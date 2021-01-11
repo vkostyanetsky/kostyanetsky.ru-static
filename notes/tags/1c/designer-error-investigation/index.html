@@ -18,24 +18,24 @@
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="https://kostyanetsky.ru/rss.xml" />
 
     <!-- Icons -->
 
-    <link rel="icon" href="/favicon.ico">    
+    <link rel="icon" href="https://kostyanetsky.ru/favicon.ico">    
         
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicons/96x96.png">
+    <link rel="icon" type="image/x-icon" href="https://kostyanetsky.ru/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://kostyanetsky.ru/assets/images/favicons/16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://kostyanetsky.ru/assets/images/favicons/32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://kostyanetsky.ru/assets/images/favicons/96x96.png">
 
     <!-- Open Graph -->
 
     <meta property="og:title" content="Расследование ошибки в Конфигураторе"/>
     <meta property="og:description" content="Итак, Конфигуратор выдает ошибку; нужно её исправить или обойти. Что может с этим помочь?"/>
-    <meta property="og:image" content="/assets/images/og.jpg">
+    <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "/notes/tags/1c/designer-error-investigation/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/1c/designer-error-investigation/" />    
 
     <!-- Google Fonts -->
 
@@ -47,8 +47,8 @@
 
     <!-- Likely -->
     
-    <script src="/assets/likely/likely.js"></script>
-    <link rel="stylesheet" href="/assets/likely/likely.css">    
+    <script src="https://kostyanetsky.ru/assets/likely/likely.js"></script>
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/likely/likely.css">    
 
     <!-- Twitter -->
 
@@ -60,13 +60,13 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = '/notes/tags/1c/excp-number-by-minutes/';
-        let ctrlRightUrl    = '/notes/tags/1c/lost-time/';
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/1c/excp-number-by-minutes/';
+        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/1c/lost-time/';
 
     </script>
     
-    <link rel="stylesheet" href="/assets/blog.css">
-    <script src="/assets/blog.js"></script>
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/blog.css">
+    <script src="https://kostyanetsky.ru/assets/blog.js"></script>
                 
 </head>
 
@@ -78,16 +78,16 @@
 
     <nav class="flex items-center lh-copy pa3 ph0-l">
     
-        <a href=""><img class="br-100" src="/assets/images/me.jpg" title="Привет!" /></a>
+        <a href="https://kostyanetsky.ru"><img class="br-100" src="https://kostyanetsky.ru/assets/images/me.jpg" title="Привет!" /></a>
 
         <div class="pl4 flex-auto">
         
             
-                <a class="dib f4 mr3 link dim bb blue" href="">Сайт Влада</a>
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.ru">Сайт Влада</a>
             
 
             
-                <a class="dib f4 mr3 link dim bb orange" href="/notes/">Заметки</a>
+                <a class="dib f4 mr3 link dim bb orange" href="https://kostyanetsky.ru/notes/">Заметки</a>
             
 
         </div>
@@ -118,9 +118,9 @@
 <p class="measure-wide">Разберем пример — может, не самый показательный, зато свежий.</p>
 <p class="measure-wide">Контекст — конфигурация, использующая <a class="link blue dim bb" href="https://v8.1c.ru/platforma/razdelenie-dannyh/">разделение данных</a>. Её база данных «нарезана» на кусочки (области данных), каждый из которых ничего не знает о своих соседях — сколько их, какого они размера и так далее. При этом в БД есть и общие данные — например, справочники, к которым можно обратиться из любой области. Как правило, это разная техническая информация — например, перечень объектов метаданных.</p>
 <p class="measure-wide">Задача — исключить справочник FileStorageVolumes из основного разделителя. Сейчас этот справочник — разделенный: то есть, его данные от области к области будут различаться. Нам нужно сделать так, чтобы содержимое справочника стало одинаковым для всех областей.</p>
-<p class="measure-wide">Задача несложная, так как таблица справочника пуста — ни одна из областей ничего в нем не хранит. Что же, применяем <a class="link blue dim bb" href="/notes/designer-error-investigation/setup.png">настройку</a> и:</p>
-<p class="measure-wide"><img alt="Исключение" src="/notes/designer-error-investigation/error.png"/></p>
-<p class="measure-wide">В <a class="link blue dim bb" href="/notes/designer-error-investigation/error.txt">тексте</a> исключения есть сообщения: одно от платформы, второе от СУБД. Первое озадачивает: то есть как это данные не уникальны? Справочник же пуст, никаких данных нет. Возможно, проблема в каких-то вспомогательных структурах, не связанных с содержимым справочника напрямую.</p>
+<p class="measure-wide">Задача несложная, так как таблица справочника пуста — ни одна из областей ничего в нем не хранит. Что же, применяем <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/designer-error-investigation/setup.png">настройку</a> и:</p>
+<p class="measure-wide"><img alt="Исключение" src="https://kostyanetsky.ru/notes/designer-error-investigation/error.png"/></p>
+<p class="measure-wide">В <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/designer-error-investigation/error.txt">тексте</a> исключения есть сообщения: одно от платформы, второе от СУБД. Первое озадачивает: то есть как это данные не уникальны? Справочник же пуст, никаких данных нет. Возможно, проблема в каких-то вспомогательных структурах, не связанных с содержимым справочника напрямую.</p>
 <p class="measure-wide">Сообщение СУБД более внятное: MS SQL Server хотела создать уникальный индекс для таблицы _DataHistorySettingsNG, но не смогла, так как сочетания индексируемых полей оказались неуникальны. Приводится даже конкретное значение, из-за которого не получилось создать индекс: это NULL.</p>
 <p class="measure-wide">Выводы?</p>
 <ol class="measure-wide">
@@ -129,17 +129,17 @@
 </ol>
 <p class="measure-wide">Последнее объясняет, почему проблема уникальности возникла на пустом справочнике: настройки истории данных для объекта хранятся независимо от того, есть в объекте какие-то данные или нет. Если посмотреть на таблицу с настройками, там всего три поля: _MetadataId (ID объекта метаданных), _Content (значения настроек) и _Fld626 (разделитель области).</p>
 <p class="measure-wide">До реструктуризации данные имеют примерно такой вид:</p>
-<p class="measure-wide"><img alt="Таблица _DataHistorySettings" src="/notes/designer-error-investigation/table.png"/></p>
+<p class="measure-wide"><img alt="Таблица _DataHistorySettings" src="https://kostyanetsky.ru/notes/designer-error-investigation/table.png"/></p>
 <p class="measure-wide">Однако потом эта картина изменилась. Когда мы исключили справочник из состава общего реквизита, конфигуратор запустил реструктуризацию: создал таблицу _DataHistorySettingsNG, перенес в неё данные из _DataHistorySettings и установил значение поля _Fld626 в NULL всем записям, которые относятся к справочнику FileStorageVolumes.</p>
-<p class="measure-wide">К чему это привело? А вот к чему: для справочника FileStorageVolumes появился целый ворох настроек, которые не относятся к какой-либо области. Это само по себе звучит нездорово, но настоящие проблемы начались, когда Конфигуратор попытался создать для таблицы кластерный индекс: он <a class="link blue dim bb" href="/notes/designer-error-investigation/index.png">строится</a> по полям _MetadataId и _Fld626, является уникальным и, соответственно, не может быть создан — в таблице множество записей, у которых различается только поле _Content, а _MetadataId и _Fld626 — гарантированно идентичны.</p>
-<p class="measure-wide">Для очистки совести посмотрим <a class="link blue dim bb" href="/notes/designer-error-investigation/20103116.log">техжурнал</a> (я вычистил оттуда нерелевантные события и другую постороннюю информацию). Наши догадки подтверждается: видим, как Конфигуратор создает и заполняет таблицу _DataHistorySettingsNG, пытается проиндексировать её, но получает ошибку и удаляет. В <a class="link blue dim bb" href="/notes/designer-error-investigation/20103116.png">трассировке</a> СУБД примерно та же картина.</p>
+<p class="measure-wide">К чему это привело? А вот к чему: для справочника FileStorageVolumes появился целый ворох настроек, которые не относятся к какой-либо области. Это само по себе звучит нездорово, но настоящие проблемы начались, когда Конфигуратор попытался создать для таблицы кластерный индекс: он <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/designer-error-investigation/index.png">строится</a> по полям _MetadataId и _Fld626, является уникальным и, соответственно, не может быть создан — в таблице множество записей, у которых различается только поле _Content, а _MetadataId и _Fld626 — гарантированно идентичны.</p>
+<p class="measure-wide">Для очистки совести посмотрим <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/designer-error-investigation/20103116.log">техжурнал</a> (я вычистил оттуда нерелевантные события и другую постороннюю информацию). Наши догадки подтверждается: видим, как Конфигуратор создает и заполняет таблицу _DataHistorySettingsNG, пытается проиндексировать её, но получает ошибку и удаляет. В <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/designer-error-investigation/20103116.png">трассировке</a> СУБД примерно та же картина.</p>
 <p class="measure-wide">На этом интересное заканчивается, так как решение достаточно очевидно: удаляем настройки истории данных для справочника во всей областях данных и повторяем реструктуризацию. Ошибку это не исправит, конечно; по хорошему, Конфигуратор должен предсказывать такую ситуацию и выдавать адекватное сообщение — как, например, при удалении измерения регистра сведений, которое приводит к нарушению уникальности измерений для записей регистра. Однако задача будет решена.</p>
 <p class="measure-wide">В общем, готово — мы великолепны!</p>
         <p class="f6 mt4">
             31 октября 2020
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="/notes/tags/1c/">1С</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
         </p>
@@ -159,11 +159,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="/notes/tags/1c/excp-number-by-minutes/">Расчет количества исключений по ТЖ</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/excp-number-by-minutes/">Расчет количества исключений по ТЖ</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="/notes/tags/1c/lost-time/">Потерянное время</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/lost-time/">Потерянное время</a>
                                 
 
             </p> 
@@ -183,7 +183,7 @@
     <p class="f6 lh-solid">Телеграм: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
     <p class="f6 lh-solid">Гитхаб: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
     
-    <a class="rss" href="/rss.xml">РСС</a> 
+    <a class="rss" href="https://kostyanetsky.ru/rss.xml">РСС</a> 
            
 </footer>
 

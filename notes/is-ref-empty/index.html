@@ -18,24 +18,24 @@
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="https://kostyanetsky.ru/rss.xml" />
 
     <!-- Icons -->
 
-    <link rel="icon" href="/favicon.ico">    
+    <link rel="icon" href="https://kostyanetsky.ru/favicon.ico">    
         
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicons/96x96.png">
+    <link rel="icon" type="image/x-icon" href="https://kostyanetsky.ru/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://kostyanetsky.ru/assets/images/favicons/16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://kostyanetsky.ru/assets/images/favicons/32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://kostyanetsky.ru/assets/images/favicons/96x96.png">
 
     <!-- Open Graph -->
 
     <meta property="og:title" content="Пустая() или ЗначениеЗаполнено()?"/>
     <meta property="og:description" content="Несколько дней назад обсуждал с коллегой, какой способ проверки заполнения ссылки лучше."/>
-    <meta property="og:image" content="/assets/images/og.jpg">
+    <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "/notes/is-ref-empty/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/is-ref-empty/" />    
 
     <!-- Google Fonts -->
 
@@ -47,8 +47,8 @@
 
     <!-- Likely -->
     
-    <script src="/assets/likely/likely.js"></script>
-    <link rel="stylesheet" href="/assets/likely/likely.css">    
+    <script src="https://kostyanetsky.ru/assets/likely/likely.js"></script>
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/likely/likely.css">    
 
     <!-- Twitter -->
 
@@ -60,13 +60,13 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = '/notes/sharex-video-recording/';
-        let ctrlRightUrl    = '/notes/black-mesa/';
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/sharex-video-recording/';
+        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/black-mesa/';
 
     </script>
     
-    <link rel="stylesheet" href="/assets/blog.css">
-    <script src="/assets/blog.js"></script>
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/blog.css">
+    <script src="https://kostyanetsky.ru/assets/blog.js"></script>
                 
 </head>
 
@@ -78,16 +78,16 @@
 
     <nav class="flex items-center lh-copy pa3 ph0-l">
     
-        <a href=""><img class="br-100" src="/assets/images/me.jpg" title="Привет!" /></a>
+        <a href="https://kostyanetsky.ru"><img class="br-100" src="https://kostyanetsky.ru/assets/images/me.jpg" title="Привет!" /></a>
 
         <div class="pl4 flex-auto">
         
             
-                <a class="dib f4 mr3 link dim bb blue" href="">Сайт Влада</a>
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.ru">Сайт Влада</a>
             
 
             
-                <a class="dib f4 mr3 link dim bb orange" href="/notes/">Заметки</a>
+                <a class="dib f4 mr3 link dim bb orange" href="https://kostyanetsky.ru/notes/">Заметки</a>
             
 
         </div>
@@ -115,18 +115,18 @@
 </code></pre>
 <p class="measure-wide">Коллега в свою очередь утверждал, что ЗначениеЗаполнено() быстрее, так как это встроенная функция, которая не тратит время на поиск метода у объекта (в скриптовых языках это сравнительно медленная операция).</p>
 <p class="measure-wide">На моей памяти ни тот, ни другой метод узким местом никогда не были, но меня разобрало любопытство; написал <a class="link blue dim bb" href="https://github.com/vkostyanetsky/IsEmptyOrValueIsFilled">тест</a>, который проверяет ссылочную переменную на пустое значение обеими способами и замеряет время, которое было потрачено. </p>
-<p class="measure-wide">В среднем результат выглядит <a class="link blue dim bb" href="/notes/is-ref-empty/is-ref-empty.png">примерно так</a>. Там четыре шага — на первых двух предполагается, что ссылка определена, а на третьем и четвертом добавляется соответствующая проверка. В последней колонке таблицы виден контекст выполнения теста (клиент или сервер).</p>
+<p class="measure-wide">В среднем результат выглядит <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/is-ref-empty/is-ref-empty.png">примерно так</a>. Там четыре шага — на первых двух предполагается, что ссылка определена, а на третьем и четвертом добавляется соответствующая проверка. В последней колонке таблицы виден контекст выполнения теста (клиент или сервер).</p>
 <p class="measure-wide">Вывод довольно очевиден: ЗначениеЗаполнено() никакой деградации не показывает, более того — работает быстрее, чем метод Пустая() (особенно если мы начинаем проверять переменную на Неопределено). Конечно, отклонение не слишком значительное, но на каких-то длительных регламентных операциях вполне можно сэкономить пару секунд.</p>
 <p class="measure-wide">Да и чисто практически проще делать проверку одним универсальным вызовом, а не пытаться угадать все возможные значения переменной.</p>
         <p class="f6 mt4">
             11 апреля 2020
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="/notes/tags/1c/">1С</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="/notes/tags/done/">сделал</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">сделал</a>
                 </span>
             
         </p>
@@ -146,11 +146,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="/notes/sharex-video-recording/">Запись видео в ShareX</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/sharex-video-recording/">Запись видео в ShareX</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="/notes/black-mesa/">Black Mesa</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/black-mesa/">Black Mesa</a>
                                 
 
             </p> 
@@ -170,7 +170,7 @@
     <p class="f6 lh-solid">Телеграм: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
     <p class="f6 lh-solid">Гитхаб: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
     
-    <a class="rss" href="/rss.xml">РСС</a> 
+    <a class="rss" href="https://kostyanetsky.ru/rss.xml">РСС</a> 
            
 </footer>
 

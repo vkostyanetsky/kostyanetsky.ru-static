@@ -18,24 +18,24 @@
     
     <!-- RSS -->
 
-    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="https://kostyanetsky.ru/rss.xml" />
 
     <!-- Icons -->
 
-    <link rel="icon" href="/favicon.ico">    
+    <link rel="icon" href="https://kostyanetsky.ru/favicon.ico">    
         
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicons/96x96.png">
+    <link rel="icon" type="image/x-icon" href="https://kostyanetsky.ru/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://kostyanetsky.ru/assets/images/favicons/16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://kostyanetsky.ru/assets/images/favicons/32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://kostyanetsky.ru/assets/images/favicons/96x96.png">
 
     <!-- Open Graph -->
 
     <meta property="og:title" content="СКД и право просмотра"/>
     <meta property="og:description" content="Универсальный подход СКД 1С к праву просмотра иногда заставляет платформу выкидывать знатные фортели."/>
-    <meta property="og:image" content="/assets/images/og.jpg">
+    <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "/notes/tags/done/rights-for-dcs/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/done/rights-for-dcs/" />    
 
     <!-- Google Fonts -->
 
@@ -47,8 +47,8 @@
 
     <!-- Likely -->
     
-    <script src="/assets/likely/likely.js"></script>
-    <link rel="stylesheet" href="/assets/likely/likely.css">    
+    <script src="https://kostyanetsky.ru/assets/likely/likely.js"></script>
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/likely/likely.css">    
 
     <!-- Twitter -->
 
@@ -60,13 +60,13 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = '/notes/tags/done/fce-results/';
-        let ctrlRightUrl    = '/notes/tags/done/failed-hunt/';
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/done/fce-results/';
+        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/done/failed-hunt/';
 
     </script>
     
-    <link rel="stylesheet" href="/assets/blog.css">
-    <script src="/assets/blog.js"></script>
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/blog.css">
+    <script src="https://kostyanetsky.ru/assets/blog.js"></script>
                 
 </head>
 
@@ -78,16 +78,16 @@
 
     <nav class="flex items-center lh-copy pa3 ph0-l">
     
-        <a href=""><img class="br-100" src="/assets/images/me.jpg" title="Привет!" /></a>
+        <a href="https://kostyanetsky.ru"><img class="br-100" src="https://kostyanetsky.ru/assets/images/me.jpg" title="Привет!" /></a>
 
         <div class="pl4 flex-auto">
         
             
-                <a class="dib f4 mr3 link dim bb blue" href="">Сайт Влада</a>
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.ru">Сайт Влада</a>
             
 
             
-                <a class="dib f4 mr3 link dim bb orange" href="/notes/">Заметки</a>
+                <a class="dib f4 mr3 link dim bb orange" href="https://kostyanetsky.ru/notes/">Заметки</a>
             
 
         </div>
@@ -112,7 +112,7 @@
     <div class="f4 lh-copy black mb5">
         <p class="measure-wide">Универсальный подход системы компоновки данных «если у пользователя нет права на просмотр чего-то, то этого как бы нет» иногда заставляет платформу выкидывать знатные фортели. Нет, сферический отчет в вакууме и правда работает хорошо — например, если нет права на просмотр какого-то справочника, то в отчете он фигурировать не будет. Однако реальные примеры бывают посложнее.</p>
 <p class="measure-wide">Например, пару недель назад я отлаживал отчет, который при попытке генерации выдавал понятную на первый взгляд ошибку:</p>
-<p class="measure-wide"><img alt="У вас настройка кривая, товарищ!" src="/notes/rights-for-dcs/ru.png"/></p>
+<p class="measure-wide"><img alt="У вас настройка кривая, товарищ!" src="https://kostyanetsky.ru/notes/rights-for-dcs/ru.png"/></p>
 <p class="measure-wide">Отчет гигантский — запрос на добрую тысячу строк, сложная настройка, здоровенный макет, запутанный код компоновки. Первое подозрение пало на ошибку в настройке, но расследование быстро дошло от ссылки на валюту в выборке данных до чтения константы с этой валютой на самом нижнем уровне отчета, на которую не было права просмотра.</p>
 <p class="measure-wide">Не скажу сходу, что именно тут сбило платформу с толку и привело к не очевидной диагностике — то ли манипуляции с временной таблицей, куда эта константа была прочитана, то ли то, что читалась она в конструкции ВЫБОР, то ли то, что на сам справочник валют все необходимые права были. Искать конкретное условие или их сочетания я не стал — думаю, это просто специфика реализации движка СКД, которая может меняться от версии к версии. Достаточно не забывать о праве просмотра, и проблемы не будет.</p>
 <p class="measure-wide">Что касается ошибки, при столкновении с ней стоит вывести проблемный отчет под полными правами. Если тут всё о'кей, нужно набросать список таблиц, откуда отчет читает данные, и проверить — все ли они с правами на чтение и просмотр.</p>
@@ -121,11 +121,11 @@
             28 августа 2018
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="/notes/tags/1c/">1С</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="/notes/tags/done/">сделал</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/done/">сделал</a>
                 </span>
             
         </p>
@@ -145,11 +145,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="/notes/tags/done/fce-results/">Результаты FCE</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/fce-results/">Результаты FCE</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="/notes/tags/done/failed-hunt/">Неудачная охота</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/failed-hunt/">Неудачная охота</a>
                                 
 
             </p> 
@@ -169,7 +169,7 @@
     <p class="f6 lh-solid">Телеграм: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
     <p class="f6 lh-solid">Гитхаб: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
     
-    <a class="rss" href="/rss.xml">РСС</a> 
+    <a class="rss" href="https://kostyanetsky.ru/rss.xml">РСС</a> 
            
 </footer>
 
