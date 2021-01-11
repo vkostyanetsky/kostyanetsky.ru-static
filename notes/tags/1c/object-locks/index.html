@@ -1,0 +1,178 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>
+        
+            Объектные блокировки
+        
+    </title>
+
+    <meta name="description" content="Различают два вида таких блокировок: пессимистические и оптимистические." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="/favicon.ico">    
+        
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicons/96x96.png">
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Объектные блокировки"/>
+    <meta property="og:description" content="Различают два вида таких блокировок: пессимистические и оптимистические."/>
+    <meta property="og:image" content="/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "/notes/tags/1c/object-locks/" />    
+
+    <!-- Google Fonts -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap"> 
+
+    <!-- Tachyons -->
+
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Likely -->
+    
+    <script src="/assets/likely/likely.js"></script>
+    <link rel="stylesheet" href="/assets/likely/likely.css">    
+
+    <!-- Twitter -->
+
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+
+    <!-- Blog -->
+
+    <script>
+
+        let ctrlUpUrl       = '';
+        let ctrlDownUrl     = '';
+        let ctrlLeftUrl     = '/notes/tags/1c/fat-roles/';
+        let ctrlRightUrl    = '/notes/tags/1c/pagelatch/';
+
+    </script>
+    
+    <link rel="stylesheet" href="/assets/blog.css">
+    <script src="/assets/blog.js"></script>
+                
+</head>
+
+<body class="w-100 bg-white">
+<div id="app">        
+<main>
+
+<header class="db dt-l w-100-l border-box pa3 ph5-l">
+
+    <nav class="flex items-center lh-copy pa3 ph0-l">
+    
+        <a href=""><img class="br-100" src="/assets/images/me.jpg" title="Привет!" /></a>
+
+        <div class="pl4 flex-auto">
+        
+            
+                <a class="dib f4 mr3 link dim bb blue" href="">Сайт Влада</a>
+            
+
+            
+                <a class="dib f4 mr3 link dim bb orange" href="/notes/">Заметки</a>
+            
+
+        </div>
+        
+    </nav>
+
+    
+        <nav class="dtc-l v-mid tc tr-l"><a href="/notes/tags/1c/object-locks/" class="link f5 f5-ns dim blue bb"></a></nav>
+    
+
+</header>
+
+<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
+    
+
+    <article>    
+                    
+        <h1 class="f-subheadline lh-solid">Объектные блокировки</h1>
+            
+        
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Во-первых, сразу, чтобы не путаться: объектные блокировки платформы никак не связаны с управляемыми блокировками и, тем более, блокировками СУБД. Во-вторых, различают два вида: пессимистические объектные блокировки и оптимистические.</p>
+<p class="measure-wide">Оба вида неплохо <a class="link blue dim bb" href="https://its.1c.ru/db/metod8dev#content:5839:hdoc">описаны</a> на ИТС; ниже — просто краткая выжимка.</p>
+<h2>Пессимистические блокировки</h2>
+<p class="measure-wide">Накладываются расширением формы, когда пользователь начинает редактировать объект — например, меняет значение поля. Если тот же объект попробует отредактировать в форме другой пользователь — форма, которую он открыл, тоже попробует наложить пессимистическую блокировку, не сможет этого сделать и пользователь получит ошибку «Не удалось заблокировать запись».</p>
+<p class="measure-wide">То есть платформа в данном случае делает своего рода пессимистичную оценку ситуации: мол, раз первый пользователь начал редактировать объект — скорее всего, он его запишет. Раз так, второму пользователю разрешать редактировать нельзя.</p>
+<p class="measure-wide">Пессимистическую блокировку также можно наложить методом объекта Заблокировать() и снять через метод Разблокировать(). Кроме того, можно воспользоваться методом глобального контекста ЗаблокироватьДанныеДляРедактирования() и методом управляемой формы ЗаблокироватьДанныеФормыДляРедактирования().</p>
+<h2>Оптимистические блокировки</h2>
+<p class="measure-wide">Сперва немного теории: платформа хранит версии объектов ссылочного типа (справочников, документов и так далее). По сути это просто момент времени, в который объект был изменён последний раз. Когда объект считывается расширением формы или кодом — его версия считывается вместе с ним.</p>
+<p class="measure-wide">Так вот, в момент записи объекта платформа сверяет ту версию, что была получена при чтении объекта из базы данных и ту, что указана в базе данных в момент записи. Если версии различаются — возникает ошибка «Операция не может быть выполнена из-за несоответствия версии или отсутствия записи базы данных».</p>
+<p class="measure-wide">Это и есть так называемая «оптимистическая блокировка». Называют её так потому, что платформа тянет с проверкой до последнего — пока не произойдет реальной попытки записи. Стакан наполовину полон, все дела.</p>
+<p class="measure-wide">Возвращаясь к теории — версия объекта хранится в поле _Version, и его заполнением занимается СУБД. То есть платформа на это значение никак не влияет и, соответственно, наложить оптимистическую блокировку (читай, сменить версию) объекта через код нельзя. Впрочем, можно просто записать объект — и его версия изменится.</p>
+        <p class="f6 mt4">
+            22 апреля 2019
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        <div class="likely">
+            <div class="twitter">Твитнуть</div>
+            <div class="telegram">Отправить</div>        
+            <div class="vkontakte">Поделиться</div>
+            <div class="facebook">Поделиться</div>
+        </div>        
+
+        
+
+            <p class="mt5 mb3 f6">
+
+                
+                    <a class="mr4 link blue bb dim" href="/notes/tags/1c/fat-roles/">Растолстевшие роли</a> &larr;
+                
+                Ctrl
+                
+                    &rarr; <a class="ml4 link blue bb dim" href="/notes/tags/1c/pagelatch/">Задержки PageLatch</a>
+                                
+
+            </p> 
+            
+        
+
+    </article>
+
+
+</section>
+
+</main>
+
+<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
+    
+    <p class="f6 lh-solid">Эл. почта: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.ru</a></p>
+    <p class="f6 lh-solid">Телеграм: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    <p class="f6 lh-solid">Гитхаб: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    
+    <a class="rss" href="/rss.xml">РСС</a> 
+           
+</footer>
+
+</div>
+</body>
+</html>

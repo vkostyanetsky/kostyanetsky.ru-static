@@ -1,0 +1,687 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>
+        
+            Заметки
+        
+    </title>
+
+    <meta name="description" content="Мои заметки о жизни, работе и других интересных штуках вокруг меня." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="/favicon.ico">    
+        
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicons/96x96.png">
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Заметки"/>
+    <meta property="og:description" content="Мои заметки о жизни, работе и других интересных штуках вокруг меня."/>
+    <meta property="og:image" content="/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "/notes/page-4/" />    
+
+    <!-- Google Fonts -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap"> 
+
+    <!-- Tachyons -->
+
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Likely -->
+    
+    <script src="/assets/likely/likely.js"></script>
+    <link rel="stylesheet" href="/assets/likely/likely.css">    
+
+    <!-- Twitter -->
+
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+
+    <!-- Blog -->
+
+    <script>
+
+        let ctrlUpUrl       = '/notes/page-3/';
+        let ctrlDownUrl     = '/notes/page-5/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
+
+    </script>
+    
+    <link rel="stylesheet" href="/assets/blog.css">
+    <script src="/assets/blog.js"></script>
+                
+</head>
+
+<body class="w-100 bg-white">
+<div id="app">        
+<main>
+
+<header class="db dt-l w-100-l border-box pa3 ph5-l">
+
+    <nav class="flex items-center lh-copy pa3 ph0-l">
+    
+        <a href=""><img class="br-100" src="/assets/images/me.jpg" title="Привет!" /></a>
+
+        <div class="pl4 flex-auto">
+        
+            
+                <a class="dib f4 mr3 link dim bb blue" href="">Сайт Влада</a>
+            
+
+            
+                <a class="dib f4 mr3 link dim bb orange" href="/notes/">Заметки</a>
+            
+
+        </div>
+        
+    </nav>
+
+    
+        <nav class="dtc-l v-mid tc tr-l"><a href="/notes/page-4/" class="link f5 f5-ns dim blue bb"></a></nav>
+    
+
+</header>
+
+<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
+    
+
+    <article>
+
+        <h1 class="f-subheadline lh-solid">Заметки</h1>
+
+        
+
+            <p class="mt5 mb3 f6">
+                <a class="link blue bb dim mr1 mt3 mb3" href="/notes/page-3/">Позднее</a> Ctrl + &uarr;
+            </p>
+
+        
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/close-to-the-sun/">Close to the Sun</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/UMsQ2oB006w" width="560"></iframe>
+<p class="measure-wide">Игрожуры и ютуберы соревнуются, кто задорнее обложит «Close to the Sun» в рецензиях, а мне игра неожиданно понравилась. Конечно, это не шедевр, но атмосфера огромного «летучего голландца» передана просто отлично. Происходящее местами напоминает Биошок, но я очень далек от того, чтобы валять в перьях любую историю, которая чем-то похожа на то, что я уже где-то видел.</p>
+<p class="measure-wide">А ещё во время финальных титров тут играет очень крутой <a class="link blue dim bb" href="https://www.youtube.com/watch?v=TiRZVAO2XbQ">сингл</a>, который буквально продал мне игру пару дней назад и который можно слушать, к самой игре не прикасаясь.</p>
+        <p class="f6 mt4">
+            14 мая 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/videogames/">видеоигры</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/pagelatch/">Задержки PageLatch</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Задержки вида PageIOLatch (я про них сегодня <a class="link blue dim bb" href="/notes/pageiolatch">писал</a>) легко встретить в любых системах, в том числе небольших. С задержками PageLatch дела обстоят наоборот — их трудно заметить, пока пользователей меньше нескольких тысяч.</p>
+<p class="measure-wide">Дело в том, что они возникают, когда страница находится в оперативной памяти и её пытаются изменить несколько пользователей. Пока один пользователь не завершит модификацию — прочие должны ждать. Время ожидания обычно ничтожно, однако если конкурирующих за страницу пользователей много — оно становится заметным.</p>
+<p class="measure-wide">Возможных причин две.</p>
+<h2>Горячее место в индексе</h2>
+<p class="measure-wide">Такой расклад иногда называют хотспотом. Он возникает, когда мы массово пытаемся писать что-то на последнюю страницу индекса; в первую очередь речь идёт об индексе с монотонно возрастающим ключом — например, любые индексы по полям ссылочного типа (начиная с последних версий 8.2, платформа выдает последовательные GUID — это снижает фрагментацию диска и делает ключ индекса монотонно возрастающим).</p>
+<p class="measure-wide">Что такое «индекс с монотонно возрастающим ключом»? Для платформы 1С это, например, индексы регистров по периоду. Конечно, они растут не вполне монотонно — однако тут скорее важно, что данные мы всегда будем писать в конец. Сюда же относятся индексы по номеру документа и индексы по коду справочника — в обеих случаях мы выдаем некий новый номер, который пишется в конец индекса.</p>
+<p class="measure-wide">Решается проблема хотспота только архитектурно — нужно добиться того, чтобы данные записывались в разные места индекса, а не только в конец.</p>
+<h2>Системные страницы tempdb</h2>
+<p class="measure-wide">Когда мы создаём или удаляем таблицу в базе данных, в ней обновляется ряд служебных страниц — IAM (Index Allocation Map), PFS (Page Free Space), GAM (Global Allocation Map), SGAM (Shared Global Allocation Map) и другие.</p>
+<p class="measure-wide">Почему это важно для tempdb? Для платформы 1С это база, в которой регулярно создается <strong>огромное</strong> количество таблиц. Служебные страницы при этом обновляются настолько часто, что при этом возникают задержки семейства PageLatch.</p>
+<p class="measure-wide">Вообще-то MS SQL Server умеет оптимизировать обновления системных страниц для tempdb, благодаря чему это делается реже, но иногда даже этого не достаточно. Особенно если в tempdb создаются таблицы с индексами — а это очень частый кейс для приложений на 1С.</p>
+<p class="measure-wide">У проблемы есть несколько возможных решений. Первый — если СУБД старше 2016-й, можно отключить смешанные экстенты через флаг трассировки 1118. При этом исчезнет необходимость сразу в двух служебных страницах — GAM и SGAM. Соответственно, ожиданий на их обновлении не будет. Экстент — это восемь страниц данных, т.е. 64 килобайта; если он содержит страницы одной таблицы — это нормированный экстент, если нескольких — смешанный.</p>
+<p class="measure-wide">Второй подход — разбивать tempdb (с 2016-й версии СУБД она, кстати, по умолчанию разбивается на восемь файлов). Дело в том, что служебные страницы ведутся в разрезе файлов; если их будет несколько — ожидания на обновлениях служебных страниц будут ниже.</p>
+<p class="measure-wide">Третий вариант — уменьшать количество временных таблиц с целью снизить нагрузку на tempdb. То есть переписывать наиболее частотные запросы так, чтобы они работали приемлемо быстро без временных таблиц.</p>
+        <p class="f6 mt4">
+            22 апреля 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/mssql/">MS SQL</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/pageiolatch/">Задержки PageIOLatch</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Когда мы читаем страницу данных с диска в буферный кэш, она на очень короткое время блокируется (её нельзя писать, а в некоторых случаях — ещё и читать). Ожидание на завершении этого действия — и есть задержка PageIOLatch.</p>
+<p class="measure-wide">Причиной может быть вымывание буферного кэша — из-за небольшого объёма доступной ОЗУ или не оптимальных запросов, которые читают миллионы строк, а возвращают три. В итоге СУБД регулярно не находит нужных страниц в кэше и вынуждена снова и снова читать их с диска.</p>
+<p class="measure-wide">В общем, если в системе есть существенные задержки PageIOLatch — их скорее всего можно снизить, используя более быстрые диски, наращивая объём ОЗУ и оптимизируя запросы.</p>
+        <p class="f6 mt4">
+            22 апреля 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/mssql/">MS SQL</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/object-locks/">Объектные блокировки</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Во-первых, сразу, чтобы не путаться: объектные блокировки платформы никак не связаны с управляемыми блокировками и, тем более, блокировками СУБД. Во-вторых, различают два вида: пессимистические объектные блокировки и оптимистические.</p>
+<p class="measure-wide">Оба вида неплохо <a class="link blue dim bb" href="https://its.1c.ru/db/metod8dev#content:5839:hdoc">описаны</a> на ИТС; ниже — просто краткая выжимка.</p>
+<h2>Пессимистические блокировки</h2>
+<p class="measure-wide">Накладываются расширением формы, когда пользователь начинает редактировать объект — например, меняет значение поля. Если тот же объект попробует отредактировать в форме другой пользователь — форма, которую он открыл, тоже попробует наложить пессимистическую блокировку, не сможет этого сделать и пользователь получит ошибку «Не удалось заблокировать запись».</p>
+<p class="measure-wide">То есть платформа в данном случае делает своего рода пессимистичную оценку ситуации: мол, раз первый пользователь начал редактировать объект — скорее всего, он его запишет. Раз так, второму пользователю разрешать редактировать нельзя.</p>
+<p class="measure-wide">Пессимистическую блокировку также можно наложить методом объекта Заблокировать() и снять через метод Разблокировать(). Кроме того, можно воспользоваться методом глобального контекста ЗаблокироватьДанныеДляРедактирования() и методом управляемой формы ЗаблокироватьДанныеФормыДляРедактирования().</p>
+<h2>Оптимистические блокировки</h2>
+<p class="measure-wide">Сперва немного теории: платформа хранит версии объектов ссылочного типа (справочников, документов и так далее). По сути это просто момент времени, в который объект был изменён последний раз. Когда объект считывается расширением формы или кодом — его версия считывается вместе с ним.</p>
+<p class="measure-wide">Так вот, в момент записи объекта платформа сверяет ту версию, что была получена при чтении объекта из базы данных и ту, что указана в базе данных в момент записи. Если версии различаются — возникает ошибка «Операция не может быть выполнена из-за несоответствия версии или отсутствия записи базы данных».</p>
+<p class="measure-wide">Это и есть так называемая «оптимистическая блокировка». Называют её так потому, что платформа тянет с проверкой до последнего — пока не произойдет реальной попытки записи. Стакан наполовину полон, все дела.</p>
+<p class="measure-wide">Возвращаясь к теории — версия объекта хранится в поле _Version, и его заполнением занимается СУБД. То есть платформа на это значение никак не влияет и, соответственно, наложить оптимистическую блокировку (читай, сменить версию) объекта через код нельзя. Впрочем, можно просто записать объект — и его версия изменится.</p>
+        <p class="f6 mt4">
+            22 апреля 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/fat-roles/">Растолстевшие роли</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Очень любопытная <a class="link blue dim bb" href="https://start1c.blogspot.com/2019/01/blog-post.html">заметка</a> про неприятности, которые можно нажить командой роли «Снять все права». Нет, никакого криминала, права-то она честно снимает — только вот её вызов может привести к тому, что объект роли на пустом месте сожрёт в несколько раз больше памяти, чем ему реально нужно.</p>
+<p class="measure-wide">Прочитал, задумался и пошел проверять, как обстоят дела с этим у нас в конфигурации. И что бы вы думали? Накопал десятка два ролей, доверху набитых «снятыми галочками». Выгрузка прав весила около трёхста мегабайт, а после оптимизации — усохла почти втрое.</p>
+<p class="measure-wide">Любопытно, как это до сих пор оставалось незамеченным. Скорее всего, из-за количества объектов — у нас сравнительно небольшая конфигурация. То есть проблемные роли потребляли не так много ресурсов, чтобы мы что-то заподозрили.</p>
+        <p class="f6 mt4">
+            18 апреля 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/work/">работа</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/gris/">GRIS</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/gvECQlxrhbw" width="560"></iframe>
+<p class="measure-wide">Эту игру сравнительно сложно рекомендовать, но она и правда искусство в прямом смысле слова. Сходу даже не вспомню, когда в последний раз был заворожен настолько, что не мог оторваться.</p>
+<p class="measure-wide">То ли графикой, то ли музыкой, то ли тем, что авторы очень искренне передали то состояние, о котором хотели рассказать.</p>
+        <p class="f6 mt4">
+            14 апреля 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/videogames/">видеоигры</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/simple-checkbox/">Простая галочка</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Пару недель назад мы добавили в справочник номенклатуры FirstBIT ERP параметр «Inactive». Задача была простой: если товар больше не нужен пользователю — он ставит галочку и тот исчезает отовсюду (из форм выбора, форм подбора остатков на складах и так далее).</p>
+<p class="measure-wide">Звучит несложно, правда? Техническая реализация тоже была простой — мы прошлись по всем объектам, в которых предполагается выбор номенклатуры, и добавили дополнительный параметр этого выбора.</p>
+<p class="measure-wide"><img alt="Параметры выбора" src="/notes/simple-checkbox/choice-parameters.png"/></p>
+<p class="measure-wide">Но пользователи начали жаловаться, что настройка не работает. Мы полезли разбираться и поняли, что забыли про историю ввода — этот механизм, как оказалось, параметры выбора просто игнорирует. То есть пользователи выбирали в инвойсе какой-то товар, потом делали его неактивным, возвращались и инвойс и... Снова видели в истории товар, который вроде только что отключили.</p>
+<p class="measure-wide">Мы принялись искать выход. Проблема в том, что история ввода хранится в системном хранилище и повлиять на неё программно нельзя. Можно разве что полностью удалить — но фактическая очистка истории происходит только при перезапуске клиента (и то через раз). Отключить историю вообще? Напоминает лечение простуды отсечением головы.</p>
+<p class="measure-wide">В какой-то момент мы наткнулись на информацию о том, что история ввода хранится не просто для конкретного поля, а ещё и в разрезе параметров выбора. То есть для каждого сочетания параметров выбора и их значений история выбора своя. Получается, если добавить некий дополнительный параметр выбора ко всем полям, где выбирается номенклатура — изменение значения этого параметра будет «чистить» историю (на самом деле, конечно, создавать новую — но пользователю-то какая разница).</p>
+<p class="measure-wide">В общем, мы создали такой параметр. Хранится в общем хранилище и транслируется в формы при их открытии через общий модуль, который программно добавляет параметр выбора. Если пользователь снимает или устанавливает флаг Inactive для любой номенклатуры — значение параметра меняется, а уже открытые формы получают его через механизм оповещений.</p>
+<p class="measure-wide"><img alt="Минуточку!" src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif"/></p>
+<p class="measure-wide">А ведь как все невинно начиналось, а?</p>
+<p class="measure-wide">Однако механизм неплохо работает, хотя его недостатки налицо: во-первых, системное хранилище будет постепенно пухнуть по мере появления всё новых и новых сочетаний реальных параметров выбора и нашего, фиктивного. Во-вторых, запись номенклатуры теперь потенциально узкое место: два пользователя не смогут одновременно записать номенклатуры, у которых изменены флаги Inactive (будет блокировка при записи нового значения нашего скрытого параметра выбора в общее хранилище).</p>
+<p class="measure-wide">Первую проблему можно решить очисткой хранилища по какому-то триггеру, вторую — записью нашего параметра выбора в разрезе пользователей (например, через регистр сведений). Впрочем, мы искренне надеемся, что 1С даст какой-то доступ к истории ввода до того, как нам придется городить дополнительные костыли к тем, что мы уже наворотили :-)</p>
+        <p class="f6 mt4">
+            30 марта 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/work/">работа</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/mssql-server-start-date/">Дата запуска сервера MS SQL</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Для чего может пригодиться дата запуска MS SQL Server? Например, мы разбираем задержки в работе СУБД и хотим определить, в течении какого периода времени наполнялась DMV-шка <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql">sys.dm_os_wait_stats</a>. Её данные (как и любой другой DMV, впрочем) хранятся в оперативной памяти как раз с момента запуска СУБД.</p>
+<p class="measure-wide">Дату запуска сервера можно получить из  DMV-шки <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql">sys.dm_os_sys_info</a>:</p>
+<pre><code>SELECT sqlserver_start_time FROM sys.dm_os_sys_info
+</code></pre>
+<p class="measure-wide">Есть и другой способ, связанный с tempdb. Эта база данных создаётся при запуске сервера, и дата её создания вполне может считаться датой запуска сервера. Значение можно вытащить из <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-catalog-views/sys-databases-transact-sql">sys.databases</a>:</p>
+<pre><code>SELECT create_date FROM sys.databases WHERE name = 'tempdb'
+</code></pre>
+<p class="measure-wide">Нюанс: дату запуска сервера как точку начала сбора данных DMV-шек нужно рассматривать с осторожностью. Накопленная статистика могла быть очищена вручную — например, вот так:</p>
+<pre><code>DBCC SQLPERF('sys.dm_os_wait_stats', CLEAR)
+</code></pre>
+        <p class="f6 mt4">
+            8 марта 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/mssql/">MS SQL</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/mssql-server-waits/">Задержки сервера MS SQL</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Каждый раз, когда SQL-запрос может запуститься, но ожидает другого ресурса — он записывает сведения о причине задержки. Доступ к ним можно получить через представление <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql">sys.dm_os_wait_stats</a>.</p>
+<p class="measure-wide">Для анализа представления можно использовать готовые скрипты:</p>
+<ul class="measure-wide">
+<li><a class="link blue dim bb" href="/notes/mssql-server-waits/causes_of_wait_times.txt">Скрипт</a> из статьи Яна Стерка «Открытие скрытых данных для оптимизации производительности приложений», опубликованной в MSDN Magazine ещё в <a class="link blue dim bb" href="https://msdn.microsoft.com/ru-ru/magazine/ee310108.aspx">2008-м</a> году. Выводит список типов задержки, упорядоченный по времени — от самых частотных до наиболее редких.</li>
+<li><a class="link blue dim bb" href="/notes/mssql-server-waits/sql_server_wait_statistics.txt">Cкрипт</a> из <a class="link blue dim bb" href="https://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/">статьи</a> Пола Рэндала про анализ причин задержек в работе сервера MS SQL (на Хабре, кстати, есть <a class="link blue dim bb" href="https://habr.com/ru/post/216309/">перевод</a>). Фильтрует задержки, которые возникают на сервере всегда и которые обычно можно игнорировать. Кроме того, к каждой задержке добавляется ссылка на страницу, где эта задержка детально описана (например, вот <a class="link blue dim bb" href="https://www.sqlskills.com/help/waits/cxpacket">описание</a> CXPACKET).</li>
+</ul>
+        <p class="f6 mt4">
+            8 марта 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/mssql/">MS SQL</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/cursed-forest/">The Cursed Forest</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/uoCdg6SQRoA" width="560"></iframe>
+<p class="measure-wide">Ничего не ждал от игры, но она, внезапно, удалась. Выглядит бодро; чувствуется внимание к деталям, да и в сумме — совсем неплохо. А ближе к концу — ещё и трогательно.</p>
+<p class="measure-wide">Садитесь играть по всем правилам — гасите свет, надевайте наушники и, конечно, выключайте душнилу.</p>
+        <p class="f6 mt4">
+            6 марта 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/videogames/">видеоигры</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/duplicate-key/">Повторяющийся ключ</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">На Инфостарте вышла любопытная <a class="link blue dim bb" href="https://infostart.ru/public/1010017/">статья</a> про ошибку СУБД «cannot insert duplicate key». Одна из возможных причин сбоя — использование уникального идентификатора объекта для сопоставления при обмене с другими информационными базами (то есть, без служебного регистра, сопоставляющего объекты базы данных с идентификаторами объектов внешней базы).</p>
+<p class="measure-wide">Такой жести, чтобы уникальные идентификаторы совпали в разных базах для одной и той же таблицы, у меня в практике пока не было. Однако от подхода «единого идентификатора» я отрекся окончательно после того, как делал обмен между <a class="link blue dim bb" href="https://firstbit.ae/products/erp-dubai/financial_management/">FirstBIT ERP</a> и <a class="link blue dim bb" href="http://superagent.ru/products/grotem_agent">GROTEM / Agent</a>.</p>
+<p class="measure-wide">Архитектура пилотного решения была такая: данные из FirstBIT ERP выгружались сперва в служебную ИБ 1С, написанную разработчиками GROTEM'а, а уже оттуда — в основную базу данных сервера мобильных приложений.</p>
+<p class="measure-wide">Сопоставление было сделано очень просто — через идентификаторы объектов. Например, один и тот же документ в обеих базах имел один и тот же идентфикатор. Но были и более сложные схемы: например, контрагент FirstBIT ERP на стороне GROTEM'а превращался в три объекта: собственно контрагента, торговую точку и документ взаиморасчетов.</p>
+<p class="measure-wide"><img alt="WAIT WHAT" src="https://media.giphy.com/media/zkSFsZpQMZuG4/giphy.gif"/></p>
+<p class="measure-wide">Да, в документ взаиморасчетов. И все три объекта имели один и тот же идентфикатор — идентификатор контрагента FirstBIT ERP. В общем, не то чтобы это было очень изящным решением, но для платформы такой расклад вполне адекватен и мы решили, что проблем быть не должно.</p>
+<p class="measure-wide">Однако обмен работать отказался.</p>
+<p class="measure-wide">Беглый анализ показал, что данные успешно выгружаются в промежуточную базу данных и проходят все возможные проверки на целостность и полноту, а не работает только финальный шаг — выгрузка в базу данных сервера мобильных приложений.</p>
+<p class="measure-wide">В итоге выяснилось, что:</p>
+<ol class="measure-wide">
+<li>В этой самой базе есть таблица, где хранятся все интересующие нас объекты. Документы, элементы справочников, вот это всё.</li>
+<li>Эта таблица имеет уникальный индекс по GUID объекта.</li>
+</ol>
+<p class="measure-wide">В этом месте интрига закончилась. Ну да, первый же выгруженный контрагент создавал целых три сущности с одним и тем же GUID, которые прекрасно лежали в своих таблицах на стороне 1С, но не могли быть записаны в одну общую таблицу базы данных приложения.</p>
+<p class="measure-wide"><img alt="I will not use GUIDs to map objects!" src="/notes/duplicate-key/i-will-not-use-guids.gif"/></p>
+        <p class="f6 mt4">
+            1 марта 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/done/">сделал</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/work/">работа</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/loneliness/">Одиночество</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Хороший ролик про одиночество, его причины и последствия (спойлер: все серьёзно, вплоть до биологического уровня). Рассказывают на английском, но если нужно — там есть русские субтитры.</p>
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/n3Xv_g3g-mA" width="560"></iframe>
+<p class="measure-wide">(емкий <a class="link blue dim bb" href="https://twitter.com/StatusyOk/status/1098845710668185602">твит</a> о том же)</p>
+<p class="measure-wide">(а также я, походу, достаточно много наиграл в Starcraft II, чтобы название ролика у меня в голове произносилось исключительно голосом Зератула и под музыку из <a class="link blue dim bb" href="https://www.youtube.com/watch?v=xu94hnQDnRY">Alone</a>)</p>
+        <p class="f6 mt4">
+            1 марта 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/meanwhile/">тем временем</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/videogames/">видеоигры</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/failed-hunt/">Неудачная охота</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">При обновлении платформы до 8.13.12.1790 наткнулись на плавающий баг при переключении текущей страницы элемента на сервере. Конкретно на сервере оно срабатывает, но как только управление возвращается на клиент — текущей страницей становится та, что была до изменения. При этом ещё и происходит событие изменения текущей страницы (как будто пользователь сменил её вручную).</p>
+<p class="measure-wide">Неприятно, но, в общем, ничего страшного — запатчили баг, описали и зарепортили в 1С. Там пока <a class="link blue dim bb" href="https://bugboard.v8.1c.ru/error/000050675.html">думают</a>. Но я, внезапно, даже как-то расстроен — когда расследуешь такие штуки, они всегда выглядят немного загадочно и кажется, что ты вот-вот найдешь что-то интересное! Например, новый аспект работы платформы или что-то вроде этого.</p>
+<p class="measure-wide">И вот, наконец, ты смотришь на проблему под правильным углом, а она — обычный жук. Возможно, полосатый или в крапинку, но жук как жук — сидит себе, шевелит усами. И ты такой: блин, это что — и есть моя добыча? :-)</p>
+        <p class="f6 mt4">
+            21 февраля 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/done/">сделал</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/work/">работа</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/big-value-tables/">Большие таблицы значений</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Пока писал про <a class="link blue dim bb" href="/notes/find-rows-at-client/">поиск строк</a> на клиенте, вспомнил ещё один нюанс, связанный с данными на управляемых формах — тоже про передачу между клиентом и сервером.</p>
+<p class="measure-wide">Допустим, нам по условиям задачи нужно оперировать сравнительно большими (тысячи строк) таблицами значений. Это могут быть данные, которые в общем случае не нужно показывать пользователю: например, параметры расчета цен, информация о продажах и закупках, что-то ещё. Логично создать такие таблицы в виде атрибутов формы — хотя бы потому, что можно использовать удобный конструктор.</p>
+<p class="measure-wide">Но когда платформа решит передать такую таблицу на сервер, начнутся проблемы. Дело в том, что передавать она будет не простой и компактный объект ТаблицаЗначений, а весьма насыщенный ДанныеФормыКоллекция. Разница колоссальна — на одном из наших проектов траты на такой обмен данными составляли порядка 40% от всего времени работы ключевой операции.</p>
+<p class="measure-wide">Решение достаточно очевидно — не использовать атрибуты формы вообще. Вместо этого создавать таблицы значений с помощью кода (например, в обработчике ПриСозданииНаСервере), закидывать их во временное хранилище, а в атрибутах формы хранить только адреса хранилища. Таким образом при необходимости поработать с таблицей на сервер отправляется только строка с адресом, и расходы на сериализацию и обмен данными начинают стремиться к нулю. На сервере извлекаем таблицу, читаем данные, изменяем их, если нужно, и сохраняем обратно во временное хранилище — по тому же адресу.</p>
+        <p class="f6 mt4">
+            17 февраля 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/alita-battle-angel/">Алита: Боевой ангел</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Тот неловкий момент, когда заходишь на сайт почтенного издания, чтобы посмотреть ультракороткую <a class="link blue dim bb" href="https://meduza.io/slides/chto-smotret-v-kino-alita-boevoy-angel-chestnyy-chelovek-ayka">рецензию</a> на «Алиту», а тебя оттуда обкладывают уважительным отношением к читателю :D</p>
+<p class="measure-wide"><img alt="OH HI" src="https://media.giphy.com/media/fDO2Nk0ImzvvW/giphy.gif"/></p>
+<p class="measure-wide">По сути: отличный фильм для любителей крутого экшена, разве что концовка, как по мне, подкачала. Манга, кстати, заметно длиннее (фильм пересказывает лишь несколько первых томов), так что если к концу просмотра НАКОПИЛИСЬ ВОПРОСЫ — в ней есть ответы.</p>
+        <p class="f6 mt4">
+            16 февраля 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/films/">фильмы</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/evolution/">Эволюция</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Говоря о развитии чего-либо (продукта, языка общения, языка программирования и так далее), люди иногда называют это «эволюцией». Мол, процессы похожи — неудачные решения точно так же постепенно вымываются, а удачные — остаются и усиляют сущность, к которой принадлежат. Так-то оно так, но я сейчас вспомнил не про позитивную сторону — фигня в том, что в ходе эволюции потомки, кроме полезных ништяков, получают все хреново выстроенные и зачастую бессмысленные механизмы, которые не смогли прикончить предка.</p>
+<p class="measure-wide">В итоге мы задерживаем дыхание, когда глотаем, путаемся между dissatisfied и unsatisfactory, а ещё программируем на чудесном языке JavaScript — который, при всём своем удобстве и распостраненности, вобрал в себя все мыслимые и немыслимые недостатки скриптовых языков.</p>
+<p class="measure-wide">Но это нам ещё везёт — есть, например, жирафы! У этих ребят гортанный нерв сначала спускается по шее на два метра вниз, а потом — поднимается обратно к мышцам гортани (ага, вместо того, чтобы пройти несколько сантиметров от мозга напрямую).</p>
+<p class="measure-wide">Зная всё это, мне чуть-чуть проще смотреть на то, во что иногда превращается мой код на очередном цикле разработки. Ну и что, что у этого хомячка отрос драконий хвост? Эволюционно, например, такой хвост очень полезен. Кто я такой, чтобы спорить с Дарвином?</p>
+<div class="blog-embedded-tweet" data-tweet-id="966624401172123649"><a class="link blue dim bb" href="https://twitter.com/bluecoders/status/966624401172123649">Твит</a></div>
+        <p class="f6 mt4">
+            16 февраля 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/english/">английский</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/work/">работа</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/find-rows-at-client/">Найти строки на клиенте</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Про то, что метод НайтиСтроки() для коллекций данных формы горазд под шумок сделать серверный вызов, я узнал довольно давно, столкнувшись с неадекватно долгим открытием формы документа — в ней он вызывался при открытии, да ещё и в цикле. Так делать, конечно, не нужно, на что мягко намекает справка: calling the method executes a server call.</p>
+<p class="measure-wide">Однако сегодня писал код для задачи с похожей механикой и заметил, что серверных вызовов по факту нет. Удивился, полез на ИТС и, в общем, дело в следующем: при вызове НайтиСтроки() на клиенте поиск на нём и происходит, однако платформа не держит все данные больших коллекций на клиенте. Они передаются с сервера, и запрос этих данных с клиента — тот самый серверный вызов, на который ссылается справка.</p>
+<p class="measure-wide">Разработчики платформы расплывчато описывают объем коллекции, до которого клиенту не нужно обращаться к серверу (на ИТС пишут, что это порядка двадцати строк). Так что подход не меняется: делаем явный серверный вызов и не переживаем, что платформа решит наделать своих. Впрочем, всегда приятно немного лучше понимать, что внутри барабанчика :-)</p>
+        <p class="f6 mt4">
+            12 февраля 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/i-wish-i-could/">Ай ду май бэст</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Что здорово облегчает работу над английским языком — так это практика, которая буквально сама лезет в руки. Причем порой она полезнее каких-нибудь примеров с условного Cambridge Dictionary — просто потому, что лучше запоминается.</p>
+<p class="measure-wide">Например, вчера проходили на занятиях гипотетические формулировки и запоминали, как правильно понимать wish и if only; сегодня первое, что попалось в ленте — вот этот твит. Куда уж доходчивее :-)</p>
+<div class="blog-embedded-tweet" data-tweet-id="1046952683477729282"><a class="link blue dim bb" href="https://twitter.com/roxiqt/status/1046952683477729282">Твит</a></div>
+<p class="measure-wide">Или, скажем, недавно освежали в памяти разницу между try и trying — а я её запомнил давным-давно по вымученному «I do my best» Фелисити из Borderlands: The Pre-Sequel. Ситуация там была довольно яркая, и этот оттенок невозможности выполнить задачу здорово въелся в память.</p>
+        <p class="f6 mt4">
+            12 февраля 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/english/">английский</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/videogames/">видеоигры</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/what-are-our-girls-made-of/">Из чего сделаны наши девчонки?</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">На фоне скандальной рекламы «Reebok» (я в этой теме полный мимокрокодил, но взрывная волна даже до меня докатилась) на ютубе попался классный ролик их конкурентов. Ему уже пара лет, но он ровно про то же и, блин! Реклама здорового человека — не знаю, как лучше выразиться.</p>
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/xifSHMbGSKI" width="560"></iframe>
+<p class="measure-wide">Показал мелкой — смотрела глазами по пять копеек. Покажу ещё раз, когда опять будет батониться вместо тренировки :-)</p>
+        <p class="f6 mt4">
+            9 февраля 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/family/">семья</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/meanwhile/">тем временем</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/drummer/">Внезапный барабанщик</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Я пишу на платформе 1С довольно давно и повидал некоторое дерьмо, но такое, честно говоря, вижу первый раз.</p>
+<p class="measure-wide"><a href="/notes/drummer/bug.png"><img alt="Оттакота!" src="/notes/drummer/bug-thumbnail.png"/></a></p>
+<p class="measure-wide">Поначалу я даже не понял, с какого конца это жевать. Поискал перевод иероглифа — Википедия лишь сухо сообщила, что это такой <a class="link blue dim bb" href="https://en.wiktionary.org/wiki/%E4%80%80">тип чашки</a>, а Google Translate вообще <a class="link blue dim bb" href="https://translate.google.com/#view=home&amp;op=translate&amp;sl=auto&amp;tl=ru&amp;text=%E4%80%80">развёл руками</a>.</p>
+<p class="measure-wide">Коллега заметил, что символ отдаленно похож на складского сортировщика — мол, перекладывает что-то там себе между коробками. Не знаю, не знаю. По-моему, больше напоминает барабанщика за работой. Но что, черт побери, это значит? Может быть, 1С пытается что-то мне сказать? Что-то про музыку?</p>
+<p class="measure-wide">Может, мне нужно было стать басистом, а не вот это всё.</p>
+        <p class="f6 mt4">
+            9 февраля 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+        
+
+            <p class="mt5 mb3 f6">
+                <a class="link blue bb dim mr1 mt5 mb3" href="/notes/page-5/">Ранее</a> Ctrl + &darr;
+            </p>
+
+        
+
+    </article>
+
+
+</section>
+
+</main>
+
+<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
+    
+    <p class="f6 lh-solid">Эл. почта: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.ru</a></p>
+    <p class="f6 lh-solid">Телеграм: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    <p class="f6 lh-solid">Гитхаб: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    
+    <a class="rss" href="/rss.xml">РСС</a> 
+           
+</footer>
+
+</div>
+</body>
+</html>

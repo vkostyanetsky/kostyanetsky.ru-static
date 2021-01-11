@@ -1,0 +1,192 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>
+        
+            Расследование ошибки в Конфигураторе
+        
+    </title>
+
+    <meta name="description" content="Итак, Конфигуратор выдает ошибку; нужно её исправить или обойти. Что может с этим помочь?" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="/favicon.ico">    
+        
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicons/96x96.png">
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Расследование ошибки в Конфигураторе"/>
+    <meta property="og:description" content="Итак, Конфигуратор выдает ошибку; нужно её исправить или обойти. Что может с этим помочь?"/>
+    <meta property="og:image" content="/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "/notes/designer-error-investigation/" />    
+
+    <!-- Google Fonts -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap"> 
+
+    <!-- Tachyons -->
+
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Likely -->
+    
+    <script src="/assets/likely/likely.js"></script>
+    <link rel="stylesheet" href="/assets/likely/likely.css">    
+
+    <!-- Twitter -->
+
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+
+    <!-- Blog -->
+
+    <script>
+
+        let ctrlUpUrl       = '';
+        let ctrlDownUrl     = '';
+        let ctrlLeftUrl     = '/notes/excp-number-by-minutes/';
+        let ctrlRightUrl    = '/notes/time-to-wink/';
+
+    </script>
+    
+    <link rel="stylesheet" href="/assets/blog.css">
+    <script src="/assets/blog.js"></script>
+                
+</head>
+
+<body class="w-100 bg-white">
+<div id="app">        
+<main>
+
+<header class="db dt-l w-100-l border-box pa3 ph5-l">
+
+    <nav class="flex items-center lh-copy pa3 ph0-l">
+    
+        <a href=""><img class="br-100" src="/assets/images/me.jpg" title="Привет!" /></a>
+
+        <div class="pl4 flex-auto">
+        
+            
+                <a class="dib f4 mr3 link dim bb blue" href="">Сайт Влада</a>
+            
+
+            
+                <a class="dib f4 mr3 link dim bb orange" href="/notes/">Заметки</a>
+            
+
+        </div>
+        
+    </nav>
+
+    
+        <nav class="dtc-l v-mid tc tr-l"><a href="/notes/designer-error-investigation/" class="link f5 f5-ns dim blue bb"></a></nav>
+    
+
+</header>
+
+<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
+    
+
+    <article>    
+                    
+        <h1 class="f-subheadline lh-solid">Расследование ошибки в Конфигураторе</h1>
+            
+        
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Итак, Конфигуратор выдает ошибку; нужно её исправить или обойти. Это потенциально неприятный расклад: у нас нет никакого доступа к коду приложения. Тем не менее, чтобы решить проблему — важно понять, что именно делал Конфигуратор до сбоя и почему он не справился.</p>
+<p class="measure-wide">Что может с этим помочь?</p>
+<p class="measure-wide">Первое — сам текст ошибки. Нередко его вполне достаточно, чтобы мысли двинулись в правильном направлении. Если причиной сбоя стал запрос, то в ошибке будет ещё и сообщение от СУБД.</p>
+<p class="measure-wide">Второе — технологический журнал по событиям EXCP, SDBL и DBMSSQL (DBPOSTGRS?) для t:applicationName=Designer. Из него мы получим информацию об исключениях внутри Конфигуратора и данные запросов, которые он выполняет (нередко они и есть причина ошибки).</p>
+<p class="measure-wide">Кроме того, может пригодиться трассировка запросов к базе данных. Если используется MS SQL, то трассировку можно получить через Extended Events — конкретно, нас интересуют события error_reported, rpc_completed и sql_batch_completed. Общий принцип тот же — ловим ошибки выполнения запросов и сами запросы. </p>
+<p class="measure-wide">Разберем пример — может, не самый показательный, зато свежий.</p>
+<p class="measure-wide">Контекст — конфигурация, использующая <a class="link blue dim bb" href="https://v8.1c.ru/platforma/razdelenie-dannyh/">разделение данных</a>. Её база данных «нарезана» на кусочки (области данных), каждый из которых ничего не знает о своих соседях — сколько их, какого они размера и так далее. При этом в БД есть и общие данные — например, справочники, к которым можно обратиться из любой области. Как правило, это разная техническая информация — например, перечень объектов метаданных.</p>
+<p class="measure-wide">Задача — исключить справочник FileStorageVolumes из основного разделителя. Сейчас этот справочник — разделенный: то есть, его данные от области к области будут различаться. Нам нужно сделать так, чтобы содержимое справочника стало одинаковым для всех областей.</p>
+<p class="measure-wide">Задача несложная, так как таблица справочника пуста — ни одна из областей ничего в нем не хранит. Что же, применяем <a class="link blue dim bb" href="/notes/designer-error-investigation/setup.png">настройку</a> и:</p>
+<p class="measure-wide"><img alt="Исключение" src="/notes/designer-error-investigation/error.png"/></p>
+<p class="measure-wide">В <a class="link blue dim bb" href="/notes/designer-error-investigation/error.txt">тексте</a> исключения есть сообщения: одно от платформы, второе от СУБД. Первое озадачивает: то есть как это данные не уникальны? Справочник же пуст, никаких данных нет. Возможно, проблема в каких-то вспомогательных структурах, не связанных с содержимым справочника напрямую.</p>
+<p class="measure-wide">Сообщение СУБД более внятное: MS SQL Server хотела создать уникальный индекс для таблицы _DataHistorySettingsNG, но не смогла, так как сочетания индексируемых полей оказались неуникальны. Приводится даже конкретное значение, из-за которого не получилось создать индекс: это NULL.</p>
+<p class="measure-wide">Выводы?</p>
+<ol class="measure-wide">
+<li>Очевидно, что проблема возникла в ходе реструктуризации. Во-первых, именно её мы и делали. Во-вторых, на это указывает и операция CREATE UNIQUE INDEX (создание индексов в таблицах — часть реструктуризации), и название проблемной таблицы: в нём есть постфикс NG (его получают копии таблиц, которые создаются при реструктуризации; если она проходит успешно, то платформа удаляет исходную таблицу и переименовывает копию).</li>
+<li>Проблема возникла с настройками механизма истории данных (_DataHistorySettings). Там хранится статус каждого объекта метаданных: нужно или нет вести историю данных для объекта, его полей и полей его табличных частей (если они есть).</li>
+</ol>
+<p class="measure-wide">Последнее объясняет, почему проблема уникальности возникла на пустом справочнике: настройки истории данных для объекта хранятся независимо от того, есть в объекте какие-то данные или нет. Если посмотреть на таблицу с настройками, там всего три поля: _MetadataId (ID объекта метаданных), _Content (значения настроек) и _Fld626 (разделитель области).</p>
+<p class="measure-wide">До реструктуризации данные имеют примерно такой вид:</p>
+<p class="measure-wide"><img alt="Таблица _DataHistorySettings" src="/notes/designer-error-investigation/table.png"/></p>
+<p class="measure-wide">Однако потом эта картина изменилась. Когда мы исключили справочник из состава общего реквизита, конфигуратор запустил реструктуризацию: создал таблицу _DataHistorySettingsNG, перенес в неё данные из _DataHistorySettings и установил значение поля _Fld626 в NULL всем записям, которые относятся к справочнику FileStorageVolumes.</p>
+<p class="measure-wide">К чему это привело? А вот к чему: для справочника FileStorageVolumes появился целый ворох настроек, которые не относятся к какой-либо области. Это само по себе звучит нездорово, но настоящие проблемы начались, когда Конфигуратор попытался создать для таблицы кластерный индекс: он <a class="link blue dim bb" href="/notes/designer-error-investigation/index.png">строится</a> по полям _MetadataId и _Fld626, является уникальным и, соответственно, не может быть создан — в таблице множество записей, у которых различается только поле _Content, а _MetadataId и _Fld626 — гарантированно идентичны.</p>
+<p class="measure-wide">Для очистки совести посмотрим <a class="link blue dim bb" href="/notes/designer-error-investigation/20103116.log">техжурнал</a> (я вычистил оттуда нерелевантные события и другую постороннюю информацию). Наши догадки подтверждается: видим, как Конфигуратор создает и заполняет таблицу _DataHistorySettingsNG, пытается проиндексировать её, но получает ошибку и удаляет. В <a class="link blue dim bb" href="/notes/designer-error-investigation/20103116.png">трассировке</a> СУБД примерно та же картина.</p>
+<p class="measure-wide">На этом интересное заканчивается, так как решение достаточно очевидно: удаляем настройки истории данных для справочника во всей областях данных и повторяем реструктуризацию. Ошибку это не исправит, конечно; по хорошему, Конфигуратор должен предсказывать такую ситуацию и выдавать адекватное сообщение — как, например, при удалении измерения регистра сведений, которое приводит к нарушению уникальности измерений для записей регистра. Однако задача будет решена.</p>
+<p class="measure-wide">В общем, готово — мы великолепны!</p>
+        <p class="f6 mt4">
+            31 октября 2020
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        <div class="likely">
+            <div class="twitter">Твитнуть</div>
+            <div class="telegram">Отправить</div>        
+            <div class="vkontakte">Поделиться</div>
+            <div class="facebook">Поделиться</div>
+        </div>        
+
+        
+
+            <p class="mt5 mb3 f6">
+
+                
+                    <a class="mr4 link blue bb dim" href="/notes/excp-number-by-minutes/">Расчет количества исключений по ТЖ</a> &larr;
+                
+                Ctrl
+                
+                    &rarr; <a class="ml4 link blue bb dim" href="/notes/time-to-wink/">Время для прогулки</a>
+                                
+
+            </p> 
+            
+        
+
+    </article>
+
+
+</section>
+
+</main>
+
+<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
+    
+    <p class="f6 lh-solid">Эл. почта: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.ru</a></p>
+    <p class="f6 lh-solid">Телеграм: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    <p class="f6 lh-solid">Гитхаб: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    
+    <a class="rss" href="/rss.xml">РСС</a> 
+           
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>
+        
+            В пятьдесят раз быстрее
+        
+    </title>
+
+    <meta name="description" content="Получил вводную: документ закрытия месяца у заказчика проводится почти час, и почти всё это время платформа медитирует н" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="/favicon.ico">    
+        
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicons/96x96.png">
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="В пятьдесят раз быстрее"/>
+    <meta property="og:description" content="Получил вводную: документ закрытия месяца у заказчика проводится почти час, и почти всё это время платформа медитирует н"/>
+    <meta property="og:image" content="/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "/notes/tags/work/fifty-times-faster/" />    
+
+    <!-- Google Fonts -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap"> 
+
+    <!-- Tachyons -->
+
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Likely -->
+    
+    <script src="/assets/likely/likely.js"></script>
+    <link rel="stylesheet" href="/assets/likely/likely.css">    
+
+    <!-- Twitter -->
+
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+
+    <!-- Blog -->
+
+    <script>
+
+        let ctrlUpUrl       = '';
+        let ctrlDownUrl     = '';
+        let ctrlLeftUrl     = '/notes/tags/work/duct-tape/';
+        let ctrlRightUrl    = '/notes/tags/work/1001-nights-with-1c/';
+
+    </script>
+    
+    <link rel="stylesheet" href="/assets/blog.css">
+    <script src="/assets/blog.js"></script>
+                
+</head>
+
+<body class="w-100 bg-white">
+<div id="app">        
+<main>
+
+<header class="db dt-l w-100-l border-box pa3 ph5-l">
+
+    <nav class="flex items-center lh-copy pa3 ph0-l">
+    
+        <a href=""><img class="br-100" src="/assets/images/me.jpg" title="Привет!" /></a>
+
+        <div class="pl4 flex-auto">
+        
+            
+                <a class="dib f4 mr3 link dim bb blue" href="">Сайт Влада</a>
+            
+
+            
+                <a class="dib f4 mr3 link dim bb orange" href="/notes/">Заметки</a>
+            
+
+        </div>
+        
+    </nav>
+
+    
+        <nav class="dtc-l v-mid tc tr-l"><a href="/notes/tags/work/fifty-times-faster/" class="link f5 f5-ns dim blue bb"></a></nav>
+    
+
+</header>
+
+<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
+    
+
+    <article>    
+                    
+        <h1 class="f-subheadline lh-solid">В пятьдесят раз быстрее</h1>
+            
+        
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Получил вводную: документ закрытия месяца у заказчика проводится без малого час. База не особенно большая, но такая продолжительность в любом случае не вариант. Даже если учесть, что закрытие месяца — это ни разу не частотная операция и её можно делать, например, ночью.</p>
+<p class="measure-wide">Лезу в код, делаю замер производительности и вижу, что и почти всё это время платформа тратит на одну-единственную процедуру, выполняя пакет запросов. Смотрю <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/cf34c6cb088515e2bab6485b2f35eab8">первый</a> из них; ну, думаю, классика — запрос данных через точку от составного типа. Наверняка СУБД пристегивает целый вагон соединений с тяжеленными таблицами документов, вот оптимизатор и не успевает набросать адекватный план.</p>
+<p class="measure-wide">Проверяю теорию — так, а тип SalesDocument включает всего восемь документов. Это, условно, в пределах допустимого (считается, что оптимизатор в состоянии подобрать адекватный план выполнения запроса, если количество соединений — в пределах восьми).</p>
+<p class="measure-wide">Смотрю размеры таблиц документов — не особенно-то и большие. Выполняю запрос отдельно от пакета — да, работает не мгновенно (читает около 350 000 записей и отбирает примерно 200 000), но никак не час.</p>
+<p class="measure-wide">Ладно, первый запрос пакета тяжелый, но проблема не в нём. Лезу во <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/f4423dcfb28d4a27039c7310c13c3a73">второй</a> и понимаю, что до этого прочитали весь регистр Inventory и отобрали большую часть записей, а теперь — читаем его ещё раз и склеиваем обе выборки по куче условий. Подходящего индекса в таблице движений нет — только стандартный по регистратору и он, конечно, не подходит.</p>
+<p class="measure-wide">Проверил — именно тут платформа и проводит большую часть времени, ожидая ответа от СУБД.</p>
+<p class="measure-wide">Отказаться от двойного чтения всей таблицы регистра не вышло: я перебрал несколько вариантов, но все они требовали изменения структуры хранения данных, что было неприемлемо. В итоге остановился на промежуточном варианте: во втором запросе соединение с реальной таблицей движений регистра заменилось на соединение с заранее созданной временной таблицей, проиндексированной по полям соединения.</p>
+<p class="measure-wide">Это тот случай, когда общая рекомендация 1С сработала идеально — вместо 50 минут документ стал проводиться за три, а после дополнительной оптимизации кода — за минуту. То есть, в пятьдесят раз быстрее того, что я имел вначале.</p>
+<p class="measure-wide">Такой результат я счел достаточным (минута для закрытия месяца — это в общем случае нормально) и остановился.</p>
+        <p class="f6 mt4">
+            5 декабря 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/done/">сделал</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/optimization/">оптимизация</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="/notes/tags/work/">работа</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        <div class="likely">
+            <div class="twitter">Твитнуть</div>
+            <div class="telegram">Отправить</div>        
+            <div class="vkontakte">Поделиться</div>
+            <div class="facebook">Поделиться</div>
+        </div>        
+
+        
+
+            <p class="mt5 mb3 f6">
+
+                
+                    <a class="mr4 link blue bb dim" href="/notes/tags/work/duct-tape/">На, мужик, изоленту</a> &larr;
+                
+                Ctrl
+                
+                    &rarr; <a class="ml4 link blue bb dim" href="/notes/tags/work/1001-nights-with-1c/">Тысяча и одна ночь с 1С</a>
+                                
+
+            </p> 
+            
+        
+
+    </article>
+
+
+</section>
+
+</main>
+
+<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
+    
+    <p class="f6 lh-solid">Эл. почта: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.ru</a></p>
+    <p class="f6 lh-solid">Телеграм: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    <p class="f6 lh-solid">Гитхаб: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    
+    <a class="rss" href="/rss.xml">РСС</a> 
+           
+</footer>
+
+</div>
+</body>
+</html>

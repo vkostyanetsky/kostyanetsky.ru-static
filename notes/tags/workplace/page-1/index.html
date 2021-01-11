@@ -1,0 +1,291 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>
+        
+            рабочее место
+        
+    </title>
+
+    <meta name="description" content="Мои заметки о жизни, работе и других интересных штуках вокруг меня." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="/favicon.ico">    
+        
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicons/96x96.png">
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="рабочее место"/>
+    <meta property="og:description" content="Мои заметки о жизни, работе и других интересных штуках вокруг меня."/>
+    <meta property="og:image" content="/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "/notes/tags/workplace/page-1/" />    
+
+    <!-- Google Fonts -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap"> 
+
+    <!-- Tachyons -->
+
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Likely -->
+    
+    <script src="/assets/likely/likely.js"></script>
+    <link rel="stylesheet" href="/assets/likely/likely.css">    
+
+    <!-- Twitter -->
+
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+
+    <!-- Blog -->
+
+    <script>
+
+        let ctrlUpUrl       = '';
+        let ctrlDownUrl     = '';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
+
+    </script>
+    
+    <link rel="stylesheet" href="/assets/blog.css">
+    <script src="/assets/blog.js"></script>
+                
+</head>
+
+<body class="w-100 bg-white">
+<div id="app">        
+<main>
+
+<header class="db dt-l w-100-l border-box pa3 ph5-l">
+
+    <nav class="flex items-center lh-copy pa3 ph0-l">
+    
+        <a href=""><img class="br-100" src="/assets/images/me.jpg" title="Привет!" /></a>
+
+        <div class="pl4 flex-auto">
+        
+            
+                <a class="dib f4 mr3 link dim bb blue" href="">Сайт Влада</a>
+            
+
+            
+                <a class="dib f4 mr3 link dim bb orange" href="/notes/">Заметки</a>
+            
+
+        </div>
+        
+    </nav>
+
+    
+        <nav class="dtc-l v-mid tc tr-l"><a href="/notes/tags/workplace/page-1/" class="link f5 f5-ns dim blue bb"></a></nav>
+    
+
+</header>
+
+<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
+    
+
+    <article>
+
+        <h1 class="f-subheadline lh-solid">рабочее место</h1>
+
+        
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/tags/workplace/service-launcher-update/">Обновление запускатора служб</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Доработал логику <a class="link blue dim bb" href="/notes/service-launcher/">запускатора служб</a>. Теперь, если вызвать скрипт без параметров (т.е. не указав ни -start, ни -stop) — он сам решит, запускать службы или останавливать их.</p>
+<p class="measure-wide">Для этого скрипт определит статус первой службы в списке. Если она работает — все службы из списка будут остановлены, если выключена — скрипт попытается их запустить.</p>
+<p class="measure-wide">Зачем это нужно? Ну, если вы вызываете скрипт прямо с программируемой клавиатуры, как я — теперь вам нужна только одна кнопка. Раньше было нужно две: одна для запуска служб, вторая для остановки.</p>
+        <p class="f6 mt4">
+            22 июля 2020
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/done/">сделал</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/powershell/">PowerShell</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="/notes/tags/workplace/">рабочее место</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/tags/workplace/service-launcher/">Запускатор служб</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Какое-то время назад я <a class="link blue dim bb" href="/notes/manage-services-with-powershell/">писал</a> про командлеты PowerShell, с помощью которых можно запускать и останавливать службы. В итоге я собрал из этих набросков нормальный скрипт: он читает список к запуску или остановке служб из отдельного файла, а ещё проверяет и (если нужно) запрашивает права администратора.</p>
+<p class="measure-wide">Результат можно <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ServiceLauncher">посмотреть</a> на GitHub'е. No big deal — хотел поупражняться в языке и упростить ежедневную рутину: в моей системе наберется десятка полтора прожорливых сервисов, которые нужны для работы, но бесполезны в другое время. Вручную останавливать, а потом запускать этот зоопарк неудобно, а вот одной командой — совсем другое дело!</p>
+        <p class="f6 mt4">
+            13 июля 2020
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/done/">сделал</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/powershell/">PowerShell</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="/notes/tags/workplace/">рабочее место</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/tags/workplace/manage-services-with-powershell/">Управление службами через PowerShell</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">На днях набросал себе несколько скриптов на PowerShell'е для запуска и остановки служб на рабочем ПК. Наработки в итоге не пригодились, так что зафиксирую себе пару примеров на будущее, чтобы не потерять:</p>
+<pre><code>get-service -Name 1C:Enterprise* | Where-Object {$_.status -eq 'running'} | stop-service -pass
+get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service -pass
+</code></pre>
+<p class="measure-wide">Обе строки выше делают одно и то же: ищут службы с определенным именем, проверяют их состояния и, если службы запущены — останавливают их. Имена служб удобно задавать через шаблоны — например, у Microsoft SQL Server целый выводок служб с разным назначением и их удобно пристрелить одной строкой. Или, скажем, служба сервера 1С:Предприятия — она одна, зато её длиннющее название просто лень писать полностью :-)</p>
+<p class="measure-wide">Примерно тот же подход, кстати, работает и с обычными процессами. Так, строка ниже ищет процесс obs64; если находит — останавливает. </p>
+<pre><code>get-process -Name obs64 | stop-process -pass
+</code></pre>
+<p class="measure-wide">Если нужны детали, то на сайте разработчика есть подробная <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/powershell/scripting/samples/managing-services?view=powershell-7">документация</a> с кучей примеров и рассуждений в духе «как запустить службу, если вы медитируете на одной ноге в условиях искусственной невесомости».</p>
+        <p class="f6 mt4">
+            28 апреля 2020
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/powershell/">PowerShell</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="/notes/tags/workplace/">рабочее место</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/tags/workplace/sharex-video-recording/">Запись видео в ShareX</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Прежде чем приспособить OBS Studio для записи видео (писал о ней в <a class="link blue dim bb" href="/notes/video-recording">предыдущей</a> заметке), я пробовал использовать <a class="link blue dim bb" href="https://getsharex.com/">ShareX</a>. Программа поначалу неплохо справлялась, однако от неё пришлось отказаться из-за неприятного бага: иногда при попытке завершить запись софт портил полученное видео.</p>
+<p class="measure-wide">Я гуглил, но причину понять так и не смог. Впрочем, неудивительно — ShareX использует <a class="link blue dim bb" href="https://www.ffmpeg.org/">ffmpeg</a> для записи видео, а это дитя опенсорца вместо адекватной диагностики невозмутимо вываливает целый рулон логов. Разбирать его без соответствующего опыта — занятие для клинического оптимиста.</p>
+<p class="measure-wide">Впрочем, как инструмент для создания скриншотов ShareX почти безупречна. Обилие опций слегка напоминает замотанного человека в приступе гиперактивности :-)</p>
+<p class="measure-wide"><a href="/notes/sharex-video-recording/interface.png"><img alt="Настраиваем скриншоты" src="/notes/sharex-video-recording/interface-thumb.png"/></a></p>
+<blockquote>
+<p class="measure-wide">— Протестирую сам! Сам все протестирую! И полы вымою!</p>
+<p class="measure-wide"><em><a class="link blue dim bb" href="https://www.youtube.com/watch?v=K6oZuB8_dU8&amp;feature=youtu.be&amp;t=640">Эффективность не работает. Илья Якямсев</a></em></p>
+</blockquote>
+        <p class="f6 mt4">
+            8 апреля 2020
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="/notes/tags/workplace/">рабочее место</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="/notes/tags/workplace/video-recording/">Запись видео</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Я работаю удалённо и с коллегами общаюсь через Zoom и Slack. В основном в чатах, но многие темы по-прежнему проще обсудить голосом. И вот тут-то возникают проблемы: приходится забыть про индексацию и поиск по сообщениям, а главное — нет никакого архива разговоров. Иногда очень нужно вспомнить: кто говорил? Что конкретно? Когда?</p>
+<p class="measure-wide">Zoom и Slack сами по себе эту проблему не решают. Первый умеет записывать только те конференции, которые организуешь ты или которые тебе разрешили писать (короче, далеко не все), а второй писать видео не умеет вообще.</p>
+<h2>Решение проблемы</h2>
+<p class="measure-wide">Я закрыл вопрос какое-то время назад, поставив себе <a class="link blue dim bb" href="https://obsproject.com">OBS Studio</a> — популярный среди стримеров софт для записи экрана. С записью конференций он прекрасно справляется. Настройка минимальная: пишем весь экран, звук с микрофона и все звуки, которые воспроизводятся. В микшере по результатам тестовых записей можно натыкать фильтры — усиление, шумоподавление и так далее.</p>
+<p class="measure-wide"><img alt="Настройка OBS Studio" src="/notes/video-recording/video-recording.png"/></p>
+<p class="measure-wide">В настройках нужно указать папку, куда будут складываться записанные видео (Вывод → Запись → Путь записи). Поскольку мы пишем звонки и файлов будет много, лучше сразу разложить их в папки по дням — для этого идем в расширенные настройки и в поле «Формат имени файла» указываем нечто вроде %CCYY-%MM-%DD/%hh-%mm-%ss.</p>
+<h2>Быстрое управление записью</h2>
+<p class="measure-wide">Конечно, лезть в OBS при каждом звонке неудобно, но у неё есть куча хоткеев — можно прожимать какие-нибудь заковыристые комбинации в начале и в конце разговора. Однако со мной это не сработало — придуманные хоткеи почему-то постоянно вылетали из головы. Даже стикеры не помогали. </p>
+<p class="measure-wide">Поначалу я здорово разозлился, но потом понял: раз не получается запомнить хоткей — надо его выкинуть. Начинать запись нажатием одной кнопки, заканчивать нажатием на другую.</p>
+<p class="measure-wide">С оборудованием всё было просто: у меня эргономичная <a class="link blue dim bb" href="https://www.microsoft.com/accessories/ru-ru/products/keyboards/natural-ergonomic-keyboard-4000/b2m-00020">клавиатура</a> от Microsoft, программируемых кнопок на ней — вагон. Хуже с софтом: OBS Studio понимает некоторые <a class="link blue dim bb" href="https://github.com/obsproject/obs-studio/wiki/Launch-Parameters">параметры</a> запуска, но список откровенно бедноват — даже остановки записи нет. Хотелось бы побольше.</p>
+<p class="measure-wide">В итоге решил задачу через плагин к OBS Studio, который дает порулить запущенным экземпляром программы. Он придуман для удаленного управления записью (например, со смартфона), но никто не мешает использовать его локально.</p>
+<p class="measure-wide">Схема получилась такая:</p>
+<ol class="measure-wide">
+<li>Ставим OBS Studio и плагин <a class="link blue dim bb" href="https://obsproject.com/forum/resources/obs-websocket-remote-control-of-obs-studio-made-easy.466/">obs-websocket</a> к ней. Снимаем галку «Enable System Tray Alerts» в настройках (Tools → WebSockets Server Settings), не то программа примется сообщать о каждом чихе.</li>
+<li>Кладем куда-нибудь <a class="link blue dim bb" href="https://obsproject.com/forum/resources/command-line-tool-for-obs-websocket-plugin-windows.615/">утилиту</a>, с помощью которой этим плагином можно рулить из командной строки. </li>
+<li>Вешаем на одну кнопку OBSCommand.exe /startrecording, а на другую — OBSCommand.exe /stoprecording.</li>
+<li>Готово, вы великолепны!</li>
+</ol>
+<p class="measure-wide">При вызове на долю секунду видно консоль (OBSCommand запускается, связывается с obs-websocket и ждет ответа). Сначала хотел как-нибудь скрыть это окно, но, поразмыслив, передумал — если OBS Studio не будет запущен или возникнет какая-то проблема, консоль не закроется и я хотя бы узнаю, что запись не началась.</p>
+        <p class="f6 mt4">
+            3 апреля 2020
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="/notes/tags/workplace/">рабочее место</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+        
+
+    </article>
+
+
+</section>
+
+</main>
+
+<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
+    
+    <p class="f6 lh-solid">Эл. почта: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.ru</a></p>
+    <p class="f6 lh-solid">Телеграм: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    <p class="f6 lh-solid">Гитхаб: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    
+    <a class="rss" href="/rss.xml">РСС</a> 
+           
+</footer>
+
+</div>
+</body>
+</html>

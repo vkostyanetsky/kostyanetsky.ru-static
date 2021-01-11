@@ -1,0 +1,171 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>
+        
+            Не скомпилированный код
+        
+    </title>
+
+    <meta name="description" content="Не очевидная штука: внешняя обработка работает медленнее точно такой же, но встроенной в конфигурацию или её расширение." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="/favicon.ico">    
+        
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicons/96x96.png">
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Не скомпилированный код"/>
+    <meta property="og:description" content="Не очевидная штука: внешняя обработка работает медленнее точно такой же, но встроенной в конфигурацию или её расширение."/>
+    <meta property="og:image" content="/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "/notes/incompiled-code/" />    
+
+    <!-- Google Fonts -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap"> 
+
+    <!-- Tachyons -->
+
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Likely -->
+    
+    <script src="/assets/likely/likely.js"></script>
+    <link rel="stylesheet" href="/assets/likely/likely.css">    
+
+    <!-- Twitter -->
+
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+
+    <!-- Blog -->
+
+    <script>
+
+        let ctrlUpUrl       = '';
+        let ctrlDownUrl     = '';
+        let ctrlLeftUrl     = '/notes/trip-to-kok-kol/';
+        let ctrlRightUrl    = '/notes/string-concatenation/';
+
+    </script>
+    
+    <link rel="stylesheet" href="/assets/blog.css">
+    <script src="/assets/blog.js"></script>
+                
+</head>
+
+<body class="w-100 bg-white">
+<div id="app">        
+<main>
+
+<header class="db dt-l w-100-l border-box pa3 ph5-l">
+
+    <nav class="flex items-center lh-copy pa3 ph0-l">
+    
+        <a href=""><img class="br-100" src="/assets/images/me.jpg" title="Привет!" /></a>
+
+        <div class="pl4 flex-auto">
+        
+            
+                <a class="dib f4 mr3 link dim bb blue" href="">Сайт Влада</a>
+            
+
+            
+                <a class="dib f4 mr3 link dim bb orange" href="/notes/">Заметки</a>
+            
+
+        </div>
+        
+    </nav>
+
+    
+        <nav class="dtc-l v-mid tc tr-l"><a href="/notes/incompiled-code/" class="link f5 f5-ns dim blue bb"></a></nav>
+    
+
+</header>
+
+<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
+    
+
+    <article>    
+                    
+        <h1 class="f-subheadline lh-solid">Не скомпилированный код</h1>
+            
+        
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Не очевидная штука: абстрактная внешняя обработка работает заметно медленнее точно такой же, но встроенной в конфигурацию или её расширение. Причина — её код нужно заново компилировать для каждого пользователя при каждом запуске (тогда как код встроенных обработок компилируется один раз и для всех). Судя по <a class="link blue dim bb" href="https://kb.1c.ru/articleView.jsp?id=111">статье</a> в базе знаний 1С, для платформы 8.3.10 это было прямо катастрофа, но и пятидесятипроцентный рост нагрузки на процессор в 8.3.13 — тоже, в общем, ничего хорошего.</p>
+<p class="measure-wide">Другой подход с тем же эффектом — это хранение кода внутри базы (в реквизитах служебных справочников, например). Каждый раз, когда такой код нужно запустить, он извлекается из БД и компилируется. Например, у нас в <a class="link blue dim bb" href="https://firstbit.ae/products/erp-dubai/financial_management/">конфигурации</a> можно создавать регламентные задания без изменения метаданных — просто добавляем элемент специального справочника, загружаем в него код и настраиваем расписание работы.</p>
+<p class="measure-wide">Это относительно нормально — регламентные задания обычно выполняются не слишком часто и компиляция, скорее всего, не создаст сколько-либо заметной нагрузки на процессор. Однако этот же справочник может использоваться и для автоматического вызова какого-либо кода после произвольного события: например, после сохранения документа определенного типа. В таких случаях, если есть понимание, что код будет выполняться постоянно и множеством пользователей — стоит перенести логику в метод общего модуля из расширения, а в самом хранимом коде оставить только вызов этой логики.</p>
+<p class="measure-wide">А ещё можно вообще отказаться от хранения кода и сделать весь механизм в виде расширения. Возможно, решение будет менее гибким, но все же это лучше, чем потом медитировать над низким APDEX'ом.</p>
+        <p class="f6 mt4">
+            27 января 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        <div class="likely">
+            <div class="twitter">Твитнуть</div>
+            <div class="telegram">Отправить</div>        
+            <div class="vkontakte">Поделиться</div>
+            <div class="facebook">Поделиться</div>
+        </div>        
+
+        
+
+            <p class="mt5 mb3 f6">
+
+                
+                    <a class="mr4 link blue bb dim" href="/notes/trip-to-kok-kol/">Поездка на Кок-Коль</a> &larr;
+                
+                Ctrl
+                
+                    &rarr; <a class="ml4 link blue bb dim" href="/notes/string-concatenation/">Конкатенация строк</a>
+                                
+
+            </p> 
+            
+        
+
+    </article>
+
+
+</section>
+
+</main>
+
+<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
+    
+    <p class="f6 lh-solid">Эл. почта: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.ru</a></p>
+    <p class="f6 lh-solid">Телеграм: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    <p class="f6 lh-solid">Гитхаб: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    
+    <a class="rss" href="/rss.xml">РСС</a> 
+           
+</footer>
+
+</div>
+</body>
+</html>
