@@ -1,0 +1,176 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>
+        
+            Рекурсивный поиск по всем текстовым файлам в каталоге
+        
+    </title>
+
+    <meta name="description" content="Время назад я примеривался к поискам уязвимостей в коде скриптами на bash и выдал слишком сложное решение. Можно проще!" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="https://kostyanetsky.ru/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.ru/favicon.ico">    
+        
+    <link rel="icon" type="image/x-icon" href="https://kostyanetsky.ru/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="https://kostyanetsky.ru/assets/images/favicons/16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://kostyanetsky.ru/assets/images/favicons/32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://kostyanetsky.ru/assets/images/favicons/96x96.png">
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Рекурсивный поиск по всем текстовым файлам в каталоге"/>
+    <meta property="og:description" content="Время назад я примеривался к поискам уязвимостей в коде скриптами на bash и выдал слишком сложное решение. Можно проще!"/>
+    <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/recursive-search/" />    
+
+    <!-- Google Fonts -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap"> 
+
+    <!-- Tachyons -->
+
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Likely -->
+    
+    <script src="https://kostyanetsky.ru/assets/likely/likely.js"></script>
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/likely/likely.css">    
+
+    <!-- Twitter -->
+
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+
+    <!-- Blog -->
+
+    <script>
+
+        let ctrlUpUrl       = '';
+        let ctrlDownUrl     = '';
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/old-but-gold/';
+        let ctrlRightUrl    = '';
+
+    </script>
+    
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/blog.css">
+    <script src="https://kostyanetsky.ru/assets/blog.js"></script>
+                
+</head>
+
+<body class="w-100 bg-white">
+<div id="app">        
+<main>
+
+<header class="db dt-l w-100-l border-box pa3 ph5-l">
+
+    <nav class="flex items-center lh-copy pa3 ph0-l">
+    
+        <a href="https://kostyanetsky.ru"><img class="br-100" src="https://kostyanetsky.ru/assets/images/me.jpg" title="Привет!" /></a>
+
+        <div class="pl4 flex-auto">
+        
+            
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.ru">Сайт Влада</a>
+            
+
+            
+                <a class="dib f4 mr3 link dim bb orange" href="https://kostyanetsky.ru/notes/">Заметки</a>
+            
+
+        </div>
+        
+    </nav>
+
+    
+
+</header>
+
+<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
+    
+
+    <article>    
+                    
+        <h1 class="f-subheadline lh-solid">Рекурсивный поиск по всем текстовым файлам в каталоге</h1>
+            
+        
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Время назад я <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/vulnerabilities/">примеривался</a> к поискам уязвимостей в коде скриптами на bash (звучит грозно, но это просто рекурсивный поиск текста с помощью регулярных выражений). Скрипты-то я тогда написал, но, как сегодня понял — несколько... Ректально, что ли. Для решения хватает одного egrep, то есть из связки find, xargs и egrep можно выкинуть два компонента из трех.</p>
+<p class="measure-wide">Например, сегодня у нас возникла проблема: конфигурация перестала собираться в последнем релизе EDT. Подозрение пало на битые GUID — ссылки на объекты метаданных, удаленные из конфигурации. Платформа не всегда справляется с их вычисткой после того, как удалит сами объекты; я уже пару раз писал про это (например, <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/designer-error-investigation/">здесь</a> или <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/tags/1c/unresolved-gopher/">вот тут</a>).</p>
+<p class="measure-wide">В общем, мы решили порыться в выгрузке конфигурации — найти GUID'ы и оценить, все ли они находятся там, где положено. Общее решение — одна-единственная команда:</p>
+<pre><code>egrep -rn '.{8}-.{4}-.{4}-.{4}-.{12}' dump
+</code></pre>
+<p class="measure-wide">Ключ r включает рекурсивный поиск, ключ n — заставляет egrep пристегнуть к найденной строке не только имя файла, но и номер самой строки. Последний параметр, dump — имя директории, где нужно искать.</p>
+<p class="measure-wide">Регулярку можно сделать точнее, но и такой за глаза хватает. Что до ложных срабатываний (то есть GUID, которые не являются битыми ссылками) — их легко отсеять через пайп. Например, скрипт ниже не будет выводить строки с GUID, в которых есть подстрока «uuid»:</p>
+<pre><code>egrep -rn '.{8}-.{4}-.{4}-.{4}-.{12}' dump | grep -v 'uuid'
+</code></pre>
+        <p class="f6 mt4">
+            14 января 2021
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        <div class="likely">
+            <div class="twitter">Твитнуть</div>
+            <div class="telegram">Отправить</div>        
+            <div class="vkontakte">Поделиться</div>
+            <div class="facebook">Поделиться</div>
+        </div>        
+
+        
+
+            <p class="mt5 mb3 f6">
+
+                
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/old-but-gold/">Старый добрый DATETIME</a> &larr;
+                
+                Ctrl
+                                
+
+            </p> 
+            
+        
+
+    </article>
+
+
+</section>
+
+</main>
+
+<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
+    
+    <p class="f6 lh-solid">Эл. почта: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.ru</a></p>
+    <p class="f6 lh-solid">Телеграм: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    <p class="f6 lh-solid">Гитхаб: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    
+    <a class="rss" href="https://kostyanetsky.ru/rss.xml">РСС</a> 
+           
+</footer>
+
+</div>
+</body>
+</html>

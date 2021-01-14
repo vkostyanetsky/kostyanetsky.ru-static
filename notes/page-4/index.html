@@ -115,6 +115,27 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/big-table-at-client/">Большая таблица на клиенте</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Про нюансы работы со здоровенными таблицами на клиенте я уже пару раз писал (<a class="link blue dim bb" href="https://kostyanetsky.ru/notes/find-rows-at-client">раз</a>, <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/big-value-tables">два</a>), но в конце прошлой недели коллеги подсказали ещё один любопытный способ оптимизации работы с относительно большими коллекциями данных на клиенте. Вкратце: стандарт <a class="link blue dim bb" href="https://its.1c.ru/db/v8std#content:628:hdoc">советует</a> работать с большими коллекциями только на сервере, однако если сразу обойти всю коллекцию на клиенте (например, в обработчике открытия формы) — она закешируется. В итоге последующие обходы, поиск строк и другая работа с данными не будут требовать дополнительных серверных вызовов. Суммарные расходы при таком подходе получаются ниже.</p>
+<p class="measure-wide">Погонял сейчас простые тесты — да, похоже, что так и есть. Метод выглядит отчасти костыльно и на серьезных нагрузках я его ещё не проверял — но, вероятно, его вполне можно иметь ввиду.</p>
+        <p class="f6 mt4">
+            19 мая 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/close-to-the-sun/">Close to the Sun</a></h2>
 
             
@@ -622,30 +643,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/meanwhile/">тем временем</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/drummer/">Внезапный барабанщик</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Я пишу на платформе 1С довольно давно и повидал некоторое дерьмо, но такое, честно говоря, вижу первый раз.</p>
-<p class="measure-wide"><a href="https://kostyanetsky.ru/notes/drummer/bug.png"><img alt="Оттакота!" src="https://kostyanetsky.ru/notes/drummer/bug-thumbnail.png"/></a></p>
-<p class="measure-wide">Поначалу я даже не понял, с какого конца это жевать. Поискал перевод иероглифа — Википедия лишь сухо сообщила, что это такой <a class="link blue dim bb" href="https://en.wiktionary.org/wiki/%E4%80%80">тип чашки</a>, а Google Translate вообще <a class="link blue dim bb" href="https://translate.google.com/#view=home&amp;op=translate&amp;sl=auto&amp;tl=ru&amp;text=%E4%80%80">развёл руками</a>.</p>
-<p class="measure-wide">Коллега заметил, что символ отдаленно похож на складского сортировщика — мол, перекладывает что-то там себе между коробками. Не знаю, не знаю. По-моему, больше напоминает барабанщика за работой. Но что, черт побери, это значит? Может быть, 1С пытается что-то мне сказать? Что-то про музыку?</p>
-<p class="measure-wide">Может, мне нужно было стать басистом, а не вот это всё.</p>
-        <p class="f6 mt4">
-            9 февраля 2019
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
         </p>
