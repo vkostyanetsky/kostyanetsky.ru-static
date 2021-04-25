@@ -115,6 +115,38 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/what-is-inside-the-drum/">Выгрузка стандартных обработок</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Недавно внедрили в нашу конфигурацию встроенный в платформу механизм истории данных вместо морально и функционально устаревшего велосипеда из SSLi. Сейчас как раз дописываю выгрузку историю данных в бэкап и загрузку его обратно: удивительно, но этого пока не умеет ни БСП, ни БТС, ни SSLi (впрочем, от последней я и не ждал).</p>
+<p class="measure-wide">Как закончу, расскажу подробнее. Пока хочу отметить любопытную опцию, которая пригодилась по ходу дела: встроенные в платформу обработки, которые доступны из меню «Все функции», можно выгрузить в виде обычных epf-файлов! Трюк очень подробно разобрали коллеги на Инфостарте (<a class="link blue dim bb" href="https://infostart.ru/public/369487/">вот тут</a> и <a class="link blue dim bb" href="https://infostart.ru/public/538300/">вот тут</a>). Вкратце магия выглядит вот так:</p>
+<pre><code>КопироватьФайл(
+    "v8res://mngbase/StandardDataChangeHistory.epf",
+    "Q:/StandardDataChangeHistory.epf"
+);
+</code></pre>
+<p class="measure-wide">Полный список стандартных форм и обработок, которые можно вытащить, способ получения этого списка, а также куча споров вокруг и около — по ссылкам выше.</p>
+<p class="measure-wide">Зачем это пригодится вам — честно, не знаю. Что касается нас, то мы делали интерфейсы для работы с историей данных и было любопытно, как они написаны у самой 1С (спойлер: довольно неряшливо).</p>
+        <p class="f6 mt4">
+            5 июля 2020
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/value-table-view/">Просмотр таблицы значений</a></h2>
 
             
@@ -655,32 +687,6 @@
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/fat-roles/">Растолстевшие роли</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Очень любопытная <a class="link blue dim bb" href="https://start1c.blogspot.com/2019/01/blog-post.html">заметка</a> про неприятности, которые можно нажить командой роли «Снять все права». Нет, никакого криминала, права-то она честно снимает — только вот её вызов может привести к тому, что объект роли на пустом месте сожрёт в несколько раз больше памяти, чем ему реально нужно.</p>
-<p class="measure-wide">Прочитал, задумался и пошел проверять, как обстоят дела с этим у нас в конфигурации. И что бы вы думали? Накопал десятка два ролей, доверху набитых «снятыми галочками». Выгрузка прав весила около трёхста мегабайт, а после оптимизации — усохла почти втрое.</p>
-<p class="measure-wide">Любопытно, как это до сих пор оставалось незамеченным. Скорее всего, из-за количества объектов — у нас сравнительно небольшая конфигурация. То есть проблемные роли потребляли не так много ресурсов, чтобы мы что-то заподозрили.</p>
-        <p class="f6 mt4">
-            18 апреля 2019
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
                 </span>
             
         </p>

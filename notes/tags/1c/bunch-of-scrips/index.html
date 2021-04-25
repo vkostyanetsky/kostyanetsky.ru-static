@@ -10,11 +10,11 @@
 
     <title>
         
-            SKUUUID в своем глазу
+            Пучок скриптов
         
     </title>
 
-    <meta name="description" content="Короткое заметка на полях про аббревиатуры в коде." />
+    <meta name="description" content="Ещё несколько скриптов для разбора технологического журнала платформы" />
     
     <!-- RSS -->
 
@@ -31,11 +31,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="SKUUUID в своем глазу"/>
-    <meta property="og:description" content="Короткое заметка на полях про аббревиатуры в коде."/>
+    <meta property="og:title" content="Пучок скриптов"/>
+    <meta property="og:description" content="Ещё несколько скриптов для разбора технологического журнала платформы"/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/skuuuid/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/1c/bunch-of-scrips/" />    
 
     <!-- Google Fonts -->
 
@@ -60,8 +60,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/date-literal-exceeds-3999/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/bunch-of-scrips/';
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/1c/skuuuid/';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -103,23 +103,26 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">SKUUUID в своем глазу</h1>
+        <h1 class="f-subheadline lh-solid">Пучок скриптов</h1>
             
         
     
     <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Пару недель назад Александр Кунташов у себя на канале <a class="link blue dim bb" href="https://t.me/kuntashov_devnotes/479">запостил</a> забавный скрин перечисления из Библиотеки Электронных Документов, создателей которого откровенно манили длинные аббревиатуры. Я бодро острил на тему родства ИППДОИПУПДУКД'а и московского ГНУВНИВИПФИТ'а, а потом увидел в собственном коде вот эту красотку:</p>
-<p class="measure-wide"><img alt="SKUUUID" src="https://kostyanetsky.ru/notes/skuuuid/skuuuid.png"/></p>
-<p class="measure-wide">Ещё не вполне рука маэстро, конечно, но движение определенно в том же направлении. Вспомнилась притча про сучок в чужом глазу и суковатое бревно — в своём :-)</p>
+        <p class="measure-wide">Выложил на GitHub ещё несколько скриптов для разбора технологического журнала платформы, которые написал за последнее время:</p>
+<ul class="measure-wide">
+<li><a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentEvents.sh">Частотные события</a>. Группирует события по наименованию, считает количество воспроизведений для каждого и выводит в порядке убывания — от наиболее частотного к наименее частотному. Осмысленного практического применения у этого скрипта нет; просто фиксировал для себя, какие события пишет каждый процесс кластера сам по себе.</li>
+<li><a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/ExceptionDescriptions.sh">Описания исключений</a>. Группирует EXCP по полю Name; для каждого наименования выводит варианты значений поля Description, которые были у исключений с таким наименованием. С помощью этого скрипта можно составить примерную картину — какие наименования исключений действительно сообщают о проблеме, а какие — просто белый шум, который можно игнорировать и, например, закинуть в фильтры Кибаны.</li>
+<li><a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LocksByConnectIDAndRegions.sh">Блокировки по ID соединения и области</a>. Удобен для поиска виновника таймаута на управляемых блокировках: скрипт выгребает из ТЖ все TLOCK'и по конкретной области от конкретного соединения, а потом выстраивает их в хронологическом порядке.</li>
+</ul>
         <p class="f6 mt4">
-            22 февраля 2021
+            24 апреля 2021
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/code-smell/">код с запашком</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
                 </span>
             
         </p>
@@ -139,11 +142,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/date-literal-exceeds-3999/">Проблема с литералом даты при пересчете итогов</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/skuuuid/">SKUUUID в своем глазу</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/bunch-of-scrips/">Пучок скриптов</a>
                                 
 
             </p> 
