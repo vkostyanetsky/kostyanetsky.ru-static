@@ -10,11 +10,11 @@
 
     <title>
         
-            Пучок скриптов
+            Новый скрипт поиска долгих запросов
         
     </title>
 
-    <meta name="description" content="Ещё несколько скриптов для разбора технологического журнала платформы" />
+    <meta name="description" content="Первая версия содержала серьёзный косяк, который теперь исправлен." />
     
     <!-- RSS -->
 
@@ -31,11 +31,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Пучок скриптов"/>
-    <meta property="og:description" content="Ещё несколько скриптов для разбора технологического журнала платформы"/>
+    <meta property="og:title" content="Новый скрипт поиска долгих запросов"/>
+    <meta property="og:description" content="Первая версия содержала серьёзный косяк, который теперь исправлен."/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/1c/bunch-of-scrips/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/1c/longest-queries-v2/" />    
 
     <!-- Google Fonts -->
 
@@ -60,8 +60,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/1c/skuuuid/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/1c/longest-queries-v2/';
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/1c/bunch-of-scrips/';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -103,19 +103,16 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Пучок скриптов</h1>
+        <h1 class="f-subheadline lh-solid">Новый скрипт поиска долгих запросов</h1>
             
         
     
     <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Выложил на GitHub ещё несколько скриптов для разбора технологического журнала платформы, которые написал за последнее время:</p>
-<ul class="measure-wide">
-<li><a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentEvents.sh">Частотные события</a>. Группирует события по наименованию, считает количество воспроизведений для каждого и выводит в порядке убывания — от наиболее частотного к наименее частотному. Осмысленного практического применения у этого скрипта нет; просто фиксировал для себя, какие события пишет каждый процесс кластера сам по себе.</li>
-<li><a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/ExceptionDescriptions.sh">Описания исключений</a>. Группирует EXCP по полю Name; для каждого наименования выводит варианты значений поля Description, которые были у исключений с таким наименованием. С помощью этого скрипта можно составить примерную картину: какие исключения действительно проблема, а какие — просто белый шум, который можно игнорировать и, например, закинуть в фильтры Кибаны.</li>
-<li><a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LocksByConnectIDAndRegions.sh">Блокировки по ID соединения и области</a>. Удобен для поиска виновника таймаута на управляемых блокировках: скрипт выгребает из ТЖ все TLOCK'и по конкретной области от конкретного соединения, а потом выстраивает их в хронологическом порядке.</li>
-</ul>
+        <p class="measure-wide">Обновил <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.sh">скрипт</a> поиска долгих запросов в технологическом журнале платформы. Ранняя версия содержала серьёзный косяк: она старательно группировала DBMSSQL по Sql и Content, но игнорировала случаи, в которых поле Sql отсутствовало (для DBMSSQL это не то чтобы норма, но встречается).</p>
+<p class="measure-wide">Ну и код слегка причесал, чтобы два раза не вставать: добавил разметку и комментарии, а часть логики вынес из основного тела gawk'а в её функции. В итоге скрипт стал смотреться длиннее, чем он есть на самом деле, но читать его стало заметно проще.</p>
+<p class="measure-wide">Мне вообще, по-чеснаку, непонятна причина, по которой ветераны баша трамбуют всю логику в две-три строки: язык и так-то не блещет читаемостью (в телеграм-канале Никиты Прокопова есть <a class="link blue dim bb" href="https://t.me/nikitonsky_pub/55">отличный текст</a> на эту тему), а при виде страницы конвейеров без единого перевода строки вообще хочется молча выйти в окно.</p>
         <p class="f6 mt4">
-            24 апреля 2021
+            26 апреля 2021
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -146,11 +143,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/skuuuid/">SKUUUID в своем глазу</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/bunch-of-scrips/">Пучок скриптов</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/longest-queries-v2/">Новый скрипт поиска долгих запросов</a>
                                 
 
             </p> 
