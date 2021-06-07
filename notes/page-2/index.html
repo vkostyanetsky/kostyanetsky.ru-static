@@ -119,6 +119,40 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/unresolved-gopher/">Неразрешимые ссылки на функциональные опции</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Приведу вариант решения проблемы <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/unresolved-references">неразрешимых ссылок</a>, возникший после удаления функциональной опции. Вводная — при проверке конфигурации получаю десятка два сообщений вида:</p>
+<pre><code>CommonForm.PersonalSettings.Form Unresolved metadata object references (2)
+Catalog.BankAccounts.Form.GLAccountsEditForm.Form Unresolved metadata object references (1)
+Catalog.CashRegisters.Form.GLAccountsEditForm.Form Unresolved metadata object references (1)
+</code></pre>
+<p class="measure-wide">Выгружаю конфигурацию в файлы, открываю Form.xml для одной из проблемных форм. Начинаю с той, где элементов немного — так проблему заметить будет проще.</p>
+<p class="measure-wide">Бегло просматриваю файл в поисках чего-то необычного. Искать долго не приходится:</p>
+<p class="measure-wide"><img alt="Подозреваемый" src="https://kostyanetsky.ru/notes/unresolved-gopher/suspect.png"/></p>
+<p class="measure-wide">Нормальная ссылка на функциональную опцию — её имя (как в случае DepreciationOfAssets). А вот если вместо имени указан GUID — этой функциональной опции в конфигурации нет. Ссылка неразрешима.</p>
+<p class="measure-wide">Делаю поиск этого GUID'а по остальной выгрузке и нахожу почти все проблемы, на которые ссылалась платформа при проверке. Решить их легко: удалить битую ссылку из XML, а потом загрузить файл обратно в конфигурацию. Можно ещё проще: открыть список функциональных опций для элемента формы и тут же сохранить его. В этом случая битая ссылка также будет удалена.</p>
+<p class="measure-wide">Почему искать таких потеряшек через сам Конфигуратор — занятие для клинических оптимистов? Да просто проблему почти невозможно заметить. В лучшем случае вы увидите что-то в духе:</p>
+<p class="measure-wide"><img alt="Настоящая улика" src="https://kostyanetsky.ru/notes/unresolved-gopher/evidence.png"/></p>
+<p class="measure-wide">Конфигуратор понимает, что в поле две опции, но получить название для второй не может (её нет). А ведь чаще всего функциональная опция только одна! И картина выглядит так:</p>
+<p class="measure-wide"><img alt="Ваша честь, я невиновен!" src="https://kostyanetsky.ru/notes/unresolved-gopher/innocent.png"/></p>
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ihZyUBaG_8Y" width="560"></iframe>
+        <p class="f6 mt4">
+            19 августа 2020
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/method-with-surprise/">Метод с сюрпризом</a></h2>
 
             
@@ -708,31 +742,6 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/">рабочее место</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/unresolved-references/">Неразрешимые ссылки</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Чаще всего неразрешимые ссылки на объекты метаданных образуются в ходе удаления объектов (и, иногда, при объединении конфигураций). На ИТС есть <a class="link blue dim bb" href="https://its.1c.ru/db/metod8dev#content:2290:hdoc">статья</a> по этой теме, там хорошо описаны детали.</p>
-<p class="measure-wide">На работе программы битые ссылки сказываются далеко не всегда. Конечно, поле без привязки к данным заметить несложно, но вот удалили вы, допустим, функциональную опцию — что с того, что ссылка на неё осталась где-нибудь в команде на форме? Она будет просто лежать, как обрезанный провод, инертный и безвредный. Ничего по нему не идет. </p>
-<p class="measure-wide">Однако такие штуки постепенно захламляют конфигурацию, и от них правильно избавляться, и на ИТС предложена не больно-то эффективная методика (последовательный перебор всех возможных мест, где может быть битая ссылка). Представьте себе сложную форму документа с множеством элементов; сколько времени придется потратить на поиск? Еще не факт, что успешный.</p>
-<p class="measure-wide">Есть более грубый, но действенный метод: последовательно удалять с формы группы элементов. Можно начинать с больших групп (например, со страниц). После каждого удаления выполнять проверку конфигурации и смотреть — исчезла битая ссылка или нет. Перед началом работы лучше удалить из формы весь код, чтобы платформа не ругалась на обращения к несуществующим элементам.</p>
-<p class="measure-wide">Проблема, кстати, может быть не в элементах, а в самой форме — но там её куда проще найти (хранилище настроек, условное оформление, команды; в общем, кандидатов немного).</p>
-<p class="measure-wide">Ещё можно сделать выгрузку конфигурации в файлы и порыться в полученных XML-ках. Это неплохая идея ещё и потому, что сам по себе внешний вид элементов может вас обмануть: если, например, речь идет о ссылке на функциональную опцию в команды формы, то при проверке свойств команды вы даже не заметите, что есть какая-то проблема. А вот в XML-ке будет болтаться какой-то подозрительный GUID вместо наименования опции — считай, явка с повинной :-)</p>
-        <p class="f6 mt4">
-            10 марта 2020
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
         </p>
