@@ -119,6 +119,44 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/video-recording/">Запись видео</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Я работаю удалённо и с коллегами общаюсь через Zoom и Slack. В основном в чатах, но многие темы по-прежнему проще обсудить голосом. И вот тут-то возникают проблемы: приходится забыть про индексацию и поиск по сообщениям, а главное — нет никакого архива разговоров. Иногда очень нужно вспомнить: кто говорил? Что конкретно? Когда?</p>
+<p class="measure-wide">Zoom и Slack сами по себе эту проблему не решают. Первый умеет записывать только те конференции, которые организуешь ты или которые тебе разрешили писать (короче, далеко не все), а второй писать видео не умеет вообще.</p>
+<h2>Решение проблемы</h2>
+<p class="measure-wide">Я закрыл вопрос какое-то время назад, поставив себе <a class="link blue dim bb" href="https://obsproject.com">OBS Studio</a> — популярный среди стримеров софт для записи экрана. С записью конференций он прекрасно справляется. Настройка минимальная: пишем весь экран, звук с микрофона и все звуки, которые воспроизводятся. В микшере по результатам тестовых записей можно натыкать фильтры — усиление, шумоподавление и так далее.</p>
+<p class="measure-wide"><img alt="Настройка OBS Studio" src="https://kostyanetsky.ru/notes/video-recording/video-recording.png"/></p>
+<p class="measure-wide">В настройках нужно указать папку, куда будут складываться записанные видео (Вывод → Запись → Путь записи). Поскольку мы пишем звонки и файлов будет много, лучше сразу разложить их в папки по дням — для этого идем в расширенные настройки и в поле «Формат имени файла» указываем нечто вроде %CCYY-%MM-%DD/%hh-%mm-%ss.</p>
+<h2>Быстрое управление записью</h2>
+<p class="measure-wide">Конечно, лезть в OBS при каждом звонке неудобно, но у неё есть куча хоткеев — можно прожимать какие-нибудь заковыристые комбинации в начале и в конце разговора. Однако со мной это не сработало — придуманные хоткеи почему-то постоянно вылетали из головы. Даже стикеры не помогали. </p>
+<p class="measure-wide">Поначалу я здорово разозлился, но потом понял: раз не получается запомнить хоткей — надо его выкинуть. Начинать запись нажатием одной кнопки, заканчивать нажатием на другую.</p>
+<p class="measure-wide">С оборудованием всё было просто: у меня эргономичная <a class="link blue dim bb" href="https://www.microsoft.com/accessories/ru-ru/products/keyboards/natural-ergonomic-keyboard-4000/b2m-00020">клавиатура</a> от Microsoft, программируемых кнопок на ней — вагон. Хуже с софтом: OBS Studio понимает некоторые <a class="link blue dim bb" href="https://github.com/obsproject/obs-studio/wiki/Launch-Parameters">параметры</a> запуска, но список откровенно бедноват — даже остановки записи нет. Хотелось бы побольше.</p>
+<p class="measure-wide">В итоге решил задачу через плагин к OBS Studio, который дает порулить запущенным экземпляром программы. Он придуман для удаленного управления записью (например, со смартфона), но никто не мешает использовать его локально.</p>
+<p class="measure-wide">Схема получилась такая:</p>
+<ol class="measure-wide">
+<li>Ставим OBS Studio и плагин <a class="link blue dim bb" href="https://obsproject.com/forum/resources/obs-websocket-remote-control-of-obs-studio-made-easy.466/">obs-websocket</a> к ней. Снимаем галку «Enable System Tray Alerts» в настройках (Tools → WebSockets Server Settings), не то программа примется сообщать о каждом чихе.</li>
+<li>Кладем куда-нибудь <a class="link blue dim bb" href="https://obsproject.com/forum/resources/command-line-tool-for-obs-websocket-plugin-windows.615/">утилиту</a>, с помощью которой этим плагином можно рулить из командной строки. </li>
+<li>Вешаем на одну кнопку OBSCommand.exe /startrecording, а на другую — OBSCommand.exe /stoprecording.</li>
+<li>Готово, вы великолепны!</li>
+</ol>
+<p class="measure-wide">При вызове на долю секунду видно консоль (OBSCommand запускается, связывается с obs-websocket и ждет ответа). Сначала хотел как-нибудь скрыть это окно, но, поразмыслив, передумал — если OBS Studio не будет запущен или возникнет какая-то проблема, консоль не закроется и я хотя бы узнаю, что запись не началась.</p>
+        <p class="f6 mt4">
+            3 апреля 2020
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/">рабочее место</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/unresolved-references/">Неразрешимые ссылки</a></h2>
 
             
@@ -632,35 +670,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/duct-tape/">На, мужик, изоленту</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Начитанные друзья иногда спрашивают — мол, какая у тебя любимая книга? Мне, блин, всегда чутка стыдно отвечать на этот вопрос, потому что при всём том огромном выборе, который есть, это «Марсианин» Энди Вейера.</p>
-<p class="measure-wide">Если опустить то, что это классный приключенческий роман, то причина проста: как программист, я чувствую необыкновенное духовное родство с человеком, который решил кучу сложных инженерных проблем с помощью изоленты.</p>
-<blockquote>
-<p class="measure-wide">Да, разумеется, изолента работает почти в вакууме. Изолента работает почти везде и повсюду. Изолента — это дар богов, ей нужно поклоняться.</p>
-<p class="measure-wide"><em>― Энди Вейер, «Марсианин»</em></p>
-</blockquote>
-        <p class="f6 mt4">
-            2 августа 2019
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/books/">книги</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
                 </span>
             
         </p>
