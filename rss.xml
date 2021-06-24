@@ -4,7 +4,23 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Tue, 08 Jun 2021 17:12:05 +0700</lastBuildDate>
+        <lastBuildDate>Wed, 23 Jun 2021 22:24:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Почему баш?</title>
+            <link>https://kostyanetsky.ru/notes/why-bash/</link>
+            <guid isPermaLink="false">note-why-bash</guid>
+            <pubDate>Wed, 23 Jun 2021 22:24:48 +0700</pubDate>
+            <description><p class="measure-wide">Периодически вижу вопросы коллег: а что, 1С всё ещё носится с башем, да? А чё не питон-то? Или павершелл, на худой конец? Вот чудаки!</p>
+<p class="measure-wide">Да, баш не родной для Windows (которая, напротив, родная для 1С) и притащить его туда — отдельная история; да, при усложнении задачи читаемость скрипта падает по экспоненте; да, с некоторыми задачами баш просто не справляется.</p>
+<p class="measure-wide">Однако главный плюс баша в том, что для многих задач по анализу ТЖ 1С он — самое простое и быстрое решение. Как старая отвертка, которой ещё дед пользовался. Она всегда под рукой — пусть поцарапанная, с зазубринами и слегка корявая, но всё еще прекрасно работает.</p>
+<p class="measure-wide">Пример? Допустим, нужно выгрести из ТЖ исключения; простоты ради договоримся, что достаточно первой строки каждого события. Получим <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/f95b30e2f09edd64d9e7a39575bb289a">примерно такой</a> скрипт на питоне. </p>
+<p class="measure-wide">Скажете, его можно легко сократить вдвое? А то и втрое. В конце концов, мы решаем локальную задачу. Возня с читаемостью и предсказуемостью тут ни к чему.</p>
+<p class="measure-wide">Согласен! Но давайте сначала решим ту же задачу на баше:</p>
+<pre><code>grep -r --include "*.log" ',EXCP,' &gt; result.txt
+</code></pre>
+<p class="measure-wide">Вот почему баш.</p></description>
+        </item>
         
         <item>
             <title>Метаданные не найдены</title>
@@ -131,20 +147,6 @@
 <p class="measure-wide">Регулярку можно сделать точнее, но и такой за глаза хватает. Что до ложных срабатываний (то есть GUID, которые не являются битыми ссылками) — их легко отсеять через пайп. Например, скрипт ниже не будет выводить строки с GUID, в которых есть подстрока «uuid»:</p>
 <pre><code>egrep -rn '.{8}-.{4}-.{4}-.{4}-.{12}' dump | grep -v 'uuid'
 </code></pre></description>
-        </item>
-        
-        <item>
-            <title>Старый добрый DATETIME</title>
-            <link>https://kostyanetsky.ru/notes/old-but-gold/</link>
-            <guid isPermaLink="false">note-old-but-gold</guid>
-            <pubDate>Wed, 11 Nov 2020 17:00:50 +0700</pubDate>
-            <description><p class="measure-wide">Порылся в сети по поводу типов дат в MS SQL Server и в целом вопроса «почему 1С до сих пор носится со своим смещением» больше не имею. Люди пишут о целой пачке проблем с DATETIME2:</p>
-<ol class="measure-wide">
-<li>Недоступна базовая математика. Без дополнительных финтов ушами не выйдет посчитать разницу между двумя датами, прибавить к дате день и так далее.</li>
-<li>Стандартные функции по-прежнему возвращают старый добрый DATETIME (например, DATEADD). Если данные хранятся в DATETIME2 — потребуется конвертация.</li>
-<li>Поля с этим типом <a class="link blue dim bb" href="https://sqlperformance.com/2016/04/sql-performance/surprises-dateadd">неважно</a> индексируются, так как каждое значение DATETIME2 хранится задом наперед (сначала время, потом дата). В итоге СУБД промахивается с оценкой количества строк, которое может вернуть запрос, и строит для него неэффективный план выполнения.</li>
-</ol>
-<p class="measure-wide">Подробнее о всем этом можно прочитать на <a class="link blue dim bb" href="https://towardsdatascience.com/datetime2-why-you-should-not-use-it-70e50ae2bab9">Towards Data Science</a> или, например, на <a class="link blue dim bb" href="https://www.sqlservercentral.com/forums/topic/why-do-some-dbas-avoid-datetime2">SQL Server Central</a>.</p></description>
         </item>
         
     </channel>

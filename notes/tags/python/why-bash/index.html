@@ -10,11 +10,11 @@
 
     <title>
         
-            Python
+            Почему баш?
         
     </title>
 
-    <meta name="description" content="Мои заметки о жизни, работе и других интересных штуках вокруг меня." />
+    <meta name="description" content="Пара слов о причине, по которой для анализа ТЖ 1С удобно использовать баш." />
     
     <!-- RSS -->
 
@@ -31,11 +31,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Python"/>
-    <meta property="og:description" content="Мои заметки о жизни, работе и других интересных штуках вокруг меня."/>
+    <meta property="og:title" content="Почему баш?"/>
+    <meta property="og:description" content="Пара слов о причине, по которой для анализа ТЖ 1С удобно использовать баш."/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/python/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/python/why-bash/" />    
 
     <!-- Google Fonts -->
 
@@ -60,7 +60,7 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = '';
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/python/rclone-abuser/';
         let ctrlRightUrl    = '';
 
     </script>
@@ -99,7 +99,7 @@
     </nav>
 
     
-        <nav class="dtc-l v-mid tc tr-l"><a href="https://kostyanetsky.me/notes/tags/python/" class="link f5 f5-ns dim blue bb">EN</a></nav>
+        <nav class="dtc-l v-mid tc tr-l"><a href="https://kostyanetsky.me/notes/tags/python/why-bash/" class="link f5 f5-ns dim blue bb">EN</a></nav>
     
 
 </header>
@@ -107,17 +107,11 @@
 <section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
     
 
-    <article>
-
-        <h1 class="f-subheadline lh-solid">Python</h1>
-
-        
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/why-bash/">Почему баш?</a></h2>
-
+    <article>    
+                    
+        <h1 class="f-subheadline lh-solid">Почему баш?</h1>
             
+        
     
     <div class="f4 lh-copy black mb5">
         <p class="measure-wide">Периодически вижу вопросы коллег: а что, 1С всё ещё носится с башем, да? А чё не питон-то? Или павершелл, на худой конец? Вот чудаки!</p>
@@ -149,38 +143,25 @@
 
 
 
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/rclone-abuser/">Скрипт для синхронизации c NAS</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Выложил на GitHub <a class="link blue dim bb" href="https://github.com/vkostyanetsky/RCloneAbuser">скрипт</a> на Python, который я использую для синхронизации файлов между своим компьютером и домашним NAS'ом. У меня стоит Synology DS220j; с ним так-то идет целый вагон софта и в том числе утилита, которая умеет гонять файлы туда-сюда по расписанию. Однако сделана она, похоже, чисто для галочки: программа принялась глючить ещё на этапе настройки, после чего доверие к ней я потерял.</p>
-<p class="measure-wide">В общем, какое-то время я помучался с решениями конкурентов и в итоге вернулся к привычному <a class="link blue dim bb" href="https://rclone.org">rclone</a>, с которым было всего две проблемы. Во-первых, нельзя нормально соединиться с SMB-шарой: да, логин и пароль можно сохранить в Windows и rclone будет их использовать, но они будут слетать при каждом удобном случае. Я вышел из положения, подключив шару как внешний диск.</p>
-<p class="measure-wide">Во-вторых, файлов и папок для синхронизации у меня оказалось много: директория здесь, директория там, конфиг оттуда, профиль отсюда... Чтобы не плодить лапшу, я накатал простой скрипт, который берет из конфига источники и приемники, а потом для каждого вызывает rclone по одному и тому же шаблону.</p>
-        <p class="f6 mt4">
-            7 июня 2021
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/python/">Python</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/">рабочее место</a>
-                </span>
-            
-        </p>
-    </div>
-
-
+        <div class="likely">
+            <div class="twitter">Твитнуть</div>
+            <div class="telegram">Отправить</div>        
+            <div class="vkontakte">Поделиться</div>
+            <div class="facebook">Поделиться</div>
+        </div>        
 
         
 
+            <p class="mt5 mb3 f6">
+
+                
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/rclone-abuser/">Скрипт для синхронизации c NAS</a> &larr;
+                
+                Ctrl
+                                
+
+            </p> 
+            
         
 
     </article>
