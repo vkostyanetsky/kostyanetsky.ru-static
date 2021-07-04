@@ -115,6 +115,49 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/why-not-bash/">Почему не баш?</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">В прошлой заметке я говорил о задачах, для решения которых баш — идеальный инструмент: минимум ограничений, простые условия — и оговорился, что иногда он вообще не справляется.</p>
+<p class="measure-wide">Чтобы не быть голословным, давайте пример из практики. Есть, скажем, порядка семидесяти гигабайт логов ТЖ 1С, по которым нужно построить топ пояснений к исключениям — от самых частотных к менее частотным.</p>
+<p class="measure-wide">Плёвое дело, верно? Выгребаем EXCP, извлекаем Descr, считаем повторения. Даже похожий <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentExceptions.sh">скрипт</a> я как-то уже писал. Запускаю, терпеливо жду...</p>
+<p class="measure-wide">Знаете, сколько понадобилось времени? Я тоже нет: после того, как скрипт проработал сутки, я его просто остановил.</p>
+<p class="measure-wide">Попытался понять, в чем проблема. Затык возникает где-то в скрипте gawk'а: именно она активно нагружает процессор. Ещё время от времени вожжи берет cat, которая читает очередную порцию данных для gawk'а.</p>
+<p class="measure-wide"><img alt="Процессы" src="https://kostyanetsky.ru/notes/why-not-bash/procexp64.png"/></p>
+<p class="measure-wide">Беда, беда, огорчение! В общем, я подумал и <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentExceptions.py">переписал</a> этот скрипт на Питоне. Новая версия отработала за 15 минут и дала мне:</p>
+<ol class="measure-wide">
+<li>Топ пояснений по событиям исключений;</li>
+<li>Скрипт, который можно прочитать через полгода без помощи гугла;</li>
+<li>Уверенность, что я могу добавить в скрипт ещё пару условий и не вызвать Сатану случайным сочетанием регулярок и ключей.</li>
+</ol>
+<p class="measure-wide">Конечно, я мог оптимизировать версию на баше. Вероятно, тормозит поиск в массиве; можно попробовать хранить данные как-то иначе или вообще переписать часть скрипта на перле.</p>
+<p class="measure-wide">Однако это уже отчетливо отдает мемасом про буханку хлеба: из неё, конечно, можно сделать троллейбус, просто не очень понятно — зачем? Камон, мне бы проблему решить. Не хочу вместо этого два часа медитировать над Stack Overflow. А Питон с задачей уже справился на твердую пятёрку, чем сэкономил мне кучу времени и нервов.</p>
+<div class="blog-embedded-tweet" data-tweet-id="1408560771877965825"><a class="link blue dim bb" href="https://twitter.com/EffinBirds/status/1408560771877965825">Твит</a></div>
+<p class="measure-wide">Поэтому тут явно не баш, ага.</p>
+        <p class="f6 mt4">
+            3 июля 2021
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/">Python</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/why-bash/">Почему баш?</a></h2>
 
             
@@ -724,57 +767,6 @@ Catalog.CashRegisters.Form.GLAccountsEditForm.Form Unresolved metadata object re
 <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ihZyUBaG_8Y" width="560"></iframe>
         <p class="f6 mt4">
             19 августа 2020
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/method-with-surprise/">Метод с сюрпризом</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Пару недель назад столкнулся с досадным багом. Контекст — примитивнее не придумаешь: нужно найти документ по номеру. Если сделать так — документ будет найден:</p>
-<pre><code>SELECT Ref FROM Document.Invoice WHERE Number = &amp;Number
-</code></pre>
-<p class="measure-wide">А вот так — фигушки:</p>
-<pre><code>Documents.Invoice.FindByNumber(Number)
-</code></pre>
-<p class="measure-wide">Сначала я даже слегка завис, но потом полез в документацию и, конечно, нашел ответ. У метода FindByNumber() есть второй параметр, IntervalDate, нужный для поиска периодического документа. С помощью него можно сузить поиск до конкретного периода; например, если периодичность нумерации — год и мы присвоим параметру значение 01-05-2020, то поиск пойдет в периоде от 01-01-2020 до 31-12-2020. А нумерация у документа Invoice и правда периодическая — в пределах года.</p>
-<p class="measure-wide">Так в чем проблема? Дело в том, что за уклончивым «the parameter is used for documents with periodic numbering» на самом деле скрывается железное правило: параметр <strong>нельзя</strong> опускать для периодических документов.</p>
-<p class="measure-wide">Чтобы убедиться в этом, посмотрим, какой SQL выполняется на стороне СУБД. Делаем обычный запрос — никаких сюрпризов. P1 здесь — разделитель, P2 — номер документа:</p>
-<pre><code>SELECT
-    T1._IDRRef 
-FROM
-    dbo._Document283 T1
-WHERE
-    ((T1._Fld704 = @P1))
-    AND ((T1._Number = @P2))
-</code></pre>
-<p class="measure-wide">А вот если выполнить FindByNumber(), то в запросе появится третий параметр со значением 2001-12-31 23:59:59 — ну да, «конец первого года с начала времён»:</p>
-<pre><code>SELECT
-    T1._IDRRef
-FROM
-    dbo._Document283 T1
-WHERE
-    ((T1._Fld704 = @P1))
-    AND
-    (
-        T1._Number = @P2
-        AND T1._Date_Time &lt;= @P3
-    )
-</code></pre>
-<p class="measure-wide">Конечно, такой запрос не находит нужный документ. Он вообще ничего не найдет  в любой реальной базе — никогда, ни при каких обстоятельствах.</p>
-<p class="measure-wide">Подведем итог. Как решить проблему — понятно: указываем IntervalDate или, если даты нет, подключаем ЗначениеРеквизитаОбъекта() БСП или его аналог. Но, честное слово, со стороны платформы, было бы куда адекватнее выбрасывать исключение, если FindByNumber() вызван без IntervalDate, а у документа включена периодичность — чем вот так, тихой сапой, делать гарантированно бессмысленные запросы.</p>
-        <p class="f6 mt4">
-            27 июля 2020
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>

@@ -121,6 +121,37 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/is-ref-empty/">Пустая() или ЗначениеЗаполнено()?</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Несколько дней назад обсуждал с коллегой, какой способ проверки заполнения ссылки лучше. С одной стороны, несколько лет назад я слышал на каких-то курсах авторитетное мнение, что функцию ЗначениеЗаполнено() нужно использовать с осторожностью, так как её логика — сопоставлять переменную всем возможным пустым значениям, которые есть в конфигурации. И это, мол, огромная тормозная лапша. Как альтернативу авторы курса советовали использовать метод ссылки Пустая(), а композитные реквизиты предлагалось проверять примерно так:</p>
+<pre><code>СсылкаЗаполнена = Ссылка &lt;&gt; Неопределено И Не Ссылка.Пустая();
+</code></pre>
+<p class="measure-wide">Коллега в свою очередь утверждал, что ЗначениеЗаполнено() быстрее, так как это встроенная функция, которая не тратит время на поиск метода у объекта (в скриптовых языках это сравнительно медленная операция).</p>
+<p class="measure-wide">На моей памяти ни тот, ни другой метод узким местом никогда не были, но меня разобрало любопытство; написал <a class="link blue dim bb" href="https://github.com/vkostyanetsky/IsEmptyOrValueIsFilled">тест</a>, который проверяет ссылочную переменную на пустое значение обеими способами и замеряет время, которое было потрачено. </p>
+<p class="measure-wide">В среднем результат выглядит <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/is-ref-empty/is-ref-empty.png">примерно так</a>. Там четыре шага — на первых двух предполагается, что ссылка определена, а на третьем и четвертом добавляется соответствующая проверка. В последней колонке таблицы виден контекст выполнения теста (клиент или сервер).</p>
+<p class="measure-wide">Вывод довольно очевиден: ЗначениеЗаполнено() никакой деградации не показывает, более того — работает быстрее, чем метод Пустая() (особенно если мы начинаем проверять переменную на Неопределено). Конечно, отклонение не слишком значительное, но на каких-то длительных регламентных операциях вполне можно сэкономить пару секунд.</p>
+<p class="measure-wide">Да и чисто практически проще делать проверку одним универсальным вызовом, а не пытаться угадать все возможные значения переменной.</p>
+        <p class="f6 mt4">
+            11 апреля 2020
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/sharex-video-recording/">Запись видео в ShareX</a></h2>
 
             
@@ -648,28 +679,6 @@
 <p class="measure-wide">Я понимаю, что оба пункта звучат мальца несерьёзно, но это правда всё. Control исключительно хороша и внешне, и геймплейно, и сюжетно. Единственная причина, по которой я никому не подарю эту игру на Новый Год — в Epic Games Store пока нет возможности это сделать :-)</p>
         <p class="f6 mt4">
             14 сентября 2019
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/control-and-poets-of-the-fall/">Control и Poets of the Fall</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Я и так уже не устоял перед рыжей чертовкой из <a class="link blue dim bb" href="https://youtu.be/oFjb_vlCsRA">трейлера</a> Control, а этим роликом ребята из Remedy и вовсе зашли с непробиваемых козырей.</p>
-<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/EpiahpKp-VA" width="560"></iframe>
-<p class="measure-wide">Послушайте, это просто неприлично круто! Можно как-нибудь перемотать время на конец августа? :-)</p>
-        <p class="f6 mt4">
-            23 августа 2019
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>

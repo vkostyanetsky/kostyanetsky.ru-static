@@ -115,6 +115,49 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/why-not-bash/">Почему не баш?</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">В прошлой заметке я говорил о задачах, для решения которых баш — идеальный инструмент: минимум ограничений, простые условия — и оговорился, что иногда он вообще не справляется.</p>
+<p class="measure-wide">Чтобы не быть голословным, давайте пример из практики. Есть, скажем, порядка семидесяти гигабайт логов ТЖ 1С, по которым нужно построить топ пояснений к исключениям — от самых частотных к менее частотным.</p>
+<p class="measure-wide">Плёвое дело, верно? Выгребаем EXCP, извлекаем Descr, считаем повторения. Даже похожий <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentExceptions.sh">скрипт</a> я как-то уже писал. Запускаю, терпеливо жду...</p>
+<p class="measure-wide">Знаете, сколько понадобилось времени? Я тоже нет: после того, как скрипт проработал сутки, я его просто остановил.</p>
+<p class="measure-wide">Попытался понять, в чем проблема. Затык возникает где-то в скрипте gawk'а: именно она активно нагружает процессор. Ещё время от времени вожжи берет cat, которая читает очередную порцию данных для gawk'а.</p>
+<p class="measure-wide"><img alt="Процессы" src="https://kostyanetsky.ru/notes/why-not-bash/procexp64.png"/></p>
+<p class="measure-wide">Беда, беда, огорчение! В общем, я подумал и <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentExceptions.py">переписал</a> этот скрипт на Питоне. Новая версия отработала за 15 минут и дала мне:</p>
+<ol class="measure-wide">
+<li>Топ пояснений по событиям исключений;</li>
+<li>Скрипт, который можно прочитать через полгода без помощи гугла;</li>
+<li>Уверенность, что я могу добавить в скрипт ещё пару условий и не вызвать Сатану случайным сочетанием регулярок и ключей.</li>
+</ol>
+<p class="measure-wide">Конечно, я мог оптимизировать версию на баше. Вероятно, тормозит поиск в массиве; можно попробовать хранить данные как-то иначе или вообще переписать часть скрипта на перле.</p>
+<p class="measure-wide">Однако это уже отчетливо отдает мемасом про буханку хлеба: из неё, конечно, можно сделать троллейбус, просто не очень понятно — зачем? Камон, мне бы проблему решить. Не хочу вместо этого два часа медитировать над Stack Overflow. А Питон с задачей уже справился на твердую пятёрку, чем сэкономил мне кучу времени и нервов.</p>
+<div class="blog-embedded-tweet" data-tweet-id="1408560771877965825"><a class="link blue dim bb" href="https://twitter.com/EffinBirds/status/1408560771877965825">Твит</a></div>
+<p class="measure-wide">Поэтому тут явно не баш, ага.</p>
+        <p class="f6 mt4">
+            3 июля 2021
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/">Python</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/why-bash/">Почему баш?</a></h2>
 
             
