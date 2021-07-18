@@ -121,6 +121,37 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/longest-queries-using-python/">Поиск долгих запросов на Python</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Выложил <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.py">скрипт на Python</a> для поиска длительных запросов в ТЖ 1С. Накатал его в приступе отчаяния: никак не мог понять, почему мой <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.sh">верный баш</a> для одного из запросов выдаёт среднюю продолжительность больше максимальной.</p>
+<p class="measure-wide">Причину, к слову, я потом <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/commit/946f271d6ea0c1e618b180cee11ae91ce4632c18">нашел</a>. Утилита gawk, которая работала с событиями, для некоторых из них не могла перегнать строку с длительностью события в число и... Нет, что вы! Конечно, не выдавала ошибку! Просто невозмутимо считала эти строки как ноль и ехала дальше.</p>
+<p class="measure-wide">В общем, цирк уехал, а новый скрипт остался. До кучи, он бережнее расходует память и процессор: в скрипте на баше для расчета количества выполнений запроса, суммарного времени выполнения и максимального времени для одного выполнения я использовал три коллекции, у каждой из которых ключом был текст запроса и его контекст.</p>
+<p class="measure-wide">Это вполне рабочая стратегия, пока размер коллекции не переваливает за сотни тысяч элементов: где-то тут мы начинаем терять гигабайты ОЗУ на хранении коллекций и прорву тактов процессора на поиске в них. Новая реализация попрямее: коллекция одна, но хранит все три значения для каждого запроса.</p>
+        <p class="f6 mt4">
+            18 июля 2021
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/">Python</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/why-not-bash/">Почему не баш?</a></h2>
 
             
@@ -742,40 +773,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/unresolved-gopher/">Неразрешимые ссылки на функциональные опции</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Приведу вариант решения проблемы <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/unresolved-references">неразрешимых ссылок</a>, возникший после удаления функциональной опции. Вводная — при проверке конфигурации получаю десятка два сообщений вида:</p>
-<pre><code>CommonForm.PersonalSettings.Form Unresolved metadata object references (2)
-Catalog.BankAccounts.Form.GLAccountsEditForm.Form Unresolved metadata object references (1)
-Catalog.CashRegisters.Form.GLAccountsEditForm.Form Unresolved metadata object references (1)
-</code></pre>
-<p class="measure-wide">Выгружаю конфигурацию в файлы, открываю Form.xml для одной из проблемных форм. Начинаю с той, где элементов немного — так проблему заметить будет проще.</p>
-<p class="measure-wide">Бегло просматриваю файл в поисках чего-то необычного. Искать долго не приходится:</p>
-<p class="measure-wide"><img alt="Подозреваемый" src="https://kostyanetsky.ru/notes/unresolved-gopher/suspect.png"/></p>
-<p class="measure-wide">Нормальная ссылка на функциональную опцию — её имя (как в случае DepreciationOfAssets). А вот если вместо имени указан GUID — этой функциональной опции в конфигурации нет. Ссылка неразрешима.</p>
-<p class="measure-wide">Делаю поиск этого GUID'а по остальной выгрузке и нахожу почти все проблемы, на которые ссылалась платформа при проверке. Решить их легко: удалить битую ссылку из XML, а потом загрузить файл обратно в конфигурацию. Можно ещё проще: открыть список функциональных опций для элемента формы и тут же сохранить его. В этом случая битая ссылка также будет удалена.</p>
-<p class="measure-wide">Почему искать таких потеряшек через сам Конфигуратор — занятие для клинических оптимистов? Да просто проблему почти невозможно заметить. В лучшем случае вы увидите что-то в духе:</p>
-<p class="measure-wide"><img alt="Настоящая улика" src="https://kostyanetsky.ru/notes/unresolved-gopher/evidence.png"/></p>
-<p class="measure-wide">Конфигуратор понимает, что в поле две опции, но получить название для второй не может (её нет). А ведь чаще всего функциональная опция только одна! И картина выглядит так:</p>
-<p class="measure-wide"><img alt="Ваша честь, я невиновен!" src="https://kostyanetsky.ru/notes/unresolved-gopher/innocent.png"/></p>
-<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ihZyUBaG_8Y" width="560"></iframe>
-        <p class="f6 mt4">
-            19 августа 2020
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
         </p>

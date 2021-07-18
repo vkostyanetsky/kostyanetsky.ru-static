@@ -121,6 +121,37 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/longest-queries-using-python/">Поиск долгих запросов на Python</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Выложил <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.py">скрипт на Python</a> для поиска длительных запросов в ТЖ 1С. Накатал его в приступе отчаяния: никак не мог понять, почему мой <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.sh">верный баш</a> для одного из запросов выдаёт среднюю продолжительность больше максимальной.</p>
+<p class="measure-wide">Причину, к слову, я потом <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/commit/946f271d6ea0c1e618b180cee11ae91ce4632c18">нашел</a>. Утилита gawk, которая работала с событиями, для некоторых из них не могла перегнать строку с длительностью события в число и... Нет, что вы! Конечно, не выдавала ошибку! Просто невозмутимо считала эти строки как ноль и ехала дальше.</p>
+<p class="measure-wide">В общем, цирк уехал, а новый скрипт остался. До кучи, он бережнее расходует память и процессор: в скрипте на баше для расчета количества выполнений запроса, суммарного времени выполнения и максимального времени для одного выполнения я использовал три коллекции, у каждой из которых ключом был текст запроса и его контекст.</p>
+<p class="measure-wide">Это вполне рабочая стратегия, пока размер коллекции не переваливает за сотни тысяч элементов: где-то тут мы начинаем терять гигабайты ОЗУ на хранении коллекций и прорву тактов процессора на поиске в них. Новая реализация попрямее: коллекция одна, но хранит все три значения для каждого запроса.</p>
+        <p class="f6 mt4">
+            18 июля 2021
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/">Python</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/why-not-bash/">Почему не баш?</a></h2>
 
             
