@@ -358,13 +358,6 @@
     </url>
     
     <url>
-        <loc>https://kostyanetsky.ru/notes/salt/</loc>
-        <lastmod>2020-03-22</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    
-    <url>
         <loc>https://kostyanetsky.ru/notes/debug-via-http/</loc>
         <lastmod>2020-03-21</lastmod>
         <changefreq>weekly</changefreq>
