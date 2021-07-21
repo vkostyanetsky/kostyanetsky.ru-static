@@ -764,13 +764,6 @@
     </url>
     
     <url>
-        <loc>https://kostyanetsky.ru/notes/momodora/</loc>
-        <lastmod>2020-03-21</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    
-    <url>
         <loc>https://kostyanetsky.ru/notes/kona/</loc>
         <lastmod>2020-03-21</lastmod>
         <changefreq>weekly</changefreq>
@@ -870,13 +863,6 @@
     
     <url>
         <loc>https://kostyanetsky.ru/notes/unhappy/</loc>
-        <lastmod>2020-03-21</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    
-    <url>
-        <loc>https://kostyanetsky.ru/notes/tattletail/</loc>
         <lastmod>2020-03-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
