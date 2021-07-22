@@ -128,7 +128,7 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
 <p class="measure-wide">Примерно тот же подход, кстати, работает и с обычными процессами. Так, строка ниже ищет процесс obs64; если находит — останавливает. </p>
 <pre><code>get-process -Name obs64 | stop-process -pass
 </code></pre>
-<p class="measure-wide">Если нужны детали, то на сайте разработчика есть подробная <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/powershell/scripting/samples/managing-services?view=powershell-7">документация</a> с кучей примеров и рассуждений в духе «как запустить службу, если вы медитируете на одной ноге в условиях искусственной невесомости».</p>
+<p class="measure-wide">Если нужны детали, то на сайте разработчика есть подробная <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/powershell/scripting/samples/managing-services?view=powershell-7" target="_blank">документация</a> с кучей примеров и рассуждений в духе «как запустить службу, если вы медитируете на одной ноге в условиях искусственной невесомости».</p>
         <p class="f6 mt4">
             28 апреля 2020
             

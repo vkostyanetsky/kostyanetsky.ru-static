@@ -120,9 +120,9 @@
         
     
     <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Переписал <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/FrequentExceptions.sh">скрипт</a> на баше, строящий топ исключений по собранному ТЖ: хотел решить эту задачу как-то попроще.</p>
+        <p class="measure-wide">Переписал <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/FrequentExceptions.sh" target="_blank">скрипт</a> на баше, строящий топ исключений по собранному ТЖ: хотел решить эту задачу как-то попроще.</p>
 <p class="measure-wide">В итоге выкинул из кода возню с заменой начала события на маркер gawk для разделения записей (его можно сразу задать регулярным выражением) и перенес больше логики в скрипт для gawk (так нагляднее, особенно если потом захочется её расширить). </p>
-<p class="measure-wide">Получилось явно лучше, чем <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/47e02e199bb32082c4d5019ca88233c0">было</a> — во всяком случае, логика выглядит понятнее. Изначально, правда, я хотел скорее сократить скрипт в размере и получить что-то вроде:</p>
+<p class="measure-wide">Получилось явно лучше, чем <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/47e02e199bb32082c4d5019ca88233c0" target="_blank">было</a> — во всяком случае, логика выглядит понятнее. Изначально, правда, я хотел скорее сократить скрипт в размере и получить что-то вроде:</p>
 <pre><code>grep -hoP ",EXCP,.*\KDescr=.*" */*.log | uniq -c | sort -rn
 </code></pre>
 <p class="measure-wide">То есть фильтруем только строки с событием EXCP, отрезаем всё до описания ошибки и группируем с помощью uniq. По-моему, очень изящно.</p>

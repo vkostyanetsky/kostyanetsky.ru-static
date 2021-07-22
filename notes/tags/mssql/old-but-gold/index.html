@@ -124,9 +124,9 @@
 <ol class="measure-wide">
 <li>Недоступна базовая математика. Без дополнительных финтов ушами не выйдет посчитать разницу между двумя датами, прибавить к дате день и так далее.</li>
 <li>Стандартные функции по-прежнему возвращают старый добрый DATETIME (например, DATEADD). Если данные хранятся в DATETIME2 — потребуется конвертация.</li>
-<li>Поля с этим типом <a class="link blue dim bb" href="https://sqlperformance.com/2016/04/sql-performance/surprises-dateadd">неважно</a> индексируются, так как каждое значение DATETIME2 хранится задом наперед (сначала время, потом дата). В итоге СУБД промахивается с оценкой количества строк, которое может вернуть запрос, и строит для него неэффективный план выполнения.</li>
+<li>Поля с этим типом <a class="link blue dim bb" href="https://sqlperformance.com/2016/04/sql-performance/surprises-dateadd" target="_blank">неважно</a> индексируются, так как каждое значение DATETIME2 хранится задом наперед (сначала время, потом дата). В итоге СУБД промахивается с оценкой количества строк, которое может вернуть запрос, и строит для него неэффективный план выполнения.</li>
 </ol>
-<p class="measure-wide">Подробнее о всем этом можно прочитать на <a class="link blue dim bb" href="https://towardsdatascience.com/datetime2-why-you-should-not-use-it-70e50ae2bab9">Towards Data Science</a> или, например, на <a class="link blue dim bb" href="https://www.sqlservercentral.com/forums/topic/why-do-some-dbas-avoid-datetime2">SQL Server Central</a>.</p>
+<p class="measure-wide">Подробнее о всем этом можно прочитать на <a class="link blue dim bb" href="https://towardsdatascience.com/datetime2-why-you-should-not-use-it-70e50ae2bab9" target="_blank">Towards Data Science</a> или, например, на <a class="link blue dim bb" href="https://www.sqlservercentral.com/forums/topic/why-do-some-dbas-avoid-datetime2" target="_blank">SQL Server Central</a>.</p>
         <p class="f6 mt4">
             11 ноября 2020
             
