@@ -15,6 +15,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.ru/notes/pavel-chistov-passed-away/</loc>
+        <lastmod>2021-08-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.ru/notes/longest-queries-using-python/</loc>
         <lastmod>2021-07-18</lastmod>
         <changefreq>weekly</changefreq>
@@ -262,13 +269,6 @@
     <url>
         <loc>https://kostyanetsky.ru/notes/fred/</loc>
         <lastmod>2020-05-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    
-    <url>
-        <loc>https://kostyanetsky.ru/notes/perfectly-balanced/</loc>
-        <lastmod>2020-05-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>

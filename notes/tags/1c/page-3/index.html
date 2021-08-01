@@ -127,6 +127,38 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/find-methods-with-parameter/">Поиск методов с параметром</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Задача: нужно найти в общих модулях конфигурации методы с определенным параметром (в этом примере — с параметром DecimalPlacesFor).</p>
+<p class="measure-wide">Обычный поиск по коду конфигурации даст массу ложных срабатываний (например, все обращения к параметру с таким именем в теле методов). Поиск по регулярным выражениям платформа пока не поддерживает, поэтому выгодно выгрузить конфигурацию в файлы и натравить на папку общих модулей <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsForLogAnalysis/blob/master/Файлы%20конфигурации/MethodsWithParameter.sh" target="_blank">скрипт</a> на баше.</p>
+<p class="measure-wide">Первая часть скрипта (до пайпа) выполняет сам поиск, вторая — отрезает лишнее, чтобы на вывод уходили только названия модулей и найденных в них методов. Получится, например, так:</p>
+<p class="measure-wide"><img alt="Скриншот консоли" src="https://kostyanetsky.ru/notes/find-methods-with-parameter/bash.png"/></p>
+<p class="measure-wide">Профит? Профит!</p>
+        <p class="f6 mt4">
+            18 ноября 2019
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/bablox/">Что такое Баблокс?</a></h2>
 
             
@@ -637,28 +669,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/message-to-user/">Сообщение пользователю</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">В 1С:Предприятии есть удобный метод вывода сообщений — объект СообщениеПользователю. Он выводит их в нижней части формы и это, внезапно, потенциальная проблема: дело в том, что большинство пользователей туда не смотрит. Мол, если никаких явных ошибок на экране нет — беспокоиться не о чем.</p>
-<p class="measure-wide">Поэтому в случае, когда происходит сбой или просто нужно донести какую-то критично важную информацию, сообщение нужно выводить в диалоговом окне — например, через методы ПоказатьВопрос() или ПоказатьПредупреждение(). В противном случае пользователь может не обратить внимания на проблему и продолжить работу — несмотря на то, что какое-то действие не было выполнено или было выполнено не так. Впоследствии это станет явным и в проблеме (справедливо) обвинят вас.</p>
-<p class="measure-wide">До кучи можно вспомнить небольшие служебные формы: в них СообщениеПользователю вообще противопоказано. Да, на маленьком полотне сложнее не заметить всплывший внизу текст, однако тут дело в другом — одно-два сообщения буквально <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/message-to-user/ru.png" target="_blank">пожирают</a> рабочее пространство формы и работать с ней становится неудобно.</p>
-        <p class="f6 mt4">
-            30 апреля 2018
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
         </p>
