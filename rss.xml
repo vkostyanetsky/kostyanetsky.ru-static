@@ -4,7 +4,31 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Wed, 18 Aug 2021 20:03:30 +0700</lastBuildDate>
+        <lastBuildDate>Wed, 08 Sep 2021 00:12:00 +0700</lastBuildDate>
+        
+        <item>
+            <title>Без комментариев</title>
+            <link>https://kostyanetsky.ru/notes/no-comment/</link>
+            <guid isPermaLink="false">note-no-comment</guid>
+            <pubDate>Wed, 08 Sep 2021 00:12:00 +0700</pubDate>
+            <description><p class="measure-wide">Сам не заметил, как бросил привычку педантично комментировать каждый метод, с которым приходится работать. Наверняка у этой практики есть какое-нибудь умное название, но мне нет дела, если честно. Я имею в виду стиль, когда описание добавляют к каждому осмысленному блоку кода:</p>
+<pre><code>&amp;AtServer
+Procedure BobDoSomething()
+
+    // what the code below does, blah blah blah
+    (lot of code)
+
+    // what the code below does, blah blah blah
+    (lot of another code)
+
+    // what the code below does, blah blah blah
+    (lot of code, once again)
+
+EndProcedure // BobDoSomething()
+</code></pre>
+<p class="measure-wide">Смысл тут простой: когда копаешься в каком-нибудь дремучем легаси и бегаешь туда-сюда между хаотично раскиданными процедурами на три экрана каждая — логику каждой из них держать в голове довольно трудно. Первая же чашка кофе всё смоет. Поэтому такие заметки на полях здорово ускоряют ориентацию на местности, и чем больше времени проходит между подходами к коду — тем заметнее эффект.</p>
+<p class="measure-wide">Однако в какой-то момент стало понятно, что это ноу-хау — просто костыль, подпирающий откровенно хреновый дизайн кода. Попалась тебе длинная процедура или функция — вздохни, сядь и нарежь толстяка на методы поменьше. Сэкономишь и время, и нервы, и в коде разберешься быстрее, и SonarCube порадуешь.</p></description>
+        </item>
         
         <item>
             <title>Медленное оповещение</title>
@@ -149,19 +173,6 @@
             <description><p class="measure-wide">Обновил <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.sh" target="_blank">скрипт</a> поиска долгих запросов в технологическом журнале платформы. Ранняя версия содержала серьёзный косяк: она старательно группировала DBMSSQL по Sql и Content, но игнорировала случаи, в которых поле Sql отсутствовало (для DBMSSQL это не то чтобы норма, но встречается).</p>
 <p class="measure-wide">Ну и код слегка причесал, чтобы два раза не вставать: добавил разметку и комментарии, а часть логики gawk'а вынес из основного тела в функции. Да, скрипт стал смотреться длиннее, чем он есть на самом деле, зато читать его стало куда проще.</p>
 <p class="measure-wide">Мне вообще, по-чеснаку, непонятна причина, по которой ветераны баша трамбуют всю логику в две-три строки: язык и так-то не блещет читаемостью (в телеграм-канале Никиты Прокопова есть <a class="link blue dim bb" href="https://t.me/nikitonsky_pub/55" target="_blank">отличный текст</a> на эту тему), а при виде страницы конвейеров без единого перевода строки вообще хочется молча выйти в окно.</p></description>
-        </item>
-        
-        <item>
-            <title>Пучок скриптов</title>
-            <link>https://kostyanetsky.ru/notes/bunch-of-scrips/</link>
-            <guid isPermaLink="false">note-bunch-of-scrips</guid>
-            <pubDate>Sat, 24 Apr 2021 10:00:00 +0700</pubDate>
-            <description><p class="measure-wide">Выложил на GitHub ещё несколько скриптов для разбора технологического журнала платформы, которые написал за последнее время:</p>
-<ul class="measure-wide">
-<li><a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentEvents.sh" target="_blank">Частотные события</a>. Группирует события по наименованию, считает количество воспроизведений для каждого и выводит в порядке убывания — от наиболее частотного к наименее частотному. Практического применения у этого скрипта, скорее, нет; просто фиксировал для себя, какой процесс кластера какие события пишет.</li>
-<li><a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/ExceptionDescriptions.sh" target="_blank">Описания исключений</a>. Группирует EXCP по полю Name; для каждого наименования выводит варианты значений поля Description, которые были у исключений с таким наименованием. С помощью этого скрипта можно составить примерную картину: какие исключения действительно проблема, а какие — просто белый шум, который можно игнорировать и, например, закинуть в фильтры Кибаны.</li>
-<li><a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LocksByConnectIDAndRegions.sh" target="_blank">Блокировки по ID соединения и области</a>. Удобен для поиска виновника таймаута на управляемых блокировках: скрипт выгребает из ТЖ все TLOCK'и по конкретной области от конкретного соединения, а потом выстраивает их в хронологическом порядке.</li>
-</ul></description>
         </item>
         
     </channel>

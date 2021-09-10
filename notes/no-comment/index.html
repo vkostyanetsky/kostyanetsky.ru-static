@@ -10,11 +10,11 @@
 
     <title>
         
-            SKUUUID в своем глазу
+            Без комментариев
         
     </title>
 
-    <meta name="description" content="Короткое заметка на полях про аббревиатуры в коде." />
+    <meta name="description" content="Чем дальше, тем меньше я комментирую код." />
     
     <!-- RSS -->
 
@@ -29,11 +29,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="SKUUUID в своем глазу"/>
-    <meta property="og:description" content="Короткое заметка на полях про аббревиатуры в коде."/>
+    <meta property="og:title" content="Без комментариев"/>
+    <meta property="og:description" content="Чем дальше, тем меньше я комментирую код."/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/code-smell/skuuuid/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/no-comment/" />    
 
     <!-- Google Fonts -->
 
@@ -58,8 +58,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/code-smell/self-documenting-code/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/code-smell/no-comment/';
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/slow-notification/';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -105,7 +105,7 @@
     </nav>
 
     
-        <nav class="dtc-l v-mid tc tr-l"><a href="https://kostyanetsky.me/notes/tags/code-smell/skuuuid/" class="link f5 f5-ns dim blue bb">EN</a></nav>
+        <nav class="dtc-l v-mid tc tr-l"><a href="https://kostyanetsky.me/notes/no-comment/" class="link f5 f5-ns dim blue bb">EN</a></nav>
     
 
 </header>
@@ -115,23 +115,37 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">SKUUUID в своем глазу</h1>
+        <h1 class="f-subheadline lh-solid">Без комментариев</h1>
             
         
     
     <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Пару недель назад Александр Кунташов у себя на канале <a class="link blue dim bb" href="https://t.me/kuntashov_devnotes/479" target="_blank">запостил</a> забавный скрин перечисления из Библиотеки Электронных Документов, создателей которого откровенно манили длинные аббревиатуры. Я бодро острил на тему родства ИППДОИПУПДУКД'а и московского ГНУВНИВИПФИТ'а, а потом увидел в собственном коде вот эту красотку:</p>
-<p class="measure-wide"><img alt="SKUUUID" src="https://kostyanetsky.ru/notes/skuuuid/skuuuid.png"/></p>
-<p class="measure-wide">Ещё не вполне рука маэстро, конечно, но движение определенно в том же направлении. Вспомнилась притча про сучок в чужом глазу и суковатое бревно — в своём :-)</p>
+        <p class="measure-wide">Сам не заметил, как бросил привычку педантично комментировать каждый метод, с которым приходится работать. Наверняка у этой практики есть какое-нибудь умное название, но мне нет дела, если честно. Я имею в виду стиль, когда описание добавляют к каждому осмысленному блоку кода:</p>
+<pre><code>&amp;AtServer
+Procedure BobDoSomething()
+
+    // what the code below does, blah blah blah
+    (lot of code)
+
+    // what the code below does, blah blah blah
+    (lot of another code)
+
+    // what the code below does, blah blah blah
+    (lot of code, once again)
+
+EndProcedure // BobDoSomething()
+</code></pre>
+<p class="measure-wide">Смысл тут простой: когда копаешься в каком-нибудь дремучем легаси и бегаешь туда-сюда между хаотично раскиданными процедурами на три экрана каждая — логику каждой из них держать в голове довольно трудно. Первая же чашка кофе всё смоет. Поэтому такие заметки на полях здорово ускоряют ориентацию на местности, и чем больше времени проходит между подходами к коду — тем заметнее эффект.</p>
+<p class="measure-wide">Однако в какой-то момент стало понятно, что это ноу-хау — просто костыль, подпирающий откровенно хреновый дизайн кода. Попалась тебе длинная процедура или функция — вздохни, сядь и нарежь толстяка на методы поменьше. Сэкономишь и время, и нервы, и в коде разберешься быстрее, и SonarCube порадуешь.</p>
         <p class="f6 mt4">
-            22 февраля 2021
+            8 сентября 2021
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/code-smell/">код с запашком</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/code-smell/">код с запашком</a>
                 </span>
             
         </p>
@@ -151,11 +165,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/code-smell/self-documenting-code/">Самодокументируемый код</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/slow-notification/">Медленное оповещение</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/code-smell/no-comment/">Без комментариев</a>
                                 
 
             </p> 

@@ -127,6 +127,53 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/excp-number-by-minutes/">Расчет количества исключений по ТЖ</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Ещё <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/ExceptionsNumberByMinutes.sh" target="_blank">скрипт</a>. Считает количество исключений в минуту и строит топ, по которому видно распределение. Можно быстро оценить периоды, когда программы сбоили особенно яростно.</p>
+<p class="measure-wide">По ходу дела столкнулся в двумя любопытными проблемами, которые меня порядком сбили с толку. Во-первых, я почему-то был уверен, что uniq -c группирует строки вне зависимости от того, где в потоке данных они встречаются. Рассмотрим пример:</p>
+<pre><code>банан
+банан
+груша
+банан
+</code></pre>
+<p class="measure-wide">Я думал, что если отдать эти данные uniq -c, то она сгруппирует одинаковые строки, посчитает количество повторений и выдаст примерно такое:</p>
+<pre><code>3 банан
+1 груша
+</code></pre>
+<p class="measure-wide">Но на деле получилось так:</p>
+<pre><code>2 банан
+1 груша
+1 банан
+</code></pre>
+<p class="measure-wide">Вывод: утилита uniq ожидает, что повторяющиеся строки идут одна за другой. Если строка отличается от предыдущей — она начинает считать счетчик совпадений для неё с нуля. То есть, чтобы получить тот результат, на который я рассчитывал — нужно сначала отсортировать данные, и только потом передавать их в uniq.</p>
+<p class="measure-wide">Второй проблемой стала утилита sed. С помощью неё я пытался удалить из потока данных всё, кроме часов и минут (текст попытки на 12-й строке скрипта). Однако часть событий упорно не попадали под регулярку несмотря на то, что визуально никак не отличались. Я промаялся кучу времени и здорово разозлился, но потом вспомнил про существование <a class="link blue dim bb" href="https://ru.wikipedia.org/wiki/Маркер_последовательности_байтов" target="_blank">BOM</a>. Вычистил их и дальше все пошло как по маслу.</p>
+<p class="measure-wide">BOM используется во всех файлах ТЖ (в этом можно убедиться, например, с помощью <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LogFilesWithoutBOM.sh" target="_blank">скрипта</a>). То есть каждый лог начинается с особых символов, которых невооруженным глазом не увидеть и которые могут помешать обработать первую строку файла (так как эти самые символы не будут попадать под условие регулярного выражения).</p>
+<p class="measure-wide">Вывод: проще всего удалять BOM по умолчанию, не оценивая рисков для каждой конкретной задачи. Да, иногда это будет лишним (например, решению задачи по тексту выше через grep BOM никак не мешает). Но я не люблю сюрпризы. Кроме того, несколько тактов процессора на простую замену — явно выгоднее, чем эквивалент в сгоревших нервных клетках и потерянном времени.</p>
+        <p class="f6 mt4">
+            24 октября 2020
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/nerdview/">Профессиональная деформация</a></h2>
 
             
@@ -724,32 +771,6 @@ WHERE
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/value-table-view/">Просмотр таблицы значений</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Закинул на GitHub <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/ef44bbb18f36a1c51826a5d0b4f3960e" target="_blank">короткую функцию</a>, с помощью которой произвольную таблицу значений можно превратить в табличный документ.</p>
-<p class="measure-wide">Для чего? Чтобы посмотреть её содержимое. Саму таблицу на клиент передать нельзя, а вот табличный документ на её основе — можно. Кроме того, у табличного документа есть клиентский метод Show(), который отображает его в отдельном окне.</p>
-<p class="measure-wide">То есть можно прямо из режима предприятия просматривать разные служебные таблицы, не тратя время на создание интерфейса для них. Просто передаем их в функцию по ссылке выше, получаем табличные документы, возвращаем их на клиент и выводим.</p>
-        <p class="f6 mt4">
-            16 мая 2020
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
                 </span>
             
         </p>

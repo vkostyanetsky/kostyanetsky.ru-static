@@ -121,6 +121,46 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/no-comment/">Без комментариев</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Сам не заметил, как бросил привычку педантично комментировать каждый метод, с которым приходится работать. Наверняка у этой практики есть какое-нибудь умное название, но мне нет дела, если честно. Я имею в виду стиль, когда описание добавляют к каждому осмысленному блоку кода:</p>
+<pre><code>&amp;AtServer
+Procedure BobDoSomething()
+
+    // what the code below does, blah blah blah
+    (lot of code)
+
+    // what the code below does, blah blah blah
+    (lot of another code)
+
+    // what the code below does, blah blah blah
+    (lot of code, once again)
+
+EndProcedure // BobDoSomething()
+</code></pre>
+<p class="measure-wide">Смысл тут простой: когда копаешься в каком-нибудь дремучем легаси и бегаешь туда-сюда между хаотично раскиданными процедурами на три экрана каждая — логику каждой из них держать в голове довольно трудно. Первая же чашка кофе всё смоет. Поэтому такие заметки на полях здорово ускоряют ориентацию на местности, и чем больше времени проходит между подходами к коду — тем заметнее эффект.</p>
+<p class="measure-wide">Однако в какой-то момент стало понятно, что это ноу-хау — просто костыль, подпирающий откровенно хреновый дизайн кода. Попалась тебе длинная процедура или функция — вздохни, сядь и нарежь толстяка на методы поменьше. Сэкономишь и время, и нервы, и в коде разберешься быстрее, и SonarCube порадуешь.</p>
+        <p class="f6 mt4">
+            8 сентября 2021
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/code-smell/">код с запашком</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/slow-notification/">Медленное оповещение</a></h2>
 
             
@@ -740,40 +780,6 @@
 <p class="measure-wide">Ожидания на блокировках тоже считаются по продолжительности. При этом скрипт проверяет, что у события TLOCK заполнено свойство WaitConnections — то есть платформа действительно ждала возможности установить блокировку, а не просто потратила какое-то время на её установку.</p>
         <p class="f6 mt4">
             19 октября 2020
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/top-exceptions-v2/">Новый скрипт топа исключений</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Переписал <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/FrequentExceptions.sh" target="_blank">скрипт</a> на баше, строящий топ исключений по собранному ТЖ: хотел решить эту задачу как-то попроще.</p>
-<p class="measure-wide">В итоге выкинул из кода возню с заменой начала события на маркер gawk для разделения записей (его можно сразу задать регулярным выражением) и перенес больше логики в скрипт для gawk (так нагляднее, особенно если потом захочется её расширить). </p>
-<p class="measure-wide">Получилось явно лучше, чем <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/47e02e199bb32082c4d5019ca88233c0" target="_blank">было</a> — во всяком случае, логика выглядит понятнее. Изначально, правда, я хотел скорее сократить скрипт в размере и получить что-то вроде:</p>
-<pre><code>grep -hoP ",EXCP,.*\KDescr=.*" */*.log | uniq -c | sort -rn
-</code></pre>
-<p class="measure-wide">То есть фильтруем только строки с событием EXCP, отрезаем всё до описания ошибки и группируем с помощью uniq. По-моему, очень изящно.</p>
-<p class="measure-wide">Однако описание у EXCP может быть многострочным. То есть мы будем время от времени терять часть данных, нужных для расследования (всё описание после первого же перевода строки). Как решить эту проблему так, чтобы скрипт не разбарабанило втрое — я пока не придумал :-)</p>
-        <p class="f6 mt4">
-            17 октября 2020
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
