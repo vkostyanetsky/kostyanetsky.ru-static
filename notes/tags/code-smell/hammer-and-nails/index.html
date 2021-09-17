@@ -10,11 +10,11 @@
 
     <title>
         
-            Без комментариев
+            Про молоток и гвозди
         
     </title>
 
-    <meta name="description" content="Чем дальше, тем меньше я комментирую код." />
+    <meta name="description" content="Как решить простую задачу максимально сложно?" />
     
     <!-- RSS -->
 
@@ -29,11 +29,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Без комментариев"/>
-    <meta property="og:description" content="Чем дальше, тем меньше я комментирую код."/>
+    <meta property="og:title" content="Про молоток и гвозди"/>
+    <meta property="og:description" content="Как решить простую задачу максимально сложно?"/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/code-smell/no-comment/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/code-smell/hammer-and-nails/" />    
 
     <!-- Google Fonts -->
 
@@ -58,8 +58,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/code-smell/skuuuid/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/code-smell/hammer-and-nails/';
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/code-smell/no-comment/';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -105,7 +105,7 @@
     </nav>
 
     
-        <nav class="dtc-l v-mid tc tr-l"><a href="https://kostyanetsky.me/notes/tags/code-smell/no-comment/" class="link f5 f5-ns dim blue bb">EN</a></nav>
+        <nav class="dtc-l v-mid tc tr-l"><a href="https://kostyanetsky.me/notes/tags/code-smell/hammer-and-nails/" class="link f5 f5-ns dim blue bb">EN</a></nav>
     
 
 </header>
@@ -115,33 +115,28 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Без комментариев</h1>
+        <h1 class="f-subheadline lh-solid">Про молоток и гвозди</h1>
             
         
     
     <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Сам не заметил, как бросил привычку педантично комментировать каждый метод, с которым приходится работать. Наверняка у этой практики есть какое-нибудь умное название, но мне нет дела, если честно. Я имею в виду стиль, когда описание добавляют к каждому осмысленному блоку кода:</p>
-<pre><code>&amp;AtServer
-Procedure BobDoSomething()
-
-    // what the code below does, blah blah blah
-    (lot of code)
-
-    // what the code below does, blah blah blah
-    (lot of another code)
-
-    // what the code below does, blah blah blah
-    (lot of code, once again)
-
-EndProcedure // BobDoSomething()
-</code></pre>
-<p class="measure-wide">Смысл тут простой: когда копаешься в каком-нибудь дремучем легаси и бегаешь туда-сюда между хаотично раскиданными процедурами на три экрана каждая — логику каждой из них держать в голове довольно трудно. Первая же чашка кофе всё смоет. Поэтому такие заметки на полях здорово ускоряют ориентацию на местности, и чем больше времени проходит между подходами к коду — тем заметнее эффект.</p>
-<p class="measure-wide">Однако в какой-то момент стало понятно, что это ноу-хау — просто костыль, подпирающий откровенно хреновый дизайн кода. Попалась тебе длинная процедура или функция — вздохни, сядь и нарежь толстяка на методы поменьше. Сэкономишь и время, и нервы, и в коде разберешься быстрее, и SonarCube порадуешь.</p>
+        <p class="measure-wide">На днях допиливал платежные документы в нашей конфигурации и наткнулся на невероятно избыточное решение примитивной задачи. Простите, не  могу держать в себе.</p>
+<p class="measure-wide">Вот есть у вас документ, да? В нём — несколько табличных частей. В каждой — поле для комментария. Делаете вы для этого документа печатную форму; если хотя бы в одной строке любой ТЧ есть комментарий — нужно использовать один шаблон, если комментариев нет — другой.</p>
+<p class="measure-wide">Задача примитивная, все мы миллион раз такое делали — ну, смотрим в выборку строк, натравливаем ПустаяСтрока() на нужное поле и грузим подходящий шаблон. Готово, можно пить кофе!</p>
+<p class="measure-wide">Однако, вместо короткого цикла я увидел это:</p>
+<script src="https://gist.github.com/vkostyanetsky/e870d5bb3d2f23d93f3d17001eaef59b.js">Суть</script>
+<p class="measure-wide">Ну то есть да, делаем матрешку из подзапросов, в самом нижнем из которых роемся в ТЧ (которые мы, напомню, только что выгребали для вывода на печатную форму). Ищем в них комментарии, если есть — ставим единичку. Нет? Нолик. Итог несколько раз группируем и возвращаем в скрипт.</p>
+<p class="measure-wide">Я сейчас даже не про нагрузку на СУБД (рискну предположить, что заметного эффекта этот трюк не дает — в конце концов, после отбора по ссылке выборка будет копеечной). Просто... Ну... Чекнуть выборку строк — пять строк кода. Понятных, простых, коротких, Сонару ругнуться негде. Как можно было родить вот это? Из большой любви к запросам? </p>
+<p class="measure-wide">А ведь что-то в этом духе и было, скорее всего. Я почти вижу его, этого кодера, который только что более-менее сносно освоил запросы и пребывает в перманентном восторге от новых возможностей. А когда в руках есть клевый блестящий молоток, всё вокруг кажется гвоздями.</p>
         <p class="f6 mt4">
-            8 сентября 2021
+            15 сентября 2021
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
                 </span>
             
                 <span class="pl2">
@@ -165,11 +160,9 @@ EndProcedure // BobDoSomething()
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/code-smell/skuuuid/">SKUUUID в своем глазу</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/code-smell/no-comment/">Без комментариев</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/code-smell/hammer-and-nails/">Про молоток и гвозди</a>
                                 
 
             </p> 
