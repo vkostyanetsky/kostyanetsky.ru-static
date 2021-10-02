@@ -143,6 +143,36 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/how-not-to-land/">Тонкое искусство приземления</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/bvim4rsNHkQ" width="560"></iframe>
+<p class="measure-wide">На волне актуальных новостей наткнулся на трёхлетней давности ролик от SpaceX с подборкой неудачных приземлений на плавучую платформу. Как по мне — отличный пример того, как нужно относиться к своим ошибкам. С юмором!</p>
+<blockquote>
+<p class="measure-wide">Well, technically, it did land… Just not in one piece.</p>
+</blockquote>
+<p class="measure-wide">:D</p>
+<p class="measure-wide">В комментариях не отстают:</p>
+<blockquote>
+<p class="measure-wide">Space X : Launches astronauts for the first time.</p>
+<p class="measure-wide">Youtube: Let's recommend this video!</p>
+</blockquote>
+        <p class="f6 mt4">
+            31 мая 2020
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/meanwhile/">тем временем</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/fred/">Фред</a></h2>
 
             
@@ -694,38 +724,6 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/find-methods-with-parameter/">Поиск методов с параметром</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Задача: нужно найти в общих модулях конфигурации методы с определенным параметром (в этом примере — с параметром DecimalPlacesFor).</p>
-<p class="measure-wide">Обычный поиск по коду конфигурации даст массу ложных срабатываний (например, все обращения к параметру с таким именем в теле методов). Поиск по регулярным выражениям платформа пока не поддерживает, поэтому выгодно выгрузить конфигурацию в файлы и натравить на папку общих модулей <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsForLogAnalysis/blob/master/Файлы%20конфигурации/MethodsWithParameter.sh" target="_blank">скрипт</a> на баше.</p>
-<p class="measure-wide">Первая часть скрипта (до пайпа) выполняет сам поиск, вторая — отрезает лишнее, чтобы на вывод уходили только названия модулей и найденных в них методов. Получится, например, так:</p>
-<p class="measure-wide"><img alt="Скриншот консоли" src="https://kostyanetsky.ru/notes/find-methods-with-parameter/bash.png"/></p>
-<p class="measure-wide">Профит? Профит!</p>
-        <p class="f6 mt4">
-            18 ноября 2019
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
                 </span>
             
         </p>
