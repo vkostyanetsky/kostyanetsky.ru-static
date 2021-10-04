@@ -137,6 +137,33 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/top-salaries/">Самые большие зарплаты</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <blockquote>
+<p class="measure-wide">Есть путь до CSV-файла, надо его открыть, прочитать заголовок (первая строка), найти колонку Salary и вывести топ 10 зарплат.</p>
+<p class="measure-wide"><em><a class="link blue dim bb" href="https://t.me/nikitonsky_chat/26402" target="_blank">Ссылка</a></em></p>
+</blockquote>
+<p class="measure-wide">Вбросил свои <a class="link blue dim bb" href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" target="_blank">пять копеек</a> просто для полноты картины. Если забить на стабильность, читаемость и производительность — можно усечь где-то вдвое. Тут с самого начала было очевидно, что на баше выйдет короче — так что просто написал как привык.</p>
+<p class="measure-wide">Из полезного: в комментариях к сообщению куча примеров на других языках. С некоторыми вообще до сих пор не сталкивался; было реально любопытно посмотреть на синтаксис и попробовать понять подход.</p>
+<p class="measure-wide">В целом история напомнила <a class="link blue dim bb" href="https://bolknote.ru/tags/beer99/" target="_blank">хобби</a> Евгения Степанищева — писать вывод американской «песни о пиве» на всех языках подряд. По большому счету, задача Тонского тоже больше фан — слишком тривиальная, чтобы на её базе что-то всерьёз сравнивать.</p>
+<p class="measure-wide">Из смешного: у пары <a class="link blue dim bb" href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">коллег</a> язык 1С вызвал настолько острые проблемы со зрением, что они сочли нужным об этом сообщить :-) Отчасти понимаю желание самоутвердиться на стереотипе «1С — это плохо, понятненько?», но тут момент явно выбран неудачно. Предпочтения в синтаксисе — оголтелая вкусовщина, а кроме него решение на 1С ничем толком не отличается от решений на любом другом языке, где нет встроенной библиотеки для парсинга CSV.</p>
+        <p class="f6 mt4">
+            2 октября 2021
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/build-on-github/">Сборка этого сайта на GitHub</a></h2>
 
             
@@ -719,39 +746,6 @@
 <p class="measure-wide">Подробнее о всем этом можно прочитать на <a class="link blue dim bb" href="https://towardsdatascience.com/datetime2-why-you-should-not-use-it-70e50ae2bab9" target="_blank">Towards Data Science</a> или, например, на <a class="link blue dim bb" href="https://www.sqlservercentral.com/forums/topic/why-do-some-dbas-avoid-datetime2" target="_blank">SQL Server Central</a>.</p>
         <p class="f6 mt4">
             11 ноября 2020
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/">MS SQL</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/lost-time/">Смещение дат в 1С</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">В MS SQL Server поля DATETIME <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/dotnet/api/system.data.sqltypes.sqldatetime.minvalue?view=dotnet-plat-ext-3.1" target="_blank">не могут</a> хранить даты раньше 1753-го года. Например, если попытаться записать в базу 01.01.0001 — получим ругань на out-of-range value. Я считал это забавным для такой почтенной СУБД рудиментом, пока случайно не наткнулся на <a class="link blue dim bb" href="https://stackoverflow.com/questions/3310569/what-is-the-significance-of-1-1-1753-in-sql-server" target="_blank">причину</a>.</p>
-<p class="measure-wide">Если вкратце, в 1752-м году Великобритания внедрила у себя Григорианский календарь, и в процессе у них из летосчисления пропало одиннадцать дней. Это породило проблему: вот хочет юзер посчитать разницу в днях между 1653-м и 1753-м годом — что делать будем? Учтем потеряшек? Проигнорируем? Сделаем какие-то хинты или настройки?</p>
-<p class="measure-wide">Видимо, чтобы не городить неоднозначные механизмы, разработчики СУБД решили вопрос радикально — усечением доступного диапазона дат. А для тех, для кого это проблема, есть DATETIME2, который никаких ограничений не имеет.</p>
-<p class="measure-wide">Что касается 1С, то изначально платформа использовала DATETIME, а чтобы не иметь головной боли с хранением дат раньше 1753-го года — придумала специальный <a class="link blue dim bb" href="https://its.1c.ru/db/metod8dev/content/4055/hdoc" target="_blank">костыль</a>. В двух словах: когда платформа пишет даты в БД, то тихой сапой прибавляет к каждой две тысячи лет, а когда читает — вычитает обратно. То есть в 1С пользователь видит 01.01.2000, а в БД на самом деле хранится 01.01.4000.</p>
-<p class="measure-wide">Любопытно, почему 1C до сих пор не выкинула эту штуку? Сейчас платформа использует DATETIME2 и фокус по смещением в общем-то не нужен. Конечно, тут могут быть какие-то подводные камни или просто разумная осторожность, но среди разработчиков самой СУБД сомнений <a class="link blue dim bb" href="https://stackoverflow.com/questions/3310569/what-is-the-significance-of-1-1-1753-in-sql-server/3310627#3310627" target="_blank">не заметно</a>:</p>
-<blockquote>
-<p class="measure-wide">Your great great great great great great great grandfather should upgrade to SQL Server 2008 and use the DateTime2 data type, which supports dates in the range: 0001-01-01 through 9999-12-31.</p>
-<p class="measure-wide"><em>Joe Stefanelli (SQL Server developer)</em></p>
-</blockquote>
-<p class="measure-wide">Возможно, это просто на дне приоритетов. Добавление и удаление двух тысяч лет для каждой даты, конечно, увеличивает нагрузку на оборудование, но на фоне остального она теряется.</p>
-        <p class="f6 mt4">
-            10 ноября 2020
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
