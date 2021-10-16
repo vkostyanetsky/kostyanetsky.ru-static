@@ -137,6 +137,39 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/2nd-monitor-and-console/">Управление вторым монитором из консоли</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">У меня стоят два монитора. Второй нужен во время встреч в Zoom или при совместной игре с друзьями (в обеих случаях туда удобно вывести камеры собеседников). Есть ещё несколько примеров, когда он полезен, но часто устройство просто простаивает. Чтобы не отвлекало, решил его выключать.</p>
+<p class="measure-wide">В чем тут засада: средствами ОС управлять вторым монитором неудобно (несколько кликов, скроллить надо, да ещё всё время путаю, куда лезть — в «Параметры экрана» или «Персонализацию»). Хотелось бы одной командой, а команду — на хоткей. И в идеале из скрипта всем этим рулить.</p>
+<p class="measure-wide">Скрипта я не нашел, но накопал готовую утилиту — <a class="link blue dim bb" href="https://www.nirsoft.net/utils/multi_monitor_tool.html" target="_blank">MultiMonitorTool</a>. Бесплатная. Под десятой виндой работает без проблем. Команды ниже включают-выключают 2-й монитор:</p>
+<pre><code>MultiMonitorTool.exe /disable 2
+MultiMonitorTool.exe /enable 2  
+MultiMonitorTool.exe /switch 2
+</code></pre>
+<p class="measure-wide">Почему-то при включении монитора через enable или switch он иногда неверно позиционируется (например, до выключения он был справа, а после включения встал слева). Это поправимо. Сначала запишем конфигурацию в тот момент, когда включены оба монитора:</p>
+<pre><code>MultiMonitorTool.exe /SaveConfig Monitors.cfg
+</code></pre>
+<p class="measure-wide">А потом, когда нужно включить монитор — загрузим сохранённый конфиг:</p>
+<pre><code>MultiMonitorTool.exe /LoadConfig Monitors.cfg
+</code></pre>
+<p class="measure-wide">Утилита ещё много чего умеет (например, одна из команд перекидывает окна приложений между мониторами). Описание — по ссылке выше.</p>
+        <p class="f6 mt4">
+            16 октября 2021
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/">рабочее место</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/rclone-abuser/">Скрипт для синхронизации c NAS</a></h2>
 
             

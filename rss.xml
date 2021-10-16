@@ -4,7 +4,28 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Sat, 02 Oct 2021 16:49:35 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 16 Oct 2021 19:55:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Управление вторым монитором из консоли</title>
+            <link>https://kostyanetsky.ru/notes/2nd-monitor-and-console/</link>
+            <guid isPermaLink="false">note-2nd-monitor-and-console</guid>
+            <pubDate>Sat, 16 Oct 2021 19:55:48 +0700</pubDate>
+            <description><p class="measure-wide">У меня стоят два монитора. Второй нужен во время встреч в Zoom или при совместной игре с друзьями (в обеих случаях туда удобно вывести камеры собеседников). Есть ещё несколько примеров, когда он полезен, но часто устройство просто простаивает. Чтобы не отвлекало, решил его выключать.</p>
+<p class="measure-wide">В чем тут засада: средствами ОС управлять вторым монитором неудобно (несколько кликов, скроллить надо, да ещё всё время путаю, куда лезть — в «Параметры экрана» или «Персонализацию»). Хотелось бы одной командой, а команду — на хоткей. И в идеале из скрипта всем этим рулить.</p>
+<p class="measure-wide">Скрипта я не нашел, но накопал готовую утилиту — <a class="link blue dim bb" href="https://www.nirsoft.net/utils/multi_monitor_tool.html" target="_blank">MultiMonitorTool</a>. Бесплатная. Под десятой виндой работает без проблем. Команды ниже включают-выключают 2-й монитор:</p>
+<pre><code>MultiMonitorTool.exe /disable 2
+MultiMonitorTool.exe /enable 2  
+MultiMonitorTool.exe /switch 2
+</code></pre>
+<p class="measure-wide">Почему-то при включении монитора через enable или switch он иногда неверно позиционируется (например, до выключения он был справа, а после включения встал слева). Это поправимо. Сначала запишем конфигурацию в тот момент, когда включены оба монитора:</p>
+<pre><code>MultiMonitorTool.exe /SaveConfig Monitors.cfg
+</code></pre>
+<p class="measure-wide">А потом, когда нужно включить монитор — загрузим сохранённый конфиг:</p>
+<pre><code>MultiMonitorTool.exe /LoadConfig Monitors.cfg
+</code></pre>
+<p class="measure-wide">Утилита ещё много чего умеет (например, одна из команд перекидывает окна приложений между мониторами). Описание — по ссылке выше.</p></description>
+        </item>
         
         <item>
             <title>Самые большие зарплаты</title>
@@ -144,22 +165,6 @@
 <p class="measure-wide">Собственно, к этому я вел. Родовые травмы баша понятны и нередко приемлемы, плюсы — приятны и очевидны, но при работе с ним вопрос иногда встает так: cтоит ли только ради того, чтобы получить решение именно на баше, потратить часа два на возню с утилитами, параметрами, мануалами и постами на Stack Overflow? </p>
 <div class="blog-embedded-tweet" data-tweet-id="1408560771877965825"><a class="link blue dim bb" href="https://twitter.com/EffinBirds/status/1408560771877965825" target="_blank">Твит</a></div>
 <p class="measure-wide">Вот поэтому не баш, да.</p></description>
-        </item>
-        
-        <item>
-            <title>Почему баш?</title>
-            <link>https://kostyanetsky.ru/notes/why-bash/</link>
-            <guid isPermaLink="false">note-why-bash</guid>
-            <pubDate>Wed, 23 Jun 2021 22:24:48 +0700</pubDate>
-            <description><p class="measure-wide">Периодически вижу вопросы коллег: а что, 1С всё ещё носится с башем, да? А чё не питон-то? Или павершелл, на худой конец? Вот чудаки!</p>
-<p class="measure-wide">Да, баш не родной для Windows (которая, напротив, родная для 1С) и притащить его туда — отдельная история; да, при усложнении задачи читаемость скрипта падает по экспоненте; да, с некоторыми задачами баш просто не справляется.</p>
-<p class="measure-wide">Однако главный плюс баша в том, что для многих задач по анализу ТЖ 1С он — самое простое и быстрое решение. Как старая отвертка, которой ещё дед пользовался. Она всегда под рукой — пусть поцарапанная, с зазубринами и слегка корявая, но всё еще прекрасно работает.</p>
-<p class="measure-wide">Пример? Допустим, нужно выгрести из ТЖ исключения; простоты ради договоримся, что достаточно первой строки каждого события. Получим <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/f95b30e2f09edd64d9e7a39575bb289a" target="_blank">примерно такой</a> скрипт на питоне. </p>
-<p class="measure-wide">Скажете, его можно легко сократить вдвое? А то и втрое. В конце концов, мы решаем локальную задачу. Возня с читаемостью и предсказуемостью тут ни к чему.</p>
-<p class="measure-wide">Согласен! Но давайте сначала решим ту же задачу на баше:</p>
-<pre><code>grep -r --include "*.log" ',EXCP,' &gt; result.txt
-</code></pre>
-<p class="measure-wide">Вот почему баш.</p></description>
         </item>
         
     </channel>
