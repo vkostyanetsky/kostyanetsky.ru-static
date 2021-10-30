@@ -137,6 +137,33 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/matryoshka/">Матрёшка</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">На днях в чат команды кинули ссылку на сертификат 1Ci (коллега проходил их <a class="link blue dim bb" href="https://academy.1ci.com/courses/1c-junior-developer" target="_blank">курс</a> на джуна). Перехожу, получаю PDF. Всё идёт как надо, верно? Открываю файл:</p>
+<p class="measure-wide"><img alt="Error.pdf" src="https://kostyanetsky.ru/notes/matryoshka/not-your-certificate.png"/></p>
+<p class="measure-wide">Честно? Я даже восхищён. Надо этот UX в наших продуктах внедрить: прожимаешь ты, например, печать документа, а он тебе — PDF! А в нём — ссылка на другой PDF! А в нём — entity is not filled, иди заполняй.</p>
+<p class="measure-wide">Можно продать это как русский путь вывода ошибок: мол, у нас так исторически сложилось. Всё матрёшки виноваты, проклятые, и Кощей со своей иглой. Она, как вы помните, в яйце, а оно — в утке, которая в зайце, засунутом в сундук, и далее по цепочке вложенности.</p>
+        <p class="f6 mt4">
+            30 октября 2021
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/top-salaries/">Самые большие зарплаты</a></h2>
 
             
@@ -735,53 +762,6 @@
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/excp-number-by-minutes/">Расчет количества исключений по ТЖ</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Ещё <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/ExceptionsNumberByMinutes.sh" target="_blank">скрипт</a>. Считает количество исключений в минуту и строит топ, по которому видно распределение. Можно быстро оценить периоды, когда программы сбоили особенно яростно.</p>
-<p class="measure-wide">По ходу дела столкнулся в двумя любопытными проблемами, которые меня порядком сбили с толку. Во-первых, я почему-то был уверен, что uniq -c группирует строки вне зависимости от того, где в потоке данных они встречаются. Рассмотрим пример:</p>
-<pre><code>банан
-банан
-груша
-банан
-</code></pre>
-<p class="measure-wide">Я думал, что если отдать эти данные uniq -c, то она сгруппирует одинаковые строки, посчитает количество повторений и выдаст примерно такое:</p>
-<pre><code>3 банан
-1 груша
-</code></pre>
-<p class="measure-wide">Но на деле получилось так:</p>
-<pre><code>2 банан
-1 груша
-1 банан
-</code></pre>
-<p class="measure-wide">Вывод: утилита uniq ожидает, что повторяющиеся строки идут одна за другой. Если строка отличается от предыдущей — она начинает считать счетчик совпадений для неё с нуля. То есть, чтобы получить тот результат, на который я рассчитывал — нужно сначала отсортировать данные, и только потом передавать их в uniq.</p>
-<p class="measure-wide">Второй проблемой стала утилита sed. С помощью неё я пытался удалить из потока данных всё, кроме часов и минут (текст попытки на 12-й строке скрипта). Однако часть событий упорно не попадали под регулярку несмотря на то, что визуально никак не отличались. Я промаялся кучу времени и здорово разозлился, но потом вспомнил про существование <a class="link blue dim bb" href="https://ru.wikipedia.org/wiki/Маркер_последовательности_байтов" target="_blank">BOM</a>. Вычистил их и дальше все пошло как по маслу.</p>
-<p class="measure-wide">BOM используется во всех файлах ТЖ (в этом можно убедиться, например, с помощью <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LogFilesWithoutBOM.sh" target="_blank">скрипта</a>). То есть каждый лог начинается с особых символов, которых невооруженным глазом не увидеть и которые могут помешать обработать первую строку файла (так как эти самые символы не будут попадать под условие регулярного выражения).</p>
-<p class="measure-wide">Вывод: проще всего удалять BOM по умолчанию, не оценивая рисков для каждой конкретной задачи. Да, иногда это будет лишним (например, решению задачи по тексту выше через grep BOM никак не мешает). Но я не люблю сюрпризы. Кроме того, несколько тактов процессора на простую замену — явно выгоднее, чем эквивалент в сгоревших нервных клетках и потерянном времени.</p>
-        <p class="f6 mt4">
-            24 октября 2020
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
                 </span>
             
         </p>
