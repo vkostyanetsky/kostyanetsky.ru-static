@@ -11,7 +11,7 @@
             <link>https://kostyanetsky.ru/notes/matryoshka/</link>
             <guid isPermaLink="false">note-matryoshka</guid>
             <pubDate>Sat, 30 Oct 2021 17:14:56 +0700</pubDate>
-            <description><p class="measure-wide">На днях в чат команды кинули ссылку на сертификат 1Ci (коллега проходил их <a class="link blue dim bb" href="https://academy.1ci.com/courses/1c-junior-developer" target="_blank">курс</a> на джуна). Перехожу, получаю PDF. Всё идёт как надо, верно? Открываю файл:</p>
+            <description><p class="measure-wide">На днях в чат команды кинули ссылку на сертификат 1Ci (коллега проходил их <a class="link blue dim bb" href="https://academy.1ci.com/courses/1c-junior-developer" target="_blank">курс</a> на джуна). Перехожу по ней; браузер загружает PDF. Всё идёт как надо, верно? Открываю файл:</p>
 <p class="measure-wide"><img alt="Error.pdf" src="https://kostyanetsky.ru/notes/matryoshka/not-your-certificate.png"/></p>
 <p class="measure-wide">Честно? Я даже восхищён. Надо этот UX в наших продуктах внедрить: прожимаешь ты, например, печать документа, а он тебе — PDF! А в нём — ссылка на другой PDF! А в нём — entity is not filled, иди заполняй.</p>
 <p class="measure-wide">Можно продать это как русский путь вывода ошибок: мол, у нас так исторически сложилось. Всё матрёшки виноваты, проклятые, и Кощей со своей иглой. Она, как вы помните, в яйце, а оно — в утке, которая в зайце, засунутом в сундук, и далее по цепочке вложенности.</p></description>
