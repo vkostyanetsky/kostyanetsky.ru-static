@@ -143,6 +143,31 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/broken-bicycle/">Сломанный велосипед</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide"><a href="https://www.1ci.com/applications/1c-drive/" target="_blank"><img alt="1C:Drive" src="https://kostyanetsky.ru/notes/broken-bicycle/broken-bicycle.png"/></a></p>
+<p class="measure-wide">Думаю, эту картинку для 1Ci нарисовал человек, прямо вот максимально далекий от разработки самой конфигурации и программирования вообще. Потому как программист видит на ней ровно два месседжа о продукте: </p>
+<ol class="measure-wide">
+<li>Это велосипед.</li>
+<li>Он сломан.</li>
+</ol>
+        <p class="f6 mt4">
+            20 июля 2020
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/service-launcher/">Запускатор служб</a></h2>
 
             
@@ -706,28 +731,6 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
 <p class="measure-wide">Подробнее процесс настройки <a class="link blue dim bb" href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001604" target="_blank">описан</a> на ИТС.</p>
         <p class="f6 mt4">
             26 января 2020
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/unsupported-code/">Неподдерживаемый код</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Случайно наткнулся на <a class="link blue dim bb" href="https://helpf.pro/faq/view/1907.html" target="_blank">пример</a> запроса в 1С, который считает разницу между двумя датами (в годах, месяцах и днях).</p>
-<p class="measure-wide">Код, возможно, действительно работает (я не проверял), но как по мне — это хороший пример того, как делать не надо. Проблема в том, что автор забудет смысл большинства если-тогда-иначе через пару месяцев, не говоря уже о посторонних разработчиках, которые решат использовать этот код на своих проектах. В итоге при первой же доработке, которую потребуется провернуть на этом участке, куда дешевле будет заменить решение на что-то более наглядное, а не доработать.</p>
-<p class="measure-wide">И это еще далеко не самый наглядный пример. Взять хотя бы <a class="link blue dim bb" href="http://www.google.ru/search?q=email+regex" target="_blank">регулярки для проверки e-mail</a>. Хочется выйти подышать, да? :-)</p>
-        <p class="f6 mt4">
-            18 января 2020
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
