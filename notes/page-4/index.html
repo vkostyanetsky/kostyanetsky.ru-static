@@ -143,6 +143,36 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/top-exceptions/">Топ исключений по ТЖ</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Выложил на GitHub <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/FrequentExceptions.sh" target="_blank">скрипт</a> на баше, который по собранному технологическому журналу 1С определяет наиболее частотные исключения.</p>
+<p class="measure-wide">Скрипт анализирует события EXCP. Это основной источник информации об ошибках, хотя, конечно, не единственный: например, есть EXCPCNTX (событие, которое началось, но не закончилось в тот момент, когда произошла ошибка). Кроме того, если исключение происходит во время серверного вызова, то в поле RetExcp у события CALL будет текст ошибки, которая вернется на клиент.</p>
+<p class="measure-wide">Впрочем, в большинстве случаев EXCP и, иногда, EXCPCNTX вполне достаточно. Часто их собирают просто по умолчанию — нагрузки это не создает, зато позволяет прогонять собранные логи через какой-нибудь инструмент аналитики (скрипт выше, например) и держать, так сказать, руку на пульсе.</p>
+        <p class="f6 mt4">
+            16 февраля 2020
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/debug-via-http/">Отладка через HTTP</a></h2>
 
             
@@ -645,32 +675,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/so-much/">Сикока сикока?</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Этот сайт почти полностью написан на PHP. JavaScript на клиенте используется ситуативно — редирект сделать, картинку показать и так далее.</p>
-<p class="measure-wide">Для личного ресурса ничего сложнее и не нужно, но некоторое время назад мне приспичило слегка освежить свои навыки веб-разработки. В качестве платформы для эксперимента я выбрал Vue.js — популярный, быстрый и не слишком сложный фреймворк.</p>
-<p class="measure-wide">Я, собственно, к чему это всё пишу. Развернул тут Node.js, Vue CLI, создал первый проект — и чуть не поседел. Триста мегабайт джаваскрипта прямо со старта?! Серьёзно?!</p>
-        <p class="f6 mt4">
-            5 июня 2019
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/blog/">блог</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/webdev/">вебдев</a>
                 </span>
             
         </p>
