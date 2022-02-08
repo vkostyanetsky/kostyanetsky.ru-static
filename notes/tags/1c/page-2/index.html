@@ -143,6 +143,39 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/lost-time/">Смещение дат в 1С</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">В MS SQL Server поля DATETIME <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/dotnet/api/system.data.sqltypes.sqldatetime.minvalue?view=dotnet-plat-ext-3.1" target="_blank">не могут</a> хранить даты раньше 1753-го года. Например, если попытаться записать в базу 01.01.0001 — получим ругань на out-of-range value. Я считал это забавным для такой почтенной СУБД рудиментом, пока случайно не наткнулся на <a class="link blue dim bb" href="https://stackoverflow.com/questions/3310569/what-is-the-significance-of-1-1-1753-in-sql-server" target="_blank">причину</a>.</p>
+<p class="measure-wide">Если вкратце, в 1752-м году Великобритания внедрила у себя Григорианский календарь, и в процессе у них из летосчисления пропало одиннадцать дней. Это породило проблему: вот хочет юзер посчитать разницу в днях между 1653-м и 1753-м годом — что делать будем? Учтем потеряшек? Проигнорируем? Сделаем какие-то хинты или настройки?</p>
+<p class="measure-wide">Видимо, чтобы не городить неоднозначные механизмы, разработчики СУБД решили вопрос радикально — усечением доступного диапазона дат. А для тех, для кого это проблема, есть DATETIME2, который никаких ограничений не имеет.</p>
+<p class="measure-wide">Что касается 1С, то изначально платформа использовала DATETIME, а чтобы не иметь головной боли с хранением дат раньше 1753-го года — придумала специальный <a class="link blue dim bb" href="https://its.1c.ru/db/metod8dev/content/4055/hdoc" target="_blank">костыль</a>. В двух словах: когда платформа пишет даты в БД, то тихой сапой прибавляет к каждой две тысячи лет, а когда читает — вычитает обратно. То есть в 1С пользователь видит 01.01.2000, а в БД на самом деле хранится 01.01.4000.</p>
+<p class="measure-wide">Любопытно, почему 1C до сих пор не выкинула эту штуку? Сейчас платформа использует DATETIME2 и фокус по смещением в общем-то не нужен. Конечно, тут могут быть какие-то подводные камни или просто разумная осторожность, но среди разработчиков самой СУБД сомнений <a class="link blue dim bb" href="https://stackoverflow.com/questions/3310569/what-is-the-significance-of-1-1-1753-in-sql-server/3310627#3310627" target="_blank">не заметно</a>:</p>
+<blockquote>
+<p class="measure-wide">Your great great great great great great great grandfather should upgrade to SQL Server 2008 and use the DateTime2 data type, which supports dates in the range: 0001-01-01 through 9999-12-31.</p>
+<p class="measure-wide"><em>Joe Stefanelli (SQL Server developer)</em></p>
+</blockquote>
+<p class="measure-wide">Возможно, это просто на дне приоритетов. Добавление и удаление двух тысяч лет для каждой даты, конечно, увеличивает нагрузку на оборудование, но на фоне остального она теряется.</p>
+        <p class="f6 mt4">
+            10 ноября 2020
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/">MS SQL</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/designer-error-investigation/">Расследование ошибки в Конфигураторе</a></h2>
 
             
@@ -777,41 +810,6 @@ WHERE
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/standard-attributes-filtering/">Фильтрация стандартных реквизитов</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Короткий <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/ee1f913868673c2218877dfbecc9b08a" target="_blank">фрагмент</a> кода из обработки для настройки механизма истории данных, о которой я только что <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/data-history-settings" target="_blank">писал</a>. Эта функция определяет, является ли Attribute стандартным реквизитом с именем StandardAttributeName, принадлежащим объекту метаданных MetadataObject. Где она нужна? Допустим, вы перебираете стандартные реквизиты объекта и по какой-то причине хотите пропустить один из них.</p>
-<p class="measure-wide">На первый взгляд решение выглядит максимально индусским. Почему бы, например, просто не сравнить два реквизита — проверяемый и тот, что хотим отсеять?</p>
-<pre><code>If Attribute = MetadataObject.StandardAttributes.Order Then
-</code></pre>
-<p class="measure-wide">Дело в том, что такой код не сработает: результат операции сравнения двух стандартных реквизитов объекта метаданных в платформе 1С — всегда Ложь.</p>
-<p class="measure-wide">О'кей, скажете вы — может, тогда не будем усложнять и напишем вот так?</p>
-<pre><code>If Attribute.Name = "Order" Then
-</code></pre>
-<p class="measure-wide">Однако так тоже не сработает, если ваш код будет запущен в русскоязычной конфигурации: стандартный реквизит, который мы пытаемся найти, в этом случае будет называться «Порядок». </p>
-<p class="measure-wide">Тем не менее, к самому стандартному реквизиту внутри коллекции можно обращаться и по-русски, и по-английски. Потом получаем текущее имя атрибута и сравниваем с именем того атрибута, который проверяем.</p>
-<p class="measure-wide">Конечно, можно было просто сделать сравнение имени реквизита и с «Order», и с «Порядок» — но это, во-первых, некрасиво, а во-вторых — стандарты программирования у нас в компании запрещают писать код на русском. В общем, мне хотелось найти более общее решение.</p>
-<p class="measure-wide">Что до конструкции Try/Catch — она тут на тот случай, если стандартного реквизита с таким именем в конфигурации нет вообще (и попытка обратиться к нему  по имени приведет к ошибке).</p>
-        <p class="f6 mt4">
-            9 марта 2020
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
                 </span>
             
         </p>
