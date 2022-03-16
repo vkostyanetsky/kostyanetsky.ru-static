@@ -133,6 +133,33 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/do-not-confuse/">Смотри не перепутай</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide"><img alt="Код" src="https://kostyanetsky.ru/notes/do-not-confuse/do-not-confuse.png"/></p>
+<p class="measure-wide">Если вид операции — продажа товара или недвижимости, то открой общую форму AdvancesPickFormWithVAT с параметрами, описанными в структуре PickParameters. Колбеком будет метод EditPrepaymentOffsetEnd, описанный в этом же модуле; передай ему структуру AdditionalParameters. Форму нужно открыть так, чтобы она заблокировала весь интерфейс.</p>
+<p class="measure-wide">А вот если вид операции — возврат поставщику, то открой общую форму AdvancesPickFormWithVAT с параметрами, описанными в структуре PickParameters. Колбеком будет метод EditPrepaymentOffsetEnd, описанный в этом же модуле; передай ему структуру AdditionalParameters. Форму нужно открыть так, чтобы она заблокировала весь интерфейс.</p>
+<p class="measure-wide">Смотри не перепутай.</p>
+        <p class="f6 mt4">
+            16 марта 2022
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/code-smell/">код с запашком</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/no-more-google-fonts/">Минус Google Fonts</a></h2>
 
             
@@ -728,36 +755,6 @@ MultiMonitorTool.exe /switch 2
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/longest-queries-v2/">Новый скрипт поиска долгих запросов</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Обновил <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.sh" target="_blank">скрипт</a> поиска долгих запросов в технологическом журнале платформы. Ранняя версия содержала серьёзный косяк: она старательно группировала DBMSSQL по Sql и Content, но игнорировала случаи, в которых поле Sql отсутствовало (для DBMSSQL это не то чтобы норма, но встречается).</p>
-<p class="measure-wide">Ну и код слегка причесал, чтобы два раза не вставать: добавил разметку и комментарии, а часть логики gawk'а вынес из основного тела в функции. Да, скрипт стал смотреться длиннее, чем он есть на самом деле, зато читать его стало куда проще.</p>
-<p class="measure-wide">Мне вообще, по-чеснаку, непонятна причина, по которой ветераны баша трамбуют всю логику в две-три строки: язык и так-то не блещет читаемостью (в телеграм-канале Никиты Прокопова есть <a class="link blue dim bb" href="https://t.me/nikitonsky_pub/55" target="_blank">отличный текст</a> на эту тему), а при виде страницы конвейеров без единого перевода строки вообще хочется молча выйти в окно.</p>
-        <p class="f6 mt4">
-            26 апреля 2021
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
                 </span>
             
                 <span class="pl2">
