@@ -11,7 +11,7 @@
             <link>https://kostyanetsky.ru/notes/no-more-embedded-tweets/</link>
             <guid isPermaLink="false">note-no-more-embedded-tweets</guid>
             <pubDate>Mon, 21 Mar 2022 20:25:48 +0700</pubDate>
-            <description><p class="measure-wide">Не успел я <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/no-more-google-fonts/" target="_blank">выпилить</a> из блога Google Fonts, как пришлось отправить ему вдогонку встроенные твиты.</p>
+            <description><p class="measure-wide">Не успел я <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/no-more-google-fonts/" target="_blank">выпилить</a> из блога Google Fonts, как пришлось отправить вдогонку встроенные твиты.</p>
 <p class="measure-wide">Как это работало раньше? Хотел сослаться на твит — просто вставлял на него ссылку. Скрипт сборки заменял её на HTML-блок, который находил скрипт Твиттера и заменял на текст твита (и всякими полезными ссылками). Вот в этом <a class="link blue dim bb" href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" target="_blank">коммите</a> в целом видно, как это работало.</p>
 <p class="measure-wide">Как это работает теперь? Ну да, никак. Твиттер в России заблокирован, так что его скрипты работают только со включенным VPN.</p>
 <p class="measure-wide"><img alt="Штош" src="https://kostyanetsky.ru/notes/no-more-embedded-tweets/well.jpg"/></p>
@@ -21,7 +21,7 @@
 <blockquote>
 <p class="measure-wide">npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>
 </blockquote>
-<p class="measure-wide">И всё. Сказка какая-то! </p>
+<p class="measure-wide">И всё. Захотелось занести автору денег.</p>
 <p class="measure-wide">Подумал, не прикрутить ли snap-tweet к скрипту сборки (чтобы было, как раньше: вставляешь ссылку на твит, а дальше оно само генерит картинку и кладёт куда надо). Решил, нафиг. Грубое попирание KISS, да и вообще... В мире и так хватает энтропии. Особенно, блин, сейчас.</p></description>
         </item>
         
