@@ -4,7 +4,26 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Wed, 16 Mar 2022 20:09:31 +0700</lastBuildDate>
+        <lastBuildDate>Mon, 21 Mar 2022 20:25:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Минус встроенные твиты</title>
+            <link>https://kostyanetsky.ru/notes/no-more-embedded-tweets/</link>
+            <guid isPermaLink="false">note-no-more-embedded-tweets</guid>
+            <pubDate>Mon, 21 Mar 2022 20:25:48 +0700</pubDate>
+            <description><p class="measure-wide">Не успел я <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/no-more-google-fonts/" target="_blank">выпилить</a> из блога Google Fonts, как пришлось отправить ему вдогонку встроенные твиты.</p>
+<p class="measure-wide">Как это работало раньше? Хотел сослаться на твит — просто вставлял на него ссылку. Скрипт сборки заменял её на HTML-блок, который находил скрипт Твиттера и заменял на текст твита (и всякими полезными ссылками). Вот в этом <a class="link blue dim bb" href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" target="_blank">коммите</a> в целом видно, как это работало.</p>
+<p class="measure-wide">Как это работает теперь? Ну да, никак. Твиттер в России заблокирован, так что его скрипты работают только со включенным VPN.</p>
+<p class="measure-wide"><img alt="Штош" src="https://kostyanetsky.ru/notes/no-more-embedded-tweets/well.jpg"/></p>
+<p class="measure-wide">Пришлось поскринить все твиты, на которые я когда-то ссылался, и добавить их в заметки в виде картинок со ссылками. Кому нужен оригинал, тот включит VPN и перейдёт в Твиттер, а остальные, по крайней мере, могут прочитать текст.</p>
+<p class="measure-wide">Пара слов про техническую сторону. Скринить каждый твит вручную мне было лень, поэтому я полез в сеть, обдумывая, как автоматизировать процесс. Сначала попадались только сервисы, готовые решить проблему за какие-то жалкие десять долларов (спасибо, как-нибудь в следующий раз), но потом я набрёл на идеальный <a class="link blue dim bb" href="https://github.com/privatenumber/snap-tweet" target="_blank">инструмент</a>: консольный скрипт для Node.js.</p>
+<p class="measure-wide">Ничего лишнего. Чистый функционал. Ты ему — твит. Он тебе — картинку:</p>
+<blockquote>
+<p class="measure-wide">npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>
+</blockquote>
+<p class="measure-wide">И всё. Сказка какая-то! </p>
+<p class="measure-wide">Подумал, не прикрутить ли snap-tweet к скрипту сборки (чтобы было, как раньше: вставляешь ссылку на твит, а дальше оно само генерит картинку и кладёт куда надо). Решил, нафиг. Грубое попирание KISS, да и вообще... В мире и так хватает энтропии. Особенно, блин, сейчас.</p></description>
+        </item>
         
         <item>
             <title>Смотри не перепутай</title>
@@ -146,19 +165,6 @@ MultiMonitorTool.exe /switch 2
 </ol>
 <p class="measure-wide">Вуаля! Теперь при любом изменении репозитория с исходными данными гитхаб немедленно (ну, как немедленно — в пределах минуты) обновляет репозиторий с готовым сайтом и деплоит его оттуда через GitHub Pages. Бонусом — веб-интерфейс для правки страниц сайта (собственно, сайт гитхаба). Почти чистый No Code :-)</p>
 <p class="measure-wide">Чтобы два раза не вставать, я добавил ссылки для правки страниц прямо на сайт (карандаш в верхнем правом углу). Это задумано как удобство для меня, но вообще отправить PR может любой, кто, например, найдёт опечатку. Заранее спасибо!</p></description>
-        </item>
-        
-        <item>
-            <title>Diablo</title>
-            <link>https://kostyanetsky.ru/notes/diablo/</link>
-            <guid isPermaLink="false">note-diablo</guid>
-            <pubDate>Wed, 22 Sep 2021 21:25:48 +0700</pubDate>
-            <description><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/kVd6qeWoAxg" width="560"></iframe>
-<p class="measure-wide">Хороший выпуск айтишного подкаста «Мы обречены» про выгорание разработчиков. Особых откровений нет, но что-то полезное для себя подчерпнуть можно. Очень понравилась аналогия с видеоиграми где-то ближе к середине:</p>
-<blockquote>
-<p class="measure-wide">Была такая игра — Diablo. Бегаешь ты там, RPG, всякие спеллы. У персонажа есть мана и здоровье, и когда у тебя маны на каст… Ха, звучу как задрот! Ну ладно. В общем, когда у тебя маны на каст не хватает, она у тебя начинает из здоровья браться.</p>
-<p class="measure-wide"><em>— Доктор Кот</em></p>
-</blockquote></description>
         </item>
         
     </channel>
