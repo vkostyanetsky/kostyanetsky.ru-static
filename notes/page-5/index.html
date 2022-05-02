@@ -135,6 +135,36 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/rapunzel/">Хороший день</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide"><a href="https://twitter.com/IZRART/status/1146234848362713088" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/rapunzel/snap-tweet-IZRART-1146234848362713088.png"/></a></p>
+<blockquote>
+<p class="measure-wide">Дорогой дневник! Сегодня мне заплатили, чтобы я нарисовал думгая, который учит Рапунцель из диснеевской «Запутанной истории» стрельбе из тяжелой штурмовой винтовки. Сегодня был хороший день!</p>
+<p class="measure-wide"><em>― izra</em></p>
+</blockquote>
+<p class="measure-wide">Обожаю художников. Особенные люди :-)</p>
+<p class="measure-wide">(а также на рисунке я, обучающий дочку, как рашить зилотами в Starcraft 2)</p>
+        <p class="f6 mt4">
+            9 июля 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/family/">семья</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/vue-i18n/">Мультиязычность в Vue.js</a></h2>
 
             
@@ -645,29 +675,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/big-value-tables/">Большие таблицы значений</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Пока писал про <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/find-rows-at-client/" target="_blank">поиск строк</a> на клиенте, вспомнил ещё один нюанс, связанный с данными на управляемых формах — тоже про передачу между клиентом и сервером.</p>
-<p class="measure-wide">Допустим, нам по условиям задачи нужно оперировать сравнительно большими (тысячи строк) таблицами значений. Это могут быть данные, которые в общем случае не нужно показывать пользователю: например, параметры расчета цен, информация о продажах и закупках, что-то ещё. Логично создать такие таблицы в виде атрибутов формы — хотя бы потому, что можно использовать удобный конструктор.</p>
-<p class="measure-wide">Но когда платформа решит передать такую таблицу на сервер, начнутся проблемы. Дело в том, что передавать она будет не простой и компактный объект ТаблицаЗначений, а весьма насыщенный ДанныеФормыКоллекция. Разница колоссальна — на одном из наших проектов траты на такой обмен данными составляли порядка 40% от всего времени работы ключевой операции.</p>
-<p class="measure-wide">Решение достаточно очевидно — не использовать атрибуты формы вообще. Вместо этого создавать таблицы значений с помощью кода (например, в обработчике ПриСозданииНаСервере), закидывать их во временное хранилище, а в атрибутах формы хранить только адреса хранилища. Таким образом при необходимости поработать с таблицей на сервер отправляется только строка с адресом, и расходы на сериализацию и обмен данными начинают стремиться к нулю. На сервере извлекаем таблицу, читаем данные, изменяем их, если нужно, и сохраняем обратно во временное хранилище — по тому же адресу.</p>
-        <p class="f6 mt4">
-            17 февраля 2019
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
         </p>
