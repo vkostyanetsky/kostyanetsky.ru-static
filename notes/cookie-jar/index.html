@@ -10,11 +10,11 @@
 
     <title>
         
-            Изменения
+            Баночка с печеньем
         
     </title>
 
-    <meta name="description" content="Чем дальше, тем сложнее становится писать заметки." />
+    <meta name="description" content="Пара слов о подходах к консервации и хранению кондитерских продуктов в Python'е." />
     
     <!-- RSS -->
 
@@ -29,11 +29,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Изменения"/>
-    <meta property="og:description" content="Чем дальше, тем сложнее становится писать заметки."/>
+    <meta property="og:title" content="Баночка с печеньем"/>
+    <meta property="og:description" content="Пара слов о подходах к консервации и хранению кондитерских продуктов в Python'е."/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/changes/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/cookie-jar/" />    
 
     <!-- Tachyons -->
 
@@ -50,8 +50,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/no-more-embedded-tweets/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/cookie-jar/';
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/changes/';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -99,7 +99,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/changes/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/cookie-jar/" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -107,7 +107,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/changes/index.md" class="f4 f4-ns dim blue no-underline">✎</a>                
+                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/cookie-jar/index.md" class="f4 f4-ns dim blue no-underline">✎</a>                
             
 
             </div>
@@ -123,20 +123,23 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Изменения</h1>
+        <h1 class="f-subheadline lh-solid">Баночка с печеньем</h1>
             
         
     
     <div class="f4 lh-copy black mb5">
-        <p class="measure-wide"><a href="https://twitter.com/140sm/status/1358739902326833155" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/changes/snap-tweet-140sm-1358739902326833155.png"/></a></p>
-<p class="measure-wide">Чем дальше, тем сложнее становится писать заметки. Даже так нерегулярно, как привык это делать я. Программирование? Какие-то бытовые штуки? Что-то ещё? О чем ни решишь написать — всё по итогу кажется глупым, ненужным и неуместным.</p>
-<p class="measure-wide">А вот многие темы, которые раньше воспринимались пусть серьезно, но не особенно близко — теперь буквально обрели форму, звук, вкус и цвет. Например, твит в начале заметки и до актуальных событий был тоскливым и мрачным, но теперь, когда на самом деле пришло время смотреть в эти глаза — ощущается совсем иначе.</p>
-<p class="measure-wide">Мира всем.</p>
+        <p class="measure-wide">На днях прикручивал работу с куками к одному из своих скриптов. Пока искал оптимальное решение, наткнулся на совершенно очаровательный (при этом, кстати, 100% рабочий) <a class="link blue dim bb" href="https://stackoverflow.com/questions/13030095/how-to-save-requests-python-cookies-to-a-file" target="_blank">совет</a> со StackOverflow:</p>
+<blockquote>
+<p class="measure-wide">You can get a CookieJar object from the session with session.cookies, and use pickle to store it to a file.</p>
+</blockquote>
+<p class="measure-wide">Ну то есть, буквально: держите ваше печенье в банке, а чтобы хранить его — маринуйте. Банку с маринованным печеньем, кстати, потом можно поставить на <a class="link blue dim bb" href="https://docs.python.org/3/library/shelve.html" target="_blank">полку</a>.</p>
+<p class="measure-wide">Вот как после этого не любить пайтон, а?</p>
+<p class="measure-wide">P.S. Пока писал заметку, разобрало любопытство — почему всё-таки pickle, а нe serialization? Так вот, если вкратце: <a class="link blue dim bb" href="https://stackoverflow.com/questions/27324986/pickles-why-are-they-called-that/27325007#27325007" target="_blank">таков путь</a>.</p>
         <p class="f6 mt4">
-            2 мая 2022
+            28 мая 2022
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/meanwhile/">тем временем</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/">Python</a>
                 </span>
             
         </p>
@@ -154,11 +157,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/no-more-embedded-tweets/">Минус встроенные твиты</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/changes/">Изменения</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/cookie-jar/">Баночка с печеньем</a>
                                 
 
             </p> 
