@@ -1,0 +1,163 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>
+        
+            Проекты
+        
+    </title>
+
+    <meta name="description" content="Проекты, которыми я занимался. От новых к старым." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="https://kostyanetsky.ru/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.ru/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.ru/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.ru/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.ru/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Проекты"/>
+    <meta property="og:description" content="Проекты, которыми я занимался. От новых к старым."/>
+    <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.ru/projects/" />    
+
+    <!-- Tachyons -->
+
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Likely -->
+    
+    <script src="https://kostyanetsky.ru/assets/likely/likely.js"></script>
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/likely/likely.css">    
+
+    <!-- Blog -->
+
+    <script>
+
+        let ctrlUpUrl       = '';
+        let ctrlDownUrl     = '';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
+
+    </script>
+    
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/blog.css">
+    <script src="https://kostyanetsky.ru/assets/blog.js"></script>
+                
+</head>
+
+<body class="w-100 bg-white">
+<div id="app">        
+<main>
+
+<header class="db dt-l w-100-l border-box pa3 ph5-l">
+
+    <nav class="flex items-center lh-copy pa3 ph0-l">
+    
+        <a href="https://kostyanetsky.ru"><img class="br-100" src="https://kostyanetsky.ru/assets/images/me.jpg" title="Привет!" /></a>
+
+        <div class="pl4 flex-auto">
+        
+            
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.ru">Сайт Влада</a>
+            
+
+            
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.ru/skills/"></a>
+            
+
+            <!--
+
+            
+                <span class="black dib f4 mr3">Проекты</span>
+                        
+
+            -->
+
+            
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.ru/notes/">Заметки</a>
+            
+
+        </div>
+        
+    </nav>
+    
+    <nav class="dtc-l v-mid tc tr-l">
+
+        
+            <a href="https://kostyanetsky.me/projects/" class="link f5 f5-ns dim blue bb">EN</a>
+        
+
+        
+
+            <div class="mt3">
+
+            
+                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/projects/index.md" class="f4 f4-ns dim blue no-underline">✎</a>                
+            
+
+            </div>
+            
+        
+
+    </nav>
+
+</header>
+
+<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
+    
+
+    <article>
+
+        
+            <h1 class="f-subheadline lh-solid">Проекты</h1>
+        
+
+        <div class="f4 lh-copy black"><p class="measure-wide">На этой странице перечислены проекты, в которых я участвовал и о которых захотелось что-то написать.</p>
+<p class="measure-wide">Сортировка — по времени, от новых к старым.</p>
+<h2>Веб-интерфейс базы 1С для поставщиков</h2>
+<p class="measure-wide"><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Предприятие</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">React.js</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span></p>
+<p class="measure-wide">Нашим заказчиком был владелец торговой компании. Часть её деятельности — проценка: сотрудники компании связывались с поставщиками, определяя, у какого из них выгоднее разместить заказы клиентов с точки зрения цен, сроков доставки и других условий.</p>
+<p class="measure-wide">От нас требовалось сделать так, чтобы они могли просто отправлять поставщикам ссылки на веб-интерфейс, где можно было бы вводить цены и отвечать на дополнительные вопросы.</p>
+<p class="measure-wide">Веб-интерфейс платформы использовать было нельзя из соображений экономии лицензий. Поэтому я написал веб-приложение на React.js, которое работает с базой 1С:Предприятия через специально разработанный для этого REST-интерфейс.</p>
+<h2>Сборщик курсов валют с сайта ЦБ ОАЭ</h2>
+<p class="measure-wide"><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Предприятие</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">MongoDB</span></p>
+<p class="measure-wide">Мы хотели дать пользователям FirstBit ERP возможность автоматически получать курсы дирхама по отношению к другим валютам, которые публикует сайт ЦБ ОАЭ.</p>
+<p class="measure-wide">Код парсинга сайта можно было добавить в саму конфигурацию, однако эта идея выглядела проблемной сразу с нескольких точек зрения: удобного механизма для получения курсов на сайте ЦБ нет, сам сайт работает нестабильно, а при необходимости изменить логику парсинга её придется менять во множестве баз данных.</p>
+<p class="measure-wide">Поэтому я написал консольное приложение на пайтоне, которые регулярно загружает публикуемые курсы валют в свою базу данных и отдает через REST-сервис. Мы развернули это приложение на своей площадке, а в FirstBit ERP я добавил только регулярные обращения к сервису.</p>
+<p class="measure-wide">Код проекта можно <a class="link blue dim bb" href="https://github.com/vkostyanetsky/CurrencyRatesCrawler" target="_blank">посмотреть</a> на GitHub'е.</p></div>
+        
+    </article>
+
+
+</section>
+
+</main>
+
+<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
+    
+    <p class="f6 lh-solid">Эл. почта: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.ru</a></p>
+    <p class="f6 lh-solid">Телеграм: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    <p class="f6 lh-solid">Гитхаб: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    
+    <a class="rss" href="https://kostyanetsky.ru/rss.xml">РСС</a> 
+
+</footer>
+
+</div>
+</body>
+</html>
