@@ -128,6 +128,32 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/techprof/">Профессионал по техвопросам</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">В конце августа сдал тест на профессионала 1С по техническим вопросам крупных внедрений. Это по сути такой входной билет на <a class="link blue dim bb" href="https://1c.ru/rus/partners/training/uc1/course.jsp?id=199" target="_blank">основной экзамен</a>, призванный проредить поток претендентов и заставить их подучить теорию.</p>
+<p class="measure-wide">В тесте четырнадцать вопросов, случайно набранных из порядка пятиста возможных; нужно правильно ответить хотя бы на двенадцать. На это дается полчаса, однако по факту достаточно пяти-десяти минут: большинство ответов логически выводится или запоминается. Попадаются и неточности, и расплывчатые формулировки, но их мало. Норм вопросы, короче.</p>
+<p class="measure-wide">Подбор тем показался мне порядочным винегретом — по чуть-чуть из всего подряд. Впрочем, по факту такой охват скорее полезен: смотришь на очередной непривычный вопрос, отвечаешь, ошибаешься. Тушишь задницу, лезешь разбираться как так. Становишься немного умнее (но это не точно).</p>
+        <p class="f6 mt4">
+            5 сентября 2020
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/unresolved-gopher/">Неразрешимые ссылки на функциональные опции</a></h2>
 
             
@@ -718,44 +744,6 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
 </blockquote>
         <p class="f6 mt4">
             8 апреля 2020
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/">рабочее место</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/video-recording/">Запись видео</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Я работаю удалённо и с коллегами общаюсь через Zoom и Slack. В основном в чатах, но многие темы по-прежнему проще обсудить голосом. И вот тут-то возникают проблемы: приходится забыть про индексацию и поиск по сообщениям, а главное — нет никакого архива разговоров. Иногда очень нужно вспомнить: кто говорил? Что конкретно? Когда?</p>
-<p class="measure-wide">Zoom и Slack сами по себе эту проблему не решают. Первый умеет записывать только те конференции, которые организуешь ты или которые тебе разрешили писать (короче, далеко не все), а второй писать видео не умеет вообще.</p>
-<h2>Решение проблемы</h2>
-<p class="measure-wide">Я закрыл вопрос какое-то время назад, поставив себе <a class="link blue dim bb" href="https://obsproject.com" target="_blank">OBS Studio</a> — популярный среди стримеров софт для записи экрана. С записью конференций он прекрасно справляется. Настройка минимальная: пишем весь экран, звук с микрофона и все звуки, которые воспроизводятся. В микшере по результатам тестовых записей можно натыкать фильтры — усиление, шумоподавление и так далее.</p>
-<p class="measure-wide"><img alt="Настройка OBS Studio" src="https://kostyanetsky.ru/notes/video-recording/video-recording.png"/></p>
-<p class="measure-wide">В настройках нужно указать папку, куда будут складываться записанные видео (Вывод → Запись → Путь записи). Поскольку мы пишем звонки и файлов будет много, лучше сразу разложить их в папки по дням — для этого идем в расширенные настройки и в поле «Формат имени файла» указываем нечто вроде %CCYY-%MM-%DD/%hh-%mm-%ss.</p>
-<h2>Быстрое управление записью</h2>
-<p class="measure-wide">Конечно, лезть в OBS при каждом звонке неудобно, но у неё есть куча хоткеев — можно прожимать какие-нибудь заковыристые комбинации в начале и в конце разговора. Однако со мной это не сработало — придуманные хоткеи почему-то постоянно вылетали из головы. Даже стикеры не помогали. </p>
-<p class="measure-wide">Поначалу я здорово разозлился, но потом понял: раз не получается запомнить хоткей — надо его выкинуть. Начинать запись нажатием одной кнопки, заканчивать нажатием на другую.</p>
-<p class="measure-wide">С оборудованием всё было просто: у меня эргономичная <a class="link blue dim bb" href="https://www.microsoft.com/accessories/ru-ru/products/keyboards/natural-ergonomic-keyboard-4000/b2m-00020" target="_blank">клавиатура</a> от Microsoft, программируемых кнопок на ней — вагон. Хуже с софтом: OBS Studio понимает некоторые <a class="link blue dim bb" href="https://github.com/obsproject/obs-studio/wiki/Launch-Parameters" target="_blank">параметры</a> запуска, но список откровенно бедноват — даже остановки записи нет. Хотелось бы побольше.</p>
-<p class="measure-wide">В итоге решил задачу через плагин к OBS Studio, который дает порулить запущенным экземпляром программы. Он придуман для удаленного управления записью (например, со смартфона), но никто не мешает использовать его локально.</p>
-<p class="measure-wide">Схема получилась такая:</p>
-<ol class="measure-wide">
-<li>Ставим OBS Studio и плагин <a class="link blue dim bb" href="https://obsproject.com/forum/resources/obs-websocket-remote-control-of-obs-studio-made-easy.466/" target="_blank">obs-websocket</a> к ней. Снимаем галку «Enable System Tray Alerts» в настройках (Tools → WebSockets Server Settings), не то программа примется сообщать о каждом чихе.</li>
-<li>Кладем куда-нибудь <a class="link blue dim bb" href="https://obsproject.com/forum/resources/command-line-tool-for-obs-websocket-plugin-windows.615/" target="_blank">утилиту</a>, с помощью которой этим плагином можно рулить из командной строки. </li>
-<li>Вешаем на одну кнопку OBSCommand.exe /startrecording, а на другую — OBSCommand.exe /stoprecording.</li>
-<li>Готово, вы великолепны!</li>
-</ol>
-<p class="measure-wide">При вызове на долю секунду видно консоль (OBSCommand запускается, связывается с obs-websocket и ждет ответа). Сначала хотел как-нибудь скрыть это окно, но, поразмыслив, передумал — если OBS Studio не будет запущен или возникнет какая-то проблема, консоль не закроется и я хотя бы узнаю, что запись не началась.</p>
-        <p class="f6 mt4">
-            3 апреля 2020
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/">рабочее место</a>
