@@ -4,7 +4,18 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Fri, 22 Jul 2022 13:13:00 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 23 Jul 2022 11:32:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Не так, а этак!</title>
+            <link>https://kostyanetsky.ru/notes/not-but/</link>
+            <guid isPermaLink="false">note-not-but</guid>
+            <pubDate>Sat, 23 Jul 2022 11:32:48 +0700</pubDate>
+            <description><p class="measure-wide">Про хорватский комикс <a class="link blue dim bb" href="http://www.to-zo.com/notbut" target="_blank">NOT/BUT</a> мне кто-то рассказал в начале прошлого года, когда я всерьёз учился рисовать. Каждый стрип там — про какую-то травмирующую или просто мрачную мысль, которая приходит в голову художника во время работы. Идея в том, чтобы подтолкнуть читателя в правильном направлении и дать ему посмотреть на ситуацию, в которую он попал, с более практичной стороны.</p>
+<p class="measure-wide">Рисовать я бросил через год, в конце февраля: стало понятно, что времени на хобби у меня больше нет. Но комикс — совершенно универсальный; полистайте, даже если понятия не имеете, что такое клячка :-)</p>
+<p class="measure-wide"><a href="http://www.to-zo.com/notbut" target="_blank"><img alt="Да что за херня?" src="https://kostyanetsky.ru/notes/not-but/mistakes.png"/></a></p>
+<p class="measure-wide">Все эти бесконечные самокопания хорошо знакомы любому профессионалу, а выход из них — не всегда очевиден. Особенно если ты зол, устал, а дедлайн по проекту истёк где-то на прошлой неделе.</p></description>
+        </item>
         
         <item>
             <title>Окей!</title>
@@ -129,27 +140,6 @@
 <p class="measure-wide"><img alt="Error.pdf" src="https://kostyanetsky.ru/notes/matryoshka/not-your-certificate.png"/></p>
 <p class="measure-wide">Честно? Я даже восхищён. Надо этот UX в наших продуктах внедрить: прожимаешь ты, например, печать документа, а он тебе — PDF! А в нём — ссылка на другой PDF! А в нём — entity is not filled, иди заполняй.</p>
 <p class="measure-wide">Можно продать это как русский путь вывода ошибок: мол, у нас так исторически сложилось. Всё матрёшки виноваты, проклятые, и Кощей со своей иглой. Она, как вы помните, в яйце, а оно — в утке, которая в зайце, засунутом в сундук, и далее по цепочке вложенности.</p></description>
-        </item>
-        
-        <item>
-            <title>Управление вторым монитором из консоли</title>
-            <link>https://kostyanetsky.ru/notes/2nd-monitor-and-console/</link>
-            <guid isPermaLink="false">note-2nd-monitor-and-console</guid>
-            <pubDate>Sat, 16 Oct 2021 19:55:48 +0700</pubDate>
-            <description><p class="measure-wide">У меня стоят два монитора. Второй нужен во время встреч в Zoom или при совместной игре с друзьями (в обеих случаях туда удобно вывести камеры собеседников). Есть ещё несколько примеров, когда он полезен, но часто устройство просто простаивает. Чтобы не отвлекало, решил его выключать.</p>
-<p class="measure-wide">В чем тут засада: средствами ОС управлять вторым монитором неудобно (несколько кликов, скроллить надо, да ещё всё время путаю, куда лезть — в «Параметры экрана» или «Персонализацию»). Хотелось бы одной командой, а команду — на хоткей. И в идеале из скрипта всем этим рулить.</p>
-<p class="measure-wide">Скрипта я не нашел, но накопал готовую утилиту — <a class="link blue dim bb" href="https://www.nirsoft.net/utils/multi_monitor_tool.html" target="_blank">MultiMonitorTool</a>. Бесплатная. Под десятой виндой работает без проблем. Команды ниже включают-выключают 2-й монитор:</p>
-<pre><code>MultiMonitorTool.exe /disable 2
-MultiMonitorTool.exe /enable 2  
-MultiMonitorTool.exe /switch 2
-</code></pre>
-<p class="measure-wide">Почему-то при включении монитора через enable или switch он иногда неверно позиционируется (например, до выключения он был справа, а после включения встал слева). Это поправимо. Сначала запишем конфигурацию в тот момент, когда включены оба монитора:</p>
-<pre><code>MultiMonitorTool.exe /SaveConfig Monitors.cfg
-</code></pre>
-<p class="measure-wide">А потом, когда нужно включить монитор — загрузим сохранённый конфиг:</p>
-<pre><code>MultiMonitorTool.exe /LoadConfig Monitors.cfg
-</code></pre>
-<p class="measure-wide">Утилита ещё много чего умеет (например, одна из команд перекидывает окна приложений между мониторами). Описание — по ссылке выше.</p></description>
         </item>
         
     </channel>
