@@ -133,7 +133,7 @@
 <p class="measure-wide">Мы хотели дать пользователям FirstBit ERP возможность автоматически получать курсы дирхама по отношению к другим валютам, которые публикует сайт ЦБ ОАЭ.</p>
 <p class="measure-wide">Код парсинга сайта можно было добавить в саму конфигурацию, однако эта идея выглядела проблемной сразу с нескольких точек зрения: удобного механизма для получения курсов на сайте ЦБ нет, сам сайт работает нестабильно, а при необходимости изменить логику парсинга её придется менять во множестве баз данных.</p>
 <p class="measure-wide">Поэтому я написал консольное приложение на пайтоне, которые регулярно загружает публикуемые курсы валют в свою базу данных и отдает через REST-сервис. Мы развернули это приложение на своей площадке, а в FirstBit ERP я добавил только регулярные обращения к сервису.</p>
-<p class="measure-wide">Код серверной части проекта можно <a class="link blue dim bb" href="https://github.com/vkostyanetsky/CurrencyRatesCrawler" target="_blank">посмотреть</a> на GitHub'е.</p>
+<p class="measure-wide">Код серверной части проекта можно <a class="link blue dim bb" href="https://github.com/vkostyanetsky/UAExchangeRates" target="_blank">посмотреть</a> на GitHub'е.</p>
 <h2>Нативная история данных для FirstBit ERP</h2>
 <p class="measure-wide"><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Предприятие</span></p>
 <p class="measure-wide">В конфигурации FirstBit ERP я заменил подсистему версионирования БСП на встроенный в платформу <a class="link blue dim bb" href="https://wonderland.v8.1c.ru/blog/istoriya-dannykh/" target="_blank">механизм</a>, решающий ту же задачу. В проект вошли:</p>
