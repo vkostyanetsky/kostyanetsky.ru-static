@@ -122,6 +122,33 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/slack/">Слак советует</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Слак, конечно, есть за что ругать. За тормоза, за баги, за <a class="link blue dim bb" href="https://t.me/nikitonsky_pub/262" target="_blank">оповещения</a>. Но я просто обожаю его заглушки на случай, если новых сообщений нет.</p>
+<p class="measure-wide">Посмотрите, какая милота:</p>
+<p class="measure-wide"><img alt="All done. The future is yours." src="https://kostyanetsky.ru/notes/slack/all-done.png"/> <img alt="All clear." src="https://kostyanetsky.ru/notes/slack/all-clear.png"/></p>
+<p class="measure-wide">Зачем вообще нужны психотерапевты?</p>
+<p class="measure-wide"><img alt="You're up to date. Go forth and do great things." src="https://kostyanetsky.ru/notes/slack/up-to-date.png"/> <img alt="Done and done." src="https://kostyanetsky.ru/notes/slack/done-and-done.png"/></p>
+<p class="measure-wide">Или вот:</p>
+<p class="measure-wide"><img alt="You're all read. Here is a tractor." src="https://kostyanetsky.ru/notes/slack/here-is-tractor.png"/></p>
+<p class="measure-wide">Боже, слак, хоть ты не начинай.</p>
+        <p class="f6 mt4">
+            25 сентября 2022
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/meanwhile/">тем временем</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/shaken-not-stirred/">Взболтать, но не смешивать</a></h2>
 
             
@@ -710,38 +737,6 @@ MultiMonitorTool.exe /switch 2
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/longest-queries-using-python/">Поиск долгих запросов с помощью Python</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Выложил <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.py" target="_blank">скрипт на Python</a> для поиска длительных запросов в ТЖ 1С. Накатал его в приступе отчаяния: никак не мог понять, почему мой <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.sh" target="_blank">верный баш</a> для одного из запросов выдаёт среднее время выполнения больше максимального.</p>
-<p class="measure-wide">Как выяснилось, проблема была в gawk. Для некоторых событий ТЖ эта утилита не могла определить длительность: пыталась преобразовать строку в число, фейлилась и… Нет, что вы! Конечно, не кидалась исключением! Просто невозмутимо считала эти строки за ноль и ехала дальше.</p>
-<p class="measure-wide">Патч, кстати, вышел ещё глупее проблемы: я просто <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/commit/946f271d6ea0c1e618b180cee11ae91ce4632c18" target="_blank">сделал</a> явное преобразование строки в число, и всё заработало как надо. Чем, блин, явное преобразование в мире gawk'а отличается от неявного? И, главное, почему?</p>
-<p class="measure-wide">Короче, цирк уехал, новый скрипт остался. Впрочем, он бережнее расходует память и процессор: в скрипте на баше для расчёта количества выполнений запроса, суммарного времени выполнения и максимального времени одного выполнения я использовал три коллекции, у каждой из которых ключом был текст запроса и его контекст. Соответственно, все три нужно было обновлять и держать в памяти.</p>
-<p class="measure-wide">Это вполне рабочая тактика, пока входящий поток не переваливает за сотни тысяч элементов: где-то тут мы начинаем терять гигабайты ОЗУ на хранении коллекций и прорву времени процессора на поиске в них. Новый скрипт попрямее: коллекция одна, но хранит всe данные по каждому запросу.</p>
-        <p class="f6 mt4">
-            18 июля 2021
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/">Python</a>
                 </span>
             
         </p>

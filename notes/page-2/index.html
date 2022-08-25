@@ -128,6 +128,38 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/longest-queries-using-python/">Поиск долгих запросов с помощью Python</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Выложил <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.py" target="_blank">скрипт на Python</a> для поиска длительных запросов в ТЖ 1С. Накатал его в приступе отчаяния: никак не мог понять, почему мой <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.sh" target="_blank">верный баш</a> для одного из запросов выдаёт среднее время выполнения больше максимального.</p>
+<p class="measure-wide">Как выяснилось, проблема была в gawk. Для некоторых событий ТЖ эта утилита не могла определить длительность: пыталась преобразовать строку в число, фейлилась и… Нет, что вы! Конечно, не кидалась исключением! Просто невозмутимо считала эти строки за ноль и ехала дальше.</p>
+<p class="measure-wide">Патч, кстати, вышел ещё глупее проблемы: я просто <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/commit/946f271d6ea0c1e618b180cee11ae91ce4632c18" target="_blank">сделал</a> явное преобразование строки в число, и всё заработало как надо. Чем, блин, явное преобразование в мире gawk'а отличается от неявного? И, главное, почему?</p>
+<p class="measure-wide">Короче, цирк уехал, новый скрипт остался. Впрочем, он бережнее расходует память и процессор: в скрипте на баше для расчёта количества выполнений запроса, суммарного времени выполнения и максимального времени одного выполнения я использовал три коллекции, у каждой из которых ключом был текст запроса и его контекст. Соответственно, все три нужно было обновлять и держать в памяти.</p>
+<p class="measure-wide">Это вполне рабочая тактика, пока входящий поток не переваливает за сотни тысяч элементов: где-то тут мы начинаем терять гигабайты ОЗУ на хранении коллекций и прорву времени процессора на поиске в них. Новый скрипт попрямее: коллекция одна, но хранит всe данные по каждому запросу.</p>
+        <p class="f6 mt4">
+            18 июля 2021
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/">Python</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/why-not-bash/">Почему не баш?</a></h2>
 
             
@@ -720,40 +752,6 @@
 <p class="measure-wide">Ожидания на блокировках тоже считаются по продолжительности. При этом скрипт проверяет, что у события TLOCK заполнено свойство WaitConnections — то есть платформа действительно ждала возможности установить блокировку, а не просто потратила какое-то время на её установку.</p>
         <p class="f6 mt4">
             19 октября 2020
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/top-exceptions-v2/">Новый скрипт топа исключений</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Переписал <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/FrequentExceptions.sh" target="_blank">скрипт</a> на баше, строящий топ исключений по собранному ТЖ: хотел решить эту задачу как-то попроще.</p>
-<p class="measure-wide">В итоге выкинул из кода возню с заменой начала события на маркер gawk для разделения записей (его можно сразу задать регулярным выражением) и перенес больше логики в скрипт для gawk (так нагляднее, особенно если потом захочется её расширить). </p>
-<p class="measure-wide">Получилось явно лучше, чем <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/47e02e199bb32082c4d5019ca88233c0" target="_blank">было</a> — во всяком случае, логика выглядит понятнее. Изначально, правда, я хотел скорее сократить скрипт в размере и получить что-то вроде:</p>
-<pre><code>grep -hoP ",EXCP,.*\KDescr=.*" */*.log | uniq -c | sort -rn
-</code></pre>
-<p class="measure-wide">То есть фильтруем только строки с событием EXCP, отрезаем всё до описания ошибки и группируем с помощью uniq. По-моему, очень изящно.</p>
-<p class="measure-wide">Однако описание у EXCP может быть многострочным. То есть мы будем время от времени терять часть данных, нужных для расследования (всё описание после первого же перевода строки). Как решить эту проблему так, чтобы скрипт не разбарабанило втрое — я пока не придумал :-)</p>
-        <p class="f6 mt4">
-            17 октября 2020
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>

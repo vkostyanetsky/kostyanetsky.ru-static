@@ -4,7 +4,22 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Sun, 07 Aug 2022 19:04:51 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 25 Sep 2022 19:02:53 +0700</lastBuildDate>
+        
+        <item>
+            <title>Слак советует</title>
+            <link>https://kostyanetsky.ru/notes/slack/</link>
+            <guid isPermaLink="false">note-slack</guid>
+            <pubDate>Sun, 25 Sep 2022 19:02:53 +0700</pubDate>
+            <description><p class="measure-wide">Слак, конечно, есть за что ругать. За тормоза, за баги, за <a class="link blue dim bb" href="https://t.me/nikitonsky_pub/262" target="_blank">оповещения</a>. Но я просто обожаю его заглушки на случай, если новых сообщений нет.</p>
+<p class="measure-wide">Посмотрите, какая милота:</p>
+<p class="measure-wide"><img alt="All done. The future is yours." src="https://kostyanetsky.ru/notes/slack/all-done.png"/> <img alt="All clear." src="https://kostyanetsky.ru/notes/slack/all-clear.png"/></p>
+<p class="measure-wide">Зачем вообще нужны психотерапевты?</p>
+<p class="measure-wide"><img alt="You're up to date. Go forth and do great things." src="https://kostyanetsky.ru/notes/slack/up-to-date.png"/> <img alt="Done and done." src="https://kostyanetsky.ru/notes/slack/done-and-done.png"/></p>
+<p class="measure-wide">Или вот:</p>
+<p class="measure-wide"><img alt="You're all read. Here is a tractor." src="https://kostyanetsky.ru/notes/slack/here-is-tractor.png"/></p>
+<p class="measure-wide">Боже, слак, хоть ты не начинай.</p></description>
+        </item>
         
         <item>
             <title>Взболтать, но не смешивать</title>
@@ -153,21 +168,6 @@ EndProcedure
 <p class="measure-wide"><a href="https://twitter.com/EffinBirds/status/1488165946342662144" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/reuse-carefully/snap-tweet-EffinBirds-1488165946342662144.png"/></a></p>
 <p class="measure-wide">По-хорошему, платформе стоило бы швыряться исключениями при попытке поменять кэш, но пока этого не происходит — надо бить себя по рукам самостоятельно. Например, при разработке кэшируемых модулей возвращать из них неизменяемые типы данных (ФиксированнаяСтруктура вместо Структура, ФиксированныйМассив вместо Массив и так далее). Это, правда, не стопроцентная защита: во-первых, фиксированные типы не везде применимы, а во-вторых — даже в последних версиях БСП это делается далеко не везде. Много конфигураций сейчас пишется не на БСП?</p>
 <p class="measure-wide">Сонар тоже пока не умеет ловить проблему, а про менее популярные средства я вообще молчу. Никакой серебрянной пули, короче — следим за своим кодом, поглядываем в код коллег и стараемся не забывать об ещё одном изящном способе бахнуть себе в ногу.</p></description>
-        </item>
-        
-        <item>
-            <title>Infostart Event 2021</title>
-            <link>https://kostyanetsky.ru/notes/infostart-event-2021/</link>
-            <guid isPermaLink="false">note-infostart-event-2021</guid>
-            <pubDate>Tue, 16 Nov 2021 23:40:48 +0700</pubDate>
-            <description><p class="measure-wide">На прошлой неделе сгонял в Москву на <a class="link blue dim bb" href="https://event.infostart.ru/2021_msk/" target="_blank">Infostart Event 2021</a>:</p>
-<ul class="measure-wide">
-<li>Послушать дюжину докладов о разработке и близких темах — check;</li>
-<li>Развиртуализоваться с несколькими классными людьми — check;</li>
-<li>Поболтать с друзьями — check!</li>
-</ul>
-<p class="measure-wide">По итогу неожиданно почуствовал себя отдохнувшим — и это несмотря на перелёты, нервы и суету. Думаю, дело в том, что я удалёнщик; было по-настоящему здорово посмотреть на такое количество коллег вживую, а не в виде потока электронов.</p>
-<p class="measure-wide">Чтобы два раза не <s>вставать</s> летать, сдал в офисе PostgresPro <a class="link blue dim bb" href="https://postgrespro.ru/education/exam/DBA1-10" target="_blank">входной тест</a> по администрированию PostgreSQL. Впереди ещё три, а финального пока вообще не существует — но дорогу осилит идущий, так вижу.</p></description>
         </item>
         
     </channel>
