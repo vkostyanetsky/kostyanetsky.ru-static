@@ -128,6 +128,31 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/river-city-girls/">River City Girls</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Прошли на пару с мелкой River City Girls (недавно вышедший beat 'em up; это такой жанр игр, где нужно навалять всем, кто тебе не нравится).</p>
+<p class="measure-wide">На <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/river-city-girls/ru.jpg" target="_blank">фоточке</a> я наблюдаю  за десятилетней Лисой, которая в этот момент уверенно разбрасывает толпу японских мордоворотов.</p>
+        <p class="f6 mt4">
+            30 сентября 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/family/">семья</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/control/">Control</a></h2>
 
             
@@ -355,6 +380,10 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
                 </span>
             
         </p>
@@ -621,35 +650,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/mssql-server-start-date/">Дата запуска сервера MS SQL</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Для чего может пригодиться дата запуска MS SQL Server? Например, мы разбираем задержки в работе СУБД и хотим определить, в течении какого периода времени наполнялась DMV-шка <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql" target="_blank">sys.dm_os_wait_stats</a>. Её данные (как и любой другой DMV, впрочем) хранятся в оперативной памяти как раз с момента запуска СУБД.</p>
-<p class="measure-wide">Дату запуска сервера можно получить из  DMV-шки <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql" target="_blank">sys.dm_os_sys_info</a>:</p>
-<pre><code>SELECT sqlserver_start_time FROM sys.dm_os_sys_info
-</code></pre>
-<p class="measure-wide">Есть и другой способ, связанный с tempdb. Эта база данных создаётся при запуске сервера, и дата её создания вполне может считаться датой запуска сервера. Значение можно вытащить из <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-catalog-views/sys-databases-transact-sql" target="_blank">sys.databases</a>:</p>
-<pre><code>SELECT create_date FROM sys.databases WHERE name = 'tempdb'
-</code></pre>
-<p class="measure-wide">Нюанс: дату запуска сервера как точку начала сбора данных DMV-шек нужно рассматривать с осторожностью. Накопленная статистика могла быть очищена вручную — например, вот так:</p>
-<pre><code>DBCC SQLPERF('sys.dm_os_wait_stats', CLEAR)
-</code></pre>
-        <p class="f6 mt4">
-            8 марта 2019
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/">MS SQL</a>
                 </span>
             
         </p>

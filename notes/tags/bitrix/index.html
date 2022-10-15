@@ -10,11 +10,11 @@
 
     <title>
         
-            Групповая работа в Google Docs
+            Битрикс
         
     </title>
 
-    <meta name="description" content="Трое в лодке, не считая неопознанной квокки." />
+    <meta name="description" content="Мои заметки о жизни, работе и других интересных штуках вокруг меня." />
     
     <!-- RSS -->
 
@@ -29,11 +29,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Групповая работа в Google Docs"/>
-    <meta property="og:description" content="Трое в лодке, не считая неопознанной квокки."/>
+    <meta property="og:title" content="Битрикс"/>
+    <meta property="og:description" content="Мои заметки о жизни, работе и других интересных штуках вокруг меня."/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/work/anonymous-quokka/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/bitrix/" />    
 
     <!-- Tachyons -->
 
@@ -50,8 +50,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/work/not-but/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/work/strange-bitrix/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +92,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/work/anonymous-quokka/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/tags/bitrix/" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +100,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/anonymous-quokka/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                    <span class="f4 f4-ns">✎</span>
             
 
             </div>
@@ -114,11 +114,48 @@
 <section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
     
 
-    <article>    
-                    
-        <h1 class="f-subheadline lh-solid">Групповая работа в Google Docs</h1>
-            
+    <article>
+
+        <h1 class="f-subheadline lh-solid">Битрикс</h1>
+
         
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/strange-bitrix/">Про странный Битрикс</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">Чем дальше лезу в REST-интерфейс Битрикс24, тем сильнее поражаюсь тому, насколько необычно устроено мышление у его разработчиков.</p>
+<p class="measure-wide">Возьмем, например, интерфейс сделок и товаров по ним. В таблице последних нет поля суммы: мол, нужна тебе сумма по строке — сам и считай. Зато сумма есть на уровне документа. Угадаете, как называется поле?</p>
+<p class="measure-wide">AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
+<p class="measure-wide">Не угадали, правильный ответ — OPPORTUNITY.</p>
+<p class="measure-wide"><img alt="Чего, блядь?" src="https://kostyanetsky.ru/notes/strange-bitrix/what-the-fuck.jpg"/></p>
+<p class="measure-wide">Но вернемся в строке товара. В ней есть товар, ставка НДС и единица измерения. Все три сущности вполне самостоятельны: у каждой есть отдельная таблица со вспомогательной информацией свой собственный идентификатор. Логично предположить, что в строке товара они и хранятся: ID товара, ID ставки НДС и ID единицы измерения.</p>
+<p class="measure-wide">Логично-то логично, но нет, хрен там плавал. Для номенклатуры и правда хранится ID, а вот для ставки НДС — значение ставки, и для единицы измерения — код измерения по ОКЕИ 🤷‍♂️</p>
+<p class="measure-wide">Нормализация базы данных? Чего? Какая еще нормализация? Отвали, мужик, работать мешаешь.</p>
+        <p class="f6 mt4">
+            15 октября 2022
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/anonymous-quokka/">Групповая работа в Google Docs</a></h2>
+
+            
     
     <div class="f4 lh-copy black mb5">
         <p class="measure-wide">Посмотрел <a class="link blue dim bb" href="https://www.youtube.com/watch?v=p6D7SdhO4LI" target="_blank">вебинар</a> Евгения Филиппова про Баблокс. В общем, это такая дополнительная методика оценки производительности. Как и Апдекс, опирается на замеры времени — но предлагает иную механику расчета.</p>
@@ -135,11 +172,11 @@
             18 сентября 2022
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
                 </span>
             
                 <span class="pl2">
@@ -151,25 +188,37 @@
 
 
 
-        <div class="likely">
-            <div class="twitter">Твитнуть</div>
-            <div class="telegram">Отправить</div>        
-        </div>
-        
         
 
-            <p class="mt5 mb3 f6">
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/burned-people/">И приятнее пахнуть</a></h2>
 
-                
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/not-but/">Не так, а этак!</a> &larr;
-                
-                Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/strange-bitrix/">Про странный Битрикс</a>
-                                
-
-            </p> 
             
+    
+    <div class="f4 lh-copy black mb5">
+        <p class="measure-wide">На днях выпустили очередный релиз FirstBIT ERP (наш программный продукт для автоматизации бизнеса в ОАЭ). Вложен вагон труда, всё работает как надо, есть чем гордиться и всё такое. Я, например, кучу сил потратил на то, чтобы сделать полноценный обмен данными с Битрикс24 и порядком рад, что успел этот механизм зафиналить.</p>
+<p class="measure-wide">Но в душе всё равно немного завидно <a class="link blue dim bb" href="https://steamcommunity.com/games/505230/announcements/detail/1597002662743679418" target="_blank">коллегам</a> из геймдева: наши патчноуты, конечно, тоже интересные, но <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/burned-people/better.png" target="_blank">такого</a> там всё-таки не встретить.</p>
+        <p class="f6 mt4">
+            10 июня 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
         
 
     </article>
