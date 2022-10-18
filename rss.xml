@@ -11,8 +11,8 @@
             <link>https://kostyanetsky.ru/notes/strange-bitrix/</link>
             <guid isPermaLink="false">note-strange-bitrix</guid>
             <pubDate>Sat, 15 Oct 2022 18:22:43 +0700</pubDate>
-            <description><p class="measure-wide">Чем дальше лезу в REST-интерфейс Битрикс24, тем сильнее поражаюсь тому, насколько необычно устроено мышление у его разработчиков.</p>
-<p class="measure-wide">Возьмем, например, интерфейс сделок и товаров по ним. В таблице последних нет поля суммы: мол, нужна тебе сумма по строке — сам и считай. Зато сумма есть на уровне документа. Угадаете, как называется поле?</p>
+            <description><p class="measure-wide">Чем дальше лезу в REST-интерфейс Битрикс24, тем сильнее поражаюсь тому, насколько необычно устроено мышление у его разработчиков. Проявляется это в самых разных аспектах.</p>
+<p class="measure-wide">Взять, например, интерфейс сделок и товаров по ним. В таблице последних нет поля суммы: мол, нужна тебе сумма по строке — сам и считай. Зато сумма есть на уровне документа. Угадаете, как называется поле?</p>
 <p class="measure-wide">AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
 <p class="measure-wide">Не угадали, правильный ответ — OPPORTUNITY.</p>
 <p class="measure-wide"><img alt="Чего, блядь?" src="https://kostyanetsky.ru/notes/strange-bitrix/what-the-fuck.jpg"/></p>
@@ -128,6 +128,17 @@ EndProcedure
         </item>
         
         <item>
+            <title>Изменения</title>
+            <link>https://kostyanetsky.ru/notes/_changes/</link>
+            <guid isPermaLink="false">note-_changes</guid>
+            <pubDate>Mon, 02 May 2022 19:20:00 +0700</pubDate>
+            <description><p class="measure-wide"><a href="https://twitter.com/140sm/status/1358739902326833155" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/_changes/snap-tweet-140sm-1358739902326833155.png"/></a></p>
+<p class="measure-wide">Чем дальше, тем сложнее становится писать заметки. Даже так нерегулярно, как привык это делать я. Программирование? Какие-то бытовые штуки? Что-то ещё? О чем ни решишь написать — всё по итогу кажется глупым, ненужным и неуместным.</p>
+<p class="measure-wide">А вот многие темы, которые раньше воспринимались пусть серьезно, но не особенно близко — теперь буквально обрели форму, звук, вкус и цвет. Например, твит в начале заметки и до актуальных событий был тоскливым и мрачным, но теперь, когда на самом деле пришло время смотреть в эти глаза — ощущается совсем иначе.</p>
+<p class="measure-wide">Мира всем.</p></description>
+        </item>
+        
+        <item>
             <title>Минус встроенные твиты</title>
             <link>https://kostyanetsky.ru/notes/no-more-embedded-tweets/</link>
             <guid isPermaLink="false">note-no-more-embedded-tweets</guid>
@@ -155,17 +166,6 @@ EndProcedure
 <p class="measure-wide">Если вид операции — продажа товара или недвижимости, то открой общую форму AdvancesPickFormWithVAT с параметрами, описанными в структуре PickParameters. Колбеком будет метод EditPrepaymentOffsetEnd, описанный в этом же модуле; передай ему структуру AdditionalParameters. Форму нужно открыть так, чтобы она заблокировала весь интерфейс.</p>
 <p class="measure-wide">А вот если вид операции — возврат поставщику, то открой общую форму AdvancesPickFormWithVAT с параметрами, описанными в структуре PickParameters. Колбеком будет метод EditPrepaymentOffsetEnd, описанный в этом же модуле; передай ему структуру AdditionalParameters. Форму нужно открыть так, чтобы она заблокировала весь интерфейс.</p>
 <p class="measure-wide">Смотри не перепутай.</p></description>
-        </item>
-        
-        <item>
-            <title>Минус Google Fonts</title>
-            <link>https://kostyanetsky.ru/notes/no-more-google-fonts/</link>
-            <guid isPermaLink="false">note-no-more-google-fonts</guid>
-            <pubDate>Sat, 19 Feb 2022 20:25:48 +0700</pubDate>
-            <description><p class="measure-wide"><a href="https://twitter.com/PixelAmbacht/status/1494272370076536840" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/no-more-google-fonts/snap-tweet-PixelAmbacht-1494272370076536840.png"/></a></p>
-<p class="measure-wide">Год назад, блин. Ладно, всем привет! С вами Джонни Слоупок! Сегодня мы будем выпиливать из моего блога работу с Google Fonts. Я подгружал с него основной шрифт (PT Sans), но без кросс-доменного кэширования единственный смысл делать это дальше — если сервер, на котором работает сайт, слабоват и с гугла шрифты грузятся шустрее. </p>
-<p class="measure-wide">В моем случае блог отдают сервера гитхаба, которые на производительность не жалуются, так что теперь PT Sans загружается прямо с них. И знаете что? Разница прямо драматическая. Если раньше при обновлении страницы была явно заметна задержка между загрузкой страницы и загрузкой шрифта, то теперь её невооруженным глазом не разобрать. Если у вас свой блог и хотите попробовать — вот тут есть классный <a class="link blue dim bb" href="https://google-webfonts-helper.herokuapp.com/fonts" target="_blank">сервис</a>, который решает задачу в несколько кликов.</p>
-<p class="measure-wide">Не забудьте повесить звезду на <a class="link blue dim bb" href="https://github.com/majodev/google-webfonts-helper" target="_blank">репозиторий</a>!</p></description>
         </item>
         
     </channel>
