@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Неразрешимые ссылки
-        
-    </title>
+    <title>Неразрешимые ссылки</title>
 
-    <meta name="description" content="Чаще всего неразрешимые ссылки на объекты метаданных образуются в ходе удаления объектов (и, иногда, при объединении кон" />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Неразрешимые ссылки"/>
-    <meta property="og:description" content="Чаще всего неразрешимые ссылки на объекты метаданных образуются в ходе удаления объектов (и, иногда, при объединении кон"/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/unresolved-references/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/unresolved-references" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/standard-attributes-filtering/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/video-recording/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/unresolved-references/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/unresolved-references" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/unresolved-references/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/unresolved-references/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,15 +116,15 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Чаще всего неразрешимые ссылки на объекты метаданных образуются в ходе удаления объектов (и, иногда, при объединении конфигураций). На ИТС есть <a class="link blue dim bb" href="https://its.1c.ru/db/metod8dev#content:2290:hdoc" target="_blank">статья</a> по этой теме, там хорошо описаны детали.</p>
-<p class="measure-wide">На работе программы битые ссылки сказываются далеко не всегда. Конечно, поле без привязки к данным заметить несложно, но вот удалили вы, допустим, функциональную опцию — что с того, что ссылка на неё осталась где-нибудь в команде на форме? Она будет просто лежать, как обрезанный провод, инертный и безвредный. Ничего по нему не идет. </p>
-<p class="measure-wide">Однако такие штуки постепенно захламляют конфигурацию, и от них правильно избавляться, и на ИТС предложена не больно-то эффективная методика (последовательный перебор всех возможных мест, где может быть битая ссылка). Представьте себе сложную форму документа с множеством элементов; сколько времени придется потратить на поиск? Еще не факт, что успешный.</p>
-<p class="measure-wide">Есть более грубый, но действенный метод: последовательно удалять с формы группы элементов. Можно начинать с больших групп (например, со страниц). После каждого удаления выполнять проверку конфигурации и смотреть — исчезла битая ссылка или нет. Перед началом работы лучше удалить из формы весь код, чтобы платформа не ругалась на обращения к несуществующим элементам.</p>
-<p class="measure-wide">Проблема, кстати, может быть не в элементах, а в самой форме — но там её куда проще найти (хранилище настроек, условное оформление, команды; в общем, кандидатов немного).</p>
-<p class="measure-wide">Ещё можно сделать выгрузку конфигурации в файлы и порыться в полученных XML-ках. Это неплохая идея ещё и потому, что сам по себе внешний вид элементов может вас обмануть: если, например, речь идет о ссылке на функциональную опцию в команды формы, то при проверке свойств команды вы даже не заметите, что есть какая-то проблема. А вот в XML-ке будет болтаться какой-то подозрительный GUID вместо наименования опции — считай, явка с повинной :-)</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Чаще всего неразрешимые ссылки на объекты метаданных образуются в ходе удаления объектов (и, иногда, при объединении конфигураций). На ИТС есть <a href="https://its.1c.ru/db/metod8dev#content:2290:hdoc" target="_blank">статья</a> по этой теме, там хорошо описаны детали.</p>
+<p>На работе программы битые ссылки сказываются далеко не всегда. Конечно, поле без привязки к данным заметить несложно, но вот удалили вы, допустим, функциональную опцию — что с того, что ссылка на неё осталась где-нибудь в команде на форме? Она будет просто лежать, как обрезанный провод, инертный и безвредный. Ничего по нему не идет. </p>
+<p>Однако такие штуки постепенно захламляют конфигурацию, и от них правильно избавляться, и на ИТС предложена не больно-то эффективная методика (последовательный перебор всех возможных мест, где может быть битая ссылка). Представьте себе сложную форму документа с множеством элементов; сколько времени придется потратить на поиск? Еще не факт, что успешный.</p>
+<p>Есть более грубый, но действенный метод: последовательно удалять с формы группы элементов. Можно начинать с больших групп (например, со страниц). После каждого удаления выполнять проверку конфигурации и смотреть — исчезла битая ссылка или нет. Перед началом работы лучше удалить из формы весь код, чтобы платформа не ругалась на обращения к несуществующим элементам.</p>
+<p>Проблема, кстати, может быть не в элементах, а в самой форме — но там её куда проще найти (хранилище настроек, условное оформление, команды; в общем, кандидатов немного).</p>
+<p>Ещё можно сделать выгрузку конфигурации в файлы и порыться в полученных XML-ках. Это неплохая идея ещё и потому, что сам по себе внешний вид элементов может вас обмануть: если, например, речь идет о ссылке на функциональную опцию в команды формы, то при проверке свойств команды вы даже не заметите, что есть какая-то проблема. А вот в XML-ке будет болтаться какой-то подозрительный GUID вместо наименования опции — считай, явка с повинной :-)</p>
         <p class="f6 mt4">
-            10 марта 2020
+            2020-03-10 20:08:36
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -149,11 +145,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/standard-attributes-filtering/">Фильтрация стандартных реквизитов</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/standard-attributes-filtering">Фильтрация стандартных реквизитов</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/video-recording/">Запись видео</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/video-recording">Запись видео</a>
                                 
 
             </p> 

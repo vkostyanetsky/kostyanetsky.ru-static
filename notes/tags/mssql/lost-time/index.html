@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Смещение дат в 1С
-        
-    </title>
+    <title>Смещение дат в 1С</title>
 
-    <meta name="description" content="В MS SQL Server поля типа DATETIME не могут хранить даты раньше 1753-го года. Знаете, почему?" />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Смещение дат в 1С"/>
-    <meta property="og:description" content="В MS SQL Server поля типа DATETIME не могут хранить даты раньше 1753-го года. Знаете, почему?"/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/mssql/lost-time/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/lost-time" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/mssql/pagelatch/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/mssql/old-but-gold/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/mssql/lost-time/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/lost-time" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/lost-time/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/lost-time/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,19 +116,19 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">В MS SQL Server поля DATETIME <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/dotnet/api/system.data.sqltypes.sqldatetime.minvalue?view=dotnet-plat-ext-3.1" target="_blank">не могут</a> хранить даты раньше 1753-го года. Например, если попытаться записать в базу 01.01.0001 — получим ругань на out-of-range value. Я считал это забавным для такой почтенной СУБД рудиментом, пока случайно не наткнулся на <a class="link blue dim bb" href="https://stackoverflow.com/questions/3310569/what-is-the-significance-of-1-1-1753-in-sql-server" target="_blank">причину</a>.</p>
-<p class="measure-wide">Если вкратце, в 1752-м году Великобритания внедрила у себя Григорианский календарь, и в процессе у них из летосчисления пропало одиннадцать дней. Это породило проблему: вот хочет юзер посчитать разницу в днях между 1653-м и 1753-м годом — что делать будем? Учтем потеряшек? Проигнорируем? Сделаем какие-то хинты или настройки?</p>
-<p class="measure-wide">Видимо, чтобы не городить неоднозначные механизмы, разработчики СУБД решили вопрос радикально — усечением доступного диапазона дат. А для тех, для кого это проблема, есть DATETIME2, который никаких ограничений не имеет.</p>
-<p class="measure-wide">Что касается 1С, то изначально платформа использовала DATETIME, а чтобы не иметь головной боли с хранением дат раньше 1753-го года — придумала специальный <a class="link blue dim bb" href="https://its.1c.ru/db/metod8dev/content/4055/hdoc" target="_blank">костыль</a>. В двух словах: когда платформа пишет даты в БД, то тихой сапой прибавляет к каждой две тысячи лет, а когда читает — вычитает обратно. То есть в 1С пользователь видит 01.01.2000, а в БД на самом деле хранится 01.01.4000.</p>
-<p class="measure-wide">Любопытно, почему 1C до сих пор не выкинула эту штуку? Сейчас платформа использует DATETIME2 и фокус по смещением в общем-то не нужен. Конечно, тут могут быть какие-то подводные камни или просто разумная осторожность, но среди разработчиков самой СУБД сомнений <a class="link blue dim bb" href="https://stackoverflow.com/questions/3310569/what-is-the-significance-of-1-1-1753-in-sql-server/3310627#3310627" target="_blank">не заметно</a>:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>В MS SQL Server поля DATETIME <a href="https://docs.microsoft.com/ru-ru/dotnet/api/system.data.sqltypes.sqldatetime.minvalue?view=dotnet-plat-ext-3.1" target="_blank">не могут</a> хранить даты раньше 1753-го года. Например, если попытаться записать в базу 01.01.0001 — получим ругань на out-of-range value. Я считал это забавным для такой почтенной СУБД рудиментом, пока случайно не наткнулся на <a href="https://stackoverflow.com/questions/3310569/what-is-the-significance-of-1-1-1753-in-sql-server" target="_blank">причину</a>.</p>
+<p>Если вкратце, в 1752-м году Великобритания внедрила у себя Григорианский календарь, и в процессе у них из летосчисления пропало одиннадцать дней. Это породило проблему: вот хочет юзер посчитать разницу в днях между 1653-м и 1753-м годом — что делать будем? Учтем потеряшек? Проигнорируем? Сделаем какие-то хинты или настройки?</p>
+<p>Видимо, чтобы не городить неоднозначные механизмы, разработчики СУБД решили вопрос радикально — усечением доступного диапазона дат. А для тех, для кого это проблема, есть DATETIME2, который никаких ограничений не имеет.</p>
+<p>Что касается 1С, то изначально платформа использовала DATETIME, а чтобы не иметь головной боли с хранением дат раньше 1753-го года — придумала специальный <a href="https://its.1c.ru/db/metod8dev/content/4055/hdoc" target="_blank">костыль</a>. В двух словах: когда платформа пишет даты в БД, то тихой сапой прибавляет к каждой две тысячи лет, а когда читает — вычитает обратно. То есть в 1С пользователь видит 01.01.2000, а в БД на самом деле хранится 01.01.4000.</p>
+<p>Любопытно, почему 1C до сих пор не выкинула эту штуку? Сейчас платформа использует DATETIME2 и фокус по смещением в общем-то не нужен. Конечно, тут могут быть какие-то подводные камни или просто разумная осторожность, но среди разработчиков самой СУБД сомнений <a href="https://stackoverflow.com/questions/3310569/what-is-the-significance-of-1-1-1753-in-sql-server/3310627#3310627" target="_blank">не заметно</a>:</p>
 <blockquote>
-<p class="measure-wide">Your great great great great great great great grandfather should upgrade to SQL Server 2008 and use the DateTime2 data type, which supports dates in the range: 0001-01-01 through 9999-12-31.</p>
-<p class="measure-wide"><em>Joe Stefanelli (SQL Server developer)</em></p>
+<p>Your great great great great great great great grandfather should upgrade to SQL Server 2008 and use the DateTime2 data type, which supports dates in the range: 0001-01-01 through 9999-12-31.</p>
+<p><em>Joe Stefanelli (SQL Server developer)</em></p>
 </blockquote>
-<p class="measure-wide">Возможно, это просто на дне приоритетов. Добавление и удаление двух тысяч лет для каждой даты, конечно, увеличивает нагрузку на оборудование, но на фоне остального она теряется.</p>
+<p>Возможно, это просто на дне приоритетов. Добавление и удаление двух тысяч лет для каждой даты, конечно, увеличивает нагрузку на оборудование, но на фоне остального она теряется.</p>
         <p class="f6 mt4">
-            10 ноября 2020
+            2020-11-10 19:06:41
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -157,11 +153,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/pagelatch/">Задержки PageLatch</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/pagelatch">Задержки PageLatch</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/old-but-gold/">Старый добрый DATETIME</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/old-but-gold">Старый добрый DATETIME</a>
                                 
 
             </p> 

@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Взболтать, но не смешивать
-        
-    </title>
+    <title>Взболтать, но не смешивать</title>
 
-    <meta name="description" content="Как отрефакторить описания объектов?" />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Взболтать, но не смешивать"/>
-    <meta property="og:description" content="Как отрефакторить описания объектов?"/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/1c/shaken-not-stirred/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/shaken-not-stirred" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,7 +46,7 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/1c/do-not-confuse/';
+        let ctrlLeftUrl     = '';
         let ctrlRightUrl    = '';
 
     </script>
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/1c/shaken-not-stirred/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/shaken-not-stirred" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/shaken-not-stirred/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/shaken-not-stirred/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,15 +116,15 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Затрем немного про организацию кода. Если вам нужно где-то описать множество объектов с общими свойствами — подумайте, не стоит ли подробить описание на отдельные методы, каждый из которых будет описывать один конкретный объект?</p>
-<p class="measure-wide">Посмотрим на пример — метод, который описывает табличные части документов, пригодные для какой-то задачи. Что-то вроде:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Затрем немного про организацию кода. Если вам нужно где-то описать множество объектов с общими свойствами — подумайте, не стоит ли подробить описание на отдельные методы, каждый из которых будет описывать один конкретный объект?</p>
+<p>Посмотрим на пример — метод, который описывает табличные части документов, пригодные для какой-то задачи. Что-то вроде:</p>
 <pre><code>SupportedTypes["Document.SupplierPricesEntering"]   = "Prices";
 SupportedTypes["Document.OpeningBalancesEntering"]  = "CustomerAccounts,VendorAccounts";
 SupportedTypes["Document.Requisition"]              = "InventoryAndServices";
 </code></pre>
-<p class="measure-wide">Вроде всё в порядке, так? Описания есть, табличные части перечислены, посплитить их по запятой — считай, бесплатно.</p>
-<p class="measure-wide">Однако документов в методе описано много. Рано или поздно какому-нибудь коллеге (или вам самим) понадобится добавить ещё одну табличную часть для документа, который уже описан в методе. Его что-то отвлечет, он забудет поискать существующую строку и получится что-то вроде:</p>
+<p>Вроде всё в порядке, так? Описания есть, табличные части перечислены, посплитить их по запятой — считай, бесплатно.</p>
+<p>Однако документов в методе описано много. Рано или поздно какому-нибудь коллеге (или вам самим) понадобится добавить ещё одну табличную часть для документа, который уже описан в методе. Его что-то отвлечет, он забудет поискать существующую строку и получится что-то вроде:</p>
 <pre><code>SupportedTypes["Document.SupplierPricesEntering"]   = "Prices";
 SupportedTypes["Document.OpeningBalancesEntering"]  = "CustomerAccounts,VendorAccounts";
 SupportedTypes["Document.Requisition"]              = "InventoryAndServices";
@@ -137,9 +133,9 @@ SupportedTypes["Document.Requisition"]              = "InventoryAndServices";
 
 SupportedTypes["Document.OpeningBalancesEntering"]  = "PayrollDeductions";
 </code></pre>
-<p class="measure-wide">В результате пара табличных частей выпадет из описания, и хорошо, если связанный функционал покрыт тестами.</p>
-<p class="measure-wide">Вывод? Ну, можно написать метод-хелпер, который будет принимать на вход тип документа и имя <strong>одной</strong> табличной части. Хелпер будет заполнять соответствие SupportedTypes и следить за тем, чтобы уже добавленные в него данные не были потеряны.</p>
-<p class="measure-wide">А если совсем по фен-шую, лучше поступить так, как я написал в начале заметки: разделить метод на отдельные вспомогательные методы, каждый из которых будет описывать только табличные части по одному документу. Что-то вроде:</p>
+<p>В результате пара табличных частей выпадет из описания, и хорошо, если связанный функционал покрыт тестами.</p>
+<p>Вывод? Ну, можно написать метод-хелпер, который будет принимать на вход тип документа и имя <strong>одной</strong> табличной части. Хелпер будет заполнять соответствие SupportedTypes и следить за тем, чтобы уже добавленные в него данные не были потеряны.</p>
+<p>А если совсем по фен-шую, лучше поступить так, как я написал в начале заметки: разделить метод на отдельные вспомогательные методы, каждый из которых будет описывать только табличные части по одному документу. Что-то вроде:</p>
 <pre><code>Procedure AddOpeningBalancesEnteringDocument(SupportedTypes)
 
     TabularSections = New Array;
@@ -152,9 +148,9 @@ SupportedTypes["Document.OpeningBalancesEntering"]  = "PayrollDeductions";
 
 EndProcedure
 </code></pre>
-<p class="measure-wide">Так и описание документа никто случайно не сотрет, и Сонар будет доволен. А вот случае реализации хелпера он, скорее всего, примется ругаться на повторяющиеся литералы с именами табличных частей.</p>
+<p>Так и описание документа никто случайно не сотрет, и Сонар будет доволен. А вот случае реализации хелпера он, скорее всего, примется ругаться на повторяющиеся литералы с именами табличных частей.</p>
         <p class="f6 mt4">
-            7 августа 2022
+            2022-08-07 19:04:51
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -175,7 +171,7 @@ EndProcedure
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/do-not-confuse/">Смотри не перепутай</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/do-not-confuse">Смотри не перепутай</a> &larr;
                 
                 Ctrl
                                 

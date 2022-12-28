@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Почему баш?
-        
-    </title>
+    <title>Почему баш?</title>
 
-    <meta name="description" content="Пара слов о причине, по которой для анализа ТЖ 1С удобно использовать баш." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Почему баш?"/>
-    <meta property="og:description" content="Пара слов о причине, по которой для анализа ТЖ 1С удобно использовать баш."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/1c/why-bash/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/why-bash" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/1c/metadata-not-found/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/1c/why-not-bash/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/1c/why-bash/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/why-bash" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/why-bash/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/why-bash/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,18 +116,18 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Периодически вижу вопросы коллег: а что, 1С всё ещё носится с башем, да? А чё не пайтон-то? Или павершелл, на худой конец? Вот чудаки!</p>
-<p class="measure-wide">Да, баш не родной для Windows (которая, напротив, родная для 1С) и притащить его туда — отдельная история; да, при усложнении задачи читаемость скрипта падает по экспоненте; да, с некоторыми задачами баш просто не справляется.</p>
-<p class="measure-wide">Однако главный плюс баша в том, что для многих задач по анализу ТЖ 1С он — самое простое и быстрое решение. Как старая отвертка, которой ещё дед пользовался. Она всегда под рукой — пусть поцарапанная, с зазубринами и слегка корявая, но всё еще прекрасно работает.</p>
-<p class="measure-wide">Пример? Допустим, нужно выгрести из ТЖ исключения; простоты ради договоримся, что достаточно первой строки каждого события. Получим <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/f95b30e2f09edd64d9e7a39575bb289a" target="_blank">примерно такой</a> скрипт на пайтоне. </p>
-<p class="measure-wide">Скажете, его можно легко сократить вдвое? А то и втрое. В конце концов, мы решаем локальную задачу. Возня с читаемостью и предсказуемостью тут ни к чему.</p>
-<p class="measure-wide">Согласен! Но давайте сначала решим ту же задачу на баше:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Периодически вижу вопросы коллег: а что, 1С всё ещё носится с башем, да? А чё не пайтон-то? Или павершелл, на худой конец? Вот чудаки!</p>
+<p>Да, баш не родной для Windows (которая, напротив, родная для 1С) и притащить его туда — отдельная история; да, при усложнении задачи читаемость скрипта падает по экспоненте; да, с некоторыми задачами баш просто не справляется.</p>
+<p>Однако главный плюс баша в том, что для многих задач по анализу ТЖ 1С он — самое простое и быстрое решение. Как старая отвертка, которой ещё дед пользовался. Она всегда под рукой — пусть поцарапанная, с зазубринами и слегка корявая, но всё еще прекрасно работает.</p>
+<p>Пример? Допустим, нужно выгрести из ТЖ исключения; простоты ради договоримся, что достаточно первой строки каждого события. Получим <a href="https://gist.github.com/vkostyanetsky/f95b30e2f09edd64d9e7a39575bb289a" target="_blank">примерно такой</a> скрипт на пайтоне. </p>
+<p>Скажете, его можно легко сократить вдвое? А то и втрое. В конце концов, мы решаем локальную задачу. Возня с читаемостью и предсказуемостью тут ни к чему.</p>
+<p>Согласен! Но давайте сначала решим ту же задачу на баше:</p>
 <pre><code>grep -r --include "*.log" ',EXCP,' &gt; result.txt
 </code></pre>
-<p class="measure-wide">Вот почему баш.</p>
+<p>Вот почему баш.</p>
         <p class="f6 mt4">
-            23 июня 2021
+            2021-06-23 22:24:48
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -160,11 +156,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/metadata-not-found/">Метаданные не найдены</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/metadata-not-found">Метаданные не найдены</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/why-not-bash/">Почему не баш?</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/why-not-bash">Почему не баш?</a>
                                 
 
             </p> 

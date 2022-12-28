@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Большая таблица на клиенте
-        
-    </title>
+    <title>Большая таблица на клиенте</title>
 
-    <meta name="description" content="Коллеги подсказали любопытный способ оптимизации работы с относительно большими коллекциями данных на клиенте." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Большая таблица на клиенте"/>
-    <meta property="og:description" content="Коллеги подсказали любопытный способ оптимизации работы с относительно большими коллекциями данных на клиенте."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/1c/big-table-at-client/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/big-table-at-client" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/1c/pagelatch/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/1c/no-turnovers/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/1c/big-table-at-client/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/big-table-at-client" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/big-table-at-client/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/big-table-at-client/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,11 +116,11 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Про нюансы работы со здоровенными таблицами на клиенте я уже пару раз писал (<a class="link blue dim bb" href="https://kostyanetsky.ru/notes/find-rows-at-client" target="_blank">раз</a>, <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/big-value-tables" target="_blank">два</a>), но в конце прошлой недели коллеги подсказали ещё один любопытный способ оптимизации работы с относительно большими коллекциями данных на клиенте. Вкратце: стандарт <a class="link blue dim bb" href="https://its.1c.ru/db/v8std#content:628:hdoc" target="_blank">советует</a> работать с большими коллекциями только на сервере, однако если сразу обойти всю коллекцию на клиенте (например, в обработчике открытия формы) — она закешируется. В итоге последующие обходы, поиск строк и другая работа с данными не будут требовать дополнительных серверных вызовов. Суммарные расходы при таком подходе получаются ниже.</p>
-<p class="measure-wide">Погонял сейчас простые тесты — да, похоже, что так и есть. Метод выглядит отчасти костыльно и на серьезных нагрузках я его ещё не проверял — но, вероятно, его вполне можно иметь ввиду.</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Про нюансы работы со здоровенными таблицами на клиенте я уже пару раз писал (<a href="https://kostyanetsky.ru//notes/find-rows-at-client" target="_blank">раз</a>, <a href="https://kostyanetsky.ru//notes/big-value-tables" target="_blank">два</a>), но в конце прошлой недели коллеги подсказали ещё один любопытный способ оптимизации работы с относительно большими коллекциями данных на клиенте. Вкратце: стандарт <a href="https://its.1c.ru/db/v8std#content:628:hdoc" target="_blank">советует</a> работать с большими коллекциями только на сервере, однако если сразу обойти всю коллекцию на клиенте (например, в обработчике открытия формы) — она закешируется. В итоге последующие обходы, поиск строк и другая работа с данными не будут требовать дополнительных серверных вызовов. Суммарные расходы при таком подходе получаются ниже.</p>
+<p>Погонял сейчас простые тесты — да, похоже, что так и есть. Метод выглядит отчасти костыльно и на серьезных нагрузках я его ещё не проверял — но, вероятно, его вполне можно иметь ввиду.</p>
         <p class="f6 mt4">
-            19 мая 2019
+            2019-05-19 16:54:12
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -145,11 +141,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/pagelatch/">Задержки PageLatch</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/pagelatch">Задержки PageLatch</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/no-turnovers/">Оборотный регистр без оборотов</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/no-turnovers">Оборотный регистр без оборотов</a>
                                 
 
             </p> 

@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Поиск методов с параметром
-        
-    </title>
+    <title>Поиск методов с параметром</title>
 
-    <meta name="description" content="Скрипт для поиска методов с параметром в выгрузке конфигурации." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Поиск методов с параметром"/>
-    <meta property="og:description" content="Скрипт для поиска методов с параметром в выгрузке конфигурации."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/find-methods-with-parameter/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/find-methods-with-parameter" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/bablox/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/what-is-pmc-for/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/find-methods-with-parameter/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/find-methods-with-parameter" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/find-methods-with-parameter/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/find-methods-with-parameter/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,14 +116,14 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Задача: нужно найти в общих модулях конфигурации методы с определенным параметром (в этом примере — с параметром DecimalPlacesFor).</p>
-<p class="measure-wide">Обычный поиск по коду конфигурации даст массу ложных срабатываний (например, все обращения к параметру с таким именем в теле методов). Поиск по регулярным выражениям платформа пока не поддерживает, поэтому выгодно выгрузить конфигурацию в файлы и натравить на папку общих модулей <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsForLogAnalysis/blob/master/Файлы%20конфигурации/MethodsWithParameter.sh" target="_blank">скрипт</a> на баше.</p>
-<p class="measure-wide">Первая часть скрипта (до пайпа) выполняет сам поиск, вторая — отрезает лишнее, чтобы на вывод уходили только названия модулей и найденных в них методов. Получится, например, так:</p>
-<p class="measure-wide"><img alt="Скриншот консоли" src="https://kostyanetsky.ru/notes/find-methods-with-parameter/bash.png"/></p>
-<p class="measure-wide">Профит? Профит!</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Задача: нужно найти в общих модулях конфигурации методы с определенным параметром (в этом примере — с параметром DecimalPlacesFor).</p>
+<p>Обычный поиск по коду конфигурации даст массу ложных срабатываний (например, все обращения к параметру с таким именем в теле методов). Поиск по регулярным выражениям платформа пока не поддерживает, поэтому выгодно выгрузить конфигурацию в файлы и натравить на папку общих модулей <a href="https://github.com/vkostyanetsky/ScriptsForLogAnalysis/blob/master/Файлы%20конфигурации/MethodsWithParameter.sh" target="_blank">скрипт</a> на баше.</p>
+<p>Первая часть скрипта (до пайпа) выполняет сам поиск, вторая — отрезает лишнее, чтобы на вывод уходили только названия модулей и найденных в них методов. Получится, например, так:</p>
+<p><img alt="Скриншот консоли" src="https://kostyanetsky.ru/notes/find-methods-with-parameter/bash.png"/></p>
+<p>Профит? Профит!</p>
         <p class="f6 mt4">
-            18 ноября 2019
+            2019-11-18 19:18:12
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -156,11 +152,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/bablox/">Что такое Баблокс?</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/bablox">Что такое Баблокс?</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/what-is-pmc-for/">Зачем нужен ЦУП?</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/what-is-pmc-for">Зачем нужен ЦУП?</a>
                                 
 
             </p> 

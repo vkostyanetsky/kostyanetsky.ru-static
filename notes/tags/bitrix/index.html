@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Битрикс
-        
-    </title>
+    <title>Битрикс</title>
 
-    <meta name="description" content="Мои заметки о жизни, работе и других интересных штуках вокруг меня." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Битрикс"/>
-    <meta property="og:description" content="Мои заметки о жизни, работе и других интересных штуках вокруг меня."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/bitrix/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/bitrix" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/bitrix/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/tags/bitrix" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -126,17 +122,17 @@
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Чем дальше лезу в REST-интерфейс Битрикс24, тем сильнее поражаюсь тому, насколько необычно устроено мышление у его разработчиков. Проявляется это по-разному.</p>
-<p class="measure-wide">Взять, например, интерфейс сделок и товаров по ним. В таблице последних нет поля суммы: мол, нужна тебе сумма по строке — сам и считай. Зато сумма есть на уровне документа. Угадаете, как называется поле?</p>
-<p class="measure-wide">AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
-<p class="measure-wide">Не угадали, правильный ответ — OPPORTUNITY.</p>
-<p class="measure-wide"><img alt="Чего, блядь?" src="https://kostyanetsky.ru/notes/strange-bitrix/what-the-fuck.jpg"/></p>
-<p class="measure-wide">Но вернемся в строке товара. В ней есть товар, ставка НДС и единица измерения. Все три сущности вполне самостоятельны: у каждой есть отдельная таблица со вспомогательной информацией и свой собственный идентификатор. Логично предположить, что в строке товара они и хранятся: ID товара, ID ставки НДС и ID единицы измерения.</p>
-<p class="measure-wide">Логично-то логично, но нет, хрен там плавал. Для номенклатуры и правда хранится ID, а вот для ставки НДС — значение ставки, и для единицы измерения — код измерения по ОКЕИ ¯\_(ツ)_/¯</p>
-<p class="measure-wide">Нормализация базы данных? Чего? Какая еще нормализация? Отстань, мужик, работать мешаешь.</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Чем дальше лезу в REST-интерфейс Битрикс24, тем сильнее поражаюсь тому, насколько необычно устроено мышление у его разработчиков. Проявляется это по-разному.</p>
+<p>Взять, например, интерфейс сделок и товаров по ним. В таблице последних нет поля суммы: мол, нужна тебе сумма по строке — сам и считай. Зато сумма есть на уровне документа. Угадаете, как называется поле?</p>
+<p>AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
+<p>Не угадали, правильный ответ — OPPORTUNITY.</p>
+<p><img alt="Чего, блядь?" src="https://kostyanetsky.ru/notes/strange-bitrix/what-the-fuck.jpg"/></p>
+<p>Но вернемся в строке товара. В ней есть товар, ставка НДС и единица измерения. Все три сущности вполне самостоятельны: у каждой есть отдельная таблица со вспомогательной информацией и свой собственный идентификатор. Логично предположить, что в строке товара они и хранятся: ID товара, ID ставки НДС и ID единицы измерения.</p>
+<p>Логично-то логично, но нет, хрен там плавал. Для номенклатуры и правда хранится ID, а вот для ставки НДС — значение ставки, и для единицы измерения — код измерения по ОКЕИ ¯\_(ツ)_/¯</p>
+<p>Нормализация базы данных? Чего? Какая еще нормализация? Отстань, мужик, работать мешаешь.</p>
         <p class="f6 mt4">
-            15 октября 2022
+            2022-10-15 18:22:43
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
@@ -157,12 +153,12 @@
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Последний месяц переписываю типовой обмен данными между FirstBit ERP и Битриксом под клиентскую задачу. Коллеги, занимающиеся тем же на стороне Битрикса, подготовили под это дело массивный маппинг: какое поле на стороне 1С в какое поле Битрикса нужно передавать (и наоборот).</p>
-<p class="measure-wide">Этот маппинг они выложили в виде таблиц Google Docs, в интерфейсе которого можно видеть пользователей, пользующихся документом в этот момент — как залогиненных, так и анонимных. Последних он традиционно отображает в виде <a class="link blue dim bb" href="https://support.google.com/docs/answer/2494888?hl=ru" target="_blank">животных</a>.</p>
-<p class="measure-wide">Коллеги в основном предпочитают работать анонимно. В итоге я последнее время крепко ощущаю себя диснеевской принцессой: приступаешь такой утром к работе, и отовсюду выкатываются неопознанные квокки, пингвины и шиншиллы :-)</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Последний месяц переписываю типовой обмен данными между FirstBit ERP и Битриксом под клиентскую задачу. Коллеги, занимающиеся тем же на стороне Битрикса, подготовили под это дело массивный маппинг: какое поле на стороне 1С в какое поле Битрикса нужно передавать (и наоборот).</p>
+<p>Этот маппинг они выложили в виде таблиц Google Docs, в интерфейсе которого можно видеть пользователей, пользующихся документом в этот момент — как залогиненных, так и анонимных. Последних он традиционно отображает в виде <a href="https://support.google.com/docs/answer/2494888?hl=ru" target="_blank">животных</a>.</p>
+<p>Коллеги в основном предпочитают работать анонимно. В итоге я последнее время крепко ощущаю себя диснеевской принцессой: приступаешь такой утром к работе, и отовсюду выкатываются неопознанные квокки, пингвины и шиншиллы :-)</p>
         <p class="f6 mt4">
-            18 сентября 2022
+            2022-09-18 16:25:48
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
@@ -187,11 +183,11 @@
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">На днях выпустили очередный релиз FirstBIT ERP (наш программный продукт для автоматизации бизнеса в ОАЭ). Вложен вагон труда, всё работает как надо, есть чем гордиться и всё такое. Я, например, кучу сил потратил на то, чтобы сделать полноценный обмен данными с Битрикс24 и порядком рад, что успел этот механизм зафиналить.</p>
-<p class="measure-wide">Но в душе всё равно немного завидно <a class="link blue dim bb" href="https://steamcommunity.com/games/505230/announcements/detail/1597002662743679418" target="_blank">коллегам</a> из геймдева: наши патчноуты, конечно, тоже интересные, но <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/burned-people/better.png" target="_blank">такого</a> там всё-таки не встретить.</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>На днях выпустили очередный релиз FirstBIT ERP (наш программный продукт для автоматизации бизнеса в ОАЭ). Вложен вагон труда, всё работает как надо, есть чем гордиться и всё такое. Я, например, кучу сил потратил на то, чтобы сделать полноценный обмен данными с Битрикс24 и порядком рад, что успел этот механизм зафиналить.</p>
+<p>Но в душе всё равно немного завидно <a href="https://steamcommunity.com/games/505230/announcements/detail/1597002662743679418" target="_blank">коллегам</a> из геймдева: наши патчноуты, конечно, тоже интересные, но <a href="https://kostyanetsky.ru/notes/burned-people/better.png" target="_blank">такого</a> там всё-таки не встретить.</p>
         <p class="f6 mt4">
-            10 июня 2019
+            2019-06-10 17:04:33
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>

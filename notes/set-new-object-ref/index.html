@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Ссылка нового объекта
-        
-    </title>
+    <title>Ссылка нового объекта</title>
 
-    <meta name="description" content="Уникальный идентификатор — удобный критерий при сопоставлении объектов в разных конфигурациях." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Ссылка нового объекта"/>
-    <meta property="og:description" content="Уникальный идентификатор — удобный критерий при сопоставлении объектов в разных конфигурациях."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/set-new-object-ref/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/set-new-object-ref" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/distributed-design/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/snowboard-effect/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/set-new-object-ref/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/set-new-object-ref" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/set-new-object-ref/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/set-new-object-ref/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,18 +116,18 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Уникальный идентификатор — удобный критерий при сопоставлении объектов в разных конфигурациях. Например, когда нужно передавать инвойсы из одной базы в другую. Как второй базе понять, загружался полученный инвойс или нет? Первое, что приходит в голову — просто выполнить поиск объекта по его UUID:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Уникальный идентификатор — удобный критерий при сопоставлении объектов в разных конфигурациях. Например, когда нужно передавать инвойсы из одной базы в другую. Как второй базе понять, загружался полученный инвойс или нет? Первое, что приходит в голову — просто выполнить поиск объекта по его UUID:</p>
 <pre><code>ИнвойсЗагружен = Документы.Инвойс.ПолучитьСсылку(UUID).Пустая();
 </code></pre>
-<p class="measure-wide">Однако иногда уникальный идентификатор используют для связи объектов в одной конфигурации. Например, если условия задачи мешают добавить обычный ссылочный реквизит и мы не можем в документе А прямо сослаться на документ Б. Или, скажем, если мы создаем элемент справочника на основании документа и хотим иметь между ними прямую связь — присваивая элементу справочника ссылку, полученную по уникальному идентификатору документа. Платформа гарантирует уникальность идентификатора в пределах таблицы, так что такие трюки вполне безопасны.</p>
-<p class="measure-wide">Я это к чему. Метод УстановитьСсылкуНового() в коде нужно использовать с осторожностью! Проверяйте, что ссылка ещё не установлена до выполнения вашего кода:</p>
+<p>Однако иногда уникальный идентификатор используют для связи объектов в одной конфигурации. Например, если условия задачи мешают добавить обычный ссылочный реквизит и мы не можем в документе А прямо сослаться на документ Б. Или, скажем, если мы создаем элемент справочника на основании документа и хотим иметь между ними прямую связь — присваивая элементу справочника ссылку, полученную по уникальному идентификатору документа. Платформа гарантирует уникальность идентификатора в пределах таблицы, так что такие трюки вполне безопасны.</p>
+<p>Я это к чему. Метод УстановитьСсылкуНового() в коде нужно использовать с осторожностью! Проверяйте, что ссылка ещё не установлена до выполнения вашего кода:</p>
 <pre><code>СсылкаЗадана = ПолучитьСсылкуНового().Пустая();
 </code></pre>
-<p class="measure-wide">Если ссылка задана, то это надо как-то обработать — либо не заменять её вашей (если логика задачи позволяет), либо создать исключение. Иначе может возникнуть нарушение связности данных, которое будет непросто расследовать — да и вообще заметить.</p>
-<p class="measure-wide">Ну и, конечно, эта штука работает в обе стороны — я имею в виду, что установленную вами ссылку тоже может потереть какой-нибудь посторонний код (например, обработчик события объекта или подписка на него). Это надежно решается только тестированием.</p>
+<p>Если ссылка задана, то это надо как-то обработать — либо не заменять её вашей (если логика задачи позволяет), либо создать исключение. Иначе может возникнуть нарушение связности данных, которое будет непросто расследовать — да и вообще заметить.</p>
+<p>Ну и, конечно, эта штука работает в обе стороны — я имею в виду, что установленную вами ссылку тоже может потереть какой-нибудь посторонний код (например, обработчик события объекта или подписка на него). Это надежно решается только тестированием.</p>
         <p class="f6 mt4">
-            29 ноября 2018
+            2018-11-29 19:22:56
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -152,11 +148,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/distributed-design/">Распределенный дизайн</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/distributed-design">Распределенный дизайн</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/snowboard-effect/">Эффект сноуборда</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/snowboard-effect">Эффект сноуборда</a>
                                 
 
             </p> 

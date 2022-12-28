@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Задержки сервера MS SQL
-        
-    </title>
+    <title>Задержки сервера MS SQL</title>
 
-    <meta name="description" content="Каждый раз, когда запрос SQL может запуститься, но ожидает другого ресурса, он записывает сведения о причине задержки." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Задержки сервера MS SQL"/>
-    <meta property="og:description" content="Каждый раз, когда запрос SQL может запуститься, но ожидает другого ресурса, он записывает сведения о причине задержки."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/mssql/mssql-server-waits/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/mssql-server-waits" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -51,7 +47,7 @@
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
         let ctrlLeftUrl     = '';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/mssql/mssql-server-start-date/';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/mssql/mssql-server-waits/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/mssql-server-waits" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/mssql-server-waits/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/mssql-server-waits/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,15 +116,15 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Каждый раз, когда SQL-запрос может запуститься, но ожидает другого ресурса — он записывает сведения о причине задержки. Доступ к ним можно получить через представление <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql" target="_blank">sys.dm_os_wait_stats</a>.</p>
-<p class="measure-wide">Для анализа представления можно использовать готовые скрипты:</p>
-<ul class="measure-wide">
-<li><a class="link blue dim bb" href="https://kostyanetsky.ru/notes/mssql-server-waits/causes_of_wait_times.txt" target="_blank">Скрипт</a> из статьи Яна Стерка «Открытие скрытых данных для оптимизации производительности приложений», опубликованной в MSDN Magazine ещё в <a class="link blue dim bb" href="https://msdn.microsoft.com/ru-ru/magazine/ee310108.aspx" target="_blank">2008-м</a> году. Выводит список типов задержки, упорядоченный по времени — от самых частотных до наиболее редких.</li>
-<li><a class="link blue dim bb" href="https://kostyanetsky.ru/notes/mssql-server-waits/sql_server_wait_statistics.txt" target="_blank">Cкрипт</a> из <a class="link blue dim bb" href="https://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/" target="_blank">статьи</a> Пола Рэндала про анализ причин задержек в работе сервера MS SQL (на Хабре, кстати, есть <a class="link blue dim bb" href="https://habr.com/ru/post/216309/" target="_blank">перевод</a>). Фильтрует задержки, которые возникают на сервере всегда и которые обычно можно игнорировать. Кроме того, к каждой задержке добавляется ссылка на страницу, где эта задержка детально описана (например, вот <a class="link blue dim bb" href="https://www.sqlskills.com/help/waits/cxpacket" target="_blank">описание</a> CXPACKET).</li>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Каждый раз, когда SQL-запрос может запуститься, но ожидает другого ресурса — он записывает сведения о причине задержки. Доступ к ним можно получить через представление <a href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql" target="_blank">sys.dm_os_wait_stats</a>.</p>
+<p>Для анализа представления можно использовать готовые скрипты:</p>
+<ul>
+<li><a href="https://kostyanetsky.ru/notes/mssql-server-waits/causes_of_wait_times.txt" target="_blank">Скрипт</a> из статьи Яна Стерка «Открытие скрытых данных для оптимизации производительности приложений», опубликованной в MSDN Magazine ещё в <a href="https://msdn.microsoft.com/ru-ru/magazine/ee310108.aspx" target="_blank">2008-м</a> году. Выводит список типов задержки, упорядоченный по времени — от самых частотных до наиболее редких.</li>
+<li><a href="https://kostyanetsky.ru/notes/mssql-server-waits/sql_server_wait_statistics.txt" target="_blank">Cкрипт</a> из <a href="https://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/" target="_blank">статьи</a> Пола Рэндала про анализ причин задержек в работе сервера MS SQL (на Хабре, кстати, есть <a href="https://habr.com/ru/post/216309/" target="_blank">перевод</a>). Фильтрует задержки, которые возникают на сервере всегда и которые обычно можно игнорировать. Кроме того, к каждой задержке добавляется ссылка на страницу, где эта задержка детально описана (например, вот <a href="https://www.sqlskills.com/help/waits/cxpacket" target="_blank">описание</a> CXPACKET).</li>
 </ul>
         <p class="f6 mt4">
-            8 марта 2019
+            2019-03-08 06:40:05
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/">MS SQL</a>
@@ -151,7 +147,7 @@
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/mssql-server-start-date/">Дата запуска сервера MS SQL</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/mssql-server-start-date">Дата запуска сервера MS SQL</a>
                                 
 
             </p> 

@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Фильтрация стандартных реквизитов
-        
-    </title>
+    <title>Фильтрация стандартных реквизитов</title>
 
-    <meta name="description" content="Функция, которая поможет отсеивать стандартные реквизиты объекта метаданных при их переборе." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Фильтрация стандартных реквизитов"/>
-    <meta property="og:description" content="Функция, которая поможет отсеивать стандартные реквизиты объекта метаданных при их переборе."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/1c/standard-attributes-filtering/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/standard-attributes-filtering" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/1c/data-history-settings/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/1c/unresolved-references/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/1c/standard-attributes-filtering/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/standard-attributes-filtering" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/standard-attributes-filtering/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/standard-attributes-filtering/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,21 +116,21 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Короткий <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/ee1f913868673c2218877dfbecc9b08a" target="_blank">фрагмент</a> кода из обработки для настройки механизма истории данных, о которой я только что <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/data-history-settings" target="_blank">писал</a>. Эта функция определяет, является ли Attribute стандартным реквизитом с именем StandardAttributeName, принадлежащим объекту метаданных MetadataObject. Где она нужна? Допустим, вы перебираете стандартные реквизиты объекта и по какой-то причине хотите пропустить один из них.</p>
-<p class="measure-wide">На первый взгляд решение выглядит максимально индусским. Почему бы, например, просто не сравнить два реквизита — проверяемый и тот, что хотим отсеять?</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Короткий <a href="https://gist.github.com/vkostyanetsky/ee1f913868673c2218877dfbecc9b08a" target="_blank">фрагмент</a> кода из обработки для настройки механизма истории данных, о которой я только что <a href="https://kostyanetsky.ru//notes/data-history-settings" target="_blank">писал</a>. Эта функция определяет, является ли Attribute стандартным реквизитом с именем StandardAttributeName, принадлежащим объекту метаданных MetadataObject. Где она нужна? Допустим, вы перебираете стандартные реквизиты объекта и по какой-то причине хотите пропустить один из них.</p>
+<p>На первый взгляд решение выглядит максимально индусским. Почему бы, например, просто не сравнить два реквизита — проверяемый и тот, что хотим отсеять?</p>
 <pre><code>If Attribute = MetadataObject.StandardAttributes.Order Then
 </code></pre>
-<p class="measure-wide">Дело в том, что такой код не сработает: результат операции сравнения двух стандартных реквизитов объекта метаданных в платформе 1С — всегда Ложь.</p>
-<p class="measure-wide">О'кей, скажете вы — может, тогда не будем усложнять и напишем вот так?</p>
+<p>Дело в том, что такой код не сработает: результат операции сравнения двух стандартных реквизитов объекта метаданных в платформе 1С — всегда Ложь.</p>
+<p>О'кей, скажете вы — может, тогда не будем усложнять и напишем вот так?</p>
 <pre><code>If Attribute.Name = "Order" Then
 </code></pre>
-<p class="measure-wide">Однако так тоже не сработает, если ваш код будет запущен в русскоязычной конфигурации: стандартный реквизит, который мы пытаемся найти, в этом случае будет называться «Порядок». </p>
-<p class="measure-wide">Тем не менее, к самому стандартному реквизиту внутри коллекции можно обращаться и по-русски, и по-английски. Потом получаем текущее имя атрибута и сравниваем с именем того атрибута, который проверяем.</p>
-<p class="measure-wide">Конечно, можно было просто сделать сравнение имени реквизита и с «Order», и с «Порядок» — но это, во-первых, некрасиво, а во-вторых — стандарты программирования у нас в компании запрещают писать код на русском. В общем, мне хотелось найти более общее решение.</p>
-<p class="measure-wide">Что до конструкции Try/Catch — она тут на тот случай, если стандартного реквизита с таким именем в конфигурации нет вообще (и попытка обратиться к нему  по имени приведет к ошибке).</p>
+<p>Однако так тоже не сработает, если ваш код будет запущен в русскоязычной конфигурации: стандартный реквизит, который мы пытаемся найти, в этом случае будет называться «Порядок». </p>
+<p>Тем не менее, к самому стандартному реквизиту внутри коллекции можно обращаться и по-русски, и по-английски. Потом получаем текущее имя атрибута и сравниваем с именем того атрибута, который проверяем.</p>
+<p>Конечно, можно было просто сделать сравнение имени реквизита и с «Order», и с «Порядок» — но это, во-первых, некрасиво, а во-вторых — стандарты программирования у нас в компании запрещают писать код на русском. В общем, мне хотелось найти более общее решение.</p>
+<p>Что до конструкции Try/Catch — она тут на тот случай, если стандартного реквизита с таким именем в конфигурации нет вообще (и попытка обратиться к нему  по имени приведет к ошибке).</p>
         <p class="f6 mt4">
-            9 марта 2020
+            2020-03-09 13:52:03
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -159,11 +155,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/data-history-settings/">Настройки истории данных</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/data-history-settings">Настройки истории данных</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/unresolved-references/">Неразрешимые ссылки</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/unresolved-references">Неразрешимые ссылки</a>
                                 
 
             </p> 

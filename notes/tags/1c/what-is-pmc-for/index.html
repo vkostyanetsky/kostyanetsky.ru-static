@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Зачем нужен ЦУП?
-        
-    </title>
+    <title>Зачем нужен ЦУП?</title>
 
-    <meta name="description" content="Главное, что дает этот инструмент — это набор аналитических показателей." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Зачем нужен ЦУП?"/>
-    <meta property="og:description" content="Главное, что дает этот инструмент — это набор аналитических показателей."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/1c/what-is-pmc-for/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/what-is-pmc-for" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/1c/find-methods-with-parameter/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/1c/fifty-times-faster/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/1c/what-is-pmc-for/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/what-is-pmc-for" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/what-is-pmc-for/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/what-is-pmc-for/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,19 +116,19 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">ЦУП нужен, чтобы:</p>
-<ol class="measure-wide">
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>ЦУП нужен, чтобы:</p>
+<ol>
 <li>Найти в системе узкое место (медленный код, тяжелый запрос);</li>
 <li>Расследовать конкретные блокировки или взаимоблокировки.</li>
 </ol>
-<p class="measure-wide">В первом случае можно включить анализ запросов и, допустим, серверных вызовов. По результатам можно понять, что в системе грузит сервер приложений, а что — сервер СУБД. Часто так делают даже не решая конкретную проблему, а просто чтобы устранить узкие места и увеличить запас прочности системы на будущее.</p>
-<p class="measure-wide">Во втором сценарии включают анализ блокировок или взаимоблокировок — когда знают, что они есть в системе, и хотят получить отчет: кто заблокировал, кого, когда, на какой строчке кода и так далее.</p>
-<p class="measure-wide">В обеих случаях мониторинг запускают только в периоды основной нагрузки и минут на десять-пятнадцать. Массив исходных данных получается сравнительно небольшим (ЦУП'у нужно его обработать перед выдачей результата, чем больше данных — тем больше времени потребуется). Кроме того, не будет собрано лишних данных — например, не будет анализа нагрузки от регламентных работ, которые вы проводите ночью.</p>
-<p class="measure-wide">Кроме того, это снижает влияние сбора данных на работу системы. Дело в том, что ЦУП может собирать очень тяжелый ТЖ, способный заметно нагрузить железо (на 30% медленнее? подержи мое пиво). С этим лучше быть осторожным.</p>
-<p class="measure-wide">Для всего, что перечислено выше, достаточно аналитических показателей ЦУП'а: анализа запросов, ожиданий на блокировках, анализа взаимоблокировок 1С и MS SQL. Что до оперативных показателей — количества выполняемых запросов, суммарного времени их выполнения и так далее — то популярностью они не пользуются. Польза от них обычно не стоит времени на настройку, и ЦУП по большому счету никогда не проектировался для того, чтобы постоянно собирать их.</p>
+<p>В первом случае можно включить анализ запросов и, допустим, серверных вызовов. По результатам можно понять, что в системе грузит сервер приложений, а что — сервер СУБД. Часто так делают даже не решая конкретную проблему, а просто чтобы устранить узкие места и увеличить запас прочности системы на будущее.</p>
+<p>Во втором сценарии включают анализ блокировок или взаимоблокировок — когда знают, что они есть в системе, и хотят получить отчет: кто заблокировал, кого, когда, на какой строчке кода и так далее.</p>
+<p>В обеих случаях мониторинг запускают только в периоды основной нагрузки и минут на десять-пятнадцать. Массив исходных данных получается сравнительно небольшим (ЦУП'у нужно его обработать перед выдачей результата, чем больше данных — тем больше времени потребуется). Кроме того, не будет собрано лишних данных — например, не будет анализа нагрузки от регламентных работ, которые вы проводите ночью.</p>
+<p>Кроме того, это снижает влияние сбора данных на работу системы. Дело в том, что ЦУП может собирать очень тяжелый ТЖ, способный заметно нагрузить железо (на 30% медленнее? подержи мое пиво). С этим лучше быть осторожным.</p>
+<p>Для всего, что перечислено выше, достаточно аналитических показателей ЦУП'а: анализа запросов, ожиданий на блокировках, анализа взаимоблокировок 1С и MS SQL. Что до оперативных показателей — количества выполняемых запросов, суммарного времени их выполнения и так далее — то популярностью они не пользуются. Польза от них обычно не стоит времени на настройку, и ЦУП по большому счету никогда не проектировался для того, чтобы постоянно собирать их.</p>
         <p class="f6 mt4">
-            24 ноября 2019
+            2019-11-24 15:46:53
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -153,11 +149,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/find-methods-with-parameter/">Поиск методов с параметром</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/find-methods-with-parameter">Поиск методов с параметром</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/fifty-times-faster/">В пятьдесят раз быстрее</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/fifty-times-faster">В пятьдесят раз быстрее</a>
                                 
 
             </p> 

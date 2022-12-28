@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Поиск долгих запросов с помощью Python
-        
-    </title>
+    <title>Поиск долгих запросов с помощью Python</title>
 
-    <meta name="description" content="Выложил скрипт для поиска долгих запросов в ТЖ 1С, написанный на Python." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Поиск долгих запросов с помощью Python"/>
-    <meta property="og:description" content="Выложил скрипт для поиска долгих запросов в ТЖ 1С, написанный на Python."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/longest-queries-using-python/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/longest-queries-using-python" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/why-not-bash/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/pavel-chistov-passed-away/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/longest-queries-using-python/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/longest-queries-using-python" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/longest-queries-using-python/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/longest-queries-using-python/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,14 +116,14 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Выложил <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.py" target="_blank">скрипт на Python</a> для поиска длительных запросов в ТЖ 1С. Накатал его в приступе отчаяния: никак не мог понять, почему мой <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.sh" target="_blank">верный баш</a> для одного из запросов выдаёт среднее время выполнения больше максимального.</p>
-<p class="measure-wide">Как выяснилось, проблема была в gawk. Для некоторых событий ТЖ эта утилита не могла определить длительность: пыталась преобразовать строку в число, фейлилась и… Нет, что вы! Конечно, не кидалась исключением! Просто невозмутимо считала эти строки за ноль и ехала дальше.</p>
-<p class="measure-wide">Патч, кстати, вышел ещё глупее проблемы: я просто <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/commit/946f271d6ea0c1e618b180cee11ae91ce4632c18" target="_blank">сделал</a> явное преобразование строки в число, и всё заработало как надо. Чем, блин, явное преобразование в мире gawk'а отличается от неявного? И, главное, почему?</p>
-<p class="measure-wide">Короче, цирк уехал, новый скрипт остался. Впрочем, он бережнее расходует память и процессор: в скрипте на баше для расчёта количества выполнений запроса, суммарного времени выполнения и максимального времени одного выполнения я использовал три коллекции, у каждой из которых ключом был текст запроса и его контекст. Соответственно, все три нужно было обновлять и держать в памяти.</p>
-<p class="measure-wide">Это вполне рабочая тактика, пока входящий поток не переваливает за сотни тысяч элементов: где-то тут мы начинаем терять гигабайты ОЗУ на хранении коллекций и прорву времени процессора на поиске в них. Новый скрипт попрямее: коллекция одна, но хранит всe данные по каждому запросу.</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Выложил <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.py" target="_blank">скрипт на Python</a> для поиска длительных запросов в ТЖ 1С. Накатал его в приступе отчаяния: никак не мог понять, почему мой <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.sh" target="_blank">верный баш</a> для одного из запросов выдаёт среднее время выполнения больше максимального.</p>
+<p>Как выяснилось, проблема была в gawk. Для некоторых событий ТЖ эта утилита не могла определить длительность: пыталась преобразовать строку в число, фейлилась и… Нет, что вы! Конечно, не кидалась исключением! Просто невозмутимо считала эти строки за ноль и ехала дальше.</p>
+<p>Патч, кстати, вышел ещё глупее проблемы: я просто <a href="https://github.com/vkostyanetsky/ScriptsFor1C/commit/946f271d6ea0c1e618b180cee11ae91ce4632c18" target="_blank">сделал</a> явное преобразование строки в число, и всё заработало как надо. Чем, блин, явное преобразование в мире gawk'а отличается от неявного? И, главное, почему?</p>
+<p>Короче, цирк уехал, новый скрипт остался. Впрочем, он бережнее расходует память и процессор: в скрипте на баше для расчёта количества выполнений запроса, суммарного времени выполнения и максимального времени одного выполнения я использовал три коллекции, у каждой из которых ключом был текст запроса и его контекст. Соответственно, все три нужно было обновлять и держать в памяти.</p>
+<p>Это вполне рабочая тактика, пока входящий поток не переваливает за сотни тысяч элементов: где-то тут мы начинаем терять гигабайты ОЗУ на хранении коллекций и прорву времени процессора на поиске в них. Новый скрипт попрямее: коллекция одна, но хранит всe данные по каждому запросу.</p>
         <p class="f6 mt4">
-            18 июля 2021
+            2021-07-18 17:23:55
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -156,11 +152,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/why-not-bash/">Почему не баш?</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/why-not-bash">Почему не баш?</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/pavel-chistov-passed-away/">Умер Павел Чистов</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/pavel-chistov-passed-away">Умер Павел Чистов</a>
                                 
 
             </p> 

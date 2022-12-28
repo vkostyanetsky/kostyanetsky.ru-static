@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Пустая() или ЗначениеЗаполнено()?
-        
-    </title>
+    <title>Пустая() или ЗначениеЗаполнено()?</title>
 
-    <meta name="description" content="Несколько дней назад обсуждал с коллегой, какой способ проверки заполнения ссылки лучше." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Пустая() или ЗначениеЗаполнено()?"/>
-    <meta property="og:description" content="Несколько дней назад обсуждал с коллегой, какой способ проверки заполнения ссылки лучше."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/done/is-ref-empty/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/is-ref-empty" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/done/standard-attributes-filtering/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/done/value-table-view/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/done/is-ref-empty/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/is-ref-empty" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/is-ref-empty/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/is-ref-empty/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,17 +116,17 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Несколько дней назад обсуждал с коллегой, какой способ проверки заполнения ссылки лучше. С одной стороны, время назад на каком-то курсе я слышал авторитетное мнение, что функцию ЗначениеЗаполнено() нужно использовать с осторожностью, так как её логика — сопоставлять переменную всем возможным пустым значениям, которые есть в конфигурации. И это, мол, огромная тормозная лапша. Как альтернативу автор курса советовал использовать метод ссылки Пустая(), а композитные реквизиты проверять примерно так:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Несколько дней назад обсуждал с коллегой, какой способ проверки заполнения ссылки лучше. С одной стороны, время назад на каком-то курсе я слышал авторитетное мнение, что функцию ЗначениеЗаполнено() нужно использовать с осторожностью, так как её логика — сопоставлять переменную всем возможным пустым значениям, которые есть в конфигурации. И это, мол, огромная тормозная лапша. Как альтернативу автор курса советовал использовать метод ссылки Пустая(), а композитные реквизиты проверять примерно так:</p>
 <pre><code>СсылкаЗаполнена = Ссылка &lt;&gt; Неопределено И Не Ссылка.Пустая();
 </code></pre>
-<p class="measure-wide">Коллега в свою очередь утверждал, что ЗначениеЗаполнено() быстрее, так как это встроенная функция, которая не тратит время на поиск метода у объекта (в скриптовых языках это сравнительно медленная операция).</p>
-<p class="measure-wide">На моей памяти ни тот, ни другой метод узким местом никогда не были, но меня разобрало любопытство; написал <a class="link blue dim bb" href="https://github.com/vkostyanetsky/IsEmptyOrValueIsFilled" target="_blank">тест</a>, который проверяет ссылочную переменную на пустое значение обеими способами и замеряет время, которое было потрачено. </p>
-<p class="measure-wide">В среднем результат выглядит <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/is-ref-empty/is-ref-empty.png" target="_blank">примерно так</a>. Там четыре шага — на первых двух предполагается, что ссылка определена, а на третьем и четвертом добавляется соответствующая проверка. В последней колонке таблицы виден контекст выполнения теста (клиент или сервер).</p>
-<p class="measure-wide">Вывод довольно очевиден: ЗначениеЗаполнено() никакой деградации не показывает, более того — работает быстрее, чем метод Пустая() (особенно если мы начинаем проверять переменную на Неопределено). Конечно, отклонение не слишком значительное, но на каких-то длительных регламентных операциях вполне можно сэкономить пару секунд.</p>
-<p class="measure-wide">Да и чисто практически проще делать проверку одним универсальным вызовом, а не пытаться угадать все возможные значения переменной.</p>
+<p>Коллега в свою очередь утверждал, что ЗначениеЗаполнено() быстрее, так как это встроенная функция, которая не тратит время на поиск метода у объекта (в скриптовых языках это сравнительно медленная операция).</p>
+<p>На моей памяти ни тот, ни другой метод узким местом никогда не были, но меня разобрало любопытство; написал <a href="https://github.com/vkostyanetsky/IsEmptyOrValueIsFilled" target="_blank">тест</a>, который проверяет ссылочную переменную на пустое значение обеими способами и замеряет время, которое было потрачено. </p>
+<p>В среднем результат выглядит <a href="https://kostyanetsky.ru/notes/is-ref-empty/is-ref-empty.png" target="_blank">примерно так</a>. Там четыре шага — на первых двух предполагается, что ссылка определена, а на третьем и четвертом добавляется соответствующая проверка. В последней колонке таблицы виден контекст выполнения теста (клиент или сервер).</p>
+<p>Вывод довольно очевиден: ЗначениеЗаполнено() никакой деградации не показывает, более того — работает быстрее, чем метод Пустая() (особенно если мы начинаем проверять переменную на Неопределено). Конечно, отклонение не слишком значительное, но на каких-то длительных регламентных операциях вполне можно сэкономить пару секунд.</p>
+<p>Да и чисто практически проще делать проверку одним универсальным вызовом, а не пытаться угадать все возможные значения переменной.</p>
         <p class="f6 mt4">
-            11 апреля 2020
+            2020-04-11 12:24:12
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -155,11 +151,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/standard-attributes-filtering/">Фильтрация стандартных реквизитов</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/standard-attributes-filtering">Фильтрация стандартных реквизитов</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/value-table-view/">Просмотр таблицы значений</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/value-table-view">Просмотр таблицы значений</a>
                                 
 
             </p> 

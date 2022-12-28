@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Управление службами через PowerShell
-        
-    </title>
+    <title>Управление службами через PowerShell</title>
 
-    <meta name="description" content="Примеры скриптов на PowerShell для запуска и остановки служб." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Управление службами через PowerShell"/>
-    <meta property="og:description" content="Примеры скриптов на PowerShell для запуска и остановки служб."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/workplace/manage-services-with-powershell/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/manage-services-with-powershell" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/workplace/sharex-video-recording/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/workplace/service-launcher/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/workplace/manage-services-with-powershell/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/manage-services-with-powershell" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/manage-services-with-powershell/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/manage-services-with-powershell/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,18 +116,18 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">На днях набросал себе несколько скриптов на PowerShell'е для запуска и остановки служб на рабочем ПК. Наработки в итоге не пригодились, так что зафиксирую себе пару примеров на будущее, чтобы не потерять:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>На днях набросал себе несколько скриптов на PowerShell'е для запуска и остановки служб на рабочем ПК. Наработки в итоге не пригодились, так что зафиксирую себе пару примеров на будущее, чтобы не потерять:</p>
 <pre><code>get-service -Name 1C:Enterprise* | Where-Object {$_.status -eq 'running'} | stop-service -pass
 get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service -pass
 </code></pre>
-<p class="measure-wide">Обе строки выше делают одно и то же: ищут службы с определенным именем, проверяют их состояния и, если службы запущены — останавливают их. Имена служб удобно задавать через шаблоны — например, у Microsoft SQL Server целый выводок служб с разным назначением и их удобно пристрелить одной строкой. Или, скажем, служба сервера 1С:Предприятия — она одна, зато её длиннющее название просто лень писать полностью :-)</p>
-<p class="measure-wide">Примерно тот же подход, кстати, работает и с обычными процессами. Так, строка ниже ищет процесс obs64; если находит — останавливает. </p>
+<p>Обе строки выше делают одно и то же: ищут службы с определенным именем, проверяют их состояния и, если службы запущены — останавливают их. Имена служб удобно задавать через шаблоны — например, у Microsoft SQL Server целый выводок служб с разным назначением и их удобно пристрелить одной строкой. Или, скажем, служба сервера 1С:Предприятия — она одна, зато её длиннющее название просто лень писать полностью :-)</p>
+<p>Примерно тот же подход, кстати, работает и с обычными процессами. Так, строка ниже ищет процесс obs64; если находит — останавливает. </p>
 <pre><code>get-process -Name obs64 | stop-process -pass
 </code></pre>
-<p class="measure-wide">Если нужны детали, то на сайте разработчика есть подробная <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/powershell/scripting/samples/managing-services?view=powershell-7" target="_blank">документация</a> с кучей примеров и рассуждений в духе «как запустить службу, если вы медитируете на одной ноге в условиях искусственной невесомости».</p>
+<p>Если нужны детали, то на сайте разработчика есть подробная <a href="https://docs.microsoft.com/ru-ru/powershell/scripting/samples/managing-services?view=powershell-7" target="_blank">документация</a> с кучей примеров и рассуждений в духе «как запустить службу, если вы медитируете на одной ноге в условиях искусственной невесомости».</p>
         <p class="f6 mt4">
-            28 апреля 2020
+            2020-04-28 17:18:10
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/powershell/">PowerShell</a>
@@ -156,11 +152,11 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/sharex-video-recording/">Запись видео в ShareX</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/sharex-video-recording">Запись видео в ShareX</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/service-launcher/">Запускатор служб</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/service-launcher">Запускатор служб</a>
                                 
 
             </p> 

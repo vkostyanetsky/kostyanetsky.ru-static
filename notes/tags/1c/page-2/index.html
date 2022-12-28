@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            1С
-        
-    </title>
+    <title>1С</title>
 
-    <meta name="description" content="Мои заметки о жизни, работе и других интересных штуках вокруг меня." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="1С"/>
-    <meta property="og:description" content="Мои заметки о жизни, работе и других интересных штуках вокруг меня."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/1c/page-2/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/1c/page-2" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -48,8 +44,8 @@
 
     <script>
 
-        let ctrlUpUrl       = 'https://kostyanetsky.ru/notes/tags/1c/';
-        let ctrlDownUrl     = 'https://kostyanetsky.ru/notes/tags/1c/page-3/';
+        let ctrlUpUrl       = 'https://kostyanetsky.ru/notes/tags/1c';
+        let ctrlDownUrl     = 'https://kostyanetsky.ru/notes/tags/1c/page-3';
         let ctrlLeftUrl     = '';
         let ctrlRightUrl    = '';
 
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/1c/page-2/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/tags/1c/page-2" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -121,29 +117,29 @@
         
 
             <p class="mt5 mb3 f6">
-                <a class="link blue bb dim mr1 mt3 mb3" href="https://kostyanetsky.ru/notes/tags/1c/">Позднее</a> Ctrl + &uarr;
+                <a class="link blue bb dim mr1 mt3 mb3" href="https://kostyanetsky.ru/notes/tags/1c">Позднее</a> Ctrl + &uarr;
             </p>
 
         
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/recursive-search/">Рекурсивный поиск по файлам</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/recursive-search/">Рекурсивный поиск по файлам</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Время назад я <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/vulnerabilities/" target="_blank">примеривался</a> к поискам уязвимостей в коде скриптами на bash (звучит грозно, но это просто рекурсивный поиск текста с помощью регулярных выражений). Скрипты-то я тогда написал, но, как сегодня понял — несколько… Ректально, кхм. Для решения хватает одного egrep! То есть из связки find, xargs и egrep можно выкинуть два компонента из трех.</p>
-<p class="measure-wide">Например, сегодня у нас возникла проблема: конфигурация перестала собираться в последнем релизе EDT. Подозрение пало на битые GUID — ссылки на объекты метаданных, удаленные из конфигурации. Платформа не всегда справляется с их вычисткой после того, как удалит сами объекты; я уже пару раз писал про это (например, <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/designer-error-investigation/" target="_blank">здесь</a> или <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/unresolved-gopher/" target="_blank">вот тут</a>).</p>
-<p class="measure-wide">В общем, мы решили порыться в выгрузке конфигурации — найти GUID'ы и оценить, все ли они находятся там, где положено. Общее решение — одна-единственная команда:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Время назад я <a href="https://kostyanetsky.ru//notes/vulnerabilities/" target="_blank">примеривался</a> к поискам уязвимостей в коде скриптами на bash (звучит грозно, но это просто рекурсивный поиск текста с помощью регулярных выражений). Скрипты-то я тогда написал, но, как сегодня понял — несколько… Ректально, кхм. Для решения хватает одного egrep! То есть из связки find, xargs и egrep можно выкинуть два компонента из трех.</p>
+<p>Например, сегодня у нас возникла проблема: конфигурация перестала собираться в последнем релизе EDT. Подозрение пало на битые GUID — ссылки на объекты метаданных, удаленные из конфигурации. Платформа не всегда справляется с их вычисткой после того, как удалит сами объекты; я уже пару раз писал про это (например, <a href="https://kostyanetsky.ru//notes/designer-error-investigation/" target="_blank">здесь</a> или <a href="https://kostyanetsky.ru//notes/unresolved-gopher/" target="_blank">вот тут</a>).</p>
+<p>В общем, мы решили порыться в выгрузке конфигурации — найти GUID'ы и оценить, все ли они находятся там, где положено. Общее решение — одна-единственная команда:</p>
 <pre><code>egrep -rn '.{8}-.{4}-.{4}-.{4}-.{12}' dump
 </code></pre>
-<p class="measure-wide">Ключ r включает рекурсивный поиск, ключ n — заставляет утилиту пристегнуть к найденной строке не только имя файла, в котором найдена строка, но и номер самой строки. Последний параметр, dump — имя директории, где нужно искать.</p>
-<p class="measure-wide">Регулярку можно сделать точнее, но и такой за глаза хватает. Что до ложных срабатываний (то есть GUID, которые не являются битыми ссылками) — их легко отсеять через пайп. Например, скрипт ниже не будет выводить строки с GUID, в которых есть подстрока «uuid»:</p>
+<p>Ключ r включает рекурсивный поиск, ключ n — заставляет утилиту пристегнуть к найденной строке не только имя файла, в котором найдена строка, но и номер самой строки. Последний параметр, dump — имя директории, где нужно искать.</p>
+<p>Регулярку можно сделать точнее, но и такой за глаза хватает. Что до ложных срабатываний (то есть GUID, которые не являются битыми ссылками) — их легко отсеять через пайп. Например, скрипт ниже не будет выводить строки с GUID, в которых есть подстрока «uuid»:</p>
 <pre><code>egrep -rn '.{8}-.{4}-.{4}-.{4}-.{12}' dump | grep -v 'uuid'
 </code></pre>
         <p class="f6 mt4">
-            14 января 2021
+            2021-01-14 10:15:16
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -160,20 +156,20 @@
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/old-but-gold/">Старый добрый DATETIME</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/old-but-gold/">Старый добрый DATETIME</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Порылся в сети по поводу типов дат в MS SQL Server и в целом вопроса «почему 1С до сих пор носится со своим смещением» больше не имею. Люди пишут о целой пачке проблем с DATETIME2:</p>
-<ol class="measure-wide">
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Порылся в сети по поводу типов дат в MS SQL Server и в целом вопроса «почему 1С до сих пор носится со своим смещением» больше не имею. Люди пишут о целой пачке проблем с DATETIME2:</p>
+<ol>
 <li>Недоступна базовая математика. Без дополнительных финтов ушами не выйдет посчитать разницу между двумя датами, прибавить к дате день и так далее.</li>
 <li>Стандартные функции по-прежнему возвращают старый добрый DATETIME (например, DATEADD). Если данные хранятся в DATETIME2 — потребуется конвертация.</li>
-<li>Поля с этим типом <a class="link blue dim bb" href="https://sqlperformance.com/2016/04/sql-performance/surprises-dateadd" target="_blank">неважно</a> индексируются, так как каждое значение DATETIME2 хранится задом наперед (сначала время, потом дата). В итоге СУБД промахивается с оценкой количества строк, которое может вернуть запрос, и строит для него неэффективный план выполнения.</li>
+<li>Поля с этим типом <a href="https://sqlperformance.com/2016/04/sql-performance/surprises-dateadd" target="_blank">неважно</a> индексируются, так как каждое значение DATETIME2 хранится задом наперед (сначала время, потом дата). В итоге СУБД промахивается с оценкой количества строк, которое может вернуть запрос, и строит для него неэффективный план выполнения.</li>
 </ol>
-<p class="measure-wide">Подробнее о всем этом можно прочитать на <a class="link blue dim bb" href="https://towardsdatascience.com/datetime2-why-you-should-not-use-it-70e50ae2bab9" target="_blank">Towards Data Science</a> или, например, на <a class="link blue dim bb" href="https://www.sqlservercentral.com/forums/topic/why-do-some-dbas-avoid-datetime2" target="_blank">SQL Server Central</a>.</p>
+<p>Подробнее о всем этом можно прочитать на <a href="https://towardsdatascience.com/datetime2-why-you-should-not-use-it-70e50ae2bab9" target="_blank">Towards Data Science</a> или, например, на <a href="https://www.sqlservercentral.com/forums/topic/why-do-some-dbas-avoid-datetime2" target="_blank">SQL Server Central</a>.</p>
         <p class="f6 mt4">
-            11 ноября 2020
+            2020-11-11 17:00:50
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -190,23 +186,23 @@
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/lost-time/">Смещение дат в 1С</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/lost-time/">Смещение дат в 1С</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">В MS SQL Server поля DATETIME <a class="link blue dim bb" href="https://docs.microsoft.com/ru-ru/dotnet/api/system.data.sqltypes.sqldatetime.minvalue?view=dotnet-plat-ext-3.1" target="_blank">не могут</a> хранить даты раньше 1753-го года. Например, если попытаться записать в базу 01.01.0001 — получим ругань на out-of-range value. Я считал это забавным для такой почтенной СУБД рудиментом, пока случайно не наткнулся на <a class="link blue dim bb" href="https://stackoverflow.com/questions/3310569/what-is-the-significance-of-1-1-1753-in-sql-server" target="_blank">причину</a>.</p>
-<p class="measure-wide">Если вкратце, в 1752-м году Великобритания внедрила у себя Григорианский календарь, и в процессе у них из летосчисления пропало одиннадцать дней. Это породило проблему: вот хочет юзер посчитать разницу в днях между 1653-м и 1753-м годом — что делать будем? Учтем потеряшек? Проигнорируем? Сделаем какие-то хинты или настройки?</p>
-<p class="measure-wide">Видимо, чтобы не городить неоднозначные механизмы, разработчики СУБД решили вопрос радикально — усечением доступного диапазона дат. А для тех, для кого это проблема, есть DATETIME2, который никаких ограничений не имеет.</p>
-<p class="measure-wide">Что касается 1С, то изначально платформа использовала DATETIME, а чтобы не иметь головной боли с хранением дат раньше 1753-го года — придумала специальный <a class="link blue dim bb" href="https://its.1c.ru/db/metod8dev/content/4055/hdoc" target="_blank">костыль</a>. В двух словах: когда платформа пишет даты в БД, то тихой сапой прибавляет к каждой две тысячи лет, а когда читает — вычитает обратно. То есть в 1С пользователь видит 01.01.2000, а в БД на самом деле хранится 01.01.4000.</p>
-<p class="measure-wide">Любопытно, почему 1C до сих пор не выкинула эту штуку? Сейчас платформа использует DATETIME2 и фокус по смещением в общем-то не нужен. Конечно, тут могут быть какие-то подводные камни или просто разумная осторожность, но среди разработчиков самой СУБД сомнений <a class="link blue dim bb" href="https://stackoverflow.com/questions/3310569/what-is-the-significance-of-1-1-1753-in-sql-server/3310627#3310627" target="_blank">не заметно</a>:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>В MS SQL Server поля DATETIME <a href="https://docs.microsoft.com/ru-ru/dotnet/api/system.data.sqltypes.sqldatetime.minvalue?view=dotnet-plat-ext-3.1" target="_blank">не могут</a> хранить даты раньше 1753-го года. Например, если попытаться записать в базу 01.01.0001 — получим ругань на out-of-range value. Я считал это забавным для такой почтенной СУБД рудиментом, пока случайно не наткнулся на <a href="https://stackoverflow.com/questions/3310569/what-is-the-significance-of-1-1-1753-in-sql-server" target="_blank">причину</a>.</p>
+<p>Если вкратце, в 1752-м году Великобритания внедрила у себя Григорианский календарь, и в процессе у них из летосчисления пропало одиннадцать дней. Это породило проблему: вот хочет юзер посчитать разницу в днях между 1653-м и 1753-м годом — что делать будем? Учтем потеряшек? Проигнорируем? Сделаем какие-то хинты или настройки?</p>
+<p>Видимо, чтобы не городить неоднозначные механизмы, разработчики СУБД решили вопрос радикально — усечением доступного диапазона дат. А для тех, для кого это проблема, есть DATETIME2, который никаких ограничений не имеет.</p>
+<p>Что касается 1С, то изначально платформа использовала DATETIME, а чтобы не иметь головной боли с хранением дат раньше 1753-го года — придумала специальный <a href="https://its.1c.ru/db/metod8dev/content/4055/hdoc" target="_blank">костыль</a>. В двух словах: когда платформа пишет даты в БД, то тихой сапой прибавляет к каждой две тысячи лет, а когда читает — вычитает обратно. То есть в 1С пользователь видит 01.01.2000, а в БД на самом деле хранится 01.01.4000.</p>
+<p>Любопытно, почему 1C до сих пор не выкинула эту штуку? Сейчас платформа использует DATETIME2 и фокус по смещением в общем-то не нужен. Конечно, тут могут быть какие-то подводные камни или просто разумная осторожность, но среди разработчиков самой СУБД сомнений <a href="https://stackoverflow.com/questions/3310569/what-is-the-significance-of-1-1-1753-in-sql-server/3310627#3310627" target="_blank">не заметно</a>:</p>
 <blockquote>
-<p class="measure-wide">Your great great great great great great great grandfather should upgrade to SQL Server 2008 and use the DateTime2 data type, which supports dates in the range: 0001-01-01 through 9999-12-31.</p>
-<p class="measure-wide"><em>Joe Stefanelli (SQL Server developer)</em></p>
+<p>Your great great great great great great great grandfather should upgrade to SQL Server 2008 and use the DateTime2 data type, which supports dates in the range: 0001-01-01 through 9999-12-31.</p>
+<p><em>Joe Stefanelli (SQL Server developer)</em></p>
 </blockquote>
-<p class="measure-wide">Возможно, это просто на дне приоритетов. Добавление и удаление двух тысяч лет для каждой даты, конечно, увеличивает нагрузку на оборудование, но на фоне остального она теряется.</p>
+<p>Возможно, это просто на дне приоритетов. Добавление и удаление двух тысяч лет для каждой даты, конечно, увеличивает нагрузку на оборудование, но на фоне остального она теряется.</p>
         <p class="f6 mt4">
-            10 ноября 2020
+            2020-11-10 19:06:41
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -223,38 +219,38 @@
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/designer-error-investigation/">Расследование ошибки в Конфигураторе</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/designer-error-investigation/">Расследование ошибки в Конфигураторе</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Итак, Конфигуратор выдает ошибку; нужно её исправить или обойти. Это потенциально неприятный расклад: у нас нет никакого доступа к коду приложения. Тем не менее, чтобы решить проблему — важно понять, что именно делал Конфигуратор до сбоя и почему он не справился.</p>
-<p class="measure-wide">Что может с этим помочь?</p>
-<p class="measure-wide">Первое — сам текст ошибки. Нередко его вполне достаточно, чтобы мысли двинулись в правильном направлении. Если причиной сбоя стал запрос, то в ошибке будет ещё и сообщение от СУБД.</p>
-<p class="measure-wide">Второе — технологический журнал по событиям EXCP, SDBL и DBMSSQL (DBPOSTGRS?) для t:applicationName=Designer. Из него мы получим информацию об исключениях внутри Конфигуратора и данные запросов, которые он выполняет (нередко они и есть причина ошибки).</p>
-<p class="measure-wide">Кроме того, может пригодиться трассировка запросов к базе данных. Если используется MS SQL, то трассировку можно получить через Extended Events — конкретно, нас интересуют события error_reported, rpc_completed и sql_batch_completed. Общий принцип тот же — ловим ошибки выполнения запросов и сами запросы. </p>
-<p class="measure-wide">Разберем пример — может, не самый показательный, зато свежий.</p>
-<p class="measure-wide">Контекст — конфигурация, использующая <a class="link blue dim bb" href="https://v8.1c.ru/platforma/razdelenie-dannyh/" target="_blank">разделение данных</a>. Её база данных «нарезана» на кусочки (области данных), каждый из которых ничего не знает о своих соседях — сколько их, какого они размера и так далее. При этом в БД есть и общие данные — например, справочники, к которым можно обратиться из любой области. Как правило, это разная техническая информация — например, перечень объектов метаданных.</p>
-<p class="measure-wide">Задача — исключить справочник FileStorageVolumes из основного разделителя. Сейчас этот справочник — разделенный: то есть, его данные от области к области будут различаться. Нам нужно сделать так, чтобы содержимое справочника стало одинаковым для всех областей.</p>
-<p class="measure-wide">Задача несложная, так как таблица справочника пуста — ни одна из областей ничего в нем не хранит. Что же, применяем <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/designer-error-investigation/setup.png" target="_blank">настройку</a> и:</p>
-<p class="measure-wide"><img alt="Исключение" src="https://kostyanetsky.ru/notes/designer-error-investigation/error.png"/></p>
-<p class="measure-wide">В <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/designer-error-investigation/error.txt" target="_blank">тексте</a> исключения есть сообщения: одно от платформы, второе от СУБД. Первое озадачивает: то есть как это данные не уникальны? Справочник же пуст, никаких данных нет. Возможно, проблема в каких-то вспомогательных структурах, не связанных с содержимым справочника напрямую.</p>
-<p class="measure-wide">Сообщение СУБД более внятное: MS SQL Server хотела создать уникальный индекс для таблицы _DataHistorySettingsNG, но не смогла, так как сочетания индексируемых полей оказались неуникальны. Приводится даже конкретное значение, из-за которого не получилось создать индекс: это NULL.</p>
-<p class="measure-wide">Выводы?</p>
-<ol class="measure-wide">
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Итак, Конфигуратор выдает ошибку; нужно её исправить или обойти. Это потенциально неприятный расклад: у нас нет никакого доступа к коду приложения. Тем не менее, чтобы решить проблему — важно понять, что именно делал Конфигуратор до сбоя и почему он не справился.</p>
+<p>Что может с этим помочь?</p>
+<p>Первое — сам текст ошибки. Нередко его вполне достаточно, чтобы мысли двинулись в правильном направлении. Если причиной сбоя стал запрос, то в ошибке будет ещё и сообщение от СУБД.</p>
+<p>Второе — технологический журнал по событиям EXCP, SDBL и DBMSSQL (DBPOSTGRS?) для t:applicationName=Designer. Из него мы получим информацию об исключениях внутри Конфигуратора и данные запросов, которые он выполняет (нередко они и есть причина ошибки).</p>
+<p>Кроме того, может пригодиться трассировка запросов к базе данных. Если используется MS SQL, то трассировку можно получить через Extended Events — конкретно, нас интересуют события error_reported, rpc_completed и sql_batch_completed. Общий принцип тот же — ловим ошибки выполнения запросов и сами запросы. </p>
+<p>Разберем пример — может, не самый показательный, зато свежий.</p>
+<p>Контекст — конфигурация, использующая <a href="https://v8.1c.ru/platforma/razdelenie-dannyh/" target="_blank">разделение данных</a>. Её база данных «нарезана» на кусочки (области данных), каждый из которых ничего не знает о своих соседях — сколько их, какого они размера и так далее. При этом в БД есть и общие данные — например, справочники, к которым можно обратиться из любой области. Как правило, это разная техническая информация — например, перечень объектов метаданных.</p>
+<p>Задача — исключить справочник FileStorageVolumes из основного разделителя. Сейчас этот справочник — разделенный: то есть, его данные от области к области будут различаться. Нам нужно сделать так, чтобы содержимое справочника стало одинаковым для всех областей.</p>
+<p>Задача несложная, так как таблица справочника пуста — ни одна из областей ничего в нем не хранит. Что же, применяем <a href="https://kostyanetsky.ru/notes/designer-error-investigation/setup.png" target="_blank">настройку</a> и:</p>
+<p><img alt="Исключение" src="https://kostyanetsky.ru/notes/designer-error-investigation/error.png"/></p>
+<p>В <a href="https://kostyanetsky.ru/notes/designer-error-investigation/error.txt" target="_blank">тексте</a> исключения есть сообщения: одно от платформы, второе от СУБД. Первое озадачивает: то есть как это данные не уникальны? Справочник же пуст, никаких данных нет. Возможно, проблема в каких-то вспомогательных структурах, не связанных с содержимым справочника напрямую.</p>
+<p>Сообщение СУБД более внятное: MS SQL Server хотела создать уникальный индекс для таблицы _DataHistorySettingsNG, но не смогла, так как сочетания индексируемых полей оказались неуникальны. Приводится даже конкретное значение, из-за которого не получилось создать индекс: это NULL.</p>
+<p>Выводы?</p>
+<ol>
 <li>Очевидно, что проблема возникла в ходе реструктуризации. Во-первых, именно её мы и делали. Во-вторых, на это указывает и операция CREATE UNIQUE INDEX (создание индексов в таблицах — часть реструктуризации), и название проблемной таблицы: в нём есть постфикс NG (его получают копии таблиц, которые создаются при реструктуризации; если она проходит успешно, то платформа удаляет исходную таблицу и переименовывает копию).</li>
 <li>Проблема возникла с настройками механизма истории данных (_DataHistorySettings). Там хранится статус каждого объекта метаданных: нужно или нет вести историю данных для объекта, его полей и полей его табличных частей (если они есть).</li>
 </ol>
-<p class="measure-wide">Последнее объясняет, почему проблема уникальности возникла на пустом справочнике: настройки истории данных для объекта хранятся независимо от того, есть в объекте какие-то данные или нет. Если посмотреть на таблицу с настройками, там всего три поля: _MetadataId (ID объекта метаданных), _Content (значения настроек) и _Fld626 (разделитель области).</p>
-<p class="measure-wide">До реструктуризации данные имеют примерно такой вид:</p>
-<p class="measure-wide"><img alt="Таблица _DataHistorySettings" src="https://kostyanetsky.ru/notes/designer-error-investigation/table.png"/></p>
-<p class="measure-wide">Однако потом эта картина изменилась. Когда мы исключили справочник из состава общего реквизита, конфигуратор запустил реструктуризацию: создал таблицу _DataHistorySettingsNG, перенес в неё данные из _DataHistorySettings и установил значение поля _Fld626 в NULL всем записям, которые относятся к справочнику FileStorageVolumes.</p>
-<p class="measure-wide">К чему это привело? А вот к чему: для справочника FileStorageVolumes появился целый ворох настроек, которые не относятся к какой-либо области. Это само по себе звучит нездорово, но настоящие проблемы начались, когда Конфигуратор попытался создать для таблицы кластерный индекс: он <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/designer-error-investigation/index.png" target="_blank">строится</a> по полям _MetadataId и _Fld626, является уникальным и, соответственно, не может быть создан — в таблице множество записей, у которых различается только поле _Content, а _MetadataId и _Fld626 — гарантированно идентичны.</p>
-<p class="measure-wide">Для очистки совести посмотрим <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/designer-error-investigation/20103116.log" target="_blank">техжурнал</a> (я вычистил оттуда нерелевантные события и другую постороннюю информацию). Наши догадки подтверждается: видим, как Конфигуратор создает и заполняет таблицу _DataHistorySettingsNG, пытается проиндексировать её, но получает ошибку и удаляет. В <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/designer-error-investigation/20103116.png" target="_blank">трассировке</a> СУБД примерно та же картина.</p>
-<p class="measure-wide">На этом интересное заканчивается, так как решение достаточно очевидно: удаляем настройки истории данных для справочника во всей областях данных и повторяем реструктуризацию. Ошибку это не исправит, конечно; по хорошему, Конфигуратор должен предсказывать такую ситуацию и выдавать адекватное сообщение — как, например, при удалении измерения регистра сведений, которое приводит к нарушению уникальности измерений для записей регистра. Однако задача будет решена.</p>
-<p class="measure-wide">В общем, готово — мы великолепны!</p>
+<p>Последнее объясняет, почему проблема уникальности возникла на пустом справочнике: настройки истории данных для объекта хранятся независимо от того, есть в объекте какие-то данные или нет. Если посмотреть на таблицу с настройками, там всего три поля: _MetadataId (ID объекта метаданных), _Content (значения настроек) и _Fld626 (разделитель области).</p>
+<p>До реструктуризации данные имеют примерно такой вид:</p>
+<p><img alt="Таблица _DataHistorySettings" src="https://kostyanetsky.ru/notes/designer-error-investigation/table.png"/></p>
+<p>Однако потом эта картина изменилась. Когда мы исключили справочник из состава общего реквизита, конфигуратор запустил реструктуризацию: создал таблицу _DataHistorySettingsNG, перенес в неё данные из _DataHistorySettings и установил значение поля _Fld626 в NULL всем записям, которые относятся к справочнику FileStorageVolumes.</p>
+<p>К чему это привело? А вот к чему: для справочника FileStorageVolumes появился целый ворох настроек, которые не относятся к какой-либо области. Это само по себе звучит нездорово, но настоящие проблемы начались, когда Конфигуратор попытался создать для таблицы кластерный индекс: он <a href="https://kostyanetsky.ru/notes/designer-error-investigation/index.png" target="_blank">строится</a> по полям _MetadataId и _Fld626, является уникальным и, соответственно, не может быть создан — в таблице множество записей, у которых различается только поле _Content, а _MetadataId и _Fld626 — гарантированно идентичны.</p>
+<p>Для очистки совести посмотрим <a href="https://kostyanetsky.ru/notes/designer-error-investigation/20103116.log" target="_blank">техжурнал</a> (я вычистил оттуда нерелевантные события и другую постороннюю информацию). Наши догадки подтверждается: видим, как Конфигуратор создает и заполняет таблицу _DataHistorySettingsNG, пытается проиндексировать её, но получает ошибку и удаляет. В <a href="https://kostyanetsky.ru/notes/designer-error-investigation/20103116.png" target="_blank">трассировке</a> СУБД примерно та же картина.</p>
+<p>На этом интересное заканчивается, так как решение достаточно очевидно: удаляем настройки истории данных для справочника во всей областях данных и повторяем реструктуризацию. Ошибку это не исправит, конечно; по хорошему, Конфигуратор должен предсказывать такую ситуацию и выдавать адекватное сообщение — как, например, при удалении измерения регистра сведений, которое приводит к нарушению уникальности измерений для записей регистра. Однако задача будет решена.</p>
+<p>В общем, готово — мы великолепны!</p>
         <p class="f6 mt4">
-            31 октября 2020
+            2020-10-31 12:38:15
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -267,33 +263,33 @@
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/excp-number-by-minutes/">Расчет количества исключений по ТЖ</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/excp-number-by-minutes/">Расчет количества исключений по ТЖ</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Ещё <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/ExceptionsNumberByMinutes.sh" target="_blank">скрипт</a>. Считает количество исключений в минуту и строит топ, по которому видно распределение. Можно быстро оценить периоды, когда программы сбоили особенно яростно.</p>
-<p class="measure-wide">По ходу дела столкнулся в двумя любопытными проблемами, которые меня порядком сбили с толку. Во-первых, я почему-то был уверен, что uniq -c группирует строки вне зависимости от того, где в потоке данных они встречаются. Рассмотрим пример:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Ещё <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/ExceptionsNumberByMinutes.sh" target="_blank">скрипт</a>. Считает количество исключений в минуту и строит топ, по которому видно распределение. Можно быстро оценить периоды, когда программы сбоили особенно яростно.</p>
+<p>По ходу дела столкнулся в двумя любопытными проблемами, которые меня порядком сбили с толку. Во-первых, я почему-то был уверен, что uniq -c группирует строки вне зависимости от того, где в потоке данных они встречаются. Рассмотрим пример:</p>
 <pre><code>банан
 банан
 груша
 банан
 </code></pre>
-<p class="measure-wide">Я думал, что если отдать эти данные uniq -c, то она сгруппирует одинаковые строки, посчитает количество повторений и выдаст примерно такое:</p>
+<p>Я думал, что если отдать эти данные uniq -c, то она сгруппирует одинаковые строки, посчитает количество повторений и выдаст примерно такое:</p>
 <pre><code>3 банан
 1 груша
 </code></pre>
-<p class="measure-wide">Но на деле получилось так:</p>
+<p>Но на деле получилось так:</p>
 <pre><code>2 банан
 1 груша
 1 банан
 </code></pre>
-<p class="measure-wide">Вывод: утилита uniq ожидает, что повторяющиеся строки идут одна за другой. Если строка отличается от предыдущей — она начинает считать счетчик совпадений для неё с нуля. То есть, чтобы получить тот результат, на который я рассчитывал — нужно сначала отсортировать данные, и только потом передавать их в uniq.</p>
-<p class="measure-wide">Второй проблемой стала утилита sed. С помощью неё я пытался удалить из потока данных всё, кроме часов и минут (текст попытки на 12-й строке скрипта). Однако часть событий упорно не попадали под регулярку несмотря на то, что визуально никак не отличались. Я промаялся кучу времени и здорово разозлился, но потом вспомнил про существование <a class="link blue dim bb" href="https://ru.wikipedia.org/wiki/Маркер_последовательности_байтов" target="_blank">BOM</a>. Вычистил их и дальше все пошло как по маслу.</p>
-<p class="measure-wide">BOM используется во всех файлах ТЖ (в этом можно убедиться, например, с помощью <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LogFilesWithoutBOM.sh" target="_blank">скрипта</a>). То есть каждый лог начинается с особых символов, которых невооруженным глазом не увидеть и которые могут помешать обработать первую строку файла (так как эти самые символы не будут попадать под условие регулярного выражения).</p>
-<p class="measure-wide">Вывод: проще всего удалять BOM по умолчанию, не оценивая рисков для каждой конкретной задачи. Да, иногда это будет лишним (например, решению задачи по тексту выше через grep BOM никак не мешает). Но я не люблю сюрпризы. Кроме того, несколько тактов процессора на простую замену — явно выгоднее, чем эквивалент в сгоревших нервных клетках и потерянном времени.</p>
+<p>Вывод: утилита uniq ожидает, что повторяющиеся строки идут одна за другой. Если строка отличается от предыдущей — она начинает считать счетчик совпадений для неё с нуля. То есть, чтобы получить тот результат, на который я рассчитывал — нужно сначала отсортировать данные, и только потом передавать их в uniq.</p>
+<p>Второй проблемой стала утилита sed. С помощью неё я пытался удалить из потока данных всё, кроме часов и минут (текст попытки на 12-й строке скрипта). Однако часть событий упорно не попадали под регулярку несмотря на то, что визуально никак не отличались. Я промаялся кучу времени и здорово разозлился, но потом вспомнил про существование <a href="https://ru.wikipedia.org/wiki/Маркер_последовательности_байтов" target="_blank">BOM</a>. Вычистил их и дальше все пошло как по маслу.</p>
+<p>BOM используется во всех файлах ТЖ (в этом можно убедиться, например, с помощью <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LogFilesWithoutBOM.sh" target="_blank">скрипта</a>). То есть каждый лог начинается с особых символов, которых невооруженным глазом не увидеть и которые могут помешать обработать первую строку файла (так как эти самые символы не будут попадать под условие регулярного выражения).</p>
+<p>Вывод: проще всего удалять BOM по умолчанию, не оценивая рисков для каждой конкретной задачи. Да, иногда это будет лишним (например, решению задачи по тексту выше через grep BOM никак не мешает). Но я не люблю сюрпризы. Кроме того, несколько тактов процессора на простую замену — явно выгоднее, чем эквивалент в сгоревших нервных клетках и потерянном времени.</p>
         <p class="f6 mt4">
-            24 октября 2020
+            2020-10-24 12:00:12
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -314,21 +310,21 @@
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/nerdview/">Профессиональная деформация</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/nerdview/">Профессиональная деформация</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide"><img alt="Чат с дочкой" src="https://kostyanetsky.ru/notes/nerdview/telegram.png"/></p>
-<p class="measure-wide">Дочка пишет о своих планах — мол, не теряй меня. А у меня профессиональная деформация: этот вполне нормальный чат мой мозг упорно воспринимает как код на Gherkin. Просто какой-то неправильный, что ли, хочется быстренько пофиксить :-)</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p><img alt="Чат с дочкой" src="https://kostyanetsky.ru/notes/nerdview/telegram.png"/></p>
+<p>Дочка пишет о своих планах — мол, не теряй меня. А у меня профессиональная деформация: этот вполне нормальный чат мой мозг упорно воспринимает как код на Gherkin. Просто какой-то неправильный, что ли, хочется быстренько пофиксить :-)</p>
 <pre><code>И я выхожу
 Тогда я в школе
 И я выхожу
 Тогда я покачаюсь
 </code></pre>
-<p class="measure-wide">Мы на этом языке пишем автотесты нашей конфигурации для <a class="link blue dim bb" href="https://github.com/Pr-Mex/vanessa-automation" target="_blank">Vanessa Automation</a>. Вроде не так уж много я их накатал (сравнивая с некоторыми коллегами — баловался, считай). Но, видимо, достаточно.</p>
+<p>Мы на этом языке пишем автотесты нашей конфигурации для <a href="https://github.com/Pr-Mex/vanessa-automation" target="_blank">Vanessa Automation</a>. Вроде не так уж много я их накатал (сравнивая с некоторыми коллегами — баловался, считай). Но, видимо, достаточно.</p>
         <p class="f6 mt4">
-            19 октября 2020
+            2020-10-19 18:35:56
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -349,16 +345,16 @@
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/queries-and-lock-waits/">Запросы и ожидания на блокировках</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/queries-and-lock-waits/">Запросы и ожидания на блокировках</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Набросал ещё два скрипта для анализа ТЖ: <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestQueries.sh" target="_blank">первый</a> строит топ тяжелых запросов к MS SQL, <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestLockWaitsByRegions.sh" target="_blank">второй</a> — топ длительных ожиданий на блокировках.</p>
-<p class="measure-wide">Тяжелые запросы определяются по продолжительности событий DBMSSQL. То есть, чем дольше выполнялся запрос — тем вероятнее, что в процессе он слопал кучу ресурсов. Обычно это так и есть, хотя для нормальной диагностики нужно смотреть трассировку.</p>
-<p class="measure-wide">Ожидания на блокировках тоже считаются по продолжительности. При этом скрипт проверяет, что у события TLOCK заполнено свойство WaitConnections — то есть платформа действительно ждала возможности установить блокировку, а не просто потратила какое-то время на её установку.</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Набросал ещё два скрипта для анализа ТЖ: <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestQueries.sh" target="_blank">первый</a> строит топ тяжелых запросов к MS SQL, <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestLockWaitsByRegions.sh" target="_blank">второй</a> — топ длительных ожиданий на блокировках.</p>
+<p>Тяжелые запросы определяются по продолжительности событий DBMSSQL. То есть, чем дольше выполнялся запрос — тем вероятнее, что в процессе он слопал кучу ресурсов. Обычно это так и есть, хотя для нормальной диагностики нужно смотреть трассировку.</p>
+<p>Ожидания на блокировках тоже считаются по продолжительности. При этом скрипт проверяет, что у события TLOCK заполнено свойство WaitConnections — то есть платформа действительно ждала возможности установить блокировку, а не просто потратила какое-то время на её установку.</p>
         <p class="f6 mt4">
-            19 октября 2020
+            2020-10-19 06:23:06
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -379,20 +375,20 @@
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/top-exceptions-v2/">Новый скрипт топа исключений</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/top-exceptions-v2/">Новый скрипт топа исключений</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Переписал <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/FrequentExceptions.sh" target="_blank">скрипт</a> на баше, строящий топ исключений по собранному ТЖ: хотел решить эту задачу как-то попроще.</p>
-<p class="measure-wide">В итоге выкинул из кода возню с заменой начала события на маркер gawk для разделения записей (его можно сразу задать регулярным выражением) и перенес больше логики в скрипт для gawk (так нагляднее, особенно если потом захочется её расширить). </p>
-<p class="measure-wide">Получилось явно лучше, чем <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/47e02e199bb32082c4d5019ca88233c0" target="_blank">было</a> — во всяком случае, логика выглядит понятнее. Изначально, правда, я хотел скорее сократить скрипт в размере и получить что-то вроде:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Переписал <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/FrequentExceptions.sh" target="_blank">скрипт</a> на баше, строящий топ исключений по собранному ТЖ: хотел решить эту задачу как-то попроще.</p>
+<p>В итоге выкинул из кода возню с заменой начала события на маркер gawk для разделения записей (его можно сразу задать регулярным выражением) и перенес больше логики в скрипт для gawk (так нагляднее, особенно если потом захочется её расширить). </p>
+<p>Получилось явно лучше, чем <a href="https://gist.github.com/vkostyanetsky/47e02e199bb32082c4d5019ca88233c0" target="_blank">было</a> — во всяком случае, логика выглядит понятнее. Изначально, правда, я хотел скорее сократить скрипт в размере и получить что-то вроде:</p>
 <pre><code>grep -hoP ",EXCP,.*\KDescr=.*" */*.log | uniq -c | sort -rn
 </code></pre>
-<p class="measure-wide">То есть фильтруем только строки с событием EXCP, отрезаем всё до описания ошибки и группируем с помощью uniq. По-моему, очень изящно.</p>
-<p class="measure-wide">Однако описание у EXCP может быть многострочным. То есть мы будем время от времени терять часть данных, нужных для расследования (всё описание после первого же перевода строки). Как решить эту проблему так, чтобы скрипт не разбарабанило втрое — я пока не придумал :-)</p>
+<p>То есть фильтруем только строки с событием EXCP, отрезаем всё до описания ошибки и группируем с помощью uniq. По-моему, очень изящно.</p>
+<p>Однако описание у EXCP может быть многострочным. То есть мы будем время от времени терять часть данных, нужных для расследования (всё описание после первого же перевода строки). Как решить эту проблему так, чтобы скрипт не разбарабанило втрое — я пока не придумал :-)</p>
         <p class="f6 mt4">
-            17 октября 2020
+            2020-10-17 13:25:02
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -413,17 +409,17 @@
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/vulnerabilities/">Уязвимости в конфигурациях 1С</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/vulnerabilities/">Уязвимости в конфигурациях 1С</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">В прошлом месяце был на <a class="link blue dim bb" href="https://infostart.ru/events/1269292/" target="_blank">митапе</a> «Инфостарта» по безопасности решений на платформе 1С. Узнал кучу интересного! Среди прочего, Олег Тымко обзорно рассказывал про подходы в разработке, которые можно считать потенциальными уязвимостями продуктов. Например, зашитых прямо в код IP-адресов, ссылок, e-mail'ов, паролей и так далее.</p>
-<p class="measure-wide">Накидал вчера простой <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsForLogAnalysis/blob/master/Файлы%20конфигурации/Vulnerabilities.sh" target="_blank">скрипт</a> на баше, который роется в выгрузке конфигурации в поисках таких косяков. По сути, эта штука просто пропускает конфигурацию через регулярки — я особо не заморачивался и чисто из спортивного интереса реализовал два-три варианта.</p>
-<p class="measure-wide">Вывод: для серьёзной итеративной разработки лучше сразу думать в сторону чего-то вроде SonarQube, а не колхозить вот это всё — подходы «в лоб» дают слишком много ложных срабатываний, нужно думать над фильтрами, исключениями, историей и другой обвязкой.</p>
-<p class="measure-wide">А вот для быстрой оценки такого подхода вполне достаточно — никакой инфраструктуры, никакой возни с настройкой и железом. Выгрузил конфигурацию, пнул баш и, собственно, всё — готовый результат за несколько секунд.</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>В прошлом месяце был на <a href="https://infostart.ru/events/1269292/" target="_blank">митапе</a> «Инфостарта» по безопасности решений на платформе 1С. Узнал кучу интересного! Среди прочего, Олег Тымко обзорно рассказывал про подходы в разработке, которые можно считать потенциальными уязвимостями продуктов. Например, зашитых прямо в код IP-адресов, ссылок, e-mail'ов, паролей и так далее.</p>
+<p>Накидал вчера простой <a href="https://github.com/vkostyanetsky/ScriptsForLogAnalysis/blob/master/Файлы%20конфигурации/Vulnerabilities.sh" target="_blank">скрипт</a> на баше, который роется в выгрузке конфигурации в поисках таких косяков. По сути, эта штука просто пропускает конфигурацию через регулярки — я особо не заморачивался и чисто из спортивного интереса реализовал два-три варианта.</p>
+<p>Вывод: для серьёзной итеративной разработки лучше сразу думать в сторону чего-то вроде SonarQube, а не колхозить вот это всё — подходы «в лоб» дают слишком много ложных срабатываний, нужно думать над фильтрами, исключениями, историей и другой обвязкой.</p>
+<p>А вот для быстрой оценки такого подхода вполне достаточно — никакой инфраструктуры, никакой возни с настройкой и железом. Выгрузил конфигурацию, пнул баш и, собственно, всё — готовый результат за несколько секунд.</p>
         <p class="f6 mt4">
-            13 октября 2020
+            2020-10-13 17:35:51
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -444,16 +440,16 @@
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/techprof/">Профессионал по техвопросам</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/techprof/">Профессионал по техвопросам</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">В конце августа сдал тест на профессионала 1С по техническим вопросам крупных внедрений. Это по сути такой входной билет на <a class="link blue dim bb" href="https://1c.ru/rus/partners/training/uc1/course.jsp?id=199" target="_blank">основной экзамен</a>, призванный проредить поток претендентов и заставить их подучить теорию.</p>
-<p class="measure-wide">В тесте четырнадцать вопросов, случайно набранных из порядка пятиста возможных; нужно правильно ответить хотя бы на двенадцать. На это дается полчаса, однако по факту достаточно пяти-десяти минут: большинство ответов логически выводится или запоминается. Попадаются и неточности, и расплывчатые формулировки, но их мало. Норм вопросы, короче.</p>
-<p class="measure-wide">Подбор тем показался мне порядочным винегретом — по чуть-чуть из всего подряд. Впрочем, по факту такой охват скорее полезен: смотришь на очередной непривычный вопрос, отвечаешь, ошибаешься. Тушишь задницу, лезешь разбираться как так. Становишься немного умнее (но это не точно).</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>В конце августа сдал тест на профессионала 1С по техническим вопросам крупных внедрений. Это по сути такой входной билет на <a href="https://1c.ru/rus/partners/training/uc1/course.jsp?id=199" target="_blank">основной экзамен</a>, призванный проредить поток претендентов и заставить их подучить теорию.</p>
+<p>В тесте четырнадцать вопросов, случайно набранных из порядка пятиста возможных; нужно правильно ответить хотя бы на двенадцать. На это дается полчаса, однако по факту достаточно пяти-десяти минут: большинство ответов логически выводится или запоминается. Попадаются и неточности, и расплывчатые формулировки, но их мало. Норм вопросы, короче.</p>
+<p>Подбор тем показался мне порядочным винегретом — по чуть-чуть из всего подряд. Впрочем, по факту такой охват скорее полезен: смотришь на очередной непривычный вопрос, отвечаешь, ошибаешься. Тушишь задницу, лезешь разбираться как так. Становишься немного умнее (но это не точно).</p>
         <p class="f6 mt4">
-            5 сентября 2020
+            2020-09-05 16:52:54
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -470,28 +466,28 @@
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/unresolved-gopher/">Неразрешимые ссылки на функциональные опции</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/unresolved-gopher/">Неразрешимые ссылки на функциональные опции</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Приведу вариант решения проблемы <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/unresolved-references" target="_blank">неразрешимых ссылок</a>, возникший после удаления функциональной опции. Вводная — при проверке конфигурации получаю десятка два сообщений вида:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Приведу вариант решения проблемы <a href="https://kostyanetsky.ru//notes/unresolved-references" target="_blank">неразрешимых ссылок</a>, возникший после удаления функциональной опции. Вводная — при проверке конфигурации получаю десятка два сообщений вида:</p>
 <pre><code>CommonForm.PersonalSettings.Form Unresolved metadata object references (2)
 Catalog.BankAccounts.Form.GLAccountsEditForm.Form Unresolved metadata object references (1)
 Catalog.CashRegisters.Form.GLAccountsEditForm.Form Unresolved metadata object references (1)
 </code></pre>
-<p class="measure-wide">Выгружаю конфигурацию в файлы, открываю Form.xml для одной из проблемных форм. Начинаю с той, где элементов немного — так проблему заметить будет проще.</p>
-<p class="measure-wide">Бегло просматриваю файл в поисках чего-то необычного. Искать долго не приходится:</p>
-<p class="measure-wide"><img alt="Подозреваемый" src="https://kostyanetsky.ru/notes/unresolved-gopher/suspect.png"/></p>
-<p class="measure-wide">Нормальная ссылка на функциональную опцию — её имя (как в случае DepreciationOfAssets). А вот если вместо имени указан GUID — этой функциональной опции в конфигурации нет. Ссылка неразрешима.</p>
-<p class="measure-wide">Делаю поиск этого GUID'а по остальной выгрузке и нахожу почти все проблемы, на которые ссылалась платформа при проверке. Решить их легко: удалить битую ссылку из XML, а потом загрузить файл обратно в конфигурацию. Можно ещё проще: открыть список функциональных опций для элемента формы и тут же сохранить его. В этом случая битая ссылка также будет удалена.</p>
-<p class="measure-wide">Почему искать таких потеряшек через сам Конфигуратор — занятие для клинических оптимистов? Да просто проблему почти невозможно заметить. В лучшем случае вы увидите что-то в духе:</p>
-<p class="measure-wide"><img alt="Настоящая улика" src="https://kostyanetsky.ru/notes/unresolved-gopher/evidence.png"/></p>
-<p class="measure-wide">Конфигуратор понимает, что в поле две опции, но получить название для второй не может (её нет). А ведь чаще всего функциональная опция только одна! И картина выглядит так:</p>
-<p class="measure-wide"><img alt="Ваша честь, я невиновен!" src="https://kostyanetsky.ru/notes/unresolved-gopher/innocent.png"/></p>
+<p>Выгружаю конфигурацию в файлы, открываю Form.xml для одной из проблемных форм. Начинаю с той, где элементов немного — так проблему заметить будет проще.</p>
+<p>Бегло просматриваю файл в поисках чего-то необычного. Искать долго не приходится:</p>
+<p><img alt="Подозреваемый" src="https://kostyanetsky.ru/notes/unresolved-gopher/suspect.png"/></p>
+<p>Нормальная ссылка на функциональную опцию — её имя (как в случае DepreciationOfAssets). А вот если вместо имени указан GUID — этой функциональной опции в конфигурации нет. Ссылка неразрешима.</p>
+<p>Делаю поиск этого GUID'а по остальной выгрузке и нахожу почти все проблемы, на которые ссылалась платформа при проверке. Решить их легко: удалить битую ссылку из XML, а потом загрузить файл обратно в конфигурацию. Можно ещё проще: открыть список функциональных опций для элемента формы и тут же сохранить его. В этом случая битая ссылка также будет удалена.</p>
+<p>Почему искать таких потеряшек через сам Конфигуратор — занятие для клинических оптимистов? Да просто проблему почти невозможно заметить. В лучшем случае вы увидите что-то в духе:</p>
+<p><img alt="Настоящая улика" src="https://kostyanetsky.ru/notes/unresolved-gopher/evidence.png"/></p>
+<p>Конфигуратор понимает, что в поле две опции, но получить название для второй не может (её нет). А ведь чаще всего функциональная опция только одна! И картина выглядит так:</p>
+<p><img alt="Ваша честь, я невиновен!" src="https://kostyanetsky.ru/notes/unresolved-gopher/innocent.png"/></p>
 <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ihZyUBaG_8Y" width="560"></iframe>
         <p class="f6 mt4">
-            19 августа 2020
+            2020-08-19 18:09:13
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -504,20 +500,20 @@ Catalog.CashRegisters.Form.GLAccountsEditForm.Form Unresolved metadata object re
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/method-with-surprise/">Метод с сюрпризом</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/method-with-surprise/">Метод с сюрпризом</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Пару недель назад столкнулся с досадным багом. Контекст — примитивнее не придумаешь: нужно найти документ по номеру. Если сделать так — документ будет найден:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Пару недель назад столкнулся с досадным багом. Контекст — примитивнее не придумаешь: нужно найти документ по номеру. Если сделать так — документ будет найден:</p>
 <pre><code>SELECT Ref FROM Document.Invoice WHERE Number = &amp;Number
 </code></pre>
-<p class="measure-wide">А вот так — фигушки:</p>
+<p>А вот так — фигушки:</p>
 <pre><code>Documents.Invoice.FindByNumber(Number)
 </code></pre>
-<p class="measure-wide">Сначала я даже слегка завис, но потом полез в документацию и, конечно, нашел ответ. У метода FindByNumber() есть второй параметр, IntervalDate, нужный для поиска периодического документа. С помощью него можно сузить поиск до конкретного периода; например, если периодичность нумерации — год и мы присвоим параметру значение 01-05-2020, то поиск пойдет в периоде от 01-01-2020 до 31-12-2020. А нумерация у документа Invoice и правда периодическая — в пределах года.</p>
-<p class="measure-wide">Так в чем проблема? Дело в том, что за уклончивым «the parameter is used for documents with periodic numbering» на самом деле скрывается железное правило: параметр <strong>нельзя</strong> опускать для периодических документов.</p>
-<p class="measure-wide">Чтобы убедиться в этом, посмотрим, какой SQL выполняется на стороне СУБД. Делаем обычный запрос — никаких сюрпризов. P1 здесь — разделитель, P2 — номер документа:</p>
+<p>Сначала я даже слегка завис, но потом полез в документацию и, конечно, нашел ответ. У метода FindByNumber() есть второй параметр, IntervalDate, нужный для поиска периодического документа. С помощью него можно сузить поиск до конкретного периода; например, если периодичность нумерации — год и мы присвоим параметру значение 01-05-2020, то поиск пойдет в периоде от 01-01-2020 до 31-12-2020. А нумерация у документа Invoice и правда периодическая — в пределах года.</p>
+<p>Так в чем проблема? Дело в том, что за уклончивым «the parameter is used for documents with periodic numbering» на самом деле скрывается железное правило: параметр <strong>нельзя</strong> опускать для периодических документов.</p>
+<p>Чтобы убедиться в этом, посмотрим, какой SQL выполняется на стороне СУБД. Делаем обычный запрос — никаких сюрпризов. P1 здесь — разделитель, P2 — номер документа:</p>
 <pre><code>SELECT
     T1._IDRRef 
 FROM
@@ -526,7 +522,7 @@ WHERE
     ((T1._Fld704 = @P1))
     AND ((T1._Number = @P2))
 </code></pre>
-<p class="measure-wide">А вот если выполнить FindByNumber(), то в запросе появится третий параметр со значением 2001-12-31 23:59:59 — ну да, «конец первого года с начала времён»:</p>
+<p>А вот если выполнить FindByNumber(), то в запросе появится третий параметр со значением 2001-12-31 23:59:59 — ну да, «конец первого года с начала времён»:</p>
 <pre><code>SELECT
     T1._IDRRef
 FROM
@@ -539,10 +535,10 @@ WHERE
         AND T1._Date_Time &lt;= @P3
     )
 </code></pre>
-<p class="measure-wide">Конечно, такой запрос не находит нужный документ. Он вообще ничего не найдет  в любой реальной базе — никогда, ни при каких обстоятельствах.</p>
-<p class="measure-wide">Подведем итог. Как решить проблему — понятно: указываем IntervalDate или, если даты нет, подключаем ЗначениеРеквизитаОбъекта() БСП или его аналог. Но, честное слово, со стороны платформы, было бы куда адекватнее выбрасывать исключение, если FindByNumber() вызван без IntervalDate, а у документа включена периодичность — чем вот так, тихой сапой, делать гарантированно бессмысленные запросы.</p>
+<p>Конечно, такой запрос не находит нужный документ. Он вообще ничего не найдет  в любой реальной базе — никогда, ни при каких обстоятельствах.</p>
+<p>Подведем итог. Как решить проблему — понятно: указываем IntervalDate или, если даты нет, подключаем ЗначениеРеквизитаОбъекта() БСП или его аналог. Но, честное слово, со стороны платформы, было бы куда адекватнее выбрасывать исключение, если FindByNumber() вызван без IntervalDate, а у документа включена периодичность — чем вот так, тихой сапой, делать гарантированно бессмысленные запросы.</p>
         <p class="f6 mt4">
-            27 июля 2020
+            2020-07-27 07:38:49
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -555,25 +551,25 @@ WHERE
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/one-query-to-rule-them-all/">Один запрос, что правит всеми</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/one-query-to-rule-them-all/">Один запрос, что правит всеми</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Истории ради <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/ddb286da9674b05d014389bed3b022c4" target="_blank">закинул</a> на Github Gist один из неоптимальных запросов, с которыми возился несколько месяцев назад. Он использовался для динамического списка в форме элемента справочника и, когда пользователь открывал вкладку с этим списком, платформа погружалась в медитацию даже в относительно небольшой базе.</p>
-<p class="measure-wide">На первый взгляд структура запроса простая и четкая: пачка запросов к таблицам документов, соединяемых через ОБЪЕДИНИТЬ ВСЁ. Каждая из таблиц фильтруется по примерно одинаковым условиям — тип ссылки, дата и вхождение ссылки в результат подзапроса.</p>
-<p class="measure-wide">Однако потенциальных проблем тут сразу несколько. Во-первых, работа идет как минимум с 14-ю таблицами — по числу соединяемых запросов. Это само по себе повышает риск того, что оптимизатор не успеет подобрать хотя бы относительно приличный план выполнения. Скорее всего, он просто ткнет пальцем в небо, а дальше — как повезет.</p>
-<p class="measure-wide">Во-вторых, большая часть этой работы, вероятно, будет выполняться впустую. Каждый из запросов содержит примерно такую конструкцию:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Истории ради <a href="https://gist.github.com/vkostyanetsky/ddb286da9674b05d014389bed3b022c4" target="_blank">закинул</a> на Github Gist один из неоптимальных запросов, с которыми возился несколько месяцев назад. Он использовался для динамического списка в форме элемента справочника и, когда пользователь открывал вкладку с этим списком, платформа погружалась в медитацию даже в относительно небольшой базе.</p>
+<p>На первый взгляд структура запроса простая и четкая: пачка запросов к таблицам документов, соединяемых через ОБЪЕДИНИТЬ ВСЁ. Каждая из таблиц фильтруется по примерно одинаковым условиям — тип ссылки, дата и вхождение ссылки в результат подзапроса.</p>
+<p>Однако потенциальных проблем тут сразу несколько. Во-первых, работа идет как минимум с 14-ю таблицами — по числу соединяемых запросов. Это само по себе повышает риск того, что оптимизатор не успеет подобрать хотя бы относительно приличный план выполнения. Скорее всего, он просто ткнет пальцем в небо, а дальше — как повезет.</p>
+<p>Во-вторых, большая часть этой работы, вероятно, будет выполняться впустую. Каждый из запросов содержит примерно такую конструкцию:</p>
 <pre><code>WHERE VALUETYPE(AdditionalExpenses.Ref) IN (&amp;DocumentsListSelectedTypes)
 </code></pre>
-<p class="measure-wide">То есть в динамический список передается список типов документов, которые требуется вывести. Однако это условие будет наложено <strong>после</strong> выборки данных, и если пользователю нужны только инвойсы — СУБД все равно сначала выгребет все 14 таблиц, а потом отбросит 13 из них.</p>
-<p class="measure-wide">Но это всё не так критично. Если бы список проблем этим и ограничивался, мы, возможно, и не полезли бы разбираться. Главная проблема — во втором условии секций WHERE: каждый запрос проверяет вхождение ссылки на документ в результат подзапроса.</p>
-<p class="measure-wide">Использование вложенного запроса в условиях — само по себе почти табу, если речь идет не о временных таблицах: СУБД часто не в состоянии понять, сколько данных вернет подзапрос и, соответственно, какой способ работы с ними подойдет лучше. Однако тут это ещё и усугубляется тем, к какому источнику данных мы делаем запрос. Критерий отбора — это не таблица в базе данных, которую можно прочитать, пусть даже со сканом — это набор таблиц. В критерии отбора DocumentsByProject их тридцать!</p>
-<p class="measure-wide">В этом месте можно было бы сказать «занавес», но нужно добавить, что выборку из тридцати таблиц по определенному типу документа делает каждый из четырнадцати соединяемых запросов.</p>
-<p class="measure-wide"><img alt="OMG" src="https://media.giphy.com/media/oYtVHSxngR3lC/giphy.gif"/></p>
-<p class="measure-wide">Вот теперь занавес :-)</p>
+<p>То есть в динамический список передается список типов документов, которые требуется вывести. Однако это условие будет наложено <strong>после</strong> выборки данных, и если пользователю нужны только инвойсы — СУБД все равно сначала выгребет все 14 таблиц, а потом отбросит 13 из них.</p>
+<p>Но это всё не так критично. Если бы список проблем этим и ограничивался, мы, возможно, и не полезли бы разбираться. Главная проблема — во втором условии секций WHERE: каждый запрос проверяет вхождение ссылки на документ в результат подзапроса.</p>
+<p>Использование вложенного запроса в условиях — само по себе почти табу, если речь идет не о временных таблицах: СУБД часто не в состоянии понять, сколько данных вернет подзапрос и, соответственно, какой способ работы с ними подойдет лучше. Однако тут это ещё и усугубляется тем, к какому источнику данных мы делаем запрос. Критерий отбора — это не таблица в базе данных, которую можно прочитать, пусть даже со сканом — это набор таблиц. В критерии отбора DocumentsByProject их тридцать!</p>
+<p>В этом месте можно было бы сказать «занавес», но нужно добавить, что выборку из тридцати таблиц по определенному типу документа делает каждый из четырнадцати соединяемых запросов.</p>
+<p><img alt="OMG" src="https://media.giphy.com/media/oYtVHSxngR3lC/giphy.gif"/></p>
+<p>Вот теперь занавес :-)</p>
         <p class="f6 mt4">
-            25 июля 2020
+            2020-07-25 17:55:10
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -598,16 +594,16 @@ WHERE
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/thisobject-thisobject/">ЭтотОбъект.ЭтотОбъект</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/thisobject-thisobject/">ЭтотОбъект.ЭтотОбъект</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide"><a href="https://twitter.com/webholt/status/923830370822389760" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/thisobject-thisobject/snap-tweet-webholt-923830370822389760.png"/></a></p>
-<p class="measure-wide">Обожаю JavaScript! Каждый раз, когда у меня сгорает задница от какой-нибудь странной дичи в любимой платформе, я просто открываю любой тред про будни веб-девелоперов и быстро, очень быстро успокаиваюсь.</p>
-<p class="measure-wide">Впрочем, похожие трюки можно повторить в 1С. Например, JavaScript понимает window.window.window.location, а платформа — <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/thisobject-thisobject/thisobject-thisobject.png" target="_blank">вот это</a> :-)</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p><a href="https://twitter.com/webholt/status/923830370822389760" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/thisobject-thisobject/snap-tweet-webholt-923830370822389760.png"/></a></p>
+<p>Обожаю JavaScript! Каждый раз, когда у меня сгорает задница от какой-нибудь странной дичи в любимой платформе, я просто открываю любой тред про будни веб-девелоперов и быстро, очень быстро успокаиваюсь.</p>
+<p>Впрочем, похожие трюки можно повторить в 1С. Например, JavaScript понимает window.window.window.location, а платформа — <a href="https://kostyanetsky.ru/notes/thisobject-thisobject/thisobject-thisobject.png" target="_blank">вот это</a> :-)</p>
         <p class="f6 mt4">
-            24 июля 2020
+            2020-07-24 10:47:34
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -624,19 +620,19 @@ WHERE
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/broken-bicycle/">Сломанный велосипед</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/broken-bicycle/">Сломанный велосипед</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide"><a href="https://www.1ci.com/applications/1c-drive/" target="_blank"><img alt="1C:Drive" src="https://kostyanetsky.ru/notes/broken-bicycle/broken-bicycle.png"/></a></p>
-<p class="measure-wide">Думаю, эту картинку для 1Ci нарисовал человек, прямо вот максимально далекий от разработки самой конфигурации и программирования вообще. Потому как программист видит на ней ровно два месседжа о продукте: </p>
-<ol class="measure-wide">
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p><a href="https://www.1ci.com/applications/1c-drive/" target="_blank"><img alt="1C:Drive" src="https://kostyanetsky.ru/notes/broken-bicycle/broken-bicycle.png"/></a></p>
+<p>Думаю, эту картинку для 1Ci нарисовал человек, прямо вот максимально далекий от разработки самой конфигурации и программирования вообще. Потому как программист видит на ней ровно два месседжа о продукте: </p>
+<ol>
 <li>Это велосипед.</li>
 <li>Он сломан.</li>
 </ol>
         <p class="f6 mt4">
-            20 июля 2020
+            2020-07-20 15:32:07
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -649,14 +645,14 @@ WHERE
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/data-size-console/">Размер данных базы 1С</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/data-size-console/">Размер данных базы 1С</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">На прошлой неделе листал комментарии к 8.3.15 и наткнулся на метод ПолучитьРазмерДанныхБазыДанных(). Стало любопытно, как эта штука работает и насколько её данные расходятся с теми, которые можно получить из, например, Management Studio.</p>
-<p class="measure-wide">В итоге накатал что-то вроде <a class="link blue dim bb" href="https://github.com/vkostyanetsky/DataSizeConsole" target="_blank">консоли</a>, через которую методу можно передавать разные метаданные, и принялся следить за запросами платформы к БД.</p>
-<p class="measure-wide">В общем, размер данных платформа считает примерно таким выражением:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>На прошлой неделе листал комментарии к 8.3.15 и наткнулся на метод ПолучитьРазмерДанныхБазыДанных(). Стало любопытно, как эта штука работает и насколько её данные расходятся с теми, которые можно получить из, например, Management Studio.</p>
+<p>В итоге накатал что-то вроде <a href="https://github.com/vkostyanetsky/DataSizeConsole" target="_blank">консоли</a>, через которую методу можно передавать разные метаданные, и принялся следить за запросами платформы к БД.</p>
+<p>В общем, размер данных платформа считает примерно таким выражением:</p>
 <pre><code>CAST(
     SUM(
         CAST(
@@ -665,15 +661,15 @@ WHERE
     ) AS NUMERIC(18, 0)
 )
 </code></pre>
-<p class="measure-wide">И так для каждого поля, которое есть у объекта, включая стандартные. Если есть табличные части — они тоже считаются. Результат суммируется.</p>
-<p class="measure-wide">Выводы?</p>
-<p class="measure-wide">Ну, во-первых, понятно, почему у метода такое дурацкое название. Он считает не размер таблиц, как я изначально подумал, а именно <strong>размер данных</strong> — то есть на оценку не влияют ни расходы на схему данных, ни расходы на индексы, ни механика экстентов. Учитывается только размер самих данных, которые хранятся непосредственно в объекте.</p>
-<p class="measure-wide">Таким образом, реальный объём места, которое слопал условный справочник номенклатуры, будет больше того, которое покажет метод. Возможно, значительно. Для точной аналитики такой подход не годится, но чтобы быстро оценить распределение данных в БД – вполне подходит. </p>
-<p class="measure-wide">Во-вторых, метод никак не считает расходы на историю данных для анализируемых объектов, что честно указано в документации. Теоретически их можно посчитать вручную, оттолкнувшись от _DataHistoryMetadata, но подождем релиз-другой — возможно, разработчики это добавят.</p>
-<p class="measure-wide">В-третьих, СУБД в ходе расчетов выгребает все содержимое нужных таблиц, а потом считает размер того, что выгребла. То есть вызов, скорее всего, приведет к куче сканирований и может быстро вымыть буферный кэш. На 1cFresh запросы будут делаться с учетом разделителей, но это слабое утешение, как по мне.</p>
-<p class="measure-wide">В общем, на работающем проде применять с осторожностью.</p>
+<p>И так для каждого поля, которое есть у объекта, включая стандартные. Если есть табличные части — они тоже считаются. Результат суммируется.</p>
+<p>Выводы?</p>
+<p>Ну, во-первых, понятно, почему у метода такое дурацкое название. Он считает не размер таблиц, как я изначально подумал, а именно <strong>размер данных</strong> — то есть на оценку не влияют ни расходы на схему данных, ни расходы на индексы, ни механика экстентов. Учитывается только размер самих данных, которые хранятся непосредственно в объекте.</p>
+<p>Таким образом, реальный объём места, которое слопал условный справочник номенклатуры, будет больше того, которое покажет метод. Возможно, значительно. Для точной аналитики такой подход не годится, но чтобы быстро оценить распределение данных в БД – вполне подходит. </p>
+<p>Во-вторых, метод никак не считает расходы на историю данных для анализируемых объектов, что честно указано в документации. Теоретически их можно посчитать вручную, оттолкнувшись от _DataHistoryMetadata, но подождем релиз-другой — возможно, разработчики это добавят.</p>
+<p>В-третьих, СУБД в ходе расчетов выгребает все содержимое нужных таблиц, а потом считает размер того, что выгребла. То есть вызов, скорее всего, приведет к куче сканирований и может быстро вымыть буферный кэш. На 1cFresh запросы будут делаться с учетом разделителей, но это слабое утешение, как по мне.</p>
+<p>В общем, на работающем проде применять с осторожностью.</p>
         <p class="f6 mt4">
-            11 июля 2020
+            2020-07-11 14:00:51
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -690,22 +686,22 @@ WHERE
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/what-is-inside-the-drum/">Выгрузка стандартных обработок</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/what-is-inside-the-drum/">Выгрузка стандартных обработок</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Недавно внедрили в нашу конфигурацию встроенный в платформу механизм истории данных вместо морально и функционально устаревшего велосипеда из SSLi. Сейчас как раз дописываю выгрузку историю данных в бэкап и загрузку его обратно: удивительно, но этого пока не умеет ни БСП, ни БТС, ни SSLi (впрочем, от последней я и не ждал).</p>
-<p class="measure-wide">Как закончу, расскажу подробнее. Пока хочу отметить любопытную опцию, которая пригодилась по ходу дела: встроенные в платформу обработки, которые доступны из меню «Все функции», можно выгрузить в виде обычных epf-файлов! Трюк очень подробно разобрали коллеги на Инфостарте (<a class="link blue dim bb" href="https://infostart.ru/public/369487/" target="_blank">вот тут</a> и <a class="link blue dim bb" href="https://infostart.ru/public/538300/" target="_blank">вот тут</a>). Вкратце магия выглядит вот так:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Недавно внедрили в нашу конфигурацию встроенный в платформу механизм истории данных вместо морально и функционально устаревшего велосипеда из SSLi. Сейчас как раз дописываю выгрузку историю данных в бэкап и загрузку его обратно: удивительно, но этого пока не умеет ни БСП, ни БТС, ни SSLi (впрочем, от последней я и не ждал).</p>
+<p>Как закончу, расскажу подробнее. Пока хочу отметить любопытную опцию, которая пригодилась по ходу дела: встроенные в платформу обработки, которые доступны из меню «Все функции», можно выгрузить в виде обычных epf-файлов! Трюк очень подробно разобрали коллеги на Инфостарте (<a href="https://infostart.ru/public/369487/" target="_blank">вот тут</a> и <a href="https://infostart.ru/public/538300/" target="_blank">вот тут</a>). Вкратце магия выглядит вот так:</p>
 <pre><code>КопироватьФайл(
     "v8res://mngbase/StandardDataChangeHistory.epf",
     "Q:/StandardDataChangeHistory.epf"
 );
 </code></pre>
-<p class="measure-wide">Полный список стандартных форм и обработок, которые можно вытащить, способ получения этого списка, а также куча споров вокруг и около — по ссылкам выше.</p>
-<p class="measure-wide">Зачем это пригодится вам — честно, не знаю. Что касается нас, то мы делали интерфейсы для работы с историей данных и было любопытно, как они написаны у самой 1С (спойлер: довольно неряшливо).</p>
+<p>Полный список стандартных форм и обработок, которые можно вытащить, способ получения этого списка, а также куча споров вокруг и около — по ссылкам выше.</p>
+<p>Зачем это пригодится вам — честно, не знаю. Что касается нас, то мы делали интерфейсы для работы с историей данных и было любопытно, как они написаны у самой 1С (спойлер: довольно неряшливо).</p>
         <p class="f6 mt4">
-            5 июля 2020
+            2020-07-05 11:07:20
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -722,24 +718,24 @@ WHERE
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/perfectly-balanced/">Об идеальном балансе</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/perfectly-balanced/">Об идеальном балансе</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Хочу поделиться парой классных текстов о современном софте. Они не особенно свежие (первый-то уж точно), но наверняка ведь кто-то пропустил:</p>
-<ul class="measure-wide">
-<li><a class="link blue dim bb" href="https://tonsky.me/blog/disenchantment/ru/" target="_blank">Моё разочарование в софте</a> Никиты Тонского</li>
-<li><a class="link blue dim bb" href="https://habr.com/ru/company/jugru/blog/493178/" target="_blank">В софте всё восхитительно, но все недовольны</a> Евгения Трифонова</li>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Хочу поделиться парой классных текстов о современном софте. Они не особенно свежие (первый-то уж точно), но наверняка ведь кто-то пропустил:</p>
+<ul>
+<li><a href="https://tonsky.me/blog/disenchantment/ru/" target="_blank">Моё разочарование в софте</a> Никиты Тонского</li>
+<li><a href="https://habr.com/ru/company/jugru/blog/493178/" target="_blank">В софте всё восхитительно, но все недовольны</a> Евгения Трифонова</li>
 </ul>
-<p class="measure-wide">К чему я это вспомнил? На прошлой неделе участвовал в хакатоне среди программистов нашей компании. Узнал кучу клевых штук, а по итогам даже занял первое место (вместе с ещё двумя участниками, у которых получились очень похожие решения).</p>
-<p class="measure-wide">(если вы — тоже сотрудник «Первого БИТа», то <a class="link blue dim bb" href="https://newportal.1cbit.ru/news/3066979/" target="_blank">итоги</a> хакатона лежат на портале; там же — <a class="link blue dim bb" href="https://newportal.1cbit.ru/news/3066980/" target="_blank">отзыв</a> другого победителя, Димы Лещенко)</p>
-<p class="measure-wide">В процессе нужно было развернуть и настроить целую гору софта: EDT, RabbitMQ, Docker, GitLab, JIRA, SonarQube и ещё вагон инструментов поменьше и попроще. Ладно, к RabbitMQ у меня претензий нет: легкий и быстрый, но вот остальное… Про хороший аппетит EDT я знал и раньше, а вот прожорливость GitLab и JIRA по-настоящему удивила.</p>
-<p class="measure-wide">Да, в моём случае всё запускалось в докере; да, конфигурация не была оптимальной (например, было развернуто несколько серверов PostgreSQL вместо одного); да, докер был для Windows, а его реализация под эту платформу — тема для едких шуток у всех сисадминов, с которыми я знаком. Но потратить 12 гигабайт ОЗУ прямо со старта?! Про процессор вообще молчу — нагрузка была такая, будто компьютер просчитывал ядерный взрыв в реальном времени.</p>
-<p class="measure-wide">Короче, лучшей иллюстрации к тезисам Никиты подобрать трудно: софт выше слопал море ресурсов и невозмутимо попросил ещё, даже не приступив к какой-то понятной задаче. Впрочем, в то же время это отличная иллюстрация к тексту Евгения: я, на секундочку, одной-единственной командой развернул несколько операционных систем со сложными серверами внутри. И потратил на это несоизмеримо меньше времени чем, скажем, пришлось бы потратить несколько лет назад.</p>
-<p class="measure-wide">У меня нет ответа. Думаю, ни у кого нет. Это такой вечный холивар внутри профессии: какую сторону не займи, на деле все равно балансируешь между двумя крайностями — с одной стороны, надо писать хороший, быстрый код, с другой — надо не свалиться в преждевременную оптимизацию. Первое в итоге дает чистое удовольствие от хорошо сделанной работы: вспоминаешь, что ты, черт побери, неплох! Второе — просто позволяет не нажить бед с башкой в поисках идеального алгоритма сортировки пузырьком :-)</p>
+<p>К чему я это вспомнил? На прошлой неделе участвовал в хакатоне среди программистов нашей компании. Узнал кучу клевых штук, а по итогам даже занял первое место (вместе с ещё двумя участниками, у которых получились очень похожие решения).</p>
+<p>(если вы — тоже сотрудник «Первого БИТа», то <a href="https://newportal.1cbit.ru/news/3066979/" target="_blank">итоги</a> хакатона лежат на портале; там же — <a href="https://newportal.1cbit.ru/news/3066980/" target="_blank">отзыв</a> другого победителя, Димы Лещенко)</p>
+<p>В процессе нужно было развернуть и настроить целую гору софта: EDT, RabbitMQ, Docker, GitLab, JIRA, SonarQube и ещё вагон инструментов поменьше и попроще. Ладно, к RabbitMQ у меня претензий нет: легкий и быстрый, но вот остальное… Про хороший аппетит EDT я знал и раньше, а вот прожорливость GitLab и JIRA по-настоящему удивила.</p>
+<p>Да, в моём случае всё запускалось в докере; да, конфигурация не была оптимальной (например, было развернуто несколько серверов PostgreSQL вместо одного); да, докер был для Windows, а его реализация под эту платформу — тема для едких шуток у всех сисадминов, с которыми я знаком. Но потратить 12 гигабайт ОЗУ прямо со старта?! Про процессор вообще молчу — нагрузка была такая, будто компьютер просчитывал ядерный взрыв в реальном времени.</p>
+<p>Короче, лучшей иллюстрации к тезисам Никиты подобрать трудно: софт выше слопал море ресурсов и невозмутимо попросил ещё, даже не приступив к какой-то понятной задаче. Впрочем, в то же время это отличная иллюстрация к тексту Евгения: я, на секундочку, одной-единственной командой развернул несколько операционных систем со сложными серверами внутри. И потратил на это несоизмеримо меньше времени чем, скажем, пришлось бы потратить несколько лет назад.</p>
+<p>У меня нет ответа. Думаю, ни у кого нет. Это такой вечный холивар внутри профессии: какую сторону не займи, на деле все равно балансируешь между двумя крайностями — с одной стороны, надо писать хороший, быстрый код, с другой — надо не свалиться в преждевременную оптимизацию. Первое в итоге дает чистое удовольствие от хорошо сделанной работы: вспоминаешь, что ты, черт побери, неплох! Второе — просто позволяет не нажить бед с башкой в поисках идеального алгоритма сортировки пузырьком :-)</p>
         <p class="f6 mt4">
-            20 мая 2020
+            2020-05-20 06:48:19
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -756,16 +752,16 @@ WHERE
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/value-table-view/">Просмотр таблицы значений</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/value-table-view/">Просмотр таблицы значений</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Закинул на GitHub <a class="link blue dim bb" href="https://gist.github.com/vkostyanetsky/ef44bbb18f36a1c51826a5d0b4f3960e" target="_blank">короткую функцию</a>, с помощью которой произвольную таблицу значений можно превратить в табличный документ.</p>
-<p class="measure-wide">Для чего? Чтобы посмотреть её содержимое. Саму таблицу на клиент передать нельзя, а вот табличный документ на её основе — можно. Кроме того, у табличного документа есть клиентский метод Show(), который отображает его в отдельном окне.</p>
-<p class="measure-wide">То есть можно прямо из режима предприятия просматривать разные служебные таблицы, не тратя время на создание интерфейса для них. Просто передаем их в функцию по ссылке выше, получаем табличные документы, возвращаем их на клиент и выводим.</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Закинул на GitHub <a href="https://gist.github.com/vkostyanetsky/ef44bbb18f36a1c51826a5d0b4f3960e" target="_blank">короткую функцию</a>, с помощью которой произвольную таблицу значений можно превратить в табличный документ.</p>
+<p>Для чего? Чтобы посмотреть её содержимое. Саму таблицу на клиент передать нельзя, а вот табличный документ на её основе — можно. Кроме того, у табличного документа есть клиентский метод Show(), который отображает его в отдельном окне.</p>
+<p>То есть можно прямо из режима предприятия просматривать разные служебные таблицы, не тратя время на создание интерфейса для них. Просто передаем их в функцию по ссылке выше, получаем табличные документы, возвращаем их на клиент и выводим.</p>
         <p class="f6 mt4">
-            16 мая 2020
+            2020-05-16 21:19:05
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -782,18 +778,18 @@ WHERE
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/self-documenting-code/">Самодокументируемый код</a></h2>
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/page-2/self-documenting-code/">Самодокументируемый код</a></h2>
 
             
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Всем привет! С вами снова Джонни Кэтсвилл и передача «Самодокументируемый код»!</p>
-<p class="measure-wide">Сегодня мы переберем строки таблицы значений с Н по Й:</p>
-<p class="measure-wide"><img alt=":|" src="https://kostyanetsky.ru/notes/self-documenting-code/self-documenting-code.png"/></p>
-<p class="measure-wide">Вроде и мелочь совсем, но когда в пределах одного модуля в пятый раз натыкаешься на такой подход к именованию переменных — глаз невольно начинает дергаться :-)</p>
-<p class="measure-wide">Дело даже не в том, что этот участок <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/why-so-serious" target="_blank">труднее разобрать</a> — просто он неплохо говорит о качестве модуля в целом. Скорее всего, писавший его программист был вымотан, и поблизости можно встретить что-нибудь вроде отважной выгрузки справочника номенклатуры в таблицу значений, чтения кучи объектов «через точку» и прочего тяп-ляп.</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Всем привет! С вами снова Джонни Кэтсвилл и передача «Самодокументируемый код»!</p>
+<p>Сегодня мы переберем строки таблицы значений с Н по Й:</p>
+<p><img alt=":|" src="https://kostyanetsky.ru/notes/self-documenting-code/self-documenting-code.png"/></p>
+<p>Вроде и мелочь совсем, но когда в пределах одного модуля в пятый раз натыкаешься на такой подход к именованию переменных — глаз невольно начинает дергаться :-)</p>
+<p>Дело даже не в том, что этот участок <a href="https://kostyanetsky.ru//notes/why-so-serious" target="_blank">труднее разобрать</a> — просто он неплохо говорит о качестве модуля в целом. Скорее всего, писавший его программист был вымотан, и поблизости можно встретить что-нибудь вроде отважной выгрузки справочника номенклатуры в таблицу значений, чтения кучи объектов «через точку» и прочего тяп-ляп.</p>
         <p class="f6 mt4">
-            3 мая 2020
+            2020-05-03 15:48:37
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -813,7 +809,7 @@ WHERE
         
 
             <p class="mt5 mb3 f6">
-                <a class="link blue bb dim mr1 mt5 mb3" href="https://kostyanetsky.ru/notes/tags/1c/page-3/">Ранее</a> Ctrl + &darr;
+                <a class="link blue bb dim mr1 mt5 mb3" href="https://kostyanetsky.ru/notes/tags/1c/page-3">Ранее</a> Ctrl + &darr;
             </p>
 
         

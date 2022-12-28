@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Почему не баш?
-        
-    </title>
+    <title>Почему не баш?</title>
 
-    <meta name="description" content="Пара слов о причинах, по которой баш бывает использовать неудобно." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Почему не баш?"/>
-    <meta property="og:description" content="Пара слов о причинах, по которой баш бывает использовать неудобно."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/python/why-not-bash/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/why-not-bash" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/python/why-bash/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/python/longest-queries-using-python/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/python/why-not-bash/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/why-not-bash" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/why-not-bash/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/why-not-bash/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,25 +116,25 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">В прошлой заметке я говорил о задачах, для решения которых баш — идеальный инструмент: минимум ограничений, простые условия — и оговорился, что иногда он вообще не справляется.</p>
-<p class="measure-wide">Чтобы не быть голословным, давайте пример из практики. Есть, скажем, порядка семидесяти гигабайт логов ТЖ 1С, по которым нужно построить топ пояснений к исключениям — от самых частотных к менее частотным.</p>
-<p class="measure-wide">Плёвое дело, верно? Выгребаем EXCP, извлекаем Descr, считаем повторения. Даже нужный <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentExceptions.sh" target="_blank">скрипт</a> я как-то уже писал. Запускаю, терпеливо жду…</p>
-<p class="measure-wide">Знаете, сколько понадобилось времени? Я тоже нет: после того, как скрипт проработал сутки, я его вырубил и полез разбираться, в чём проблема. Затык возник где-то в скрипте gawk'а: именно она активно нагружала процессор (если не считать cat'а, которая время от времени читала очередную порцию данных).</p>
-<p class="measure-wide"><img alt="Процессы" src="https://kostyanetsky.ru/notes/why-not-bash/procexp64.png"/></p>
-<p class="measure-wide">Беда, беда, огорчение! В общем, я подумал и <a class="link blue dim bb" href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentExceptions.py" target="_blank">переписал</a> этот скрипт на Питоне. Новая версия отработала за 15 минут и дала мне:</p>
-<ol class="measure-wide">
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>В прошлой заметке я говорил о задачах, для решения которых баш — идеальный инструмент: минимум ограничений, простые условия — и оговорился, что иногда он вообще не справляется.</p>
+<p>Чтобы не быть голословным, давайте пример из практики. Есть, скажем, порядка семидесяти гигабайт логов ТЖ 1С, по которым нужно построить топ пояснений к исключениям — от самых частотных к менее частотным.</p>
+<p>Плёвое дело, верно? Выгребаем EXCP, извлекаем Descr, считаем повторения. Даже нужный <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentExceptions.sh" target="_blank">скрипт</a> я как-то уже писал. Запускаю, терпеливо жду…</p>
+<p>Знаете, сколько понадобилось времени? Я тоже нет: после того, как скрипт проработал сутки, я его вырубил и полез разбираться, в чём проблема. Затык возник где-то в скрипте gawk'а: именно она активно нагружала процессор (если не считать cat'а, которая время от времени читала очередную порцию данных).</p>
+<p><img alt="Процессы" src="https://kostyanetsky.ru/notes/why-not-bash/procexp64.png"/></p>
+<p>Беда, беда, огорчение! В общем, я подумал и <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentExceptions.py" target="_blank">переписал</a> этот скрипт на Питоне. Новая версия отработала за 15 минут и дала мне:</p>
+<ol>
 <li>Топ пояснений по событиям исключений;</li>
 <li>Скрипт, который можно прочитать через полгода без помощи гугла;</li>
 <li>Уверенность, что я могу добавить в скрипт два-три условия и не вызвать Сатану случайным сочетанием операторов и ключей.</li>
 </ol>
-<p class="measure-wide">Конечно, я мог оптимизировать версию на баше. Вероятно, тормозит поиск в массиве — время, необходимое для поиска пояснения в массиве уже зафиксированных пояснений, линейно растет с увеличением размера массива. Можно, например, попробовать изменить подход к сбору данных — gawk'ом только извлекать сами пояснения, а результат сбора передать в тандем sort &amp; uniq.</p>
-<p class="measure-wide">Однако это уже отчётливо отдаёт <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/why-not-bash/but-why.jpg" target="_blank">мемасом</a> про буханку хлеба: из неё, конечно, можно сделать троллейбус, просто не очень понятно — зачем? Камон, мне бы проблему решить. А Питон с ней уже справился на твердую пятёрку, чем сэкономил мне кучу времени и нервов.</p>
-<p class="measure-wide">Собственно, к этому я вел. Родовые травмы баша понятны и нередко приемлемы, плюсы — приятны и очевидны, но при работе с ним вопрос иногда встает так: cтоит ли только ради того, чтобы получить решение именно на баше, потратить часа два на возню с утилитами, параметрами, мануалами и постами на Stack Overflow? </p>
-<p class="measure-wide"><a href="https://twitter.com/EffinBirds/status/1408560771877965825" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/why-not-bash/snap-tweet-EffinBirds-1408560771877965825.png"/></a></p>
-<p class="measure-wide">Вот поэтому не баш, да.</p>
+<p>Конечно, я мог оптимизировать версию на баше. Вероятно, тормозит поиск в массиве — время, необходимое для поиска пояснения в массиве уже зафиксированных пояснений, линейно растет с увеличением размера массива. Можно, например, попробовать изменить подход к сбору данных — gawk'ом только извлекать сами пояснения, а результат сбора передать в тандем sort &amp; uniq.</p>
+<p>Однако это уже отчётливо отдаёт <a href="https://kostyanetsky.ru/notes/why-not-bash/but-why.jpg" target="_blank">мемасом</a> про буханку хлеба: из неё, конечно, можно сделать троллейбус, просто не очень понятно — зачем? Камон, мне бы проблему решить. А Питон с ней уже справился на твердую пятёрку, чем сэкономил мне кучу времени и нервов.</p>
+<p>Собственно, к этому я вел. Родовые травмы баша понятны и нередко приемлемы, плюсы — приятны и очевидны, но при работе с ним вопрос иногда встает так: cтоит ли только ради того, чтобы получить решение именно на баше, потратить часа два на возню с утилитами, параметрами, мануалами и постами на Stack Overflow? </p>
+<p><a href="https://twitter.com/EffinBirds/status/1408560771877965825" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/why-not-bash/snap-tweet-EffinBirds-1408560771877965825.png"/></a></p>
+<p>Вот поэтому не баш, да.</p>
         <p class="f6 mt4">
-            3 июля 2021
+            2021-07-03 21:31:48
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -167,11 +163,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/why-bash/">Почему баш?</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/why-bash">Почему баш?</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/longest-queries-using-python/">Поиск долгих запросов с помощью Python</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/longest-queries-using-python">Поиск долгих запросов с помощью Python</a>
                                 
 
             </p> 

@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Обновление запускатора служб
-        
-    </title>
+    <title>Обновление запускатора служб</title>
 
-    <meta name="description" content="Доработал логику запускатора служб в случае, если он запущен без параметров." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Обновление запускатора служб"/>
-    <meta property="og:description" content="Доработал логику запускатора служб в случае, если он запущен без параметров."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/powershell/service-launcher-update/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/service-launcher-update" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,7 +46,7 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/powershell/service-launcher/';
+        let ctrlLeftUrl     = '';
         let ctrlRightUrl    = '';
 
     </script>
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/powershell/service-launcher-update/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/service-launcher-update" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/service-launcher-update/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/service-launcher-update/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,12 +116,12 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Доработал логику <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/service-launcher/" target="_blank">запускатора служб</a>. Теперь, если вызвать скрипт без параметров (т.е. не указав ни -start, ни -stop) — он сам решит, запускать службы или останавливать их.</p>
-<p class="measure-wide">Для этого скрипт определит статус первой службы в списке. Если она работает — все службы из списка будут остановлены, если выключена — скрипт попытается их запустить.</p>
-<p class="measure-wide">Зачем это нужно? Ну, если вы вызываете скрипт прямо с программируемой клавиатуры, как я — теперь вам нужна только одна кнопка. Раньше было нужно две: одна для запуска служб, вторая для остановки.</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Доработал логику <a href="https://kostyanetsky.ru//notes/service-launcher/" target="_blank">запускатора служб</a>. Теперь, если вызвать скрипт без параметров (т.е. не указав ни -start, ни -stop) — он сам решит, запускать службы или останавливать их.</p>
+<p>Для этого скрипт определит статус первой службы в списке. Если она работает — все службы из списка будут остановлены, если выключена — скрипт попытается их запустить.</p>
+<p>Зачем это нужно? Ну, если вы вызываете скрипт прямо с программируемой клавиатуры, как я — теперь вам нужна только одна кнопка. Раньше было нужно две: одна для запуска служб, вторая для остановки.</p>
         <p class="f6 mt4">
-            22 июля 2020
+            2020-07-22 20:23:40
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
@@ -154,7 +150,7 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/powershell/service-launcher/">Запускатор служб</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/powershell/service-launcher">Запускатор служб</a> &larr;
                 
                 Ctrl
                                 

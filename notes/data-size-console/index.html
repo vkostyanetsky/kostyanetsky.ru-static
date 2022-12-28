@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Размер данных базы 1С
-        
-    </title>
+    <title>Размер данных базы 1С</title>
 
-    <meta name="description" content="На прошлой неделе листал комментарии к 8.3.15 и наткнулся на метод ПолучитьРазмерДанныхБазыДанных()." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Размер данных базы 1С"/>
-    <meta property="og:description" content="На прошлой неделе листал комментарии к 8.3.15 и наткнулся на метод ПолучитьРазмерДанныхБазыДанных()."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/data-size-console/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/data-size-console" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/what-is-inside-the-drum/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/service-launcher/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/data-size-console/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/data-size-console" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/data-size-console/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/data-size-console/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,10 +116,10 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">На прошлой неделе листал комментарии к 8.3.15 и наткнулся на метод ПолучитьРазмерДанныхБазыДанных(). Стало любопытно, как эта штука работает и насколько её данные расходятся с теми, которые можно получить из, например, Management Studio.</p>
-<p class="measure-wide">В итоге накатал что-то вроде <a class="link blue dim bb" href="https://github.com/vkostyanetsky/DataSizeConsole" target="_blank">консоли</a>, через которую методу можно передавать разные метаданные, и принялся следить за запросами платформы к БД.</p>
-<p class="measure-wide">В общем, размер данных платформа считает примерно таким выражением:</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>На прошлой неделе листал комментарии к 8.3.15 и наткнулся на метод ПолучитьРазмерДанныхБазыДанных(). Стало любопытно, как эта штука работает и насколько её данные расходятся с теми, которые можно получить из, например, Management Studio.</p>
+<p>В итоге накатал что-то вроде <a href="https://github.com/vkostyanetsky/DataSizeConsole" target="_blank">консоли</a>, через которую методу можно передавать разные метаданные, и принялся следить за запросами платформы к БД.</p>
+<p>В общем, размер данных платформа считает примерно таким выражением:</p>
 <pre><code>CAST(
     SUM(
         CAST(
@@ -132,15 +128,15 @@
     ) AS NUMERIC(18, 0)
 )
 </code></pre>
-<p class="measure-wide">И так для каждого поля, которое есть у объекта, включая стандартные. Если есть табличные части — они тоже считаются. Результат суммируется.</p>
-<p class="measure-wide">Выводы?</p>
-<p class="measure-wide">Ну, во-первых, понятно, почему у метода такое дурацкое название. Он считает не размер таблиц, как я изначально подумал, а именно <strong>размер данных</strong> — то есть на оценку не влияют ни расходы на схему данных, ни расходы на индексы, ни механика экстентов. Учитывается только размер самих данных, которые хранятся непосредственно в объекте.</p>
-<p class="measure-wide">Таким образом, реальный объём места, которое слопал условный справочник номенклатуры, будет больше того, которое покажет метод. Возможно, значительно. Для точной аналитики такой подход не годится, но чтобы быстро оценить распределение данных в БД – вполне подходит. </p>
-<p class="measure-wide">Во-вторых, метод никак не считает расходы на историю данных для анализируемых объектов, что честно указано в документации. Теоретически их можно посчитать вручную, оттолкнувшись от _DataHistoryMetadata, но подождем релиз-другой — возможно, разработчики это добавят.</p>
-<p class="measure-wide">В-третьих, СУБД в ходе расчетов выгребает все содержимое нужных таблиц, а потом считает размер того, что выгребла. То есть вызов, скорее всего, приведет к куче сканирований и может быстро вымыть буферный кэш. На 1cFresh запросы будут делаться с учетом разделителей, но это слабое утешение, как по мне.</p>
-<p class="measure-wide">В общем, на работающем проде применять с осторожностью.</p>
+<p>И так для каждого поля, которое есть у объекта, включая стандартные. Если есть табличные части — они тоже считаются. Результат суммируется.</p>
+<p>Выводы?</p>
+<p>Ну, во-первых, понятно, почему у метода такое дурацкое название. Он считает не размер таблиц, как я изначально подумал, а именно <strong>размер данных</strong> — то есть на оценку не влияют ни расходы на схему данных, ни расходы на индексы, ни механика экстентов. Учитывается только размер самих данных, которые хранятся непосредственно в объекте.</p>
+<p>Таким образом, реальный объём места, которое слопал условный справочник номенклатуры, будет больше того, которое покажет метод. Возможно, значительно. Для точной аналитики такой подход не годится, но чтобы быстро оценить распределение данных в БД – вполне подходит. </p>
+<p>Во-вторых, метод никак не считает расходы на историю данных для анализируемых объектов, что честно указано в документации. Теоретически их можно посчитать вручную, оттолкнувшись от _DataHistoryMetadata, но подождем релиз-другой — возможно, разработчики это добавят.</p>
+<p>В-третьих, СУБД в ходе расчетов выгребает все содержимое нужных таблиц, а потом считает размер того, что выгребла. То есть вызов, скорее всего, приведет к куче сканирований и может быстро вымыть буферный кэш. На 1cFresh запросы будут делаться с учетом разделителей, но это слабое утешение, как по мне.</p>
+<p>В общем, на работающем проде применять с осторожностью.</p>
         <p class="f6 mt4">
-            11 июля 2020
+            2020-07-11 14:00:51
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -165,11 +161,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/what-is-inside-the-drum/">Выгрузка стандартных обработок</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/what-is-inside-the-drum">Выгрузка стандартных обработок</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/service-launcher/">Запускатор служб</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/service-launcher">Запускатор служб</a>
                                 
 
             </p> 

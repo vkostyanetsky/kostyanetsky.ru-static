@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Настройки истории данных
-        
-    </title>
+    <title>Настройки истории данных</title>
 
-    <meta name="description" content="Обработка для настройки механизма истории данных, который сравнительно недавно появился в платформе." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Настройки истории данных"/>
-    <meta property="og:description" content="Обработка для настройки механизма истории данных, который сравнительно недавно появился в платформе."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/work/data-history-settings/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/data-history-settings" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/work/ninth-wave/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/work/perfectly-balanced/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/work/data-history-settings/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/data-history-settings" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/data-history-settings/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/data-history-settings/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,18 +116,18 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Выложил на GitHub <a class="link blue dim bb" href="https://github.com/vkostyanetsky/AuditLogSettings" target="_blank">обработку</a> для настройки механизма истории данных, который сравнительно недавно <a class="link blue dim bb" href="https://its.1c.ru/db/v8312doc#bookmark:dev:TI000001938" target="_blank">появился</a> в платформе. Эта обработка:</p>
-<ol class="measure-wide">
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Выложил на GitHub <a href="https://github.com/vkostyanetsky/AuditLogSettings" target="_blank">обработку</a> для настройки механизма истории данных, который сравнительно недавно <a href="https://its.1c.ru/db/v8312doc#bookmark:dev:TI000001938" target="_blank">появился</a> в платформе. Эта обработка:</p>
+<ol>
 <li>Строит дерево объектов, для которых может вестись история данных;</li>
 <li>Подсказывает, для каких объектов история данных ведется сейчас;</li>
 <li>Дает возможность включить или выключить историю данных для объектов и их реквизитов. </li>
 </ol>
-<p class="measure-wide">Обработка поддерживает пакетные операции — например, можно включить историю разом для нескольких документов и всех справочников. Или вообще удалить все внесенные настройки, откатив состояние механизма к тому, которое заложил разработчик конфигурации.</p>
-<p class="measure-wide">По-моему, неплохо получилось. Я писал эту штуку больше для себя, разминая мозг по вечерам — но мы, возможно, даже включим её в <a class="link blue dim bb" href="https://firstbit.ae" target="_blank">нашу конфигурацию</a>! Сейчас версионированием данных в ней занимается SSLi, и её механизмы трудно назвать эффективными — медленные и сильно раздувают базу. Надеюсь, платформа на тестах покажет себя лучше.</p>
-<p class="measure-wide">На Инфостарте и ИТС можно найти похожие разработки, но они либо глючат, либо работают только на русскоязычных конфигурациях (не имеют английского интерфейса + опираются на БСП), либо просто-напросто устарели (например, не поддерживают работу с константами).</p>
+<p>Обработка поддерживает пакетные операции — например, можно включить историю разом для нескольких документов и всех справочников. Или вообще удалить все внесенные настройки, откатив состояние механизма к тому, которое заложил разработчик конфигурации.</p>
+<p>По-моему, неплохо получилось. Я писал эту штуку больше для себя, разминая мозг по вечерам — но мы, возможно, даже включим её в <a href="https://firstbit.ae" target="_blank">нашу конфигурацию</a>! Сейчас версионированием данных в ней занимается SSLi, и её механизмы трудно назвать эффективными — медленные и сильно раздувают базу. Надеюсь, платформа на тестах покажет себя лучше.</p>
+<p>На Инфостарте и ИТС можно найти похожие разработки, но они либо глючат, либо работают только на русскоязычных конфигурациях (не имеют английского интерфейса + опираются на БСП), либо просто-напросто устарели (например, не поддерживают работу с константами).</p>
         <p class="f6 mt4">
-            9 марта 2020
+            2020-03-09 12:02:26
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -160,11 +156,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/ninth-wave/">Девятый вал</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/ninth-wave">Девятый вал</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/perfectly-balanced/">Об идеальном балансе</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/perfectly-balanced">Об идеальном балансе</a>
                                 
 
             </p> 

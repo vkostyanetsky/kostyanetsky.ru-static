@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            СКД и право просмотра
-        
-    </title>
+    <title>СКД и право просмотра</title>
 
-    <meta name="description" content="Универсальный подход СКД 1С к праву просмотра иногда заставляет платформу выкидывать знатные фортели." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="СКД и право просмотра"/>
-    <meta property="og:description" content="Универсальный подход СКД 1С к праву просмотра иногда заставляет платформу выкидывать знатные фортели."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/rights-for-dcs/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/rights-for-dcs" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/jaina/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/non-judgmental-attitude/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/rights-for-dcs/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/rights-for-dcs" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/rights-for-dcs/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/rights-for-dcs/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,16 +116,16 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Универсальный подход системы компоновки данных «если у пользователя нет права на просмотр чего-то, то этого как бы нет» иногда заставляет платформу выкидывать знатные фортели. Нет, сферический отчет в вакууме и правда работает хорошо — например, если нет права на просмотр какого-то справочника, то в отчете он фигурировать не будет. Однако реальные примеры бывают посложнее.</p>
-<p class="measure-wide">Например, пару недель назад я отлаживал отчет, который при попытке генерации выдавал понятную на первый взгляд ошибку:</p>
-<p class="measure-wide"><img alt="У вас настройка кривая, товарищ!" src="https://kostyanetsky.ru/notes/rights-for-dcs/ru.png"/></p>
-<p class="measure-wide">Отчет гигантский — запрос на добрую тысячу строк, сложная настройка, здоровенный макет, запутанный код компоновки. Первое подозрение пало на ошибку в настройке, но расследование быстро дошло от ссылки на валюту в выборке данных до чтения константы с этой валютой на самом нижнем уровне отчета, на которую не было права просмотра.</p>
-<p class="measure-wide">Не скажу сходу, что именно тут сбило платформу с толку и привело к не очевидной диагностике — то ли манипуляции с временной таблицей, куда эта константа была прочитана, то ли то, что читалась она в конструкции ВЫБОР, то ли то, что на сам справочник валют все необходимые права были. Искать конкретное условие или их сочетания я не стал — думаю, это просто специфика реализации движка СКД, которая может меняться от версии к версии. Достаточно не забывать о праве просмотра, и проблемы не будет.</p>
-<p class="measure-wide">Что касается ошибки, при столкновении с ней стоит вывести проблемный отчет под полными правами. Если тут всё о'кей, нужно набросать список таблиц, откуда отчет читает данные, и проверить — все ли они с правами на чтение и просмотр.</p>
-<p class="measure-wide">Нудно, но может сэкономить прилично времени.</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Универсальный подход системы компоновки данных «если у пользователя нет права на просмотр чего-то, то этого как бы нет» иногда заставляет платформу выкидывать знатные фортели. Нет, сферический отчет в вакууме и правда работает хорошо — например, если нет права на просмотр какого-то справочника, то в отчете он фигурировать не будет. Однако реальные примеры бывают посложнее.</p>
+<p>Например, пару недель назад я отлаживал отчет, который при попытке генерации выдавал понятную на первый взгляд ошибку:</p>
+<p><img alt="У вас настройка кривая, товарищ!" src="https://kostyanetsky.ru/notes/rights-for-dcs/ru.png"/></p>
+<p>Отчет гигантский — запрос на добрую тысячу строк, сложная настройка, здоровенный макет, запутанный код компоновки. Первое подозрение пало на ошибку в настройке, но расследование быстро дошло от ссылки на валюту в выборке данных до чтения константы с этой валютой на самом нижнем уровне отчета, на которую не было права просмотра.</p>
+<p>Не скажу сходу, что именно тут сбило платформу с толку и привело к не очевидной диагностике — то ли манипуляции с временной таблицей, куда эта константа была прочитана, то ли то, что читалась она в конструкции ВЫБОР, то ли то, что на сам справочник валют все необходимые права были. Искать конкретное условие или их сочетания я не стал — думаю, это просто специфика реализации движка СКД, которая может меняться от версии к версии. Достаточно не забывать о праве просмотра, и проблемы не будет.</p>
+<p>Что касается ошибки, при столкновении с ней стоит вывести проблемный отчет под полными правами. Если тут всё о'кей, нужно набросать список таблиц, откуда отчет читает данные, и проверить — все ли они с правами на чтение и просмотр.</p>
+<p>Нудно, но может сэкономить прилично времени.</p>
         <p class="f6 mt4">
-            28 августа 2018
+            2018-08-28 20:35:33
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -154,11 +150,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/jaina/">Беги от дочери морей</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/jaina">Беги от дочери морей</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/non-judgmental-attitude/">Принцип не-осуждения</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/non-judgmental-attitude">Принцип не-осуждения</a>
                                 
 
             </p> 

@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Мультиязычность в Vue.js
-        
-    </title>
+    <title>Мультиязычность в Vue.js</title>
 
-    <meta name="description" content="Я веду этот сайт на русском языке, но есть и зеркало на английском — туда я постепенно перевожу то, что написал здесь." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Мультиязычность в Vue.js"/>
-    <meta property="og:description" content="Я веду этот сайт на русском языке, но есть и зеркало на английском — туда я постепенно перевожу то, что написал здесь."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/blog/vue-i18n/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/vue-i18n" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/blog/so-much/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/blog/vuejs-blog/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/blog/vue-i18n/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/vue-i18n" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/vue-i18n/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/vue-i18n/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,17 +116,17 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Я веду этот сайт на русском языке, но есть и <a class="link blue dim bb" href="https://kostyanetsky.me" target="_blank">зеркало</a> на английском — туда я постепенно перевожу то, что написал здесь. Поддерживать два набора скриптов я не хочу, поэтому оба домена ссылаются на один и тот же сервер, который определяет, с какого домена пришел запрос — и выводит ответ на соответствующем языке.</p>
-<p class="measure-wide">Звучит просто, но на самом деле эта задача рождает довольно много дополнительных проблем, и одна из них — вывод интерфейса. Сначала я <s>по привычке</s> завел на клиенте два массива с фразами на разных языках, но быстро выкинул этот велосипед и прикрутил <a class="link blue dim bb" href="https://www.npmjs.com/package/vue-i18n" target="_blank">Vue I18n</a>.</p>
-<p class="measure-wide">На нижнем уровне это, правда, всё те же <a class="link blue dim bb" href="https://kazupon.github.io/vue-i18n/guide/formatting.html#named-formatting" target="_blank">два массива</a> с фразами (их нужно задать при инициализации), однако выгода здесь в другом. Этот плагин сам по себе закрывает еще две проблемы с генерацией интерфейса:</p>
-<ol class="measure-wide">
-<li><a class="link blue dim bb" href="https://kazupon.github.io/vue-i18n/guide/pluralization.html" target="_blank">Склонение существительных</a>. Нужно, чтобы правильно выводить слово «страница» в <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/tags/" target="_blank">статистике по тегам</a> — одна заметка, две заметки, пять заметок и так далее.</li>
-<li><a class="link blue dim bb" href="https://kazupon.github.io/vue-i18n/guide/datetime.html" target="_blank">Вывод дат</a>. Например, дата под этой заметкой.</li>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Я веду этот сайт на русском языке, но есть и <a href="https://kostyanetsky.me" target="_blank">зеркало</a> на английском — туда я постепенно перевожу то, что написал здесь. Поддерживать два набора скриптов я не хочу, поэтому оба домена ссылаются на один и тот же сервер, который определяет, с какого домена пришел запрос — и выводит ответ на соответствующем языке.</p>
+<p>Звучит просто, но на самом деле эта задача рождает довольно много дополнительных проблем, и одна из них — вывод интерфейса. Сначала я <s>по привычке</s> завел на клиенте два массива с фразами на разных языках, но быстро выкинул этот велосипед и прикрутил <a href="https://www.npmjs.com/package/vue-i18n" target="_blank">Vue I18n</a>.</p>
+<p>На нижнем уровне это, правда, всё те же <a href="https://kazupon.github.io/vue-i18n/guide/formatting.html#named-formatting" target="_blank">два массива</a> с фразами (их нужно задать при инициализации), однако выгода здесь в другом. Этот плагин сам по себе закрывает еще две проблемы с генерацией интерфейса:</p>
+<ol>
+<li><a href="https://kazupon.github.io/vue-i18n/guide/pluralization.html" target="_blank">Склонение существительных</a>. Нужно, чтобы правильно выводить слово «страница» в <a href="https://kostyanetsky.ru//notes/tags/" target="_blank">статистике по тегам</a> — одна заметка, две заметки, пять заметок и так далее.</li>
+<li><a href="https://kazupon.github.io/vue-i18n/guide/datetime.html" target="_blank">Вывод дат</a>. Например, дата под этой заметкой.</li>
 </ol>
-<p class="measure-wide">Обе задачи, конечно, можно было закрыть на стороне сервера, силами PHP, но я счел это некрасивым решением. Сервер должен возвращать данные, клиент — строить интерфейс. Нечего их смешивать.</p>
+<p>Обе задачи, конечно, можно было закрыть на стороне сервера, силами PHP, но я счел это некрасивым решением. Сервер должен возвращать данные, клиент — строить интерфейс. Нечего их смешивать.</p>
         <p class="f6 mt4">
-            25 июня 2019
+            2019-06-25 14:29:28
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/blog/">блог</a>
@@ -159,11 +155,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/blog/so-much/">Сикока сикока?</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/blog/so-much">Сикока сикока?</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/blog/vuejs-blog/">Блог на Vue.js</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/blog/vuejs-blog">Блог на Vue.js</a>
                                 
 
             </p> 

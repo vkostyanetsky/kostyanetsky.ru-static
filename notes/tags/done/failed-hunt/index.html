@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Неудачная охота
-        
-    </title>
+    <title>Неудачная охота</title>
 
-    <meta name="description" content="При обновлении платформы до 8.13.12.1790 наткнулись на баг при переключении текущей страницы элемента на сервере." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Неудачная охота"/>
-    <meta property="og:description" content="При обновлении платформы до 8.13.12.1790 наткнулись на баг при переключении текущей страницы элемента на сервере."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/done/failed-hunt/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/failed-hunt" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/done/rights-for-dcs/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/done/duplicate-key/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/done/failed-hunt/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/failed-hunt" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/failed-hunt/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/failed-hunt/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,12 +116,12 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">При обновлении платформы до 8.13.12.1790 наткнулись на плавающий баг при переключении текущей страницы элемента на сервере. Конкретно на сервере оно срабатывает, но как только управление возвращается на клиент — текущей страницей становится та, что была до изменения. При этом ещё и происходит событие изменения текущей страницы (как будто пользователь сменил её вручную).</p>
-<p class="measure-wide">Неприятно, но, в общем, ничего страшного — запатчили баг, описали и зарепортили в 1С. Там пока <a class="link blue dim bb" href="https://bugboard.v8.1c.ru/error/000050675.html" target="_blank">думают</a>. Но я, внезапно, даже как-то расстроен — когда расследуешь такие штуки, они всегда выглядят немного загадочно и кажется, что ты вот-вот найдешь что-то интересное! Например, новый аспект работы платформы или что-то вроде этого.</p>
-<p class="measure-wide">И вот, наконец, ты смотришь на проблему под правильным углом, а она — обычный жук. Возможно, полосатый или в крапинку, но жук как жук — сидит себе, шевелит усами. И ты такой: блин, это что — и есть моя добыча? :-)</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>При обновлении платформы до 8.13.12.1790 наткнулись на плавающий баг при переключении текущей страницы элемента на сервере. Конкретно на сервере оно срабатывает, но как только управление возвращается на клиент — текущей страницей становится та, что была до изменения. При этом ещё и происходит событие изменения текущей страницы (как будто пользователь сменил её вручную).</p>
+<p>Неприятно, но, в общем, ничего страшного — запатчили баг, описали и зарепортили в 1С. Там пока <a href="https://bugboard.v8.1c.ru/error/000050675.html" target="_blank">думают</a>. Но я, внезапно, даже как-то расстроен — когда расследуешь такие штуки, они всегда выглядят немного загадочно и кажется, что ты вот-вот найдешь что-то интересное! Например, новый аспект работы платформы или что-то вроде этого.</p>
+<p>И вот, наконец, ты смотришь на проблему под правильным углом, а она — обычный жук. Возможно, полосатый или в крапинку, но жук как жук — сидит себе, шевелит усами. И ты такой: блин, это что — и есть моя добыча? :-)</p>
         <p class="f6 mt4">
-            21 февраля 2019
+            2019-02-21 16:42:32
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -154,11 +150,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/rights-for-dcs/">СКД и право просмотра</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/rights-for-dcs">СКД и право просмотра</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/duplicate-key/">Повторяющийся ключ</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/duplicate-key">Повторяющийся ключ</a>
                                 
 
             </p> 

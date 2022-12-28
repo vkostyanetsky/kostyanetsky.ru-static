@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Отладка через HTTP
-        
-    </title>
+    <title>Отладка через HTTP</title>
 
-    <meta name="description" content="Как включить отладку через HTTP на сервере 1С?" />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Отладка через HTTP"/>
-    <meta property="og:description" content="Как включить отладку через HTTP на сервере 1С?"/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/debug-via-http/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/debug-via-http" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/unsupported-code/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/top-exceptions/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/debug-via-http/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/debug-via-http" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/debug-via-http/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/debug-via-http/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,17 +116,17 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">В конце недели столкнулся с довольно глупой ситуацией: отладка через TCP/IP на сервере 1С перестала работать. То есть сам по себе режим отладки включен, однако конфигуратор «не видит» контекстов отладки на сервере.</p>
-<p class="measure-wide">Ситуация глупая в том смысле, что понять причину довольно сложно: явных ошибок платформа не выдает. После проверки очевидных вариантов (фаервол, порты и так далее) остается только руками разводить. </p>
-<p class="measure-wide">Решил проблему, переключившись на отладку через HTTP. Инфрастуктурно это более сложная <a class="link blue dim bb" href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001599" target="_blank">схема</a>, но настраивается она довольно просто; если вкратце, то нужно:</p>
-<ul class="measure-wide">
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>В конце недели столкнулся с довольно глупой ситуацией: отладка через TCP/IP на сервере 1С перестала работать. То есть сам по себе режим отладки включен, однако конфигуратор «не видит» контекстов отладки на сервере.</p>
+<p>Ситуация глупая в том смысле, что понять причину довольно сложно: явных ошибок платформа не выдает. После проверки очевидных вариантов (фаервол, порты и так далее) остается только руками разводить. </p>
+<p>Решил проблему, переключившись на отладку через HTTP. Инфрастуктурно это более сложная <a href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001599" target="_blank">схема</a>, но настраивается она довольно просто; если вкратце, то нужно:</p>
+<ul>
 <li>Запустить службу агента сервера с ключами «-debug -http».</li>
 <li>В параметрах отладки конфигуратором (Сервис → Параметры → Отладка) указать HTTP как протокол отладки и сервер отладки кластера как сервер отладки.</li>
 </ul>
-<p class="measure-wide">Подробнее процесс настройки <a class="link blue dim bb" href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001604" target="_blank">описан</a> на ИТС.</p>
+<p>Подробнее процесс настройки <a href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001604" target="_blank">описан</a> на ИТС.</p>
         <p class="f6 mt4">
-            26 января 2020
+            2020-01-26 12:32:49
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -151,11 +147,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/unsupported-code/">Неподдерживаемый код</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/unsupported-code">Неподдерживаемый код</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/top-exceptions/">Топ исключений по ТЖ</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/top-exceptions">Топ исключений по ТЖ</a>
                                 
 
             </p> 

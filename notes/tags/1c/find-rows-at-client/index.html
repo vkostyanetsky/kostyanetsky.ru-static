@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Найти строки на клиенте
-        
-    </title>
+    <title>Найти строки на клиенте</title>
 
-    <meta name="description" content="Вызов НайтиСтроки() может и не привести к серверному вызову." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Найти строки на клиенте"/>
-    <meta property="og:description" content="Вызов НайтиСтроки() может и не привести к серверному вызову."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/1c/find-rows-at-client/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/find-rows-at-client" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/1c/drummer/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/1c/big-value-tables/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/1c/find-rows-at-client/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/find-rows-at-client" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/find-rows-at-client/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/find-rows-at-client/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,12 +116,12 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Про то, что метод НайтиСтроки() для коллекций данных формы горазд под шумок сделать серверный вызов, я узнал довольно давно, столкнувшись с неадекватно долгим открытием формы документа — в ней он вызывался при открытии, да ещё и в цикле. Так делать, конечно, не нужно, на что мягко намекает справка: calling the method executes a server call.</p>
-<p class="measure-wide">Однако сегодня писал код для задачи с похожей механикой и заметил, что серверных вызовов по факту нет. Удивился, полез на ИТС и, в общем, дело в следующем: при вызове НайтиСтроки() на клиенте поиск на нём и происходит, однако платформа не держит все данные больших коллекций на клиенте. Они передаются с сервера, и запрос этих данных с клиента — тот самый серверный вызов, на который ссылается справка.</p>
-<p class="measure-wide">Разработчики платформы расплывчато описывают объем коллекции, до которого клиенту не нужно обращаться к серверу (на ИТС пишут, что это порядка двадцати строк). Так что подход не меняется: делаем явный серверный вызов и не переживаем, что платформа решит наделать своих. Впрочем, всегда приятно немного лучше понимать, что внутри барабанчика :-)</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Про то, что метод НайтиСтроки() для коллекций данных формы горазд под шумок сделать серверный вызов, я узнал довольно давно, столкнувшись с неадекватно долгим открытием формы документа — в ней он вызывался при открытии, да ещё и в цикле. Так делать, конечно, не нужно, на что мягко намекает справка: calling the method executes a server call.</p>
+<p>Однако сегодня писал код для задачи с похожей механикой и заметил, что серверных вызовов по факту нет. Удивился, полез на ИТС и, в общем, дело в следующем: при вызове НайтиСтроки() на клиенте поиск на нём и происходит, однако платформа не держит все данные больших коллекций на клиенте. Они передаются с сервера, и запрос этих данных с клиента — тот самый серверный вызов, на который ссылается справка.</p>
+<p>Разработчики платформы расплывчато описывают объем коллекции, до которого клиенту не нужно обращаться к серверу (на ИТС пишут, что это порядка двадцати строк). Так что подход не меняется: делаем явный серверный вызов и не переживаем, что платформа решит наделать своих. Впрочем, всегда приятно немного лучше понимать, что внутри барабанчика :-)</p>
         <p class="f6 mt4">
-            12 февраля 2019
+            2019-02-12 17:14:18
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -146,11 +142,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/drummer/">Внезапный барабанщик</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/drummer">Внезапный барабанщик</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/big-value-tables/">Большие таблицы значений</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/big-value-tables">Большие таблицы значений</a>
                                 
 
             </p> 

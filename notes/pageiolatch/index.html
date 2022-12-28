@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Задержки PageIOLatch
-        
-    </title>
+    <title>Задержки PageIOLatch</title>
 
-    <meta name="description" content="Задержка, возникающая из-за блокировки страницы на время её миграции в буферный кэш." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Задержки PageIOLatch"/>
-    <meta property="og:description" content="Задержка, возникающая из-за блокировки страницы на время её миграции в буферный кэш."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/pageiolatch/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/pageiolatch" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/object-locks/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/pagelatch/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/pageiolatch/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/pageiolatch" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/pageiolatch/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/pageiolatch/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,12 +116,12 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Когда мы читаем страницу данных с диска в буферный кэш, она на очень короткое время блокируется (её нельзя писать, а в некоторых случаях — ещё и читать). Ожидание на завершении этого действия — и есть задержка PageIOLatch.</p>
-<p class="measure-wide">Причиной может быть вымывание буферного кэша — из-за небольшого объёма доступной ОЗУ или не оптимальных запросов, которые читают миллионы строк, а возвращают три. В итоге СУБД регулярно не находит нужных страниц в кэше и вынуждена снова и снова читать их с диска.</p>
-<p class="measure-wide">В общем, если в системе есть существенные задержки PageIOLatch — их скорее всего можно снизить, используя более быстрые диски, наращивая объём ОЗУ и оптимизируя запросы.</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Когда мы читаем страницу данных с диска в буферный кэш, она на очень короткое время блокируется (её нельзя писать, а в некоторых случаях — ещё и читать). Ожидание на завершении этого действия — и есть задержка PageIOLatch.</p>
+<p>Причиной может быть вымывание буферного кэша — из-за небольшого объёма доступной ОЗУ или не оптимальных запросов, которые читают миллионы строк, а возвращают три. В итоге СУБД регулярно не находит нужных страниц в кэше и вынуждена снова и снова читать их с диска.</p>
+<p>В общем, если в системе есть существенные задержки PageIOLatch — их скорее всего можно снизить, используя более быстрые диски, наращивая объём ОЗУ и оптимизируя запросы.</p>
         <p class="f6 mt4">
-            22 апреля 2019
+            2019-04-22 19:40:08
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/">MS SQL</a>
@@ -146,11 +142,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/object-locks/">Объектные блокировки</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/object-locks">Объектные блокировки</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/pagelatch/">Задержки PageLatch</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/pagelatch">Задержки PageLatch</a>
                                 
 
             </p> 

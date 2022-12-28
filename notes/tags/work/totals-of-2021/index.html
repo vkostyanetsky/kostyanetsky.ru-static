@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Итоги 2021-го
-        
-    </title>
+    <title>Итоги 2021-го</title>
 
-    <meta name="description" content="Коротко об итогах прошедшего года и планах на этот." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Итоги 2021-го"/>
-    <meta property="og:description" content="Коротко об итогах прошедшего года и планах на этот."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/work/totals-of-2021/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/totals-of-2021" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/work/reuse-carefully/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/work/ok/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/work/totals-of-2021/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/totals-of-2021" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/totals-of-2021/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/totals-of-2021/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,17 +116,17 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Поздновато я сел итоги подводить, да? Ну, предыдущие пара месяцев вышли, гм, плотными и у меня банально руки не доходили сесть и подумать. А сейчас я как раз в отпуске за 2021-й год — так что самое время. Пишу, типа, из прошлого.</p>
-<p class="measure-wide">Выписывать каждую ачивку меня совершенно не тянет. Год точно вышел неплохим: я проделал уйму сложной работы над FirstBit ERP (писал новые модули, перепиливал существующие, давил баги, писал функциональные и нагрузочные тесты — да много чего было). Это хорошо сказалось и на самой конфе, и на делах компании. Кроме того, между делом я защитился на эксперта по 1С и на профессионала по PostgreSQL, гип-гип-ура.</p>
-<p class="measure-wide">Были и фейлы, ну. Перечислять, опять же, лень, но главный провал — я чудовищно разжирел и вместо того, чтобы сбросить килограм десять (таков был изначальный план) — набрал ещё пяток.</p>
-<p class="measure-wide">Оглядываясь назад, корень большинства проблем за прошлый год вижу так: я слишком сильно фокусировался на потоке задач. Они все были по-своему интересные, от тщательно проработанного ТЗ до челленджей в духе «найди в коде проблему, используя ведьмачье чутьё». Делаешь одну задачу, другую, третью, сотую и сам не замечаешь, что забил почти на всё, кроме работы. В итоге получаешь кучу опыта, но мир усыхает до окна с конфигуратором и сил как-то применять этот опыт нет. Нездоровая фигня.</p>
-<p class="measure-wide">Короче, если представить меня как персонажа какой-нибудь видеоигры, выглядит так: атака и интеллект за год заметно выросли, но здоровье, подвижность, харизма и вообще почти всё остальное — поползло вниз. Теперь надо с этим всем что-то делать.</p>
-<p class="measure-wide">Пойду для начала пробегусь километров десять, вот что!</p>
-<p class="measure-wide"><a href="https://twitter.com/EffinBirds/status/1329575199667347459" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/totals-of-2021/snap-tweet-EffinBirds-1329575199667347459.png"/></a></p>
-<p class="measure-wide">Возможно, птичка, возможно.</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Поздновато я сел итоги подводить, да? Ну, предыдущие пара месяцев вышли, гм, плотными и у меня банально руки не доходили сесть и подумать. А сейчас я как раз в отпуске за 2021-й год — так что самое время. Пишу, типа, из прошлого.</p>
+<p>Выписывать каждую ачивку меня совершенно не тянет. Год точно вышел неплохим: я проделал уйму сложной работы над FirstBit ERP (писал новые модули, перепиливал существующие, давил баги, писал функциональные и нагрузочные тесты — да много чего было). Это хорошо сказалось и на самой конфе, и на делах компании. Кроме того, между делом я защитился на эксперта по 1С и на профессионала по PostgreSQL, гип-гип-ура.</p>
+<p>Были и фейлы, ну. Перечислять, опять же, лень, но главный провал — я чудовищно разжирел и вместо того, чтобы сбросить килограм десять (таков был изначальный план) — набрал ещё пяток.</p>
+<p>Оглядываясь назад, корень большинства проблем за прошлый год вижу так: я слишком сильно фокусировался на потоке задач. Они все были по-своему интересные, от тщательно проработанного ТЗ до челленджей в духе «найди в коде проблему, используя ведьмачье чутьё». Делаешь одну задачу, другую, третью, сотую и сам не замечаешь, что забил почти на всё, кроме работы. В итоге получаешь кучу опыта, но мир усыхает до окна с конфигуратором и сил как-то применять этот опыт нет. Нездоровая фигня.</p>
+<p>Короче, если представить меня как персонажа какой-нибудь видеоигры, выглядит так: атака и интеллект за год заметно выросли, но здоровье, подвижность, харизма и вообще почти всё остальное — поползло вниз. Теперь надо с этим всем что-то делать.</p>
+<p>Пойду для начала пробегусь километров десять, вот что!</p>
+<p><a href="https://twitter.com/EffinBirds/status/1329575199667347459" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/totals-of-2021/snap-tweet-EffinBirds-1329575199667347459.png"/></a></p>
+<p>Возможно, птичка, возможно.</p>
         <p class="f6 mt4">
-            8 февраля 2022
+            2022-02-08 13:25:00
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
@@ -151,11 +147,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/reuse-carefully/">Переиспользуйте с осторожностью</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/reuse-carefully">Переиспользуйте с осторожностью</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/ok/">Окей!</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/ok">Окей!</a>
                                 
 
             </p> 

@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Выгрузка автобусных рейсов
-        
-    </title>
+    <title>Выгрузка автобусных рейсов</title>
 
-    <meta name="description" content="С тех пор, как мы с коллегами заново автоматизировали КПАТ, она работает на «Управлении автовокзалами»." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Выгрузка автобусных рейсов"/>
-    <meta property="og:description" content="С тех пор, как мы с коллегами заново автоматизировали КПАТ, она работает на «Управлении автовокзалами»."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/done/bus-trips-uploading/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/bus-trips-uploading" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -51,7 +47,7 @@
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
         let ctrlLeftUrl     = '';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/done/fce-results/';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/done/bus-trips-uploading/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/bus-trips-uploading" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/bus-trips-uploading/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/bus-trips-uploading/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,20 +116,20 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">С тех пор, как мы с коллегами заново автоматизировали <a class="link blue dim bb" href="http://kpat.ru/" target="_blank">КПАТ</a>, она работает на «<a class="link blue dim bb" href="http://avibus.pro/standalone/" target="_blank">Управлении автовокзалами</a>». Это конфигурация для 1С:Предприятия, то есть её можно сравнительно быстро интегрировать почти с чем угодно.</p>
-<p class="measure-wide">Первым делом мы решили наладить выгрузку маршрутного расписания автобусов на E-Traffic и Яндекс.Расписания.</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>С тех пор, как мы с коллегами заново автоматизировали <a href="http://kpat.ru/" target="_blank">КПАТ</a>, она работает на «<a href="http://avibus.pro/standalone/" target="_blank">Управлении автовокзалами</a>». Это конфигурация для 1С:Предприятия, то есть её можно сравнительно быстро интегрировать почти с чем угодно.</p>
+<p>Первым делом мы решили наладить выгрузку маршрутного расписания автобусов на E-Traffic и Яндекс.Расписания.</p>
 <h2>Что это за ресурсы?</h2>
-<p class="measure-wide">Первый ресурс, <a class="link blue dim bb" href="http://e-traffic.ru" target="_blank">E-Traffic</a> — это крупнейший в России агрегатор данных автовокзалов. Собирает информацию о запланированных рейсах и выступает как агент по продаже электронных билетов. То есть пассажирам не нужно продираться через сайты автовокзалов — на E-Traffic можно купить билет откуда угодно куда угодно.</p>
-<p class="measure-wide">Что касается <a class="link blue dim bb" href="http://rasp.yandex.ru" target="_blank">Яндекс.Расписаний</a> — это один из дочерних проектов российского поисковика. Как и E-Traffic, предназначен в первую очередь для пассажиров и умеет быстро строить относительно сложные маршруты с пересадками. Билетами они, правда, не торгуют.</p>
+<p>Первый ресурс, <a href="http://e-traffic.ru" target="_blank">E-Traffic</a> — это крупнейший в России агрегатор данных автовокзалов. Собирает информацию о запланированных рейсах и выступает как агент по продаже электронных билетов. То есть пассажирам не нужно продираться через сайты автовокзалов — на E-Traffic можно купить билет откуда угодно куда угодно.</p>
+<p>Что касается <a href="http://rasp.yandex.ru" target="_blank">Яндекс.Расписаний</a> — это один из дочерних проектов российского поисковика. Как и E-Traffic, предназначен в первую очередь для пассажиров и умеет быстро строить относительно сложные маршруты с пересадками. Билетами они, правда, не торгуют.</p>
 <h2>Как была сделана выгрузка?</h2>
-<p class="measure-wide">Поначалу мы нагородили довольно сложную архитектуру, позволяющую транслировать расписание в обе системы. Потели как черти — пока в ходе переговоров не выяснилось, что у E-Traffic уже есть рабочий транспорт для передачи расписания в Яндекс, и задача естественным образом не усохла вдвое.</p>
-<p class="measure-wide">Технически всё было сделано в виде веб-сервиса для «Управления автовокзалами». Получив SOAP-запрос от E-Traffic, он собирал внутри информационной базы 1С:Предприятия все необходимые данные о запланированных автобусных рейсах и возвращал их в виде XML-ки.</p>
-<p class="measure-wide">Нам даже не пришлось писать код получения расписания с каждого вокзала, входящего в сеть КПАТ'а: все они создаются и хранятся в одном месте — главном узле РИБ, а веб-сервис мы развернули именно там. В итоге больше времени ушло на разные согласования, чем на программирование.</p>
+<p>Поначалу мы нагородили довольно сложную архитектуру, позволяющую транслировать расписание в обе системы. Потели как черти — пока в ходе переговоров не выяснилось, что у E-Traffic уже есть рабочий транспорт для передачи расписания в Яндекс, и задача естественным образом не усохла вдвое.</p>
+<p>Технически всё было сделано в виде веб-сервиса для «Управления автовокзалами». Получив SOAP-запрос от E-Traffic, он собирал внутри информационной базы 1С:Предприятия все необходимые данные о запланированных автобусных рейсах и возвращал их в виде XML-ки.</p>
+<p>Нам даже не пришлось писать код получения расписания с каждого вокзала, входящего в сеть КПАТ'а: все они создаются и хранятся в одном месте — главном узле РИБ, а веб-сервис мы развернули именно там. В итоге больше времени ушло на разные согласования, чем на программирование.</p>
 <h2>А где посмотреть?</h2>
-<p class="measure-wide">Внутренняя кухня снаружи не видна, да и там ничего необычного — роботы общаются с роботами, эка невидаль :-) Результат их болтовни — куда интереснее! Например, вот <a class="link blue dim bb" href="https://rasp.yandex.ru/search/bus/?fromName=Кемерово&amp;toName=Новокузнецк&amp;fromId=c64&amp;toId=c237&amp;when=сегодня" target="_blank">расписание</a> рейсов из Кемерово в Новокузнецк на сегодня.</p>
+<p>Внутренняя кухня снаружи не видна, да и там ничего необычного — роботы общаются с роботами, эка невидаль :-) Результат их болтовни — куда интереснее! Например, вот <a href="https://rasp.yandex.ru/search/bus/?fromName=Кемерово&amp;toName=Новокузнецк&amp;fromId=c64&amp;toId=c237&amp;when=сегодня" target="_blank">расписание</a> рейсов из Кемерово в Новокузнецк на сегодня.</p>
         <p class="f6 mt4">
-            17 ноября 2017
+            2017-11-17 16:49:35
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -164,7 +160,7 @@
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/fce-results/">Результаты FCE</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/fce-results">Результаты FCE</a>
                                 
 
             </p> 

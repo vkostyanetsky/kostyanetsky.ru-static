@@ -4,161 +4,122 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Sat, 15 Oct 2022 18:22:43 +0700</lastBuildDate>
+        <lastBuildDate>Tue, 21 Jul 2020 20:01:10 +0700</lastBuildDate>
         
         <item>
-            <title>Про странный Битрикс</title>
-            <link>https://kostyanetsky.ru/notes/strange-bitrix/</link>
-            <guid isPermaLink="false">note-strange-bitrix</guid>
-            <pubDate>Sat, 15 Oct 2022 18:22:43 +0700</pubDate>
-            <description><p class="measure-wide">Чем дальше лезу в REST-интерфейс Битрикс24, тем сильнее поражаюсь тому, насколько необычно устроено мышление у его разработчиков. Проявляется это по-разному.</p>
-<p class="measure-wide">Взять, например, интерфейс сделок и товаров по ним. В таблице последних нет поля суммы: мол, нужна тебе сумма по строке — сам и считай. Зато сумма есть на уровне документа. Угадаете, как называется поле?</p>
-<p class="measure-wide">AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
-<p class="measure-wide">Не угадали, правильный ответ — OPPORTUNITY.</p>
-<p class="measure-wide"><img alt="Чего, блядь?" src="https://kostyanetsky.ru/notes/strange-bitrix/what-the-fuck.jpg"/></p>
-<p class="measure-wide">Но вернемся в строке товара. В ней есть товар, ставка НДС и единица измерения. Все три сущности вполне самостоятельны: у каждой есть отдельная таблица со вспомогательной информацией и свой собственный идентификатор. Логично предположить, что в строке товара они и хранятся: ID товара, ID ставки НДС и ID единицы измерения.</p>
-<p class="measure-wide">Логично-то логично, но нет, хрен там плавал. Для номенклатуры и правда хранится ID, а вот для ставки НДС — значение ставки, и для единицы измерения — код измерения по ОКЕИ ¯\_(ツ)_/¯</p>
-<p class="measure-wide">Нормализация базы данных? Чего? Какая еще нормализация? Отстань, мужик, работать мешаешь.</p></description>
+            <title>Блог на Vue.js</title>
+            <link>https://kostyanetsky.ru/notes/vuejs-blog</link>
+            <guid isPermaLink="false">note-vuejs-blog</guid>
+            <pubDate>Tue, 21 Jul 2020 20:01:10 +0700</pubDate>
+            <description><p>В середине прошлого года я <a href="https://kostyanetsky.ru//notes/so-much" target="_blank">загорелся</a> идеей переписать этот сайт на чем-то посовременнее PHP, выбрал Vue.js в качестве фреймворка и принялся за дело. JavaScript я на тот момент почти не знал, поэтому набил прорву шишек на кейсах в духе «метод вывода даты падает в Safari» — однако в итоге получил вполне жизнеспособное приложение.</p>
+<p>Ну, как жизнеспособное? С одной стороны, главное у меня получилось — я разработал клиентское веб-приложение, которое ходит на сервер только за данными, а весь интерфейс собирает само. С другой — пришлось накрутить на фреймворк целую армию <s>костылей</s> хуков даже для самых простых штук (вроде подсветки элементов меню или, скажем, выдачи правильных кодов HTTP). Кое-что я вообще с наскока реализовать не смог — например, выдачу HTML-версий страниц для Яндекса (их пауки в 2020-м году не умеют индексировать сайты на JavaScript).</p>
+<p>В общем, опыт вышел полезным, но результат — настолько спорным, что в конце концов я бросил эту затею, а получившегося Франкенштейна <a href="https://github.com/vkostyanetsky/VuejsBlog" target="_blank">выложил</a> на GitHub. Возможно, он кому-то сэкономит время на решение задач в духе «как вывести через Vue.js произвольный HTML» или «как научить VueI18n работать с русским языком».</p>
+<p>Документации там нет, правда. Я сначала хотел подробно расписать, как что работает, но быстро понял, что потрачу уйму времени без видимой пользы. Вероятно, буду возвращаться к этой теме под настроение — а пока, так сказать, ограничимся парадигмой MVP :-)</p></description>
         </item>
         
         <item>
-            <title>Групповая работа в Google Docs</title>
-            <link>https://kostyanetsky.ru/notes/anonymous-quokka/</link>
-            <guid isPermaLink="false">note-anonymous-quokka</guid>
-            <pubDate>Sun, 18 Sep 2022 16:25:48 +0700</pubDate>
-            <description><p class="measure-wide">Последний месяц переписываю типовой обмен данными между FirstBit ERP и Битриксом под клиентскую задачу. Коллеги, занимающиеся тем же на стороне Битрикса, подготовили под это дело массивный маппинг: какое поле на стороне 1С в какое поле Битрикса нужно передавать (и наоборот).</p>
-<p class="measure-wide">Этот маппинг они выложили в виде таблиц Google Docs, в интерфейсе которого можно видеть пользователей, пользующихся документом в этот момент — как залогиненных, так и анонимных. Последних он традиционно отображает в виде <a class="link blue dim bb" href="https://support.google.com/docs/answer/2494888?hl=ru" target="_blank">животных</a>.</p>
-<p class="measure-wide">Коллеги в основном предпочитают работать анонимно. В итоге я последнее время крепко ощущаю себя диснеевской принцессой: приступаешь такой утром к работе, и отовсюду выкатываются неопознанные квокки, пингвины и шиншиллы :-)</p></description>
+            <title>Firewatch</title>
+            <link>https://kostyanetsky.ru/notes/firewatch</link>
+            <guid isPermaLink="false">note-firewatch</guid>
+            <pubDate>Sat, 22 Apr 2017 21:50:58 +0700</pubDate>
+            <description><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/WexJcqgismA" width="560"></iframe>
+<p>Обычная, человеческая такая история, и ей совершенно по-человечески чего-то не хватает. Какой-то искры, что ли? Идеи? Смысла? Чем ближе к развязке, тем сильнее становится ощущение, что в кастрюлю забыли налить супа.</p>
+<p>Не, я не хочу сказать, что играть не стоит. Тут <strong>очень</strong> живые и здорово прописанные диалоги, которые делают три четверти атмосферы. Кроме того, игра неплохо выглядит (хотя я не очень понял, откуда в отзывах столько восторгов — в каком-нибудь «The Vanishing of Ethan Carter» виды встречались покруче) и в целом проходится на ура.</p>
+<p>Но концовка сюжета откровенно скомкана, а кульминация просто отсутствует. Да, я в курсе насчёт заложенной философии — мол, это жизнь, бла-бла-бла, многоточий больше чем точек, бла-бла-бла. Но, камон! Если история ставит кучу вопросов и не отвечает ни на один из них — это не очень-то и круто, как ни ссылайся на age-check.</p></description>
         </item>
         
         <item>
-            <title>Слак советует</title>
-            <link>https://kostyanetsky.ru/notes/slack/</link>
-            <guid isPermaLink="false">note-slack</guid>
-            <pubDate>Thu, 25 Aug 2022 19:02:53 +0700</pubDate>
-            <description><p class="measure-wide">Слак, конечно, есть за что ругать. За тормоза, за баги, за <a class="link blue dim bb" href="https://t.me/nikitonsky_pub/262" target="_blank">оповещения</a>. Но я просто обожаю его заглушки на случай, если новых сообщений нет.</p>
-<p class="measure-wide">Посмотрите, какая милота:</p>
-<p class="measure-wide"><img alt="All done. The future is yours." src="https://kostyanetsky.ru/notes/slack/all-done.png"/></p>
-<p class="measure-wide">Зачем вообще нужны психотерапевты?</p>
-<p class="measure-wide"><img alt="You're up to date. Go forth and do great things." src="https://kostyanetsky.ru/notes/slack/up-to-date.png"/></p>
-<p class="measure-wide">Или вот:</p>
-<p class="measure-wide"><img alt="You're all read. Here is a tractor." src="https://kostyanetsky.ru/notes/slack/here-is-tractor.png"/></p>
-<p class="measure-wide">Боже, слак, хоть ты не начинай.</p></description>
+            <title>Запускатор служб</title>
+            <link>https://kostyanetsky.ru/notes/service-launcher</link>
+            <guid isPermaLink="false">note-service-launcher</guid>
+            <pubDate>Mon, 13 Jul 2020 20:15:07 +0700</pubDate>
+            <description><p>Какое-то время назад я <a href="https://kostyanetsky.ru//notes/manage-services-with-powershell/" target="_blank">писал</a> про командлеты PowerShell, с помощью которых можно запускать и останавливать службы. В итоге я собрал из этих набросков нормальный скрипт: он читает список к запуску или остановке служб из отдельного файла, а ещё проверяет и (если нужно) запрашивает права администратора.</p>
+<p>Результат можно <a href="https://github.com/vkostyanetsky/ServiceLauncher" target="_blank">посмотреть</a> на GitHub'е. No big deal — хотел поупражняться в языке и упростить ежедневную рутину: в моей системе наберется десятка полтора прожорливых сервисов, которые нужны для работы, но бесполезны в другое время. Вручную останавливать, а потом запускать этот зоопарк неудобно, а вот одной командой — совсем другое дело!</p></description>
         </item>
         
         <item>
-            <title>Взболтать, но не смешивать</title>
-            <link>https://kostyanetsky.ru/notes/shaken-not-stirred/</link>
-            <guid isPermaLink="false">note-shaken-not-stirred</guid>
-            <pubDate>Sun, 07 Aug 2022 19:04:51 +0700</pubDate>
-            <description><p class="measure-wide">Затрем немного про организацию кода. Если вам нужно где-то описать множество объектов с общими свойствами — подумайте, не стоит ли подробить описание на отдельные методы, каждый из которых будет описывать один конкретный объект?</p>
-<p class="measure-wide">Посмотрим на пример — метод, который описывает табличные части документов, пригодные для какой-то задачи. Что-то вроде:</p>
-<pre><code>SupportedTypes["Document.SupplierPricesEntering"]   = "Prices";
-SupportedTypes["Document.OpeningBalancesEntering"]  = "CustomerAccounts,VendorAccounts";
-SupportedTypes["Document.Requisition"]              = "InventoryAndServices";
+            <title>Кегли на дороге</title>
+            <link>https://kostyanetsky.ru/notes/skittles</link>
+            <guid isPermaLink="false">note-skittles</guid>
+            <pubDate>Mon, 03 Jun 2013 21:43:12 +0700</pubDate>
+            <description><p>Интересно, какому проценту пешеходов, переходящих дорогу где придется, реально тяжело добраться до зебры, а какому — просто плевать на последствия? Недавно прочитал «<a href="http://mymaster.livejournal.com/344609.html" target="_blank">Откровения кегли</a>» (клёвую заметку Антона Буслова про ситуацию с зебрами с точки зрения больного человека) — но мне всё равно трудно поверить, что все эти упитанные и совсем не старые люди настолько измотаны, что не могут добраться до перехода.</p>
+<p>Ладно я, велосипед легко маневрирует и быстро тормозит. А вот что испытывают водители автомобилей и мотоциклов — боюсь представить.</p></description>
+        </item>
+        
+        <item>
+            <title>Без комментариев</title>
+            <link>https://kostyanetsky.ru/notes/no-comment</link>
+            <guid isPermaLink="false">note-no-comment</guid>
+            <pubDate>Wed, 08 Sep 2021 00:12:00 +0700</pubDate>
+            <description><p>Сам не заметил, как бросил привычку педантично комментировать каждый метод, с которым приходится работать. Наверняка у этой практики есть какое-нибудь умное название, но мне нет дела, если честно. Я имею в виду стиль, когда описание добавляют к каждому осмысленному блоку кода:</p>
+<script src="https://gist.github.com/vkostyanetsky/afae4dee09d639f34156d6c02b29c2a5.js">Суть</script>
+<p>Смысл тут простой: когда копаешься в каком-нибудь дремучем легаси и бегаешь туда-сюда между хаотично раскиданными процедурами на три экрана каждая — логику каждой из них держать в голове довольно трудно. Первая же чашка кофе всё смоет. Поэтому такие заметки на полях здорово ускоряют ориентацию на местности, и чем больше времени проходит между подходами к коду — тем заметнее эффект.</p>
+<p>Однако в какой-то момент стало понятно, что это ноу-хау — просто костыль, подпирающий откровенно хреновый дизайн кода. Попалась тебе длинная процедура или функция — вздохни, сядь и нарежь толстяка на методы поменьше. Сэкономишь и время, и нервы, и в коде разберешься быстрее, и Сонар порадуешь.</p></description>
+        </item>
+        
+        <item>
+            <title>Знак амперсанда в 1С</title>
+            <link>https://kostyanetsky.ru/notes/ampersand-sign-in-1c</link>
+            <guid isPermaLink="false">note-ampersand-sign-in-1c</guid>
+            <pubDate>Thu, 27 Dec 2018 10:11:50 +0700</pubDate>
+            <description><p>При обработке символа амперсанда в тексте надписей платформа применяет стандартный подход Windows: то есть, сам амперсанд не отобразится, а следующий после него символ станет горячей клавишей для действия, закрепленного за надписью (например, обработчика команды или события элемента).</p>
+<p>Пример ниже выведется как «Project Costing». Символ «P» в ней будет подчеркнут и станет горячей клавишей; если это, например, заголовок команды, то её можно будет вызвать, нажав Alt + P.</p>
+<pre><code>ТекстНадписи = "&amp;Project Costing";
 </code></pre>
-<p class="measure-wide">Вроде всё в порядке, так? Описания есть, табличные части перечислены, посплитить их по запятой — считай, бесплатно.</p>
-<p class="measure-wide">Однако документов в методе описано много. Рано или поздно какому-нибудь коллеге (или вам самим) понадобится добавить ещё одну табличную часть для документа, который уже описан в методе. Его что-то отвлечет, он забудет поискать существующую строку и получится что-то вроде:</p>
-<pre><code>SupportedTypes["Document.SupplierPricesEntering"]   = "Prices";
-SupportedTypes["Document.OpeningBalancesEntering"]  = "CustomerAccounts,VendorAccounts";
-SupportedTypes["Document.Requisition"]              = "InventoryAndServices";
-
-&lt;...&gt;
-
-SupportedTypes["Document.OpeningBalancesEntering"]  = "PayrollDeductions";
-</code></pre>
-<p class="measure-wide">В результате пара табличных частей выпадет из описания, и хорошо, если связанный функционал покрыт тестами.</p>
-<p class="measure-wide">Вывод? Ну, можно написать метод-хелпер, который будет принимать на вход тип документа и имя <strong>одной</strong> табличной части. Хелпер будет заполнять соответствие SupportedTypes и следить за тем, чтобы уже добавленные в него данные не были потеряны.</p>
-<p class="measure-wide">А если совсем по фен-шую, лучше поступить так, как я написал в начале заметки: разделить метод на отдельные вспомогательные методы, каждый из которых будет описывать только табличные части по одному документу. Что-то вроде:</p>
-<pre><code>Procedure AddOpeningBalancesEnteringDocument(SupportedTypes)
-
-    TabularSections = New Array;
-
-    TabularSections.Add("CustomerAccounts");
-    TabularSections.Add("VendorAccounts");
-    TabularSections.Add("PayrollDeductions");
-
-    SupportedTypes["Document.Requisition"] = StrConcat(TabularSections, ",");
-
-EndProcedure
-</code></pre>
-<p class="measure-wide">Так и описание документа никто случайно не сотрет, и Сонар будет доволен. А вот случае реализации хелпера он, скорее всего, примется ругаться на повторяющиеся литералы с именами табличных частей.</p></description>
+<p>Единственное неудобство — если нужно вывести амперсанд прямо в надпись. В этом случае символ следует удвоить: так, пример ниже будет выглядеть как «Project P&amp;L». Никаких горячих клавиш в таком случае создано не будет.</p>
+<pre><code>ТекстНадписи = "Project P&amp;&amp;L";
+</code></pre></description>
         </item>
         
         <item>
-            <title>Не так, а этак!</title>
-            <link>https://kostyanetsky.ru/notes/not-but/</link>
-            <guid isPermaLink="false">note-not-but</guid>
-            <pubDate>Sat, 23 Jul 2022 11:32:48 +0700</pubDate>
-            <description><p class="measure-wide">Про хорватский комикс <a class="link blue dim bb" href="http://www.to-zo.com/notbut" target="_blank">NOT/BUT</a> мне кто-то рассказал в начале прошлого года, когда я всерьёз учился рисовать. Каждый стрип там — про какую-то травмирующую или просто мрачную мысль, которая приходит в голову художника во время работы. Идея в том, чтобы подтолкнуть читателя в правильном направлении и дать ему посмотреть на ситуацию, в которую он попал, с более практичной стороны.</p>
-<p class="measure-wide">Рисовать я бросил через год, в конце февраля: стало понятно, что времени на хобби у меня больше нет. Но комикс — совершенно универсальный; полистайте, даже если понятия не имеете, что такое клячка :-)</p>
-<p class="measure-wide"><a href="http://www.to-zo.com/notbut" target="_blank"><img alt="Да что за херня?" src="https://kostyanetsky.ru/notes/not-but/mistakes.png"/></a></p>
-<p class="measure-wide">Все эти бесконечные самокопания хорошо знакомы любому профессионалу, а выход из них — не всегда очевиден. Особенно если ты зол, устал, а дедлайн по проекту истёк где-то на прошлой неделе.</p></description>
-        </item>
-        
-        <item>
-            <title>Окей!</title>
-            <link>https://kostyanetsky.ru/notes/ok/</link>
-            <guid isPermaLink="false">note-ok</guid>
-            <pubDate>Fri, 22 Jul 2022 13:13:00 +0700</pubDate>
-            <description><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/GuIPxcXwF30" width="560"></iframe>
-<p class="measure-wide">Блин. Посмотрел видео и понял, что я как раз давным-давно просто пишу OK в утренних дейликах в ответ на вопрос «how do you feel today». Мол, со мной всё в норме, жив-здоров, на работу ничто не влияет.</p>
-<p class="measure-wide">Что обо мне думали коллеги — боюсь предположить. Надеюсь, они тоже не знали про то, что okay в ответе на такой вопрос нифига не значит okay. :-)</p></description>
-        </item>
-        
-        <item>
-            <title>Баночка с печеньем</title>
-            <link>https://kostyanetsky.ru/notes/cookie-jar/</link>
-            <guid isPermaLink="false">note-cookie-jar</guid>
-            <pubDate>Sat, 28 May 2022 21:34:38 +0700</pubDate>
-            <description><p class="measure-wide">На днях прикручивал работу с куками к одному из своих скриптов. Пока искал оптимальное решение, наткнулся на совершенно очаровательный (при этом, кстати, 100% рабочий) <a class="link blue dim bb" href="https://stackoverflow.com/questions/13030095/how-to-save-requests-python-cookies-to-a-file" target="_blank">совет</a> со StackOverflow:</p>
-<blockquote>
-<p class="measure-wide">You can get a CookieJar object from the session with session.cookies, and use pickle to store it to a file.</p>
+            <title>Самые большие зарплаты</title>
+            <link>https://kostyanetsky.ru/notes/top-salaries</link>
+            <guid isPermaLink="false">note-top-salaries</guid>
+            <pubDate>Sat, 02 Oct 2021 16:49:35 +0700</pubDate>
+            <description><blockquote>
+<p>Есть путь до CSV-файла, надо его открыть, прочитать заголовок (первая строка), найти колонку Salary и вывести топ 10 зарплат.</p>
+<p><em><a href="https://t.me/nikitonsky_chat/26402" target="_blank">Ссылка</a></em></p>
 </blockquote>
-<p class="measure-wide">Ну то есть, буквально: держите ваше печенье в банке, а чтобы хранить его — маринуйте. Банку с маринованным печеньем, кстати, потом можно поставить на <a class="link blue dim bb" href="https://docs.python.org/3/library/shelve.html" target="_blank">полку</a>.</p>
-<p class="measure-wide">Вот как после этого не любить пайтон, а?</p>
-<p class="measure-wide">P.S. Пока писал заметку, разобрало любопытство — почему всё-таки pickle, а нe serialization? Так вот, если вкратце: <a class="link blue dim bb" href="https://stackoverflow.com/questions/27324986/pickles-why-are-they-called-that/27325007#27325007" target="_blank">таков путь</a>.</p></description>
+<p>Вбросил свои <a href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" target="_blank">пять копеек</a> просто для полноты картины. Если забить на стабильность, читаемость и производительность — можно усечь где-то вдвое. Тут с самого начала было очевидно, что на баше выйдет короче, а на питоне проще — так что просто написал как привык.</p>
+<p>Из полезного: в комментариях к сообщению куча примеров на других языках. С некоторыми вообще до сих пор не сталкивался; было реально любопытно посмотреть на синтаксис и попробовать понять подход.</p>
+<p>В целом история напомнила <a href="https://bolknote.ru/tags/beer99/" target="_blank">хобби</a> Евгения Степанищева — писать вывод американской «песни о пиве» на всех языках подряд. Задача с чтением CSV, кстати, мне тоже кажется скорее фаном — слишком узкий кейс, чтобы на его базе что-то всерьёз сравнивать.</p>
+<p>Из смешного: у пары <a href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">коллег</a> язык 1С вызвал настолько острые проблемы со зрением, что они сочли нужным об этом сообщить :-) Отчасти понимаю желание самоутвердиться на стереотипе «1С — это плохо, понятненько?», но тут момент явно выбран неудачно. Предпочтения в синтаксисе — дело вкуса, а кроме них решение на 1С никак не отличается от решений на любом другом языке, где нет встроенной библиотеки для парсинга CSV.</p></description>
         </item>
         
         <item>
-            <title>Изменения</title>
-            <link>https://kostyanetsky.ru/notes/_changes/</link>
-            <guid isPermaLink="false">note-_changes</guid>
-            <pubDate>Mon, 02 May 2022 19:20:00 +0700</pubDate>
-            <description><p class="measure-wide"><a href="https://twitter.com/140sm/status/1358739902326833155" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/_changes/snap-tweet-140sm-1358739902326833155.png"/></a></p>
-<p class="measure-wide">Чем дальше, тем сложнее становится писать заметки. Даже так нерегулярно, как привык это делать я. Программирование? Какие-то бытовые штуки? Что-то ещё? О чем ни решишь написать — всё по итогу кажется глупым, ненужным и неуместным.</p>
-<p class="measure-wide">А вот многие темы, которые раньше воспринимались пусть серьезно, но не особенно близко — теперь буквально обрели форму, звук, вкус и цвет. Например, твит в начале заметки и до актуальных событий был тоскливым и мрачным, но теперь, когда на самом деле пришло время смотреть в эти глаза — ощущается совсем иначе.</p>
-<p class="measure-wide">Мира всем.</p></description>
+            <title>Запросы и ожидания на блокировках</title>
+            <link>https://kostyanetsky.ru/notes/queries-and-lock-waits</link>
+            <guid isPermaLink="false">note-queries-and-lock-waits</guid>
+            <pubDate>Mon, 19 Oct 2020 06:23:06 +0700</pubDate>
+            <description><p>Набросал ещё два скрипта для анализа ТЖ: <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestQueries.sh" target="_blank">первый</a> строит топ тяжелых запросов к MS SQL, <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestLockWaitsByRegions.sh" target="_blank">второй</a> — топ длительных ожиданий на блокировках.</p>
+<p>Тяжелые запросы определяются по продолжительности событий DBMSSQL. То есть, чем дольше выполнялся запрос — тем вероятнее, что в процессе он слопал кучу ресурсов. Обычно это так и есть, хотя для нормальной диагностики нужно смотреть трассировку.</p>
+<p>Ожидания на блокировках тоже считаются по продолжительности. При этом скрипт проверяет, что у события TLOCK заполнено свойство WaitConnections — то есть платформа действительно ждала возможности установить блокировку, а не просто потратила какое-то время на её установку.</p></description>
         </item>
         
         <item>
-            <title>Минус встроенные твиты</title>
-            <link>https://kostyanetsky.ru/notes/no-more-embedded-tweets/</link>
-            <guid isPermaLink="false">note-no-more-embedded-tweets</guid>
-            <pubDate>Mon, 21 Mar 2022 20:25:48 +0700</pubDate>
-            <description><p class="measure-wide">Не успел я <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/no-more-google-fonts/" target="_blank">выпилить</a> из блога Google Fonts, как пришлось отправить вдогонку встроенные твиты.</p>
-<p class="measure-wide">Как это работало раньше? Хотел сослаться на твит — просто вставлял на него ссылку. Скрипт сборки заменял её на HTML-блок, который находил скрипт Твиттера и заменял на текст твита (и всякими полезными ссылками). Вот в этом <a class="link blue dim bb" href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" target="_blank">коммите</a> в целом видно, как это работало.</p>
-<p class="measure-wide">Как это работает теперь? Ну да, никак. Твиттер в России заблокирован, так что его скрипты работают только со включенным VPN.</p>
-<p class="measure-wide"><img alt="Штош" src="https://kostyanetsky.ru/notes/no-more-embedded-tweets/well.jpg"/></p>
-<p class="measure-wide">Пришлось поскринить все твиты, на которые я когда-то ссылался, и добавить их в заметки в виде картинок со ссылками. Кому нужен оригинал, тот включит VPN и перейдёт в Твиттер, а остальные, по крайней мере, могут прочитать текст.</p>
-<p class="measure-wide">Пара слов про техническую сторону. Скринить каждый твит вручную мне было лень, поэтому я полез в сеть, обдумывая, как автоматизировать процесс. Сначала попадались только сервисы, готовые решить проблему за какие-то жалкие десять долларов (спасибо, как-нибудь в следующий раз), но потом я набрёл на идеальный <a class="link blue dim bb" href="https://github.com/privatenumber/snap-tweet" target="_blank">инструмент</a>: консольный скрипт для Node.js.</p>
-<p class="measure-wide">Ничего лишнего. Чистый функционал. Ты ему — твит. Он тебе — картинку:</p>
-<blockquote>
-<p class="measure-wide">npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>
-</blockquote>
-<p class="measure-wide">И всё. Захотелось занести автору денег.</p>
-<p class="measure-wide">Подумал, не прикрутить ли snap-tweet к скрипту сборки (чтобы было, как раньше: вставляешь ссылку на твит, а дальше оно само генерит картинку и кладёт куда надо). Решил, нафиг. Грубое попирание KISS, да и вообще... В мире и так хватает энтропии. Особенно, блин, сейчас.</p></description>
+            <title>Рецепт торта</title>
+            <link>https://kostyanetsky.ru/notes/cake-recipe</link>
+            <guid isPermaLink="false">note-cake-recipe</guid>
+            <pubDate>Tue, 03 Dec 2013 21:43:16 +0700</pubDate>
+            <description><p>На курсах английского разбирали тему кухни — посуда, мебель, еда, вот это всё. Зачитал <a href="https://www.youtube.com/watch?v=fXzr5iwGFfE" target="_blank">рецепт торта</a> из Portal как пример блюда, которое готовится из множества компонентов. Имел определенный успех :-)</p>
+<p>Кстати, редкий случай отличной локализации: в русской версии игры этот монолог (да и все остальные реплики GLaDOS) звучат куда выразительнее.</p></description>
         </item>
         
         <item>
-            <title>Смотри не перепутай</title>
-            <link>https://kostyanetsky.ru/notes/do-not-confuse/</link>
-            <guid isPermaLink="false">note-do-not-confuse</guid>
-            <pubDate>Wed, 16 Mar 2022 20:09:31 +0700</pubDate>
-            <description><p class="measure-wide"><img alt="Код" src="https://kostyanetsky.ru/notes/do-not-confuse/do-not-confuse.png"/></p>
-<p class="measure-wide">Если вид операции — продажа товара или недвижимости, то открой общую форму AdvancesPickFormWithVAT с параметрами, описанными в структуре PickParameters. Колбеком будет метод EditPrepaymentOffsetEnd, описанный в этом же модуле; передай ему структуру AdditionalParameters. Форму нужно открыть так, чтобы она заблокировала весь интерфейс.</p>
-<p class="measure-wide">А вот если вид операции — возврат поставщику, то открой общую форму AdvancesPickFormWithVAT с параметрами, описанными в структуре PickParameters. Колбеком будет метод EditPrepaymentOffsetEnd, описанный в этом же модуле; передай ему структуру AdditionalParameters. Форму нужно открыть так, чтобы она заблокировала весь интерфейс.</p>
-<p class="measure-wide">Смотри не перепутай.</p></description>
+            <title>Зачем нужен ЦУП?</title>
+            <link>https://kostyanetsky.ru/notes/what-is-pmc-for</link>
+            <guid isPermaLink="false">note-what-is-pmc-for</guid>
+            <pubDate>Sun, 24 Nov 2019 15:46:53 +0700</pubDate>
+            <description><p>ЦУП нужен, чтобы:</p>
+<ol>
+<li>Найти в системе узкое место (медленный код, тяжелый запрос);</li>
+<li>Расследовать конкретные блокировки или взаимоблокировки.</li>
+</ol>
+<p>В первом случае можно включить анализ запросов и, допустим, серверных вызовов. По результатам можно понять, что в системе грузит сервер приложений, а что — сервер СУБД. Часто так делают даже не решая конкретную проблему, а просто чтобы устранить узкие места и увеличить запас прочности системы на будущее.</p>
+<p>Во втором сценарии включают анализ блокировок или взаимоблокировок — когда знают, что они есть в системе, и хотят получить отчет: кто заблокировал, кого, когда, на какой строчке кода и так далее.</p>
+<p>В обеих случаях мониторинг запускают только в периоды основной нагрузки и минут на десять-пятнадцать. Массив исходных данных получается сравнительно небольшим (ЦУП'у нужно его обработать перед выдачей результата, чем больше данных — тем больше времени потребуется). Кроме того, не будет собрано лишних данных — например, не будет анализа нагрузки от регламентных работ, которые вы проводите ночью.</p>
+<p>Кроме того, это снижает влияние сбора данных на работу системы. Дело в том, что ЦУП может собирать очень тяжелый ТЖ, способный заметно нагрузить железо (на 30% медленнее? подержи мое пиво). С этим лучше быть осторожным.</p>
+<p>Для всего, что перечислено выше, достаточно аналитических показателей ЦУП'а: анализа запросов, ожиданий на блокировках, анализа взаимоблокировок 1С и MS SQL. Что до оперативных показателей — количества выполняемых запросов, суммарного времени их выполнения и так далее — то популярностью они не пользуются. Польза от них обычно не стоит времени на настройку, и ЦУП по большому счету никогда не проектировался для того, чтобы постоянно собирать их.</p></description>
         </item>
         
     </channel>

@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Удаление временных таблиц
-        
-    </title>
+    <title>Удаление временных таблиц</title>
 
-    <meta name="description" content="Любопытная деталь: при закрытии менеджера временных таблиц не происходит удаления этих таблиц из tempdb." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Удаление временных таблиц"/>
-    <meta property="og:description" content="Любопытная деталь: при закрытии менеджера временных таблиц не происходит удаления этих таблиц из tempdb."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/1c/temporary-tables-deletion/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/temporary-tables-deletion" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/1c/string-concatenation/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/1c/drummer/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/1c/temporary-tables-deletion/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/temporary-tables-deletion" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/temporary-tables-deletion/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/temporary-tables-deletion/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,12 +116,12 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Любопытная деталь: при закрытии менеджера временных таблиц не происходит удаления этих таблиц из tempdb. Актуально и для прямого вызова метода Закрыть() объекта менеджера, и для неявного варианта (когда объект менеджера уничтожается при завершении метода, в котором он был создан). На деле в обеих случаях выполняется только TRUNCATE, который удаляет данные таблицы; сама же таблица остаётся на случай, если пользователь снова выполнит запрос с таким же составом полей (это выгоднее, чем заново её создавать).</p>
-<p class="measure-wide">То же самое (удаление данных, но не самой таблицы) происходит при прямом вызове УНИЧТОЖИТЬ из текста запроса. К слову, эта команда вообще редко бывает осмыслена — разве что если объект менеджера живет сравнительно долго, а во временную таблицу помещён большой объем данных, от которого хочется побыстрее избавиться.</p>
-<p class="measure-wide">Что до удаления таблицы, то оно выполняется только при закрытии соединения с сервером приложений.</p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Любопытная деталь: при закрытии менеджера временных таблиц не происходит удаления этих таблиц из tempdb. Актуально и для прямого вызова метода Закрыть() объекта менеджера, и для неявного варианта (когда объект менеджера уничтожается при завершении метода, в котором он был создан). На деле в обеих случаях выполняется только TRUNCATE, который удаляет данные таблицы; сама же таблица остаётся на случай, если пользователь снова выполнит запрос с таким же составом полей (это выгоднее, чем заново её создавать).</p>
+<p>То же самое (удаление данных, но не самой таблицы) происходит при прямом вызове УНИЧТОЖИТЬ из текста запроса. К слову, эта команда вообще редко бывает осмыслена — разве что если объект менеджера живет сравнительно долго, а во временную таблицу помещён большой объем данных, от которого хочется побыстрее избавиться.</p>
+<p>Что до удаления таблицы, то оно выполняется только при закрытии соединения с сервером приложений.</p>
         <p class="f6 mt4">
-            7 февраля 2019
+            2019-02-07 17:35:29
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -146,11 +142,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/string-concatenation/">Конкатенация строк</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/string-concatenation">Конкатенация строк</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/drummer/">Внезапный барабанщик</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/drummer">Внезапный барабанщик</a>
                                 
 
             </p> 

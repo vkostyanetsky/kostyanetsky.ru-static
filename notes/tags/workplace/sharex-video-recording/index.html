@@ -8,13 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>
-        
-            Запись видео в ShareX
-        
-    </title>
+    <title>Запись видео в ShareX</title>
 
-    <meta name="description" content="Прежде чем приспособить OBS Studio для записи видео, я пробовал использовать ShareX." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -30,14 +26,14 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Запись видео в ShareX"/>
-    <meta property="og:description" content="Прежде чем приспособить OBS Studio для записи видео, я пробовал использовать ShareX."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/workplace/sharex-video-recording/" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/sharex-video-recording" />    
 
     <!-- Tachyons -->
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
 
     <!-- Likely -->
     
@@ -50,8 +46,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/workplace/video-recording/';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/workplace/manage-services-with-powershell/';
+        let ctrlLeftUrl     = '';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -92,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/tags/workplace/sharex-video-recording/" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/sharex-video-recording" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -100,7 +96,7 @@
             <div class="mt3">
 
             
-                    <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/pages/notes/sharex-video-recording/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/sharex-video-recording/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,17 +116,17 @@
             
         
     
-    <div class="f4 lh-copy black mb5">
-        <p class="measure-wide">Прежде чем приспособить OBS Studio для записи видео (писал о ней в <a class="link blue dim bb" href="https://kostyanetsky.ru/notes/video-recording" target="_blank">предыдущей</a> заметке), я пробовал использовать <a class="link blue dim bb" href="https://getsharex.com/" target="_blank">ShareX</a>. Программа поначалу неплохо справлялась, однако от неё пришлось отказаться из-за неприятного бага: иногда при попытке завершить запись софт портил полученное видео.</p>
-<p class="measure-wide">Я гуглил, но причину понять так и не смог. Впрочем, неудивительно — ShareX использует <a class="link blue dim bb" href="https://www.ffmpeg.org/" target="_blank">ffmpeg</a> для записи видео, а это дитя опенсорца вместо адекватной диагностики невозмутимо вываливает целый рулон логов. Разбирать его без соответствующего опыта — занятие для клинического оптимиста.</p>
-<p class="measure-wide">Впрочем, как инструмент для создания скриншотов ShareX почти безупречна. Обилие опций слегка напоминает замотанного человека в приступе гиперактивности :-)</p>
-<p class="measure-wide"><a href="https://kostyanetsky.ru/notes/sharex-video-recording/interface.png" target="_blank"><img alt="Настраиваем скриншоты" src="https://kostyanetsky.ru/notes/sharex-video-recording/interface-thumb.png"/></a></p>
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Прежде чем приспособить OBS Studio для записи видео (писал о ней в <a href="https://kostyanetsky.ru//notes/video-recording" target="_blank">предыдущей</a> заметке), я пробовал использовать <a href="https://getsharex.com/" target="_blank">ShareX</a>. Программа поначалу неплохо справлялась, однако от неё пришлось отказаться из-за неприятного бага: иногда при попытке завершить запись софт портил полученное видео.</p>
+<p>Я гуглил, но причину понять так и не смог. Впрочем, неудивительно — ShareX использует <a href="https://www.ffmpeg.org/" target="_blank">ffmpeg</a> для записи видео, а это дитя опенсорца вместо адекватной диагностики невозмутимо вываливает целый рулон логов. Разбирать его без соответствующего опыта — занятие для клинического оптимиста.</p>
+<p>Впрочем, как инструмент для создания скриншотов ShareX почти безупречна. Обилие опций слегка напоминает замотанного человека в приступе гиперактивности :-)</p>
+<p><a href="https://kostyanetsky.ru/notes/sharex-video-recording/interface.png" target="_blank"><img alt="Настраиваем скриншоты" src="https://kostyanetsky.ru/notes/sharex-video-recording/interface-thumb.png"/></a></p>
 <blockquote>
-<p class="measure-wide">— Протестирую сам! Сам все протестирую! И полы вымою!</p>
-<p class="measure-wide"><em><a class="link blue dim bb" href="https://www.youtube.com/watch?v=K6oZuB8_dU8&amp;feature=youtu.be&amp;t=640" target="_blank">Эффективность не работает. Илья Якямсев</a></em></p>
+<p>— Протестирую сам! Сам все протестирую! И полы вымою!</p>
+<p><em><a href="https://www.youtube.com/watch?v=K6oZuB8_dU8&amp;feature=youtu.be&amp;t=640" target="_blank">Эффективность не работает. Илья Якямсев</a></em></p>
 </blockquote>
         <p class="f6 mt4">
-            8 апреля 2020
+            2020-04-08 05:53:13
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/">рабочее место</a>
@@ -151,11 +147,11 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/video-recording/">Запись видео</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/video-recording">Запись видео</a> &larr;
                 
                 Ctrl
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/manage-services-with-powershell/">Управление службами через PowerShell</a>
+                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/manage-services-with-powershell">Управление службами через PowerShell</a>
                                 
 
             </p> 
