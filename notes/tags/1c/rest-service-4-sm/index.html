@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Про странный Битрикс</title>
+    <title>REST-сервис для Service Manager</title>
 
-    <meta name="description" content="Катаю интеграцию с Битриксом под клиентский проект. Чем дальше, тем страньше." />
+    <meta name="description" content="Про ботинок, натиравший мне ногу." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Про странный Битрикс"/>
-    <meta property="og:description" content="Катаю интеграцию с Битриксом под клиентский проект. Чем дальше, тем страньше."/>
+    <meta property="og:title" content="REST-сервис для Service Manager"/>
+    <meta property="og:description" content="Про ботинок, натиравший мне ногу."/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/strange-bitrix" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/rest-service-4-sm" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/strange-bitrix" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/rest-service-4-sm" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/strange-bitrix/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/rest-service-4-sm/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,28 +112,30 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Про странный Битрикс</h1>
+        <h1 class="f-subheadline lh-solid">REST-сервис для Service Manager</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Чем дальше лезу в REST-интерфейс Битрикс24, тем сильнее поражаюсь тому, насколько необычно устроено мышление у его разработчиков. Проявляется это по-разному.</p>
-<p>Взять, например, интерфейс сделок и товаров по ним. В таблице последних нет поля суммы: мол, нужна тебе сумма по строке — сам и считай. Зато сумма есть на уровне документа. Угадаете, как называется поле?</p>
-<p>AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
-<p>Не угадали, правильный ответ — OPPORTUNITY.</p>
-<p><img alt="Чего, блядь?" src="https://kostyanetsky.ru/notes/strange-bitrix/what-the-fuck.jpg"/></p>
-<p>Но вернемся в строке товара. В ней есть товар, ставка НДС и единица измерения. Все три сущности вполне самостоятельны: у каждой есть отдельная таблица со вспомогательной информацией и свой собственный идентификатор. Логично предположить, что в строке товара они и хранятся: ID товара, ID ставки НДС и ID единицы измерения.</p>
-<p>Логично-то логично, но нет, хрен там плавал. Для номенклатуры и правда хранится ID, а вот для ставки НДС — значение ставки, и для единицы измерения — код измерения по ОКЕИ ¯\_(ツ)_/¯</p>
-<p>Нормализация базы данных? Чего? Какая еще нормализация? Отстань, мужик, работать мешаешь.</p>
+        <p>На этой неделе написал REST-сервис для настройки к нашему сервис-менеджеру (это такая конфигурация для управления инстансом 1cFresh). Развернуть контур разработки у нас — задача регулярная, и базу менеджера каждый раз приходилось тюнить руками: подкручивать витрину, менять адреса приложений, перезаписывать регламентные задания и так далее.</p>
+<p>Реализация была проста. Придумай структуру JSON, напиши парсер, найди подходящий код в конфигурации, обеспечь его вызов извне и убедись, что ничего не сломал. Рутинная работа, в общем-то, но я люблю время от времени делать такие штуки: смотреть вокруг и пытаться сообразить, какая из ежедневных задач раздражает достаточно сильно. </p>
+<p>Эта — хороший пример. Настройка сервис-менеджера не была проблемой (запустить приложение и покрутить настройки), но о ней нужно было думать и её нужно было делать. А теперь — нет:</p>
+<ol>
+<li>Есть JSON-файл со всеми настройками;</li>
+<li>Есть REST-сервис для его обработки;</li>
+<li>Есть скрипт, который засунет первый во второй; </li>
+<li>Есть пайплайн, который сделает всё это сам. </li>
+</ol>
+<p>Короче, ботинок тёр ногу, а теперь перестал. Йаху!</p>
         <p class="f6 mt4">
-            2022-10-15 18:22:43
+            2023-02-25 19:02:49
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
                 </span>
             
         </p>
@@ -151,11 +153,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/anonymous-quokka">Групповая работа в Google Docs</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/haul-trucks">Карьерные самосвалы</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/rest-service-4-sm">REST-сервис для Service Manager</a>
                                 
 
             </p> 

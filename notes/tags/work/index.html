@@ -118,6 +118,39 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/rest-service-4-sm/">REST-сервис для Service Manager</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>На этой неделе написал REST-сервис для настройки к нашему сервис-менеджеру (это такая конфигурация для управления инстансом 1cFresh). Развернуть контур разработки у нас — задача регулярная, и базу менеджера каждый раз приходилось тюнить руками: подкручивать витрину, менять адреса приложений, перезаписывать регламентные задания и так далее.</p>
+<p>Реализация была проста. Придумай структуру JSON, напиши парсер, найди подходящий код в конфигурации, обеспечь его вызов извне и убедись, что ничего не сломал. Рутинная работа, в общем-то, но я люблю время от времени делать такие штуки: смотреть вокруг и пытаться сообразить, какая из ежедневных задач раздражает достаточно сильно. </p>
+<p>Эта — хороший пример. Настройка сервис-менеджера не была проблемой (запустить приложение и покрутить настройки), но о ней нужно было думать и её нужно было делать. А теперь — нет:</p>
+<ol>
+<li>Есть JSON-файл со всеми настройками;</li>
+<li>Есть REST-сервис для его обработки;</li>
+<li>Есть скрипт, который засунет первый во второй; </li>
+<li>Есть пайплайн, который сделает всё это сам. </li>
+</ol>
+<p>Короче, ботинок тёр ногу, а теперь перестал. Йаху!</p>
+        <p class="f6 mt4">
+            2023-02-25 19:02:49
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/strange-bitrix/">Про странный Битрикс</a></h2>
 
             
@@ -714,35 +747,6 @@
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/burned-people/">И приятнее пахнуть</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>На днях выпустили очередный релиз FirstBIT ERP (наш программный продукт для автоматизации бизнеса в ОАЭ). Вложен вагон труда, всё работает как надо, есть чем гордиться и всё такое. Я, например, кучу сил потратил на то, чтобы сделать полноценный обмен данными с Битрикс24 и порядком рад, что успел этот механизм зафиналить.</p>
-<p>Но в душе всё равно немного завидно <a href="https://steamcommunity.com/games/505230/announcements/detail/1597002662743679418" target="_blank">коллегам</a> из геймдева: наши патчноуты, конечно, тоже интересные, но <a href="https://kostyanetsky.ru/notes/burned-people/better.png" target="_blank">такого</a> там всё-таки не встретить.</p>
-        <p class="f6 mt4">
-            2019-06-10 17:04:33
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
                 </span>
             
         </p>
