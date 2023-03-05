@@ -118,6 +118,36 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/outgoing-requests-limiter/">Помедленнее, я записываю</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Обычно при разработке исходишь из простой формулы: чем быстрее работает — тем лучше. Например, чем больше запросов приложение успеет выполнить за единицу времени — тем быстрее решится задача, ради которой эти запросы нужны.</p>
+<p>Однако бывает наоборот: нужно снизить количество операций, которые программа способна выполнить. Допустим, мы дергаем внешний сервис и он банит, если делать это слишком часто. Пример — облако <a href="https://bitrix24.net" target="_blank">Битрикс24</a>, которое требует отправлять не больше двух запросов в секунду.</p>
+<p>Вот <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">реализация</a> такой замедлялки, которую я написал на прошлой неделе. Поддержки очередности в ней нет; основная решенная задача — выполнить как можно больше запросов, не выходя за лимит (с учётом того, что запросы могут делаться из разных сеансов).</p>
+        <p class="f6 mt4">
+            2023-03-05 15:54:51
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/rest-service-4-sm/">REST-сервис для Service Manager</a></h2>
 
             
@@ -699,35 +729,6 @@ MultiMonitorTool.exe /switch 2
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/diablo/">Diablo</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/kVd6qeWoAxg" width="560"></iframe>
-<p>Хороший выпуск айтишного подкаста «Мы обречены» про выгорание разработчиков. Особых откровений нет, но что-то полезное для себя подчерпнуть можно. Очень понравилась аналогия с видеоиграми где-то ближе к середине:</p>
-<blockquote>
-<p>Была такая игра — Diablo. Бегаешь ты там, RPG, всякие спеллы. У персонажа есть мана и здоровье, и когда у тебя маны на каст… Ха, звучу как задрот! Ну ладно. В общем, когда у тебя маны на каст не хватает, она у тебя начинает из здоровья браться.</p>
-<p><em>— Доктор Кот</em></p>
-</blockquote>
-        <p class="f6 mt4">
-            2021-09-22 21:25:48
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
                 </span>
             
         </p>

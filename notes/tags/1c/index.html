@@ -118,6 +118,36 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/outgoing-requests-limiter/">Помедленнее, я записываю</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Обычно при разработке исходишь из простой формулы: чем быстрее работает — тем лучше. Например, чем больше запросов приложение успеет выполнить за единицу времени — тем быстрее решится задача, ради которой эти запросы нужны.</p>
+<p>Однако бывает наоборот: нужно снизить количество операций, которые программа способна выполнить. Допустим, мы дергаем внешний сервис и он банит, если делать это слишком часто. Пример — облако <a href="https://bitrix24.net" target="_blank">Битрикс24</a>, которое требует отправлять не больше двух запросов в секунду.</p>
+<p>Вот <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">реализация</a> такой замедлялки, которую я написал на прошлой неделе. Поддержки очередности в ней нет; основная решенная задача — выполнить как можно больше запросов, не выходя за лимит (с учётом того, что запросы могут делаться из разных сеансов).</p>
+        <p class="f6 mt4">
+            2023-03-05 15:54:51
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/rest-service-4-sm/">REST-сервис для Service Manager</a></h2>
 
             
@@ -728,32 +758,6 @@ EndProcedure
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/skuuuid/">SKUUUID в своем глазу</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Пару недель назад Александр Кунташов у себя на канале <a href="https://t.me/kuntashov_devnotes/479" target="_blank">запостил</a> забавный скрин перечисления из Библиотеки Электронных Документов, создателей которого откровенно манили длинные аббревиатуры. Я бодро острил на тему родства ИППДОИПУПДУКД'а и московского ГНУВНИВИПФИТ'а, а потом увидел в собственном коде вот эту красотку:</p>
-<p><img alt="SKUUUID" src="https://kostyanetsky.ru/notes/skuuuid/skuuuid.png"/></p>
-<p>Ещё не вполне рука маэстро, конечно, но движение определенно в том же направлении. Вспомнилась притча про сучок в чужом глазу и суковатое бревно — в своём :-)</p>
-        <p class="f6 mt4">
-            2021-02-22 17:11:53
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/code-smell/">код с запашком</a>
                 </span>
             
         </p>

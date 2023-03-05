@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Про странный Битрикс</title>
+    <title>Помедленнее, я записываю</title>
 
-    <meta name="description" content="Катаю интеграцию с Битриксом под клиентский проект. Чем дальше, тем страньше." />
+    <meta name="description" content="Сравнительно простой способ замедлить выполнение запросов из конфигурации к внешним сервисам." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Про странный Битрикс"/>
-    <meta property="og:description" content="Катаю интеграцию с Битриксом под клиентский проект. Чем дальше, тем страньше."/>
+    <meta property="og:title" content="Помедленнее, я записываю"/>
+    <meta property="og:description" content="Сравнительно простой способ замедлить выполнение запросов из конфигурации к внешним сервисам."/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/strange-bitrix" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/outgoing-requests-limiter" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/strange-bitrix" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/outgoing-requests-limiter" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/strange-bitrix/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/outgoing-requests-limiter/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,28 +112,27 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Про странный Битрикс</h1>
+        <h1 class="f-subheadline lh-solid">Помедленнее, я записываю</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Чем дальше лезу в REST-интерфейс Битрикс24, тем сильнее поражаюсь тому, насколько необычно устроено мышление у его разработчиков. Проявляется это по-разному.</p>
-<p>Взять, например, интерфейс сделок и товаров по ним. В таблице последних нет поля суммы: мол, нужна тебе сумма по строке — сам и считай. Зато сумма есть на уровне документа. Угадаете, как называется поле?</p>
-<p>AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
-<p>Не угадали, правильный ответ — OPPORTUNITY.</p>
-<p><img alt="Чего, блядь?" src="https://kostyanetsky.ru/notes/strange-bitrix/what-the-fuck.jpg"/></p>
-<p>Но вернемся в строке товара. В ней есть товар, ставка НДС и единица измерения. Все три сущности вполне самостоятельны: у каждой есть отдельная таблица со вспомогательной информацией и свой собственный идентификатор. Логично предположить, что в строке товара они и хранятся: ID товара, ID ставки НДС и ID единицы измерения.</p>
-<p>Логично-то логично, но нет, хрен там плавал. Для номенклатуры и правда хранится ID, а вот для ставки НДС — значение ставки, и для единицы измерения — код измерения по ОКЕИ ¯\_(ツ)_/¯</p>
-<p>Нормализация базы данных? Чего? Какая еще нормализация? Отстань, мужик, работать мешаешь.</p>
+        <p>Обычно при разработке исходишь из простой формулы: чем быстрее работает — тем лучше. Например, чем больше запросов приложение успеет выполнить за единицу времени — тем быстрее решится задача, ради которой эти запросы нужны.</p>
+<p>Однако бывает наоборот: нужно снизить количество операций, которые программа способна выполнить. Допустим, мы дергаем внешний сервис и он банит, если делать это слишком часто. Пример — облако <a href="https://bitrix24.net" target="_blank">Битрикс24</a>, которое требует отправлять не больше двух запросов в секунду.</p>
+<p>Вот <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">реализация</a> такой замедлялки, которую я написал на прошлой неделе. Поддержки очередности в ней нет; основная решенная задача — выполнить как можно больше запросов, не выходя за лимит (с учётом того, что запросы могут делаться из разных сеансов).</p>
         <p class="f6 mt4">
-            2022-10-15 18:22:43
+            2023-03-05 15:54:51
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
                 </span>
             
         </p>
@@ -151,11 +150,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/anonymous-quokka">Групповая работа в Google Docs</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/rest-service-4-sm">REST-сервис для Service Manager</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/outgoing-requests-limiter">Помедленнее, я записываю</a>
                                 
 
             </p> 
