@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Помедленнее, я записываю</title>
+    <title>Сделай это педантично</title>
 
-    <meta name="description" content="Сравнительно простой способ замедлить выполнение запросов из конфигурации к внешним сервисам." />
+    <meta name="description" content="Как сравнить две булевые переменные?" />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Помедленнее, я записываю"/>
-    <meta property="og:description" content="Сравнительно простой способ замедлить выполнение запросов из конфигурации к внешним сервисам."/>
+    <meta property="og:title" content="Сделай это педантично"/>
+    <meta property="og:description" content="Как сравнить две булевые переменные?"/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/outgoing-requests-limiter" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/in-a-pedantic-way" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/outgoing-requests-limiter" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/in-a-pedantic-way" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/outgoing-requests-limiter/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/in-a-pedantic-way/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,27 +112,32 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Помедленнее, я записываю</h1>
+        <h1 class="f-subheadline lh-solid">Сделай это педантично</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Обычно при разработке исходишь из простой формулы: чем быстрее работает — тем лучше. Например, чем больше запросов приложение успеет выполнить за единицу времени — тем быстрее решится задача, ради которой эти запросы нужны.</p>
-<p>Однако бывает наоборот: нужно снизить количество операций, которые программа способна выполнить. Допустим, мы дергаем внешний сервис и он банит, если делать это слишком часто. Пример — облако <a href="https://bitrix24.net" target="_blank">Битрикс24</a>, которое требует отправлять не больше двух запросов в секунду.</p>
-<p>Вот <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">реализация</a> такой замедлялки, которую я написал на прошлой неделе. Поддержки очередности в ней нет; основная решенная задача — выполнить как можно больше запросов, не выходя за лимит (с учётом того, что запросы могут делаться из разных сеансов).</p>
+        <p>Ежедневная пальма первенства в номинации «самый философский код» уходит автору этого элегантного способа проверить, что пара булевых переменных не равны друг другу:</p>
+<pre><code>If DataStructure.Property("AmountVATIn")
+    And ((DataStructure.AmountVATIn And NOT SearchPriceIncludesVAT)
+    OR (NOT DataStructure.AmountVATIn And SearchPriceIncludesVAT)) Then    
+    Price = RecalculateAmountOnVATFlagsChange(Price, DataStructure.AmountVATIn, TabSectionLine.VATRate);
+EndIf;
+</code></pre>
+<p>Думаю дописать сюда что-нибудь вроде «And Not (DataStructure.AmountVATIn = SearchPriceIncludesVAT)», чтобы придать происходящему тонкую нотку безумия.</p>
         <p class="f6 mt4">
-            2023-03-05 15:54:51
+            2023-03-21 20:26:43
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/code-smell/">код с запашком</a>
                 </span>
             
         </p>
@@ -150,11 +155,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/rest-service-4-sm">REST-сервис для Service Manager</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/environmental-storytelling">Повествование через окружение</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/in-a-pedantic-way">Сделай это педантично</a>
                                 
 
             </p> 

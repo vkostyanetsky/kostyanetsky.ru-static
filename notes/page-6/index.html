@@ -124,6 +124,28 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/pageiolatch/">Задержки PageIOLatch</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Когда мы читаем страницу данных с диска в буферный кэш, она на очень короткое время блокируется (её нельзя писать, а в некоторых случаях — ещё и читать). Ожидание на завершении этого действия — и есть задержка PageIOLatch.</p>
+<p>Причиной может быть вымывание буферного кэша — из-за небольшого объёма доступной ОЗУ или не оптимальных запросов, которые читают миллионы строк, а возвращают три. В итоге СУБД регулярно не находит нужных страниц в кэше и вынуждена снова и снова читать их с диска.</p>
+<p>В общем, если в системе есть существенные задержки PageIOLatch — их скорее всего можно снизить, используя более быстрые диски, наращивая объём ОЗУ и оптимизируя запросы.</p>
+        <p class="f6 mt4">
+            2019-04-22 19:40:08
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/">MS SQL</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/object-locks/">Объектные блокировки</a></h2>
 
             
@@ -624,27 +646,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/trip-to-kok-kol/">Поездка на Кок-Коль</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Летом катался с друзьями на границу с Монголией (на машинах доехали до Ташанты, а оттуда — на велосипедах до <a href="http://rasulka.ru/ооо-расул---кок-коль.html" target="_blank">Кок-Коля</a>). Вымотались как проклятые, однако это того определенно стоило — виды с гор невероятно крутые! Одно жаль, животные попадались нечасто — даже чумных сусликов не встретили, хотя их нам каждый встречный анонсировал, включая погранцев :-)</p>
-<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/4HbJAdYQ-xM" width="560"></iframe>
-        <p class="f6 mt4">
-            2019-01-06 16:23:04
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/sport/">спорт</a>
                 </span>
             
         </p>

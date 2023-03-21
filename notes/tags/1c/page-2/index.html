@@ -124,6 +124,39 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/bunch-of-scrips/">Пучок скриптов</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Выложил на GitHub ещё несколько скриптов для разбора технологического журнала платформы, которые написал за последнее время:</p>
+<ul>
+<li><a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentEvents.sh" target="_blank">Частотные события</a>. Группирует события по наименованию, считает количество воспроизведений для каждого и выводит в порядке убывания — от наиболее частотного к наименее частотному. Практического применения у этого скрипта, скорее, нет; просто фиксировал для себя, какой процесс кластера какие события пишет.</li>
+<li><a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/ExceptionDescriptions.sh" target="_blank">Описания исключений</a>. Группирует EXCP по полю Name; для каждого наименования выводит варианты значений поля Description, которые были у исключений с таким наименованием. С помощью этого скрипта можно составить примерную картину: какие исключения действительно проблема, а какие — просто белый шум, который можно игнорировать и, например, закинуть в фильтры Кибаны.</li>
+<li><a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LocksByConnectIDAndRegions.sh" target="_blank">Блокировки по ID соединения и области</a>. Удобен для поиска виновника таймаута на управляемых блокировках: скрипт выгребает из ТЖ все TLOCK'и по конкретной области от конкретного соединения, а потом выстраивает их в хронологическом порядке.</li>
+</ul>
+        <p class="f6 mt4">
+            2021-04-24 10:00:00
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/skuuuid/">SKUUUID в своем глазу</a></h2>
 
             
@@ -757,38 +790,6 @@ WHERE
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/what-is-inside-the-drum/">Выгрузка стандартных обработок</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Недавно внедрили в нашу конфигурацию встроенный в платформу механизм истории данных вместо морально и функционально устаревшего велосипеда из SSLi. Сейчас как раз дописываю выгрузку историю данных в бэкап и загрузку его обратно: удивительно, но этого пока не умеет ни БСП, ни БТС, ни SSLi (впрочем, от последней я и не ждал).</p>
-<p>Как закончу, расскажу подробнее. Пока хочу отметить любопытную опцию, которая пригодилась по ходу дела: встроенные в платформу обработки, которые доступны из меню «Все функции», можно выгрузить в виде обычных epf-файлов! Трюк очень подробно разобрали коллеги на Инфостарте (<a href="https://infostart.ru/public/369487/" target="_blank">вот тут</a> и <a href="https://infostart.ru/public/538300/" target="_blank">вот тут</a>). Вкратце магия выглядит вот так:</p>
-<pre><code>КопироватьФайл(
-    "v8res://mngbase/StandardDataChangeHistory.epf",
-    "Q:/StandardDataChangeHistory.epf"
-);
-</code></pre>
-<p>Полный список стандартных форм и обработок, которые можно вытащить, способ получения этого списка, а также куча споров вокруг и около — по ссылкам выше.</p>
-<p>Зачем это пригодится вам — честно, не знаю. Что касается нас, то мы делали интерфейсы для работы с историей данных и было любопытно, как они написаны у самой 1С (спойлер: довольно неряшливо).</p>
-        <p class="f6 mt4">
-            2020-07-05 11:07:20
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
                 </span>
             
         </p>
