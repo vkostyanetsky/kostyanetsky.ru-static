@@ -124,6 +124,28 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/temporary-tables-deletion/">Удаление временных таблиц</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Любопытная деталь: при закрытии менеджера временных таблиц не происходит удаления этих таблиц из tempdb. Актуально и для прямого вызова метода Закрыть() объекта менеджера, и для неявного варианта (когда объект менеджера уничтожается при завершении метода, в котором он был создан). На деле в обеих случаях выполняется только TRUNCATE, который удаляет данные таблицы; сама же таблица остаётся на случай, если пользователь снова выполнит запрос с таким же составом полей (это выгоднее, чем заново её создавать).</p>
+<p>То же самое (удаление данных, но не самой таблицы) происходит при прямом вызове УНИЧТОЖИТЬ из текста запроса. К слову, эта команда вообще редко бывает осмыслена — разве что если объект менеджера живет сравнительно долго, а во временную таблицу помещён большой объем данных, от которого хочется побыстрее избавиться.</p>
+<p>Что до удаления таблицы, то оно выполняется только при закрытии соединения с сервером приложений.</p>
+        <p class="f6 mt4">
+            2019-02-07 17:35:29
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/string-concatenation/">Конкатенация строк</a></h2>
 
             
@@ -575,32 +597,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/papers-please-short-film/">Ваши документы</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/YFHHGETsxkE" width="560"></iframe>
-<p>Крутая экранизация «<a href="https://store.steampowered.com/app/239030/Papers_Please/" target="_blank">Papers, Please</a>», даром что на десять минут. Савочкин здорово сыграл, да и остальные не подкачали, включая сценариста. Запихнуть в такой хронометраж драму и сюжетный твист — это надо уметь.</p>
-<p>Если вспомнить, что экранизации видеоигр обычно звёзд с небес не хватают — эту можно считать блестящим экземпляром.</p>
-        <p class="f6 mt4">
-            2018-03-01 18:51:09
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/films/">фильмы</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
                 </span>
             
         </p>
