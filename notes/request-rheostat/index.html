@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Помедленнее, я записываю</title>
+    <title>Реостат для запросов</title>
 
-    <meta name="description" content="Сравнительно простой способ замедлить выполнение запросов из конфигурации к внешним сервисам." />
+    <meta name="description" content="Код, ограничивающий количество запросов, отправляемых из информационной базы 1С:Предприятия." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Помедленнее, я записываю"/>
-    <meta property="og:description" content="Сравнительно простой способ замедлить выполнение запросов из конфигурации к внешним сервисам."/>
+    <meta property="og:title" content="Реостат для запросов"/>
+    <meta property="og:description" content="Код, ограничивающий количество запросов, отправляемых из информационной базы 1С:Предприятия."/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/outgoing-requests-limiter" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/request-rheostat" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/outgoing-requests-limiter" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/request-rheostat" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/outgoing-requests-limiter/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/request-rheostat/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,27 +112,23 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Помедленнее, я записываю</h1>
+        <h1 class="f-subheadline lh-solid">Реостат для запросов</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Обычно при разработке исходишь из простой формулы: чем быстрее работает — тем лучше. Например, чем больше запросов приложение успеет выполнить за единицу времени — тем быстрее решится задача, ради которой эти запросы нужны.</p>
-<p>Однако бывает наоборот: нужно снизить количество операций, которые программа способна выполнить. Допустим, мы дергаем внешний сервис и он банит, если делать это слишком часто. Пример — облако <a href="https://bitrix24.net" target="_blank">Битрикс24</a>, которое требует отправлять не больше двух запросов в секунду.</p>
-<p>Вот <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">реализация</a> такой замедлялки, которую я написал на прошлой неделе. Поддержки очередности в ней нет; основная решенная задача — выполнить как можно больше запросов, не выходя за лимит (с учётом того, что запросы могут делаться из разных сеансов).</p>
+        <p>Забыл написать: пару месяцев назад <a href="https://github.com/vkostyanetsky/RequestRheostat" target="_blank">выложил</a> на GitHub пример кода, ограничивающего количество запросов в секунду, которое может быть отправлено к какому-то стороннему ресурсу из информационной базы 1С:Предприятия. </p>
+<p>Задача решена через константу, которая хранит дату текущей секунды и количество запросов, которые уже были отправлены. Клиенты, которые утыкаются в ограничение — ждут. Очередь не гарантируется, но плюс-минус соблюдается.</p>
+<p>Может пригодиться для управления нагрузкой на внешнюю систему. Например, облачный Битрикс24 прямо требует не отправлять ему запросы чаще, чем два раза в секунду, и за превышение выдает бан.</p>
         <p class="f6 mt4">
-            2023-03-05 15:54:51
+            2023-05-27 13:20:05
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
                 </span>
             
         </p>
@@ -150,11 +146,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/strange-bitrix">Про странный Битрикс</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/do-you-speak-english">Ду ю спик инглиш?</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/request-rheostat">Реостат для запросов</a>
                                 
 
             </p> 
