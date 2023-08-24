@@ -124,6 +124,33 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/no-more-google-fonts/">Минус Google Fonts</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p><a href="https://twitter.com/PixelAmbacht/status/1494272370076536840" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/no-more-google-fonts/snap-tweet-PixelAmbacht-1494272370076536840.png"/></a></p>
+<p>Год назад, блин. Ладно, всем привет! С вами Джонни Слоупок! Сегодня мы будем выпиливать из моего блога работу с Google Fonts. Я подгружал с него основной шрифт (PT Sans), но без кросс-доменного кэширования единственный смысл делать это дальше — если сервер, на котором работает сайт, слабоват и с гугла шрифты грузятся шустрее. </p>
+<p>В моем случае блог отдают сервера гитхаба, которые на производительность не жалуются, так что теперь PT Sans загружается прямо с них. И знаете что? Разница прямо драматическая. Если раньше при обновлении страницы была явно заметна задержка между загрузкой страницы и загрузкой шрифта, то теперь её невооруженным глазом не разобрать. Если у вас свой блог и хотите попробовать — вот тут есть классный <a href="https://google-webfonts-helper.herokuapp.com/fonts" target="_blank">сервис</a>, который решает задачу в несколько кликов.</p>
+<p>Не забудьте повесить звезду на <a href="https://github.com/majodev/google-webfonts-helper" target="_blank">репозиторий</a>!</p>
+        <p class="f6 mt4">
+            2022-02-19 20:25:48
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/blog/">блог</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/webdev/">вебдев</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/totals-of-2021/">Итоги 2021-го</a></h2>
 
             
@@ -716,39 +743,6 @@ MultiMonitorTool.exe /switch 2
 <p>Мне вообще, по-чеснаку, непонятна причина, по которой ветераны баша трамбуют всю логику в две-три строки: язык и так-то не блещет читаемостью (в телеграм-канале Никиты Прокопова есть <a href="https://t.me/nikitonsky_pub/55" target="_blank">отличный текст</a> на эту тему), а при виде страницы конвейеров без единого перевода строки вообще хочется молча выйти в окно.</p>
         <p class="f6 mt4">
             2021-04-26 19:24:00
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/bunch-of-scrips/">Пучок скриптов</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Выложил на GitHub ещё несколько скриптов для разбора технологического журнала платформы, которые написал за последнее время:</p>
-<ul>
-<li><a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentEvents.sh" target="_blank">Частотные события</a>. Группирует события по наименованию, считает количество воспроизведений для каждого и выводит в порядке убывания — от наиболее частотного к наименее частотному. Практического применения у этого скрипта, скорее, нет; просто фиксировал для себя, какой процесс кластера какие события пишет.</li>
-<li><a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/ExceptionDescriptions.sh" target="_blank">Описания исключений</a>. Группирует EXCP по полю Name; для каждого наименования выводит варианты значений поля Description, которые были у исключений с таким наименованием. С помощью этого скрипта можно составить примерную картину: какие исключения действительно проблема, а какие — просто белый шум, который можно игнорировать и, например, закинуть в фильтры Кибаны.</li>
-<li><a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LocksByConnectIDAndRegions.sh" target="_blank">Блокировки по ID соединения и области</a>. Удобен для поиска виновника таймаута на управляемых блокировках: скрипт выгребает из ТЖ все TLOCK'и по конкретной области от конкретного соединения, а потом выстраивает их в хронологическом порядке.</li>
-</ul>
-        <p class="f6 mt4">
-            2021-04-24 10:00:00
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
