@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Новый Фастаймер</title>
+    <title>Румынская фича</title>
 
-    <meta name="description" content="Выпустил новую версию консольного таймера для интервального голодания." />
+    <meta name="description" content="Про румынскую специфику при отправке SMS с буквенно-цифрового ID отправителя." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Новый Фастаймер"/>
-    <meta property="og:description" content="Выпустил новую версию консольного таймера для интервального голодания."/>
+    <meta property="og:title" content="Румынская фича"/>
+    <meta property="og:description" content="Про румынскую специфику при отправке SMS с буквенно-цифрового ID отправителя."/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/fastimer-1-3-1" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/crossed" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/fastimer-1-3-1" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/crossed" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/fastimer-1-3-1/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/crossed/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,22 +112,35 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Новый Фастаймер</h1>
+        <h1 class="f-subheadline lh-solid">Румынская фича</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Выпустил новую <a href="https://github.com/vkostyanetsky/Fastimer/releases/tag/v1.3.1" target="_blank">версию</a> своего консольного таймера для <a href="https://ru.wikipedia.org/wiki/Периодическое_голодание" target="_blank">интервального голодания</a>. Сам таймер я написал где-то год назад, когда меня в очередной раз расстроило приложение <a href="https://www.zerolongevity.com/" target="_blank">Zero</a> для Android: в нём не работала какая-то совсем примитивная функция вроде просмотра конкретного интервала.</p>
-<p>Основное отличие 1.3.1 от 1.2.3 — выпилил к черту консольное меню в пользу старых-добрых аргументов и опций. Концепция меню выглядит удобной, пока фич у приложения мало, но как только их число растёт — необходимость протыкивать каждое действие начинает напрягать.</p>
+        <p>Делаю для нашего клиентского портала функцию восстановления пароля через SMS. Добрался до <a href="https://support.twilio.com/hc/en-us/articles/223133767-International-support-for-Alphanumeric-Sender-ID" target="_blank">документации</a> Twilio о поддержке <a href="https://www.twilio.com/docs/glossary/what-alphanumeric-sender-id" target="_blank">буквенно-цифрового ID отправителя</a> в разных странах; эта фича позволяет отправлять сообщения так, чтобы получатель видел не номер отправителя, а что-то осмысленное (название компании, например). </p>
+<p>При этом фича везде зарегулирована по-своему: где-то просто работает, а где-то нужна регистрация.</p>
+<p>Читаю:</p>
+<p><img alt="Скрин" src="https://kostyanetsky.ru/notes/crossed/twilio.png"/></p>
+<p>🤔</p>
+<ul>
+<li>Португалия: можно</li>
+<li>Пуэрто-Рико: можно</li>
+<li>Катар: можно (с регистрацией)</li>
+<li>Реюньон: можно</li>
+<li>Румыния: можно (с регистрацией) (но бойтесь Дракулы)</li>
+</ul>
+<p>Не знаю, как ещё объяснить это кладбище.</p>
+<p>UPD: Нашёл разгадку. Могильные кресты означают, что за регистрацию нужно заплатить 700 баксов. </p>
+<p>Объяснение про Дракулу мне нравилось больше.</p>
         <p class="f6 mt4">
-            2023-08-23 20:58:32
+            2023-08-30 01:02:24
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/meanwhile/">тем временем</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/">Python</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
                 </span>
             
         </p>
@@ -145,11 +158,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/this-is-the-way">Таков путь</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/in-a-pedantic-way">Сделай это педантично</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/crossed">Румынская фича</a>
                                 
 
             </p> 

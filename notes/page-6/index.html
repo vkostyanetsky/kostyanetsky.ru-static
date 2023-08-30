@@ -124,6 +124,28 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/draugen/">Draugen</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ziNZqEw0Adg" width="560"></iframe>
+<p>Сравнительно короткая, но по-своему яркая история. Проиграть тут нельзя, особого выбора (кроме вариантов реплик) нет. Но то, как тут всё звучит и выглядит, то, как здорово прописаны персонажи — удивляет и трогает. Даже если угадываешь повороты сюжета до того, как с ними столкнешься.</p>
+<p>В целом игра напомнила то ли Firewatch, то ли The Vanishing of Ethan Carter. Сюжет, на мой вкус, мог быть немного длиннее и заметно драматичнее, но мне всё равно чертовски понравилось, как всё закончилось. Эмоции от финала можно выразить — <strong>осторожно, спойлер</strong> — <a href="https://kostyanetsky.ru/notes/draugen/the-main-thing-is.jpg" target="_blank">вот этой картинкой</a> :-)</p>
+        <p class="f6 mt4">
+            2019-06-10 18:03:04
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/burned-people/">И приятнее пахнуть</a></h2>
 
             
@@ -636,28 +658,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/find-rows-at-client/">Найти строки на клиенте</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Про то, что метод НайтиСтроки() для коллекций данных формы горазд под шумок сделать серверный вызов, я узнал довольно давно, столкнувшись с неадекватно долгим открытием формы документа — в ней он вызывался при открытии, да ещё и в цикле. Так делать, конечно, не нужно, на что мягко намекает справка: calling the method executes a server call.</p>
-<p>Однако сегодня писал код для задачи с похожей механикой и заметил, что серверных вызовов по факту нет. Удивился, полез на ИТС и, в общем, дело в следующем: при вызове НайтиСтроки() на клиенте поиск на нём и происходит, однако платформа не держит все данные больших коллекций на клиенте. Они передаются с сервера, и запрос этих данных с клиента — тот самый серверный вызов, на который ссылается справка.</p>
-<p>Разработчики платформы расплывчато описывают объем коллекции, до которого клиенту не нужно обращаться к серверу (на ИТС пишут, что это порядка двадцати строк). Так что подход не меняется: делаем явный серверный вызов и не переживаем, что платформа решит наделать своих. Впрочем, всегда приятно немного лучше понимать, что внутри барабанчика :-)</p>
-        <p class="f6 mt4">
-            2019-02-12 17:14:18
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
         </p>
