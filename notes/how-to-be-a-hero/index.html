@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Румынская фича</title>
+    <title>Бытовой героизм</title>
 
-    <meta name="description" content="Про румынскую специфику при отправке SMS с буквенно-цифрового ID отправителя." />
+    <meta name="description" content="О вредной привычке посылать на RTFM." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Румынская фича"/>
-    <meta property="og:description" content="Про румынскую специфику при отправке SMS с буквенно-цифрового ID отправителя."/>
+    <meta property="og:title" content="Бытовой героизм"/>
+    <meta property="og:description" content="О вредной привычке посылать на RTFM."/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/crossed" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/how-to-be-a-hero" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/crossed" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/how-to-be-a-hero" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/crossed/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/how-to-be-a-hero/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,35 +112,24 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Румынская фича</h1>
+        <h1 class="f-subheadline lh-solid">Бытовой героизм</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Делаю для нашего клиентского портала функцию восстановления пароля через SMS. Добрался до <a href="https://support.twilio.com/hc/en-us/articles/223133767-International-support-for-Alphanumeric-Sender-ID" target="_blank">документации</a> Twilio о поддержке <a href="https://www.twilio.com/docs/glossary/what-alphanumeric-sender-id" target="_blank">буквенно-цифрового ID отправителя</a> в разных странах; эта фича позволяет отправлять сообщения так, чтобы получатель видел не номер отправителя, а что-то осмысленное (название компании, например). </p>
-<p>При этом фича везде зарегулирована по-своему: где-то просто работает, где-то нужна регистрация.</p>
-<p>Читаю:</p>
-<p><img alt="Скрин" src="https://kostyanetsky.ru/notes/crossed/twilio.png"/></p>
-<p>🤔</p>
-<ul>
-<li>Португалия: да</li>
-<li>Пуэрто-Рико: нет</li>
-<li>Катар: да (с регистрацией)</li>
-<li>Реюньон: да</li>
-<li>Румыния: да (с регистрацией) (но бойтесь Дракулы)</li>
-</ul>
-<p>Не знаю, как ещё объяснить это кладбище.</p>
-<p>UPD: Нашёл разгадку. Могильные кресты означают, что за регистрацию нужно заплатить 700 баксов. </p>
-<p>Объяснение про Дракулу мне нравилось больше.</p>
+        <p>Поднимал какое-то время назад Swagger для внутренней API-шки. Пока возился — стало понятно, что часть функционала в документацию включать не нужно. Поискал способ, как это сделать без костылей — наткнулся на забавный <a href="https://github.com/tiangolo/full-stack-fastapi-couchbase/issues/10" target="_blank">вопрос</a> на GitHub'е.</p>
+<p>Чем забавный? Ну, невольно вспомнил про <a href="https://forum.mista.ru" target="_blank">Мисту</a>. В среде 1С-разработчиков это синоним слова "токсичность": мол, спросишь там что-нибудь — получишь ушат помоев за шиворот вместо ответа. Здесь, конечно, не так всё запущено, но ребята, в завидным упорством ссылающиеся на 14-и страничный мануал, здорово рассмешили.</p>
+<p>Одно радует: к концу треда всё же нашёлся отважный повстанец, который просто взял и запостил нужный параметр для декоратора.</p>
+<p>Не все герои носят плащи, ей-богу.</p>
         <p class="f6 mt4">
-            2023-08-30 01:02:24
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/meanwhile/">тем временем</a>
-                </span>
+            2023-09-24 23:06:30
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/swagger/">Swagger</a>
                 </span>
             
         </p>
@@ -158,11 +147,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/fastimer-1-3-1">Новый Фастаймер</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/crossed">Румынская фича</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/how-to-be-a-hero">Бытовой героизм</a>
                                 
 
             </p> 
