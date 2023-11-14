@@ -124,6 +124,32 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/cookie-jar/">Баночка с печеньем</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>На днях прикручивал работу с куками к одному из своих скриптов. Пока искал оптимальное решение, наткнулся на совершенно очаровательный (при этом, кстати, 100% рабочий) <a href="https://stackoverflow.com/questions/13030095/how-to-save-requests-python-cookies-to-a-file" target="_blank">совет</a> со StackOverflow:</p>
+<blockquote>
+<p>You can get a CookieJar object from the session with session.cookies, and use pickle to store it to a file.</p>
+</blockquote>
+<p>Ну то есть, буквально: держите ваше печенье в банке, а чтобы хранить его — маринуйте. Банку с маринованным печеньем, кстати, потом можно поставить на <a href="https://docs.python.org/3/library/shelve.html" target="_blank">полку</a>.</p>
+<p>Вот как после этого не любить пайтон, а?</p>
+<p>P.S. Пока писал заметку, разобрало любопытство — почему всё-таки pickle, а нe serialization? Так вот, если вкратце: <a href="https://stackoverflow.com/questions/27324986/pickles-why-are-they-called-that/27325007#27325007" target="_blank">таков путь</a>.</p>
+        <p class="f6 mt4">
+            2022-05-28 21:34:38
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/">Python</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/no-more-embedded-tweets/">Минус встроенные твиты</a></h2>
 
             
@@ -722,36 +748,6 @@ MultiMonitorTool.exe /switch 2
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/rclone-abuser/">Скрипт для синхронизации c NAS</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Выложил на GitHub <a href="https://github.com/vkostyanetsky/RCloneAbuser" target="_blank">скрипт</a> на Python, который я использую для синхронизации файлов между своим компьютером и домашним NAS'ом. У меня стоит Synology DS220j; с ним так-то идет целый вагон софта и в том числе утилита, которая умеет гонять файлы туда-сюда по расписанию. Однако сделана она, похоже, чисто для галочки: программа принялась глючить ещё на этапе настройки, после чего доверие к ней я потерял.</p>
-<p>В общем, какое-то время я помучался с решениями конкурентов и в итоге вернулся к привычному <a href="https://rclone.org" target="_blank">rclone</a>, с которым было всего две проблемы. Во-первых, нельзя нормально соединиться с SMB-шарой: да, логин и пароль можно сохранить в Windows и rclone будет их использовать, но они будут слетать при каждом удобном случае. Я вышел из положения, подключив шару как внешний диск.</p>
-<p>Во-вторых, файлов и папок для синхронизации у меня оказалось много: директория здесь, директория там, конфиг оттуда, профиль отсюда… Чтобы не плодить лапшу, я накатал простой скрипт, который берет из конфига источники и приемники, а потом для каждого вызывает rclone по одному и тому же шаблону.</p>
-        <p class="f6 mt4">
-            2021-06-07 19:04:48
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/">Python</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/">рабочее место</a>
                 </span>
             
         </p>
