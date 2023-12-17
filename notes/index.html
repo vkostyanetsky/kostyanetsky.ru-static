@@ -118,6 +118,47 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/last-meth/">Последний мет</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Роюсь в коде внешней компоненты 1С, опубликованный разработчиками платформы как пример у себя на сайте. Из хорошего: ну, она компилируется и, если немного допилить — действительно работает. </p>
+<p>В остальном хватает bruh moments: например, проект не открывается в современной Visual Studio (нужно указывать CMake вручную). Код довольно небрежный, документации нет, комментариев и оформления по большому счёту тоже. Разработчику без опыта в С++ может быть непросто вкатиться.</p>
+<p>Позабавила реализация поиска метода компоненты:</p>
+<pre><code>long CAddInNative::FindMethod(const WCHAR_T* wsMethodName)
+{ 
+    long plMethodNum = -1;
+    wchar_t* name = 0;
+
+    ::convFromShortWchar(&amp;name, wsMethodName);
+
+    plMethodNum = findName(g_MethodNames, name, eMethLast);
+
+    if (plMethodNum == -1)
+        plMethodNum = findName(g_MethodNamesRu, name, eMethLast);
+
+    delete[] name;
+
+    return plMethodNum;
+}
+</code></pre>
+<p>Со строк выше на нас смотрит необъяснимая любовь автора кода к сокращениям: вот что ему мешало назвать переменную с индексом последнего метода "eMethodLast", а не "eMethLast"? В конце концов, у нас уже есть "wsMethodName" и "plMethodNum". </p>
+<p>Возможно, это такая пасхалка с отсылкой на Breaking Bad. Тогда, конечно, уверенный лайк :)</p>
+        <p class="f6 mt4">
+            2023-12-17 19:34:42
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/wrong-freeway-entrance/">Пропущенный съезд</a></h2>
 
             
@@ -664,32 +705,6 @@ EndProcedure
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/meanwhile/">тем временем</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/ok/">Окей!</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/GuIPxcXwF30" width="560"></iframe>
-<p>Блин. Посмотрел видео и понял, что я как раз давным-давно просто пишу OK в утренних дейликах в ответ на вопрос «how do you feel today». Мол, со мной всё в норме, жив-здоров, на работу ничто не влияет.</p>
-<p>Что обо мне думали коллеги — боюсь предположить. Надеюсь, они тоже не знали про то, что okay в ответе на такой вопрос нифига не значит okay. :-)</p>
-        <p class="f6 mt4">
-            2022-07-22 13:13:00
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/english/">английский</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
                 </span>
             
         </p>
