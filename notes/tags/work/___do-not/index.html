@@ -29,7 +29,7 @@
     <meta property="og:description" content="Про Do и Do Not в интерфейсе."/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/do-not" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/___do-not" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/do-not" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/___do-not" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/do-not/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/___do-not/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -120,7 +120,7 @@
         <p>На одном из проектов у нас две системы: ERP и CRM. Среди прочего, между ними работает следующая механика: если в CRM кто-то вносит контрагента — новые данные отправляются в ERP. Все это работает на push'n'pull сервере, вокруг него подписки на события, REST API и много другой интересной технической обвязки, но я сейчас не про неё.</p>
 <p>Так вот, проблема: один из контрагентов не отправляется из CRM ну вот вообще никак, сколько не записывай его. Лезем разбираться, подозревая худшее: CRM написана на PHP, много легаси и выстрелить себе в ногу проще, чем высморкаться. </p>
 <p>Открываем страницу контрагента в CRM и видим, что стоит галка "Do Not Export To ERP", которая как раз блокирует экспорт. Очевидно, ошибка какого-то менеджера. Убираем галку, закрываем тикет?</p>
-<p><img alt="Well yes, but actually no" src="https://kostyanetsky.ru/notes/do-not/actually.jpg"/></p>
+<p><img alt="Well yes, but actually no" src="https://kostyanetsky.ru/notes/___do-not/actually.jpg"/></p>
 <p>Это уберет последствия, но не причину проблемы. А проблема — в частице not. Программистам часто непросто понять, почему так: мы привыкли в уме мгновенно рассчитывать булевы "истина", "ложь", "не истина" (ложь) и их многочисленные вариации, а вот люди с другим бэкграундом начинают путаться. Совсем чуточку, но иногда и этого достаточно, чтобы в горячке дня прочитать do not export как do export, ткнуть опцию и побежать дальше.</p>
 <p>Отсюда выводим правильное решение: убираем do и do not из интерфейса. Например, подходящее название для галки выше — disable export или stop export. В голову ещё приходит prohibit export, но это скорее про межличностные отношения: запрет что-то делать не означает, что это что-то не будет сделано.</p>
         <p class="f6 mt4">
