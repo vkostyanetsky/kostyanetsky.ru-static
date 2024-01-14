@@ -124,33 +124,6 @@
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/not-but/">Не так, а этак!</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Про хорватский комикс <a href="http://www.to-zo.com/notbut" target="_blank">NOT/BUT</a> мне кто-то рассказал в начале прошлого года, когда я всерьёз учился рисовать. Каждый стрип там — про какую-то травмирующую или просто мрачную мысль, которая приходит в голову художника во время работы. Идея в том, чтобы подтолкнуть читателя в правильном направлении и дать ему посмотреть на ситуацию, в которую он попал, с более практичной стороны.</p>
-<p>Рисовать я бросил через год, в конце февраля: стало понятно, что времени на хобби у меня больше нет. Но комикс — совершенно универсальный; полистайте, даже если понятия не имеете, что такое клячка :-)</p>
-<p><a href="http://www.to-zo.com/notbut" target="_blank"><img alt="Да что за херня?" src="https://kostyanetsky.ru/notes/not-but/mistakes.png"/></a></p>
-<p>Все эти бесконечные самокопания хорошо знакомы любому профессионалу, а выход из них — не всегда очевиден. Особенно если ты зол, устал, а дедлайн по проекту истёк где-то на прошлой неделе.</p>
-        <p class="f6 mt4">
-            2022-07-23 11:32:48
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/meanwhile/">тем временем</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/ok/">Окей!</a></h2>
 
             
@@ -726,6 +699,42 @@ MultiMonitorTool.exe /switch 2
 <p>UPD: Хорошая <a href="https://grishaev.me/no-bash/" target="_blank">заметка</a> Ивана Гришаева на ту же тему.</p>
         <p class="f6 mt4">
             2021-07-03 21:31:48
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/">Python</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/why-bash/">Почему баш?</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Периодически вижу вопросы коллег: а что, 1С всё ещё носится с башем, да? А чё не пайтон-то? Или павершелл, на худой конец? Вот чудаки!</p>
+<p>Да, баш не родной для Windows (которая, напротив, родная для 1С) и притащить его туда — отдельная история; да, при усложнении задачи читаемость скрипта падает по экспоненте; да, с некоторыми задачами баш просто не справляется.</p>
+<p>Однако главный плюс баша в том, что для многих задач по анализу ТЖ 1С он — самое простое и быстрое решение. Как старая отвертка, которой ещё дед пользовался. Она всегда под рукой — пусть поцарапанная, с зазубринами и слегка корявая, но всё еще прекрасно работает.</p>
+<p>Пример? Допустим, нужно выгрести из ТЖ исключения; простоты ради договоримся, что достаточно первой строки каждого события. Получим <a href="https://gist.github.com/vkostyanetsky/f95b30e2f09edd64d9e7a39575bb289a" target="_blank">примерно такой</a> скрипт на пайтоне. </p>
+<p>Скажете, его можно легко сократить вдвое? А то и втрое. В конце концов, мы решаем локальную задачу. Возня с читаемостью и предсказуемостью тут ни к чему.</p>
+<p>Согласен! Но давайте сначала решим ту же задачу на баше:</p>
+<pre><code>grep -r --include "*.log" ',EXCP,' &gt; result.txt
+</code></pre>
+<p>Вот почему баш.</p>
+        <p class="f6 mt4">
+            2021-06-23 22:24:48
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
