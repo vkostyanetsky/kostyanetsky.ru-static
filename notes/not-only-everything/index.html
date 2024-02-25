@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Последний мет</title>
+    <title>Не только лишь все</title>
 
-    <meta name="description" content="Разбираюсь с кодом внешней компоненты 1С на C++, опубликованный разработчиками платформы." />
+    <meta name="description" content="Забавная ошибка из документации к WriteJSON()." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Последний мет"/>
-    <meta property="og:description" content="Разбираюсь с кодом внешней компоненты 1С на C++, опубликованный разработчиками платформы."/>
+    <meta property="og:title" content="Не только лишь все"/>
+    <meta property="og:description" content="Забавная ошибка из документации к WriteJSON()."/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/last-meth" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/not-only-everything" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/last-meth" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/not-only-everything" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/last-meth/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/not-only-everything/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,38 +112,19 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Последний мет</h1>
+        <h1 class="f-subheadline lh-solid">Не только лишь все</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Роюсь в коде внешней компоненты 1С, опубликованный разработчиками платформы как пример у себя на сайте. Из хорошего: ну, она компилируется и, если немного допилить — действительно работает. </p>
-<p>В остальном хватает bruh moments: например, проект не открывается в современной Visual Studio (нужно указывать CMake вручную). Код довольно небрежный, документации нет, комментариев и оформления по большому счёту тоже. Разработчику без опыта в С++ может быть непросто вкатиться.</p>
-<p>Позабавил нейминг:</p>
-<pre><code>long CAddInNative::FindMethod(const WCHAR_T* wsMethodName)
-{ 
-    long plMethodNum = -1;
-    wchar_t* name = 0;
-
-    ::convFromShortWchar(&amp;name, wsMethodName);
-
-    plMethodNum = findName(g_MethodNames, name, eMethLast);
-
-    if (plMethodNum == -1)
-        plMethodNum = findName(g_MethodNamesRu, name, eMethLast);
-
-    delete[] name;
-
-    return plMethodNum;
-}
-</code></pre>
-<p>Со строк выше на нас смотрит необъяснимая любовь автора кода к сокращениям: вот что ему мешало назвать переменную "eMethodLast", а не "eMethLast"? В конце концов, у нас уже есть "wsMethodName" и "plMethodNum". </p>
-<p>Возможно, это такая пасхалка с отсылкой на Breaking Bad. Тогда, конечно, уверенный лайк :)</p>
+        <p>Завидной глубины комментарий разработчиков к методу WriteJSON() XDTOSerializer'а из документации к платформе:</p>
+<p><img alt="Не только лиь все" src="https://kostyanetsky.ru/notes/not-only-everything/write-json.jpg"/></p>
+<p>Ну да, метод дампит данные в JSON, а не в XML. Так что поспорить сложно, не все данные с его помощью можно упаковать в XML (если быть точным — никакие). Если бы дальше не пошла очевидная копипаста из справки к WriteXML() — счёл бы пасхалкой от разрабочтиков :)</p>
         <p class="f6 mt4">
-            2023-12-17 19:34:42
+            2024-02-25 22:49:48
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
         </p>
@@ -161,11 +142,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/how-to-be-a-hero">Бытовой героизм</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/obsidian-fastimer">Фастаймер для Обсидиана</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/not-only-everything">Не только лишь все</a>
                                 
 
             </p> 
