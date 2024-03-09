@@ -118,6 +118,35 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/callouts-for-fastimer/">Внешний вид Фастаймера</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Завернул отрисовку <a href="https://kostyanetsky.ru/notes/callouts-for-fastimer/notes/obsidian-fastimer" target="_blank">Фастаймера</a> через выноски: это механика Obsidian, позволяющая превращать обычную цитату в оформленный блок текста, привлекающий внимание читателя. Вы наверняка видели блоки в духе «совет» и «обрати внимание» 
+— вот это и есть выноски. </p>
+<p>Подробнее можно прочитать в <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">справке</a> Obsidian.</p>
+<p>В общем, теперь таймер принимает разный цвет в зависимости от состояния (активный интервал — голубой, успех — зеленый, провал — красный). Кроме того, я немного уплотнил текст и отточил формулировки:</p>
+<p><img alt="Пример" src="https://kostyanetsky.ru/notes/callouts-for-fastimer/example.png"/></p>
+<p>Получилось компактнее и симпатичнее блока неформатированного текста, который я использовал до этого.</p>
+        <p class="f6 mt4">
+            2024-03-09 17:44:32
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/obsidian/">Obsidian</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/typescript/">TypeScript</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/small-pleasures/">Маленькие радости</a></h2>
 
             
@@ -648,37 +677,6 @@ EndIf;
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/strange-bitrix/">Про странный Битрикс</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Чем дальше лезу в REST-интерфейс Битрикс24, тем сильнее поражаюсь тому, насколько необычно устроено мышление у его разработчиков. Проявляется это по-разному.</p>
-<p>Взять, например, интерфейс сделок и товаров по ним. В таблице последних нет поля суммы: мол, нужна тебе сумма по строке — сам и считай. Зато сумма есть на уровне документа. Угадаете, как называется поле?</p>
-<p>AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
-<p>Не угадали, правильный ответ — OPPORTUNITY.</p>
-<p><img alt="Чего, блядь?" src="https://kostyanetsky.ru/notes/strange-bitrix/what-the-fuck.jpg"/></p>
-<p>Но вернемся в строке товара. В ней есть товар, ставка НДС и единица измерения. Все три сущности вполне самостоятельны: у каждой есть отдельная таблица со вспомогательной информацией и свой собственный идентификатор. Логично предположить, что в строке товара они и хранятся: ID товара, ID ставки НДС и ID единицы измерения.</p>
-<p>Логично-то логично, но нет, хрен там плавал. Для номенклатуры и правда хранится ID, а вот для ставки НДС — значение ставки, и для единицы измерения — код измерения по ОКЕИ ¯\_(ツ)_/¯</p>
-<p>Нормализация базы данных? Чего? Какая еще нормализация? Отстань, мужик, работать мешаешь.</p>
-        <p class="f6 mt4">
-            2022-10-15 18:22:43
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
                 </span>
             
         </p>

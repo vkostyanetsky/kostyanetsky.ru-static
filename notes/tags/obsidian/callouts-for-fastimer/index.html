@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Фастаймер для Обсидиана</title>
+    <title>Внешний вид Фастаймера</title>
 
-    <meta name="description" content="Набросал плагин для учета интервального голодания в Обсидиане." />
+    <meta name="description" content="Выпустил новую версию плагина для интервального голодания с улучшениями для внешнего вида." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Фастаймер для Обсидиана"/>
-    <meta property="og:description" content="Набросал плагин для учета интервального голодания в Обсидиане."/>
+    <meta property="og:title" content="Внешний вид Фастаймера"/>
+    <meta property="og:description" content="Выпустил новую версию плагина для интервального голодания с улучшениями для внешнего вида."/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/obsidian-fastimer" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/callouts-for-fastimer" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/obsidian-fastimer" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/callouts-for-fastimer" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/obsidian-fastimer/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/callouts-for-fastimer/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,28 +112,26 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Фастаймер для Обсидиана</h1>
+        <h1 class="f-subheadline lh-solid">Внешний вид Фастаймера</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Разработчики <a href="https://obsidian.md" target="_blank">Obsidian</a> на днях заапрувили один из моих пет-плагинов на TypeScript — <a href="https://github.com/vkostyanetsky/ObsidianFastimer" target="_blank">Фастаймер</a>, трекер интервального голодания. Он добавляет в хранилище новый блок кода: вводишь в него дату начала окна голодания и получаешь дату завершения, время до этого момента и раскладку по зонам, которые предстоит пройти. </p>
-<p>Блок показывает актуальную картину каждый раз, когда Obsidian его отрисовывает — то есть, можно следить за своим прогрессом в реальном времени. Когда окно голодания закончится, можно ввести дату завершения и блок покажет результат: получилось ли выполнить цель, сколько времени сверх плана вы голодали и так далее.</p>
-<p>Думаю немного доработать визуальную часть (сейчас всё выводится текстом без какого-либо оформления). А ещё — прикрутить функции расчета статистики, чтобы можно было на ходу рисовать красивые графики в духе <a href="https://charts.phib.ro/Meta/Charts/Charts+Documentation" target="_blank">Charts</a> и показывать ачивки. У меня была эта механика в <a href="https://github.com/vkostyanetsky/Fastimer" target="_blank">реализации</a> этого же приложения на Python, но я вряд ли к ней вернусь — в хранилище Obsidian эту задачу решать проще, чем раскатывать на компьютер дополнительную утилиту.</p>
-<p>Короче, зацените плагин! :) В библиотеке Обсидиана его можно найти по имени (Fastimer). Или, при желании, установить вручную из репозитория.</p>
+        <p>Завернул отрисовку <a href="https://kostyanetsky.ru/notes/callouts-for-fastimer/notes/obsidian-fastimer" target="_blank">Фастаймера</a> через выноски: это механика Obsidian, позволяющая превращать обычную цитату в оформленный блок текста, привлекающий внимание читателя. Вы наверняка видели блоки в духе «совет» и «обрати внимание» 
+— вот это и есть выноски. </p>
+<p>Подробнее можно прочитать в <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">справке</a> Obsidian.</p>
+<p>В общем, теперь таймер принимает разный цвет в зависимости от состояния (активный интервал — голубой, успех — зеленый, провал — красный). Кроме того, я немного уплотнил текст и отточил формулировки:</p>
+<p><img alt="Пример" src="https://kostyanetsky.ru/notes/callouts-for-fastimer/example.png"/></p>
+<p>Получилось компактнее и симпатичнее блока неформатированного текста, который я использовал до этого.</p>
         <p class="f6 mt4">
-            2024-02-13 01:08:58
+            2024-03-09 17:44:32
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/obsidian/">Obsidian</a>
                 </span>
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/typescript/">TypeScript</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/obsidian/">Obsidian</a>
                 </span>
             
         </p>
@@ -151,9 +149,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                Ctrl
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/obsidian/obsidian-fastimer">Фастаймер для Обсидиана</a> &larr;
                 
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/obsidian/callouts-for-fastimer">Внешний вид Фастаймера</a>
+                Ctrl
                                 
 
             </p> 

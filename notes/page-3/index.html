@@ -124,6 +124,43 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/slow-notification/">Медленное оповещение</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p><a href="https://twitter.com/iamhellcat/status/1427626118635470866" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/slow-notification/snap-tweet-iamhellcat-1427626118635470866.png"/></a></p>
+<p>Прочитал этот твит и внезапно вспомнил случай из практики. Прилетает запрос от клиента — мол, 1С тормозит, сделайте что-нибудь. Уточняем: тормозит всё-таки не вся 1С, а конкретная операция.</p>
+<p>База клиента — переписанная УТ, проблемная операция — из блока доработок. Внутри — множество многоэтажных запросов, возня с таблицами значений, какие-то невнятные вычисления и пачка серверных процедур по семьсот строк каждая. Копию базы снять нельзя, ТЖ недоступен, доступ к СУБД закрыт, доступ к счётчикам — тоже. Отладка на сервере 1С выключена, включить — не вариант.</p>
+<p>Бардак, в общем. Как понять, где тут всё вязнет? Ладно, конфигурацию можно менять — уже неплохо. Вешаю на операцию замер: ну да, думает над чем-то пару минут. Отлично! Потираю ручки и сужаю область поиска: докидываю целый ворох замеров на самые подозрительные участки.</p>
+<p>Результат любопытный: тормозов нет! Код не то чтобы летает, но о минутах и речи нет — с учетом сложности, расходы в пределах допустимого. Может, какая-то сериализация данных между клиентом и сервером? Тщательно выверяю код серверной процедуры — нет, никакой трансляции. Всё, что было на сервере, осталось на сервере.</p>
+<p>Перехожу к клиентской части. Что тут может тормозить-то?.. Выглядел код, упрощая, как-то так:</p>
+<script src="https://gist.github.com/vkostyanetsky/df0b17526991bbac3b3df1c75dfa154f.js">Суть</script>
+<p>Смотрел я на этот код, как баран, минут десять. В конце концов спросил коллегу и он рассказал удивительную вещь: оказывается, Оповестить() не просто рассылает оповещения во все открытые формы, а <strong>ждёт</strong>, когда в них завершится обработчик оповещения.</p>
+<p>Я знатно офигел, полез проверять и в конце концов наткнулся на форму, которая ловила событие выполнение операции и подрывалась обновлять свои динамические списки. Запрос в одном из них и давал тормоза (там подзапрос к подзапросу к подзапросу и ворох соединений «через точку» — в общем, дальше не интересно).</p>
+<p>Такая вот яломиште :-) Оповещайте с осторожностью!</p>
+        <p class="f6 mt4">
+            2021-08-18 20:03:30
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/optimization/">оптимизация</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/pavel-chistov-passed-away/">Умер Павел Чистов</a></h2>
 
             
@@ -717,41 +754,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/nerdview/">Профессиональная деформация</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p><img alt="Чат с дочкой" src="https://kostyanetsky.ru/notes/nerdview/telegram.png"/></p>
-<p>Дочка пишет о своих планах — мол, не теряй меня. А у меня профессиональная деформация: этот вполне нормальный чат мой мозг упорно воспринимает как код на Gherkin. Просто какой-то неправильный, что ли, хочется быстренько пофиксить :-)</p>
-<pre><code>И я выхожу
-Тогда я в школе
-И я выхожу
-Тогда я покачаюсь
-</code></pre>
-<p>Мы на этом языке пишем автотесты нашей конфигурации для <a href="https://github.com/Pr-Mex/vanessa-automation" target="_blank">Vanessa Automation</a>. Вроде не так уж много я их накатал (сравнивая с некоторыми коллегами — баловался, считай). Но, видимо, достаточно.</p>
-        <p class="f6 mt4">
-            2020-10-19 18:35:56
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/family/">семья</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
                 </span>
             
         </p>

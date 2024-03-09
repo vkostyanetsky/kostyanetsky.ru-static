@@ -4,7 +4,20 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Wed, 06 Mar 2024 21:22:43 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 09 Mar 2024 17:44:32 +0700</lastBuildDate>
+        
+        <item>
+            <title>Внешний вид Фастаймера</title>
+            <link>https://kostyanetsky.ru/notes/callouts-for-fastimer</link>
+            <guid isPermaLink="false">note-callouts-for-fastimer</guid>
+            <pubDate>Sat, 09 Mar 2024 17:44:32 +0700</pubDate>
+            <description><p>Завернул отрисовку <a href="https://kostyanetsky.ru/notes/callouts-for-fastimer/notes/obsidian-fastimer" target="_blank">Фастаймера</a> через выноски: это механика Obsidian, позволяющая превращать обычную цитату в оформленный блок текста, привлекающий внимание читателя. Вы наверняка видели блоки в духе «совет» и «обрати внимание» 
+— вот это и есть выноски. </p>
+<p>Подробнее можно прочитать в <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">справке</a> Obsidian.</p>
+<p>В общем, теперь таймер принимает разный цвет в зависимости от состояния (активный интервал — голубой, успех — зеленый, провал — красный). Кроме того, я немного уплотнил текст и отточил формулировки:</p>
+<p><img alt="Пример" src="https://kostyanetsky.ru/notes/callouts-for-fastimer/example.png"/></p>
+<p>Получилось компактнее и симпатичнее блока неформатированного текста, который я использовал до этого.</p></description>
+        </item>
         
         <item>
             <title>Маленькие радости</title>
@@ -133,18 +146,6 @@
             <pubDate>Wed, 23 Aug 2023 20:58:32 +0700</pubDate>
             <description><p>Выпустил новую <a href="https://github.com/vkostyanetsky/Fastimer/releases/tag/v1.3.1" target="_blank">версию</a> своего консольного таймера для <a href="https://ru.wikipedia.org/wiki/Периодическое_голодание" target="_blank">интервального голодания</a>. Сам таймер я написал где-то год назад, когда меня в очередной раз расстроило приложение <a href="https://www.zerolongevity.com/" target="_blank">Zero</a> для Android: в нём не работала какая-то совсем примитивная функция вроде просмотра конкретного интервала.</p>
 <p>Основное отличие 1.3.1 от 1.2.3 — выпилил к черту консольное меню в пользу старых-добрых аргументов и опций. Концепция меню выглядит удобной, пока фич у приложения мало, но как только их число растёт — необходимость протыкивать каждое действие начинает напрягать.</p></description>
-        </item>
-        
-        <item>
-            <title>Таков путь</title>
-            <link>https://kostyanetsky.ru/notes/this-is-the-way</link>
-            <guid isPermaLink="false">note-this-is-the-way</guid>
-            <pubDate>Mon, 17 Jul 2023 00:46:01 +0700</pubDate>
-            <description><p>Немного экзистенциальной безысходности от СП (на случай, если вам её почему-то не хватало):</p>
-<p><img alt="Исключение генерируется" src="https://kostyanetsky.ru/notes/this-is-the-way/delete-messages.png"/></p>
-<p>Это справка для метода УдалитьСообщения() менеджера канала сервиса интеграции. Если серьёзно, я понимаю, что тут имеется в виду: дело в том, что все методы сервисов интеграции швыряются исключениями, если их вызвать в сеансе со включенными разделителями. Авторы документации педантично сообщают об этом в справке по любому из них, так что здесь, видимо, просто почему-то кусок отвалился. В английской документации к этому методу, например, всё нормально.</p>
-<p>Но все равно, забавно смотрится. Напомнило старый мем:</p>
-<p><img alt="Исключение генерируется" src="https://kostyanetsky.ru/notes/this-is-the-way/bees.jpeg"/></p></description>
         </item>
         
     </channel>
