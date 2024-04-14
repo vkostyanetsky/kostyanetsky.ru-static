@@ -155,7 +155,7 @@
             
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Приведу вариант решения проблемы <a href="https://kostyanetsky.ru//notes/unresolved-references" target="_blank">неразрешимых ссылок</a>, возникший после удаления функциональной опции. Вводная — при проверке конфигурации получаю десятка два сообщений вида:</p>
+        <p>Приведу вариант решения проблемы <a href="https://kostyanetsky.ru/notes/unresolved-references" target="_blank">неразрешимых ссылок</a>, возникший после удаления функциональной опции. Вводная — при проверке конфигурации получаю десятка два сообщений вида:</p>
 <pre><code>CommonForm.PersonalSettings.Form Unresolved metadata object references (2)
 Catalog.BankAccounts.Form.GLAccountsEditForm.Form Unresolved metadata object references (1)
 Catalog.CashRegisters.Form.GLAccountsEditForm.Form Unresolved metadata object references (1)
@@ -471,7 +471,7 @@ WHERE
 <p>Сегодня мы переберем строки таблицы значений с Н по Й:</p>
 <p><img alt=":|" src="https://kostyanetsky.ru/notes/self-documenting-code/self-documenting-code.png"/></p>
 <p>Вроде и мелочь совсем, но когда в пределах одного модуля в пятый раз натыкаешься на такой подход к именованию переменных — глаз невольно начинает дергаться :-)</p>
-<p>Дело даже не в том, что этот участок <a href="https://kostyanetsky.ru//notes/why-so-serious" target="_blank">труднее разобрать</a> — просто он неплохо говорит о качестве модуля в целом. Скорее всего, писавший его программист был вымотан, и поблизости можно встретить что-нибудь вроде отважной выгрузки справочника номенклатуры в таблицу значений, чтения кучи объектов «через точку» и прочего тяп-ляп.</p>
+<p>Дело даже не в том, что этот участок <a href="https://kostyanetsky.ru/notes/why-so-serious" target="_blank">труднее разобрать</a> — просто он неплохо говорит о качестве модуля в целом. Скорее всего, писавший его программист был вымотан, и поблизости можно встретить что-нибудь вроде отважной выгрузки справочника номенклатуры в таблицу значений, чтения кучи объектов «через точку» и прочего тяп-ляп.</p>
         <p class="f6 mt4">
             2020-05-03 15:48:37
             
@@ -551,7 +551,7 @@ WHERE
             
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Короткий <a href="https://gist.github.com/vkostyanetsky/ee1f913868673c2218877dfbecc9b08a" target="_blank">фрагмент</a> кода из обработки для настройки механизма истории данных, о которой я только что <a href="https://kostyanetsky.ru//notes/data-history-settings" target="_blank">писал</a>. Эта функция определяет, является ли Attribute стандартным реквизитом с именем StandardAttributeName, принадлежащим объекту метаданных MetadataObject. Где она нужна? Допустим, вы перебираете стандартные реквизиты объекта и по какой-то причине хотите пропустить один из них.</p>
+        <p>Короткий <a href="https://gist.github.com/vkostyanetsky/ee1f913868673c2218877dfbecc9b08a" target="_blank">фрагмент</a> кода из обработки для настройки механизма истории данных, о которой я только что <a href="https://kostyanetsky.ru/notes/data-history-settings" target="_blank">писал</a>. Эта функция определяет, является ли Attribute стандартным реквизитом с именем StandardAttributeName, принадлежащим объекту метаданных MetadataObject. Где она нужна? Допустим, вы перебираете стандартные реквизиты объекта и по какой-то причине хотите пропустить один из них.</p>
 <p>На первый взгляд решение выглядит максимально индусским. Почему бы, например, просто не сравнить два реквизита — проверяемый и тот, что хотим отсеять?</p>
 <pre><code>If Attribute = MetadataObject.StandardAttributes.Order Then
 </code></pre>

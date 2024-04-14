@@ -11,7 +11,7 @@
             <link>https://kostyanetsky.ru/notes/callouts-for-fastimer</link>
             <guid isPermaLink="false">note-callouts-for-fastimer</guid>
             <pubDate>Sat, 09 Mar 2024 17:44:32 +0700</pubDate>
-            <description><p>Завернул отрисовку <a href="https://kostyanetsky.ru//notes/obsidian-fastimer" target="_blank">Фастаймера</a> через выноски: это механика Obsidian, позволяющая превращать обычную цитату в оформленный блок текста, привлекающий внимание читателя. Вы наверняка видели блоки в духе «совет» и «обрати внимание» — вот это и есть выноски. </p>
+            <description><p>Завернул отрисовку <a href="https://kostyanetsky.ru/notes/obsidian-fastimer" target="_blank">Фастаймера</a> через выноски: это механика Obsidian, позволяющая превращать обычную цитату в оформленный блок текста, привлекающий внимание читателя. Вы наверняка видели блоки в духе «совет» и «обрати внимание» — вот это и есть выноски. </p>
 <p>Подробнее можно прочитать в <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">справке</a> Obsidian.</p>
 <p>В общем, теперь таймер принимает разный цвет в зависимости от состояния (активный интервал — голубой, успех — зеленый, провал — красный). Кроме того, я немного уплотнил текст и отточил формулировки:</p>
 <p><img alt="Пример" src="https://kostyanetsky.ru/notes/callouts-for-fastimer/example.png"/></p>
