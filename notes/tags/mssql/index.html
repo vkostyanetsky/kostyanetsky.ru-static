@@ -131,7 +131,7 @@
 </ol>
 <p>Подробнее о всем этом можно прочитать на <a href="https://towardsdatascience.com/datetime2-why-you-should-not-use-it-70e50ae2bab9" target="_blank">Towards Data Science</a> или, например, на <a href="https://www.sqlservercentral.com/forums/topic/why-do-some-dbas-avoid-datetime2" target="_blank">SQL Server Central</a>.</p>
         <p class="f6 mt4">
-            2020-11-11 17:00:50
+            2020-11-11
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -164,7 +164,7 @@
 </blockquote>
 <p>Возможно, это просто на дне приоритетов. Добавление и удаление двух тысяч лет для каждой даты, конечно, увеличивает нагрузку на оборудование, но на фоне остального она теряется.</p>
         <p class="f6 mt4">
-            2020-11-10 19:06:41
+            2020-11-10
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -201,7 +201,7 @@
 <p>Второй подход — разбивать tempdb (с 2016-й версии СУБД она, кстати, по умолчанию разбивается на восемь файлов). Дело в том, что служебные страницы ведутся в разрезе файлов; если их будет несколько — ожидания на обновлениях служебных страниц будут ниже.</p>
 <p>Третий вариант — уменьшать количество временных таблиц с целью снизить нагрузку на tempdb. То есть переписывать наиболее частотные запросы так, чтобы они работали приемлемо быстро без временных таблиц.</p>
         <p class="f6 mt4">
-            2019-04-22 20:00:30
+            2019-04-22
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
@@ -227,7 +227,7 @@
 <p>Причиной может быть вымывание буферного кэша — из-за небольшого объёма доступной ОЗУ или не оптимальных запросов, которые читают миллионы строк, а возвращают три. В итоге СУБД регулярно не находит нужных страниц в кэше и вынуждена снова и снова читать их с диска.</p>
 <p>В общем, если в системе есть существенные задержки PageIOLatch — их скорее всего можно снизить, используя более быстрые диски, наращивая объём ОЗУ и оптимизируя запросы.</p>
         <p class="f6 mt4">
-            2019-04-22 19:40:08
+            2019-04-22
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/">MS SQL</a>
@@ -256,7 +256,7 @@
 <pre><code>DBCC SQLPERF('sys.dm_os_wait_stats', CLEAR)
 </code></pre>
         <p class="f6 mt4">
-            2019-03-08 07:47:23
+            2019-03-08
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/">MS SQL</a>
@@ -281,7 +281,7 @@
 <li><a href="https://kostyanetsky.ru/notes/mssql-server-waits/sql_server_wait_statistics.txt" target="_blank">Cкрипт</a> из <a href="https://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/" target="_blank">статьи</a> Пола Рэндала про анализ причин задержек в работе сервера MS SQL (на Хабре, кстати, есть <a href="https://habr.com/ru/post/216309/" target="_blank">перевод</a>). Фильтрует задержки, которые возникают на сервере всегда и которые обычно можно игнорировать. Кроме того, к каждой задержке добавляется ссылка на страницу, где эта задержка детально описана (например, вот <a href="https://www.sqlskills.com/help/waits/cxpacket" target="_blank">описание</a> CXPACKET).</li>
 </ul>
         <p class="f6 mt4">
-            2019-03-08 06:40:05
+            2019-03-08
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/">MS SQL</a>
