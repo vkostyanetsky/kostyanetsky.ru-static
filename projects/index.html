@@ -116,24 +116,31 @@
             <h1 class="f-subheadline lh-solid">Проекты</h1>
         
 
-        <div class="f4 lh-copy black measure-wide"><p>На этой странице перечислены проекты, в которых я участвовал и о которых нашлось время написать.</p>
+        <div class="f4 lh-copy black measure-wide"><p>На этой странице собраны некоторые проекты, в которых я участвовал и о которых нашлось время написать.с</p>
 <p>Сортировка — по времени, от новых к старым.</p>
 <h2>Клиентский портал</h2>
-<p>Компания разрабатывает софт и продает подписки на него. Нужно было разработать для клиентов компании портал, на котором они могут работать со своими подписками: видеть действующие, оплачивать истекающие, а также скачивать выставленные счета и накладные.</p>
+<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">FirstBit ERP</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Предприятие</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Шина</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">RabbitMQ</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">FastAPI</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Python</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">React.js</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Typescript</span></p>
+<p>Заказчик пишет софт и продает на него подписки. Нужно было сделать веб-сайт, на котором его клиенты смогут работать с подписками без помощи менеджеров заказчика. Например:</p>
+<ul>
+<li>увидеть данные этих подписок (купленный продукт, срок действия);</li>
+<li>оплатить истекающие подписки с помощью банковской карты;</li>
+<li>скачать выставленные компанией счета и накладные.</li>
+</ul>
+<p><a href="https://kostyanetsky.ru/projects/customer-portal" target="_blank">Подробности</a></p>
 <h2>Веб-интерфейс базы 1С для поставщиков</h2>
-<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Предприятие</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">React.js</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span></p>
+<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">FirstBit ERP</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Предприятие</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Python</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">React.js</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Typescript</span></p>
 <p>Нашим заказчиком был владелец торговой компании. Часть её деятельности — проценка: сотрудники компании связывались с поставщиками, определяя, у какого из них выгоднее разместить заказы клиентов с точки зрения цен, сроков доставки и других условий.</p>
 <p>От нас требовалось сделать так, чтобы они могли просто отправлять поставщикам ссылки на веб-интерфейс, где можно было бы вводить цены и отвечать на дополнительные вопросы.</p>
 <p>Веб-интерфейс платформы использовать было нельзя из соображений экономии лицензий. Поэтому я написал веб-приложение на React.js, которое работает с базой 1С:Предприятия через специально разработанный для этого REST-интерфейс.</p>
 <p>Упрощенную версию проекта можно <a href="https://github.com/vkostyanetsky/RFQ" target="_blank">посмотреть</a> на GitHub'е.</p>
-<h2>Сборщик курсов валют с сайта ЦБ ОАЭ</h2>
-<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Предприятие</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">MongoDB</span></p>
+<h2>Сбор курсов валют с сайта ЦБ ОАЭ</h2>
+<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">FirstBit ERP</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Предприятие</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Python</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">MongoDB</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">NoSQL</span> </p>
 <p>Мы хотели дать пользователям FirstBit ERP возможность автоматически получать курсы дирхама по отношению к другим валютам, которые публикует сайт ЦБ ОАЭ.</p>
 <p>Код парсинга сайта можно было добавить в саму конфигурацию, однако эта идея выглядела проблемной сразу с нескольких точек зрения: удобного механизма для получения курсов на сайте ЦБ нет, сам сайт работает нестабильно, а при необходимости изменить логику парсинга её придется менять во множестве баз данных.</p>
 <p>Поэтому я написал консольное приложение на пайтоне, которые регулярно загружает публикуемые курсы валют в свою базу данных и отдает через REST-сервис. Мы развернули это приложение на своей площадке, а в FirstBit ERP я добавил только регулярные обращения к сервису.</p>
 <p>Код серверной части проекта можно <a href="https://github.com/vkostyanetsky/UAExchangeRates" target="_blank">посмотреть</a> на GitHub'е.</p>
-<h2>Нативная история данных для FirstBit ERP</h2>
-<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Предприятие</span></p>
+<h2>История данных в FirstBit ERP</h2>
+<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">FirstBit ERP</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Предприятие</span></p>
 <p>В конфигурации FirstBit ERP я заменил подсистему версионирования БСП на встроенный в платформу <a href="https://wonderland.v8.1c.ru/blog/istoriya-dannykh/" target="_blank">механизм</a>, решающий ту же задачу. В проект вошли:</p>
 <ol>
 <li>Алгоритм миграции истории изменений из регистров сведений во встроенное хранилище платформы.</li>
