@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Фудиари для Обсидиана</title>
+    <title>Таймшит для Обсидиана</title>
 
-    <meta name="description" content="Написал плагин для расчета калорийность еды." />
+    <meta name="description" content="Написал плагин для генерации отчета о работе за день в Обсидиане." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Фудиари для Обсидиана"/>
-    <meta property="og:description" content="Написал плагин для расчета калорийность еды."/>
+    <meta property="og:title" content="Таймшит для Обсидиана"/>
+    <meta property="og:description" content="Написал плагин для генерации отчета о работе за день в Обсидиане."/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/obsidian-foodiary" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/obsidian-timesheet" />    
 
     <!-- Tachyons -->
 
@@ -88,7 +88,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/obsidian-foodiary" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/obsidian-timesheet" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -96,7 +96,7 @@
             <div class="mt3">
 
             
-                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/obsidian-foodiary/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/obsidian-timesheet/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -112,26 +112,19 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Фудиари для Обсидиана</h1>
+        <h1 class="f-subheadline lh-solid">Таймшит для Обсидиана</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Вслед за <a href="https://kostyanetsky.ru/notes/obsidian-fastimer" target="_blank">первым</a> плагином для Obsidian пару недель назад выкатил <a href="https://github.com/vkostyanetsky/ObsidianFoodiary" target="_blank">второй</a>. Считает КБЖУ (калории, белки, жиры и углеводы) в пище. Помогает не переедать на пустом месте — всё-таки на глаз трудно оценить, сколько слопал за день, и можно ли позволить себе вон тот пончик.</p>
-<p>Короче, полезная штука, если вы:</p>
-<ol>
-<li>Толстяк (как я)</li>
-<li>Хотите перестать им быть (как я)</li>
-<li>Ведете заметки в Obsidian (как я) 🙂</li>
-</ol>
-<p>На самом деле, программ для этой задачи полным-полно (я перепробовал штук десять). Остался недоволен: либо страшная, либо глючит, либо постоянно пытается всучить ежемесячную подписку. Короче, больше раздражает, чем помогает. Хочется чего-то нативного, встроенного в обычную рутину — и если она оседает в Obsidian, то решение напрашивается само собой.</p>
-<p>Установить плагин можно прямо из программы — разработчики его уже одобрили. В остальном всё просто: пишем в ежедневной заметке, что съели и сколько это весило, и в ответ получаем компактную табличку с сортировкой по калориям и числам по белкам, жирам и углеводам. </p>
-<p>В репозитории по ссылке выше есть примеры.</p>
+        <p>Написал ещё один плагин к <a href="https://obsidian.md" target="_blank">Obsidian</a>, на этот раз — для [ежедневных заметок](https://help.obsidian.md/Plugins/Daily+notes]. Рисует симпатичный отчет: над какими задачами работал, что сделал, сколько времени потратил. Я постарался описать в <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">репозитории</a>, как это работает; буду рад фидбеку!</p>
+<p>Забавный момент: для примеров в README я использовал задачи типа FBI-1, FBI-2 и так далее. Это не отсылка к X-Files или Twin Peaks — это просто первый префикс, который пришел мне в голову. Дело в том, что наш внутренний проект по разработке FirstBit ERP называется First Bit Internal, сокращенно — FBI :) Основной пул задач, над которыми мы работаем, создается и отслеживается именно в нём.</p>
+<p>Мы-то уже привыкли, но коллег вне компании наши скриншоты из JIRA или SonarQube неизменно веселят.</p>
         <p class="f6 mt4">
-            2024-04-14
+            2024-05-12
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
                 </span>
             
                 <span class="pl2">
@@ -139,7 +132,11 @@
                 </span>
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/obsidian/">Obsidian</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/obsidian/">Obsidian</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
                 </span>
             
         </p>
@@ -157,11 +154,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/obsidian/callouts-for-fastimer">Внешний вид Фастаймера</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/obsidian-foodiary">Фудиари для Обсидиана</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/obsidian/obsidian-timesheet">Таймшит для Обсидиана</a>
                                 
 
             </p> 

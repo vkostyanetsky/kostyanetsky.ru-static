@@ -232,6 +232,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.ru/notes/obsidian-timesheet</loc>
+        <lastmod>2024-05-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.ru/notes/how-to-be-a-hero</loc>
         <lastmod>2023-09-24</lastmod>
         <changefreq>weekly</changefreq>
