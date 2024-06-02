@@ -4,7 +4,20 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Mon, 20 May 2024 00:03:07 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 02 Jun 2024 23:18:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Главная проблема UUID</title>
+            <link>https://kostyanetsky.ru/notes/uuid-main-issue</link>
+            <guid isPermaLink="false">note-uuid-main-issue</guid>
+            <pubDate>Sun, 02 Jun 2024 23:18:48 +0700</pubDate>
+            <description><p>Наткнулся на <a href="https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/" target="_blank">хороший текст</a> об основной проблеме, которую таскает с собой UUID. Для 1С она тоже актуальна: все ссылочные объекты платформы (элементы справочников, документы и так далее) имеют собственные UUID. Они хранятся в БД, активно используются при поиске и, понятно, обильно индексируются (со всеми вытекающими последствиями). </p>
+<p>1С старается компенсировать проблему, создавая последовательные UUID. Пусть не идеально, но в целом эта штука работает и индексы получаются более-менее ровными. Да и вообще в сообществе об этом вообще говорят довольно давно: вот, например, бородатый <a href="https://forum.mista.ru/topic.php?id=801986" target="_blank">топик на Мисте</a> (правда, тут диалог быстро перерос в курятник и из шести десятков комментариев от силы полтора — по делу).</p>
+<p>P.S. Рассмешила ремарка про вероятность создать в одной базе два одинаковых UUID:</p>
+<blockquote>
+<p>As an aside, for those worried about collisions: you should take up the lottery, since winning the jackpot twice in a row is a much more likely outcome than your system ever generating two identical random 128 bit numbers.</p>
+</blockquote></description>
+        </item>
         
         <item>
             <title>Скриншот со звуком</title>
@@ -118,35 +131,6 @@
 <p>Это решит проблему с этим конкретным контрагентом, но не причину, по которой она возникла. А она в интерфейсе, конкретно — в названии опции: используется «do not», которого желательно избегать из-за того, что пользователям сложнее правильно считать формулировку. К простому «do» это, кстати, тоже относится.</p>
 <p>Программистам часто непросто понять, почему так: мы привыкли мгновенно рассчитывать в уме булевые выражения и вариации в духе «не (не истина)» для нас — обычное дело. А вот люди с другим бэкграундом могут путаться. Совсем чуточку, но иногда и этого достаточно, чтобы в горячке дня воспринять «do not export» как «do export», ткнуть опцию и побежать дальше.</p>
 <p>Отсюда выводим правильное решение: переименовать галку. Подойдёт «Disable Export» или «Stop Export». В голову ещё приходит «Prohibit Export», но это скорее про межличностные отношения и вообще, запрет что-то делать не означает, что это что-то не будет сделано :)</p></description>
-        </item>
-        
-        <item>
-            <title>Последний мет</title>
-            <link>https://kostyanetsky.ru/notes/last-meth</link>
-            <guid isPermaLink="false">note-last-meth</guid>
-            <pubDate>Sun, 17 Dec 2023 19:34:42 +0700</pubDate>
-            <description><p>Роюсь в коде внешней компоненты 1С, опубликованный разработчиками платформы как пример у себя на сайте. Из хорошего: ну, она компилируется и, если немного допилить — действительно работает. </p>
-<p>В остальном хватает bruh moments: например, проект не открывается в современной Visual Studio (нужно указывать CMake вручную). Код довольно небрежный, документации нет, комментариев и оформления по большому счёту тоже. Разработчику без опыта в С++ может быть непросто вкатиться.</p>
-<p>Позабавил нейминг:</p>
-<pre><code>long CAddInNative::FindMethod(const WCHAR_T* wsMethodName)
-{ 
-    long plMethodNum = -1;
-    wchar_t* name = 0;
-
-    ::convFromShortWchar(&amp;name, wsMethodName);
-
-    plMethodNum = findName(g_MethodNames, name, eMethLast);
-
-    if (plMethodNum == -1)
-        plMethodNum = findName(g_MethodNamesRu, name, eMethLast);
-
-    delete[] name;
-
-    return plMethodNum;
-}
-</code></pre>
-<p>Со строк выше на нас смотрит необъяснимая любовь автора кода к сокращениям: вот что ему мешало назвать переменную "eMethodLast", а не "eMethLast"? В конце концов, у нас уже есть "wsMethodName" и "plMethodNum". </p>
-<p>Возможно, это такая пасхалка с отсылкой на Breaking Bad. Тогда, конечно, уверенный лайк :)</p></description>
         </item>
         
     </channel>
