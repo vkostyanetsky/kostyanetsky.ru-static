@@ -133,7 +133,7 @@ MultiMonitorTool.exe /switch 2
 </code></pre>
 <p>Утилита ещё много чего умеет (например, одна из команд перекидывает окна приложений между мониторами). Описание — по ссылке выше.</p>
         <p class="f6 mt4">
-            2021-10-16
+            16 октября 2021
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/">рабочее место</a>
@@ -155,7 +155,7 @@ MultiMonitorTool.exe /switch 2
 <p>В общем, какое-то время я помучался с решениями конкурентов и в итоге вернулся к привычному <a href="https://rclone.org" target="_blank">rclone</a>, с которым было всего две проблемы. Во-первых, нельзя нормально соединиться с SMB-шарой: да, логин и пароль можно сохранить в Windows и rclone будет их использовать, но они будут слетать при каждом удобном случае. Я вышел из положения, подключив шару как внешний диск.</p>
 <p>Во-вторых, файлов и папок для синхронизации у меня оказалось много: директория здесь, директория там, конфиг оттуда, профиль отсюда… Чтобы не плодить лапшу, я накатал простой скрипт, который берет из конфига источники и приемники, а потом для каждого вызывает rclone по одному и тому же шаблону.</p>
         <p class="f6 mt4">
-            2021-06-07
+            7 июня 2021
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
@@ -185,7 +185,7 @@ MultiMonitorTool.exe /switch 2
 <p>Для этого скрипт определит статус первой службы в списке. Если она работает — все службы из списка будут остановлены, если выключена — скрипт попытается их запустить.</p>
 <p>Зачем это нужно? Ну, если вы вызываете скрипт прямо с программируемой клавиатуры, как я — теперь вам нужна только одна кнопка. Раньше было нужно две: одна для запуска служб, вторая для остановки.</p>
         <p class="f6 mt4">
-            2020-07-22
+            22 июля 2020
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
@@ -214,7 +214,7 @@ MultiMonitorTool.exe /switch 2
         <p>Какое-то время назад я <a href="https://kostyanetsky.ru/notes/manage-services-with-powershell" target="_blank">писал</a> про командлеты PowerShell, с помощью которых можно запускать и останавливать службы. В итоге я собрал из этих набросков нормальный скрипт: он читает список к запуску или остановке служб из отдельного файла, а ещё проверяет и (если нужно) запрашивает права администратора.</p>
 <p>Результат можно <a href="https://github.com/vkostyanetsky/ServiceLauncher" target="_blank">посмотреть</a> на GitHub'е. No big deal — хотел поупражняться в языке и упростить ежедневную рутину: в моей системе наберется десятка полтора прожорливых сервисов, которые нужны для работы, но бесполезны в другое время. Вручную останавливать, а потом запускать этот зоопарк неудобно, а вот одной командой — совсем другое дело!</p>
         <p class="f6 mt4">
-            2020-07-13
+            13 июля 2020
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
@@ -250,7 +250,7 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
 </code></pre>
 <p>Если нужны детали, то на сайте разработчика есть подробная <a href="https://docs.microsoft.com/ru-ru/powershell/scripting/samples/managing-services?view=powershell-7" target="_blank">документация</a> с кучей примеров и рассуждений в духе «как запустить службу, если вы медитируете на одной ноге в условиях искусственной невесомости».</p>
         <p class="f6 mt4">
-            2020-04-28
+            28 апреля 2020
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/powershell/">PowerShell</a>
@@ -281,7 +281,7 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
 <p><em><a href="https://www.youtube.com/watch?v=K6oZuB8_dU8&amp;feature=youtu.be&amp;t=640" target="_blank">Эффективность не работает. Илья Якямсев</a></em></p>
 </blockquote>
         <p class="f6 mt4">
-            2020-04-08
+            8 апреля 2020
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/">рабочее место</a>
@@ -319,7 +319,7 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
 </ol>
 <p>При вызове на долю секунду видно консоль (OBSCommand запускается, связывается с obs-websocket и ждет ответа). Сначала хотел как-нибудь скрыть это окно, но, поразмыслив, передумал — если OBS Studio не будет запущен или возникнет какая-то проблема, консоль не закроется и я хотя бы узнаю, что запись не началась.</p>
         <p class="f6 mt4">
-            2020-04-03
+            3 апреля 2020
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/">рабочее место</a>
