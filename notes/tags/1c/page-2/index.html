@@ -119,41 +119,6 @@
 
         
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/hammer-and-nails/">Про молоток и гвозди</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>На днях допиливал платежные документы в нашей конфигурации и наткнулся на невероятно избыточное решение примитивной задачи. Простите, не  могу держать в себе.</p>
-<p>Вот есть у вас документ, да? В нём — несколько табличных частей. В каждой — поле для комментария. Делаете вы для этого документа печатную форму; если хотя бы в одной строке любой ТЧ есть комментарий — нужно использовать один шаблон, если комментариев нет — другой.</p>
-<p>Задача примитивная, все мы миллион раз такое делали — ну, смотрим в выборку строк, натравливаем ПустаяСтрока() на нужное поле и грузим подходящий шаблон. Готово, можно пить кофе!</p>
-<p>Однако, вместо короткого цикла я увидел это:</p>
-<script src="https://gist.github.com/vkostyanetsky/e870d5bb3d2f23d93f3d17001eaef59b.js">Суть</script>
-<p>Ну то есть да, делаем матрешку из подзапросов, в самом нижнем из которых роемся в ТЧ (которые мы, напомню, только что выгребали для вывода на печатную форму). Ищем в них комментарии, если есть — ставим единичку. Нет? Нолик. Итог несколько раз группируем и возвращаем в скрипт.</p>
-<p>Я сейчас даже не про нагрузку на СУБД (рискну предположить, что заметного эффекта этот трюк не дает — в конце концов, после отбора по ссылке выборка будет копеечной). Просто… Ну… Чекнуть выборку строк — пять строк кода. Понятных, простых, коротких, Сонару ругнуться негде. Как можно было родить вот это? Из большой любви к запросам? </p>
-<p>А ведь что-то в этом духе и было, скорее всего. Я почти вижу его, этого кодера, который только что более-менее сносно освоил запросы и пребывает в перманентном восторге от новых возможностей. А когда в руках есть клёвый блестящий молоток, всё вокруг кажется гвоздями.</p>
-        <p class="f6 mt4">
-            15 сентября 2021
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/code-smell/">код с запашком</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/no-comment/">Без комментариев</a></h2>
 
             
@@ -773,6 +738,36 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/queries-and-lock-waits/">Запросы и ожидания на блокировках</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Набросал ещё два скрипта для анализа ТЖ: <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestQueries.sh" target="_blank">первый</a> строит топ тяжелых запросов к MS SQL, <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestLockWaitsByRegions.sh" target="_blank">второй</a> — топ длительных ожиданий на блокировках.</p>
+<p>Тяжелые запросы определяются по продолжительности событий DBMSSQL. То есть, чем дольше выполнялся запрос — тем вероятнее, что в процессе он слопал кучу ресурсов. Обычно это так и есть, хотя для нормальной диагностики нужно смотреть трассировку.</p>
+<p>Ожидания на блокировках тоже считаются по продолжительности. При этом скрипт проверяет, что у события TLOCK заполнено свойство WaitConnections — то есть платформа действительно ждала возможности установить блокировку, а не просто потратила какое-то время на её установку.</p>
+        <p class="f6 mt4">
+            19 октября 2020
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
                 </span>
             
         </p>
