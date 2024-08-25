@@ -1,0 +1,179 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Анализ систем</title>
+
+    <meta name="description" content="Закончил курс по анализу систем от "Школы Сильных программистов"." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="https://kostyanetsky.ru/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.ru/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.ru/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.ru/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.ru/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Анализ систем"/>
+    <meta property="og:description" content="Закончил курс по анализу систем от "Школы Сильных программистов"."/>
+    <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/system-analysis-course" />    
+
+    <!-- Tachyons -->
+
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
+
+    <!-- Blog -->
+
+    <script>
+
+        let ctrlUpUrl       = '';
+        let ctrlDownUrl     = '';
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/first-pancake';
+        let ctrlRightUrl    = '';
+
+    </script>
+    
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/blog.css">
+    <script src="https://kostyanetsky.ru/assets/blog.js"></script>
+                
+</head>
+
+<body class="w-100 bg-white">
+
+<div id="app">        
+<main>
+
+<header class="db dt-l w-100-l border-box pa3 ph5-l">
+
+    <nav class="flex items-center lh-copy pa3 ph0-l">
+    
+        <a href="https://kostyanetsky.ru"><img class="br-100" src="https://kostyanetsky.ru/assets/images/me.jpg" title="Привет!" /></a>
+
+        <div class="pl4 flex-auto">
+        
+            
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.ru">Сайт Влада</a>
+            
+
+            
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.ru/projects/">Проекты</a>
+                        
+
+            
+                <a class="dib f4 mr3 link dim bb orange" href="https://kostyanetsky.ru/notes/">Заметки</a>
+            
+
+        </div>
+        
+    </nav>
+    
+    <nav class="dtc-l v-mid tc tr-l">
+
+        
+            <a href="https://kostyanetsky.me/notes/system-analysis-course" class="link f5 f5-ns dim blue bb">EN</a>
+        
+
+        
+
+            <div class="mt3">
+
+            
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/system-analysis-course/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+            
+
+            </div>
+            
+        
+
+    </nav>
+
+</header>
+
+<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
+    
+
+    <article>    
+                    
+        <h1 class="f-subheadline lh-solid">Анализ систем</h1>
+            
+        
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Среди всех этих пет-проектов и августовских переживаний забыл упомянуть, что завершил <a href="https://tough-dev.school/system-analysis" target="_blank">курс</a> по анализу систем, о которым недавно <a href="https://kostyanetsky.ru/notes/ibrahim" target="_blank">писал</a>.</p>
+<p><img alt="Сертификат" src="https://kostyanetsky.ru/notes/system-analysis-course/certificate.png"/></p>
+<p>Курс был устроен так, что на протяжении всех занятий мы работали над одной и той же системой, выявляли проблемы и постепенно их решали. Перед первым уроком нам предложили спроектировать первую версию системы, чтобы потом, в конце курса, сравнить её с финальной версией и оценить прогресс. Так вот, сравнением я доволен — в том смысле, что на первую версию без слез теперь смотреть сложно :)</p>
+<p>Времени для рефлексии на курсе было в целом мало, так что буду дальше работать над материалами и растаскивать уроки на личные заметки. Это не так-то просто, так как у нас в компании много специфики связано с решениями на базе 1С:Предприятия и масса моей работы связана с различной обвязкой 1С-инстансов на решениях вне стека 1С. </p>
+<p>Однако 1С-инстансы, кажется, можно воспринимать как монолиты с определенным набором характеристик (в зависимости от решаемых внутри задач), а в остальном коммуникации с ними мало чем отличаются от традиционных решений: те же события (например, кролик), те же входящие/исходящие HTTP-вызовы, тот же показатель instability и так далее.</p>
+<p>На этом этапе я точно потащу (или уже потащил) к себе:</p>
+<ol>
+<li>Распил ТЗ на нумерованные пункты (US-XXX) и хранение их в одном месте с пометками «updated at», «canceled at» и так далее. Кажется, удачный формат.</li>
+<li>Ведение ADR. Собственно, это уже внедрил. Несколько смущает, правда, что в них периодически оседает что-то, что архитектурой в прямом смысле не является (например, принципы логирования событий на каком-то участке). Однако такие штуки тоже кажутся важными для принятия решений.</li>
+<li>Event Storming как способ визуализации бизнес-процессов. Не могу сказать, что он сильно выигрывает по сравнению с той сборной солянкой, которая до этого обычно оседала у нас, но результат выглядит симпатично и вообще: какой-то стандарт лучше, чем никакого.</li>
+<li>Диаграммы сервисов приложения с наклеиванием стикеров с характеристиками каждого. Достаточно функционально, если надо взглянуть на проект с высоты птичьего полета и опять же не так сухо, как гигантские таблицы. То есть, если сработает bus factor — выше шанс, что следующий (или следующая) я заметит эти детали.</li>
+<li>Хочу делать BPMN-ки и Activity Diagrams. Формат мне нравится, но пока мои попытки оставляют желать лучшего. Буду пробовать ещё.</li>
+<li>Неожиданно зашел концепт разделения функционала для снижения зависимостей. Раньше казалось, что всегда проще склеить похожий функционал для снижения объёма кода, но, кажется, это бьет и по сложности, и по росту внутренней связности — а значит, может сильно больше вредить, чем помогать.</li>
+</ol>
+<p>В целом курсом очень довлен. Кажется, лучшее вложение сил за последний год. Если думаете идти туда, но сомневаетесь — идите :)</p>
+        <p class="f6 mt4">
+            25 августа 2024
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/meanwhile/">тем временем</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+        
+        
+
+            <p class="mt5 mb3 f6">
+
+                
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/first-pancake">Мой первый подход к генеративкам</a> &larr;
+                
+                Ctrl
+                                
+
+            </p> 
+            
+        
+
+    </article>
+
+
+</section>
+
+</main>
+
+<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
+    
+    <p class="f6 lh-solid">Эл. почта: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.ru</a></p>
+    <p class="f6 lh-solid">Телеграм: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    <p class="f6 lh-solid">Гитхаб: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    
+    <a class="rss" href="https://kostyanetsky.ru/rss.xml">РСС</a> 
+
+</footer>
+
+</div>
+</body>
+</html>
