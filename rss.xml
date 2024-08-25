@@ -11,7 +11,7 @@
             <link>https://kostyanetsky.ru/notes/first-pancake</link>
             <guid isPermaLink="false">note-first-pancake</guid>
             <pubDate>Sun, 25 Aug 2024 14:07:48 +0700</pubDate>
-            <description><p>Понадобилось по-быстрому наделать картинок для одного пет-проекта. Развернул первое, что под руку попалось — WaifuDiffusion (это такой клон StableDiffusion, но обученный на аниме и манге).</p>
+            <description><p>Понадобилось по-быстрому наделать картинок для одного пет-проекта. Развернул первое, что под руку попалось — <a href="https://huggingface.co/hakurei/waifu-diffusion" target="_blank">WaifuDiffusion</a> (это такой клон <a href="https://huggingface.co/stabilityai/stable-diffusion-3-medium" target="_blank">StableDiffusion</a>, но обученный на аниме и манге).</p>
 <p>Запрос: </p>
 <blockquote>
 <p>A dimly lit, empty classroom with faintly visible music notes on the chalkboard. A young woman with long blue hair and blue eyes, is standing behind the teacher's desk, packing her things into a small handbag. She looks tired and worried.</p>
