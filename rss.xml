@@ -4,7 +4,23 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Sat, 17 Aug 2024 15:11:48 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 25 Aug 2024 14:07:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Мой первый подход к генеративкам</title>
+            <link>https://kostyanetsky.ru/notes/first-pancake</link>
+            <guid isPermaLink="false">note-first-pancake</guid>
+            <pubDate>Sun, 25 Aug 2024 14:07:48 +0700</pubDate>
+            <description><p>Понадобилось по-быстрому наделать картинок для одного пет-проекта. Развернул первое, что под руку попалось — WaifuDiffusion (это такой клон StableDiffusion, но обученный на аниме и манге).</p>
+<p>Запрос: </p>
+<blockquote>
+<p>A dimly lit, empty classroom with faintly visible music notes on the chalkboard. A young woman with long blue hair and blue eyes, is standing behind the teacher's desk, packing her things into a small handbag. She looks tired and worried.</p>
+</blockquote>
+<p>Результат:</p>
+<p><img alt="Молодая женщина" src="https://kostyanetsky.ru/notes/first-pancake/young-woman.jpg"/></p>
+<p>Кажется, это отличный повод рассказать, как далеко вперед шагнули нейросети! Модель с порога раскусила задумку и предложила ввести в сюжет... Хм... Мудрого бородача? Или, возможно, намекнула, что я должен больше ценить неожиданные сюрпризы?</p>
+<p>Думаю, WaifuDiffusion просто решила поднять мне настроение. Смех, говорят, продлевает жизнь. В любом случае, первую генерацию считаю успешной! Но над калибровкой явно придется поработать еще :)</p></description>
+        </item>
         
         <item>
             <title>Переключалка дней для Obsidian</title>
@@ -138,16 +154,6 @@
 <p><img alt="Cut My Life Into Pieces" src="https://kostyanetsky.ru/notes/last-resort/last-resort.png"/></p>
 <p>Заголовок вышел со звуком. Ладно, думаю, смешно, но как тогда назвать? Во, пусть будет Distributed Internal ERP. Сокращенно... DIE?</p>
 <p>Оставил первый вариант. Long live Papa Roach :)</p></description>
-        </item>
-        
-        <item>
-            <title>Таймшит для Обсидиана</title>
-            <link>https://kostyanetsky.ru/notes/obsidian-timesheet</link>
-            <guid isPermaLink="false">note-obsidian-timesheet</guid>
-            <pubDate>Sun, 12 May 2024 17:50:58 +0700</pubDate>
-            <description><p>Написал ещё один плагин к <a href="https://obsidian.md" target="_blank">Obsidian</a>, на этот раз — для <a href="https://help.obsidian.md/Plugins/Daily+notes" target="_blank">ежедневных заметок</a>. Рисует симпатичный отчет: над какими задачами работал, что сделал, сколько времени потратил. Я постарался описать в <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">репозитории</a>, как это работает; буду рад, если кому-то ещё пригодится!</p>
-<p>Забавный момент: для примеров в README я использовал номера задач FBI-1, FBI-2 и так далее. Это не отсылка к X-Files или Twin Peaks — просто первое, что пришло мне в голову. Дело в том, что наш внутренний проект по разработке FirstBit ERP называется First Bit Internal, сокращенно — FBI. Основной пул задач, над которыми мы работаем, живёт именно в нём.</p>
-<p>Мы-то уже привыкли, но коллег вне компании наши скриншоты из JIRA или SonarQube неизменно веселят. Представили, что вы — агент Купер? А мне и представлять не надо :)</p></description>
         </item>
         
     </channel>

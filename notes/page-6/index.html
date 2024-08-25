@@ -119,6 +119,42 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/data-history-settings/">Настройки истории данных</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Выложил на GitHub <a href="https://github.com/vkostyanetsky/AuditLogSettings" target="_blank">обработку</a> для настройки механизма истории данных, который сравнительно недавно <a href="https://its.1c.ru/db/v8312doc#bookmark:dev:TI000001938" target="_blank">появился</a> в платформе. Эта обработка:</p>
+<ol>
+<li>Строит дерево объектов, для которых может вестись история данных;</li>
+<li>Подсказывает, для каких объектов история данных ведется сейчас;</li>
+<li>Дает возможность включить или выключить историю данных для объектов и их реквизитов. </li>
+</ol>
+<p>Обработка поддерживает пакетные операции — например, можно включить историю разом для нескольких документов и всех справочников. Или вообще удалить все внесенные настройки, откатив состояние механизма к тому, которое заложил разработчик конфигурации.</p>
+<p>По-моему, неплохо получилось. Я писал эту штуку больше для себя, разминая мозг по вечерам — но мы, возможно, даже включим её в <a href="https://firstbit.ae" target="_blank">нашу конфигурацию</a>! Сейчас версионированием данных в ней занимается SSLi, и её механизмы трудно назвать эффективными — медленные и сильно раздувают базу. Надеюсь, платформа на тестах покажет себя лучше.</p>
+<p>На Инфостарте и ИТС можно найти похожие разработки, но они либо глючат, либо работают только на русскоязычных конфигурациях (не имеют английского интерфейса + опираются на БСП), либо просто-напросто устарели (например, не поддерживают работу с константами).</p>
+        <p class="f6 mt4">
+            9 марта 2020
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/ninth-wave/">Девятый вал</a></h2>
 
             
@@ -630,28 +666,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/draugen/">Draugen</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ziNZqEw0Adg" width="560"></iframe>
-<p>Сравнительно короткая, но по-своему яркая история. Проиграть тут нельзя, особого выбора (кроме вариантов реплик) нет. Но то, как тут всё звучит и выглядит, то, как здорово прописаны персонажи — удивляет и трогает. Даже если угадываешь повороты сюжета до того, как с ними столкнешься.</p>
-<p>В целом игра напомнила то ли Firewatch, то ли The Vanishing of Ethan Carter. Сюжет, на мой вкус, мог быть немного длиннее и заметно драматичнее, но мне всё равно чертовски понравилось, как всё закончилось. Эмоции от финала можно выразить — <strong>осторожно, спойлер</strong> — <a href="https://kostyanetsky.ru/notes/draugen/the-main-thing-is.jpg" target="_blank">вот этой картинкой</a> :-)</p>
-        <p class="f6 mt4">
-            10 июня 2019
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
                 </span>
             
         </p>
