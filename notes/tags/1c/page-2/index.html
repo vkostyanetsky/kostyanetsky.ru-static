@@ -119,6 +119,60 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/matryoshka/">Матрёшка</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>На днях в чат команды кинули ссылку на сертификат 1Ci (коллега проходил их <a href="https://academy.1ci.com/courses/1c-junior-developer" target="_blank">курс</a> на джуна). Перехожу по ней — авторизации не требует, ошибки не выдает, браузер сразу загружает PDF. Всё идёт как надо, верно? Ладно, открываю файл:</p>
+<p><img alt="Error.pdf" src="https://kostyanetsky.ru/notes/matryoshka/not-your-certificate.png"/></p>
+<p>Честно? Я даже восхищён. Надо этот UX в наших продуктах внедрить: прожимаешь ты, например, печать документа, а он тебе — PDF! А в нём — ссылка на другой PDF! А в нём — entity is not filled, иди заполняй.</p>
+<p>Можно продать это как русский путь вывода ошибок: мол, у нас так исторически сложилось. Всё матрёшки виноваты, проклятые, и Кощей со своей иглой. Она, как вы помните, в яйце, а оно — в утке, которая в зайце, засунутом в сундук, и далее по цепочке вложенности.</p>
+        <p class="f6 mt4">
+            30 октября 2021
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/top-salaries/">Самые большие зарплаты</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <blockquote>
+<p>Есть путь до CSV-файла, надо его открыть, прочитать заголовок (первая строка), найти колонку Salary и вывести топ 10 зарплат.</p>
+<p><em><a href="https://t.me/nikitonsky_chat/26402" target="_blank">Ссылка</a></em></p>
+</blockquote>
+<p>Вбросил свои <a href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" target="_blank">пять копеек</a> просто для полноты картины. Если забить на стабильность, читаемость и производительность — можно усечь где-то вдвое. Тут с самого начала было очевидно, что на баше выйдет короче, а на питоне проще — так что просто написал как привык.</p>
+<p>Из полезного: в комментариях к сообщению куча примеров на других языках. С некоторыми вообще до сих пор не сталкивался; было реально любопытно посмотреть на синтаксис и попробовать понять подход.</p>
+<p>В целом история напомнила <a href="https://bolknote.ru/tags/beer99/" target="_blank">хобби</a> Евгения Степанищева — писать вывод американской «песни о пиве» на всех языках подряд. Задача с чтением CSV, кстати, мне тоже кажется скорее фаном — слишком узкий кейс, чтобы на его базе что-то всерьёз сравнивать.</p>
+<p>Из смешного: у пары <a href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">коллег</a> язык 1С вызвал настолько острые проблемы со зрением, что они сочли нужным об этом сообщить :-) Отчасти понимаю желание самоутвердиться на стереотипе «1С — это плохо, понятненько?», но тут момент явно выбран неудачно. Предпочтения в синтаксисе — дело вкуса, а кроме них решение на 1С никак не отличается от решений на любом другом языке, где нет встроенной библиотеки для парсинга CSV.</p>
+        <p class="f6 mt4">
+            2 октября 2021
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/hammer-and-nails/">Про молоток и гвозди</a></h2>
 
             
@@ -691,88 +745,6 @@
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/excp-number-by-minutes/">Расчет количества исключений по ТЖ</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Ещё <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/ExceptionsNumberByMinutes.sh" target="_blank">скрипт</a>. Считает количество исключений в минуту и строит топ, по которому видно распределение. Можно быстро оценить периоды, когда программы сбоили особенно яростно.</p>
-<p>По ходу дела столкнулся в двумя любопытными проблемами, которые меня порядком сбили с толку. Во-первых, я почему-то был уверен, что uniq -c группирует строки вне зависимости от того, где в потоке данных они встречаются. Рассмотрим пример:</p>
-<pre><code>банан
-банан
-груша
-банан
-</code></pre>
-<p>Я думал, что если отдать эти данные uniq -c, то она сгруппирует одинаковые строки, посчитает количество повторений и выдаст примерно такое:</p>
-<pre><code>3 банан
-1 груша
-</code></pre>
-<p>Но на деле получилось так:</p>
-<pre><code>2 банан
-1 груша
-1 банан
-</code></pre>
-<p>Вывод: утилита uniq ожидает, что повторяющиеся строки идут одна за другой. Если строка отличается от предыдущей — она начинает считать счетчик совпадений для неё с нуля. То есть, чтобы получить тот результат, на который я рассчитывал — нужно сначала отсортировать данные, и только потом передавать их в uniq.</p>
-<p>Второй проблемой стала утилита sed. С помощью неё я пытался удалить из потока данных всё, кроме часов и минут (текст попытки на 12-й строке скрипта). Однако часть событий упорно не попадали под регулярку несмотря на то, что визуально никак не отличались. Я промаялся кучу времени и здорово разозлился, но потом вспомнил про существование <a href="https://ru.wikipedia.org/wiki/Маркер_последовательности_байтов" target="_blank">BOM</a>. Вычистил их и дальше все пошло как по маслу.</p>
-<p>BOM используется во всех файлах ТЖ (в этом можно убедиться, например, с помощью <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LogFilesWithoutBOM.sh" target="_blank">скрипта</a>). То есть каждый лог начинается с особых символов, которых невооруженным глазом не увидеть и которые могут помешать обработать первую строку файла (так как эти самые символы не будут попадать под условие регулярного выражения).</p>
-<p>Вывод: проще всего удалять BOM по умолчанию, не оценивая рисков для каждой конкретной задачи. Да, иногда это будет лишним (например, решению задачи по тексту выше через grep BOM никак не мешает). Но я не люблю сюрпризы. Кроме того, несколько тактов процессора на простую замену — явно выгоднее, чем эквивалент в сгоревших нервных клетках и потерянном времени.</p>
-        <p class="f6 mt4">
-            24 октября 2020
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/nerdview/">Профессиональная деформация</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p><img alt="Чат с дочкой" src="https://kostyanetsky.ru/notes/nerdview/telegram.png"/></p>
-<p>Дочка пишет о своих планах — мол, не теряй меня. А у меня профессиональная деформация: этот вполне нормальный чат мой мозг упорно воспринимает как код на Gherkin. Просто какой-то неправильный, что ли, хочется быстренько пофиксить :-)</p>
-<pre><code>И я выхожу
-Тогда я в школе
-И я выхожу
-Тогда я покачаюсь
-</code></pre>
-<p>Мы на этом языке пишем автотесты нашей конфигурации для <a href="https://github.com/Pr-Mex/vanessa-automation" target="_blank">Vanessa Automation</a>. Вроде не так уж много я их накатал (сравнивая с некоторыми коллегами — баловался, считай). Но, видимо, достаточно.</p>
-        <p class="f6 mt4">
-            19 октября 2020
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/family/">семья</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
                 </span>
             
         </p>

@@ -477,6 +477,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.ru/notes/nowhere-to-run</loc>
+        <lastmod>2024-08-31</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.ru/notes/alien-isolation</loc>
         <lastmod>2015-01-16</lastmod>
         <changefreq>weekly</changefreq>
@@ -1333,6 +1340,13 @@
     <url>
         <loc>https://kostyanetsky.ru/notes/data-history-duplication</loc>
         <lastmod>2024-06-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://kostyanetsky.ru/notes/rapture</loc>
+        <lastmod>2024-08-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
