@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Сингапурская кукла</title>
+    <title>Про PDF</title>
 
-    <meta name="description" content="Про забавные баги на фронте центрального банка Саудовской Аравии." />
+    <meta name="description" content="PDF — это не только Portable Document Format!" />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Сингапурская кукла"/>
-    <meta property="og:description" content="Про забавные баги на фронте центрального банка Саудовской Аравии."/>
+    <meta property="og:title" content="Про PDF"/>
+    <meta property="og:description" content="PDF — это не только Portable Document Format!"/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/singapore-doll" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/pdf" />    
 
     <!-- Tachyons -->
 
@@ -41,8 +41,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/work/last-resort';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/work/pdf';
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/rapture';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -83,7 +83,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/singapore-doll" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/pdf" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -91,7 +91,7 @@
             <div class="mt3">
 
             
-                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/singapore-doll/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/pdf/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -107,21 +107,22 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Сингапурская кукла</h1>
+        <h1 class="f-subheadline lh-solid">Про PDF</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Можно ли любить валюту своей страны сильнее, чем жители Саудовской Аравии? Вопрос риторический: уверен, что нет.</p>
-<p>Разглядываю <a href="https://www.sama.gov.sa/en-US/FinExc/Pages/Currency.aspx" target="_blank">сайт</a> их центрального банка. Валюта страны — саудовский риал, и курсы других валют ЦБ устанавливает по отношению к ней. То есть, нет смысла спрашивать с банка курс самого риала. Однако сайт невозмутимо предлагает выбрать его дважды:</p>
-<p><img alt="Форма выбора" src="https://kostyanetsky.ru/notes/singapore-doll/cb.png"/></p>
-<p>Для справки: первый вариант ломает интерфейс, а второй педантично выдает единицу на любую дату.</p>
-<p>Другая забавная деталь: коллеги, кажется, хранят названия валют как строки длиной в 14 символов. Иначе сложно объяснить, почему по их данным в Канаде используется не канадский доллар, а CANADIAN DOLLA, а в Румынии — загадочный NEW ROMANIAN L вместо леи. Впрочем, этим двоим ещё повезло: Сингапур, например, ведёт расчёты в SINGAPORE DOLL.</p>
+        <p>Получаю тикет: клиент не может войти на портал. Смотрю в базе — учетная запись в порядке. Что не так-то? Проверяю логин и вижу чудную картину:</p>
+<p><img alt="PDF" src="https://kostyanetsky.ru/notes/pdf/pdf.png"/></p>
+<p>Выше то, что в базе, а ниже 
+— то, что вводит пользователь. Первая мысль: откуда, черт подери, в строке взялся документ? :D </p>
+<p>Опущу дальнейший разбор. Главное тут — задавать правильные вопросы (иначе и гугл, и ИИ будут рассуждать о популярном формате, а не о символе). Короче, PDF в контексте Юникода означает Pop Directional Formatting! Это символ, который управляет направлением текста; он нужен, например, чтобы корректно рендерить арабский язык (где может встречаться как текст слева направо, так и справа налево).</p>
+<p>В общем, дело на одну трубку. Однако хочу заметить: формат PDF появился задолго до этого символа. Я понимаю, что это разные технические сферы и разработчики могли счесть пересечение терминологии несущественной проблемой. Но в глубине души я уверен: кто-то из них точно ехидно улыбался, предвидя сегодняшнюю путаницу.</p>
         <p class="f6 mt4">
-            22 июня 2024
+            6 сентября 2024
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
                 </span>
             
         </p>
@@ -134,11 +135,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/last-resort">Скриншот со звуком</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/rapture">Восторг</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/pdf">Про PDF</a>
                                 
 
             </p> 
