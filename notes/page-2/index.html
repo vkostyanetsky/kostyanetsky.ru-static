@@ -119,6 +119,28 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/not-only-everything/">Не только лишь все</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Завидной глубины комментарий из документации к методу WriteJSON() XDTOSerializer'а:</p>
+<p><img alt="Не только лиь все" src="https://kostyanetsky.ru/notes/not-only-everything/write-json.jpg"/></p>
+<p>Ну да, метод дампит данные в JSON, а не в XML. Так что поспорить сложно, не все типы данных можно упаковать в XML с его помощью (если быть точным — никакие). Если бы дальше не пошла очевидная копипаста из справки к WriteXML() — счёл бы пасхалкой от разработчиков :)</p>
+        <p class="f6 mt4">
+            25 февраля 2024
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/obsidian-fastimer/">Фастаймер для Обсидиана</a></h2>
 
             
@@ -665,57 +687,6 @@ EndIf;
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/meanwhile/">тем временем</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/shaken-not-stirred/">Взболтать, но не смешивать</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Затрем немного про организацию кода. Если вам нужно где-то описать множество объектов с общими свойствами — подумайте, не стоит ли подробить описание на отдельные методы, каждый из которых будет описывать один конкретный объект?</p>
-<p>Посмотрим на пример — метод, который описывает табличные части документов, пригодные для какой-то задачи. Что-то вроде:</p>
-<pre><code>SupportedTypes["Document.SupplierPricesEntering"]   = "Prices";
-SupportedTypes["Document.OpeningBalancesEntering"]  = "CustomerAccounts,VendorAccounts";
-SupportedTypes["Document.Requisition"]              = "InventoryAndServices";
-</code></pre>
-<p>Вроде всё в порядке, так? Описания есть, табличные части перечислены, посплитить их по запятой — считай, бесплатно.</p>
-<p>Однако документов в методе описано много. Рано или поздно какому-нибудь коллеге (или вам самим) понадобится добавить ещё одну табличную часть для документа, который уже описан в методе. Его что-то отвлечет, он забудет поискать существующую строку и получится что-то вроде:</p>
-<pre><code>SupportedTypes["Document.SupplierPricesEntering"]   = "Prices";
-SupportedTypes["Document.OpeningBalancesEntering"]  = "CustomerAccounts,VendorAccounts";
-SupportedTypes["Document.Requisition"]              = "InventoryAndServices";
-
-&lt;...&gt;
-
-SupportedTypes["Document.OpeningBalancesEntering"]  = "PayrollDeductions";
-</code></pre>
-<p>В результате пара табличных частей выпадет из описания, и хорошо, если связанный функционал покрыт тестами.</p>
-<p>Вывод? Ну, можно написать метод-хелпер, который будет принимать на вход тип документа и имя <strong>одной</strong> табличной части. Хелпер будет заполнять соответствие SupportedTypes и следить за тем, чтобы уже добавленные в него данные не были потеряны.</p>
-<p>А если совсем по фен-шую, лучше поступить так, как я написал в начале заметки: разделить метод на отдельные вспомогательные методы, каждый из которых будет описывать только табличные части по одному документу. Что-то вроде:</p>
-<pre><code>Procedure AddOpeningBalancesEnteringDocument(SupportedTypes)
-
-    TabularSections = New Array;
-
-    TabularSections.Add("CustomerAccounts");
-    TabularSections.Add("VendorAccounts");
-    TabularSections.Add("PayrollDeductions");
-
-    SupportedTypes["Document.Requisition"] = StrConcat(TabularSections, ",");
-
-EndProcedure
-</code></pre>
-<p>Так и описание документа никто случайно не сотрет, и Сонар будет доволен. А вот случае реализации хелпера он, скорее всего, примется ругаться на повторяющиеся литералы с именами табличных частей.</p>
-        <p class="f6 mt4">
-            7 августа 2022
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
         </p>
