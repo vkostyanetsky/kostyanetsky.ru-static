@@ -119,6 +119,31 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/mssql-server-waits/">Задержки сервера MS SQL</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Каждый раз, когда SQL-запрос может запуститься, но ожидает другого ресурса — он записывает сведения о причине задержки. Доступ к ним можно получить через представление <a href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql" target="_blank">sys.dm_os_wait_stats</a>.</p>
+<p>Для анализа представления можно использовать готовые скрипты:</p>
+<ul>
+<li><a href="https://kostyanetsky.ru/notes/mssql-server-waits/causes_of_wait_times.txt" target="_blank">Скрипт</a> из статьи Яна Стерка «Открытие скрытых данных для оптимизации производительности приложений», опубликованной в MSDN Magazine ещё в <a href="https://msdn.microsoft.com/ru-ru/magazine/ee310108.aspx" target="_blank">2008-м</a> году. Выводит список типов задержки, упорядоченный по времени — от самых частотных до наиболее редких.</li>
+<li><a href="https://kostyanetsky.ru/notes/mssql-server-waits/sql_server_wait_statistics.txt" target="_blank">Cкрипт</a> из <a href="https://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/" target="_blank">статьи</a> Пола Рэндала про анализ причин задержек в работе сервера MS SQL (на Хабре, кстати, есть <a href="https://habr.com/ru/post/216309/" target="_blank">перевод</a>). Фильтрует задержки, которые возникают на сервере всегда и которые обычно можно игнорировать. Кроме того, к каждой задержке добавляется ссылка на страницу, где эта задержка детально описана (например, вот <a href="https://www.sqlskills.com/help/waits/cxpacket" target="_blank">описание</a> CXPACKET).</li>
+</ul>
+        <p class="f6 mt4">
+            8 марта 2019
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/">MS SQL</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/cursed-forest/">The Cursed Forest</a></h2>
 
             
@@ -602,28 +627,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/ideal-pronunciation/">Идеальное произношение</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p><a href="https://twitter.com/vanswan/status/1051001827104178177" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/ideal-pronunciation/snap-tweet-vanswan-1051001827104178177.png"/></a></p>
-<p>Примерно то же самое я услышал несколько лет назад от инженера Bloomberg'а — мы тогда писали для заказчика программу, автоматически следящую за курсами акций, и столкнулись с кучей проблем (для работы с финансовыми инструментами Bloomberg дает мощный, но довольно сложный API).</p>
-<p>В конце концов дело дошло до диалога с техподдержкой, и после обмена несколькими сообщениями коллега предложил пообщаться голосом. Я здорово смутился и заметил, что, мол, так-то можно, но my English isn't fluent enough. На это собеседник лишь пожал плечами: мол, мы привыкли — английский используется повсеместно, и обратная сторона медали в том, что его везде крутят на свой лад. Так что правильное ударение — последнее, что его будет волновать, лишь бы была понятна мысль.</p>
-        <p class="f6 mt4">
-            15 октября 2018
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/english/">английский</a>
                 </span>
             
         </p>
