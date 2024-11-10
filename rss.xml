@@ -4,7 +4,19 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Sat, 12 Oct 2024 20:45:16 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 10 Nov 2024 13:22:54 +0700</lastBuildDate>
+        
+        <item>
+            <title>Сводка в Slack</title>
+            <link>https://kostyanetsky.ru/notes/slack-summary</link>
+            <guid isPermaLink="false">note-slack-summary</guid>
+            <pubDate>Sun, 10 Nov 2024 13:22:54 +0700</pubDate>
+            <description><p>Нашел под руку <a href="https://gist.github.com/vkostyanetsky/b0807f2df2501bbeeb97c95a977f3e23" target="_blank">скрипт</a>, который я пару лет назад накатал для рабочего GitLab'а. Вкратце: мы ежедневно прогоняем репозиторий разработки через прорву тестов на Ванессе, в результате чего получаем симпатичный отчет — сколько тестов выполнено, какие провалились, причины провалов и так далее.</p>
+<p>Отчет нужно постоянно анализировать, хотя бы бегло. Конечно, полностью «зеленых» тестов мы уже давно не видели, и это нормально: например, в случае взаимозависимой разработки, когда коммиты ломают проверяемый функционал, и тесты еще предстоит поправить. Однако держать руку на пульсе все равно необходимо.</p>
+<p>Чтобы упростить эту рутину, я немного расширил код пайплайна: после формирования отчета GitLab первым делом создает короткую сводку (тип клиента, тип базы, статистика по тестам) и отправляет ее в слак.</p>
+<p><img alt="Отчет" src="https://kostyanetsky.ru/notes/slack-summary/report.jpg"/></p>
+<p>Как бонус, стало проще отвечать на философский вопрос «кто все сломал». Чаще всего — автор первого коммита, на котором метрика Scenarios Failed на скриншоте выше пробила потолок :)</p></description>
+        </item>
         
         <item>
             <title>Лог и баг</title>
@@ -128,18 +140,6 @@
 <li>В функции noteLink() пропишите путь к вашей папке с ежедневными заметками (сейчас в ней папка Days для примера; путь, если забыли, указан в настройке Daily notes/New file location);</li>
 <li>Закиньте скрипт в шаблон ежедневной заметки (настройка Daily notes/Template file location).</li>
 </ol></description>
-        </item>
-        
-        <item>
-            <title>Клементина запомнит это</title>
-            <link>https://kostyanetsky.ru/notes/clementine</link>
-            <guid isPermaLink="false">note-clementine</guid>
-            <pubDate>Fri, 09 Aug 2024 23:09:32 +0700</pubDate>
-            <description><p>Когда ChatGPT запоминает какую-то деталь диалога на будущее, он рисует над своим ответом плашку "Memory updated". Типа, я понял:</p>
-<p><img alt="Memory updated" src="https://kostyanetsky.ru/notes/clementine/memory-updated.jpg"/></p>
-<p>Каждый раз смешно: сразу вспоминается <a href="https://store.steampowered.com/app/207610/The_Walking_Dead/" target="_blank">The Walking Dead</a> и мем «Клементина запомнит это» :) В этой игре персонажи, окружающие протагониста, запоминали его решения и это оказывало влияние на их поведение. В том числе и Клементина — девочка, которую главный герой спасает в начале игры.</p>
-<p><img alt="Клементина запомнит это" src="https://kostyanetsky.ru/notes/clementine/remember.jpeg"/></p>
-<p>В игре эта механика была сделана, если честно, так себе, а вот ChatGPT и правда все запоминает. Внимание к деталям такое, что иногда приходится напоминать себе, что разговариваешь с языковой моделью, а не с необыкновенно участливым и очень эрудированным человеком.</p></description>
         </item>
         
     </channel>
