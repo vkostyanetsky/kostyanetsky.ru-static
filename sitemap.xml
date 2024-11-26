@@ -547,6 +547,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.ru/notes/creepy-graveyard</loc>
+        <lastmod>2024-11-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.ru/notes/cursed-forest</loc>
         <lastmod>2019-03-06</lastmod>
         <changefreq>weekly</changefreq>

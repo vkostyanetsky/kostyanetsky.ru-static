@@ -4,7 +4,21 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Sun, 10 Nov 2024 13:22:54 +0700</lastBuildDate>
+        <lastBuildDate>Tue, 26 Nov 2024 23:23:48 +0700</lastBuildDate>
+        
+        <item>
+            <title>Жуткое кладбище</title>
+            <link>https://kostyanetsky.ru/notes/creepy-graveyard</link>
+            <guid isPermaLink="false">note-creepy-graveyard</guid>
+            <pubDate>Tue, 26 Nov 2024 23:23:48 +0700</pubDate>
+            <description><p>Продолжаю осваивать 3D в свободное время. Вот, первая более-менее самостоятельная работа после <a href="https://www.udemy.com/course/blender-environments-megacourse-create-3d-environments/" target="_blank">курса</a>, который недавно закончил.</p>
+<p><a href="https://kostyanetsky.ru/notes/creepy-graveyard/creepy-graveyard.png" target="_blank"><img alt="Creepy Graveyard" src="https://kostyanetsky.ru/notes/creepy-graveyard/creepy-graveyard.png"/></a></p>
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mraGFR_Tr5k" width="560"></iframe>
+<p>Проблем, конечно, хватает: и в моделях, и в цветах, и в композиции... Да вообще везде. Хорошо хоть, что сцена по сюжету — ночь и туман. Самые косячные места можно просто спрятать. Не удивлюсь, если авторы курса специально выбрали такой сеттинг, чтобы новички не расстраивались :)</p>
+<p>Но результатом я всё равно доволен. Думаю, на этом этапе перфекционизм скорее мешает, чем помогает. К тому же получилось явно лучше, чем прошлая работа. Я тогда был совсем зелёным в Blender и боялся сделать шаг в сторону от преподавателя: десять минут смотрел урок, а потом десять минут пытался повторить.</p>
+<p>Такой подход работает только на старте, но не помогает понять, как искать решения проблем. Поэтому в этот раз я смотрел несколько уроков подряд по часу-полтора. Потом пробовал делать сам и к видео возвращался, только если совсем что-то не клелось. В голове, кажется, оседает заметно больше.</p>
+<p>Короче, прогресс есть, едем дальше!</p></description>
+        </item>
         
         <item>
             <title>Сводка в Slack</title>
@@ -124,22 +138,6 @@
 <p><img alt="Молодая женщина" src="https://kostyanetsky.ru/notes/first-pancake/young-woman.jpg"/></p>
 <p>Кажется, это отличный повод поговорить о том, как далеко вперед шагнули нейросети! Модель с порога раскусила задумку и предложила ввести в сюжет... Хм... Мудрого бородача? Или, возможно, намекнула, что я должен больше ценить неожиданные сюрпризы?</p>
 <p>Думаю, WaifuDiffusion просто решила поднять мне настроение. Смех, говорят, продлевает жизнь. В любом случае, первую генерацию считаю успешной! Но над калибровкой явно придется поработать еще :)</p></description>
-        </item>
-        
-        <item>
-            <title>Переключалка дней для Obsidian</title>
-            <link>https://kostyanetsky.ru/notes/obsidian-day-switcher</link>
-            <guid isPermaLink="false">note-obsidian-day-switcher</guid>
-            <pubDate>Sat, 17 Aug 2024 15:11:48 +0700</pubDate>
-            <description><p>Когда активно работаешь в ежедневных заметках Obsidian'а, часто хочется сунуть нос в заметку за вчера или, наоборот, на завтра. Например, когда сортируешь сегодняшние задачи и хочешь отложить часть на завтра.</p>
-<p>Каждый раз набирать нужную дату мне лень, поэтому я написал под это <a href="https://gist.github.com/vkostyanetsky/6c70f00b817157f9b6e62ee89bade853" target="_blank">скрипт</a>. Берет дату заметки из её названия (ожидает, что она в формате <abbr title="2024-08-17, например.">ISO 8601</abbr>) и рисует выноску со ссылками на вчера и завтра для неё. В заголовке выводит день недели для дополнительного удобства:</p>
-<p><img alt="Пример" src="https://kostyanetsky.ru/notes/obsidian-day-switcher/callout.jpg"/></p>
-<p>Скрипт написан для плагина <a href="https://github.com/blacksmithgu/obsidian-dataview" target="_blank">Dataview</a>, потому что я его и так использую для других задач. Можно легко переделать его для <a href="https://github.com/SilentVoid13/Templater" target="_blank">Templater</a>, <a href="https://github.com/saml-dev/obsidian-custom-js" target="_blank">CustomJS</a> или отдельный плагин накидать (мне, опять-таки, было лень возиться). </p>
-<p>Если будете использовать: </p>
-<ol>
-<li>В функции noteLink() пропишите путь к вашей папке с ежедневными заметками (сейчас в ней папка Days для примера; путь, если забыли, указан в настройке Daily notes/New file location);</li>
-<li>Закиньте скрипт в шаблон ежедневной заметки (настройка Daily notes/Template file location).</li>
-</ol></description>
         </item>
         
     </channel>
