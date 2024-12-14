@@ -4,7 +4,16 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Tue, 26 Nov 2024 23:23:48 +0700</lastBuildDate>
+        <lastBuildDate>Sat, 14 Dec 2024 17:37:06 +0700</lastBuildDate>
+        
+        <item>
+            <title>Смутно знакомый логотип</title>
+            <link>https://kostyanetsky.ru/notes/vaporia</link>
+            <guid isPermaLink="false">note-vaporia</guid>
+            <pubDate>Sat, 14 Dec 2024 17:37:06 +0700</pubDate>
+            <description><p><s>Тем временем OpenAI открыл в Тбилиси филиал</s> На самом деле тут вейпами торгуют, а дизайнер логотипа, скорее всего, вдохновлялся клубами дыма. Но каждый раз, как мимо хожу, глаз цепляется :)</p>
+<p><img alt="Vaporia" src="https://kostyanetsky.ru/notes/vaporia/vaporia.jpg"/></p></description>
+        </item>
         
         <item>
             <title>Жуткое кладбище</title>
@@ -122,22 +131,6 @@
 <li>Неожиданно зашел концепт разделения функционала для снижения зависимостей. Раньше казалось, что всегда проще склеить похожий функционал для снижения объёма кода, но это увеличивает и сложность, и внутреннюю связность — а значит, может сильно больше вредить, чем помогать.</li>
 </ol>
 <p>В целом курсом очень доволен. Лучшее вложение сил за последний год. Если думаете идти туда, но сомневаетесь — идите :)</p></description>
-        </item>
-        
-        <item>
-            <title>Мой первый подход к генеративкам</title>
-            <link>https://kostyanetsky.ru/notes/first-pancake</link>
-            <guid isPermaLink="false">note-first-pancake</guid>
-            <pubDate>Sun, 25 Aug 2024 14:07:48 +0700</pubDate>
-            <description><p>Понадобилось по-быстрому наделать картинок для одного пет-проекта. Развернул первое, что под руку попалось — <a href="https://huggingface.co/hakurei/waifu-diffusion" target="_blank">WaifuDiffusion</a> (это такой клон <a href="https://huggingface.co/stabilityai/stable-diffusion-3-medium" target="_blank">StableDiffusion</a>, но обученный на аниме и манге).</p>
-<p>Запрос: </p>
-<blockquote>
-<p>A dimly lit, empty classroom with faintly visible music notes on the chalkboard. A young woman with long blue hair and blue eyes, is standing behind the teacher's desk, packing her things into a small handbag. She looks tired and worried.</p>
-</blockquote>
-<p>Результат:</p>
-<p><img alt="Молодая женщина" src="https://kostyanetsky.ru/notes/first-pancake/young-woman.jpg"/></p>
-<p>Кажется, это отличный повод поговорить о том, как далеко вперед шагнули нейросети! Модель с порога раскусила задумку и предложила ввести в сюжет... Хм... Мудрого бородача? Или, возможно, намекнула, что я должен больше ценить неожиданные сюрпризы?</p>
-<p>Думаю, WaifuDiffusion просто решила поднять мне настроение. Смех, говорят, продлевает жизнь. В любом случае, первую генерацию считаю успешной! Но над калибровкой явно придется поработать еще :)</p></description>
         </item>
         
     </channel>
