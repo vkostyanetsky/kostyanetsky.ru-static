@@ -119,6 +119,34 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/last-resort/">Скриншот со звуком</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Недавно в компании родилась идея разделить внутреннюю ERP-шку на несколько независимых частей и организовать между ними обмен данными. Мы обсудили контуры задачи, модель обмена, транспорт, примерно подбились по срокам — в общем, привычная рутина.</p>
+<p>Создал под весь этот огород задачу. Названия им мы даем на английском языке, так что вписал первую формулировку, которая пришла в голову.</p>
+<p><img alt="Cut My Life Into Pieces" src="https://kostyanetsky.ru/notes/last-resort/last-resort.png"/></p>
+<p>Заголовок вышел со звуком. Ладно, думаю, смешно, но как тогда назвать? Во, пусть будет Distributed Internal ERP. Сокращенно... DIE?</p>
+<p>Оставил первый вариант. Long live Papa Roach :)</p>
+        <p class="f6 mt4">
+            20 мая 2024
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/meanwhile/">тем временем</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/obsidian-timesheet/">Таймшит для Обсидиана</a></h2>
 
             
@@ -671,37 +699,6 @@ EndIf;
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/outgoing-requests-limiter/">Помедленнее, я записываю</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Обычно при разработке исходишь из простой формулы: чем быстрее работает — тем лучше. Например, чем больше запросов приложение успеет выполнить за единицу времени — тем быстрее решится задача, ради которой эти запросы нужны.</p>
-<p>Однако бывает наоборот: нужно снизить количество операций, которые программа способна выполнить. Допустим, мы дергаем внешний сервис и он банит, если делать это слишком часто. Пример — облако <a href="https://bitrix24.net" target="_blank">Битрикс24</a>, которое требует отправлять не больше двух запросов в секунду.</p>
-<p>Вот <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">реализация</a> такой замедлялки, которую я написал на прошлой неделе. Поддержки очередности в ней нет; основная решенная задача — выполнить как можно больше запросов, не выходя за лимит (с учётом того, что запросы могут делаться из разных сеансов).</p>
-<p>Задача решена грубо — через константу, которая хранит дату текущей секунды и количество уже были отправленных запросов. Клиенты, которые утыкаются в ограничение — ждут. Для нагруженных систем такой подход не годится, а так — вполне может пригодиться.</p>
-        <p class="f6 mt4">
-            5 марта 2023
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bitrix/">Битрикс</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
                 </span>
             
         </p>
