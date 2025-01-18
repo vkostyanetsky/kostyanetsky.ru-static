@@ -119,6 +119,66 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/pause/">Пауза()</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <blockquote>
+<p>Важная особенность: метод ВызватьПаузу недоступен в клиент-серверном вызове; при вызове с клиента серверного метода, в котором вызывается ВызватьПаузу, будет сгенерировано исключение «Нельзя вызвать метод ВызватьПаузу в клиент-серверном вызове».</p>
+<p><a href="https://wonderland.v8.1c.ru/blog/metod-vyzvatpauzu/" target="_blank">Метод ВызватьПаузу</a></p>
+</blockquote>
+<p>Странное ограничение, если честно. С одной стороны, адекватный разработчик и так не будет в клиент-серверном вызове делать искусственную паузу, с другой — кому чешется, всё равно её там сделает (через проверку времени в цикле, например). Стоило ради security by obscurity огород городить?</p>
+<p>В лучшем случае какой-нибудь джун схватит это исключение, подумает "похоже, я что-то не так делаю" и двинется в правильном направлении. Однако закладывать в платформу ограничение ради этого кейса — как из пушки по воробьям палить. Давайте ещё лимит по количеству прикрутим — мол, не больше 1000 пауз на сеанс, а то вдруг пользователи подумают, что программа работает слишком медленно :-)</p>
+        <p class="f6 mt4">
+            30 апреля 2023
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/in-a-pedantic-way/">Сделай это педантично</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Ежедневная пальма первенства в номинации «самый философский код» уходит автору этого элегантного способа проверить, что две булевые переменные не равны друг другу:</p>
+<pre><code>If DataStructure.Property("AmountVATIn")
+    And ((DataStructure.AmountVATIn And NOT SearchPriceIncludesVAT)
+    OR (NOT DataStructure.AmountVATIn And SearchPriceIncludesVAT)) Then    
+    Price = RecalculateAmountOnVATFlagsChange(Price, DataStructure.AmountVATIn, TabSectionLine.VATRate);
+EndIf;
+</code></pre>
+<p>Думаю дописать сюда что-нибудь вроде «And Not (DataStructure.AmountVATIn = SearchPriceIncludesVAT)», чтобы придать происходящему тонкую нотку безумия.</p>
+        <p class="f6 mt4">
+            21 марта 2023
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/code-smell/">код с запашком</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/environmental-storytelling/">Повествование через окружение</a></h2>
 
             
@@ -661,66 +721,6 @@ EndProcedure
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/2nd-monitor-and-console/">Управление вторым монитором из консоли</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>У меня стоят два монитора. Второй нужен во время встреч в Zoom или при совместной игре с друзьями (в обеих случаях туда удобно вывести камеры собеседников). Есть ещё несколько примеров, когда он полезен, но часто устройство просто простаивает. Чтобы не отвлекало, решил его выключать.</p>
-<p>В чем тут засада: средствами ОС управлять вторым монитором неудобно (несколько кликов, скроллить надо, да ещё всё время путаю, куда лезть — в «Параметры экрана» или «Персонализацию»). Хотелось бы одной командой, а команду — на хоткей. И в идеале из скрипта всем этим рулить.</p>
-<p>Скрипта я не нашел, но накопал готовую утилиту — <a href="https://www.nirsoft.net/utils/multi_monitor_tool.html" target="_blank">MultiMonitorTool</a>. Бесплатная. Под десятой виндой работает без проблем. Команды ниже включают-выключают 2-й монитор:</p>
-<pre><code>MultiMonitorTool.exe /disable 2
-MultiMonitorTool.exe /enable 2  
-MultiMonitorTool.exe /switch 2
-</code></pre>
-<p>Почему-то при включении монитора через enable или switch он иногда неверно позиционируется (например, до выключения он был справа, а после включения встал слева). Это поправимо. Сначала запишем конфигурацию в тот момент, когда включены оба монитора:</p>
-<pre><code>MultiMonitorTool.exe /SaveConfig Monitors.cfg
-</code></pre>
-<p>А потом, когда нужно включить монитор — загрузим сохранённый конфиг:</p>
-<pre><code>MultiMonitorTool.exe /LoadConfig Monitors.cfg
-</code></pre>
-<p>Утилита ещё много чего умеет (например, одна из команд перекидывает окна приложений между мониторами). Описание — по ссылке выше.</p>
-        <p class="f6 mt4">
-            16 октября 2021
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/">рабочее место</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/top-salaries/">Самые большие зарплаты</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <blockquote>
-<p>Есть путь до CSV-файла, надо его открыть, прочитать заголовок (первая строка), найти колонку Salary и вывести топ 10 зарплат.</p>
-<p><em><a href="https://t.me/nikitonsky_chat/26402" target="_blank">Ссылка</a></em></p>
-</blockquote>
-<p>Вбросил свои <a href="https://gist.github.com/tonsky/881d5d8c4fbed818fe2905a7591a91e0#file-vkostyanetsky-1c" target="_blank">пять копеек</a> просто для полноты картины. Если забить на стабильность, читаемость и производительность — можно усечь где-то вдвое. Тут с самого начала было очевидно, что на баше выйдет короче, а на питоне проще — так что просто написал как привык.</p>
-<p>Из полезного: в комментариях к сообщению куча примеров на других языках. С некоторыми вообще до сих пор не сталкивался; было реально любопытно посмотреть на синтаксис и попробовать понять подход.</p>
-<p>В целом история напомнила <a href="https://bolknote.ru/tags/beer99/" target="_blank">хобби</a> Евгения Степанищева — писать вывод американской «песни о пиве» на всех языках подряд. Задача с чтением CSV, кстати, мне тоже кажется скорее фаном — слишком узкий кейс, чтобы на его базе что-то всерьёз сравнивать.</p>
-<p>Из смешного: у пары <a href="https://t.me/nikitonsky_pub/201?comment=26703" target="_blank">коллег</a> язык 1С вызвал настолько острые проблемы со зрением, что они сочли нужным об этом сообщить :-) Отчасти понимаю желание самоутвердиться на стереотипе «1С — это плохо, понятненько?», но тут момент явно выбран неудачно. Предпочтения в синтаксисе — дело вкуса, а кроме них решение на 1С никак не отличается от решений на любом другом языке, где нет встроенной библиотеки для парсинга CSV.</p>
-        <p class="f6 mt4">
-            2 октября 2021
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
         </p>
