@@ -4,7 +4,19 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Sun, 19 Jan 2025 23:54:12 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 06 Apr 2025 23:33:52 +0700</lastBuildDate>
+        
+        <item>
+            <title>Пасхалки</title>
+            <link>https://kostyanetsky.ru/notes/easter-eggs</link>
+            <guid isPermaLink="false">note-easter-eggs</guid>
+            <pubDate>Sun, 06 Apr 2025 23:33:52 +0700</pubDate>
+            <description><p><img alt="Thank you, Mario!" src="https://kostyanetsky.ru/notes/easter-eggs/mario.jpg"/> <img alt="Awaiting Signal" src="https://kostyanetsky.ru/notes/easter-eggs/mothership.jpg"/></p>
+<p>Пара пасхалок, которые можно найти внутри FirstBit ERP. Спрятаны для разработчиков: пользователи в первом случае видят на форме заголовок и текст оповещения, а во втором — стандартное waiting for connection.</p>
+<p>Люблю время от времени делать такие штуки: помогает не скучать, даже если задача не слишком увлекает или просто устал. Если не читали заметку «<a href="https://collab.ldwg.ru/stressless-design" target="_blank">Дизайн без стресса</a>» Быстроновского — рекомендую прочитать (я все равно не сформулирую лучше).</p>
+<p>Вот, кстати, ещё одна пасхалка. Эта уже не из нашей ERP, а из инструмента по автоматическому обновлению баз, который мы сейчас пишем. Пишем сами для себя, поэтому можно хохмить, общаясь с пользователем :)</p>
+<p><img alt="Nice try, Marty!" src="https://kostyanetsky.ru/notes/easter-eggs/marty.jpg"/></p></description>
+        </item>
         
         <item>
             <title>Разработка ERP на английском</title>
@@ -107,18 +119,6 @@
 <p><img alt="Морковка" src="https://kostyanetsky.ru/notes/love/carrot.jpg"/> <img alt="Кулаки" src="https://kostyanetsky.ru/notes/love/fists.jpg"/> <img alt="Угараешь?" src="https://kostyanetsky.ru/notes/love/joke.jpg"/></p>
 <p>А вот ответ ниже прямо порадовал. Даже если оставить за скобками философию — Скайнет, похоже, отменяется! :) Впрочем, будущее из финала <a href="https://store.steampowered.com/app/282140/SOMA/" target="_blank">SOMA</a> — пока, боюсь, нет.</p>
 <p><img alt="Любовь" src="https://kostyanetsky.ru/notes/love/love.jpg"/></p></description>
-        </item>
-        
-        <item>
-            <title>Во!</title>
-            <link>https://kostyanetsky.ru/notes/thumbs-up</link>
-            <guid isPermaLink="false">note-thumbs-up</guid>
-            <pubDate>Sat, 21 Sep 2024 11:59:34 +0700</pubDate>
-            <description><p>Звонок в дверь. Открываю и вижу двух сияющих девушек лет двадцати. Ослепительно улыбаются мне и начинают что-то наперебой тараторить. </p>
-<p>Грузинский язык красивый, но на слух я его совсем не понимаю. Вздохнул, предложил перейти на английский или русский.</p>
-<p>Девушки насупились. Потом одна выудила из сумки раздатку, показала на неё, потом показала мне большой палец — типа, во! — и сунула её мне в руки. </p>
-<p>Рассмеялись и убежали.</p>
-<p>Так тебе, языковой барьер, получай!</p></description>
         </item>
         
     </channel>
