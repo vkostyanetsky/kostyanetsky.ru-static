@@ -119,6 +119,45 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/vuejs-blog/">Блог на Vue.js</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>В середине прошлого года я <a href="https://kostyanetsky.ru/notes/so-much" target="_blank">загорелся</a> идеей переписать этот сайт на чем-то посовременнее PHP, выбрал Vue.js в качестве фреймворка и принялся за дело. JavaScript я на тот момент почти не знал, поэтому набил прорву шишек на кейсах в духе «метод вывода даты падает в Safari» — однако в итоге получил вполне жизнеспособное приложение.</p>
+<p>Ну, как жизнеспособное? С одной стороны, главное у меня получилось — я разработал клиентское веб-приложение, которое ходит на сервер только за данными, а весь интерфейс собирает само. С другой — пришлось накрутить на фреймворк целую армию <s>костылей</s> хуков даже для самых простых штук (вроде подсветки элементов меню или, скажем, выдачи правильных кодов HTTP). Кое-что я вообще с наскока реализовать не смог — например, выдачу HTML-версий страниц для Яндекса (их пауки в 2020-м году не умеют индексировать сайты на JavaScript).</p>
+<p>В общем, опыт вышел полезным, но результат — настолько спорным, что в конце концов я бросил эту затею, а получившегося Франкенштейна <a href="https://github.com/vkostyanetsky/VuejsBlog" target="_blank">выложил</a> на GitHub. Возможно, он кому-то сэкономит время на решение задач в духе «как вывести через Vue.js произвольный HTML» или «как научить VueI18n работать с русским языком».</p>
+<p>Документации там нет, правда. Я сначала хотел подробно расписать, как что работает, но быстро понял, что потрачу уйму времени без видимой пользы. Вероятно, буду возвращаться к этой теме под настроение — а пока, так сказать, ограничимся парадигмой MVP :-)</p>
+        <p class="f6 mt4">
+            21 июля 2020
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/blog/">блог</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/webdev/">вебдев</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/nodejs/">Node.js</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/javascript/">JavaScript</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/broken-bicycle/">Сломанный велосипед</a></h2>
 
             
@@ -683,33 +722,6 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/debug-via-http/">Отладка через HTTP</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>В конце недели столкнулся с довольно глупой ситуацией: отладка через TCP/IP на сервере 1С перестала работать. То есть сам по себе режим отладки включен, однако конфигуратор «не видит» контекстов отладки на сервере.</p>
-<p>Ситуация глупая в том смысле, что понять причину довольно сложно: явных ошибок платформа не выдает. После проверки очевидных вариантов (фаервол, порты и так далее) остается только руками разводить. </p>
-<p>Решил проблему, переключившись на отладку через HTTP. Инфрастуктурно это более сложная <a href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001599" target="_blank">схема</a>, но настраивается она довольно просто; если вкратце, то нужно:</p>
-<ul>
-<li>Запустить службу агента сервера с ключами «-debug -http».</li>
-<li>В параметрах отладки конфигуратором (Сервис → Параметры → Отладка) указать HTTP как протокол отладки и сервер отладки кластера как сервер отладки.</li>
-</ul>
-<p>Подробнее процесс настройки <a href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001604" target="_blank">описан</a> на ИТС.</p>
-        <p class="f6 mt4">
-            26 января 2020
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
         </p>

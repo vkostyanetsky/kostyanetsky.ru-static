@@ -119,6 +119,33 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/debug-via-http/">Отладка через HTTP</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>В конце недели столкнулся с довольно глупой ситуацией: отладка через TCP/IP на сервере 1С перестала работать. То есть сам по себе режим отладки включен, однако конфигуратор «не видит» контекстов отладки на сервере.</p>
+<p>Ситуация глупая в том смысле, что понять причину довольно сложно: явных ошибок платформа не выдает. После проверки очевидных вариантов (фаервол, порты и так далее) остается только руками разводить. </p>
+<p>Решил проблему, переключившись на отладку через HTTP. Инфрастуктурно это более сложная <a href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001599" target="_blank">схема</a>, но настраивается она довольно просто; если вкратце, то нужно:</p>
+<ul>
+<li>Запустить службу агента сервера с ключами «-debug -http».</li>
+<li>В параметрах отладки конфигуратором (Сервис → Параметры → Отладка) указать HTTP как протокол отладки и сервер отладки кластера как сервер отладки.</li>
+</ul>
+<p>Подробнее процесс настройки <a href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001604" target="_blank">описан</a> на ИТС.</p>
+        <p class="f6 mt4">
+            26 января 2020
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/unsupported-code/">Неподдерживаемый код</a></h2>
 
             
@@ -632,28 +659,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/javascript/">JavaScript</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/yomawari-night-alone/">Yomawari: Night Alone</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/Li5YQxI_WQg" width="560"></iframe>
-<p>Клевая изометрическая бродилка про город, набитый классическими японскими призраками и девочку, которая в этом городе ищет пропавшую сестру. Не слишком страшная — она, скорее, держит в напряжении. Не слишком сложная, хотя требует внимательности и концентрации (привидений много, ведут они себя по-разному, нужно смотреть по сторонам и не считать ворон). Не слишком быстрая, хотя местами всё-таки нужна хорошая реакция (особенно ближе к концу сюжетной линии).</p>
-<p>В целом оставила очень приятное ощущение проекта, в который, может, и не были вложены миллионы, но который старались сделать настолько хорошо, насколько это было возможно.</p>
-        <p class="f6 mt4">
-            30 мая 2019
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
                 </span>
             
         </p>
