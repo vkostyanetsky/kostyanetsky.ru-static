@@ -113,6 +113,30 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/myth-buster/">Развенчиватель мифов</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Попался под руку объёмный <a href="https://infostart.ru/1c/articles/2434171/" target="_blank">текст</a> на Инфостарте с «развенчанием мифов» о платформе. Заголовок бульварный, ладно, пусть. Полез читать.</p>
+<p>По сути. Половина там написана рофла ради, никак иначе это воспринимать не могу. Свежий номер! Криминал, интриги, расследования! Файловая база быстрее клиент-серверной! СКД медленнее запроса! Вызов метода сервера на сервере — новый вызов сервера! <s>НЛО над Красной площадью!</s></p>
+<p>Однако местами и правда любопытно. Например, о том, что код, слепленный в одну строку, механически работает в десять раз быстрее, я услышал впервые. Жалко, за такой отчаянный свэг коллеги побьют быстрее, чем успеешь порадоваться результату. Да и основные тормоза enterprise-приложений чаще растут из других мест.</p>
+<p>Или, скажем, сравнение скорости выгрузки в таблицу для представлений объектов и для их наименований. Первое — в десятки раз медленее! На первый взгляд странно: в конце концов, в обоих случаях у нас строки, и на момент замера они уже извлечены из базы. Думаю, что дело в типизации: строки представлений имеют неограниченную длину, в отличие от наименований. Отсюда расходы на выделение памяти, какие-то вспомогательные структуры и вот мы имеем то, что имеем.</p>
+<p>P.S. Кстати, про некоторые аспекты из статьи я где-то у себя писал. Если навскидку — помню свою попытку <a href="https://kostyanetsky.ru/notes/is-ref-empty" target="_blank">измерить</a> скорость работы ValueIsFilled() и неприятный сюрприз от встроенного <a href="https://kostyanetsky.ru/notes/method-with-surprise" target="_blank">FindByNumber()</a>.</p>
+        <p class="f6 mt4">
+            27 июля 2025
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/delete-geometry/">Удаление геометрии</a></h2>
 
             
@@ -639,38 +663,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/ai/">ИИ</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/obsidian-day-switcher/">Переключалка дней для Obsidian</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Когда активно работаешь в ежедневных заметках Obsidian'а, часто хочется сунуть нос в заметку за вчера или, наоборот, на завтра. Например, когда сортируешь сегодняшние задачи и хочешь отложить часть на завтра.</p>
-<p>Каждый раз набирать нужную дату мне лень, поэтому я написал под это <a href="https://gist.github.com/vkostyanetsky/6c70f00b817157f9b6e62ee89bade853" target="_blank">скрипт</a>. Берет дату заметки из её названия (ожидает, что она в формате <abbr title="2024-08-17, например.">ISO 8601</abbr>) и рисует выноску со ссылками на вчера и завтра для неё. В заголовке выводит день недели для дополнительного удобства:</p>
-<p><img alt="Пример" src="https://kostyanetsky.ru/notes/obsidian-day-switcher/callout.jpg"/></p>
-<p>Скрипт написан для плагина <a href="https://github.com/blacksmithgu/obsidian-dataview" target="_blank">Dataview</a>, потому что я его и так использую для других задач. Можно легко переделать его для <a href="https://github.com/SilentVoid13/Templater" target="_blank">Templater</a>, <a href="https://github.com/saml-dev/obsidian-custom-js" target="_blank">CustomJS</a> или отдельный плагин накидать (мне, опять-таки, было лень возиться). </p>
-<p>Если будете использовать: </p>
-<ol>
-<li>В функции noteLink() пропишите путь к вашей папке с ежедневными заметками (сейчас в ней папка Days для примера; путь, если забыли, указан в настройке Daily notes/New file location);</li>
-<li>Закиньте скрипт в шаблон ежедневной заметки (настройка Daily notes/Template file location).</li>
-</ol>
-        <p class="f6 mt4">
-            17 августа 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/obsidian/">Obsidian</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/javascript/">JavaScript</a>
                 </span>
             
         </p>

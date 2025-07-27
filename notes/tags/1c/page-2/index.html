@@ -119,6 +119,33 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/do-not-confuse/">Смотри не перепутай</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p><img alt="Код" src="https://kostyanetsky.ru/notes/do-not-confuse/do-not-confuse.png"/></p>
+<p>Если вид операции — продажа товара или недвижимости, то открой общую форму AdvancesPickFormWithVAT с параметрами, описанными в структуре PickParameters. Колбеком будет метод EditPrepaymentOffsetEnd, описанный в этом же модуле; передай ему структуру AdditionalParameters. Форму нужно открыть так, чтобы она заблокировала весь интерфейс.</p>
+<p>А вот если вид операции — возврат поставщику, то открой общую форму AdvancesPickFormWithVAT с параметрами, описанными в структуре PickParameters. Колбеком будет метод EditPrepaymentOffsetEnd, описанный в этом же модуле; передай ему структуру AdditionalParameters. Форму нужно открыть так, чтобы она заблокировала весь интерфейс.</p>
+<p>Смотри не перепутай.</p>
+        <p class="f6 mt4">
+            16 марта 2022
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/code-smell/">код с запашком</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/reuse-carefully/">Переиспользуйте с осторожностью</a></h2>
 
             
@@ -708,36 +735,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/bash/">bash</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/old-but-gold/">Старый добрый DATETIME</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Порылся в сети по поводу типов дат в MS SQL Server и в целом вопроса «почему 1С до сих пор носится со своим смещением» больше не имею. Люди пишут о целой пачке проблем с DATETIME2:</p>
-<ol>
-<li>Недоступна базовая математика. Без дополнительных финтов ушами не выйдет посчитать разницу между двумя датами, прибавить к дате день и так далее.</li>
-<li>Стандартные функции по-прежнему возвращают старый добрый DATETIME (например, DATEADD). Если данные хранятся в DATETIME2 — потребуется конвертация.</li>
-<li>Поля с этим типом <a href="https://sqlperformance.com/2016/04/sql-performance/surprises-dateadd" target="_blank">неважно</a> индексируются, так как каждое значение DATETIME2 хранится задом наперед (сначала время, потом дата). В итоге СУБД промахивается с оценкой количества строк, которое может вернуть запрос, и строит для него неэффективный план выполнения.</li>
-</ol>
-<p>Подробнее о всем этом можно прочитать на <a href="https://towardsdatascience.com/datetime2-why-you-should-not-use-it-70e50ae2bab9" target="_blank">Towards Data Science</a> или, например, на <a href="https://www.sqlservercentral.com/forums/topic/why-do-some-dbas-avoid-datetime2" target="_blank">SQL Server Central</a>.</p>
-        <p class="f6 mt4">
-            11 ноября 2020
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/mssql/">MS SQL</a>
                 </span>
             
         </p>
