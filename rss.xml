@@ -11,7 +11,7 @@
             <link>https://kostyanetsky.ru/notes/data-history-missing-indexes</link>
             <guid isPermaLink="false">note-data-history-missing-indexes</guid>
             <pubDate>Sun, 03 Aug 2025 16:25:35 +0700</pubDate>
-            <description><p>Коллега заметил, что на одном из инстансов нашего фреша удаление областей стало идти прямо-таки трагически долго. Полезли в метрики. </p>
+            <description><p>Коллега заметил, что на одном из инстансов нашего фреша удаление областей стало идти прямо-таки трагически долго. Что в метриках? Вот это:</p>
 <pre>
 DELETE FROM T1
 FROM _DataHistoryMetadata T1
