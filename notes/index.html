@@ -113,6 +113,67 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/data-history-missing-indexes/">Медленное удаление областей Фреша</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Коллега заметил, что на одном из инстансов нашего фреша удаление областей стало идти прямо-таки трагически долго. Полезли в метрики. </p>
+<pre>
+DELETE FROM T1
+FROM _DataHistoryMetadata T1
+WHERE 
+    T1._MetadataId = ?
+    AND T1._IsActual = 0x00 
+    AND NOT (
+        T1._MetadataVersionNumber IN (
+            SELECT T2._MetadataVersionNumber AS MetadataVersionNumber_
+            FROM _DataHistoryVersions T2
+            WHERE T2._HistoryDataId IN (
+                SELECT DataHistoryLatestVersions1.DataHistoryLatestVersions._HistoryDataId AS HistoryDataId_
+                FROM DataHistoryLatestVersions1.DataHistoryLatestVersions T3
+                WHERE DataHistoryLatestVersions1.DataHistoryLatestVersions._MetadataId = ?
+            )
+        )
+    )
+</pre>
+<p>Каждый такой запрос читает порядка двадцати гигабайт данных из таблицы истории данных. Что тут происходит — примерно понятно: платформа пытается удалить историю данных области и кривой запрос к БД приводит к сканированию всей таблицы по всем областям вместо быстрого поиска по индексу. Кто-то на Дмитровском опять поленился.</p>
+<p><a href="https://x.com/EffinBirds/status/1945545263407301033" target="_blank"><img alt="Чему ты удивлён?" src="https://kostyanetsky.ru/notes/data-history-missing-indexes/why.png"/></a></p>
+<p>В общем, теряем от тридцати секунд до полутора минут на действие. Хотелось бы побыстрее. Решение:</p>
+<pre>
+CREATE NONCLUSTERED INDEX IX_DataHistoryLatestVersions1_MetadataId
+  ON dbo._DataHistoryLatestVersions1 (_MetadataId)
+  INCLUDE (_HistoryDataId)
+  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
+
+CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
+  ON dbo._DataHistoryVersions (_MetadataVersionNumber)
+  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
+</pre>
+<p>Стоимость удаления области ожидаемо просела на ~99%.</p>
+<p>Если будете повторять у себя — помните, что:</p>
+<ol>
+<li>Формально такой трюк нарушает лицензионное соглашение, you've been warned и всё такое.</li>
+<li>Есть риск, что платформа при будущих реструктуризациях будет спотыкаться о новые индексы (особенно при работе по «новой» схеме). Лучше иметь под рукой готовый скрипт, который сможет грохнуть индекс, а потом (после реструктуризации) — вернуть обратно.</li>
+</ol>
+        <p class="f6 mt4">
+            3 августа 2025
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/myth-buster/">Развенчиватель мифов</a></h2>
 
             
@@ -635,34 +696,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/meanwhile/">тем временем</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/first-pancake/">Мой первый подход к генеративкам</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Понадобилось по-быстрому наделать картинок для одного пет-проекта. Развернул первое, что под руку попалось — <a href="https://huggingface.co/hakurei/waifu-diffusion" target="_blank">WaifuDiffusion</a> (это такой клон <a href="https://huggingface.co/stabilityai/stable-diffusion-3-medium" target="_blank">StableDiffusion</a>, но обученный на аниме и манге).</p>
-<p>Запрос: </p>
-<blockquote>
-<p>A dimly lit, empty classroom with faintly visible music notes on the chalkboard. A young woman with long blue hair and blue eyes, is standing behind the teacher's desk, packing her things into a small handbag. She looks tired and worried.</p>
-</blockquote>
-<p>Результат:</p>
-<p><img alt="Молодая женщина" src="https://kostyanetsky.ru/notes/first-pancake/young-woman.jpg"/></p>
-<p>Кажется, это отличный повод поговорить о том, как далеко вперед шагнули нейросети! Модель с порога раскусила задумку и предложила ввести в сюжет... Хм... Мудрого бородача? Или, возможно, намекнула, что я должен больше ценить неожиданные сюрпризы?</p>
-<p>Думаю, WaifuDiffusion просто решила поднять мне настроение. Смех, говорят, продлевает жизнь. В любом случае, первую генерацию считаю успешной! Но над калибровкой явно придется поработать еще :)</p>
-        <p class="f6 mt4">
-            25 августа 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/ai/">ИИ</a>
                 </span>
             
         </p>

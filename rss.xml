@@ -4,7 +4,52 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Sun, 27 Jul 2025 12:21:32 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 03 Aug 2025 16:25:35 +0700</lastBuildDate>
+        
+        <item>
+            <title>Медленное удаление областей Фреша</title>
+            <link>https://kostyanetsky.ru/notes/data-history-missing-indexes</link>
+            <guid isPermaLink="false">note-data-history-missing-indexes</guid>
+            <pubDate>Sun, 03 Aug 2025 16:25:35 +0700</pubDate>
+            <description><p>Коллега заметил, что на одном из инстансов нашего фреша удаление областей стало идти прямо-таки трагически долго. Полезли в метрики. </p>
+<pre>
+DELETE FROM T1
+FROM _DataHistoryMetadata T1
+WHERE 
+    T1._MetadataId = ?
+    AND T1._IsActual = 0x00 
+    AND NOT (
+        T1._MetadataVersionNumber IN (
+            SELECT T2._MetadataVersionNumber AS MetadataVersionNumber_
+            FROM _DataHistoryVersions T2
+            WHERE T2._HistoryDataId IN (
+                SELECT DataHistoryLatestVersions1.DataHistoryLatestVersions._HistoryDataId AS HistoryDataId_
+                FROM DataHistoryLatestVersions1.DataHistoryLatestVersions T3
+                WHERE DataHistoryLatestVersions1.DataHistoryLatestVersions._MetadataId = ?
+            )
+        )
+    )
+</pre>
+<p>Каждый такой запрос читает порядка двадцати гигабайт данных из таблицы истории данных. Что тут происходит — примерно понятно: платформа пытается удалить историю данных области и кривой запрос к БД приводит к сканированию всей таблицы по всем областям вместо быстрого поиска по индексу. Кто-то на Дмитровском опять поленился.</p>
+<p><a href="https://x.com/EffinBirds/status/1945545263407301033" target="_blank"><img alt="Чему ты удивлён?" src="https://kostyanetsky.ru/notes/data-history-missing-indexes/why.png"/></a></p>
+<p>В общем, теряем от тридцати секунд до полутора минут на действие. Хотелось бы побыстрее. Решение:</p>
+<pre>
+CREATE NONCLUSTERED INDEX IX_DataHistoryLatestVersions1_MetadataId
+  ON dbo._DataHistoryLatestVersions1 (_MetadataId)
+  INCLUDE (_HistoryDataId)
+  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
+
+CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
+  ON dbo._DataHistoryVersions (_MetadataVersionNumber)
+  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
+</pre>
+<p>Стоимость удаления области ожидаемо просела на ~99%.</p>
+<p>Если будете повторять у себя — помните, что:</p>
+<ol>
+<li>Формально такой трюк нарушает лицензионное соглашение, you've been warned и всё такое.</li>
+<li>Есть риск, что платформа при будущих реструктуризациях будет спотыкаться о новые индексы (особенно при работе по «новой» схеме). Лучше иметь под рукой готовый скрипт, который сможет грохнуть индекс, а потом (после реструктуризации) — вернуть обратно.</li>
+</ol></description>
+        </item>
         
         <item>
             <title>Развенчиватель мифов</title>
@@ -120,15 +165,6 @@
 <p>Пересобрали права, перезапустили кластер, проблема ушла.</p>
 <p><img alt="End of Report" src="https://kostyanetsky.ru/notes/bit-of-surgery/report.jpeg"/></p>
 <p>Остальные гипотезы (буйство менеджера кластера, недостаток аппаратных ресурсов, программные ошибки конфигурации, ошибки клиентского процесса, кривая отработка security profile, проблемы c сетью между клиентом и сервером) отбросили по ходу диагностики.</p></description>
-        </item>
-        
-        <item>
-            <title>Смутно знакомый логотип</title>
-            <link>https://kostyanetsky.ru/notes/vaporia</link>
-            <guid isPermaLink="false">note-vaporia</guid>
-            <pubDate>Sat, 14 Dec 2024 17:37:06 +0700</pubDate>
-            <description><p><del>Тем временем OpenAI открыл в Тбилиси филиал</del> На самом деле тут вейпами торгуют, а дизайнер логотипа, скорее всего, вдохновлялся клубами пара. Но каждый раз, как мимо хожу, глаз цепляется :)</p>
-<p><img alt="Vaporia" src="https://kostyanetsky.ru/notes/vaporia/vaporia.jpg"/></p></description>
         </item>
         
     </channel>

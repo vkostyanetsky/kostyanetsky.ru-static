@@ -113,6 +113,67 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/data-history-missing-indexes/">Медленное удаление областей Фреша</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Коллега заметил, что на одном из инстансов нашего фреша удаление областей стало идти прямо-таки трагически долго. Полезли в метрики. </p>
+<pre>
+DELETE FROM T1
+FROM _DataHistoryMetadata T1
+WHERE 
+    T1._MetadataId = ?
+    AND T1._IsActual = 0x00 
+    AND NOT (
+        T1._MetadataVersionNumber IN (
+            SELECT T2._MetadataVersionNumber AS MetadataVersionNumber_
+            FROM _DataHistoryVersions T2
+            WHERE T2._HistoryDataId IN (
+                SELECT DataHistoryLatestVersions1.DataHistoryLatestVersions._HistoryDataId AS HistoryDataId_
+                FROM DataHistoryLatestVersions1.DataHistoryLatestVersions T3
+                WHERE DataHistoryLatestVersions1.DataHistoryLatestVersions._MetadataId = ?
+            )
+        )
+    )
+</pre>
+<p>Каждый такой запрос читает порядка двадцати гигабайт данных из таблицы истории данных. Что тут происходит — примерно понятно: платформа пытается удалить историю данных области и кривой запрос к БД приводит к сканированию всей таблицы по всем областям вместо быстрого поиска по индексу. Кто-то на Дмитровском опять поленился.</p>
+<p><a href="https://x.com/EffinBirds/status/1945545263407301033" target="_blank"><img alt="Чему ты удивлён?" src="https://kostyanetsky.ru/notes/data-history-missing-indexes/why.png"/></a></p>
+<p>В общем, теряем от тридцати секунд до полутора минут на действие. Хотелось бы побыстрее. Решение:</p>
+<pre>
+CREATE NONCLUSTERED INDEX IX_DataHistoryLatestVersions1_MetadataId
+  ON dbo._DataHistoryLatestVersions1 (_MetadataId)
+  INCLUDE (_HistoryDataId)
+  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
+
+CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
+  ON dbo._DataHistoryVersions (_MetadataVersionNumber)
+  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
+</pre>
+<p>Стоимость удаления области ожидаемо просела на ~99%.</p>
+<p>Если будете повторять у себя — помните, что:</p>
+<ol>
+<li>Формально такой трюк нарушает лицензионное соглашение, you've been warned и всё такое.</li>
+<li>Есть риск, что платформа при будущих реструктуризациях будет спотыкаться о новые индексы (особенно при работе по «новой» схеме). Лучше иметь под рукой готовый скрипт, который сможет грохнуть индекс, а потом (после реструктуризации) — вернуть обратно.</li>
+</ol>
+        <p class="f6 mt4">
+            3 августа 2025
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/myth-buster/">Развенчиватель мифов</a></h2>
 
             
@@ -668,57 +729,6 @@ EndIf;
 <p>Ну а я стараюсь смотреть на вещи с оптимизмом. Думаю, платформа и её IDE — это такие карьерные самосвалы. Никто в здравом уме на них по домашним делам не катает, но на разрезе эти звери незаменимы!</p>
         <p class="f6 mt4">
             20 февраля 2023
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/shaken-not-stirred/">Взболтать, но не смешивать</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Затрем немного про организацию кода. Если вам нужно где-то описать множество объектов с общими свойствами — подумайте, не стоит ли подробить описание на отдельные методы, каждый из которых будет описывать один конкретный объект?</p>
-<p>Посмотрим на пример — метод, который описывает табличные части документов, пригодные для какой-то задачи. Что-то вроде:</p>
-<pre><code>SupportedTypes["Document.SupplierPricesEntering"]   = "Prices";
-SupportedTypes["Document.OpeningBalancesEntering"]  = "CustomerAccounts,VendorAccounts";
-SupportedTypes["Document.Requisition"]              = "InventoryAndServices";
-</code></pre>
-<p>Вроде всё в порядке, так? Описания есть, табличные части перечислены, посплитить их по запятой — считай, бесплатно.</p>
-<p>Однако документов в методе описано много. Рано или поздно какому-нибудь коллеге (или вам самим) понадобится добавить ещё одну табличную часть для документа, который уже описан в методе. Его что-то отвлечет, он забудет поискать существующую строку и получится что-то вроде:</p>
-<pre><code>SupportedTypes["Document.SupplierPricesEntering"]   = "Prices";
-SupportedTypes["Document.OpeningBalancesEntering"]  = "CustomerAccounts,VendorAccounts";
-SupportedTypes["Document.Requisition"]              = "InventoryAndServices";
-
-&lt;...&gt;
-
-SupportedTypes["Document.OpeningBalancesEntering"]  = "PayrollDeductions";
-</code></pre>
-<p>В результате пара табличных частей выпадет из описания, и хорошо, если связанный функционал покрыт тестами.</p>
-<p>Вывод? Ну, можно написать метод-хелпер, который будет принимать на вход тип документа и имя <strong>одной</strong> табличной части. Хелпер будет заполнять соответствие SupportedTypes и следить за тем, чтобы уже добавленные в него данные не были потеряны.</p>
-<p>А если совсем по фен-шую, лучше поступить так, как я написал в начале заметки: разделить метод на отдельные вспомогательные методы, каждый из которых будет описывать только табличные части по одному документу. Что-то вроде:</p>
-<pre><code>Procedure AddOpeningBalancesEnteringDocument(SupportedTypes)
-
-    TabularSections = New Array;
-
-    TabularSections.Add("CustomerAccounts");
-    TabularSections.Add("VendorAccounts");
-    TabularSections.Add("PayrollDeductions");
-
-    SupportedTypes["Document.Requisition"] = StrConcat(TabularSections, ",");
-
-EndProcedure
-</code></pre>
-<p>Так и описание документа никто случайно не сотрет, и Сонар будет доволен. А вот случае реализации хелпера он, скорее всего, примется ругаться на повторяющиеся литералы с именами табличных частей.</p>
-        <p class="f6 mt4">
-            7 августа 2022
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
