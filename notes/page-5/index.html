@@ -119,6 +119,36 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/rclone-abuser/">Скрипт для синхронизации c NAS</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Выложил на GitHub <a href="https://github.com/vkostyanetsky/RCloneAbuser" target="_blank">скрипт</a> на Python, который я использую для синхронизации файлов между своим компьютером и домашним NAS'ом. У меня стоит Synology DS220j; с ним так-то идет целый вагон софта и в том числе утилита, которая умеет гонять файлы туда-сюда по расписанию. Однако сделана она, похоже, чисто для галочки: программа принялась глючить ещё на этапе настройки, после чего доверие к ней я потерял.</p>
+<p>В общем, какое-то время я помучался с решениями конкурентов и в итоге вернулся к привычному <a href="https://rclone.org" target="_blank">rclone</a>, с которым было всего две проблемы. Во-первых, нельзя нормально соединиться с SMB-шарой: да, логин и пароль можно сохранить в Windows и rclone будет их использовать, но они будут слетать при каждом удобном случае. Я вышел из положения, подключив шару как внешний диск.</p>
+<p>Во-вторых, файлов и папок для синхронизации у меня оказалось много: директория здесь, директория там, конфиг оттуда, профиль отсюда… Чтобы не плодить лапшу, я накатал простой скрипт, который берет из конфига источники и приемники, а потом для каждого вызывает rclone по одному и тому же шаблону.</p>
+        <p class="f6 mt4">
+            7 июня 2021
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/python/">Python</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/workplace/">рабочее место</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/1c-expert/">Как готовиться к 1С:Эксперту</a></h2>
 
             
@@ -699,40 +729,6 @@
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/unresolved-gopher/">Неразрешимые ссылки на функциональные опции</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Приведу вариант решения проблемы <a href="https://kostyanetsky.ru/notes/unresolved-references" target="_blank">неразрешимых ссылок</a>, возникший после удаления функциональной опции. Вводная — при проверке конфигурации получаю десятка два сообщений вида:</p>
-<pre><code>CommonForm.PersonalSettings.Form Unresolved metadata object references (2)
-Catalog.BankAccounts.Form.GLAccountsEditForm.Form Unresolved metadata object references (1)
-Catalog.CashRegisters.Form.GLAccountsEditForm.Form Unresolved metadata object references (1)
-</code></pre>
-<p>Выгружаю конфигурацию в файлы, открываю Form.xml для одной из проблемных форм. Начинаю с той, где элементов немного — так проблему заметить будет проще.</p>
-<p>Бегло просматриваю файл в поисках чего-то необычного. Искать долго не приходится:</p>
-<p><img alt="Подозреваемый" src="https://kostyanetsky.ru/notes/unresolved-gopher/suspect.png"/></p>
-<p>Нормальная ссылка на функциональную опцию — её имя (как в случае DepreciationOfAssets). А вот если вместо имени указан GUID — этой функциональной опции в конфигурации нет. Ссылка неразрешима.</p>
-<p>Делаю поиск этого GUID'а по остальной выгрузке и нахожу почти все проблемы, на которые ссылалась платформа при проверке. Решить их легко: удалить битую ссылку из XML, а потом загрузить файл обратно в конфигурацию. Можно ещё проще: открыть список функциональных опций для элемента формы и тут же сохранить его. В этом случая битая ссылка также будет удалена.</p>
-<p>Почему искать таких потеряшек через сам Конфигуратор — занятие для клинических оптимистов? Да просто проблему почти невозможно заметить. В лучшем случае вы увидите что-то в духе:</p>
-<p><img alt="Настоящая улика" src="https://kostyanetsky.ru/notes/unresolved-gopher/evidence.png"/></p>
-<p>Конфигуратор понимает, что в поле две опции, но получить название для второй не может (её нет). А ведь чаще всего функциональная опция только одна! И картина выглядит так:</p>
-<p><img alt="Ваша честь, я невиновен!" src="https://kostyanetsky.ru/notes/unresolved-gopher/innocent.png"/></p>
-<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/EHX7NZS8zAI" width="560"></iframe>
-        <p class="f6 mt4">
-            19 августа 2020
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
                 </span>
             
         </p>

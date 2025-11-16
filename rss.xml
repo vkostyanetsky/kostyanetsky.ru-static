@@ -4,7 +4,17 @@
         <description>Привет! Меня зовут Влад, я — разработчик приложений для бизнеса.</description>
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
-        <lastBuildDate>Sun, 05 Oct 2025 23:54:12 +0700</lastBuildDate>
+        <lastBuildDate>Sun, 16 Nov 2025 11:24:00 +0700</lastBuildDate>
+        
+        <item>
+            <title>Сложности</title>
+            <link>https://kostyanetsky.ru/notes/difficulties</link>
+            <guid isPermaLink="false">note-difficulties</guid>
+            <pubDate>Sun, 16 Nov 2025 11:24:00 +0700</pubDate>
+            <description><p>Гуляю вечером, сзади идут какая-то мама и ее мелкий — лет пяти, наверное. Я их не вижу, просто слышу разговор. Мама объясняет ребенку про университет: мол, туда надо поступить, учиться, будут экзамены и всё такое.</p>
+<p>Мальчик молчит, потом расстроенно выдает:</p>
+<p>— Я думал, есть только школа, а оказывается есть ещё сложности...</p></description>
+        </item>
         
         <item>
             <title>Шаманство</title>
@@ -165,17 +175,6 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
             <pubDate>Sat, 18 Jan 2025 23:25:22 +0700</pubDate>
             <description><p><img alt="Код" src="https://kostyanetsky.ru/notes/safe-code/code.jpg"/></p>
 <p>Где-то на улицах Тбилиси. Как большой фанат серии Dishonored — не смог пройти мимо. Уверен, поблизости есть сейф, к которому этот код подходит!</p></description>
-        </item>
-        
-        <item>
-            <title>Уходи, негатив!</title>
-            <link>https://kostyanetsky.ru/notes/negativity</link>
-            <guid isPermaLink="false">note-negativity</guid>
-            <pubDate>Sun, 29 Dec 2024 23:09:32 +0700</pubDate>
-            <description><p><img alt="Чичилаки" src="https://kostyanetsky.ru/notes/negativity/chichilaki.jpg"/></p>
-<p>Белые штуки на заднем плане называются чичилаки. Это что-то вроде грузинской новогодней ёлки (де-факто, тщательно наструганный орешник). Считается, что он собирает на себя весь накопившийся негатив, так что после праздников его положено сжечь (вместе с негативом).</p>
-<p>Последнее, как оказалось, задача со звездочкой. Местная полиция (и особенно пожарка) относится к этой старой доброй традиции с подозрением, и их можно понять (чичилаки бывает и в рост человека, факел выйдет — будь здоров).  Так что «заряженную» негативом чичилаки нам посоветовали просто выкинуть в мусорку, чтобы не нажить свежих проблем. Или сдать в зоопарк: животные ими играют и зубы чистят.</p>
-<p>Последнее позабавило. Избавиться от негатива помогают котики, какая неожиданность. Да, здоровенные и повышенной зубастости, но всё же!</p></description>
         </item>
         
     </channel>
