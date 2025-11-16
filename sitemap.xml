@@ -190,6 +190,13 @@
     </url>
     
     <url>
+        <loc>https://kostyanetsky.ru/notes/well-there-are-some</loc>
+        <lastmod>2025-11-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
         <loc>https://kostyanetsky.ru/notes/bablox</loc>
         <lastmod>2019-10-20</lastmod>
         <changefreq>weekly</changefreq>
@@ -654,13 +661,6 @@
     <url>
         <loc>https://kostyanetsky.ru/notes/object-locks</loc>
         <lastmod>2019-04-22</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    
-    <url>
-        <loc>https://kostyanetsky.ru/notes/there-are-some</loc>
-        <lastmod>2025-11-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
