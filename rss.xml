@@ -11,7 +11,7 @@
             <link>https://kostyanetsky.ru/notes/obsidian-foodiary-bases</link>
             <guid isPermaLink="false">note-obsidian-foodiary-bases</guid>
             <pubDate>Sun, 23 Nov 2025 00:01:58 +0700</pubDate>
-            <description><p>Переписал с помощью <a href="https://help.obsidian.md/bases" target="_blank">Obsidian Bases</a> свой прошлогодний <a href="https://kostyanetsky.ru/notes/obsidian-foodiary" target="_blank">плагин</a>, считающий калориии, белки, жиры и углеводы в пище. Получилось сильно более гибкая и настраиваемая штука, чем в виде плагина — не нужно ничего переписывать, собирать и релизить, если вдруг решил посчитать клетчатку в еде или просто подвигать колонки в отчёте.</p>
+            <description><p>Переписал с помощью <a href="https://help.obsidian.md/bases" target="_blank">Obsidian Bases</a> свой прошлогодний <a href="https://kostyanetsky.ru/notes/obsidian-foodiary" target="_blank">плагин</a>, считающий калории, белки, жиры и углеводы в пище. Получилось сильно более гибкая и настраиваемая штука, чем в виде плагина — не нужно ничего переписывать, собирать и релизить, если вдруг решил посчитать клетчатку в еде или просто подвигать колонки в отчёте.</p>
 <p>Ну и симпатичная, да:</p>
 <p><img alt="UI" src="https://kostyanetsky.ru/notes/obsidian-foodiary-bases/base.png"/></p>
 <p>Все необходимые настройки и скрипты — в <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases" target="_blank">репозитории</a> на Github'е; инструкция <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases/blob/main/README.ru.md" target="_blank">переведена</a> на русский язык.</p></description>
