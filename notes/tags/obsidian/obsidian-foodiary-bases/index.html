@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Таймшит для Обсидиана</title>
+    <title>Дневник питания в Obsidian Bases</title>
 
-    <meta name="description" content="Написал плагин для генерации отчета о работе за день в Обсидиане." />
+    <meta name="description" content="Написал расчета калорийность еды с помощью Obsidian Bases" />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Таймшит для Обсидиана"/>
-    <meta property="og:description" content="Написал плагин для генерации отчета о работе за день в Обсидиане."/>
+    <meta property="og:title" content="Дневник питания в Obsidian Bases"/>
+    <meta property="og:description" content="Написал расчета калорийность еды с помощью Obsidian Bases"/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/obsidian-timesheet" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/obsidian-foodiary-bases" />    
 
     <!-- Tachyons -->
 
@@ -41,8 +41,8 @@
 
         let ctrlUpUrl       = '';
         let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/typescript/obsidian-foodiary';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/tags/typescript/obsidian-foodiary-bases';
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/obsidian/obsidian-day-switcher';
+        let ctrlRightUrl    = '';
 
     </script>
     
@@ -83,7 +83,7 @@
     <nav class="dtc-l v-mid tc tr-l">
 
         
-            <a href="https://kostyanetsky.me/notes/obsidian-timesheet" class="link f5 f5-ns dim blue bb">EN</a>
+            <a href="https://kostyanetsky.me/notes/obsidian-foodiary-bases" class="link f5 f5-ns dim blue bb">EN</a>
         
 
         
@@ -91,7 +91,7 @@
             <div class="mt3">
 
             
-                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/obsidian-timesheet/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/obsidian-foodiary-bases/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
             
 
             </div>
@@ -107,31 +107,28 @@
 
     <article>    
                     
-        <h1 class="f-subheadline lh-solid">Таймшит для Обсидиана</h1>
+        <h1 class="f-subheadline lh-solid">Дневник питания в Obsidian Bases</h1>
             
         
     
     <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Написал ещё один плагин к <a href="https://obsidian.md" target="_blank">Obsidian</a>, на этот раз — для <a href="https://help.obsidian.md/Plugins/Daily+notes" target="_blank">ежедневных заметок</a>. Рисует симпатичный отчет: над какими задачами работал, что сделал, сколько времени потратил. Я постарался описать в <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">репозитории</a>, как это работает; буду рад, если кому-то ещё пригодится!</p>
-<p>Забавный момент: для примеров в README я использовал номера задач FBI-1, FBI-2 и так далее. Это не отсылка к X-Files или Twin Peaks — просто первое, что пришло мне в голову. Дело в том, что наш внутренний проект по разработке FirstBit ERP называется First Bit Internal, сокращенно — FBI. Основной пул задач, над которыми мы работаем, живёт именно в нём.</p>
-<p>Мы-то уже привыкли, но коллег вне компании наши скриншоты из JIRA или SonarQube неизменно веселят. Представили, что вы — агент Купер? А мне и представлять не надо :)</p>
+        <p>Переписал с помощью <a href="https://help.obsidian.md/bases" target="_blank">Obsidian Bases</a> свой прошлогодний <a href="https://kostyanetsky.ru/notes/obsidian-foodiary" target="_blank">плагин</a>, считающий калориии, белки, жиры и углеводы в пище. Получилось сильно более гибкая и настраиваемая штука, чем в виде плагина — не нужно ничего переписывать, собирать и релизить, если вдруг решил посчитать клетчатку в еде или просто подвигать колонки в отчёте.</p>
+<p>Ну и симпатичная, да:</p>
+<p><img alt="UI" src="https://kostyanetsky.ru/notes/obsidian-foodiary-bases/base.png"/></p>
+<p>Все необходимые настройки и скрипты — в <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases" target="_blank">репозитории</a> на Github'е; инструкция <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases/blob/main/README.ru.md" target="_blank">переведена</a> на русский язык.</p>
         <p class="f6 mt4">
-            12 мая 2024
+            23 ноября 2025
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/typescript/">TypeScript</a>
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/typescript/">TypeScript</a>
                 </span>
             
                 <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/obsidian/">Obsidian</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/obsidian/">Obsidian</a>
                 </span>
             
         </p>
@@ -144,11 +141,9 @@
             <p class="mt5 mb3 f6">
 
                 
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/typescript/obsidian-foodiary">Фудиари для Обсидиана</a> &larr;
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/obsidian/obsidian-day-switcher">Переключалка дней для Obsidian</a> &larr;
                 
                 Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/typescript/obsidian-foodiary-bases">Дневник питания в Obsidian Bases</a>
                                 
 
             </p> 

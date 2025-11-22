@@ -113,6 +113,37 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/obsidian-foodiary-bases/">Дневник питания в Obsidian Bases</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Переписал с помощью <a href="https://help.obsidian.md/bases" target="_blank">Obsidian Bases</a> свой прошлогодний <a href="https://kostyanetsky.ru/notes/obsidian-foodiary" target="_blank">плагин</a>, считающий калориии, белки, жиры и углеводы в пище. Получилось сильно более гибкая и настраиваемая штука, чем в виде плагина — не нужно ничего переписывать, собирать и релизить, если вдруг решил посчитать клетчатку в еде или просто подвигать колонки в отчёте.</p>
+<p>Ну и симпатичная, да:</p>
+<p><img alt="UI" src="https://kostyanetsky.ru/notes/obsidian-foodiary-bases/base.png"/></p>
+<p>Все необходимые настройки и скрипты — в <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases" target="_blank">репозитории</a> на Github'е; инструкция <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases/blob/main/README.ru.md" target="_blank">переведена</a> на русский язык.</p>
+        <p class="f6 mt4">
+            23 ноября 2025
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/typescript/">TypeScript</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/obsidian/">Obsidian</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/creepy-graveyard/">Жуткое кладбище</a></h2>
 
             
@@ -737,49 +768,6 @@
             
                 <span class="pl2">
                     <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/one-query-to-rule-them-all/">Один запрос, что правит всеми</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Истории ради <a href="https://gist.github.com/vkostyanetsky/ddb286da9674b05d014389bed3b022c4" target="_blank">закинул</a> на Github Gist один из неоптимальных запросов, с которыми возился несколько месяцев назад. Он использовался для динамического списка в форме элемента справочника и, когда пользователь открывал вкладку с этим списком, платформа погружалась в медитацию даже в относительно небольшой базе.</p>
-<p>На первый взгляд структура запроса простая и четкая: пачка запросов к таблицам документов, соединяемых через ОБЪЕДИНИТЬ ВСЁ. Каждая из таблиц фильтруется по примерно одинаковым условиям — тип ссылки, дата и вхождение ссылки в результат подзапроса.</p>
-<p>Однако потенциальных проблем тут сразу несколько. Во-первых, работа идет как минимум с 14-ю таблицами — по числу соединяемых запросов. Это само по себе повышает риск того, что оптимизатор не успеет подобрать хотя бы относительно приличный план выполнения. Скорее всего, он просто ткнет пальцем в небо, а дальше — как повезет.</p>
-<p>Во-вторых, большая часть этой работы, вероятно, будет выполняться впустую. Каждый из запросов содержит примерно такую конструкцию:</p>
-<pre><code>WHERE VALUETYPE(AdditionalExpenses.Ref) IN (&amp;DocumentsListSelectedTypes)
-</code></pre>
-<p>То есть в динамический список передается список типов документов, которые требуется вывести. Однако это условие будет наложено <strong>после</strong> выборки данных, и если пользователю нужны только инвойсы — СУБД все равно сначала выгребет все 14 таблиц, а потом отбросит 13 из них.</p>
-<p>Но это всё не так критично. Если бы список проблем этим и ограничивался, мы, возможно, и не полезли бы разбираться. Главная проблема — во втором условии секций WHERE: каждый запрос проверяет вхождение ссылки на документ в результат подзапроса.</p>
-<p>Использование вложенного запроса в условиях — само по себе почти табу, если речь идет не о временных таблицах: СУБД часто не в состоянии понять, сколько данных вернет подзапрос и, соответственно, какой способ работы с ними подойдет лучше. Однако тут это ещё и усугубляется тем, к какому источнику данных мы делаем запрос. Критерий отбора — это не таблица в базе данных, которую можно прочитать, пусть даже со сканом — это набор таблиц. В критерии отбора DocumentsByProject их тридцать!</p>
-<p>В этом месте можно было бы сказать «занавес», но нужно добавить, что выборку из тридцати таблиц по определенному типу документа делает каждый из четырнадцати соединяемых запросов.</p>
-<p><img alt="OMG" src="https://media.giphy.com/media/oYtVHSxngR3lC/giphy.gif"/></p>
-<p>Вот теперь занавес :-)</p>
-        <p class="f6 mt4">
-            25 июля 2020
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/optimization/">оптимизация</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
                 </span>
             
         </p>
