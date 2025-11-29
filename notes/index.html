@@ -113,6 +113,50 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/desire-paths/">Протоптанные дорожки</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Ладно, загадка Жана Фреско. У вас есть таблица, скажем, на 50 тысяч строк. Как прочитать из неё полмиллиарда?</p>
+<p>Раз плюнуть, Nested Loops + Clustered Index Seek:</p>
+<p><img alt="Полмиллиарда" src="https://kostyanetsky.ru/notes/desire-paths/500_million.png"/></p>
+<p>От Clustered Index Seek тут одно название, конечно. Фактически оператор при каждом исполнении пробегает по всей таблице (всему кластерному индексу) и сверяет каждую запись с Predicates. И так — 10 730 раз для 51 391 записей. В итоге 551 425 430 строк прочитали, 13 343 вернули.</p>
+<p><img alt="Ох" src="https://kostyanetsky.ru/notes/desire-paths/ouch.gif"/></p>
+<p>Короче, идеальный пример плохого плана запроса в вакууме, хоть сейчас тащи в палату мер и весов. Nested Loops, если кто позабыл, работает примерно так:</p>
+<pre>
+For Each Table1Row In Table1 Do
+    For Each Table2Row In Table2 Do
+        ...
+</pre>
+<p>Это ОК для мелких таблиц, но СУБД может его применить и для таблиц поболбше — например, если ей не хватает времени на построение плана.</p>
+<p>Это и произошло в нашем случае. Прыгнем повыше, на уровень платформы: тут у нас динамический список с запросом по таблице документа, к которой разработчики прицепили с десяток виртуальных таблиц регистров накопления.</p>
+<p>Некоторые регистры и сами по себе были здоровенными, а виртуальные таблицы дополнительно поддали жару (каждая превращается в 2+ вложенных запроса). СУБД честно пыталась придумать эффективный алгоритм, но в какой-то момент решала, что хреновый план запроса всё же лучше, чем вообще никакого.</p>
+<p>В итоге пользователь что? Пытался поискать документ по номеру и клиентское приложение просто-напросто зависало.</p>
+<p>Короче, по поводу виртуальных таблиц в динамических списках. В английском есть выражение «desire path», «протоптанная дорожка». Часто прицепить виртуальную таблицу к основной — и в самом деле самый простой, быстрый и привычный способ решить задачу. Но он <strong>не эффективен</strong>.</p>
+<p>Есть, например, обработчик ПриПолученииДанныхНаСервере(). Он дольше в реализации, но позволяет хорошо затюнить виртуальную таблицу и избежать сценария выше. На каждую прокрутся списка получится больше запросов, но они будут быстрее и эффективнее, чем один, но гигантский.</p>
+        <p class="f6 mt4">
+            29 ноября 2025
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/optimization/">оптимизация</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/obsidian-foodiary-bases/">Дневник питания в Obsidian Bases</a></h2>
 
             
@@ -695,34 +739,6 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/thumbs-up/">Во!</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Звонок в дверь. Открываю и вижу двух сияющих девушек лет двадцати. Ослепительно улыбаются мне и начинают что-то наперебой тараторить. </p>
-<p>Грузинский язык красивый, но на слух я его совсем не понимаю. Вздохнул, предложил перейти на английский или русский.</p>
-<p>Девушки насупились. Потом одна выудила из сумки раздатку, показала на неё, потом показала мне большой палец — типа, во! — и сунула её мне в руки. </p>
-<p>Рассмеялись и убежали.</p>
-<p>Так тебе, языковой барьер, получай!</p>
-        <p class="f6 mt4">
-            21 сентября 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/meanwhile/">тем временем</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/georgia/">Грузия</a>
                 </span>
             
         </p>

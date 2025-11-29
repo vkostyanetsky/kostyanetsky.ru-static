@@ -1,0 +1,185 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Протоптанные дорожки</title>
+
+    <meta name="description" content="О вреде шаблонных подходов в разработке." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="https://kostyanetsky.ru/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.ru/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.ru/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.ru/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.ru/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Протоптанные дорожки"/>
+    <meta property="og:description" content="О вреде шаблонных подходов в разработке."/>
+    <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/desire-paths" />    
+
+    <!-- Tachyons -->
+
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
+
+    <!-- Blog -->
+
+    <script>
+
+        let ctrlUpUrl       = '';
+        let ctrlDownUrl     = '';
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/tags/1c/harmless-harm';
+        let ctrlRightUrl    = '';
+
+    </script>
+    
+    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/blog.css">
+    <script src="https://kostyanetsky.ru/assets/blog.js"></script>
+                
+</head>
+
+<body class="w-100 bg-white">
+
+<div id="app">        
+<main>
+
+<header class="db dt-l w-100-l border-box pa3 ph5-l">
+
+    <nav class="flex items-center lh-copy pa3 ph0-l">
+    
+        <a href="https://kostyanetsky.ru"><img class="br-100" src="https://kostyanetsky.ru/assets/images/me.jpg" title="Привет!" /></a>
+
+        <div class="pl4 flex-auto">
+        
+            
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.ru">Сайт Влада</a>
+            
+
+            
+                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.ru/projects/">Проекты</a>
+                        
+
+            
+                <a class="dib f4 mr3 link dim bb orange" href="https://kostyanetsky.ru/notes/">Заметки</a>
+            
+
+        </div>
+        
+    </nav>
+    
+    <nav class="dtc-l v-mid tc tr-l">
+
+        
+            <a href="https://kostyanetsky.me/notes/desire-paths" class="link f5 f5-ns dim blue bb">EN</a>
+        
+
+        
+
+            <div class="mt3">
+
+            
+                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/desire-paths/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
+            
+
+            </div>
+            
+        
+
+    </nav>
+
+</header>
+
+<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
+    
+
+    <article>    
+                    
+        <h1 class="f-subheadline lh-solid">Протоптанные дорожки</h1>
+            
+        
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>Ладно, загадка Жана Фреско. У вас есть таблица, скажем, на 50 тысяч строк. Как прочитать из неё полмиллиарда?</p>
+<p>Раз плюнуть, Nested Loops + Clustered Index Seek:</p>
+<p><img alt="Полмиллиарда" src="https://kostyanetsky.ru/notes/desire-paths/500_million.png"/></p>
+<p>От Clustered Index Seek тут одно название, конечно. Фактически оператор при каждом исполнении пробегает по всей таблице (всему кластерному индексу) и сверяет каждую запись с Predicates. И так — 10 730 раз для 51 391 записей. В итоге 551 425 430 строк прочитали, 13 343 вернули.</p>
+<p><img alt="Ох" src="https://kostyanetsky.ru/notes/desire-paths/ouch.gif"/></p>
+<p>Короче, идеальный пример плохого плана запроса в вакууме, хоть сейчас тащи в палату мер и весов. Nested Loops, если кто позабыл, работает примерно так:</p>
+<pre>
+For Each Table1Row In Table1 Do
+    For Each Table2Row In Table2 Do
+        ...
+</pre>
+<p>Это ОК для мелких таблиц, но СУБД может его применить и для таблиц поболбше — например, если ей не хватает времени на построение плана.</p>
+<p>Это и произошло в нашем случае. Прыгнем повыше, на уровень платформы: тут у нас динамический список с запросом по таблице документа, к которой разработчики прицепили с десяток виртуальных таблиц регистров накопления.</p>
+<p>Некоторые регистры и сами по себе были здоровенными, а виртуальные таблицы дополнительно поддали жару (каждая превращается в 2+ вложенных запроса). СУБД честно пыталась придумать эффективный алгоритм, но в какой-то момент решала, что хреновый план запроса всё же лучше, чем вообще никакого.</p>
+<p>В итоге пользователь что? Пытался поискать документ по номеру и клиентское приложение просто-напросто зависало.</p>
+<p>Короче, по поводу виртуальных таблиц в динамических списках. В английском есть выражение «desire path», «протоптанная дорожка». Часто прицепить виртуальную таблицу к основной — и в самом деле самый простой, быстрый и привычный способ решить задачу. Но он <strong>не эффективен</strong>.</p>
+<p>Есть, например, обработчик ПриПолученииДанныхНаСервере(). Он дольше в реализации, но позволяет хорошо затюнить виртуальную таблицу и избежать сценария выше. На каждую прокрутся списка получится больше запросов, но они будут быстрее и эффективнее, чем один, но гигантский.</p>
+        <p class="f6 mt4">
+            29 ноября 2025
+            
+                <span class="pl2">
+                    <a class="link orange bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/optimization/">оптимизация</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+        
+        
+
+            <p class="mt5 mb3 f6">
+
+                
+                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/harmless-harm">Безвредный вред</a> &larr;
+                
+                Ctrl
+                                
+
+            </p> 
+            
+        
+
+    </article>
+
+
+</section>
+
+</main>
+
+<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
+    
+    <p class="f6 lh-solid">Эл. почта: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.ru</a></p>
+    <p class="f6 lh-solid">Телеграм: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    <p class="f6 lh-solid">Гитхаб: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
+    
+    <a class="rss" href="https://kostyanetsky.ru/rss.xml">РСС</a> 
+
+</footer>
+
+</div>
+</body>
+</html>
