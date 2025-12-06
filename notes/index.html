@@ -113,6 +113,44 @@
 
         
 
+            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/backup-ui/">Управление бэкапами</a></h2>
+
+            
+    
+    <div class="f4 lh-copy black mb5 measure-wide">
+        <p>В конце года выкатили для нашего внутреннего инструмента (я уже вскользь <a href="https://kostyanetsky.ru/notes/easter-eggs" target="_blank">писал</a> о нём) большой апдейт, дающий коллегам адекватный доступ к бэкапам пользовательских приложений. Бэкапы в SaaS-компании нужны всем и всегда — для разработки, для тестирования, для расследования проблем, да много для чего. Без адекватного учёта процесс превращается в зоопарк, когда три человека в один момент времени создают три запроса на практически одинаковые копии одной и той же базы. Задача, конечно, решается, но ресурсов прожраны в три раза больше, чем хотелось бы.</p>
+<p>У нас уже было решение на базе UI Битрикса, но в силу, э-э, особенностей развития этого продукта оно приносило больше боли, чем пользы. Поэтому мы переосмыслили процесс и всё переписали. На фронте — 1C, на бэке — PostgREST, PostgreSQL, PowerShell и много чего ещё. Логика довольно сложная, но у пользователя — простой и дружелюбный UI, через который можно заказать бэкап буквально в два нажатия.</p>
+<p>Выбрать можно один из трёх видов бэкапов:</p>
+<ul>
+<li>облачный (копия реального приложения, развёрнутая в облаке и доступная, в том числе, через браузер);</li>
+<li>файловый бэкап (обычный .dt-файл, который можно скачать и развернуть на локальной машине);</li>
+<li>бэкап конфигурации и расширений (.cf + .cfe).</li>
+</ul>
+<p>Кроме того, новое решение отслеживает попытки заказать бэкап приложения, если он уже делается прямо сейчас. А ещё — не даёт пользователям бэкапить одно и то же приложение чаще, чем раз в час. </p>
+<p>Ну и продолжаем хохмить в интерфейсе, конечно.</p>
+<p><img alt="But Still!" src="https://kostyanetsky.ru/notes/backup-ui/but-still.png"/> <img alt="Coffee First!" src="https://kostyanetsky.ru/notes/backup-ui/coffee-first.png"/></p>
+        <p class="f6 mt4">
+            6 декабря 2025
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
+                </span>
+            
+                <span class="pl2">
+                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
+                </span>
+            
+        </p>
+    </div>
+
+
+
+        
+
             <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/desire-paths/">Протоптанные дорожки</a></h2>
 
             
@@ -711,34 +749,6 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
             
                 <span class="pl2">
                     <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/english/">английский</a>
-                </span>
-            
-        </p>
-    </div>
-
-
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/love/">Мимикрия ChatGPT</a></h2>
-
-            
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Коллеги вовсю <a href="https://t.me/denissexy/8767" target="_blank">экспериментируют</a> с o1-preview от OpenAI: модель получилась по-настоящему интересной. Жаль, задачи для неё попадаются не так уж часто: с большинством повседневных прекрасно справляется и обычная 4o. Поиск ошибок в коде, анализ медицинских тестов на незнакомом языке, попытки вспомнить название книги, которую читал в детстве и едва помнишь завязку — я сходу и не вспомню, что ей не по зубам.</p>
-<p>Каждый раз любопытно смотреть, как ИИ рассуждает, шутит и вообще, старается выглядеть как человек. Я бы сказал, что тест Тьюринга эта штука пока не пройдёт, но время от времени стреляет пугающе близко.</p>
-<p><img alt="Морковка" src="https://kostyanetsky.ru/notes/love/carrot.jpg"/> <img alt="Кулаки" src="https://kostyanetsky.ru/notes/love/fists.jpg"/> <img alt="Угараешь?" src="https://kostyanetsky.ru/notes/love/joke.jpg"/></p>
-<p>А вот ответ ниже прямо порадовал. Даже если оставить за скобками философию — Скайнет, похоже, отменяется! :) Впрочем, будущее из финала <a href="https://store.steampowered.com/app/282140/SOMA/" target="_blank">SOMA</a> — пока, боюсь, нет.</p>
-<p><img alt="Любовь" src="https://kostyanetsky.ru/notes/love/love.jpg"/></p>
-        <p class="f6 mt4">
-            29 сентября 2024
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/ai/">ИИ</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
                 </span>
             
         </p>
