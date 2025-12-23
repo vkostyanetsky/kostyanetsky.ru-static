@@ -1,9 +1,9 @@
 ﻿
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -29,124 +29,397 @@
     <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/page-9" />    
 
-    <!-- Tachyons -->
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
+<style>
+
+  /* PT Sans (regular) — modern set */
+  @font-face {
+    font-family: "PT Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+      local("PT Sans"),
+      local("PTSans-Regular"),
+      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff2") format("woff2"),
+      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff") format("woff");
+  }
+
+  :root {
+    --site-font: "PT Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+      "Apple Color Emoji", "Segoe UI Emoji";
+
+    --text: rgb(0 0 0);                /* black */
+    --text-strong: rgb(0 0 0);         /* black */
+    --muted: rgb(71 85 105);           /* slate-600 */
+    --link: rgb(15 23 42);             /* slate-900 */
+    --link-underline: rgb(203 213 225);/* slate-300 */
+    --link-underline-hover: rgb(100 116 139); /* slate-500 */
+
+    --border: rgb(226 232 240);        /* slate-200 */
+    --surface: rgb(255 255 255);       /* white */
+    --surface-soft: rgb(248 250 252);  /* slate-50 */
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+
+    --space-1: 0.35rem;
+    --space-2: 0.75rem;
+    --space-3: 0.9rem;
+    --space-4: 1.2rem;
+    --space-5: 1.8rem;
+  }
+
+  body {
+    font-family: var(--site-font);
+    color: var(--text);
+    font-kerning: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgb(226 232 240);
+  }
+
+  .prose-like > * + * {
+    margin-top: var(--space-3);
+  }
+
+  .prose-like p {
+    color: var(--text);
+  }
+
+  .prose-like strong {
+    color: var(--text-strong);
+    font-weight: 600;
+  }
+
+  .prose-like h2 {
+    margin-top: var(--space-5);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--text-strong);
+  }
+
+  .prose-like ul,
+  .prose-like ol {
+    padding-left: 1.2rem;
+    color: var(--text);
+  }
+
+  .prose-like ul {
+    list-style: disc;
+  }
+
+  .prose-like ol {
+    list-style: decimal;
+  }
+
+  .prose-like li {
+    margin-top: var(--space-1);
+  }
+
+  .prose-like a {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-color: var(--link-underline);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+
+  .prose-like a:hover {
+    text-decoration-color: var(--link-underline-hover);
+  }
+
+  .prose-like a:focus-visible {
+    outline: 2px solid rgb(148 163 184); /* slate-400 */
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  .prose-like :not(pre) > code {
+    font-size: 0.95em;
+    padding: 0.1em 0.35em;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--surface-soft);
+  }
+
+  .prose-like pre {
+    margin-top: 1rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface-soft);
+    overflow-x: auto;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    tab-size: 2;
+  }
+
+  .prose-like pre code {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgb(15 23 42);
+    white-space: pre;
+    word-break: normal;
+  }
+
+  .prose-like a[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  .figure {
+    margin-top: var(--space-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .figure figcaption {
+    padding: var(--space-2) 1rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    background: var(--surface-soft);
+  }
+
+  .prose-like blockquote {
+    margin-top: var(--space-4);
+    padding: 0.75rem 1rem;
+    border-left: 4px solid var(--border);
+    background: var(--surface-soft);
+    border-radius: var(--radius-sm);
+    color: rgb(30 41 59);
+  }
+
+  .prose-like hr {
+    margin-top: var(--space-5);
+    border: 0;
+    border-top: 1px solid var(--border);
+  }
+</style>
 
     <!-- Blog -->
 
     <script>
-
-        let ctrlUpUrl       = 'https://kostyanetsky.ru/notes/page-8';
-        let ctrlDownUrl     = 'https://kostyanetsky.ru/notes/page-10';
-        let ctrlLeftUrl     = '';
-        let ctrlRightUrl    = '';
-
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/page-10';
+        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/page-8';
     </script>
     
-    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/blog.css">
-    <script src="https://kostyanetsky.ru/assets/blog.js"></script>
-                
-</head>
+    <script src="https://kostyanetsky.ru/assets/blog.js"></script>    
 
-<body class="w-100 bg-white">
+  </head>
 
-<div id="app">        
-<main>
+  <body class="min-h-screen bg-white text-slate-900">
 
-<header class="db dt-l w-100-l border-box pa3 ph5-l">
-
-    <nav class="flex items-center lh-copy pa3 ph0-l">
-    
-        <a href="https://kostyanetsky.ru"><img class="br-100" src="https://kostyanetsky.ru/assets/images/me.jpg" title="Привет!" /></a>
-
-        <div class="pl4 flex-auto">
+<!-- Shared wrapper: top menu -->
+<header class="border-b border-slate-200">
+  <div class="mx-auto w-full max-w-4xl px-4 py-5">
+    <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+      
+      <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
         
-            
-                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.ru">Сайт Влада</a>
-            
-
-            
-                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.ru/projects/">Проекты</a>
-                        
-
-            
-                <span class="black dib f4 mr3">Заметки</span>
-            
-
-        </div>
         
-    </nav>
-    
-    <nav class="dtc-l v-mid tc tr-l">
-
         
-            <a href="https://kostyanetsky.me/notes" class="link f5 f5-ns dim blue bb">EN</a>
+        
         
 
         
-
-            <div class="mt3">
-
-            
-                    <span class="f4 f4-ns">✎</span>
-            
-
-            </div>
-            
+        
+          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/">Сайт Влада</a>
         
 
-    </nav>
+        
+        
+          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/projects/">Проекты</a>
+        
 
+        
+        
+          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.ru/notes/">Заметки</a>
+        
+      </nav>
+
+      
+      <div class="ml-auto flex items-center gap-4">
+        
+          
+            <span
+              class="inline-block text-[1.35rem] leading-none text-slate-400"
+              title="Видите опечатку? Поправьте меня!"
+              aria-disabled="true"
+            >✎</span>
+          
+        
+
+        
+          
+          <a
+            href="https://kostyanetsky.me/notes/page-9"
+            class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+            title="EN"
+          >
+            EN
+          </a>
+        
+      </div>
+    </div>
+  </div>
 </header>
 
-<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
-    
+    <!-- Shared wrapper: content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page="9"
+      data-total-notes="20"
+      data-total-pages="12"
+    >
+      <a id="top" class="block scroll-mt-24"></a>
 
-    <article>
+      
 
-        <h1 class="f-subheadline lh-solid">Заметки</h1>
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Заметки</h1>
+        <p class="max-w-2xl text-slate-700">
+          Мои мысли о жизни, работе и разных интересных штуках вокруг меня.
+        </p>
+      </header>
 
-        
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="relative w-full sm:w-[420px]">
+          <input
+            id="search"
+            type="search"
+            placeholder="Поиск по заголовку / тегам / тексту…"
+            class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+          />
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </div>
 
-            <p class="mt5 mb3 f6">
-                <a class="link blue bb dim mr1 mt3 mb3" href="https://kostyanetsky.ru/notes/page-8">Позднее</a> Ctrl + &uarr;
-            </p>
+        <p class="text-sm text-slate-600">
+          Показано: <span id="count" class="font-semibold text-slate-900">0</span>
+          <span class="text-slate-400">·</span>
+          <span id="pageInfo">Страница</span>
+        </p>
+      </section>
 
-        
+      <!-- Static notes (SEO + no-JS fallback) -->
+      <section id="staticNotes" class="mt-10 space-y-12">
+                
+            
 
-        
+        <article class="rounded-2xl bg-white">
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/cursed-forest/">The Cursed Forest</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/uoCdg6SQRoA" width="560"></iframe>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/cursed-forest" class="block text-2xl font-semibold tracking-tight hover:underline">The Cursed Forest</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>6 марта 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Видеоигры</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/uoCdg6SQRoA" width="560"></iframe>
 <p>Ничего не ждал от игры, но она, внезапно, удалась. Выглядит бодро; чувствуется внимание к деталям, да и в сумме — совсем неплохо. А ближе к концу — ещё и трогательно.</p>
 <p>Садитесь играть по всем правилам — гасите свет, надевайте наушники и, конечно, выключайте душнилу.</p>
-        <p class="f6 mt4">
-            6 марта 2019
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/duplicate-key/">Повторяющийся ключ</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>На Инфостарте вышла любопытная <a href="https://infostart.ru/public/1010017/" target="_blank">статья</a> про ошибку СУБД «cannot insert duplicate key». Одна из возможных причин сбоя — использование уникального идентификатора объекта для сопоставления при обмене с другими информационными базами (то есть, без служебного регистра, сопоставляющего объекты базы данных с идентификаторами объектов внешней базы).</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/duplicate-key" class="block text-2xl font-semibold tracking-tight hover:underline">Повторяющийся ключ</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>1 марта 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Готово</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>На Инфостарте вышла любопытная <a href="https://infostart.ru/public/1010017/" target="_blank">статья</a> про ошибку СУБД «cannot insert duplicate key». Одна из возможных причин сбоя — использование уникального идентификатора объекта для сопоставления при обмене с другими информационными базами (то есть, без служебного регистра, сопоставляющего объекты базы данных с идентификаторами объектов внешней базы).</p>
 <p>Такой жести, чтобы уникальные идентификаторы совпали в разных базах для одной и той же таблицы, у меня в практике пока не было. Однако от подхода «единого идентификатора» я отрекся окончательно после того, как делал обмен между <a href="https://firstbit.ae/products/erp-dubai/financial_management/" target="_blank">FirstBIT ERP</a> и <a href="http://superagent.ru/products/grotem_agent" target="_blank">GROTEM / Agent</a>.</p>
 <p>Архитектура пилотного решения была такая: данные из FirstBIT ERP выгружались сперва в служебную ИБ 1С, написанную разработчиками GROTEM'а, а уже оттуда — в основную базу данных сервера мобильных приложений.</p>
 <p>Сопоставление было сделано очень просто — через идентификаторы объектов. Например, один и тот же документ в обеих базах имел один и тот же идентфикатор. Но были и более сложные схемы: например, контрагент FirstBIT ERP на стороне GROTEM'а превращался в три объекта: собственно контрагента, торговую точку и документ взаиморасчетов.</p>
@@ -161,386 +434,648 @@
 </ol>
 <p>В этом месте интрига закончилась. Ну да, первый же выгруженный контрагент создавал целых три сущности с одним и тем же GUID, которые прекрасно лежали в своих таблицах на стороне 1С, но не могли быть записаны в одну общую таблицу базы данных приложения.</p>
 <p><img alt="I will not use GUIDs to map objects!" src="https://kostyanetsky.ru/notes/duplicate-key/i-will-not-use-guids.gif"/></p>
-        <p class="f6 mt4">
-            1 марта 2019
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-        </p>
-    </div>
+            </div>
+          </div>
+          
+        </article>
 
 
+                
+            
 
-        
+        <article class="rounded-2xl bg-white">
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/loneliness/">Одиночество</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Хороший ролик про одиночество, его причины и последствия (спойлер: все серьёзно, вплоть до биологического уровня). Рассказывают на английском, но если нужно — там есть русские субтитры.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/loneliness" class="block text-2xl font-semibold tracking-tight hover:underline">Одиночество</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>1 марта 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Тем временем</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Видеоигры</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Хороший ролик про одиночество, его причины и последствия (спойлер: все серьёзно, вплоть до биологического уровня). Рассказывают на английском, но если нужно — там есть русские субтитры.</p>
 <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/n3Xv_g3g-mA" width="560"></iframe>
 <p>(емкий <a href="https://twitter.com/StatusyOk/status/1098845710668185602" target="_blank">твит</a> о том же)</p>
 <p>(а также я, походу, достаточно много наиграл в Starcraft II, чтобы название ролика у меня в голове произносилось исключительно голосом Зератула и под музыку из <a href="https://www.youtube.com/watch?v=xu94hnQDnRY" target="_blank">Alone</a>)</p>
-        <p class="f6 mt4">
-            1 марта 2019
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/meanwhile/">тем временем</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/failed-hunt/">Неудачная охота</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>При обновлении платформы до 8.13.12.1790 наткнулись на плавающий баг при переключении текущей страницы элемента на сервере. Конкретно на сервере оно срабатывает, но как только управление возвращается на клиент — текущей страницей становится та, что была до изменения. При этом ещё и происходит событие изменения текущей страницы (как будто пользователь сменил её вручную).</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/failed-hunt" class="block text-2xl font-semibold tracking-tight hover:underline">Неудачная охота</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>21 февраля 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Готово</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>При обновлении платформы до 8.13.12.1790 наткнулись на плавающий баг при переключении текущей страницы элемента на сервере. Конкретно на сервере оно срабатывает, но как только управление возвращается на клиент — текущей страницей становится та, что была до изменения. При этом ещё и происходит событие изменения текущей страницы (как будто пользователь сменил её вручную).</p>
 <p>Неприятно, но, в общем, ничего страшного — запатчили баг, описали и зарепортили в 1С. Там пока <a href="https://bugboard.v8.1c.ru/error/000050675.html" target="_blank">думают</a>. Но я, внезапно, даже как-то расстроен — когда расследуешь такие штуки, они всегда выглядят немного загадочно и кажется, что ты вот-вот найдешь что-то интересное! Например, новый аспект работы платформы или что-то вроде этого.</p>
 <p>И вот, наконец, ты смотришь на проблему под правильным углом, а она — обычный жук. Возможно, полосатый или в крапинку, но жук как жук — сидит себе, шевелит усами. И ты такой: блин, это что — и есть моя добыча? :-)</p>
-        <p class="f6 mt4">
-            21 февраля 2019
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/done/">готово</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-        </p>
-    </div>
+            </div>
+          </div>
+          
+        </article>
 
 
+                
+            
 
-        
+        <article class="rounded-2xl bg-white">
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/big-value-tables/">Большие таблицы значений</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Пока писал про <a href="https://kostyanetsky.ru/notes/find-rows-at-client" target="_blank">поиск строк</a> на клиенте, вспомнил ещё один нюанс, связанный с данными на управляемых формах — тоже про передачу между клиентом и сервером.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/big-value-tables" class="block text-2xl font-semibold tracking-tight hover:underline">Большие таблицы значений</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 февраля 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Пока писал про <a href="https://kostyanetsky.ru/notes/find-rows-at-client" target="_blank">поиск строк</a> на клиенте, вспомнил ещё один нюанс, связанный с данными на управляемых формах — тоже про передачу между клиентом и сервером.</p>
 <p>Допустим, нам по условиям задачи нужно оперировать сравнительно большими (тысячи строк) таблицами значений. Это могут быть данные, которые в общем случае не нужно показывать пользователю: например, параметры расчета цен, информация о продажах и закупках, что-то ещё. Логично создать такие таблицы в виде атрибутов формы — хотя бы потому, что можно использовать удобный конструктор.</p>
 <p>Но когда платформа решит передать такую таблицу на сервер, начнутся проблемы. Дело в том, что передавать она будет не простой и компактный объект ТаблицаЗначений, а весьма насыщенный ДанныеФормыКоллекция. Разница колоссальна — на одном из наших проектов траты на такой обмен данными составляли порядка 40% от всего времени работы ключевой операции.</p>
 <p>Решение достаточно очевидно — не использовать атрибуты формы вообще. Вместо этого создавать таблицы значений с помощью кода (например, в обработчике ПриСозданииНаСервере), закидывать их во временное хранилище, а в атрибутах формы хранить только адреса хранилища. Таким образом при необходимости поработать с таблицей на сервер отправляется только строка с адресом, и расходы на сериализацию и обмен данными начинают стремиться к нулю. На сервере извлекаем таблицу, читаем данные, изменяем их, если нужно, и сохраняем обратно во временное хранилище — по тому же адресу.</p>
-        <p class="f6 mt4">
-            17 февраля 2019
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/evolution/">Эволюция</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Говоря о развитии чего-либо (продукта, языка общения, языка программирования и так далее), люди иногда называют это «эволюцией». Мол, процессы похожи — неудачные решения точно так же постепенно вымываются, а удачные — остаются и усиляют сущность, к которой принадлежат. Так-то оно так, но я сейчас вспомнил не про позитивную сторону — фигня в том, что в ходе эволюции потомки, кроме полезных ништяков, получают все хреново выстроенные и зачастую бессмысленные механизмы, которые не смогли прикончить предка.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/evolution" class="block text-2xl font-semibold tracking-tight hover:underline">Эволюция</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>16 февраля 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">English</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">JavaScript</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Говоря о развитии чего-либо (продукта, языка общения, языка программирования и так далее), люди иногда называют это «эволюцией». Мол, процессы похожи — неудачные решения точно так же постепенно вымываются, а удачные — остаются и усиляют сущность, к которой принадлежат. Так-то оно так, но я сейчас вспомнил не про позитивную сторону — фигня в том, что в ходе эволюции потомки, кроме полезных ништяков, получают все хреново выстроенные и зачастую бессмысленные механизмы, которые не смогли прикончить предка.</p>
 <p>В итоге мы задерживаем дыхание, когда глотаем, путаемся между dissatisfied и unsatisfactory, а ещё программируем на чудесном языке JavaScript — который, при всём своем удобстве и распостраненности, вобрал в себя все мыслимые и немыслимые недостатки скриптовых языков.</p>
 <p>Но это нам ещё везёт — есть, например, жирафы! У этих ребят гортанный нерв сначала спускается по шее на два метра вниз, а потом — поднимается обратно к мышцам гортани (ага, вместо того, чтобы пройти несколько сантиметров от мозга напрямую).</p>
 <p>Зная всё это, мне чуть-чуть проще смотреть на то, во что иногда превращается мой код на очередном цикле разработки. Ну и что, что у этого хомячка отрос драконий хвост? Эволюционно, например, такой хвост очень полезен. Кто я такой, чтобы спорить с Дарвином?</p>
 <p><a href="https://twitter.com/bluecoders/status/966624401172123649" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/evolution/snap-tweet-bluecoders-966624401172123649.png"/></a></p>
-        <p class="f6 mt4">
-            16 февраля 2019
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/english/">английский</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/javascript/">JavaScript</a>
-                </span>
-            
-        </p>
-    </div>
+            </div>
+          </div>
+          
+        </article>
 
 
+                
+            
 
-        
+        <article class="rounded-2xl bg-white">
 
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/find-rows-at-client/">Найти строки на клиенте</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Про то, что метод НайтиСтроки() для коллекций данных формы горазд под шумок наделать серверных вызовов, я узнал довольно давно, столкнувшись с неадекватно долгой прогрузкой формы (там он вызывался прямо в обработчике открытия, да ещё и в цикле). Так делать, конечно, не нужно, на что мягко намекает справка: calling the method executes a server call.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/find-rows-at-client" class="block text-2xl font-semibold tracking-tight hover:underline">Найти строки на клиенте</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>12 февраля 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Про то, что метод НайтиСтроки() для коллекций данных формы горазд под шумок наделать серверных вызовов, я узнал довольно давно, столкнувшись с неадекватно долгой прогрузкой формы (там он вызывался прямо в обработчике открытия, да ещё и в цикле). Так делать, конечно, не нужно, на что мягко намекает справка: calling the method executes a server call.</p>
 <p>Однако сегодня писал код для задачи с похожей механикой и заметил, что серверных вызовов по факту нет. Удивился, полез на ИТС и, в общем, дело в следующем: при вызове НайтиСтроки() на клиенте поиск на нём и происходит, однако платформа не держит все данные больших коллекций на клиенте. Они передаются с сервера, и запрос этих данных с клиента — тот самый серверный вызов, на который ссылается справка.</p>
 <p>Разработчики платформы расплывчато описывают объем коллекции, до которого клиенту не нужно обращаться к серверу (на ИТС <a href="https://its.1c.ru/db/v8std/content/628/hdoc/_top/" target="_blank">пишут</a>, что это порядка двадцати строк). Так что подход не меняется: делаем явный серверный вызов и не переживаем, что платформа налепит своих. Впрочем, всегда приятно лучше понимать, что внутри барабанчика :-)</p>
-        <p class="f6 mt4">
-            12 февраля 2019
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/i-wish-i-could/">Ай ду май бэст</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Что здорово облегчает работу над английским языком — так это практика, которая буквально сама лезет в руки. Причем порой она полезнее каких-нибудь примеров с условного Cambridge Dictionary — просто потому, что лучше запоминается.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/i-wish-i-could" class="block text-2xl font-semibold tracking-tight hover:underline">Ай ду май бэст</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>12 февраля 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">English</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Видеоигры</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Что здорово облегчает работу над английским языком — так это практика, которая буквально сама лезет в руки. Причем порой она полезнее каких-нибудь примеров с условного Cambridge Dictionary — просто потому, что лучше запоминается.</p>
 <p>Например, вчера проходили на занятиях гипотетические формулировки и запоминали, как правильно понимать wish и if only; сегодня первое, что попалось в ленте — вот этот твит. Куда уж доходчивее :-)</p>
 <p><a href="https://twitter.com/roxiqt/status/1046952683477729282" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/i-wish-i-could/snap-tweet-roxiqt-1046952683477729282.png"/></a></p>
 <p>Или, скажем, недавно освежали в памяти разницу между try и trying — а я её запомнил давным-давно по вымученному «I do my best» Фелисити из Borderlands: The Pre-Sequel. Ситуация там была довольно яркая, и этот оттенок невозможности выполнить задачу здорово въелся в память.</p>
-        <p class="f6 mt4">
-            12 февраля 2019
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/english/">английский</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/what-are-our-girls-made-of/">Из чего сделаны наши девчонки?</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>На фоне скандальной рекламы «Reebok» (я в этой теме полный мимокрокодил, но взрывная волна даже до меня докатилась) на ютубе попался классный ролик их конкурентов. Ему уже пара лет, но он ровно про то же и, блин! Реклама здорового человека — не знаю, как лучше выразиться.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/what-are-our-girls-made-of" class="block text-2xl font-semibold tracking-tight hover:underline">Из чего сделаны наши девчонки?</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 февраля 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Семья</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Тем временем</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>На фоне скандальной рекламы «Reebok» (я в этой теме полный мимокрокодил, но взрывная волна даже до меня докатилась) на ютубе попался классный ролик их конкурентов. Ему уже пара лет, но он ровно про то же и, блин! Реклама здорового человека — не знаю, как лучше выразиться.</p>
 <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/xifSHMbGSKI" width="560"></iframe>
 <p>Показал мелкой — смотрела глазами по пять копеек. Покажу ещё раз, когда опять будет батониться вместо тренировки :-)</p>
-        <p class="f6 mt4">
-            9 февраля 2019
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/family/">семья</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/meanwhile/">тем временем</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/drummer/">Внезапный барабанщик</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Я пишу на платформе 1С довольно давно и повидал некоторое дерьмо, но такое, честно говоря, вижу первый раз.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/drummer" class="block text-2xl font-semibold tracking-tight hover:underline">Внезапный барабанщик</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 февраля 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Я пишу на платформе 1С довольно давно и повидал некоторое дерьмо, но такое, честно говоря, вижу первый раз.</p>
 <p><a href="https://kostyanetsky.ru/notes/drummer/bug.png" target="_blank"><img alt="Оттакота!" src="https://kostyanetsky.ru/notes/drummer/bug-thumbnail.png"/></a></p>
 <p>Поначалу я даже не понял, с какого конца это жевать. Поискал перевод иероглифа — Википедия лишь сухо сообщила, что это такой <a href="https://en.wiktionary.org/wiki/%E4%80%80" target="_blank">тип чашки</a>, а Google Translate вообще <a href="https://translate.google.com/#view=home&amp;op=translate&amp;sl=auto&amp;tl=ru&amp;text=%E4%80%80" target="_blank">развёл руками</a>.</p>
 <p>Коллега заметил, что символ отдаленно похож на складского сортировщика — мол, перекладывает что-то там себе между коробками. Не знаю, не знаю. По-моему, больше напоминает барабанщика за работой. Но что, черт побери, это значит? Может быть, 1С пытается что-то мне сказать? Что-то про музыку?</p>
 <p>Может, мне нужно было стать басистом, а не вот это всё.</p>
-        <p class="f6 mt4">
-            9 февраля 2019
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/temporary-tables-deletion/">Удаление временных таблиц</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Любопытная деталь: при закрытии менеджера временных таблиц не происходит удаления этих таблиц из tempdb. Актуально и для прямого вызова метода Закрыть() объекта менеджера, и для неявного варианта (когда объект менеджера уничтожается при завершении метода, в котором он был создан). На деле в обеих случаях выполняется только TRUNCATE, который удаляет данные таблицы; сама же таблица остаётся на случай, если пользователь снова выполнит запрос с таким же составом полей (это выгоднее, чем заново её создавать).</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/temporary-tables-deletion" class="block text-2xl font-semibold tracking-tight hover:underline">Удаление временных таблиц</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>7 февраля 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Любопытная деталь: при закрытии менеджера временных таблиц не происходит удаления этих таблиц из tempdb. Актуально и для прямого вызова метода Закрыть() объекта менеджера, и для неявного варианта (когда объект менеджера уничтожается при завершении метода, в котором он был создан). На деле в обеих случаях выполняется только TRUNCATE, который удаляет данные таблицы; сама же таблица остаётся на случай, если пользователь снова выполнит запрос с таким же составом полей (это выгоднее, чем заново её создавать).</p>
 <p>То же самое (удаление данных, но не самой таблицы) происходит при прямом вызове УНИЧТОЖИТЬ из текста запроса. К слову, эта команда вообще редко бывает осмыслена — разве что если объект менеджера живет сравнительно долго, а во временную таблицу помещён большой объем данных, от которого хочется побыстрее избавиться.</p>
 <p>Что до удаления таблицы, то оно выполняется только при закрытии соединения с сервером приложений.</p>
-        <p class="f6 mt4">
-            7 февраля 2019
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/string-concatenation/">Конкатенация строк</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Как и многие другие компании, мы даем соискателям тестовое задание. Оно намеренно несложное и нужно больше для того, чтобы посмотреть — насколько кандидат понимает платформу? Как аккуратно работает с объектами конфигурации и её кодом?</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/string-concatenation" class="block text-2xl font-semibold tracking-tight hover:underline">Конкатенация строк</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>27 января 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Как и многие другие компании, мы даем соискателям тестовое задание. Оно намеренно несложное и нужно больше для того, чтобы посмотреть — насколько кандидат понимает платформу? Как аккуратно работает с объектами конфигурации и её кодом?</p>
 <p>Одна из множества мелких штук, которые там проверяются — это формирование длинного сообщения для пользователя, включающее множество параметров. Разработчик может делать это через СтрШаблон() или СтрСоединить(), а может — через простую конкатенацию (соединение) строк. Если кандидат использует последний вариант — это считается небольшим минусом: для пользователя результат будет тот же, но вот понять из кода, как он будет примерно выглядеть — заметно сложнее.</p>
 <p>Однако тут есть другой аспект. В первой половине прошлого года «Рарус» опубликовал <a href="http://techlab.rarus.ru/upload/iblock/2/185/Beeline-obespechenie-bespereboynoy-raboti.pdf" target="_blank">отчет</a> о работах, проделанных для «Билайна». Там много любопытного, но среди прочего есть совершенно оглушительный пункт: за счет отказа от соединения строк разработчики добились 40% снижения нагрузки на процессоры! От двух дополнительных серверов после этих изменений вообще отказались, так как они стали не нужны.</p>
 <p>Проблема возникала из-за того, чтобы рабочие процессы тратили слишком много времени на распределение памяти для склейки строк. В случае однократного соединения заметной нагрузки не возникает, однако когда мы, например, собираем большой запрос в цикле и делаем это многократно — нагрузка растет лавинообразно. Конкатенацию в таких случаях использовать нельзя, правильный вариант — все те же СтрШаблон() или СтрСоединить(). На старых версиях платформы, где этих методов нет, можно применять объект текстового документа — добавлять в него строки, а потом получать текст.</p>
-        <p class="f6 mt4">
-            27 января 2019
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/incompiled-code/">Не скомпилированный код</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Не очевидная штука: абстрактная внешняя обработка работает заметно медленнее точно такой же, но встроенной в конфигурацию или её расширение. Причина — её код нужно заново компилировать для каждого пользователя при каждом запуске (тогда как код встроенных обработок компилируется один раз и для всех). Судя по <a href="https://kb.1c.ru/articleView.jsp?id=111" target="_blank">статье</a> в базе знаний 1С, для платформы 8.3.10 это было прямо катастрофа, но и пятидесятипроцентный рост нагрузки на процессор в 8.3.13 — тоже, в общем, ничего хорошего.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/incompiled-code" class="block text-2xl font-semibold tracking-tight hover:underline">Не скомпилированный код</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>27 января 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Не очевидная штука: абстрактная внешняя обработка работает заметно медленнее точно такой же, но встроенной в конфигурацию или её расширение. Причина — её код нужно заново компилировать для каждого пользователя при каждом запуске (тогда как код встроенных обработок компилируется один раз и для всех). Судя по <a href="https://kb.1c.ru/articleView.jsp?id=111" target="_blank">статье</a> в базе знаний 1С, для платформы 8.3.10 это было прямо катастрофа, но и пятидесятипроцентный рост нагрузки на процессор в 8.3.13 — тоже, в общем, ничего хорошего.</p>
 <p>Другой подход с тем же эффектом — это хранение кода внутри базы (в реквизитах служебных справочников, например). Каждый раз, когда такой код нужно запустить, он извлекается из БД и компилируется. Например, у нас в <a href="https://firstbit.ae/products/erp-dubai/financial_management/" target="_blank">конфигурации</a> можно создавать регламентные задания без изменения метаданных — просто добавляем элемент специального справочника, загружаем в него код и настраиваем расписание работы.</p>
 <p>Это относительно нормально — регламентные задания обычно выполняются не слишком часто и компиляция, скорее всего, не создаст сколько-либо заметной нагрузки на процессор. Однако этот же справочник может использоваться и для автоматического вызова какого-либо кода после произвольного события: например, после сохранения документа определенного типа. В таких случаях, если есть понимание, что код будет выполняться постоянно и множеством пользователей — стоит перенести логику в метод общего модуля из расширения, а в самом хранимом коде оставить только вызов этой логики.</p>
 <p>А ещё можно вообще отказаться от хранения кода и сделать весь механизм в виде расширения. Возможно, решение будет менее гибким, но все же это лучше, чем потом медитировать над низким APDEX'ом.</p>
-        <p class="f6 mt4">
-            27 января 2019
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/trip-to-kok-kol/">Поездка на Кок-Коль</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Летом катался с друзьями на границу с Монголией (на машинах доехали до Ташанты, а оттуда — на велосипедах до <a href="http://rasulka.ru/ооо-расул---кок-коль.html" target="_blank">Кок-Коля</a>). Вымотались как проклятые, однако это того определенно стоило — виды с гор невероятно крутые! Одно жаль, животные попадались нечасто — даже чумных сусликов не встретили, хотя их нам каждый встречный анонсировал, включая погранцев :-)</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/trip-to-kok-kol" class="block text-2xl font-semibold tracking-tight hover:underline">Поездка на Кок-Коль</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>6 января 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Спорт</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Летом катался с друзьями на границу с Монголией (на машинах доехали до Ташанты, а оттуда — на велосипедах до <a href="http://rasulka.ru/ооо-расул---кок-коль.html" target="_blank">Кок-Коля</a>). Вымотались как проклятые, однако это того определенно стоило — виды с гор невероятно крутые! Одно жаль, животные попадались нечасто — даже чумных сусликов не встретили, хотя их нам каждый встречный анонсировал, включая погранцев :-)</p>
 <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/4HbJAdYQ-xM" width="560"></iframe>
-        <p class="f6 mt4">
-            6 января 2019
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/sport/">спорт</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/ampersand-sign-in-1c/">Знак амперсанда в 1С</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>При обработке символа амперсанда в тексте надписей платформа применяет стандартный подход Windows: то есть, сам амперсанд не отобразится, а следующий после него символ станет горячей клавишей для действия, закрепленного за надписью (например, обработчика команды или события элемента).</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/ampersand-sign-in-1c" class="block text-2xl font-semibold tracking-tight hover:underline">Знак амперсанда в 1С</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>27 декабря 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>При обработке символа амперсанда в тексте надписей платформа применяет стандартный подход Windows: то есть, сам амперсанд не отобразится, а следующий после него символ станет горячей клавишей для действия, закрепленного за надписью (например, обработчика команды или события элемента).</p>
 <p>Пример ниже выведется как «Project Costing». Символ «P» в ней будет подчеркнут и станет горячей клавишей; если это, например, заголовок команды, то её можно будет вызвать, нажав Alt + P.</p>
 <pre><code>ТекстНадписи = "&amp;Project Costing";
 </code></pre>
 <p>Единственное неудобство — если нужно вывести амперсанд прямо в надпись. В этом случае символ следует удвоить: так, пример ниже будет выглядеть как «Project P&amp;L». Никаких горячих клавиш в таком случае создано не будет.</p>
 <pre><code>ТекстНадписи = "Project P&amp;&amp;L";
 </code></pre>
-        <p class="f6 mt4">
-            27 декабря 2018
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/valve-in-a-china-shop/">Как Valve в посудной лавке</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Ребята из Valve продолжают заигрывать с поклонниками своих игр — то ли по привычке, то ли там и правда кто-то считает, что это отличный способ напоминать о себе.</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/valve-in-a-china-shop" class="block text-2xl font-semibold tracking-tight hover:underline">Как Valve в посудной лавке</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>10 декабря 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Видеоигры</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Ребята из Valve продолжают заигрывать с поклонниками своих игр — то ли по привычке, то ли там и правда кто-то считает, что это отличный способ напоминать о себе.</p>
 <p>Конечно, с этой компанией как разработчиком игр всё в целом понятно. Мало кто всерьёз ждет третий Half-Life или, скажем, продолжение Portal. Но меня каждый раз умиляет это непринужденное изящество слона в посудной лавке, с которым Valve работает со своей аудиторией.</p>
 <p><a href="https://twitter.com/retropcan/status/1072013105515913216" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/valve-in-a-china-shop/snap-tweet-retropcan-1072013105515913216.png"/></a></p>
-        <p class="f6 mt4">
-            10 декабря 2018
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/videogames/">видеоигры</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/snowboard-effect/">Эффект сноуборда</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p><a href="https://kostyanetsky.ru/notes/snowboard-effect/standing.jpg" target="_blank"><img alt="Стою!" src="https://kostyanetsky.ru/notes/snowboard-effect/standing-thumbnail.jpg"/></a> <a href="https://kostyanetsky.ru/notes/snowboard-effect/sitting.jpg" target="_blank"><img alt="Сижу!" src="https://kostyanetsky.ru/notes/snowboard-effect/sitting-thumbnail.jpg"/></a></p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/snowboard-effect" class="block text-2xl font-semibold tracking-tight hover:underline">Эффект сноуборда</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>1 декабря 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Спорт</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><a href="https://kostyanetsky.ru/notes/snowboard-effect/standing.jpg" target="_blank"><img alt="Стою!" src="https://kostyanetsky.ru/notes/snowboard-effect/standing-thumbnail.jpg"/></a> <a href="https://kostyanetsky.ru/notes/snowboard-effect/sitting.jpg" target="_blank"><img alt="Сижу!" src="https://kostyanetsky.ru/notes/snowboard-effect/sitting-thumbnail.jpg"/></a></p>
 <p>Летишь такой вниз по склону, в который раз пытаясь почувствовать точку равновесия и не полететь кубарем, но чувствуешь только отбитую задницу, а из головы не идет знаменитый спич Васа из третьего Far Cry.</p>
 <blockquote>
 <p>Я уже говорил тебе, что такое безумие, а? Безумие — это точное повторение одного и того же действия. Раз за разом, в надежде на изменение. Это есть безумие.</p>
@@ -548,26 +1083,44 @@
 </blockquote>
 <p>Но вниз все равно приезжаешь невероятно довольный.</p>
 <p>Магия какая-то.</p>
-        <p class="f6 mt4">
-            1 декабря 2018
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/sport/">спорт</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/set-new-object-ref/">Ссылка нового объекта</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Уникальный идентификатор — удобный критерий при сопоставлении объектов в разных конфигурациях. Например, когда нужно передавать инвойсы из одной базы в другую. Как второй базе понять, загружался полученный инвойс или нет? Первое, что приходит в голову — просто выполнить поиск объекта по его UUID:</p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/set-new-object-ref" class="block text-2xl font-semibold tracking-tight hover:underline">Ссылка нового объекта</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>29 ноября 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Уникальный идентификатор — удобный критерий при сопоставлении объектов в разных конфигурациях. Например, когда нужно передавать инвойсы из одной базы в другую. Как второй базе понять, загружался полученный инвойс или нет? Первое, что приходит в голову — просто выполнить поиск объекта по его UUID:</p>
 <pre><code>ИнвойсЗагружен = Документы.Инвойс.ПолучитьСсылку(UUID).Пустая();
 </code></pre>
 <p>Однако иногда уникальный идентификатор используют для связи объектов в одной конфигурации. Например, если условия задачи мешают добавить обычный ссылочный реквизит и мы не можем в документе А прямо сослаться на документ Б. Или, скажем, если мы создаем элемент справочника на основании документа и хотим иметь между ними прямую связь — присваивая элементу справочника ссылку, полученную по уникальному идентификатору документа. Платформа гарантирует уникальность идентификатора в пределах таблицы, так что такие трюки вполне безопасны.</p>
@@ -576,88 +1129,275 @@
 </code></pre>
 <p>Если ссылка задана, то это надо как-то обработать — либо не заменять её вашей (если логика задачи позволяет), либо создать исключение. Иначе может возникнуть нарушение связности данных, которое будет непросто расследовать — да и вообще заметить.</p>
 <p>Ну и, конечно, эта штука работает в обе стороны — я имею в виду, что установленную вами ссылку тоже может потереть какой-нибудь посторонний код (например, обработчик события объекта или подписка на него). Это надежно решается только тестированием.</p>
-        <p class="f6 mt4">
-            29 ноября 2018
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/1c/">1С</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/distributed-design/">Распределенный дизайн</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Дизайнер из «Stack Overflow» <a href="http://www.tedgoas.com/blog/distributed-design" target="_blank">написал</a> о том, как они организуют удаленную работу. Понравилась структура текста — не просто «как мы это делаем», а прямо парами: проблема + решение. </p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/distributed-design" class="block text-2xl font-semibold tracking-tight hover:underline">Распределенный дизайн</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>20 октября 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Дизайнер из «Stack Overflow» <a href="http://www.tedgoas.com/blog/distributed-design" target="_blank">написал</a> о том, как они организуют удаленную работу. Понравилась структура текста — не просто «как мы это делаем», а прямо парами: проблема + решение. </p>
 <p>У нас в компании почти вся разработка — удаленная и сам я — тоже удаленщик. Мне очень нравится так работать; главное тут — помнить, как легко нахватать самых неожиданных проблем, когда твое рабочее место и твой дом — одно и то же место. Советы из статьи пить воду и вылезать под солнце вполне себе актуальны, например — в ходе какого-нибудь кранча про это и правда легко забыть.</p>
-        <p class="f6 mt4">
-            20 октября 2018
+            </div>
+          </div>
+          
+        </article>
+
+
+                
             
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/work/">работа</a>
-                </span>
-            
-        </p>
-    </div>
 
+        <article class="rounded-2xl bg-white">
 
-
-        
-
-            <h2 class="f2 lh-title"><a class="link blue bb dim" href="https://kostyanetsky.ru/notes/ideal-pronunciation/">Идеальное произношение</a></h2>
+          <header class="space-y-2">
 
             
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p><a href="https://twitter.com/vanswan/status/1051001827104178177" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/ideal-pronunciation/snap-tweet-vanswan-1051001827104178177.png"/></a></p>
+            
+            <header class="space-y-2">
+                <a href="https://kostyanetsky.ru/notes/ideal-pronunciation" class="block text-2xl font-semibold tracking-tight hover:underline">Идеальное произношение</a>
+            </header>
+            
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>15 октября 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">English</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><a href="https://twitter.com/vanswan/status/1051001827104178177" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/ideal-pronunciation/snap-tweet-vanswan-1051001827104178177.png"/></a></p>
 <p>Примерно то же самое я услышал несколько лет назад от инженера Bloomberg'а — мы тогда писали для заказчика программу, автоматически следящую за курсами акций, и столкнулись с кучей проблем (для работы с финансовыми инструментами Bloomberg дает мощный, но довольно сложный API).</p>
 <p>В конце концов дело дошло до диалога с техподдержкой, и после обмена несколькими сообщениями коллега предложил пообщаться голосом. Я здорово смутился и заметил, что, мол, так-то можно, но my English isn't fluent enough. На это собеседник лишь пожал плечами: мол, мы привыкли — английский используется повсеместно, и обратная сторона медали в том, что его везде крутят на свой лад. Так что правильное ударение — последнее, что его будет волновать, лишь бы была понятна мысль.</p>
-        <p class="f6 mt4">
-            15 октября 2018
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/english/">английский</a>
-                </span>
-            
-        </p>
-    </div>
-
+            </div>
+          </div>
+          
+        </article>
 
 
         
+      </section>
 
+      <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Видите опечатку? Поправьте меня!
+      </div>
+
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
         
-
-            <p class="mt5 mb3 f6">
-                <a class="link blue bb dim mr1 mt5 mb3" href="https://kostyanetsky.ru/notes/page-10">Ранее</a> Ctrl + &darr;
-            </p>
-
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.ru/notes/page-10"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← Раньше
+        </a>
         
+        <span class="w-[1px]"></span>
+        
+        <a
+          id="nextLink"
+          href="https://kostyanetsky.ru/notes/page-8"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          Дальше →
+        </a>
+        
+      </nav>
 
-    </article>
 
 
-</section>
+    </main>
 
-</main>
+<script>
+  // ------------------------------------------------------------
+  // Hybrid mode:
+  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
+  // - On first user search: fetch notes.json, hide static, render results.
+  // - On clear search: show static again.
+  // ------------------------------------------------------------
 
-<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
-    
-    <p class="f6 lh-solid">Эл. почта: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.ru</a></p>
-    <p class="f6 lh-solid">Телеграм: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
-    <p class="f6 lh-solid">Гитхаб: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
-    
-    <a class="rss" href="https://kostyanetsky.ru/rss.xml">РСС</a> 
+  const metaEl = document.getElementById("pageMeta");
+  const notesJsonUrl = "https://kostyanetsky.ru/notes.json";
 
-</footer>
+  const page = Number(metaEl.getAttribute("data-page") || "1");
+  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
+  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
 
-</div>
-</body>
+  const searchEl = document.getElementById("search");
+  const countEl = document.getElementById("count");
+  const pageInfoEl = document.getElementById("pageInfo");
+
+  const staticNotesEl = document.getElementById("staticNotes");
+  const dynamicNotesEl = document.getElementById("dynamicNotes");
+  const emptyEl = document.getElementById("empty");
+  const paginationEl = document.getElementById("pagination");
+
+  let notesCache = null;
+  let notesLoadPromise = null;
+
+  function debounce(fn, ms = 200) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  async function loadNotesJsonOnce() {
+    if (notesCache) return notesCache;
+
+    if (!notesLoadPromise) {
+      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          // Expecting: [{ html: "<article>...</article>", text: "plain text for search (usually already lowercased)" }]
+          notesCache = Array.isArray(data) ? data : [];
+          return notesCache;
+        })
+        .catch((err) => {
+          console.error(err);
+          notesCache = [];
+          return notesCache;
+        });
+    }
+
+    return notesLoadPromise;
+  }
+
+  function showStaticMode() {
+    dynamicNotesEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = "";
+    emptyEl.classList.add("hidden");
+
+    staticNotesEl.classList.remove("hidden");
+    paginationEl.classList.remove("hidden");
+
+    countEl.textContent = String(totalNotes);
+    pageInfoEl.textContent = `Страница ${page} из ${totalPages}`;
+  }
+
+  function showSearchMode() {
+    staticNotesEl.classList.add("hidden");
+    paginationEl.classList.add("hidden");
+
+    dynamicNotesEl.classList.remove("hidden");
+  }
+
+  function filterNotes(notes, q) {
+    const needle = (q ?? "").trim().toLowerCase();
+    if (!needle) return notes;
+
+    return notes.filter((n) => {
+      const hay = String(n?.text ?? "");
+      return hay.includes(needle);
+    });
+  }
+
+  async function runSearch() {
+    const q = (searchEl.value || "").trim();
+
+    if (!q) {
+      showStaticMode();
+      return;
+    }
+
+    showSearchMode();
+
+    const notes = await loadNotesJsonOnce(); // [{html, text}, ...]
+    const filtered = filterNotes(notes, q);
+
+    countEl.textContent = String(filtered.length);
+    pageInfoEl.textContent = "Поиск";
+
+    if (filtered.length === 0) {
+      dynamicNotesEl.innerHTML = "";
+      emptyEl.classList.remove("hidden");
+      return;
+    }
+
+    emptyEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+  }
+
+  showStaticMode();
+
+  // Search handler
+  searchEl.addEventListener("input", debounce(runSearch, 200));
+
+  // Search autorun in case search string is set (refresh / back-forward cache)
+  function runSearchSoon() {
+    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
+  }
+
+  document.addEventListener("DOMContentLoaded", runSearchSoon);
+
+  window.addEventListener("pageshow", runSearchSoon);
+</script>
+
+
+    <!-- Shared wrapper: footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Влад Костянецкий</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.ru/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 </html>

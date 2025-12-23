@@ -1,9 +1,9 @@
 ﻿
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -31,138 +31,499 @@
     <meta property="og:type" content="article"/>
     <meta property="og:url" content= "https://kostyanetsky.ru/notes/delete-geometry" />    
 
-    <!-- Tachyons -->
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/tachyons.min.css">
+<style>
+
+  /* PT Sans (regular) — modern set */
+  @font-face {
+    font-family: "PT Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+      local("PT Sans"),
+      local("PTSans-Regular"),
+      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff2") format("woff2"),
+      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff") format("woff");
+  }
+
+  :root {
+    --site-font: "PT Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+      "Apple Color Emoji", "Segoe UI Emoji";
+
+    --text: rgb(0 0 0);                /* black */
+    --text-strong: rgb(0 0 0);         /* black */
+    --muted: rgb(71 85 105);           /* slate-600 */
+    --link: rgb(15 23 42);             /* slate-900 */
+    --link-underline: rgb(203 213 225);/* slate-300 */
+    --link-underline-hover: rgb(100 116 139); /* slate-500 */
+
+    --border: rgb(226 232 240);        /* slate-200 */
+    --surface: rgb(255 255 255);       /* white */
+    --surface-soft: rgb(248 250 252);  /* slate-50 */
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+
+    --space-1: 0.35rem;
+    --space-2: 0.75rem;
+    --space-3: 0.9rem;
+    --space-4: 1.2rem;
+    --space-5: 1.8rem;
+  }
+
+  body {
+    font-family: var(--site-font);
+    color: var(--text);
+    font-kerning: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgb(226 232 240);
+  }
+
+  .prose-like > * + * {
+    margin-top: var(--space-3);
+  }
+
+  .prose-like p {
+    color: var(--text);
+  }
+
+  .prose-like strong {
+    color: var(--text-strong);
+    font-weight: 600;
+  }
+
+  .prose-like h2 {
+    margin-top: var(--space-5);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--text-strong);
+  }
+
+  .prose-like ul,
+  .prose-like ol {
+    padding-left: 1.2rem;
+    color: var(--text);
+  }
+
+  .prose-like ul {
+    list-style: disc;
+  }
+
+  .prose-like ol {
+    list-style: decimal;
+  }
+
+  .prose-like li {
+    margin-top: var(--space-1);
+  }
+
+  .prose-like a {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-color: var(--link-underline);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+
+  .prose-like a:hover {
+    text-decoration-color: var(--link-underline-hover);
+  }
+
+  .prose-like a:focus-visible {
+    outline: 2px solid rgb(148 163 184); /* slate-400 */
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  .prose-like :not(pre) > code {
+    font-size: 0.95em;
+    padding: 0.1em 0.35em;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--surface-soft);
+  }
+
+  .prose-like pre {
+    margin-top: 1rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface-soft);
+    overflow-x: auto;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    tab-size: 2;
+  }
+
+  .prose-like pre code {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgb(15 23 42);
+    white-space: pre;
+    word-break: normal;
+  }
+
+  .prose-like a[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  .figure {
+    margin-top: var(--space-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .figure figcaption {
+    padding: var(--space-2) 1rem;
+    font-size: 0.875rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    background: var(--surface-soft);
+  }
+
+  .prose-like blockquote {
+    margin-top: var(--space-4);
+    padding: 0.75rem 1rem;
+    border-left: 4px solid var(--border);
+    background: var(--surface-soft);
+    border-radius: var(--radius-sm);
+    color: rgb(30 41 59);
+  }
+
+  .prose-like hr {
+    margin-top: var(--space-5);
+    border: 0;
+    border-top: 1px solid var(--border);
+  }
+</style>
 
     <!-- Blog -->
 
     <script>
-
-        let ctrlUpUrl       = '';
-        let ctrlDownUrl     = '';
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/no';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/myth-buster';
-
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/myth-buster';
+        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/no';
     </script>
     
-    <link rel="stylesheet" href="https://kostyanetsky.ru/assets/blog.css">
-    <script src="https://kostyanetsky.ru/assets/blog.js"></script>
-                
-</head>
+    <script src="https://kostyanetsky.ru/assets/blog.js"></script>    
 
-<body class="w-100 bg-white">
+  </head>
 
-<div id="app">        
-<main>
+  <body class="min-h-screen bg-white text-slate-900">
 
-<header class="db dt-l w-100-l border-box pa3 ph5-l">
-
-    <nav class="flex items-center lh-copy pa3 ph0-l">
-    
-        <a href="https://kostyanetsky.ru"><img class="br-100" src="https://kostyanetsky.ru/assets/images/me.jpg" title="Привет!" /></a>
-
-        <div class="pl4 flex-auto">
+<!-- Shared wrapper: top menu -->
+<header class="border-b border-slate-200">
+  <div class="mx-auto w-full max-w-4xl px-4 py-5">
+    <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+      
+      <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
         
-            
-                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.ru">Сайт Влада</a>
-            
-
-            
-                <a class="dib f4 mr3 link dim bb blue" href="https://kostyanetsky.ru/projects/">Проекты</a>
-                        
-
-            
-                <a class="dib f4 mr3 link dim bb orange" href="https://kostyanetsky.ru/notes/">Заметки</a>
-            
-
-        </div>
         
-    </nav>
-    
-    <nav class="dtc-l v-mid tc tr-l">
-
         
-            <a href="https://kostyanetsky.me/notes/delete-geometry" class="link f5 f5-ns dim blue bb">EN</a>
+        
         
 
         
-
-            <div class="mt3">
-
-            
-                <a title="Видите опечатку? Поправьте меня!" href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/delete-geometry/index.md" class="f4 f4-ns dim blue no-underline">✎</a>
-            
-
-            </div>
-            
+        
+          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/">Сайт Влада</a>
         
 
-    </nav>
+        
+        
+          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/projects/">Проекты</a>
+        
 
+        
+        
+          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.ru/notes/">Заметки</a>
+        
+      </nav>
+
+      
+      <div class="ml-auto flex items-center gap-4">
+        
+          
+            <a
+              title="Видите опечатку? Поправьте меня!"
+              href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/delete-geometry/index.md"
+              class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
+            >✎</a>
+          
+        
+
+        
+          
+          <a
+            href="https://kostyanetsky.me/notes/delete-geometry"
+            class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+            title="EN"
+          >
+            EN
+          </a>
+        
+      </div>
+    </div>
+  </div>
 </header>
 
-<section class="pa3 pa5-ns bt b--black-10 black-70 bg-white">
-    
+    <!-- Shared wrapper: content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page=""
+      data-total-notes=""
+      data-total-pages=""
+    >
+      <a id="top" class="block scroll-mt-24"></a>
 
-    <article>    
-                    
-        <h1 class="f-subheadline lh-solid">Удаление геометрии</h1>
+      
+
+      <section id="staticNotes" class="space-y-12">
+        <article class="rounded-2xl bg-white">
+          
+          <header class="text-3xl font-semibold tracking-tight space-y-2">
+            Удаление геометрии
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+                
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
             
-        
-    
-    <div class="f4 lh-copy black mb5 measure-wide">
-        <p>Освоил прикольный трюк с удалением части объекта в том случае, если он с чем-то пересекается. Например, на этой гифке в центре находится модель головы обезьянки; при движении плоскости видно, как её часть (как раз та, что начинает пересекаться с обезьянкой) исчезает.</p>
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>12 июня 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">3D</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Освоил прикольный трюк с удалением части объекта в том случае, если он с чем-то пересекается. Например, на этой гифке в центре находится модель головы обезьянки; при движении плоскости видно, как её часть (как раз та, что начинает пересекаться с обезьянкой) исчезает.</p>
 <p><img alt="Демо" src="https://kostyanetsky.ru/notes/delete-geometry/demo.gif"/></p>
 <p><a href="https://github.com/vkostyanetsky/3DPlayground/blob/main/Geometry%20Nodes/DeleteGeometry.blend" target="_blank">Идея</a> довольно простая: сводим геометрию объекта-ограничителя к кубу, вычисляем его минимальные и максимальные координаты по всем осям, а потом для каждой точки «обрезаемого» объекта проверяем, входит ли она в полученный диапазон. Входит? Удаляем.</p>
 <p>Способов применения — масса; например, мне это пригодилось, когда я захотел автоматически отрезать часть линий декоративного нотного стана на стене так, чтобы они не пересекали дверной проем.</p>
 <p><img alt="Пример" src="https://kostyanetsky.ru/notes/delete-geometry/case.jpg"/></p>
 <p>Конечно, можно было бы сделать это вручную, без геонод, но такой вариант ударил бы по гибкости: изменятся какие-то размеры (ширина стены, размеры двери, угол наклона линий) — всё придётся переделывать.</p>
-        <p class="f6 mt4">
-            12 июня 2025
-            
-                <span class="pl2">
-                    <a class="link blue bb dim" href="https://kostyanetsky.ru/notes/tags/3d/">3D</a>
-                </span>
-            
-        </p>
-    </div>
+            </div>
+          </div>
+          
+        </article>
 
 
+            </div>
+          </div>
+
+        </article>
+
+      </section>
         
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
         
-
-            <p class="mt5 mb3 f6">
-
-                
-                    <a class="mr4 link blue bb dim" href="https://kostyanetsky.ru/notes/no">Нет</a> &larr;
-                
-                Ctrl
-                
-                    &rarr; <a class="ml4 link blue bb dim" href="https://kostyanetsky.ru/notes/myth-buster">Развенчиватель мифов</a>
-                                
-
-            </p> 
-            
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.ru/notes/myth-buster"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← Развенчиватель мифов
+        </a>
         
+        <span class="w-[1px]"></span>
+        
+        <a
+          id="nextLink"
+          href="https://kostyanetsky.ru/notes/no"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          Нет →
+        </a>
+        
+      </nav>
 
-    </article>
 
 
-</section>
+    </main>
 
-</main>
+<script>
+  // ------------------------------------------------------------
+  // Hybrid mode:
+  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
+  // - On first user search: fetch notes.json, hide static, render results.
+  // - On clear search: show static again.
+  // ------------------------------------------------------------
 
-<footer class="ph3 ph4-ns pv4 bt b--black-10 black">
-    
-    <p class="f6 lh-solid">Эл. почта: <a href="mailto:vlad@kostyanetsky.ru" class="link dim bb black">vlad@kostyanetsky.ru</a></p>
-    <p class="f6 lh-solid">Телеграм: <a href="tg://resolve?domain=vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
-    <p class="f6 lh-solid">Гитхаб: <a href="https://github.com/vkostyanetsky" class="link dim bb black">vkostyanetsky</a></p>
-    
-    <a class="rss" href="https://kostyanetsky.ru/rss.xml">РСС</a> 
+  const metaEl = document.getElementById("pageMeta");
+  const notesJsonUrl = "https://kostyanetsky.ru/notes.json";
 
-</footer>
+  const page = Number(metaEl.getAttribute("data-page") || "1");
+  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
+  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
 
-</div>
-</body>
+  const searchEl = document.getElementById("search");
+  const countEl = document.getElementById("count");
+  const pageInfoEl = document.getElementById("pageInfo");
+
+  const staticNotesEl = document.getElementById("staticNotes");
+  const dynamicNotesEl = document.getElementById("dynamicNotes");
+  const emptyEl = document.getElementById("empty");
+  const paginationEl = document.getElementById("pagination");
+
+  let notesCache = null;
+  let notesLoadPromise = null;
+
+  function debounce(fn, ms = 200) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  async function loadNotesJsonOnce() {
+    if (notesCache) return notesCache;
+
+    if (!notesLoadPromise) {
+      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          // Expecting: [{ html: "<article>...</article>", text: "plain text for search (usually already lowercased)" }]
+          notesCache = Array.isArray(data) ? data : [];
+          return notesCache;
+        })
+        .catch((err) => {
+          console.error(err);
+          notesCache = [];
+          return notesCache;
+        });
+    }
+
+    return notesLoadPromise;
+  }
+
+  function showStaticMode() {
+    dynamicNotesEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = "";
+    emptyEl.classList.add("hidden");
+
+    staticNotesEl.classList.remove("hidden");
+    paginationEl.classList.remove("hidden");
+
+    countEl.textContent = String(totalNotes);
+    pageInfoEl.textContent = `Страница ${page} из ${totalPages}`;
+  }
+
+  function showSearchMode() {
+    staticNotesEl.classList.add("hidden");
+    paginationEl.classList.add("hidden");
+
+    dynamicNotesEl.classList.remove("hidden");
+  }
+
+  function filterNotes(notes, q) {
+    const needle = (q ?? "").trim().toLowerCase();
+    if (!needle) return notes;
+
+    return notes.filter((n) => {
+      const hay = String(n?.text ?? "");
+      return hay.includes(needle);
+    });
+  }
+
+  async function runSearch() {
+    const q = (searchEl.value || "").trim();
+
+    if (!q) {
+      showStaticMode();
+      return;
+    }
+
+    showSearchMode();
+
+    const notes = await loadNotesJsonOnce(); // [{html, text}, ...]
+    const filtered = filterNotes(notes, q);
+
+    countEl.textContent = String(filtered.length);
+    pageInfoEl.textContent = "Поиск";
+
+    if (filtered.length === 0) {
+      dynamicNotesEl.innerHTML = "";
+      emptyEl.classList.remove("hidden");
+      return;
+    }
+
+    emptyEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+  }
+
+  showStaticMode();
+
+  // Search handler
+  searchEl.addEventListener("input", debounce(runSearch, 200));
+
+  // Search autorun in case search string is set (refresh / back-forward cache)
+  function runSearchSoon() {
+    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
+  }
+
+  document.addEventListener("DOMContentLoaded", runSearchSoon);
+
+  window.addEventListener("pageshow", runSearchSoon);
+</script>
+
+
+    <!-- Shared wrapper: footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Влад Костянецкий</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.ru/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 </html>

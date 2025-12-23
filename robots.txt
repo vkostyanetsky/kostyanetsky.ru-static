@@ -1,4 +1,3 @@
 ﻿User-agent: *
-Disallow: /notes/tags*
 
 Sitemap: https://kostyanetsky.ru/sitemap.xml
