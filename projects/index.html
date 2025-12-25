@@ -10,7 +10,7 @@
 
     <title>Проекты</title>
 
-    <meta name="description" content="Проекты, которыми я занимался. От новых к старым." />
+    <meta name="description" content="" />
     
     <!-- RSS -->
 
@@ -26,7 +26,7 @@
     <!-- Open Graph -->
 
     <meta property="og:title" content="Проекты"/>
-    <meta property="og:description" content="Проекты, которыми я занимался. От новых к старым."/>
+    <meta property="og:description" content=""/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
     <meta property="og:url" content= "https://kostyanetsky.ru/projects" />    
@@ -34,191 +34,190 @@
     <!-- Tailwind (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-<style>
+    <style>
+        /* PT Sans (regular) — modern set */
+        @font-face {
+            font-family: "PT Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src:
+            local("PT Sans"),
+            local("PTSans-Regular"),
+            url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff2") format("woff2"),
+            url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff") format("woff");
+        }
 
-  /* PT Sans (regular) — modern set */
-  @font-face {
-    font-family: "PT Sans";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-      local("PT Sans"),
-      local("PTSans-Regular"),
-      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff2") format("woff2"),
-      url("../assets/fonts/pt-sans-v16-latin_cyrillic-regular.woff") format("woff");
-  }
+        :root {
+            --site-font: "PT Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+            "Apple Color Emoji", "Segoe UI Emoji";
 
-  :root {
-    --site-font: "PT Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-      "Apple Color Emoji", "Segoe UI Emoji";
+            --text: rgb(0 0 0);                /* black */
+            --text-strong: rgb(0 0 0);         /* black */
+            --muted: rgb(71 85 105);           /* slate-600 */
+            --link: rgb(15 23 42);             /* slate-900 */
+            --link-underline: rgb(203 213 225);/* slate-300 */
+            --link-underline-hover: rgb(100 116 139); /* slate-500 */
 
-    --text: rgb(0 0 0);                /* black */
-    --text-strong: rgb(0 0 0);         /* black */
-    --muted: rgb(71 85 105);           /* slate-600 */
-    --link: rgb(15 23 42);             /* slate-900 */
-    --link-underline: rgb(203 213 225);/* slate-300 */
-    --link-underline-hover: rgb(100 116 139); /* slate-500 */
+            --border: rgb(226 232 240);        /* slate-200 */
+            --surface: rgb(255 255 255);       /* white */
+            --surface-soft: rgb(248 250 252);  /* slate-50 */
 
-    --border: rgb(226 232 240);        /* slate-200 */
-    --surface: rgb(255 255 255);       /* white */
-    --surface-soft: rgb(248 250 252);  /* slate-50 */
+            --radius-sm: 10px;
+            --radius-md: 16px;
 
-    --radius-sm: 10px;
-    --radius-md: 16px;
+            --space-1: 0.35rem;
+            --space-2: 0.75rem;
+            --space-3: 0.9rem;
+            --space-4: 1.2rem;
+            --space-5: 1.8rem;
+        }
 
-    --space-1: 0.35rem;
-    --space-2: 0.75rem;
-    --space-3: 0.9rem;
-    --space-4: 1.2rem;
-    --space-5: 1.8rem;
-  }
+        body {
+            font-family: var(--site-font);
+            color: var(--text);
+            font-kerning: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
 
-  body {
-    font-family: var(--site-font);
-    color: var(--text);
-    font-kerning: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
+        ::selection {
+            background: rgb(226 232 240);
+        }
 
-  ::selection {
-    background: rgb(226 232 240);
-  }
+        .prose-like > * + * {
+            margin-top: var(--space-3);
+        }
 
-  .prose-like > * + * {
-    margin-top: var(--space-3);
-  }
+        .prose-like p {
+            color: var(--text);
+        }
 
-  .prose-like p {
-    color: var(--text);
-  }
+        .prose-like strong {
+            color: var(--text-strong);
+            font-weight: 600;
+        }
 
-  .prose-like strong {
-    color: var(--text-strong);
-    font-weight: 600;
-  }
+        .prose-like h2 {
+            margin-top: var(--space-5);
+            font-size: 1.25rem;
+            line-height: 1.5;
+            font-weight: 600;
+            color: var(--text-strong);
+        }
 
-  .prose-like h2 {
-    margin-top: var(--space-5);
-    font-size: 1.25rem;
-    line-height: 1.5;
-    font-weight: 600;
-    color: var(--text-strong);
-  }
+        .prose-like ul,
+        .prose-like ol {
+            padding-left: 1.2rem;
+            color: var(--text);
+        }
 
-  .prose-like ul,
-  .prose-like ol {
-    padding-left: 1.2rem;
-    color: var(--text);
-  }
+        .prose-like ul {
+            list-style: disc;
+        }
 
-  .prose-like ul {
-    list-style: disc;
-  }
+        .prose-like ol {
+            list-style: decimal;
+        }
 
-  .prose-like ol {
-    list-style: decimal;
-  }
+        .prose-like li {
+            margin-top: var(--space-1);
+        }
 
-  .prose-like li {
-    margin-top: var(--space-1);
-  }
+        .prose-like a {
+            color: var(--link);
+            text-decoration: underline;
+            text-decoration-color: var(--link-underline);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.18em;
+        }
 
-  .prose-like a {
-    color: var(--link);
-    text-decoration: underline;
-    text-decoration-color: var(--link-underline);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.18em;
-  }
+        .prose-like a:hover {
+            text-decoration-color: var(--link-underline-hover);
+        }
 
-  .prose-like a:hover {
-    text-decoration-color: var(--link-underline-hover);
-  }
+        .prose-like a:focus-visible {
+            outline: 2px solid rgb(148 163 184); /* slate-400 */
+            outline-offset: 2px;
+            border-radius: 6px;
+        }
 
-  .prose-like a:focus-visible {
-    outline: 2px solid rgb(148 163 184); /* slate-400 */
-    outline-offset: 2px;
-    border-radius: 6px;
-  }
+        .prose-like :not(pre) > code {
+            font-size: 0.95em;
+            padding: 0.1em 0.35em;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            background: var(--surface-soft);
+        }
 
-  .prose-like :not(pre) > code {
-    font-size: 0.95em;
-    padding: 0.1em 0.35em;
-    border: 1px solid var(--border);
-    border-radius: 0.5rem;
-    background: var(--surface-soft);
-  }
+        .prose-like pre {
+            margin-top: 1rem;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: var(--surface-soft);
+            overflow-x: auto;
+            max-width: 100%;
+            -webkit-overflow-scrolling: touch;
+            tab-size: 2;
+        }
 
-  .prose-like pre {
-    margin-top: 1rem;
-    padding: 0.9rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    background: var(--surface-soft);
-    overflow-x: auto;
-    max-width: 100%;
-    -webkit-overflow-scrolling: touch;
-    tab-size: 2;
-  }
+        .prose-like pre code {
+            display: block;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            border-radius: 0;
 
-  .prose-like pre code {
-    display: block;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    border-radius: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgb(15 23 42);
+            white-space: pre;
+            word-break: normal;
+        }
 
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: rgb(15 23 42);
-    white-space: pre;
-    word-break: normal;
-  }
+        .prose-like a[id] {
+            scroll-margin-top: 6rem;
+        }
 
-  .prose-like a[id] {
-    scroll-margin-top: 6rem;
-  }
+        .figure {
+            margin-top: var(--space-4);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: var(--surface);
+        }
 
-  .figure {
-    margin-top: var(--space-4);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    background: var(--surface);
-  }
+        .figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-  .figure img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+        .figure figcaption {
+            padding: var(--space-2) 1rem;
+            font-size: 0.875rem;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            background: var(--surface-soft);
+        }
 
-  .figure figcaption {
-    padding: var(--space-2) 1rem;
-    font-size: 0.875rem;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
-    background: var(--surface-soft);
-  }
+        .prose-like blockquote {
+            margin-top: var(--space-4);
+            padding: 0.75rem 1rem;
+            border-left: 4px solid var(--border);
+            background: var(--surface-soft);
+            border-radius: var(--radius-sm);
+            color: rgb(30 41 59);
+        }
 
-  .prose-like blockquote {
-    margin-top: var(--space-4);
-    padding: 0.75rem 1rem;
-    border-left: 4px solid var(--border);
-    background: var(--surface-soft);
-    border-radius: var(--radius-sm);
-    color: rgb(30 41 59);
-  }
-
-  .prose-like hr {
-    margin-top: var(--space-5);
-    border: 0;
-    border-top: 1px solid var(--border);
-  }
-</style>
+        .prose-like hr {
+            margin-top: var(--space-5);
+            border: 0;
+            border-top: 1px solid var(--border);
+        }
+    </style>
 
     <!-- Blog -->
 
@@ -233,62 +232,63 @@
 
   <body class="min-h-screen bg-white text-slate-900">
 
-<!-- Shared wrapper: top menu -->
-<header class="border-b border-slate-200">
-  <div class="mx-auto w-full max-w-4xl px-4 py-5">
-    <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
-      
-      <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
-        
-        
-        
-        
-        
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
 
-        
-        
-          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/">Сайт Влада</a>
-        
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
 
-        
-        
-          <span class="inline-block text-[1.25rem] leading-tight mr-4 text-black font-medium">Проекты</span>
-        
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/">Сайт Влада</a>
+                    
 
-        
-        
-          <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/notes/">Заметки</a>
-        
-      </nav>
+                    
+                    
+                    <span class="inline-block text-[1.25rem] leading-tight mr-4 text-black font-medium">Проекты</span>
+                    
 
-      
-      <div class="ml-auto flex items-center gap-4">
-        
-          
-            <a
-              title="Видите опечатку? Поправьте меня!"
-              href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/projects/index.md"
-              class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
-            >✎</a>
-          
-        
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/notes/">Заметки</a>
+                    
+                </nav>
 
-        
-          
-          <a
-            href="https://kostyanetsky.me/projects"
-            class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
-            title="EN"
-          >
-            EN
-          </a>
-        
-      </div>
-    </div>
-  </div>
-</header>
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <span
+                        class="inline-block text-[1.35rem] leading-none text-slate-400"
+                        title="Видите опечатку? Поправьте меня!"
+                        aria-disabled="true"
+                        >✎</span>
+                    
+                    
 
-    <!-- Shared wrapper: content -->
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.me/projects"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="EN"
+                    >
+                        EN
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
     <main
       class="mx-auto w-full max-w-4xl px-4 py-10"
       id="pageMeta"
@@ -300,207 +300,569 @@
 
       
 
-        <article class="rounded-2xl bg-white">
-          <a id="note-well-there-are-some" class="block scroll-mt-24"></a>
+    
 
-          <header class="space-y-2">
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Проекты</h1>
+        <p class="max-w-2xl text-slate-700">
+          Некоторые задачи, которые я решал и о которых нашёл время написать.
+        </p>
+      </header>
 
+
+
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center">
+          <div class="relative w-full sm:w-[360px]">
+            <input
+              id="search"
+              type="search"
+              placeholder="Поиск по названию / описанию / стеку…"
+              class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+            />
+            <svg
+              class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+              />
+            </svg>
+          </div>
+
+          <div class="flex gap-2">
+            <button
+              id="btnGrid"
+              class="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 transition hover:bg-slate-100"
+              aria-pressed="true"
+            >
+              Сетка
+            </button>
+            <button
+              id="btnList"
+              class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+              aria-pressed="false"
+            >
+              Список
+            </button>
+          </div>
+        </div>
+
+        <p class="text-sm text-slate-600">
+          Показано: <span id="count" class="font-semibold text-slate-900">0</span>
+        </p>
+      </section>
+
+      <section class="mt-4 flex flex-wrap gap-2">
+      
+        <button
+          data-chip="all"
+          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 hover:bg-slate-200"
+        >
+          Все
+        </button>
+
+        
+        <button
+          data-chip="1c-v8"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          1С:Предприятие
+        </button>
+        
+        <button
+          data-chip="fb-erp"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          FirstBit ERP
+        </button>
+        
+        <button
+          data-chip="python"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Python
+        </button>
+        
+        <button
+          data-chip="telegram"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Telegram
+        </button>
+        
+        <button
+          data-chip="fastapi"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          FastAPI
+        </button>
+        
+        <button
+          data-chip="typescript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          TypeScript
+        </button>
+        
+        <button
+          data-chip="react"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          React
+        </button>
+        
+        <button
+          data-chip="1c-esb"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          1C:Шина
+        </button>
+        
+        <button
+          data-chip="rmq"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          RabbitMQ
+        </button>
+        
+        <button
+          data-chip="flask"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Flask
+        </button>
+        
+        <button
+          data-chip="postgresql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          PostgreSQL
+        </button>
+        
+        <button
+          data-chip="mongodb"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          MongoDB
+        </button>
+        
+
+      </section>
+
+      <section
+        id="cards"
+        class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+      ></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Ничего не нашлось. Попробуйте другой запрос?
+      </div>
+
+    <script>
+      const projects = [
+        
+        {
+          title: "Сервис запроса котировок",
+          description: "Веб-приложение для торговой компании, помогающее с проценкой заказов у множества поставщиков.",
+          image: "https://kostyanetsky.ru/projects/rfq-service/thumbnail.png",
+          badges: [
             
-            <h1 class="text-3xl font-semibold tracking-tight">Проекты</h1>
+            "TypeScript",
             
-
+            "React",
             
-          </header>
+            "Python",
+            
+            "Flask",
+            
+            "1С:Предприятие",
+            
+            "FirstBit ERP",
+            
+          ],          
+          stacks: [
+            
+            "typescript",
+            
+            "react",
+            
+            "python",
+            
+            "flask",
+            
+            "1c-v8",
+            
+            "fb-erp",
+            
+          ],
+          href: "rfq-service",
+        },
+        
+        {
+          title: "Клиентский портал",
+          description: "Веб-приложение, с помощью которого клиенты SaaS-компании работают со своими подписками.",
+          image: "https://kostyanetsky.ru/projects/customer-portal/thumbnail.png",
+          badges: [
+            
+            "TypeScript",
+            
+            "React",
+            
+            "PostgreSQL",
+            
+            "Python",
+            
+            "FastAPI",
+            
+            "Telegram",
+            
+            "RabbitMQ",
+            
+            "1C:Шина",
+            
+            "1С:Предприятие",
+            
+            "FirstBit ERP",
+            
+          ],          
+          stacks: [
+            
+            "typescript",
+            
+            "react",
+            
+            "postgresql",
+            
+            "python",
+            
+            "fastapi",
+            
+            "telegram",
+            
+            "rmq",
+            
+            "1c-esb",
+            
+            "1c-v8",
+            
+            "fb-erp",
+            
+          ],
+          href: "customer-portal",
+        },
+        
+        {
+          title: "FirstBit ERP x Telegram",
+          description: "Управление Telegram-ботами и рассылка оповещений прямо из FirstBit ERP!",
+          image: "https://kostyanetsky.ru/projects/erp-x-telegram/thumbnail.png",
+          badges: [
+            
+            "1С:Предприятие",
+            
+            "FirstBit ERP",
+            
+            "Telegram",
+            
+          ],          
+          stacks: [
+            
+            "1c-v8",
+            
+            "fb-erp",
+            
+            "telegram",
+            
+          ],
+          href: "erp-x-telegram",
+        },
+        
+        {
+          title: "История данных",
+          description: "Система версионирования данных для FirstBit ERP на базе стандартных возможностей платформы.",
+          image: "https://kostyanetsky.ru/projects/audit-log/thumbnail.png",
+          badges: [
+            
+            "1С:Предприятие",
+            
+            "FirstBit ERP",
+            
+          ],          
+          stacks: [
+            
+            "1c-v8",
+            
+            "fb-erp",
+            
+          ],
+          href: "audit-log",
+        },
+        
+        {
+          title: "Сервис курсов валют",
+          description: "Набор приложений, собирающих курсы обмена валют в ОАЭ и Саудовской Аравии.",
+          image: "https://kostyanetsky.ru/projects/currency-rates-service/thumbnail.png",
+          badges: [
+            
+            "Python",
+            
+            "FastAPI",
+            
+            "MongoDB",
+            
+            "Telegram",
+            
+            "1С:Предприятие",
+            
+            "FirstBit ERP",
+            
+          ],          
+          stacks: [
+            
+            "python",
+            
+            "fastapi",
+            
+            "mongodb",
+            
+            "telegram",
+            
+            "1c-v8",
+            
+            "fb-erp",
+            
+          ],
+          href: "currency-rates-service",
+        },
+        
+      ];
 
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>На этой странице собраны некоторые проекты, в которых я участвовал и о которых нашлось время написать.</p>
-<p>Сортировка — по времени, от новых к старым.</p>
-<h2>Интеграция между FirstBit ERP и Telegram</h2>
-<p>Теперь в ERP можно создавать Telegram-ботов, которые умеют рассылать сообщения в личные и групповые чаты, а также получать сообщения и отвечать на них.</p>
-<p>Входящие сообщения они могут получать тремя путями:</p>
-<ul>
-<li>через проверку время от времени, по расписанию;</li>
-<li>через постоянный опрос на новые сообщения;</li>
-<li>через веб-хук.</li>
-</ul>
-<p>Боты в состоянии опознать пользователя Telegram как сотрудника компании тремя способами:</p>
-<ul>
-<li>по заранее указанному для сотрудника имена пользователя Telegram;</li>
-<li>если сотрудник перешел по специально созданной для него администратором уникальный ссылки;</li>
-<li>через двухфакторную аутентификацию (пишешь боту, он спрашивает e-mail и отправляет туда OTP, который надо ввести).</li>
-</ul>
-<p>Кроме того, подсистема оповещений в нашей ERP теперь тоже может рассылать уведомления через Telegram-ботов.</p>
-<h2>Клиентский портал</h2>
-<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">FirstBit ERP</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Предприятие</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Шина</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">RabbitMQ</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">FastAPI</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Python</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">React.js</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Typescript</span></p>
-<p>Заказчик пишет софт и продает на него подписки. Нужно было сделать веб-сайт, на котором его клиенты смогут работать с подписками без помощи менеджеров заказчика. Например:</p>
-<ul>
-<li>увидеть данные этих подписок (купленный продукт, срок действия);</li>
-<li>оплатить истекающие подписки с помощью банковской карты;</li>
-<li>скачать выставленные компанией счета и накладные.</li>
-</ul>
-<h2>Веб-интерфейс базы 1С для поставщиков</h2>
-<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">FirstBit ERP</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Предприятие</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Python</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">React.js</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Typescript</span></p>
-<p>Нашим заказчиком был владелец торговой компании. Часть её деятельности — проценка: сотрудники компании связывались с поставщиками, определяя, у какого из них выгоднее разместить заказы клиентов с точки зрения цен, сроков доставки и других условий.</p>
-<p>От нас требовалось сделать так, чтобы они могли просто отправлять поставщикам ссылки на веб-интерфейс, где можно было бы вводить цены и отвечать на дополнительные вопросы.</p>
-<p>Веб-интерфейс платформы использовать было нельзя из соображений экономии лицензий. Поэтому я написал веб-приложение на React.js, которое работает с базой 1С:Предприятия через специально разработанный для этого REST-интерфейс.</p>
-<p>Упрощенную версию проекта можно <a href="https://github.com/vkostyanetsky/RFQ" target="_blank">посмотреть</a> на GitHub'е.</p>
-<h2>Сбор курсов валют с сайта ЦБ ОАЭ</h2>
-<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">FirstBit ERP</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Предприятие</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Flask</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">Python</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">MongoDB</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">NoSQL</span> </p>
-<p>Мы хотели дать пользователям FirstBit ERP возможность автоматически получать курсы дирхама по отношению к другим валютам, которые публикует сайт ЦБ ОАЭ.</p>
-<p>Код парсинга сайта можно было добавить в саму конфигурацию, однако эта идея выглядела проблемной сразу с нескольких точек зрения: удобного механизма для получения курсов на сайте ЦБ нет, сам сайт работает нестабильно, а при необходимости изменить логику парсинга её придется менять во множестве баз данных.</p>
-<p>Поэтому я написал консольное приложение на пайтоне, которые регулярно загружает публикуемые курсы валют в свою базу данных и отдает через REST-сервис. Мы развернули это приложение на своей площадке, а в FirstBit ERP я добавил только регулярные обращения к сервису.</p>
-<p>Код серверной части проекта можно <a href="https://github.com/vkostyanetsky/UAExchangeRates" target="_blank">посмотреть</a> на GitHub'е.</p>
-<h2>История данных в FirstBit ERP</h2>
-<p><span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">FirstBit ERP</span> <span class="f6 link br3 ph3 pv1 mb2 dib blue bg-lightest-blue">1С:Предприятие</span></p>
-<p>В конфигурации FirstBit ERP я заменил подсистему версионирования БСП на встроенный в платформу <a href="https://wonderland.v8.1c.ru/blog/istoriya-dannykh/" target="_blank">механизм</a>, решающий ту же задачу. В проект вошли:</p>
-<ol>
-<li>Алгоритм миграции истории изменений из регистров сведений во встроенное хранилище платформы.</li>
-<li>Обработка, с помощью которой можно включать и выключать историю для объектов и их реквизитов. Раннюю версию можно <a href="https://github.com/vkostyanetsky/AuditLogSettings" target="_blank">посмотреть</a> на GitHub'е.</li>
-<li>Обработка, способная выводить в одном списке изменения по разным объектам за указанный период. </li>
-<li>Анализ объектов конфигурации (был нужен, чтобы выключить историю данных для объектов, которые нет смысла версионировать — неразделенные объекты 1сFresh, служебные справочники и так далее).</li>
-<li>Доработка алгоритма выгрузки информационной базы в XML-файлы и загрузки из них (с тем, чтобы при выгрузке история так же выгружалась в XML-файлы, а при загрузке — подгружалась из них).</li>
-</ol>
+  const cardsEl = document.getElementById("cards");
+  const countEl = document.getElementById("count");
+  const emptyEl = document.getElementById("empty");
+  const searchEl = document.getElementById("search");
+
+  const btnGrid = document.getElementById("btnGrid");
+  const btnList = document.getElementById("btnList");
+
+  let mode = "grid";
+  let chip = "all";
+
+  // ------------------------------------------------------------
+  // Session state:
+  // - persists on F5 / reload
+  // - cleared when tab/browser is closed
+  // ------------------------------------------------------------
+  const STATE_KEY = "projects_ui_state_v1";
+
+  function saveState() {
+    try {
+      sessionStorage.setItem(STATE_KEY, JSON.stringify({ mode, chip }));
+    } catch (_) {}
+  }
+
+  function loadState() {
+    try {
+      const raw = sessionStorage.getItem(STATE_KEY);
+      if (!raw) return null;
+      return JSON.parse(raw);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function escapeHtml(str) {
+    return String(str)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function escapeAttr(str) {
+    return escapeHtml(str).replaceAll("\n", " ");
+  }
+
+  const badge = (text) => `
+    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">
+      ${escapeHtml(text)}
+    </span>
+  `;
+
+  function applyMode(nextMode) {
+    mode = nextMode;
+
+    if (mode === "grid") {
+      btnGrid.className =
+        "rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 transition hover:bg-slate-100";
+      btnList.className =
+        "rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50";
+      btnGrid.setAttribute("aria-pressed", "true");
+      btnList.setAttribute("aria-pressed", "false");
+    } else {
+      btnList.className =
+        "rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 transition hover:bg-slate-100";
+      btnGrid.className =
+        "rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50";
+      btnList.setAttribute("aria-pressed", "true");
+      btnGrid.setAttribute("aria-pressed", "false");
+    }
+  }
+
+  function applyChip(nextChip) {
+    chip = nextChip;
+
+    document.querySelectorAll(".chip").forEach((x) => {
+      x.className =
+        "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50";
+    });
+
+    const active = document.querySelector(`.chip[data-chip="${CSS.escape(chip)}"]`);
+
+    if (active) {
+      active.className =
+        "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 hover:bg-slate-200";
+    } else {
+      chip = "all";
+      const allBtn = document.querySelector(`.chip[data-chip="all"]`);
+      if (allBtn) {
+        allBtn.className =
+          "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 hover:bg-slate-200";
+      }
+    }
+  }
+
+  function card(project) {
+    const stacksHtml = (project.badges || []).map(badge).join("");
+
+    const body = `
+      <div class="flex flex-col gap-3 p-4">
+        <div class="flex items-start justify-between gap-3">
+          <a href="https://kostyanetsky.ru/projects/${project.href}" class="inline text-2xl font-semibold tracking-tight hover:underline">
+            <h3 class="text-lg font-semibold leading-snug tracking-tight">${escapeHtml(project.title)}</h3>
+          </a>
+        </div>
+
+        <p class="text-sm text-slate-700 ${mode === "grid" ? "line-clamp-3" : "line-clamp-2"}">
+          ${escapeHtml(project.description)}
+        </p>
+
+        <div class="flex flex-wrap gap-2">${stacksHtml}</div>
+      </div>
+    `;
+
+    if (mode === "list") {
+      return `
+        <article class="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:bg-slate-50">
+          <div class="flex flex-col md:flex-row">
+            <div class="md:w-[320px]">
+              <img
+                src="${project.image}"
+                alt="${escapeAttr(project.title)}"
+                class="h-48 w-full object-cover md:h-full"
+                loading="lazy"
+              />
             </div>
-
+            <div class="flex-1">${body}</div>
           </div>
         </article>
-
-
-
-    </main>
-
-<script>
-  // ------------------------------------------------------------
-  // Hybrid mode:
-  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
-  // - On first user search: fetch notes.json, hide static, render results.
-  // - On clear search: show static again.
-  // ------------------------------------------------------------
-
-  const metaEl = document.getElementById("pageMeta");
-  const notesJsonUrl = "https://kostyanetsky.ru/notes.json";
-
-  const page = Number(metaEl.getAttribute("data-page") || "1");
-  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
-  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
-
-  const searchEl = document.getElementById("search");
-  const countEl = document.getElementById("count");
-  const pageInfoEl = document.getElementById("pageInfo");
-
-  const staticNotesEl = document.getElementById("staticNotes");
-  const dynamicNotesEl = document.getElementById("dynamicNotes");
-  const emptyEl = document.getElementById("empty");
-  const paginationEl = document.getElementById("pagination");
-
-  let notesCache = null;
-  let notesLoadPromise = null;
-
-  function debounce(fn, ms = 200) {
-    let t;
-    return (...args) => {
-      clearTimeout(t);
-      t = setTimeout(() => fn(...args), ms);
-    };
-  }
-
-  async function loadNotesJsonOnce() {
-    if (notesCache) return notesCache;
-
-    if (!notesLoadPromise) {
-      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
-        .then((r) => {
-          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
-          return r.json();
-        })
-        .then((data) => {
-          // Expecting: [{ html: "<article>...</article>", text: "plain text for search (usually already lowercased)" }]
-          notesCache = Array.isArray(data) ? data : [];
-          return notesCache;
-        })
-        .catch((err) => {
-          console.error(err);
-          notesCache = [];
-          return notesCache;
-        });
+      `;
     }
 
-    return notesLoadPromise;
+    return `
+      <article class="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:bg-slate-50">
+        <img
+          src="${project.image}"
+          alt="${escapeAttr(project.title)}"
+          class="h-44 w-full object-cover"
+          loading="lazy"
+        />
+        ${body}
+      </article>
+    `;
   }
 
-  function showStaticMode() {
-    dynamicNotesEl.classList.add("hidden");
-    dynamicNotesEl.innerHTML = "";
-    emptyEl.classList.add("hidden");
+  function render() {
+    const q = (searchEl.value || "").trim().toLowerCase();
 
-    staticNotesEl.classList.remove("hidden");
-    paginationEl.classList.remove("hidden");
-
-    countEl.textContent = String(totalNotes);
-    pageInfoEl.textContent = `Страница ${page} из ${totalPages}`;
-  }
-
-  function showSearchMode() {
-    staticNotesEl.classList.add("hidden");
-    paginationEl.classList.add("hidden");
-
-    dynamicNotesEl.classList.remove("hidden");
-  }
-
-  function filterNotes(notes, q) {
-    const needle = (q ?? "").trim().toLowerCase();
-    if (!needle) return notes;
-
-    return notes.filter((n) => {
-      const hay = String(n?.text ?? "");
-      return hay.includes(needle);
+    const filtered = projects.filter((p) => {
+      const matchesChip = chip === "all" ? true : (p.stacks || []).includes(chip);
+      const haystack = `${p.title} ${p.description} ${(p.badges || []).join(" ")}`.toLowerCase();
+      return matchesChip && (q ? haystack.includes(q) : true);
     });
-  }
-
-  async function runSearch() {
-    const q = (searchEl.value || "").trim();
-
-    if (!q) {
-      showStaticMode();
-      return;
-    }
-
-    showSearchMode();
-
-    const notes = await loadNotesJsonOnce(); // [{html, text}, ...]
-    const filtered = filterNotes(notes, q);
 
     countEl.textContent = String(filtered.length);
-    pageInfoEl.textContent = "Поиск";
 
     if (filtered.length === 0) {
-      dynamicNotesEl.innerHTML = "";
+      cardsEl.innerHTML = "";
       emptyEl.classList.remove("hidden");
       return;
     }
 
     emptyEl.classList.add("hidden");
-    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+
+    cardsEl.className =
+      mode === "grid"
+        ? "mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+        : "mt-8 grid grid-cols-1 gap-4";
+
+    cardsEl.innerHTML = filtered.map(card).join("");
   }
 
-  showStaticMode();
+  // -----------------------
+  // Events
+  // -----------------------
+  btnGrid.addEventListener("click", () => {
+    applyMode("grid");
+    saveState();
+    render();
+  });
 
-  // Search handler
-  searchEl.addEventListener("input", debounce(runSearch, 200));
+  btnList.addEventListener("click", () => {
+    applyMode("list");
+    saveState();
+    render();
+  });
 
-  // Search autorun in case search string is set (refresh / back-forward cache)
-  function runSearchSoon() {
-    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
-  }
+  searchEl.addEventListener("input", render);
 
-  document.addEventListener("DOMContentLoaded", runSearchSoon);
+  document.querySelectorAll(".chip").forEach((b) => {
+    b.addEventListener("click", () => {
+      applyChip(b.dataset.chip);
+      saveState();
+      render();
+    });
+  });
 
-  window.addEventListener("pageshow", runSearchSoon);
-</script>
+  // -----------------------
+  // Init (restore state, then render)
+  // -----------------------
+  const st = loadState();
+
+  if (st?.mode === "grid" || st?.mode === "list") applyMode(st.mode);
+  else applyMode("grid");
+
+  if (typeof st?.chip === "string") applyChip(st.chip);
+  else applyChip("all");
+
+  render();
+    </script>
 
 
-    <!-- Shared wrapper: footer -->
+
+    </main>
+
+    <!-- footer -->
     <footer class="mt-12 border-t border-slate-200">
       <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
         <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
