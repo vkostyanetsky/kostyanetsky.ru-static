@@ -184,17 +184,17 @@
         </button>
         
         <button
-          data-chip="videogames"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Видеоигры
-        </button>
-        
-        <button
           data-chip="done"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Готово
+        </button>
+        
+        <button
+          data-chip="videogames"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Видеоигры
         </button>
         
         <button
@@ -240,17 +240,17 @@
         </button>
         
         <button
-          data-chip="workplace"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Рабочее место
-        </button>
-        
-        <button
           data-chip="blog"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Блог
+        </button>
+        
+        <button
+          data-chip="workplace"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Рабочее место
         </button>
         
         <button
@@ -363,6 +363,52 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/new-ui"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Новый UI в блоге
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 января 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Блог</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Готово</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>На новогодних праздниках внезапно закусился и переписал UI блога. Хотел всего-то прикрутить поиск по заметкам: их уже довольно много и периодически нужно что-то быстро выудить из кучи написанного (например, ссылку коллеге скинуть).</p>
+<p>Блог живёт на <a href="https://docs.github.com/ru/pages" target="_blank">Github Pages</a>, так что выбор решений небогат: либо слать запрос в гугл, либо делать свой статический индекс и отдавать в браузер пользователя, чтобы тот сам в нем порылся. Я пошёл по второму пути: быстрее, управляемее <s>и можно самому покодить</s>. При первом поиске <a href="https://kostyanetsky.ru/notes.json" target="_blank">файл индекса</a>, правда, приходится скачивать, но что такое 200 Кб в современном интернете? </p>
+<p>Ну а там как-то, знаете ли, пошло-поехало... Сначала не удавалось прикрутить к полю поиска <a href="https://tachyons.io" target="_blank">Tachyons</a> — разозлился и переделал всё на <a href="https://tailwindcss.com" target="_blank">Tailwind</a> (всё равно хотел попробовать, а случая всё никак не представлялось). Пока писал код для поиска — подумал, что логично сразу вкрутить в него теги, чтобы два раза не вставать. Когда очнулся с облаком тегов над заметками — сообразил, что тогда уж надо и к проектнику что-то в этом духе прикрутить, только там не теги будут, а стеки...</p>
+<p>В общем, получилось как в том меме из «Страха и отвращения в Лас-Вегасе». Сложно было остановиться. Осталось теперь заставить себя писать в новый проектник: работы всегда дофига, и работа интересная, но если не записывать всё — кофе, всё тонет в кофе.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1341,49 +1387,6 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
 <p>Чтобы упростить эту рутину, я немного расширил код пайплайна: после формирования отчета GitLab первым делом создает короткую сводку (тип клиента, тип базы, статистика по тестам) и отправляет ее в слак.</p>
 <p><img alt="Отчет" src="https://kostyanetsky.ru/notes/slack-summary/report.jpg"/></p>
 <p>Как бонус, стало проще отвечать на философский вопрос «кто все сломал». Чаще всего — автор первого коммита, на котором метрика Scenarios Failed на скриншоте выше пробила потолок :)</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/butterfly"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Лог и баг
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>12 октября 2024</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">English</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Люблю иногда покопаться в происхождении слов. Например, «лог» пришло из морского дела и означало буквально бревно: деревянный поплавок, к которому прикрепляли веревку и бросали за борт судна. Верёвка имела узлы на равных промежутках, и по числу узлов, которые успевали размотаться за определённое время, моряки определяли скорость судна.</p>
-<p>Эти измерения записывались в судовом журнале, который тоже назывался логом. Со временем так стали называть вообще любой журнал или запись о каком-то событии, а в айти слово вообще обрело вторую жизнь :)</p>
-<p>Или, скажем, «баг» — ну, про это, наверное, все слышали? Мотылек, который семьдесят с гаком лет назад помешал работе компьютера, был отмечен в журнале как «first actual case of bug being found», и пошло-поехало. Насекомое получило своего рода цифровое бессмертие: теперь так называют любую ошибку, особенно в программе. </p>
-<p>(Жаль только, что это было не какое-нибудь насекомое посимпатичнее — ну, не знаю, бабочка? Это прибавило бы нашей работе нотку романтики)</p>
-<p>(Впрочем, если подумать... Может, «bug» и не такой плохой вариант. «Butterfly» — как-то длинновато. Кто-нибудь быстро сократил бы это до «butt», и чинили бы мы сейчас не баги, а жопы)</p>
             </div>
           </div>
           

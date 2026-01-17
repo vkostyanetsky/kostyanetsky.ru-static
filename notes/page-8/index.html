@@ -184,17 +184,17 @@
         </button>
         
         <button
-          data-chip="videogames"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Видеоигры
-        </button>
-        
-        <button
           data-chip="done"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Готово
+        </button>
+        
+        <button
+          data-chip="videogames"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Видеоигры
         </button>
         
         <button
@@ -240,17 +240,17 @@
         </button>
         
         <button
-          data-chip="workplace"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Рабочее место
-        </button>
-        
-        <button
           data-chip="blog"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Блог
+        </button>
+        
+        <button
+          data-chip="workplace"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Рабочее место
         </button>
         
         <button
@@ -363,6 +363,48 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/control"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Control
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>14 сентября 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Видеоигры</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/r6RUXzb3NxY" width="560"></iframe>
+<p>К игре у меня две претензии. Во-первых, местные «измененные предметы»: их описания в сравнении с плодами буйной фантазии авторов из <a href="https://ru.wikipedia.org/wiki/SCP_Foundation" target="_blank">фонда SCP</a> выглядят не слишком ярко. Да, есть приятные исключения, но эта часть все равно кажется слабее остальной паранормальщины, которая есть в игре.</p>
+<p>Вторая претензия — то, при каких обстоятельствах игрок слышит <a href="https://www.youtube.com/watch?v=CkojH7htq-k" target="_blank">My Dark Disquet</a> от Poets of The Fall. Черт побери, это слишком крутой трек для такого проходного участка! Ожидал встретить его во время титров или какой-нибудь сумасшедшей схватки.</p>
+<p>Я понимаю, что оба пункта звучат мальца несерьёзно, но это правда всё. Control исключительно хороша и внешне, и геймплейно, и сюжетно. Единственная причина, по которой я никому не подарю эту игру на Новый Год — в Epic Games Store пока нет возможности это сделать :-)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1234,50 +1276,6 @@
 <p>Нюанс: дату запуска сервера как точку начала сбора данных DMV-шек нужно рассматривать с осторожностью. Накопленная статистика могла быть очищена вручную — например, вот так:</p>
 <pre><code>DBCC SQLPERF('sys.dm_os_wait_stats', CLEAR)
 </code></pre>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/mssql-server-waits"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Задержки сервера MS SQL
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>8 марта 2019</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">MS SQL</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Каждый раз, когда SQL-запрос может запуститься, но ожидает другого ресурса — он записывает сведения о причине задержки. Доступ к ним можно получить через представление <a href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql" target="_blank">sys.dm_os_wait_stats</a>.</p>
-<p>Для анализа представления можно использовать готовые скрипты:</p>
-<ul>
-<li><a href="https://kostyanetsky.ru/notes/mssql-server-waits/causes_of_wait_times.txt" target="_blank">Скрипт</a> из статьи Яна Стерка «Открытие скрытых данных для оптимизации производительности приложений», опубликованной в MSDN Magazine ещё в <a href="https://msdn.microsoft.com/ru-ru/magazine/ee310108.aspx" target="_blank">2008-м</a> году. Выводит список типов задержки, упорядоченный по времени — от самых частотных до наиболее редких.</li>
-<li><a href="https://kostyanetsky.ru/notes/mssql-server-waits/sql_server_wait_statistics.txt" target="_blank">Cкрипт</a> из <a href="https://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/" target="_blank">статьи</a> Пола Рэндала про анализ причин задержек в работе сервера MS SQL (на Хабре, кстати, есть <a href="https://habr.com/ru/post/216309/" target="_blank">перевод</a>). Фильтрует задержки, которые возникают на сервере всегда и которые обычно можно игнорировать. Кроме того, к каждой задержке добавляется ссылка на страницу, где эта задержка детально описана (например, вот <a href="https://www.sqlskills.com/help/waits/cxpacket" target="_blank">описание</a> CXPACKET).</li>
-</ul>
             </div>
           </div>
           

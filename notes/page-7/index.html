@@ -184,17 +184,17 @@
         </button>
         
         <button
-          data-chip="videogames"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Видеоигры
-        </button>
-        
-        <button
           data-chip="done"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Готово
+        </button>
+        
+        <button
+          data-chip="videogames"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Видеоигры
         </button>
         
         <button
@@ -240,17 +240,17 @@
         </button>
         
         <button
-          data-chip="workplace"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Рабочее место
-        </button>
-        
-        <button
           data-chip="blog"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Блог
+        </button>
+        
+        <button
+          data-chip="workplace"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Рабочее место
         </button>
         
         <button
@@ -363,6 +363,57 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/manage-services-with-powershell"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Управление службами через PowerShell
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>28 апреля 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Powershell</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Рабочее место</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>На днях набросал себе несколько скриптов на PowerShell'е для запуска и остановки служб на рабочем ПК. Наработки в итоге не пригодились, так что зафиксирую себе пару примеров на будущее, чтобы не потерять:</p>
+<pre><code>get-service -Name 1C:Enterprise* | Where-Object {$_.status -eq 'running'} | stop-service -pass
+get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service -pass
+</code></pre>
+<p>Обе строки выше делают одно и то же: ищут службы с определенным именем, проверяют их состояния и, если службы запущены — останавливают их. Имена служб удобно задавать через шаблоны — например, у Microsoft SQL Server целый выводок служб с разным назначением и их удобно пристрелить одной строкой. Или, скажем, служба сервера 1С:Предприятия — она одна, зато её длиннющее название просто лень писать полностью :-)</p>
+<p>Примерно тот же подход, кстати, работает и с обычными процессами. Так, строка ниже ищет процесс obs64; если находит — останавливает. </p>
+<pre><code>get-process -Name obs64 | stop-process -pass
+</code></pre>
+<p>Если нужны детали, то на сайте разработчика есть подробная <a href="https://docs.microsoft.com/ru-ru/powershell/scripting/samples/managing-services?view=powershell-7" target="_blank">документация</a> с кучей примеров и рассуждений в духе «как запустить службу, если вы медитируете на одной ноге в условиях искусственной невесомости».</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1264,48 +1315,6 @@
             <div class="prose-like">
               <p>Прошли на пару с мелкой River City Girls (недавно вышедший beat 'em up; это такой жанр игр, где нужно навалять всем, кто тебе не нравится).</p>
 <p>На <a href="https://kostyanetsky.ru/notes/river-city-girls/ru.jpg" target="_blank">фоточке</a> я наблюдаю за десятилетней Лисой, которая в этот момент уверенно разбрасывает толпу японских мордоворотов.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/control"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Control
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>14 сентября 2019</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Видеоигры</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/r6RUXzb3NxY" width="560"></iframe>
-<p>К игре у меня две претензии. Во-первых, местные «измененные предметы»: их описания в сравнении с плодами буйной фантазии авторов из <a href="https://ru.wikipedia.org/wiki/SCP_Foundation" target="_blank">фонда SCP</a> выглядят не слишком ярко. Да, есть приятные исключения, но эта часть все равно кажется слабее остальной паранормальщины, которая есть в игре.</p>
-<p>Вторая претензия — то, при каких обстоятельствах игрок слышит <a href="https://www.youtube.com/watch?v=CkojH7htq-k" target="_blank">My Dark Disquet</a> от Poets of The Fall. Черт побери, это слишком крутой трек для такого проходного участка! Ожидал встретить его во время титров или какой-нибудь сумасшедшей схватки.</p>
-<p>Я понимаю, что оба пункта звучат мальца несерьёзно, но это правда всё. Control исключительно хороша и внешне, и геймплейно, и сюжетно. Единственная причина, по которой я никому не подарю эту игру на Новый Год — в Epic Games Store пока нет возможности это сделать :-)</p>
             </div>
           </div>
           

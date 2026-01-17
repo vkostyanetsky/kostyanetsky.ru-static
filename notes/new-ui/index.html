@@ -8,9 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    <title>Управление бэкапами</title>
+    <title>Новый UI в блоге</title>
 
-    <meta name="description" content="Про новую фичу во внутреннем ПО для управления облаком." />
+    <meta name="description" content="Про новый интерфейс для блога, сделанный на новогодних праздниках." />
     
     <!-- RSS -->
 
@@ -25,11 +25,11 @@
 
     <!-- Open Graph -->
 
-    <meta property="og:title" content="Управление бэкапами"/>
-    <meta property="og:description" content="Про новую фичу во внутреннем ПО для управления облаком."/>
+    <meta property="og:title" content="Новый UI в блоге"/>
+    <meta property="og:description" content="Про новый интерфейс для блога, сделанный на новогодних праздниках."/>
     <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content= "https://kostyanetsky.ru/notes/backup-ui" />    
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/new-ui" />    
 
     <!-- CSS -->
      
@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/desire-paths';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/new-ui';
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/backup-ui';
+        let ctrlRightUrl    = '';
     </script>
     
     <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
@@ -84,7 +84,7 @@
                     
                         <a
                         title="Видите опечатку? Поправьте меня!"
-                        href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/backup-ui/index.md"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/new-ui/index.md"
                         class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
                         >✎</a>
                     
@@ -93,7 +93,7 @@
                     
                     
                     <a
-                        href="https://kostyanetsky.me/notes/backup-ui"
+                        href="https://kostyanetsky.me/notes/new-ui"
                         class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
                         title="EN"
                     >
@@ -121,7 +121,7 @@
         <article class="rounded-2xl bg-white">
           
           <header class="text-3xl font-semibold tracking-tight space-y-2">
-            Управление бэкапами
+            Новый UI в блоге
           </header>
 
           <div class="mt-5">
@@ -135,16 +135,12 @@
             
 
             <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>6 декабря 2025</span>
+              <span>17 января 2026</span>
               
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Блог</span>
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
@@ -158,18 +154,10 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>В конце года выкатили для нашего внутреннего инструмента (я уже вскользь <a href="https://kostyanetsky.ru/notes/easter-eggs" target="_blank">писал</a> о нём) большой апдейт, дающий коллегам адекватный доступ к бэкапам пользовательских приложений. Бэкапы в SaaS-компании нужны всем и всегда — для разработки, для тестирования, для расследования проблем, да много для чего. Без адекватного учёта процесс превращается в зоопарк, когда три человека в один момент времени создают три запроса на практически одинаковые копии одной и той же базы. Задача, конечно, решается, но ресурсов прожрано в три раза больше, чем хотелось бы.</p>
-<p>У нас уже было решение на базе UI Битрикса, но в силу, э-э, особенностей развития этого продукта оно приносило больше боли, чем пользы. Поэтому мы переосмыслили процесс и всё переписали. На фронте — 1C, на бэке — PostgREST, PostgreSQL, PowerShell и много чего ещё. Логика довольно сложная, но у пользователя — простой и дружелюбный UI, через который можно заказать бэкап буквально в два нажатия.</p>
-<p>Выбрать можно один из трёх видов бэкапов:</p>
-<ul>
-<li>облачный (копия реального приложения, развёрнутая в облаке и доступная, в том числе, через браузер);</li>
-<li>файловый бэкап (обычный .dt-файл, который можно скачать и развернуть на локальной машине);</li>
-<li>бэкап конфигурации и расширений (.cf + .cfe).</li>
-</ul>
-<p>Кроме того, новое решение отслеживает попытки заказать бэкап приложения, если он уже делается прямо сейчас. А ещё — не даёт пользователям бэкапить одно и то же приложение чаще, чем раз в час. </p>
-<p>Ну и продолжаем хохмить в интерфейсе, конечно.</p>
-<p><img alt="But Still!" src="https://kostyanetsky.ru/notes/backup-ui/but-still.png"/></p>
-<p><img alt="Coffee First!" src="https://kostyanetsky.ru/notes/backup-ui/coffee-first.png"/></p>
+              <p>На новогодних праздниках внезапно закусился и переписал UI блога. Хотел всего-то прикрутить поиск по заметкам: их уже довольно много и периодически нужно что-то быстро выудить из кучи написанного (например, ссылку коллеге скинуть).</p>
+<p>Блог живёт на <a href="https://docs.github.com/ru/pages" target="_blank">Github Pages</a>, так что выбор решений небогат: либо слать запрос в гугл, либо делать свой статический индекс и отдавать в браузер пользователя, чтобы тот сам в нем порылся. Я пошёл по второму пути: быстрее, управляемее <s>и можно самому покодить</s>. При первом поиске <a href="https://kostyanetsky.ru/notes.json" target="_blank">файл индекса</a>, правда, приходится скачивать, но что такое 200 Кб в современном интернете? </p>
+<p>Ну а там как-то, знаете ли, пошло-поехало... Сначала не удавалось прикрутить к полю поиска <a href="https://tachyons.io" target="_blank">Tachyons</a> — разозлился и переделал всё на <a href="https://tailwindcss.com" target="_blank">Tailwind</a> (всё равно хотел попробовать, а случая всё никак не представлялось). Пока писал код для поиска — подумал, что логично сразу вкрутить в него теги, чтобы два раза не вставать. Когда очнулся с облаком тегов над заметками — сообразил, что тогда уж надо и к проектнику что-то в этом духе прикрутить, только там не теги будут, а стеки...</p>
+<p>В общем, получилось как в том меме из «Страха и отвращения в Лас-Вегасе». Сложно было остановиться. Осталось теперь заставить себя писать в новый проектник: работы всегда дофига, и работа интересная, но если не записывать всё — кофе, всё тонет в кофе.</p>
             </div>
           </div>
           
@@ -188,21 +176,13 @@
         
         <a
           id="prevLink"
-          href="https://kostyanetsky.ru/notes/desire-paths"
+          href="https://kostyanetsky.ru/notes/backup-ui"
           class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
         >
-          ← Протоптанные дорожки
+          ← Управление бэкапами
         </a>
         
         <span class="w-[1px]"></span>
-        
-        <a
-          id="nextLink"
-          href="https://kostyanetsky.ru/notes/new-ui"
-          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
-        >
-          Новый UI в блоге →
-        </a>
         
       </nav>
 
