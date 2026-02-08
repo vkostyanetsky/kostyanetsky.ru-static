@@ -1,0 +1,231 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Автосаммари</title>
+
+    <meta name="description" content="Про то, как можно автоматизировать генерацию саммари по итогам встреч." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="https://kostyanetsky.ru/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.ru/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.ru/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.ru/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.ru/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Автосаммари"/>
+    <meta property="og:description" content="Про то, как можно автоматизировать генерацию саммари по итогам встреч."/>
+    <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/autosummary" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/new-ui';
+        let ctrlRightUrl    = '';
+    </script>
+    
+    <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/">Сайт Влада</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/projects/">Проекты</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.ru/notes/">Заметки</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <a
+                        title="Видите опечатку? Поправьте меня!"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/autosummary/index.md"
+                        class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
+                        >✎</a>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.me/notes/autosummary"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="EN"
+                    >
+                        EN
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page=""
+      data-total-notes=""
+      data-total-pages=""
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+      <section id="staticNotes" class="space-y-12">
+        <article class="rounded-2xl bg-white">
+          
+          <header class="text-3xl font-semibold tracking-tight space-y-2">
+            Автосаммари
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+                
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>8 февраля 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">ИИ</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Записывать все встречи я, судя по моим же <a href="https://kostyanetsky.ru/notes/video-recording" target="_blank">заметкам</a>, начал ещё в 2020-м. Видео всегда точнее памяти, а ткнуть на «Start Recording» в OBS — самый дешёвый способ не потерять какую-нибудь ценную инфу.</p>
+<p>Минусы, впрочем, очевидны — с видео нельзя быстро ухватить суть встречи, по нему невозможен быстрый поиск, оно много весит, в нём легко засветить что-то личное и так далее. Чтобы частично компенсировать это, я в течение встреч тезисно помечал ключевые моменты, а потом либо перекидывал в задачник, либо делал себе что-то вроде саммари: с кем встречался, что обсуждали, какие решения подобрали. Если что-то забыл или упустил детали — сверялся с видео.</p>
+<p>Однако этот метод тоже не идеален. Создание конспекта (даже тезисного) отъедает фокус от самой встречи. Кроме того, про какие-нибудь забытые по ходу дела подробности можно узнать слишком поздно.</p>
+<p><img alt="Забыл" src="https://kostyanetsky.ru/notes/autosummary/forgot.jpg"/></p>
+<p>Короче, пришёл к тому, что хороший вариант — просто извлекать из видео аудио разговора, превращать его в текст (нейронкой), а текст разговора — в детальное саммари по встрече (опять нейронка).</p>
+<p>Аудио проще всего выдрать через <a href="https://www.ffmpeg.org" target="_blank">ffmpeg</a> (консольная утилита для работы с аудио и видео). Ниже пример вызова (один аудиоканал, дискретизация 16 кГц + нормализация громкости):</p>
+<pre>
+ffmpeg.exe -y -i "D:\video.mkv" -vn -ac 1 -ar 16000 -af loudnorm -c:a pcm_s16le "D:\audio.wav"
+</pre>
+<p>Что до извлечения текста — я экспериментировал с <a href="https://alphacephei.com/vosk/" target="_blank">Vosk</a> в связке с <a href="https://github.com/benob/recasepunc" target="_blank">recasepunc</a>, но про это без слёз не вспомнить. Даже комментировать не хочу. А вот <s>Боромир</s> <a href="https://openai.com/index/whisper" target="_blank">Whisper</a> (нейросеть от OpenAI, умеющая распознавать голос) ставится в фоне за 10 минут:</p>
+<pre>
+py -3.10 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install setuptools wheel
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install openai-whisper
+</pre>
+<p>Пример вызова:</p>
+<pre>
+whisper "D:\audio.wav" --model medium --language Russian --output_format txt
+</pre>
+<p>На выходе получится текстовый файл с расшифровкой, который можно запихать в любой чатбот и получить вполне связное саммари. Его, конечно, всё ещё нужно вычитать — убрать ошибки и фантазии, что-то переформулировать — но это всё ещё сильно лучше создания конспекта на ходу.</p>
+<p>(при желании можно прикрутить вызов API или обращение к какой-нибудь модели в локальной LM Studio, но персонально для себя я решил — не, уже перебор)</p>
+<p>Вот, в общем-то, и весь метод. Остаётся написать простой скрипт, чтобы не дергать две команды вручную. Если вы тоже на Windows и вам лень вайбкодить свой скрипт, можете <a href="https://gist.github.com/vkostyanetsky/4f4760097f1b417cc85d71d11662a642" target="_blank">взять мой</a> и подогнать под себя.</p>
+<p>Скрипт ищет в своей папке первый попавшийся mkv, прогоняет через ffmpeg + Whisper и сохраняет результат в ту же папку. Если будете использовать — обратите внимание, что он работает через <a href="https://developer.nvidia.com/cuda" target="_blank">CUDA</a> (на CPU тоже можно, но будет сильно медленнее) + скачанные модели Whisper он сохраняет не в дефолтный кэш, а в папку с текущим Python-окружением.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+            </div>
+          </div>
+
+        </article>
+
+      </section>
+        
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.ru/notes/new-ui"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← Новый UI в блоге
+        </a>
+        
+        <span class="w-[1px]"></span>
+        
+      </nav>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Влад Костянецкий</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.ru/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

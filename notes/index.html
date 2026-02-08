@@ -289,6 +289,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="georgia"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -314,13 +321,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           3D
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,73 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/autosummary"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Автосаммари
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>8 февраля 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">ИИ</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Записывать все встречи я, судя по моим же <a href="https://kostyanetsky.ru/notes/video-recording" target="_blank">заметкам</a>, начал ещё в 2020-м. Видео всегда точнее памяти, а ткнуть на «Start Recording» в OBS — самый дешёвый способ не потерять какую-нибудь ценную инфу.</p>
+<p>Минусы, впрочем, очевидны — с видео нельзя быстро ухватить суть встречи, по нему невозможен быстрый поиск, оно много весит, в нём легко засветить что-то личное и так далее. Чтобы частично компенсировать это, я в течение встреч тезисно помечал ключевые моменты, а потом либо перекидывал в задачник, либо делал себе что-то вроде саммари: с кем встречался, что обсуждали, какие решения подобрали. Если что-то забыл или упустил детали — сверялся с видео.</p>
+<p>Однако этот метод тоже не идеален. Создание конспекта (даже тезисного) отъедает фокус от самой встречи. Кроме того, про какие-нибудь забытые по ходу дела подробности можно узнать слишком поздно.</p>
+<p><img alt="Забыл" src="https://kostyanetsky.ru/notes/autosummary/forgot.jpg"/></p>
+<p>Короче, пришёл к тому, что хороший вариант — просто извлекать из видео аудио разговора, превращать его в текст (нейронкой), а текст разговора — в детальное саммари по встрече (опять нейронка).</p>
+<p>Аудио проще всего выдрать через <a href="https://www.ffmpeg.org" target="_blank">ffmpeg</a> (консольная утилита для работы с аудио и видео). Ниже пример вызова (один аудиоканал, дискретизация 16 кГц + нормализация громкости):</p>
+<pre>
+ffmpeg.exe -y -i "D:\video.mkv" -vn -ac 1 -ar 16000 -af loudnorm -c:a pcm_s16le "D:\audio.wav"
+</pre>
+<p>Что до извлечения текста — я экспериментировал с <a href="https://alphacephei.com/vosk/" target="_blank">Vosk</a> в связке с <a href="https://github.com/benob/recasepunc" target="_blank">recasepunc</a>, но про это без слёз не вспомнить. Даже комментировать не хочу. А вот <s>Боромир</s> <a href="https://openai.com/index/whisper" target="_blank">Whisper</a> (нейросеть от OpenAI, умеющая распознавать голос) ставится в фоне за 10 минут:</p>
+<pre>
+py -3.10 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install setuptools wheel
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install openai-whisper
+</pre>
+<p>Пример вызова:</p>
+<pre>
+whisper "D:\audio.wav" --model medium --language Russian --output_format txt
+</pre>
+<p>На выходе получится текстовый файл с расшифровкой, который можно запихать в любой чатбот и получить вполне связное саммари. Его, конечно, всё ещё нужно вычитать — убрать ошибки и фантазии, что-то переформулировать — но это всё ещё сильно лучше создания конспекта на ходу.</p>
+<p>(при желании можно прикрутить вызов API или обращение к какой-нибудь модели в локальной LM Studio, но персонально для себя я решил — не, уже перебор)</p>
+<p>Вот, в общем-то, и весь метод. Остаётся написать простой скрипт, чтобы не дергать две команды вручную. Если вы тоже на Windows и вам лень вайбкодить свой скрипт, можете <a href="https://gist.github.com/vkostyanetsky/4f4760097f1b417cc85d71d11662a642" target="_blank">взять мой</a> и подогнать под себя.</p>
+<p>Скрипт ищет в своей папке первый попавшийся mkv, прогоняет через ffmpeg + Whisper и сохраняет результат в ту же папку. Если будете использовать — обратите внимание, что он работает через <a href="https://developer.nvidia.com/cuda" target="_blank">CUDA</a> (на CPU тоже можно, но будет сильно медленнее) + скачанные модели Whisper он сохраняет не в дефолтный кэш, а в папку с текущим Python-окружением.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1336,57 +1403,6 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
 <p>Такой подход работает только на старте, но не помогает понять, как искать решения проблем. Поэтому в этот раз я смотрел несколько уроков подряд по часу-полтора. Потом пробовал делать сам и к видео возвращался, только если совсем что-то не клеилось. В голове, кажется, осело заметно больше.</p>
 <p>Короче, прогресс есть, едем дальше!</p>
 <p>UPD: Один из фаундеров FlippedNormals записал <a href="https://www.youtube.com/watch?v=izkRFqBzya0" target="_blank">ролик</a> с теми же мыслями про обучение.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/slack-summary"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Сводка в Slack
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>10 ноября 2024</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Готово</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Powershell</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Попался под руку <a href="https://gist.github.com/vkostyanetsky/b0807f2df2501bbeeb97c95a977f3e23" target="_blank">скрипт</a>, который я пару лет назад накатал для рабочего GitLab'а. Вкратце: мы ежедневно прогоняем репозиторий разработки через прорву тестов на Ванессе, в результате чего получаем симпатичный отчет — сколько тестов выполнено, какие провалились, причины провалов и так далее.</p>
-<p>Отчет нужно постоянно анализировать, хотя бы бегло. Конечно, полностью «зеленых» тестов мы уже давно не видели, и это нормально: например, в случае взаимозависимой разработки, когда коммиты ломают проверяемый функционал, и тесты еще предстоит поправить. Однако держать руку на пульсе все равно необходимо.</p>
-<p>Чтобы упростить эту рутину, я немного расширил код пайплайна: после формирования отчета GitLab первым делом создает короткую сводку (тип клиента, тип базы, статистика по тестам) и отправляет ее в слак.</p>
-<p><img alt="Отчет" src="https://kostyanetsky.ru/notes/slack-summary/report.jpg"/></p>
-<p>Как бонус, стало проще отвечать на философский вопрос «кто все сломал». Чаще всего — автор первого коммита, на котором метрика Scenarios Failed на скриншоте выше пробила потолок :)</p>
             </div>
           </div>
           

@@ -289,6 +289,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="georgia"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -314,13 +321,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           3D
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,53 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/self-documenting-code"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Самодокументируемый код
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>3 мая 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Код с запашком</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Всем привет! С вами снова Джонни Кэтсвилл и передача «Самодокументируемый код»!</p>
+<p>Сегодня мы переберем строки таблицы значений с Н по Й:</p>
+<p><img alt=":|" src="https://kostyanetsky.ru/notes/self-documenting-code/self-documenting-code.png"/></p>
+<p>Вроде и мелочь совсем, но когда в пределах одного модуля в пятый раз натыкаешься на такой подход к именованию переменных — глаз невольно начинает дергаться :-)</p>
+<p>Дело даже не в том, что этот участок <a href="https://kostyanetsky.ru/notes/why-so-serious" target="_blank">труднее разобрать</a> — просто он неплохо говорит о качестве модуля в целом. Скорее всего, писавший его программист был вымотан, и поблизости можно встретить что-нибудь вроде отважной выгрузки справочника номенклатуры в таблицу значений, чтения кучи объектов «через точку» и прочего тяп-ляп.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1271,50 +1318,6 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
 <p>Такой трюк может быть уместен, когда мы накапливаем какие-то данные, а потом просто фильтруем их по регистратору или по другим полям. То есть от регистра нам нужна только его таблица движений. В этом случае нет никакого смысла тратить ресурсы сервера на расчет таблицы оборотов и её хранение.</p>
 <p>Конечно, при виде такой задачи в голову сразу приходит регистр сведений. Однако эффективность этого варианта зависит от количества измерений, которые вы собираетесь завести в регистре; дело в том, что каждый индекс по регистру сведений включает все его измерения (а периодические регистры — ещё и период). Между тем, платформа создает базовый индекс по измерениям, индекс для каждого измерения с признаком «Ведущее», а ещё — индекс для каждого измерения, ресурса или реквизита, которые вы решите проиндексировать отдельно. И это мы еще не дошли до таблиц срезов, где применяется тот же подход!</p>
 <p>В общем, накладные расходы на содержание индексов могут быть довольно заметны, если регистр сведений спланирован не особенно удачно и содержит сравнительно много измерений (скажем, больше двух-трех). В этом случае «плоский» оборотный регистр без оборотов смотрится вполне прилично.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/river-city-girls"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                River City Girls
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>30 сентября 2019</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Семья</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Видеоигры</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Прошли на пару с мелкой River City Girls (недавно вышедший beat 'em up; это такой жанр игр, где нужно навалять всем, кто тебе не нравится).</p>
-<p>На <a href="https://kostyanetsky.ru/notes/river-city-girls/ru.jpg" target="_blank">фоточке</a> я наблюдаю за десятилетней Лисой, которая в этот момент уверенно разбрасывает толпу японских мордоворотов.</p>
             </div>
           </div>
           

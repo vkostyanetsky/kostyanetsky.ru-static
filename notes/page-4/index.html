@@ -289,6 +289,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="georgia"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -314,13 +321,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           3D
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,56 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/strange-bitrix"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Про странный Битрикс
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>15 октября 2022</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Битрикс</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Чем дальше лезу в REST-интерфейс Битрикс24, тем сильнее поражаюсь тому, насколько необычно устроено мышление у его разработчиков. Проявляется это по-разному.</p>
+<p>Взять, например, интерфейс сделок и товаров по ним. В таблице последних нет поля суммы: мол, нужна тебе сумма по строке — сам и считай. Зато сумма есть на уровне документа. Угадаете, как называется поле?</p>
+<p>AMOUNT? DEAL_AMOUNT? DOCUMENT_AMOUNT? AMOUNT_TOTAL?</p>
+<p>Не угадали, правильный ответ — OPPORTUNITY.</p>
+<p><img alt="Чего, блядь?" src="https://kostyanetsky.ru/notes/strange-bitrix/what-the-fuck.jpg"/></p>
+<p>Но вернемся в строке товара. В ней есть товар, ставка НДС и единица измерения. Все три сущности вполне самостоятельны: у каждой есть отдельная таблица со вспомогательной информацией и свой собственный идентификатор. Логично предположить, что в строке товара они и хранятся: ID товара, ID ставки НДС и ID единицы измерения.</p>
+<p>Логично-то логично, но нет, хрен там плавал. Для номенклатуры и правда хранится ID, а вот для ставки НДС — значение ставки, и для единицы измерения — код измерения по ОКЕИ ¯\_(ツ)_/¯</p>
+<p>Нормализация базы данных? Чего? Какая еще нормализация? Отстань, мужик, работать мешаешь.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1313,62 +1363,6 @@ MultiMonitorTool.exe /switch 2
 <script src="https://gist.github.com/vkostyanetsky/afae4dee09d639f34156d6c02b29c2a5.js">Gist</script>
 <p>Смысл тут простой: когда копаешься в каком-нибудь дремучем легаси и бегаешь туда-сюда между хаотично раскиданными процедурами на три экрана каждая — логику каждой из них держать в голове довольно трудно. Первая же чашка кофе всё смоет. Поэтому такие заметки на полях здорово ускоряют ориентацию на местности, и чем больше времени проходит между подходами к коду — тем заметнее эффект.</p>
 <p>Однако в какой-то момент стало понятно, что это ноу-хау — просто костыль, подпирающий откровенно хреновый дизайн кода. Попалась тебе длинная процедура или функция — вздохни, сядь и нарежь толстяка на методы поменьше. Сэкономишь и время, и нервы, и в коде разберешься быстрее, и Сонар порадуешь.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/slow-notification"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Медленное оповещение
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>18 августа 2021</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Оптимизация</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p><a href="https://twitter.com/iamhellcat/status/1427626118635470866" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/slow-notification/snap-tweet-iamhellcat-1427626118635470866.png"/></a></p>
-<p>Прочитал этот твит и внезапно вспомнил случай из практики. Прилетает запрос от клиента — мол, 1С тормозит, сделайте что-нибудь. Уточняем: тормозит всё-таки не вся 1С, а конкретная операция.</p>
-<p>База клиента — переписанная УТ, проблемная операция — из блока доработок. Внутри — множество многоэтажных запросов, возня с таблицами значений, какие-то невнятные вычисления и пачка серверных процедур по семьсот строк каждая. Копию базы снять нельзя, ТЖ недоступен, доступ к СУБД закрыт, доступ к счётчикам — тоже. Отладка на сервере 1С выключена, включить — не вариант.</p>
-<p>Бардак, в общем. Как понять, где тут всё вязнет? Ладно, конфигурацию можно менять — уже неплохо. Вешаю на операцию замер: ну да, думает над чем-то пару минут. Отлично! Потираю ручки и сужаю область поиска: докидываю целый ворох замеров на самые подозрительные участки.</p>
-<p>Результат любопытный: тормозов нет! Код не то чтобы летает, но о минутах и речи нет — с учетом сложности, расходы в пределах допустимого. Может, какая-то сериализация данных между клиентом и сервером? Тщательно выверяю код серверной процедуры — нет, никакой трансляции. Всё, что было на сервере, осталось на сервере.</p>
-<p>Перехожу к клиентской части. Что тут может тормозить-то?.. Выглядел код, упрощая, как-то так:</p>
-<script src="https://gist.github.com/vkostyanetsky/df0b17526991bbac3b3df1c75dfa154f.js">Gist</script>
-<p>Смотрел я на этот код, как баран, минут десять. В конце концов спросил коллегу и он рассказал удивительную вещь: оказывается, Оповестить() не просто рассылает оповещения во все открытые формы, а <strong>ждёт</strong>, когда в них завершится обработчик оповещения.</p>
-<p>Я знатно офигел, полез проверять и в конце концов наткнулся на форму, которая ловила событие выполнение операции и подрывалась обновлять свои динамические списки. Запрос в одном из них и давал тормоза (там подзапрос к подзапросу к подзапросу и ворох соединений «через точку» — в общем, дальше не интересно).</p>
-<p>Такая вот яломиште :-) Оповещайте с осторожностью!</p>
             </div>
           </div>
           

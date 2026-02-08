@@ -289,6 +289,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="georgia"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -314,13 +321,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           3D
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,54 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/mssql-server-start-date"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Дата запуска сервера MS SQL
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>8 марта 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">MS SQL</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Для чего может пригодиться дата запуска MS SQL Server? Например, мы разбираем задержки в работе СУБД и хотим определить, в течении какого периода времени наполнялась DMV-шка <a href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql" target="_blank">sys.dm_os_wait_stats</a>. Её данные (как и любой другой DMV, впрочем) хранятся в оперативной памяти как раз с момента запуска СУБД.</p>
+<p>Дату запуска сервера можно получить из  DMV-шки <a href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql" target="_blank">sys.dm_os_sys_info</a>:</p>
+<pre><code>SELECT sqlserver_start_time FROM sys.dm_os_sys_info
+</code></pre>
+<p>Есть и другой способ, связанный с tempdb. Эта база данных создаётся при запуске сервера, и дата её создания вполне может считаться датой запуска сервера. Значение можно вытащить из <a href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-catalog-views/sys-databases-transact-sql" target="_blank">sys.databases</a>:</p>
+<pre><code>SELECT create_date FROM sys.databases WHERE name = 'tempdb'
+</code></pre>
+<p>Нюанс: дату запуска сервера как точку начала сбора данных DMV-шек нужно рассматривать с осторожностью. Накопленная статистика могла быть очищена вручную — например, вот так:</p>
+<pre><code>DBCC SQLPERF('sys.dm_os_wait_stats', CLEAR)
+</code></pre>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1214,46 +1262,6 @@
 </code></pre>
 <p>Если ссылка задана, то это надо как-то обработать — либо не заменять её вашей (если логика задачи позволяет), либо создать исключение. Иначе может возникнуть нарушение связности данных, которое будет непросто расследовать — да и вообще заметить.</p>
 <p>Ну и, конечно, эта штука работает в обе стороны — я имею в виду, что установленную вами ссылку тоже может потереть какой-нибудь посторонний код (например, обработчик события объекта или подписка на него). Это надежно решается только тестированием.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/distributed-design"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Распределенный дизайн
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>20 октября 2018</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Дизайнер из «Stack Overflow» <a href="http://www.tedgoas.com/blog/distributed-design" target="_blank">написал</a> о том, как они организуют удаленную работу. Понравилась структура текста — не просто «как мы это делаем», а прямо парами: проблема + решение. </p>
-<p>У нас в компании почти вся разработка — удаленная и сам я — тоже удаленщик. Мне очень нравится так работать; главное тут — помнить, как легко нахватать самых неожиданных проблем, когда твое рабочее место и твой дом — одно и то же место. Советы из статьи пить воду и вылезать под солнце вполне себе актуальны, например — в ходе какого-нибудь кранча про это и правда легко забыть.</p>
             </div>
           </div>
           
