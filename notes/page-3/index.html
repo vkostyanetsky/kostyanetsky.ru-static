@@ -372,6 +372,59 @@
 
                         
             <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/obsidian-timesheet"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Таймшит для Обсидиана
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>12 мая 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Готово</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Typescript</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Написал ещё один плагин к <a href="https://obsidian.md" target="_blank">Obsidian</a>, на этот раз — для <a href="https://help.obsidian.md/Plugins/Daily+notes" target="_blank">ежедневных заметок</a>. Рисует симпатичный отчет: над какими задачами работал, что сделал, сколько времени потратил. Я постарался описать в <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">репозитории</a>, как это работает; буду рад, если кому-то ещё пригодится!</p>
+<p>Забавный момент: для примеров в README я использовал номера задач FBI-1, FBI-2 и так далее. Это не отсылка к X-Files или Twin Peaks — просто первое, что пришло мне в голову. Дело в том, что наш внутренний проект по разработке FirstBit ERP называется First Bit Internal, сокращенно — FBI. Основной пул задач, над которыми мы работаем, живёт именно в нём.</p>
+<p>Мы-то уже привыкли, но коллег вне компании наши скриншоты из JIRA или SonarQube неизменно веселят. Представили, что вы — агент Купер? А мне и представлять не надо :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
             <a href="https://kostyanetsky.ru/notes/payment-terms"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
                 Запросом больше, запросом меньше
@@ -1272,58 +1325,6 @@ EndIf;
 <p>Однако бывает наоборот: нужно снизить количество операций, которые программа способна выполнить. Допустим, мы дергаем внешний сервис и он банит, если делать это слишком часто. Пример — облако <a href="https://bitrix24.net" target="_blank">Битрикс24</a>, которое требует отправлять не больше двух запросов в секунду.</p>
 <p>Вот <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">реализация</a> такой замедлялки, которую я написал на прошлой неделе. Поддержки очередности в ней нет; основная решенная задача — выполнить как можно больше запросов, не выходя за лимит (с учётом того, что запросы могут делаться из разных сеансов).</p>
 <p>Задача решена грубо — через константу, которая хранит дату текущей секунды и количество уже были отправленных запросов. Клиенты, которые утыкаются в ограничение — ждут. Для нагруженных систем такой подход не годится, а так — вполне может пригодиться.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/rest-service-4-sm"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                REST-сервис для Service Manager
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>25 февраля 2023</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>На этой неделе написал REST-сервис для настройки к нашему сервис-менеджеру (это такая конфигурация для управления инстансом 1cFresh). Развернуть контур разработки у нас — задача регулярная, и базу менеджера каждый раз приходилось тюнить руками: подкручивать витрину, менять адреса приложений, перезаписывать регламентные задания и так далее.</p>
-<p>Реализация была проста. Придумай структуру JSON, напиши парсер, найди подходящий код в конфигурации, обеспечь его вызов извне и убедись, что ничего не сломал. Рутинная работа, в общем-то, но я люблю время от времени делать такие штуки: смотреть вокруг и пытаться сообразить, какая из ежедневных задач раздражает достаточно сильно. </p>
-<p>Эта — хороший пример. Настройка сервис-менеджера не была проблемой (запустить приложение и покрутить настройки), но о ней нужно было думать и её нужно было делать. А теперь — нет:</p>
-<ol>
-<li>Есть JSON-файл со всеми настройками;</li>
-<li>Есть REST-сервис для его обработки;</li>
-<li>Есть скрипт, который засунет первый во второй; </li>
-<li>Есть пайплайн, который сделает всё это сам. </li>
-</ol>
-<p>Короче, ботинок тёр ногу, а теперь перестал. Йаху!</p>
             </div>
           </div>
           

@@ -372,6 +372,56 @@
 
                         
             <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/with-side-effect"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                С побочным эффектом
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>15 марта 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>В последнем релизе <a href="https://firstbit.ae" target="_blank">нашей ERP</a> мы оптимизировали несколько тяжелых динамических списков (заказы, инвойсы, проформа инвойсы и так далее). Там накопился приличный техдолг, в основном — горы вспомогательных таблиц, прикрученных к основным запросам (контактная информация, технические реквизиты, остатки, обороты и так далее). В итоге даже в сравнительно небольших приложениях оптимизатор СУБД начинал выдавать бредни вместо планов запроса и мало-помалу платить за это ресурсами стало совсем неприятно.</p>
+<p>В общем, запатчили через несколько разных подходов, один из них — подгрузка дополнительных данных в обработчике <code>ПриПолученииДанныхНаСервере()</code> (я про него недавно <a href="https://kostyanetsky.ru/notes/desire-paths" target="_blank">вспоминал</a>, кстати). Написали удобный фреймворк вокруг фичи, внедрили, потестировали и... В общем, сидим с кислыми минами. </p>
+<p>Нет, с производительностью и правда стало сильно лучше. Запрос к тяжелым виртуальным таблицам можно затюнить просто идеально. Проблема в другом: значения полей, которые заполняет этот обработчик, не пробрасываются в стандартные механики динамического списка. То есть для них не работает поиск, сортировка и группировка.</p>
+<p>Например, вводим значение, которое видим в колонке, а строка не находится. Или находятся не все строки. Или находятся строки, которые не должны были найтись. Для пользователя это выглядит отвратительно, ну баг и баг же: визуально-то такие поля никак не отличаются. Как ты ему объяснишь, что это особенность работы механизма платформы™? </p>
+<p>Исключишь такое поле из механизмов, которые с ними работать не могут — будет ещё чище. Например, попытаешься отсортировать — получишь здоровенную ошибку. Опять же, объяснить, почему на этой колонке с суммой у него вылетает ошибка, а на соседней сортировка прекрасно работает — задача со звездочкой.</p>
+<p>... Блин, вот как можно было разработать такой замечательный концепт обработчика и настолько заруинить реализацию на уровне платформы? Неожиданно вспомнил Реддит. В некоторых сообществах популярны треды «придумай суперсилу, но с побочным эффектом». Типа, кто-то пишет в комментариях: я могу бегать со скоростью ветра! Ему отвечают: да, но не можешь тормозить. И так далее. Местами получается забавно.</p>
+<p><img alt="Superpower" src="https://kostyanetsky.ru/notes/with-side-effect/reddit.png"/></p>
+<p>Вот и мы с разработчиками платформы в таком же диалоге. Вы можете разогнать динамические списки (но UI будет вызывать у пользователей бешенство). Вы можете автоматом слать двоичные данные в бакет S3 (но потеряете их в один неосторожный клик). Вы можете телепортироваться куда угодно (но тратите столько времени, словно шли пешком). Вы можете превращаться (но только в пожилого мопса). У вас пышные, шелковистые волосы (но на заднице). </p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
             <a href="https://kostyanetsky.ru/notes/ikigai"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
                 Икигай
@@ -1355,50 +1405,6 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
 <p>Пересобрали права, перезапустили кластер, проблема ушла.</p>
 <p><img alt="End of Report" src="https://kostyanetsky.ru/notes/bit-of-surgery/report.jpeg"/></p>
 <p>Остальные гипотезы (буйство менеджера кластера, недостаток аппаратных ресурсов, программные ошибки конфигурации, ошибки клиентского процесса, кривая отработка security profile, проблемы c сетью между клиентом и сервером) отбросили по ходу диагностики.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/vaporia"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Смутно знакомый логотип
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>14 декабря 2024</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">ИИ</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Грузия</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p><del>Тем временем OpenAI открыл в Тбилиси филиал</del> На самом деле тут вейпами торгуют, а дизайнер логотипа, скорее всего, вдохновлялся клубами пара. Но каждый раз, как мимо хожу, глаз цепляется :)</p>
-<p><img alt="Vaporia" src="https://kostyanetsky.ru/notes/vaporia/vaporia.jpg"/></p>
             </div>
           </div>
           

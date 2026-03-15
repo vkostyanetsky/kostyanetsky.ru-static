@@ -372,6 +372,58 @@
 
                         
             <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/rest-service-4-sm"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                REST-сервис для Service Manager
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>25 февраля 2023</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>На этой неделе написал REST-сервис для настройки к нашему сервис-менеджеру (это такая конфигурация для управления инстансом 1cFresh). Развернуть контур разработки у нас — задача регулярная, и базу менеджера каждый раз приходилось тюнить руками: подкручивать витрину, менять адреса приложений, перезаписывать регламентные задания и так далее.</p>
+<p>Реализация была проста. Придумай структуру JSON, напиши парсер, найди подходящий код в конфигурации, обеспечь его вызов извне и убедись, что ничего не сломал. Рутинная работа, в общем-то, но я люблю время от времени делать такие штуки: смотреть вокруг и пытаться сообразить, какая из ежедневных задач раздражает достаточно сильно. </p>
+<p>Эта — хороший пример. Настройка сервис-менеджера не была проблемой (запустить приложение и покрутить настройки), но о ней нужно было думать и её нужно было делать. А теперь — нет:</p>
+<ol>
+<li>Есть JSON-файл со всеми настройками;</li>
+<li>Есть REST-сервис для его обработки;</li>
+<li>Есть скрипт, который засунет первый во второй; </li>
+<li>Есть пайплайн, который сделает всё это сам. </li>
+</ol>
+<p>Короче, ботинок тёр ногу, а теперь перестал. Йаху!</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
             <a href="https://kostyanetsky.ru/notes/haul-trucks"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
                 Карьерные самосвалы
@@ -1304,60 +1356,6 @@ MultiMonitorTool.exe /switch 2
 <p>Была такая игра — Diablo. Бегаешь ты там, RPG, всякие спеллы. У персонажа есть мана и здоровье, и когда у тебя маны на каст… Ха, звучу как задрот! Ну ладно. В общем, когда у тебя маны на каст не хватает, она у тебя начинает из здоровья браться.</p>
 <p><em>— Доктор Кот</em></p>
 </blockquote>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/hammer-and-nails"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Про молоток и гвозди
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>15 сентября 2021</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Код с запашком</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>На днях допиливал платежные документы в нашей конфигурации и наткнулся на невероятно избыточное решение примитивной задачи. Простите, не  могу держать в себе.</p>
-<p>Вот есть у вас документ, да? В нём — несколько табличных частей. В каждой — поле для комментария. Делаете вы для этого документа печатную форму; если хотя бы в одной строке любой ТЧ есть комментарий — нужно использовать один шаблон, если комментариев нет — другой.</p>
-<p>Задача примитивная, все мы миллион раз такое делали — ну, смотрим в выборку строк, натравливаем ПустаяСтрока() на нужное поле и грузим подходящий шаблон. Готово, можно пить кофе!</p>
-<p>Однако, вместо короткого цикла я увидел это:</p>
-<script src="https://gist.github.com/vkostyanetsky/e870d5bb3d2f23d93f3d17001eaef59b.js">Gist</script>
-<p>Ну то есть да, делаем матрешку из подзапросов, в самом нижнем из которых роемся в ТЧ (которые мы, напомню, только что выгребали для вывода на печатную форму). Ищем в них комментарии, если есть — ставим единичку. Нет? Нолик. Итог несколько раз группируем и возвращаем в скрипт.</p>
-<p>Я сейчас даже не про нагрузку на СУБД (рискну предположить, что заметного эффекта этот трюк не дает — в конце концов, после отбора по ссылке выборка будет копеечной). Просто… Ну… Чекнуть выборку строк — пять строк кода. Понятных, простых, коротких, Сонару ругнуться негде. Как можно было родить вот это? Из большой любви к запросам? </p>
-<p>А ведь что-то в этом духе и было, скорее всего. Я почти вижу его, этого кодера, который только что более-менее сносно освоил запросы и пребывает в перманентном восторге от новых возможностей. А когда в руках есть клёвый блестящий молоток, всё вокруг кажется гвоздями.</p>
             </div>
           </div>
           
