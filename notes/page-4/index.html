@@ -372,6 +372,56 @@
 
                         
             <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/outgoing-requests-limiter"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Помедленнее, я записываю
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>5 марта 2023</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Битрикс</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Готово</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Обычно при разработке исходишь из простой формулы: чем быстрее работает — тем лучше. Например, чем больше запросов приложение успеет выполнить за единицу времени — тем быстрее решится задача, ради которой эти запросы нужны.</p>
+<p>Однако бывает наоборот: нужно снизить количество операций, которые программа способна выполнить. Допустим, мы дергаем внешний сервис и он банит, если делать это слишком часто. Пример — облако <a href="https://bitrix24.net" target="_blank">Битрикс24</a>, которое требует отправлять не больше двух запросов в секунду.</p>
+<p>Вот <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">реализация</a> такой замедлялки, которую я написал на прошлой неделе. Поддержки очередности в ней нет; основная решенная задача — выполнить как можно больше запросов, не выходя за лимит (с учётом того, что запросы могут делаться из разных сеансов).</p>
+<p>Задача решена грубо — через константу, которая хранит дату текущей секунды и количество уже были отправленных запросов. Клиенты, которые утыкаются в ограничение — ждут. Для нагруженных систем такой подход не годится, а так — вполне может пригодиться.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
             <a href="https://kostyanetsky.ru/notes/rest-service-4-sm"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
                 REST-сервис для Service Manager
@@ -1308,54 +1358,6 @@ MultiMonitorTool.exe /switch 2
 </ol>
 <p>Вуаля! Теперь при любом изменении репозитория с исходными данными гитхаб немедленно (ну, как немедленно — в пределах минуты) обновляет репозиторий с готовым сайтом и деплоит его оттуда через GitHub Pages. Бонусом — веб-интерфейс для правки страниц сайта (собственно, сайт гитхаба). Почти чистый No Code :-)</p>
 <p>Чтобы два раза не вставать, я добавил ссылки для правки страниц прямо на сайт (карандаш в верхнем правом углу). Это задумано как удобство для меня, но вообще отправить PR может любой, кто, например, найдёт опечатку. Заранее спасибо!</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/diablo"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Diablo
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>22 сентября 2021</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Видеоигры</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/kVd6qeWoAxg" width="560"></iframe>
-<p>Хороший выпуск айтишного подкаста «Мы обречены» про выгорание разработчиков. Особых откровений нет, но что-то полезное для себя подчерпнуть можно. Очень понравилась аналогия с видеоиграми где-то ближе к середине:</p>
-<blockquote>
-<p>Была такая игра — Diablo. Бегаешь ты там, RPG, всякие спеллы. У персонажа есть мана и здоровье, и когда у тебя маны на каст… Ха, звучу как задрот! Ну ладно. В общем, когда у тебя маны на каст не хватает, она у тебя начинает из здоровья браться.</p>
-<p><em>— Доктор Кот</em></p>
-</blockquote>
             </div>
           </div>
           

@@ -372,6 +372,53 @@
 
                         
             <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/last-resort"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Скриншот со звуком
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>20 мая 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Тем временем</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Недавно в компании родилась идея разделить внутреннюю ERP-шку на несколько независимых частей и организовать между ними обмен данными. Мы обсудили контуры задачи, модель обмена, транспорт, примерно подбились по срокам — в общем, привычная рутина.</p>
+<p>Создал под весь этот огород задачу. Названия им мы даем на английском языке, так что вписал первую формулировку, которая пришла в голову.</p>
+<p><img alt="Cut My Life Into Pieces" src="https://kostyanetsky.ru/notes/last-resort/last-resort.png"/></p>
+<p>Заголовок вышел со звуком. Ладно, думаю, смешно, но как тогда назвать? Во, пусть будет Distributed Internal ERP. Сокращенно... DIE?</p>
+<p>Оставил первый вариант. Long live Papa Roach :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
             <a href="https://kostyanetsky.ru/notes/obsidian-timesheet"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
                 Таймшит для Обсидиана
@@ -1275,56 +1322,6 @@ EndIf;
 <p>Чувствуется история за кулисами, да?</p>
 <p>Или, скажем, летал как-то в Турцию отдыхать и решил на всякий случай полистать правила авиакомпании (что можно брать на борт, чего нельзя). Среди списка запрещенных к проносу на борт предметов нашёл пункты «стальное копье» и «стальной кистень» 😬</p>
 <p>UPD: Ещё один отличный <a href="https://kostyanetsky.ru/notes/environmental-storytelling/soundproof.jpeg" target="_blank">пример</a> откуда-то из сети.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/outgoing-requests-limiter"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Помедленнее, я записываю
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>5 марта 2023</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Битрикс</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Готово</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Обычно при разработке исходишь из простой формулы: чем быстрее работает — тем лучше. Например, чем больше запросов приложение успеет выполнить за единицу времени — тем быстрее решится задача, ради которой эти запросы нужны.</p>
-<p>Однако бывает наоборот: нужно снизить количество операций, которые программа способна выполнить. Допустим, мы дергаем внешний сервис и он банит, если делать это слишком часто. Пример — облако <a href="https://bitrix24.net" target="_blank">Битрикс24</a>, которое требует отправлять не больше двух запросов в секунду.</p>
-<p>Вот <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" target="_blank">реализация</a> такой замедлялки, которую я написал на прошлой неделе. Поддержки очередности в ней нет; основная решенная задача — выполнить как можно больше запросов, не выходя за лимит (с учётом того, что запросы могут делаться из разных сеансов).</p>
-<p>Задача решена грубо — через константу, которая хранит дату текущей секунды и количество уже были отправленных запросов. Клиенты, которые утыкаются в ограничение — ждут. Для нагруженных систем такой подход не годится, а так — вполне может пригодиться.</p>
             </div>
           </div>
           

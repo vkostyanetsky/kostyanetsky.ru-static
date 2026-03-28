@@ -1,0 +1,220 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Номер года в литерале типа дата превышает 3999</title>
+
+    <meta name="description" content="Скрипты для поиска некорректных дат в базе данных 1С." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="https://kostyanetsky.ru/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.ru/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.ru/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.ru/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.ru/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Номер года в литерале типа дата превышает 3999"/>
+    <meta property="og:description" content="Скрипты для поиска некорректных дат в базе данных 1С."/>
+    <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/date-literal-exceeds-3999-once-again" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/with-side-effect';
+        let ctrlRightUrl    = '';
+    </script>
+    
+    <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/">Сайт Влада</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/projects/">Проекты</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.ru/notes/">Заметки</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <a
+                        title="Видите опечатку? Поправьте меня!"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/date-literal-exceeds-3999-once-again/index.md"
+                        class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
+                        >✎</a>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.me/notes/date-literal-exceeds-3999-once-again"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="EN"
+                    >
+                        EN
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page=""
+      data-total-notes=""
+      data-total-pages=""
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+      <section id="staticNotes" class="space-y-12">
+        <article class="rounded-2xl bg-white">
+          
+          <header class="text-3xl font-semibold tracking-tight space-y-2">
+            Номер года в литерале типа дата превышает 3999
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+                
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>28 марта 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Про ошибку в названии заметки я уже как-то <a href="https://kostyanetsky.ru/notes/date-literal-exceeds-3999" target="_blank">писал</a>. Напомню суть: платформа не переваривает даты позже 3999 года (на практике начинает стрелять с 3999-12-01). Теоретически такие даты вообще нельзя записать, но <s>если очень хочется</s> из-за ошибок в прикладном коде (и в коде самой платформы) это всё-таки возможно и время от времени случается. </p>
+<p>Обычные симптомы — перестают работать какие-то отчёты, не проводятся какие-то документы, падает пересчёт итогов. В общем, страдает любой код, который трогает записи с проблемными датами.</p>
+<p>Способ лечения, который я рамочно описал в заметке по ссылке выше — рабочий, но сравнительно медленный: нужно настроить ТЖ, собрать и распарсить результаты. Между тем, платформа падает на первом же обращении к битой дате, а их может быть много и валяться они могут в разных таблицах. То есть может потребоваться несколько подходов к снаряду: проверили, получили ошибку, исправили, проверили, получили следующую...</p>
+<p><img alt="Thank You, Mario!" src="https://kostyanetsky.ru/notes/date-literal-exceeds-3999-once-again/thanks.jpg"/></p>
+<p>Желая решать проблему как-нибудь побыстрее, несколько лет назад я написал <a href="https://gist.github.com/vkostyanetsky/a58ff201d2a87a35e70c4c8f4112ad4c" target="_blank">запрос для PostgreSQL</a>. Общая идея:</p>
+<ol>
+<li>Ищем в базе данных все поля с датами.</li>
+<li>Строим мегазапрос к таким полям (ищем даты, которые выходят за лимит 1С).</li>
+</ol>
+<p>То есть этот запрос генерирует другой запрос, да. Выполняем его и получаем полную картинку проблемы: список таблиц с некорректными датами. Дальше уже дело техники — смотрим, что за таблицы и решаем, как быть. В нашем случае проблемные даты иногда возникают в итогах и оборотах, так что их можно просто удалять и пересчитывать итоги через штатные инструменты.</p>
+<p>Почему действуем на уровне СУБД? Ну, средствами 1С такой номер не отколоть — напомню, платформа падает при попытке потрогать проблемные записи. Это касается любого взаимодействия, включая чтение. Кроме того, в данном случае работать напрямую быстрее и удобнее.</p>
+<p>На днях я переписал этот <a href="https://gist.github.com/vkostyanetsky/5990a16caacc4a9057b577c6a5694512" target="_blank">запрос для MS SQL</a>. Вышло длиннее (в силу особенностей этой СУБД), но идея та же.</p>
+<p>Если будете использовать, имейте в виду, что:</p>
+<ul>
+<li>Поле <code>_Fld626</code> в тексте запроса — разделитель для фреша. В вашей базе может называться по-другому или вообще отсутствовать.</li>
+<li>Запрос написан для базы со сдвигом в 2000 лет. Если в вашей базе сдвига нет, нужно скорректировать условие (см. функцию <code>DATEADD()</code>).</li>
+<li>Трюк с выводом в XML (см. <code>FOR XML</code>) я добавил, чтобы не дать SSMS обрезать текст мегазапроса (показалось быстрее, чем возиться с приведением типов). Побочный эффект: в получившемся мегазапросе нужно заменить <code>&amp;gt;</code> на <code>&gt;</code>, прежде чем выполнять его.</li>
+</ul>
+            </div>
+          </div>
+          
+        </article>
+
+
+            </div>
+          </div>
+
+        </article>
+
+      </section>
+        
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.ru/notes/with-side-effect"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← С побочным эффектом
+        </a>
+        
+        <span class="w-[1px]"></span>
+        
+      </nav>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Влад Костянецкий</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.ru/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
