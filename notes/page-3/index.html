@@ -261,6 +261,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="javascript"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -286,13 +293,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Вебдев
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,54 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/uuid-main-issue"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Главная проблема UUID
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>2 июня 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">PostgreSQL</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Наткнулся на <a href="https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/" target="_blank">хороший текст</a> об основной проблеме, которую таскает с собой UUID. Для 1С она тоже актуальна: все ссылочные объекты платформы (элементы справочников, документы и так далее) имеют собственные UUID. Они хранятся в БД, активно используются при поиске и, понятно, обильно индексируются (со всеми вытекающими последствиями). </p>
+<p>1С старается компенсировать проблему, создавая последовательные UUID. Пусть не идеально, но в целом эта штука работает и индексы получаются более-менее ровными. Да и вообще в сообществе об этом говорят довольно давно: вот, например, бородатый <a href="https://forum.mista.ru/topic.php?id=801986" target="_blank">топик на Мисте</a> (правда, тут диалог быстро перерос в курятник и из шести десятков комментариев от силы полтора — по делу).</p>
+<p>P.S. Рассмешила ремарка про вероятность создать в одной базе два одинаковых UUID:</p>
+<blockquote>
+<p>As an aside, for those worried about collisions: you should take up the lottery, since winning the jackpot twice in a row is a much more likely outcome than your system ever generating two identical random 128 bit numbers.</p>
+</blockquote>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1273,55 +1321,6 @@
 EndIf;
 </code></pre>
 <p>Думаю дописать сюда что-нибудь вроде «And Not (DataStructure.AmountVATIn = SearchPriceIncludesVAT)», чтобы придать происходящему тонкую нотку безумия.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/environmental-storytelling"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Повествование через окружение
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>19 марта 2023</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Тем временем</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Люблю замечать в окружающем мире штуки, за которыми явно стоит какая-то история. В видеоиграх это называют "повествованием через окружение": напрямую тебе историю не рассказывают, но если посмотреть по сторонам — можно догадаться, какое ружье висело на стенке и кто из него пальнул.</p>
-<p>Например, недавно отмечал с коллегами десятилетие компании в местном гольф-клубе. Шары нужно было отправлять в полет со второго этажа; перил там по понятным причинам нет, но натянута сетка на случай, если кто-то потеряет равновесие.</p>
-<p><img alt="Фотка с сайта клуба, чтобы было понятнее." src="https://kostyanetsky.ru/notes/environmental-storytelling/topgolf.jpeg"/></p>
-<p>Рядом висят предупреждения: прыгнете в сетку своим хотением — заплатите <abbr title="Порядка двухста тысяч рублей на этот момент.">десять тысяч дирхам</abbr>. Запишете этот прыжок веры на камеру — готовьте ещё пять тысяч.</p>
-<p>Чувствуется история за кулисами, да?</p>
-<p>Или, скажем, летал как-то в Турцию отдыхать и решил на всякий случай полистать правила авиакомпании (что можно брать на борт, чего нельзя). Среди списка запрещенных к проносу на борт предметов нашёл пункты «стальное копье» и «стальной кистень» 😬</p>
-<p>UPD: Ещё один отличный <a href="https://kostyanetsky.ru/notes/environmental-storytelling/soundproof.jpeg" target="_blank">пример</a> откуда-то из сети.</p>
             </div>
           </div>
           

@@ -261,6 +261,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="javascript"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -286,13 +293,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Вебдев
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,65 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/build-on-github"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Сборка блога на GitHub
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>29 сентября 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Блог</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Готово</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Последний год этот сайт работал на простой связке: статика, гитхаб и свой домен. То есть все страницы были заранее сгенерированы и лежали в <a href="https://github.com/vkostyanetsky/kostyanetsky.ru-static" target="_blank">репе</a> гитхаба, к которой был подключен <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+<p>Статику я собирал с помощью скрипта, на вход которому подавались педантично разложенные по папкам текстовые файлы с содержимым страниц. Скрипт рылся в них и генерил html-ки, которые я потом вручную перекладывал в репу.</p>
+<p>Эта схема, в общем, неплохо работала, но меня раздражало количество кликов. Здесь скрипт дерни, там скрипт дерни, потом ещё с гитом повозиться надо. Хотелось бы попроще.</p>
+<p>В какой-то момент до меня дошло, что на плечи гитхаба можно переложить не только деплой статики, но и саму сборку. Я поворочал мозгами и добавил к репозиторию со статикой ещё два:</p>
+<ol>
+<li><a href="https://github.com/vkostyanetsky/kostyanetsky.ru" target="_blank">Репозиторий</a> исходных данных. Сюда я положил контент сайта: те самые текстовые файлы и чуть-чуть метаданных (заголовки страниц, даты их создания, теги для заметок и так далее).</li>
+<li><a href="https://github.com/vkostyanetsky/BlogBuilder" target="_blank">Репозиторий</a> скрипта для генерации статики. Кроме самого скрипта, сюда я засунул разные ассеты (иконки, стили, манифесты — в общем, всё, что не нужно каждый раз генерировать, а можно просто «положить» рядом с получившимися html-ками).</li>
+</ol>
+<p>Потом я накатал <a href="https://github.com/vkostyanetsky/kostyanetsky.ru/blob/main/.github/workflows/main.yml" target="_blank">экшен</a>, который просыпается при каждом пуше в репу с исходными данными. Вкратце, его логика:</p>
+<ol>
+<li>Клонировать репу со статикой и репу с генератором;</li>
+<li>Обновить репу со статикой с помощью генератора;</li>
+<li>Запушить изменения репы со статикой в мейн;</li>
+<li>Написать хозяину (мне) в телегу.</li>
+</ol>
+<p>Вуаля! Теперь при любом изменении репозитория с исходными данными гитхаб немедленно (ну, как немедленно — в пределах минуты) обновляет репозиторий с готовым сайтом и деплоит его оттуда через GitHub Pages. Бонусом — веб-интерфейс для правки страниц сайта (собственно, сайт гитхаба). Почти чистый No Code :-)</p>
+<p>Чтобы два раза не вставать, я добавил ссылки для правки страниц прямо на сайт (карандаш в верхнем правом углу). Это задумано как удобство для меня, но вообще отправить PR может любой, кто, например, найдёт опечатку. Заранее спасибо!</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1314,47 +1373,6 @@
 <p><em>Joe Stefanelli (SQL Server developer)</em></p>
 </blockquote>
 <p>Возможно, это просто на дне приоритетов. Добавление и удаление двух тысяч лет для каждой даты, конечно, увеличивает нагрузку на оборудование, но на фоне остального она теряется.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/hulk-removes"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Халк удалять!
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>9 ноября 2020</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">PostgreSQL</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>На <a href="https://postgrespro.ru/education/courses/DBA1" target="_blank">курсе</a> по PostgreSQL узнал смешную деталь: в 10-й версии СУБД разработчики переименовали папку pg_xlog (журналы предзаписи) в pg_wal, а папку pg_clog (статусы транзакций) — в pg_xact.</p>
-<p>Знаете, почему? Из-за не слишком опытных, но уже достаточно смелых администраторов, которые триггерились на слово «log» в названии папки. Мол, мне нужно место на диске освободить, а тут СУБД забила всё своими дурацкими логами. Некогда разбираться, rm -rf их и порядок!</p>
-<p>В общем, в трубу одновременно вылетала и защита работы с данными в буферном кэше, и многоверсионность. После чего кластер умирал в муках. Свободного места на диске получалось много, но радоваться этому, боюсь, приходилось недолго :-)</p>
             </div>
           </div>
           

@@ -261,6 +261,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="javascript"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -286,13 +293,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Вебдев
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,47 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/hulk-removes"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Халк удалять!
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 ноября 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">PostgreSQL</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>На <a href="https://postgrespro.ru/education/courses/DBA1" target="_blank">курсе</a> по PostgreSQL узнал смешную деталь: в 10-й версии СУБД разработчики переименовали папку pg_xlog (журналы предзаписи) в pg_wal, а папку pg_clog (статусы транзакций) — в pg_xact.</p>
+<p>Знаете, почему? Из-за не слишком опытных, но уже достаточно смелых администраторов, которые триггерились на слово «log» в названии папки. Мол, мне нужно место на диске освободить, а тут СУБД забила всё своими дурацкими логами. Некогда разбираться, rm -rf их и порядок!</p>
+<p>В общем, в трубу одновременно вылетала и защита работы с данными в буферном кэше, и многоверсионность. После чего кластер умирал в муках. Свободного места на диске получалось много, но радоваться этому, боюсь, приходилось недолго :-)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1363,55 +1404,6 @@ WHERE
 </code></pre>
 <p>Полный список стандартных форм и обработок, которые можно вытащить, способ получения этого списка, а также куча споров вокруг и около — по ссылкам выше.</p>
 <p>Зачем это пригодится вам — честно, не знаю. Что касается нас, то мы делали интерфейсы для работы с историей данных и было любопытно, как они написаны у самой 1С (спойлер: довольно неряшливо).</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/how-not-to-land"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Тонкое искусство приземления
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>31 мая 2020</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Тем временем</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/bvim4rsNHkQ" width="560"></iframe>
-<p>На волне актуальных новостей наткнулся на трёхлетней давности ролик от SpaceX с подборкой неудачных приземлений на плавучую платформу. Как по мне — отличный пример того, как нужно относиться к своим ошибкам. С юмором!</p>
-<blockquote>
-<p>Well, technically, it did land… Just not in one piece.</p>
-</blockquote>
-<p>:D</p>
-<p>В комментариях не отстают:</p>
-<blockquote>
-<p>Space X : Launches astronauts for the first time.</p>
-<p>Youtube: Let's recommend this video!</p>
-</blockquote>
             </div>
           </div>
           

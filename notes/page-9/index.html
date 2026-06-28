@@ -261,6 +261,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="javascript"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -286,13 +293,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Вебдев
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,55 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/object-locks"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Объектные блокировки
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>22 апреля 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Во-первых, сразу, чтобы не путаться: объектные блокировки платформы никак не связаны с управляемыми блокировками и, тем более, блокировками СУБД. Во-вторых, различают два вида: пессимистические объектные блокировки и оптимистические.</p>
+<p>Оба вида неплохо <a href="https://its.1c.ru/db/metod8dev#content:5839:hdoc" target="_blank">описаны</a> на ИТС; ниже — просто краткая выжимка.</p>
+<h2>Пессимистические блокировки</h2>
+<p>Накладываются расширением формы, когда пользователь начинает редактировать объект — например, меняет значение поля. Если тот же объект попробует отредактировать в форме другой пользователь — форма, которую он открыл, тоже попробует наложить пессимистическую блокировку, не сможет этого сделать и пользователь получит ошибку «Не удалось заблокировать запись».</p>
+<p>То есть платформа в данном случае делает своего рода пессимистичную оценку ситуации: мол, раз первый пользователь начал редактировать объект — скорее всего, он его запишет. Раз так, второму пользователю разрешать редактировать нельзя.</p>
+<p>Пессимистическую блокировку также можно наложить методом объекта Заблокировать() и снять через метод Разблокировать(). Кроме того, можно воспользоваться методом глобального контекста ЗаблокироватьДанныеДляРедактирования() и методом управляемой формы ЗаблокироватьДанныеФормыДляРедактирования().</p>
+<h2>Оптимистические блокировки</h2>
+<p>Сперва немного теории: платформа хранит версии объектов ссылочного типа (справочников, документов и так далее). По сути это просто момент времени, в который объект был изменён последний раз. Когда объект считывается расширением формы или кодом — его версия считывается вместе с ним.</p>
+<p>Так вот, в момент записи объекта платформа сверяет ту версию, что была получена при чтении объекта из базы данных и ту, что указана в базе данных в момент записи. Если версии различаются — возникает ошибка «Операция не может быть выполнена из-за несоответствия версии или отсутствия записи базы данных».</p>
+<p>Это и есть так называемая «оптимистическая блокировка». Называют её так потому, что платформа тянет с проверкой до последнего — пока не произойдет реальной попытки записи.</p>
+<p>Наложить оптимистическую блокировку объекта через код нельзя: версия объекта хранится в поле _Version таблицы данных объекта, заполнением которого занимается СУБД. Напрямую изменить это значение средствами платформы нельзя (можно, впрочем, записать объект — тогда его версия изменится).</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1222,51 +1271,6 @@
             <div class="prose-like">
               <p>Летом катался с друзьями на границу с Монголией (на машинах доехали до Ташанты, а оттуда — на велосипедах до <a href="http://rasulka.ru/ооо-расул---кок-коль.html" target="_blank">Кок-Коля</a>). Вымотались как проклятые, однако это того определенно стоило — виды с гор невероятно крутые! Одно жаль, животные попадались нечасто — даже чумных сусликов не встретили, хотя их нам каждый встречный анонсировал, включая погранцев :-)</p>
 <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/4HbJAdYQ-xM" width="560"></iframe>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/ampersand-sign-in-1c"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Знак амперсанда в 1С
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>27 декабря 2018</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>При обработке символа амперсанда в тексте надписей платформа применяет стандартный подход Windows: то есть, сам амперсанд не отобразится, а следующий после него символ станет горячей клавишей для действия, закрепленного за надписью (например, обработчика команды или события элемента).</p>
-<p>Пример ниже выведется как «Project Costing». Символ «P» в ней будет подчеркнут и станет горячей клавишей; если это, например, заголовок команды, то её можно будет вызвать, нажав Alt + P.</p>
-<pre><code>ТекстНадписи = "&amp;Project Costing";
-</code></pre>
-<p>Единственное неудобство — если нужно вывести амперсанд прямо в надпись. В этом случае символ следует удвоить: так, пример ниже будет выглядеть как «Project P&amp;L». Никаких горячих клавиш в таком случае создано не будет.</p>
-<pre><code>ТекстНадписи = "Project P&amp;&amp;L";
-</code></pre>
             </div>
           </div>
           

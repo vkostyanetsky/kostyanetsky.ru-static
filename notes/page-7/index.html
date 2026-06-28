@@ -261,6 +261,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="javascript"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -286,13 +293,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Вебдев
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,55 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/how-not-to-land"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Тонкое искусство приземления
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>31 мая 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Тем временем</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/bvim4rsNHkQ" width="560"></iframe>
+<p>На волне актуальных новостей наткнулся на трёхлетней давности ролик от SpaceX с подборкой неудачных приземлений на плавучую платформу. Как по мне — отличный пример того, как нужно относиться к своим ошибкам. С юмором!</p>
+<blockquote>
+<p>Well, technically, it did land… Just not in one piece.</p>
+</blockquote>
+<p>:D</p>
+<p>В комментариях не отстают:</p>
+<blockquote>
+<p>Space X : Launches astronauts for the first time.</p>
+<p>Youtube: Let's recommend this video!</p>
+</blockquote>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1278,57 +1327,6 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
 <p>В обеих случаях мониторинг запускают только в периоды основной нагрузки и минут на десять-пятнадцать. Массив исходных данных получается сравнительно небольшим (ЦУП'у нужно его обработать перед выдачей результата, чем больше данных — тем больше времени потребуется). Кроме того, не будет собрано лишних данных — например, не будет анализа нагрузки от регламентных работ, которые вы проводите ночью.</p>
 <p>Кроме того, это снижает влияние сбора данных на работу системы. Дело в том, что ЦУП может собирать очень тяжелый ТЖ, способный заметно нагрузить железо (на 30% медленнее? подержи мое пиво). С этим лучше быть осторожным.</p>
 <p>Для всего, что перечислено выше, достаточно аналитических показателей ЦУП'а: анализа запросов, ожиданий на блокировках, анализа взаимоблокировок 1С и MS SQL. Что до оперативных показателей — количества выполняемых запросов, суммарного времени их выполнения и так далее — то популярностью они не пользуются. Польза от них обычно не стоит времени на настройку, и ЦУП по большому счету никогда не проектировался для того, чтобы постоянно собирать их.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/find-methods-with-parameter"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Поиск методов с параметром
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>18 ноября 2019</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Bash</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Готово</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Задача: нужно найти в общих модулях конфигурации методы с определенным параметром (в этом примере — с параметром DecimalPlacesFor).</p>
-<p>Обычный поиск по коду конфигурации даст массу ложных срабатываний (например, все обращения к параметру с таким именем в теле методов). Поиск по регулярным выражениям платформа пока не поддерживает, поэтому выгодно выгрузить конфигурацию в файлы и натравить на папку общих модулей <a href="https://github.com/vkostyanetsky/ScriptsForLogAnalysis/blob/master/Файлы%20конфигурации/MethodsWithParameter.sh" target="_blank">скрипт</a> на баше.</p>
-<p>Первая часть скрипта (до пайпа) выполняет сам поиск, вторая — отрезает лишнее, чтобы на вывод уходили только названия модулей и найденных в них методов. Получится, например, так:</p>
-<p><img alt="Скриншот консоли" src="https://kostyanetsky.ru/notes/find-methods-with-parameter/bash.png"/></p>
-<p>Профит? Профит!</p>
             </div>
           </div>
           

@@ -261,6 +261,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="javascript"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -286,13 +293,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Вебдев
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,48 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/if-anyone-builds-it"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Если кто-то его создаст
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>28 июня 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">ИИ</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>В Corpus вышла на русском языке книга «<a href="https://www.corpus.ru/products/ehliezer-yudkovskij-esli-kto-to-ego-sozdast-vse-pogibnut.htm" target="_blank">Если кто-то его создаст — все погибнут</a>» Элиезера Юдковского и Нейта Соареса. Оба — известные исследователи в области безопасности ИИ, AI alignment и рисков сверхинтеллекта.</p>
+<p>В книжке авторы внятно и последовательно объясняют, почему её название — не истерика, не преувеличение и не байт на лайки. Тезис простой и неприятный: если кто-нибудь на планете действительно создаст AGI или ASI на технологиях, близких к нынешним — человечеству хана.</p>
+<p>Соареса я раньше не читал, а вот в Юдковском всегда сочетались два редких качества: экспертность в теме и способность рассуждать о ней человеческим языком, не проваливаясь в заумь каждые тридцать секунд. То есть вам не обязательно иметь профильный бэкграунд: тут явно проделана куча работы просто для того, чтобы текст был понятен аудитории без кандидатской по прикладной математике.</p>
+<p>Короче, книжка классная. Забыл уже, когда в последний раз читал что-то запоем, на одном дыхании. Есть на Озоне, в Читай-городе, есть даже в пиратских бухтах (осуждаю, но если ваш фрегат с черным флагом уже припаркован у подъезда, то что я могу поделать) :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1379,52 +1421,6 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
             <div class="prose-like">
               <p><img alt="Код" src="https://kostyanetsky.ru/notes/safe-code/code.jpg"/></p>
 <p>Где-то на улицах Тбилиси. Как большой фанат серии Dishonored — не смог пройти мимо. Уверен, поблизости есть сейф, к которому этот код подходит!</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/negativity"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Уходи, негатив!
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>29 декабря 2024</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Грузия</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Тем временем</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p><img alt="Чичилаки" src="https://kostyanetsky.ru/notes/negativity/chichilaki.jpg"/></p>
-<p>Белые штуки на заднем плане называются чичилаки. Это что-то вроде грузинской новогодней ёлки (де-факто, тщательно наструганный орешник). Считается, что он собирает на себя весь накопившийся негатив, так что после праздников его положено сжечь (вместе с негативом).</p>
-<p>Последнее, как оказалось, задача со звездочкой. Местная полиция (и особенно пожарка) относится к этой старой доброй традиции с подозрением, и их можно понять (чичилаки бывает и в рост человека, факел выйдет — будь здоров).  Так что «заряженную» негативом чичилаки нам посоветовали просто выкинуть в мусорку, чтобы не нажить свежих проблем. Или сдать в зоопарк: животные ими играют и зубы чистят.</p>
-<p>Последнее позабавило. Избавиться от негатива помогают котики, какая неожиданность. Да, здоровенные и повышенной зубастости, но всё же!</p>
             </div>
           </div>
           

@@ -261,6 +261,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="javascript"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -286,13 +293,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Вебдев
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,51 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/ampersand-sign-in-1c"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Знак амперсанда в 1С
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>27 декабря 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>При обработке символа амперсанда в тексте надписей платформа применяет стандартный подход Windows: то есть, сам амперсанд не отобразится, а следующий после него символ станет горячей клавишей для действия, закрепленного за надписью (например, обработчика команды или события элемента).</p>
+<p>Пример ниже выведется как «Project Costing». Символ «P» в ней будет подчеркнут и станет горячей клавишей; если это, например, заголовок команды, то её можно будет вызвать, нажав Alt + P.</p>
+<pre><code>ТекстНадписи = "&amp;Project Costing";
+</code></pre>
+<p>Единственное неудобство — если нужно вывести амперсанд прямо в надпись. В этом случае символ следует удвоить: так, пример ниже будет выглядеть как «Project P&amp;L». Никаких горячих клавиш в таком случае создано не будет.</p>
+<pre><code>ТекстНадписи = "Project P&amp;&amp;L";
+</code></pre>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1188,53 +1233,6 @@
 <p>Нам даже не пришлось писать код получения расписания с каждого вокзала, входящего в сеть КПАТ'а: все они создаются и хранятся в одном месте — главном узле РИБ, а веб-сервис мы развернули именно там. В итоге больше времени ушло на разные согласования, чем на программирование.</p>
 <h2>А где посмотреть?</h2>
 <p>Внутренняя кухня снаружи не видна, да и там ничего необычного — роботы общаются с роботами, эка невидаль :-) Результат их болтовни — куда интереснее! Например, вот <a href="https://rasp.yandex.ru/search/bus/?fromName=Кемерово&amp;toName=Новокузнецк&amp;fromId=c64&amp;toId=c237&amp;when=сегодня" target="_blank">расписание</a> рейсов из Кемерово в Новокузнецк на сегодня.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/sebby-x-player"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Себби x Игрок
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>14 августа 2017</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">English</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Видеоигры</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>В конце июля я на волне энтузиазма <a href="https://acomics.ru/~sebby-x-player" target="_blank">перевёл</a> фанатскую мангу по «Stardew Valley», про которую я уже <a href="https://kostyanetsky.ru/notes/stardew-valley" target="_blank">писал</a> две недели назад.</p>
-<p>Забавный опыт. Во-первых, автор — китаец (точнее, китаянка) и английский язык для неё не родной — как и для меня. В итоге ряд фреймов, скажем так, вызывал вопросы. Во-вторых, я обнаружил, что подыскать русский аналог английской фразы, который бы не выглядел цитатой из документации к порталу госуслуг — само по себе неплохой челлендж.</p>
-<p>Короче, часть смысла по ходу дела, подозреваю, потерялась, хотя я постарался передать что мог и даже списался с автором, разбирая совсем уж непонятные участки. Было весело: я не знаю китайского, она — русского; общались на английском, а он у обоих далёк от идеала.</p>
-<p>Думаю, некоторые фразы можно было сделать поживее, где-то ровнее поправить исходную картинку, но — нафиг. Лучшее — враг хорошего, а результат мне уже нравится. Конечно, в сухом остатке здесь нет чего-то особенно крутого — рисовка как рисовка, сюжет по большей части повторяет игру, но… Не знаю. Наверное, визуальные новеллы сделали из меня чересчур сентиментального сукиного сына :-)</p>
-<p>Спасибо <a href="https://vk.com/id54890849" target="_blank">Кэт</a> за помощь с отрисовкой, <a href="https://twitter.com/amish77kin" target="_blank">Лему</a> — за подсказки по переводу и <a href="https://vk.com/mahrunteka" target="_blank">Марике</a> — за мысль. Ну и, конечно, <a href="https://curayukie.deviantart.com" target="_blank">Квантусу</a> — за мангу.</p>
             </div>
           </div>
           
