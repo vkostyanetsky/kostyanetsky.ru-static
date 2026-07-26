@@ -247,6 +247,13 @@
         </button>
         
         <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Obsidian
+        </button>
+        
+        <button
           data-chip="pgsql"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -272,13 +279,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Javascript
-        </button>
-        
-        <button
-          data-chip="obsidian"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Obsidian
         </button>
         
         <button
@@ -338,6 +338,13 @@
         </button>
         
         <button
+          data-chip="nodejs"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Node.js
+        </button>
+        
+        <button
           data-chip="powershell"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -351,18 +358,62 @@
           Typescript
         </button>
         
-        <button
-          data-chip="nodejs"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Node.js
-        </button>
-        
 
       </section>
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/what-is-inside-the-drum"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Выгрузка стандартных обработок
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>5 июля 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Недавно внедрили в нашу конфигурацию встроенный в платформу механизм истории данных вместо морально и функционально устаревшего велосипеда из SSLi. Сейчас как раз дописываю выгрузку историю данных в бэкап и загрузку его обратно: удивительно, но этого пока не умеет ни БСП, ни БТС, ни SSLi (впрочем, от последней я и не ждал).</p>
+<p>Как закончу, расскажу подробнее. Пока хочу отметить любопытную опцию, которая пригодилась по ходу дела: встроенные в платформу обработки, которые доступны из меню «Все функции», можно выгрузить в виде обычных epf-файлов! Трюк очень подробно разобрали коллеги на Инфостарте (<a href="https://infostart.ru/public/369487/" target="_blank">вот тут</a> и <a href="https://infostart.ru/public/538300/" target="_blank">вот тут</a>). Вкратце магия выглядит вот так:</p>
+<pre><code>КопироватьФайл(
+    "v8res://mngbase/StandardDataChangeHistory.epf",
+    "Q:/StandardDataChangeHistory.epf"
+);
+</code></pre>
+<p>Полный список стандартных форм и обработок, которые можно вытащить, способ получения этого списка, а также куча споров вокруг и около — по ссылкам выше.</p>
+<p>Зачем это пригодится вам — честно, не знаю. Что касается нас, то мы делали интерфейсы для работы с историей данных и было любопытно, как они написаны у самой 1С (спойлер: довольно неряшливо).</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1279,54 +1330,6 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
 <p>Отказаться от двойного чтения всей таблицы регистра не вышло: я перебрал несколько вариантов, но все они требовали изменения структуры хранения данных, что было неприемлемо. В итоге остановился на промежуточном варианте: во втором запросе соединение с реальной таблицей движений регистра заменилось на соединение с заранее созданной временной таблицей, проиндексированной по полям соединения.</p>
 <p>Это тот случай, когда общая рекомендация 1С сработала идеально — вместо 50 минут документ стал проводиться за три, а после дополнительной оптимизации кода — за минуту. То есть, в пятьдесят раз быстрее того, что я имел вначале.</p>
 <p>Такой результат я счел достаточным (минута для закрытия месяца — это в общем случае нормально) и остановился.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/what-is-pmc-for"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Зачем нужен ЦУП?
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>24 ноября 2019</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>ЦУП нужен, чтобы:</p>
-<ol>
-<li>Найти в системе узкое место (медленный код, тяжелый запрос);</li>
-<li>Расследовать конкретные блокировки или взаимоблокировки.</li>
-</ol>
-<p>В первом случае можно включить анализ запросов и, допустим, серверных вызовов. По результатам можно понять, что в системе грузит сервер приложений, а что — сервер СУБД. Часто так делают даже не решая конкретную проблему, а просто чтобы устранить узкие места и увеличить запас прочности системы на будущее.</p>
-<p>Во втором сценарии включают анализ блокировок или взаимоблокировок — когда знают, что они есть в системе, и хотят получить отчет: кто заблокировал, кого, когда, на какой строчке кода и так далее.</p>
-<p>В обеих случаях мониторинг запускают только в периоды основной нагрузки и минут на десять-пятнадцать. Массив исходных данных получается сравнительно небольшим (ЦУП'у нужно его обработать перед выдачей результата, чем больше данных — тем больше времени потребуется). Кроме того, не будет собрано лишних данных — например, не будет анализа нагрузки от регламентных работ, которые вы проводите ночью.</p>
-<p>Кроме того, это снижает влияние сбора данных на работу системы. Дело в том, что ЦУП может собирать очень тяжелый ТЖ, способный заметно нагрузить железо (на 30% медленнее? подержи мое пиво). С этим лучше быть осторожным.</p>
-<p>Для всего, что перечислено выше, достаточно аналитических показателей ЦУП'а: анализа запросов, ожиданий на блокировках, анализа взаимоблокировок 1С и MS SQL. Что до оперативных показателей — количества выполняемых запросов, суммарного времени их выполнения и так далее — то популярностью они не пользуются. Польза от них обычно не стоит времени на настройку, и ЦУП по большому счету никогда не проектировался для того, чтобы постоянно собирать их.</p>
             </div>
           </div>
           

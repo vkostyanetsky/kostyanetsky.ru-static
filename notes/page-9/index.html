@@ -247,6 +247,13 @@
         </button>
         
         <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Obsidian
+        </button>
+        
+        <button
           data-chip="pgsql"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -272,13 +279,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Javascript
-        </button>
-        
-        <button
-          data-chip="obsidian"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Obsidian
         </button>
         
         <button
@@ -338,6 +338,13 @@
         </button>
         
         <button
+          data-chip="nodejs"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Node.js
+        </button>
+        
+        <button
           data-chip="powershell"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -351,18 +358,52 @@
           Typescript
         </button>
         
-        <button
-          data-chip="nodejs"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Node.js
-        </button>
-        
 
       </section>
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/pageiolatch"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Задержки PageIOLatch
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>22 апреля 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">MS SQL</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Когда мы читаем страницу данных с диска в буферный кэш, она на очень короткое время блокируется (её нельзя писать, а в некоторых случаях — ещё и читать). Ожидание на завершении этого действия — и есть задержка PageIOLatch.</p>
+<p>Причиной может быть вымывание буферного кэша — из-за небольшого объёма доступной ОЗУ или не оптимальных запросов, которые читают миллионы строк, а возвращают три. В итоге СУБД регулярно не находит нужных страниц в кэше и вынуждена снова и снова читать их с диска.</p>
+<p>В общем, если в системе есть существенные задержки PageIOLatch — их скорее всего можно снизить, используя более быстрые диски, наращивая объём ОЗУ и оптимизируя запросы.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1231,46 +1272,6 @@
 <p>Другой подход с тем же эффектом — это хранение кода внутри базы (в реквизитах служебных справочников, например). Каждый раз, когда такой код нужно запустить, он извлекается из БД и компилируется. Например, у нас в <a href="https://firstbit.ae/products/erp-dubai/financial_management/" target="_blank">конфигурации</a> можно создавать регламентные задания без изменения метаданных — просто добавляем элемент специального справочника, загружаем в него код и настраиваем расписание работы.</p>
 <p>Это относительно нормально — регламентные задания обычно выполняются не слишком часто и компиляция, скорее всего, не создаст сколько-либо заметной нагрузки на процессор. Однако этот же справочник может использоваться и для автоматического вызова какого-либо кода после произвольного события: например, после сохранения документа определенного типа. В таких случаях, если есть понимание, что код будет выполняться постоянно и множеством пользователей — стоит перенести логику в метод общего модуля из расширения, а в самом хранимом коде оставить только вызов этой логики.</p>
 <p>А ещё можно вообще отказаться от хранения кода и сделать весь механизм в виде расширения. Возможно, решение будет менее гибким, но все же это лучше, чем потом медитировать над низким APDEX'ом.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/trip-to-kok-kol"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Поездка на Кок-Коль
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>6 января 2019</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Спорт</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Летом катался с друзьями на границу с Монголией (на машинах доехали до Ташанты, а оттуда — на велосипедах до <a href="http://rasulka.ru/ооо-расул---кок-коль.html" target="_blank">Кок-Коля</a>). Вымотались как проклятые, однако это того определенно стоило — виды с гор невероятно крутые! Одно жаль, животные попадались нечасто — даже чумных сусликов не встретили, хотя их нам каждый встречный анонсировал, включая погранцев :-)</p>
-<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/4HbJAdYQ-xM" width="560"></iframe>
             </div>
           </div>
           

@@ -247,6 +247,13 @@
         </button>
         
         <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Obsidian
+        </button>
+        
+        <button
           data-chip="pgsql"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -272,13 +279,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Javascript
-        </button>
-        
-        <button
-          data-chip="obsidian"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Obsidian
         </button>
         
         <button
@@ -338,6 +338,13 @@
         </button>
         
         <button
+          data-chip="nodejs"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Node.js
+        </button>
+        
+        <button
           data-chip="powershell"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -351,18 +358,58 @@
           Typescript
         </button>
         
-        <button
-          data-chip="nodejs"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Node.js
-        </button>
-        
 
       </section>
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/timesheet-auto-refresh"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Автообновление для Timesheet
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>26 июля 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Obsidian</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Node.js</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Спонтанно вернулся к своему старому <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">плагину для Obsidian</a>, который по daily notes за какой-то день выдаёт список задач и время, потраченное на каждую.</p>
+<p>В плагине был первородный баг: при изменении текста заметки блок плагина не перерисовывался самостоятельно. То есть добавляешь задачу, меняешь потраченное время или исправляешь описание, а отчёт продолжает показывать старые данные. Приходилось либо переоткрывать саму заметку, либо начинать редактирование блока, а потом отменять, чтобы затриггерить его рендер вручную. Это раздражало (и пахло велосипедом).</p>
+<p>Теперь блок плагина автоматически рендерится после изменений (только он, не вся заметка). Плюс есть небольшая задержка после ввода и проверка: если отчёт фактически не изменился, то рендера не будет вообще.</p>
+<p>Хотел ещё сразу обновить зависимости, всё-таки год прошёл, но... В NPM, знаете ли, всё тот же образцовый порядок. Каждая крошечная библиотека для сложения двух чисел непременно ссылается на десять соседних, каждый пакет соседскому забору двоюродный плетень и ни один просто так не заменишь: <code>npm audit</code> ругается на любой чих. В общем, как надежно обновить зависимости так, чтобы не сломать сам плагин — я с наскока не понял.</p>
+<p>Ладно, это задача для завтрашнего меня.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1381,50 +1428,6 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
               <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mZwHTbu285A" width="560"></iframe>
 <p>Ведущий разработчик из нашей команды немного рассказал о нашей работе — конкретно, о разработке ERP на 1С для ОАЭ и, с недавних пор, Саудовской Аравии. Встречу захостила онлайн-школа английского языка Across, так что аудитория получилась соответствующая — русскоговорящие ребята, интересующиеся карьерой и рынками за рубежом.</p>
 <p>В целом получилось прикольно, особенно как языковая практика. Напоминаю, что изучение иностранных языков — все ещё один из лучших способов размять мозги и, до кучи, один из самых доступных. Материалов и клубов по интересам не найти невозможно, было бы желание :)</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/safe-code"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Загадочный код
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>18 января 2025</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Грузия</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Видеоигры</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p><img alt="Код" src="https://kostyanetsky.ru/notes/safe-code/code.jpg"/></p>
-<p>Где-то на улицах Тбилиси. Как большой фанат серии Dishonored — не смог пройти мимо. Уверен, поблизости есть сейф, к которому этот код подходит!</p>
             </div>
           </div>
           

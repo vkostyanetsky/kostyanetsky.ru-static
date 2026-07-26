@@ -247,6 +247,13 @@
         </button>
         
         <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Obsidian
+        </button>
+        
+        <button
           data-chip="pgsql"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -272,13 +279,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Javascript
-        </button>
-        
-        <button
-          data-chip="obsidian"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Obsidian
         </button>
         
         <button
@@ -338,6 +338,13 @@
         </button>
         
         <button
+          data-chip="nodejs"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Node.js
+        </button>
+        
+        <button
           data-chip="powershell"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
@@ -351,18 +358,68 @@
           Typescript
         </button>
         
-        <button
-          data-chip="nodejs"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Node.js
-        </button>
-        
 
       </section>
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/bus-trips-uploading"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Выгрузка автобусных рейсов
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 ноября 2017</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">1С</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Готово</span>
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Работа</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>С тех пор, как мы с коллегами заново автоматизировали <a href="http://kpat.ru/" target="_blank">КПАТ</a>, она работает на «<a href="http://avibus.pro/standalone/" target="_blank">Управлении автовокзалами</a>». Это конфигурация для 1С:Предприятия, то есть её можно сравнительно быстро интегрировать почти с чем угодно.</p>
+<p>Первым делом мы решили наладить выгрузку маршрутного расписания автобусов на E-Traffic и Яндекс.Расписания.</p>
+<h2>Что это за ресурсы?</h2>
+<p>Первый ресурс, <a href="http://e-traffic.ru" target="_blank">E-Traffic</a> — это крупнейший в России агрегатор данных автовокзалов. Собирает информацию о запланированных рейсах и выступает как агент по продаже электронных билетов. То есть пассажирам не нужно продираться через сайты автовокзалов — на E-Traffic можно купить билет откуда угодно куда угодно.</p>
+<p>Что касается <a href="http://rasp.yandex.ru" target="_blank">Яндекс.Расписаний</a> — это один из дочерних проектов российского поисковика. Как и E-Traffic, предназначен в первую очередь для пассажиров и умеет быстро строить относительно сложные маршруты с пересадками. Билетами они, правда, не торгуют.</p>
+<h2>Как была сделана выгрузка?</h2>
+<p>Поначалу мы нагородили довольно сложную архитектуру, позволяющую транслировать расписание в обе системы. Потели как черти — пока в ходе переговоров не выяснилось, что у E-Traffic уже есть рабочий транспорт для передачи расписания в Яндекс, и задача естественным образом не усохла вдвое.</p>
+<p>Технически всё было сделано в виде веб-сервиса для «Управления автовокзалами». Получив SOAP-запрос от E-Traffic, он собирал внутри информационной базы 1С:Предприятия все необходимые данные о запланированных автобусных рейсах и возвращал их в виде XML-ки.</p>
+<p>Нам даже не пришлось писать код получения расписания с каждого вокзала, входящего в сеть КПАТ'а: все они создаются и хранятся в одном месте — главном узле РИБ, а веб-сервис мы развернули именно там. В итоге больше времени ушло на разные согласования, чем на программирование.</p>
+<h2>А где посмотреть?</h2>
+<p>Внутренняя кухня снаружи не видна, да и там ничего необычного — роботы общаются с роботами, эка невидаль :-) Результат их болтовни — куда интереснее! Например, вот <a href="https://rasp.yandex.ru/search/bus/?fromName=Кемерово&amp;toName=Новокузнецк&amp;fromId=c64&amp;toId=c237&amp;when=сегодня" target="_blank">расписание</a> рейсов из Кемерово в Новокузнецк на сегодня.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1164,53 +1221,6 @@
 <p>Мелкая, подумав:</p>
 <p>— Пап, эти люди, они совсем ленивые, да?</p>
 <p><a href="https://kostyanetsky.ru/notes/completely-lazy/little-one.jpg" target="_blank"><img alt="Совсем-совсем?" src="https://kostyanetsky.ru/notes/completely-lazy/little-one-thumbnail.jpg"/></a></p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/zombies-run"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Зомби! Бежим!
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>26 августа 2014</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Спорт</span>
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Видеоигры</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Я, как и все толстяки, не очень-то люблю бегать и трай-хард со мной не проходит абсолютно — два-три дня волевых усилий и всё, матушка лень да батюшка стрём.</p>
-<p>Пришлось как следует заморочиться с мотивацией; в итоге нашлась смартфонная игрушка «<a href="https://zombiesrungame.com/" target="_blank">Zombies, Run!</a>». По факту — тупо плеер, втыкаешь плейлист и идешь гулять. Однако привычные треки перемежаются незатейливым сюжетом про выживание в типичном зомбиленде: твой вертолёт потерпел крушение и ты пытаешься добраться до выживших. Ищешь припасы, медикаменты… И вокруг тебя зомби, так что если хочешь жить — шевели задницей.</p>
-<p>Джи-и-изус Христ! Это офигительно. Не знаю, заслуга это игры или моего воображения, но сотни тысяч фрагов в Left 4 Dead мне не помогли никак — под рычание за спиной бежится невероятно хорошо! Игра, причем, беспристрастно сообщает, на каком расстоянии очередной мертвец; когда один такой прыгнул ко мне разом на сорок метров — я выдал, наверное, лучший спринт в своей жизни.</p>
-<p><img alt="Йее!" src="https://kostyanetsky.ru/notes/zombies-run/escapologist.jpg"/></p>
-<p>(под конец второй прогулки runner five, вдобавок, повредил ногу и начал очень аутентично хромать, что добавило драматизма и погружения в атмосферу)</p>
             </div>
           </div>
           
