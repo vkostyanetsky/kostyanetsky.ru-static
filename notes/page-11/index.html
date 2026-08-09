@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/page-12';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/page-10';
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/page-12";
+        let ctrlRightUrl    = "https://kostyanetsky.ru/notes/page-10";
     </script>
     
     <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
@@ -240,17 +240,24 @@
         </button>
         
         <button
-          data-chip="blog"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          Блог
-        </button>
-        
-        <button
           data-chip="obsidian"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Obsidian
+        </button>
+        
+        <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
+          data-chip="blog"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
+        >
+          Блог
         </button>
         
         <button
@@ -265,13 +272,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
         >
           Рабочее место
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -372,6 +372,47 @@
 
                         
             <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/white-day"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                White Day
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 января 2018</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Видеоигры</span>
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/VRiYZbAmun4" width="560"></iframe>
+<p>Может, этот хоррор и нишевый, но и правда неплохой. Атмосфера ночной школы, набитой мрачными секретами, удалась на славу — напряжение отпускает редко, а игра то и дело подкидывает сюрпризы там, откуда не ждешь. Я в этом жанре стреляный воробей, а все равно вздрогнуть не раз пришлось.</p>
+<p>Местный сюжет меняется в зависимости от действий игрока, и если хочется добраться до конца истории — одним прохождением никак не обойтись. Но, на мой взгляд, оно того стоит. Например, из-за антагониста — это сравнительно редкий случай, когда он вышел в разы интереснее, привлекательнее и трагичнее, чем протагонисты и все остальные герои вместе взятые.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
             <a href="https://kostyanetsky.ru/notes/bus-trips-uploading"
                 class="inline text-2xl font-semibold tracking-tight hover:underline">
                 Выгрузка автобусных рейсов
@@ -403,17 +444,17 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>С тех пор, как мы с коллегами заново автоматизировали <a href="http://kpat.ru/" target="_blank">КПАТ</a>, она работает на «<a href="http://avibus.pro/standalone/" target="_blank">Управлении автовокзалами</a>». Это конфигурация для 1С:Предприятия, то есть её можно сравнительно быстро интегрировать почти с чем угодно.</p>
+              <p>С тех пор, как мы с коллегами заново автоматизировали <a href="http://kpat.ru/" rel="noopener noreferrer" target="_blank">КПАТ</a>, она работает на «<a href="http://avibus.pro/standalone/" rel="noopener noreferrer" target="_blank">Управлении автовокзалами</a>». Это конфигурация для 1С:Предприятия, то есть её можно сравнительно быстро интегрировать почти с чем угодно.</p>
 <p>Первым делом мы решили наладить выгрузку маршрутного расписания автобусов на E-Traffic и Яндекс.Расписания.</p>
 <h2>Что это за ресурсы?</h2>
-<p>Первый ресурс, <a href="http://e-traffic.ru" target="_blank">E-Traffic</a> — это крупнейший в России агрегатор данных автовокзалов. Собирает информацию о запланированных рейсах и выступает как агент по продаже электронных билетов. То есть пассажирам не нужно продираться через сайты автовокзалов — на E-Traffic можно купить билет откуда угодно куда угодно.</p>
-<p>Что касается <a href="http://rasp.yandex.ru" target="_blank">Яндекс.Расписаний</a> — это один из дочерних проектов российского поисковика. Как и E-Traffic, предназначен в первую очередь для пассажиров и умеет быстро строить относительно сложные маршруты с пересадками. Билетами они, правда, не торгуют.</p>
+<p>Первый ресурс, <a href="http://e-traffic.ru" rel="noopener noreferrer" target="_blank">E-Traffic</a> — это крупнейший в России агрегатор данных автовокзалов. Собирает информацию о запланированных рейсах и выступает как агент по продаже электронных билетов. То есть пассажирам не нужно продираться через сайты автовокзалов — на E-Traffic можно купить билет откуда угодно куда угодно.</p>
+<p>Что касается <a href="http://rasp.yandex.ru" rel="noopener noreferrer" target="_blank">Яндекс.Расписаний</a> — это один из дочерних проектов российского поисковика. Как и E-Traffic, предназначен в первую очередь для пассажиров и умеет быстро строить относительно сложные маршруты с пересадками. Билетами они, правда, не торгуют.</p>
 <h2>Как была сделана выгрузка?</h2>
 <p>Поначалу мы нагородили довольно сложную архитектуру, позволяющую транслировать расписание в обе системы. Потели как черти — пока в ходе переговоров не выяснилось, что у E-Traffic уже есть рабочий транспорт для передачи расписания в Яндекс, и задача естественным образом не усохла вдвое.</p>
 <p>Технически всё было сделано в виде веб-сервиса для «Управления автовокзалами». Получив SOAP-запрос от E-Traffic, он собирал внутри информационной базы 1С:Предприятия все необходимые данные о запланированных автобусных рейсах и возвращал их в виде XML-ки.</p>
 <p>Нам даже не пришлось писать код получения расписания с каждого вокзала, входящего в сеть КПАТ'а: все они создаются и хранятся в одном месте — главном узле РИБ, а веб-сервис мы развернули именно там. В итоге больше времени ушло на разные согласования, чем на программирование.</p>
 <h2>А где посмотреть?</h2>
-<p>Внутренняя кухня снаружи не видна, да и там ничего необычного — роботы общаются с роботами, эка невидаль :-) Результат их болтовни — куда интереснее! Например, вот <a href="https://rasp.yandex.ru/search/bus/?fromName=Кемерово&amp;toName=Новокузнецк&amp;fromId=c64&amp;toId=c237&amp;when=сегодня" target="_blank">расписание</a> рейсов из Кемерово в Новокузнецк на сегодня.</p>
+<p>Внутренняя кухня снаружи не видна, да и там ничего необычного — роботы общаются с роботами, эка невидаль :-) Результат их болтовни — куда интереснее! Например, вот <a href="https://rasp.yandex.ru/search/bus/?fromName=Кемерово&amp;toName=Новокузнецк&amp;fromId=c64&amp;toId=c237&amp;when=сегодня" rel="noopener noreferrer" target="_blank">расписание</a> рейсов из Кемерово в Новокузнецк на сегодня.</p>
             </div>
           </div>
           
@@ -456,11 +497,11 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>В конце июля я на волне энтузиазма <a href="https://acomics.ru/~sebby-x-player" target="_blank">перевёл</a> фанатскую мангу по «Stardew Valley», про которую я уже <a href="https://kostyanetsky.ru/notes/stardew-valley" target="_blank">писал</a> две недели назад.</p>
+              <p>В конце июля я на волне энтузиазма <a href="https://acomics.ru/~sebby-x-player" rel="noopener noreferrer" target="_blank">перевёл</a> фанатскую мангу по «Stardew Valley», про которую я уже <a href="https://kostyanetsky.ru/notes/stardew-valley" rel="noopener noreferrer" target="_blank">писал</a> две недели назад.</p>
 <p>Забавный опыт. Во-первых, автор — китаец (точнее, китаянка) и английский язык для неё не родной — как и для меня. В итоге ряд фреймов, скажем так, вызывал вопросы. Во-вторых, я обнаружил, что подыскать русский аналог английской фразы, который бы не выглядел цитатой из документации к порталу госуслуг — само по себе неплохой челлендж.</p>
 <p>Короче, часть смысла по ходу дела, подозреваю, потерялась, хотя я постарался передать что мог и даже списался с автором, разбирая совсем уж непонятные участки. Было весело: я не знаю китайского, она — русского; общались на английском, а он у обоих далёк от идеала.</p>
 <p>Думаю, некоторые фразы можно было сделать поживее, где-то ровнее поправить исходную картинку, но — нафиг. Лучшее — враг хорошего, а результат мне уже нравится. Конечно, в сухом остатке здесь нет чего-то особенно крутого — рисовка как рисовка, сюжет по большей части повторяет игру, но… Не знаю. Наверное, визуальные новеллы сделали из меня чересчур сентиментального сукиного сына :-)</p>
-<p>Спасибо <a href="https://vk.com/id54890849" target="_blank">Кэт</a> за помощь с отрисовкой, <a href="https://twitter.com/amish77kin" target="_blank">Лему</a> — за подсказки по переводу и <a href="https://vk.com/mahrunteka" target="_blank">Марике</a> — за мысль. Ну и, конечно, <a href="https://curayukie.deviantart.com" target="_blank">Квантусу</a> — за мангу.</p>
+<p>Спасибо <a href="https://vk.com/id54890849" rel="noopener noreferrer" target="_blank">Кэт</a> за помощь с отрисовкой, <a href="https://twitter.com/amish77kin" rel="noopener noreferrer" target="_blank">Лему</a> — за подсказки по переводу и <a href="https://vk.com/mahrunteka" rel="noopener noreferrer" target="_blank">Марике</a> — за мысль. Ну и, конечно, <a href="https://curayukie.deviantart.com" rel="noopener noreferrer" target="_blank">Квантусу</a> — за мангу.</p>
             </div>
           </div>
           
@@ -501,7 +542,7 @@
             <div class="prose-like">
               <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/ot7uXNQskhs" width="560"></iframe>
 <p>Невероятно аддиктивный симулятор фермера, сделанный с огромным вниманием к деталям. Серьёзные ребята расскажут про саундтрек, про качественный пиксель-арт и прочие такие штуки, а я так не умею — мне просто офигенно понравилось, вот и всё :-)</p>
-<p>Хотя нет, про саундтрек всё-таки скажу. Зимой в игре иногда играет «<a href="https://www.youtube.com/watch?v=Zr-PHm_qLgg" target="_blank">Ancient</a>», и это одна из самых простых и одновременно атмосферных мелодий, которые я вообще слышал в видеоиграх.</p>
+<p>Хотя нет, про саундтрек всё-таки скажу. Зимой в игре иногда играет «<a href="https://www.youtube.com/watch?v=Zr-PHm_qLgg" rel="noopener noreferrer" target="_blank">Ancient</a>», и это одна из самых простых и одновременно атмосферных мелодий, которые я вообще слышал в видеоиграх.</p>
             </div>
           </div>
           
@@ -668,7 +709,7 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Наткнулся на «<a href="https://theoatmeal.com/comics/unhappy" target="_blank">How to be Perfectly Unhappy</a>» — комикс Мэтью Инмана о счастье, несчастье и том, что вообще стоит за этими словами.</p>
+              <p>Наткнулся на «<a href="https://theoatmeal.com/comics/unhappy" rel="noopener noreferrer" target="_blank">How to be Perfectly Unhappy</a>» — комикс Мэтью Инмана о счастье, несчастье и том, что вообще стоит за этими словами.</p>
 <p>У мужика отличное чувство юмора — собственно, он и известен как автор юмористических комиксов «The Oatmeal». Когда такие люди говорят о серьёзном, часто получается вот так: забавно, мудро и как-то откровенно, что ли.</p>
             </div>
           </div>
@@ -708,7 +749,7 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Любопытная <a href="https://bureau.ru/bb/soviet/20161220/" target="_blank">заметка</a> про термины и формулировки, которые лучше не применять при разработке интерфейсов. Позабавила ремарка про аутентификацию и авторизацию.</p>
+              <p>Любопытная <a href="https://bureau.ru/bb/soviet/20161220/" rel="noopener noreferrer" target="_blank">заметка</a> про термины и формулировки, которые лучше не применять при разработке интерфейсов. Позабавила ремарка про аутентификацию и авторизацию.</p>
 <p>И, конечно, список выглядит неполным без знаменитых контактов (и полупроводников) :-)</p>
             </div>
           </div>
@@ -748,8 +789,8 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Дочитал «Гарри Поттер и методы рационального мышления» — эпический фанфик по сами-знаете-какой вселенной. Автор — крутой спец по искусственному интеллекту и интересен сам по себе, но вот эту его книгу я прямо настойчиво <a href="http://hpmor.ru" target="_blank">рекомендую</a>.</p>
-<p>В первую очередь — как очень любопытное переосмысление оригинальной саги Джоан Роулинг. Многие аспекты поданы как минимум не менее интересно и выпукло, и вообще интрига закручена отменная — две трети истории я прочитал, не выключая <a href="https://kostyanetsky.ru/notes/hpmor/gene-wilder-meme.jpg" target="_blank">Джина Уайлдера</a> :-) При этом автор ухитрился свести концы с концами и закрыть сюжетную линию так, что претензий у меня почти не осталось.</p>
+              <p>Дочитал «Гарри Поттер и методы рационального мышления» — эпический фанфик по сами-знаете-какой вселенной. Автор — крутой спец по искусственному интеллекту и интересен сам по себе, но вот эту его книгу я прямо настойчиво <a href="http://hpmor.ru" rel="noopener noreferrer" target="_blank">рекомендую</a>.</p>
+<p>В первую очередь — как очень любопытное переосмысление оригинальной саги Джоан Роулинг. Многие аспекты поданы как минимум не менее интересно и выпукло, и вообще интрига закручена отменная — две трети истории я прочитал, не выключая <a href="https://kostyanetsky.ru/notes/hpmor/gene-wilder-meme.jpg" rel="noopener noreferrer" target="_blank">Джина Уайлдера</a> :-) При этом автор ухитрился свести концы с концами и закрыть сюжетную линию так, что претензий у меня почти не осталось.</p>
 <p>Ну и в любом случае, безотносительно всего — это неплохой способ знакомства с кучей научных, около-научных и просто интересных штук, так или иначе затронутых по ходу дела. Автор умен, и книжка тоже вышла неглупая.</p>
             </div>
           </div>
@@ -832,7 +873,7 @@
             <div class="prose-like">
               <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/RO90omga8D4" width="560"></iframe>
 <p>Тот случай, когда игра настолько крута, что говорить об этом — максимально душная затея.</p>
-<p>Поступим иначе; не знаю, какой из двух треков лучше передает драйв нового DOOM'а — <a href="https://www.youtube.com/watch?v=kjIVkl34Vig" target="_blank">Hell to Pay</a> Гэвина Данна или <a href="https://www.youtube.com/watch?v=hauVRrgEXl8" target="_blank">Fight Like Hell</a> от JT Music — так что сошлюсь и на первый, и на второй.</p>
+<p>Поступим иначе; не знаю, какой из двух треков лучше передает драйв нового DOOM'а — <a href="https://www.youtube.com/watch?v=kjIVkl34Vig" rel="noopener noreferrer" target="_blank">Hell to Pay</a> Гэвина Данна или <a href="https://www.youtube.com/watch?v=hauVRrgEXl8" rel="noopener noreferrer" target="_blank">Fight Like Hell</a> от JT Music — так что сошлюсь и на первый, и на второй.</p>
             </div>
           </div>
           
@@ -913,7 +954,7 @@
           <div class="mt-5">
             <div class="prose-like">
               <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/EsJ55BzIvkE" width="560"></iframe>
-<p>Эта игра — точно не лучшая из «Биошоков» с точки зрения геймплея, но она настолько красива и детализована, что её как-то не тянет ругать. Кроме того, тут есть сурово закрученный сюжет! И Элизабет :-) Тут Дэвид Браун в своей «<a href="https://www.youtube.com/watch?v=IvvO-ndDLVE" target="_blank">Limelight</a>» уже всё спел, добавить мне нечего.</p>
+<p>Эта игра — точно не лучшая из «Биошоков» с точки зрения геймплея, но она настолько красива и детализована, что её как-то не тянет ругать. Кроме того, тут есть сурово закрученный сюжет! И Элизабет :-) Тут Дэвид Браун в своей «<a href="https://www.youtube.com/watch?v=IvvO-ndDLVE" rel="noopener noreferrer" target="_blank">Limelight</a>» уже всё спел, добавить мне нечего.</p>
 <p>Точно буду проходить еще раз — просто чтобы снова на всё посмотреть. Не знаю, правда, как играть в DLC – история Колумбии и её детей закончена, по-моему, настолько, насколько вообще можно закончить какую-то историю.</p>
             </div>
           </div>
@@ -995,7 +1036,7 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Нашел здорово оформленный <a href="https://kefiijrw.com/army/#intro" target="_blank">дневник</a> российского срочника, ныне — одного из дизайнеров <a href="https://artlebedev.ru" target="_blank">студии</a> Артемия Лебедева. Написано интересно и с юмором, читается — запоем.</p>
+              <p>Нашел здорово оформленный <a href="https://kefiijrw.com/army/#intro" rel="noopener noreferrer" target="_blank">дневник</a> российского срочника, ныне — одного из дизайнеров <a href="https://artlebedev.ru" rel="noopener noreferrer" target="_blank">студии</a> Артемия Лебедева. Написано интересно и с юмором, читается — запоем.</p>
 <p>С праздником всех причастных!</p>
             </div>
           </div>
@@ -1043,7 +1084,7 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Конфигурация для 1С:Предприятия, которую мы пару лет назад внедряли на кузбасских автовокзалах, обзавелась симпатичной <a href="http://avibus.pro/" target="_blank">обложкой</a>.</p>
+              <p>Конфигурация для 1С:Предприятия, которую мы пару лет назад внедряли на кузбасских автовокзалах, обзавелась симпатичной <a href="http://avibus.pro/" rel="noopener noreferrer" target="_blank">обложкой</a>.</p>
 <p>По-моему, очень круто! В том числе и тем, что это один из проектов, постепенно разрушающих заплесневелый, но невероятно устойчивый даже среди айтишников миф про 1С — типа, это скучный тормозной софт для бухгалтеров, а настоящие пацаны пишут только на C++ (Java, Javascript, подчеркните, впишите) и тому подобные бредни.</p>
             </div>
           </div>
@@ -1083,12 +1124,12 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Всеволод Устинов написал любопытную <a href="http://vsevolodustinov.ru/blog/all/o-polze-vedeniya-professionalnogo-bloga/" target="_blank">заметку</a> по поводу ведения рабочего блога.</p>
+              <p>Всеволод Устинов написал любопытную <a href="http://vsevolodustinov.ru/blog/all/o-polze-vedeniya-professionalnogo-bloga/" rel="noopener noreferrer" target="_blank">заметку</a> по поводу ведения рабочего блога.</p>
 <p>Я не уверен насчет формы (блог, статья, презентация «для своих» — не так важно, по-моему), но с одной из основных мыслей согласен на все сто: освоенное, но не записанное и не обдуманное ещё на три раза очень быстро утонет в чашках утреннего кофе.</p>
 <p>Ещё полезные ссылки на ту же тему:</p>
 <ul>
-<li><a href="http://sergeykorol.ru/blog/about-blog/" target="_blank">Зачем вести блог (несмотря ни на что)</a></li>
-<li><a href="https://ru.hexlet.io/blog/posts/sitnik-inflyuenser" target="_blank">Программист не обязан становиться инфлюенсером</a></li>
+<li><a href="http://sergeykorol.ru/blog/about-blog/" rel="noopener noreferrer" target="_blank">Зачем вести блог (несмотря ни на что)</a></li>
+<li><a href="https://ru.hexlet.io/blog/posts/sitnik-inflyuenser" rel="noopener noreferrer" target="_blank">Программист не обязан становиться инфлюенсером</a></li>
 </ul>
             </div>
           </div>
@@ -1178,49 +1219,6 @@
 <p>Отменный, по-честному — без скримеров — пугающий хоррор. Анимация Чужого и его охотничьи повадки выше всяких похвал: игра в кошки-мышки с монстром, попытки угадать или услышать, где он находится, истеричный писк детектора движения, слюна, капающая из вентиляции, чьи-то предсмертные вопли поблизости, панический поиск укрытий — всё это держит в диком напряжении всю игру.</p>
 <p>Даже когда у Рипли появляется возможность прогонять монстра, это мало что меняет. Он, может, и сбежит (если успеешь выстрелить и попадешь), но вернётся очень быстро, будет в два раза злее и сунет нос в каждый угол.</p>
 <p>В минусы проекту можно записать <s>деревянную анимацию лиц персонажей и мелкие огрехи стелса</s> кнопки Tab и Escape, которые ставят игру на паузу и позволяют успокоить расшатанные нервы :-)</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/completely-lazy"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Совсем ленивые
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>12 сентября 2014</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Семья</span>
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Дочка спрашивает: пап, а что значит «молиться»?</p>
-<p>Я объясняю — смотри, мол, некоторые люди верят в могущественное существо, которое живет на небе и управляет всем-всем-всем. Люди время от времени это существо о чем-то просят, вот это и называется молитвой.</p>
-<p>Мелкая, подумав:</p>
-<p>— Пап, эти люди, они совсем ленивые, да?</p>
-<p><a href="https://kostyanetsky.ru/notes/completely-lazy/little-one.jpg" target="_blank"><img alt="Совсем-совсем?" src="https://kostyanetsky.ru/notes/completely-lazy/little-one-thumbnail.jpg"/></a></p>
             </div>
           </div>
           

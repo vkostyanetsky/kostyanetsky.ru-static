@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/cursed-forest';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/mssql-server-start-date';
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/cursed-forest";
+        let ctrlRightUrl    = "https://kostyanetsky.ru/notes/mssql-server-start-date";
     </script>
     
     <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
@@ -150,11 +150,11 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Каждый раз, когда SQL-запрос может запуститься, но ожидает другого ресурса — он записывает сведения о причине задержки. Доступ к ним можно получить через представление <a href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql" target="_blank">sys.dm_os_wait_stats</a>.</p>
+              <p>Каждый раз, когда SQL-запрос может запуститься, но ожидает другого ресурса — он записывает сведения о причине задержки. Доступ к ним можно получить через представление <a href="https://docs.microsoft.com/ru-ru/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql" rel="noopener noreferrer" target="_blank">sys.dm_os_wait_stats</a>.</p>
 <p>Для анализа представления можно использовать готовые скрипты:</p>
 <ul>
-<li><a href="https://kostyanetsky.ru/notes/mssql-server-waits/causes_of_wait_times.txt" target="_blank">Скрипт</a> из статьи Яна Стерка «Открытие скрытых данных для оптимизации производительности приложений», опубликованной в MSDN Magazine ещё в <a href="https://msdn.microsoft.com/ru-ru/magazine/ee310108.aspx" target="_blank">2008-м</a> году. Выводит список типов задержки, упорядоченный по времени — от самых частотных до наиболее редких.</li>
-<li><a href="https://kostyanetsky.ru/notes/mssql-server-waits/sql_server_wait_statistics.txt" target="_blank">Cкрипт</a> из <a href="https://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/" target="_blank">статьи</a> Пола Рэндала про анализ причин задержек в работе сервера MS SQL (на Хабре, кстати, есть <a href="https://habr.com/ru/post/216309/" target="_blank">перевод</a>). Фильтрует задержки, которые возникают на сервере всегда и которые обычно можно игнорировать. Кроме того, к каждой задержке добавляется ссылка на страницу, где эта задержка детально описана (например, вот <a href="https://www.sqlskills.com/help/waits/cxpacket" target="_blank">описание</a> CXPACKET).</li>
+<li><a href="https://kostyanetsky.ru/notes/mssql-server-waits/causes_of_wait_times.txt" rel="noopener noreferrer" target="_blank">Скрипт</a> из статьи Яна Стерка «Открытие скрытых данных для оптимизации производительности приложений», опубликованной в MSDN Magazine ещё в <a href="https://msdn.microsoft.com/ru-ru/magazine/ee310108.aspx" rel="noopener noreferrer" target="_blank">2008-м</a> году. Выводит список типов задержки, упорядоченный по времени — от самых частотных до наиболее редких.</li>
+<li><a href="https://kostyanetsky.ru/notes/mssql-server-waits/sql_server_wait_statistics.txt" rel="noopener noreferrer" target="_blank">Cкрипт</a> из <a href="https://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/" rel="noopener noreferrer" target="_blank">статьи</a> Пола Рэндала про анализ причин задержек в работе сервера MS SQL (на Хабре, кстати, есть <a href="https://habr.com/ru/post/216309/" rel="noopener noreferrer" target="_blank">перевод</a>). Фильтрует задержки, которые возникают на сервере всегда и которые обычно можно игнорировать. Кроме того, к каждой задержке добавляется ссылка на страницу, где эта задержка детально описана (например, вот <a href="https://www.sqlskills.com/help/waits/cxpacket" rel="noopener noreferrer" target="_blank">описание</a> CXPACKET).</li>
 </ul>
             </div>
           </div>

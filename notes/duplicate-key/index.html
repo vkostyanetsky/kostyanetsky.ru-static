@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/loneliness';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/cursed-forest';
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/loneliness";
+        let ctrlRightUrl    = "https://kostyanetsky.ru/notes/cursed-forest";
     </script>
     
     <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
@@ -158,8 +158,8 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>На Инфостарте вышла любопытная <a href="https://infostart.ru/public/1010017/" target="_blank">статья</a> про ошибку СУБД «cannot insert duplicate key». Одна из возможных причин сбоя — использование уникального идентификатора объекта для сопоставления при обмене с другими информационными базами (то есть, без служебного регистра, сопоставляющего объекты базы данных с идентификаторами объектов внешней базы).</p>
-<p>Такой жести, чтобы уникальные идентификаторы совпали в разных базах для одной и той же таблицы, у меня в практике пока не было. Однако от подхода «единого идентификатора» я отрекся окончательно после того, как делал обмен между <a href="https://firstbit.ae/products/erp-dubai/financial_management/" target="_blank">FirstBIT ERP</a> и <a href="http://superagent.ru/products/grotem_agent" target="_blank">GROTEM / Agent</a>.</p>
+              <p>На Инфостарте вышла любопытная <a href="https://infostart.ru/public/1010017/" rel="noopener noreferrer" target="_blank">статья</a> про ошибку СУБД «cannot insert duplicate key». Одна из возможных причин сбоя — использование уникального идентификатора объекта для сопоставления при обмене с другими информационными базами (то есть, без служебного регистра, сопоставляющего объекты базы данных с идентификаторами объектов внешней базы).</p>
+<p>Такой жести, чтобы уникальные идентификаторы совпали в разных базах для одной и той же таблицы, у меня в практике пока не было. Однако от подхода «единого идентификатора» я отрекся окончательно после того, как делал обмен между <a href="https://firstbit.ae/products/erp-dubai/financial_management/" rel="noopener noreferrer" target="_blank">FirstBIT ERP</a> и <a href="http://superagent.ru/products/grotem_agent" rel="noopener noreferrer" target="_blank">GROTEM / Agent</a>.</p>
 <p>Архитектура пилотного решения была такая: данные из FirstBIT ERP выгружались сперва в служебную ИБ 1С, написанную разработчиками GROTEM'а, а уже оттуда — в основную базу данных сервера мобильных приложений.</p>
 <p>Сопоставление было сделано очень просто — через идентификаторы объектов. Например, один и тот же документ в обеих базах имел один и тот же идентфикатор. Но были и более сложные схемы: например, контрагент FirstBIT ERP на стороне GROTEM'а превращался в три объекта: собственно контрагента, торговую точку и документ взаиморасчетов.</p>
 <p><img alt="WAIT WHAT" src="https://media.giphy.com/media/zkSFsZpQMZuG4/giphy.gif"/></p>

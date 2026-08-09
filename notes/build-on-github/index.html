@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/diablo';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/top-salaries';
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/diablo";
+        let ctrlRightUrl    = "https://kostyanetsky.ru/notes/top-salaries";
     </script>
     
     <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
@@ -154,15 +154,15 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Последний год этот сайт работал на простой связке: статика, гитхаб и свой домен. То есть все страницы были заранее сгенерированы и лежали в <a href="https://github.com/vkostyanetsky/kostyanetsky.ru-static" target="_blank">репе</a> гитхаба, к которой был подключен <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+              <p>Последний год этот сайт работал на простой связке: статика, гитхаб и свой домен. То есть все страницы были заранее сгенерированы и лежали в <a href="https://github.com/vkostyanetsky/kostyanetsky.ru-static" rel="noopener noreferrer" target="_blank">репе</a> гитхаба, к которой был подключен <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">GitHub Pages</a>.</p>
 <p>Статику я собирал с помощью скрипта, на вход которому подавались педантично разложенные по папкам текстовые файлы с содержимым страниц. Скрипт рылся в них и генерил html-ки, которые я потом вручную перекладывал в репу.</p>
 <p>Эта схема, в общем, неплохо работала, но меня раздражало количество кликов. Здесь скрипт дерни, там скрипт дерни, потом ещё с гитом повозиться надо. Хотелось бы попроще.</p>
 <p>В какой-то момент до меня дошло, что на плечи гитхаба можно переложить не только деплой статики, но и саму сборку. Я поворочал мозгами и добавил к репозиторию со статикой ещё два:</p>
 <ol>
-<li><a href="https://github.com/vkostyanetsky/kostyanetsky.ru" target="_blank">Репозиторий</a> исходных данных. Сюда я положил контент сайта: те самые текстовые файлы и чуть-чуть метаданных (заголовки страниц, даты их создания, теги для заметок и так далее).</li>
-<li><a href="https://github.com/vkostyanetsky/BlogBuilder" target="_blank">Репозиторий</a> скрипта для генерации статики. Кроме самого скрипта, сюда я засунул разные ассеты (иконки, стили, манифесты — в общем, всё, что не нужно каждый раз генерировать, а можно просто «положить» рядом с получившимися html-ками).</li>
+<li><a href="https://github.com/vkostyanetsky/kostyanetsky.ru" rel="noopener noreferrer" target="_blank">Репозиторий</a> исходных данных. Сюда я положил контент сайта: те самые текстовые файлы и чуть-чуть метаданных (заголовки страниц, даты их создания, теги для заметок и так далее).</li>
+<li><a href="https://github.com/vkostyanetsky/BlogBuilder" rel="noopener noreferrer" target="_blank">Репозиторий</a> скрипта для генерации статики. Кроме самого скрипта, сюда я засунул разные ассеты (иконки, стили, манифесты — в общем, всё, что не нужно каждый раз генерировать, а можно просто «положить» рядом с получившимися html-ками).</li>
 </ol>
-<p>Потом я накатал <a href="https://github.com/vkostyanetsky/kostyanetsky.ru/blob/main/.github/workflows/main.yml" target="_blank">экшен</a>, который просыпается при каждом пуше в репу с исходными данными. Вкратце, его логика:</p>
+<p>Потом я накатал <a href="https://github.com/vkostyanetsky/kostyanetsky.ru/blob/main/.github/workflows/main.yml" rel="noopener noreferrer" target="_blank">экшен</a>, который просыпается при каждом пуше в репу с исходными данными. Вкратце, его логика:</p>
 <ol>
 <li>Клонировать репу со статикой и репу с генератором;</li>
 <li>Обновить репу со статикой с помощью генератора;</li>

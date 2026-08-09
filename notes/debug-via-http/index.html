@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/unsupported-code';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/top-exceptions';
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/unsupported-code";
+        let ctrlRightUrl    = "https://kostyanetsky.ru/notes/top-exceptions";
     </script>
     
     <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
@@ -152,12 +152,12 @@
             <div class="prose-like">
               <p>В конце недели столкнулся с довольно глупой ситуацией: отладка через TCP/IP на сервере 1С перестала работать. То есть сам по себе режим отладки включен, однако конфигуратор «не видит» контекстов отладки на сервере.</p>
 <p>Ситуация глупая в том смысле, что понять причину довольно сложно: явных ошибок платформа не выдает. После проверки очевидных вариантов (фаервол, порты и так далее) остается только руками разводить. </p>
-<p>Решил проблему, переключившись на отладку через HTTP. Инфрастуктурно это более сложная <a href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001599" target="_blank">схема</a>, но настраивается она довольно просто; если вкратце, то нужно:</p>
+<p>Решил проблему, переключившись на отладку через HTTP. Инфрастуктурно это более сложная <a href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001599" rel="noopener noreferrer" target="_blank">схема</a>, но настраивается она довольно просто; если вкратце, то нужно:</p>
 <ul>
 <li>Запустить службу агента сервера с ключами «-debug -http».</li>
 <li>В параметрах отладки конфигуратором (Сервис → Параметры → Отладка) указать HTTP как протокол отладки и сервер отладки кластера как сервер отладки.</li>
 </ul>
-<p>Подробнее процесс настройки <a href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001604" target="_blank">описан</a> на ИТС.</p>
+<p>Подробнее процесс настройки <a href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001604" rel="noopener noreferrer" target="_blank">описан</a> на ИТС.</p>
             </div>
           </div>
           

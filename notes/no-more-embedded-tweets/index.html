@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/do-not-confuse';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/cookie-jar';
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/do-not-confuse";
+        let ctrlRightUrl    = "https://kostyanetsky.ru/notes/cookie-jar";
     </script>
     
     <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
@@ -158,12 +158,12 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Не успел я <a href="https://kostyanetsky.ru/notes/no-more-google-fonts" target="_blank">выпилить</a> из блога Google Fonts, как пришлось отправить вдогонку встроенные твиты.</p>
-<p>Как это работало раньше? Хотел сослаться на твит — просто вставлял на него ссылку. Скрипт сборки заменял её на HTML-блок, который находил скрипт Твиттера и заменял на текст твита (и всякими полезными ссылками). Вот в этом <a href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" target="_blank">коммите</a> в целом видно, как это работало.</p>
+              <p>Не успел я <a href="https://kostyanetsky.ru/notes/no-more-google-fonts" rel="noopener noreferrer" target="_blank">выпилить</a> из блога Google Fonts, как пришлось отправить вдогонку встроенные твиты.</p>
+<p>Как это работало раньше? Хотел сослаться на твит — просто вставлял на него ссылку. Скрипт сборки заменял её на HTML-блок, который находил скрипт Твиттера и заменял на текст твита (и всякими полезными ссылками). Вот в этом <a href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" rel="noopener noreferrer" target="_blank">коммите</a> в целом видно, как это работало.</p>
 <p>Как это работает теперь? Ну да, никак. Твиттер в России заблокирован.</p>
 <p><img alt="Штош" src="https://kostyanetsky.ru/notes/no-more-embedded-tweets/well.jpg"/></p>
 <p>Пришлось поскринить все твиты, на которые я когда-то ссылался, и добавить их в заметки в виде картинок со ссылками. Кому нужен оригинал, тот найдёт способ перейти в Твиттер, а остальные, по крайней мере, могут прочитать текст.</p>
-<p>Пара слов про техническую сторону. Скринить каждый твит вручную мне было лень, поэтому я полез в сеть, обдумывая, как автоматизировать процесс. Сначала попадались только сервисы, готовые решить проблему за какие-то жалкие десять долларов (спасибо, как-нибудь в следующий раз), но потом я набрёл на идеальный <a href="https://github.com/privatenumber/snap-tweet" target="_blank">инструмент</a>: консольный скрипт для Node.js.</p>
+<p>Пара слов про техническую сторону. Скринить каждый твит вручную мне было лень, поэтому я полез в сеть, обдумывая, как автоматизировать процесс. Сначала попадались только сервисы, готовые решить проблему за какие-то жалкие десять долларов (спасибо, как-нибудь в следующий раз), но потом я набрёл на идеальный <a href="https://github.com/privatenumber/snap-tweet" rel="noopener noreferrer" target="_blank">инструмент</a>: консольный скрипт для Node.js.</p>
 <p>Ничего лишнего. Чистый функционал. Ты ему — твит. Он тебе — картинку:</p>
 <blockquote>
 <p>npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>

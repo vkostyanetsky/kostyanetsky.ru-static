@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/vulnerabilities';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/queries-and-lock-waits';
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/vulnerabilities";
+        let ctrlRightUrl    = "https://kostyanetsky.ru/notes/queries-and-lock-waits";
     </script>
     
     <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
@@ -158,9 +158,9 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Переписал <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/FrequentExceptions.sh" target="_blank">скрипт</a> на баше, строящий топ исключений по собранному ТЖ: хотел решить эту задачу как-то попроще.</p>
+              <p>Переписал <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/FrequentExceptions.sh" rel="noopener noreferrer" target="_blank">скрипт</a> на баше, строящий топ исключений по собранному ТЖ: хотел решить эту задачу как-то попроще.</p>
 <p>В итоге выкинул из кода возню с заменой начала события на маркер gawk для разделения записей (его можно сразу задать регулярным выражением) и перенес больше логики в скрипт для gawk (так нагляднее, особенно если потом захочется её расширить). </p>
-<p>Получилось явно лучше, чем <a href="https://gist.github.com/vkostyanetsky/47e02e199bb32082c4d5019ca88233c0" target="_blank">было</a> — во всяком случае, логика выглядит понятнее. Изначально, правда, я хотел скорее сократить скрипт в размере и получить что-то вроде:</p>
+<p>Получилось явно лучше, чем <a href="https://gist.github.com/vkostyanetsky/47e02e199bb32082c4d5019ca88233c0" rel="noopener noreferrer" target="_blank">было</a> — во всяком случае, логика выглядит понятнее. Изначально, правда, я хотел скорее сократить скрипт в размере и получить что-то вроде:</p>
 <pre><code>grep -hoP ",EXCP,.*\KDescr=.*" */*.log | uniq -c | sort -rn
 </code></pre>
 <p>То есть фильтруем только строки с событием EXCP, отрезаем всё до описания ошибки и группируем с помощью uniq. По-моему, очень изящно.</p>

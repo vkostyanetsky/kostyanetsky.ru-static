@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/black-mesa';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/self-documenting-code';
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/black-mesa";
+        let ctrlRightUrl    = "https://kostyanetsky.ru/notes/self-documenting-code";
     </script>
     
     <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
@@ -162,7 +162,7 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
 <p>Примерно тот же подход, кстати, работает и с обычными процессами. Так, строка ниже ищет процесс obs64; если находит — останавливает. </p>
 <pre><code>get-process -Name obs64 | stop-process -pass
 </code></pre>
-<p>Если нужны детали, то на сайте разработчика есть подробная <a href="https://docs.microsoft.com/ru-ru/powershell/scripting/samples/managing-services?view=powershell-7" target="_blank">документация</a> с кучей примеров и рассуждений в духе «как запустить службу, если вы медитируете на одной ноге в условиях искусственной невесомости».</p>
+<p>Если нужны детали, то на сайте разработчика есть подробная <a href="https://docs.microsoft.com/ru-ru/powershell/scripting/samples/managing-services?view=powershell-7" rel="noopener noreferrer" target="_blank">документация</a> с кучей примеров и рассуждений в духе «как запустить службу, если вы медитируете на одной ноге в условиях искусственной невесомости».</p>
             </div>
           </div>
           

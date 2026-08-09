@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/pageiolatch';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/close-to-the-sun';
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/pageiolatch";
+        let ctrlRightUrl    = "https://kostyanetsky.ru/notes/close-to-the-sun";
     </script>
     
     <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
@@ -154,7 +154,7 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Задержки вида PageIOLatch (я про них сегодня <a href="https://kostyanetsky.ru/notes/pageiolatch" target="_blank">писал</a>) легко встретить в любых системах, в том числе небольших. С задержками PageLatch дела обстоят наоборот — их трудно заметить, пока пользователей меньше нескольких тысяч.</p>
+              <p>Задержки вида PageIOLatch (я про них сегодня <a href="https://kostyanetsky.ru/notes/pageiolatch" rel="noopener noreferrer" target="_blank">писал</a>) легко встретить в любых системах, в том числе небольших. С задержками PageLatch дела обстоят наоборот — их трудно заметить, пока пользователей меньше нескольких тысяч.</p>
 <p>Дело в том, что они возникают, когда страница находится в оперативной памяти и её пытаются изменить несколько пользователей. Пока один пользователь не завершит модификацию — прочие должны ждать. Время ожидания обычно ничтожно, однако если конкурирующих за страницу пользователей много — оно становится заметным.</p>
 <p>Возможных причин две.</p>
 <h2>Горячее место в индексе</h2>

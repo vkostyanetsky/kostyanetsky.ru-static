@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/bablox';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/what-is-pmc-for';
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/bablox";
+        let ctrlRightUrl    = "https://kostyanetsky.ru/notes/what-is-pmc-for";
     </script>
     
     <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
@@ -159,7 +159,7 @@
           <div class="mt-5">
             <div class="prose-like">
               <p>Задача: нужно найти в общих модулях конфигурации методы с определенным параметром (в этом примере — с параметром DecimalPlacesFor).</p>
-<p>Обычный поиск по коду конфигурации даст массу ложных срабатываний (например, все обращения к параметру с таким именем в теле методов). Поиск по регулярным выражениям платформа пока не поддерживает, поэтому выгодно выгрузить конфигурацию в файлы и натравить на папку общих модулей <a href="https://github.com/vkostyanetsky/ScriptsForLogAnalysis/blob/master/Файлы%20конфигурации/MethodsWithParameter.sh" target="_blank">скрипт</a> на баше.</p>
+<p>Обычный поиск по коду конфигурации даст массу ложных срабатываний (например, все обращения к параметру с таким именем в теле методов). Поиск по регулярным выражениям платформа пока не поддерживает, поэтому выгодно выгрузить конфигурацию в файлы и натравить на папку общих модулей <a href="https://github.com/vkostyanetsky/ScriptsForLogAnalysis/blob/master/Файлы%20конфигурации/MethodsWithParameter.sh" rel="noopener noreferrer" target="_blank">скрипт</a> на баше.</p>
 <p>Первая часть скрипта (до пайпа) выполняет сам поиск, вторая — отрезает лишнее, чтобы на вывод уходили только названия модулей и найденных в них методов. Получится, например, так:</p>
 <p><img alt="Скриншот консоли" src="https://kostyanetsky.ru/notes/find-methods-with-parameter/bash.png"/></p>
 <p>Профит? Профит!</p>

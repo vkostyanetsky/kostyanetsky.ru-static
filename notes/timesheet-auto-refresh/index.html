@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/if-anyone-builds-it';
-        let ctrlRightUrl    = '';
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/if-anyone-builds-it";
+        let ctrlRightUrl    = "https://kostyanetsky.ru/notes/obsidian-property-organizer";
     </script>
     
     <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
@@ -154,7 +154,7 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Спонтанно вернулся к своему старому <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" target="_blank">плагину для Obsidian</a>, который по daily notes за какой-то день выдаёт список задач и время, потраченное на каждую.</p>
+              <p>Спонтанно вернулся к своему старому <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" rel="noopener noreferrer" target="_blank">плагину для Obsidian</a>, который по daily notes за какой-то день выдаёт список задач и время, потраченное на каждую.</p>
 <p>В его коде был первородный баг: при изменении текста заметки блок плагина не перерисовывался самостоятельно. То есть добавляешь задачу, меняешь потраченное время или исправляешь описание, а отчёт продолжает показывать старые данные. Приходилось либо переоткрывать саму заметку, либо начинать редактирование блока, а потом отменять, чтобы затриггерить его рендер вручную. Это раздражало (и пахло велосипедом).</p>
 <p>Теперь блок плагина автоматически рендерится после изменений (только он, не вся заметка). Плюс есть небольшая задержка после ввода и проверка: если отчёт фактически не изменился, то рендера не будет вообще.</p>
 <p>Хотел ещё сразу обновить зависимости, всё-таки год прошёл, но... В NPM, знаете ли, всё тот же образцовый порядок. Каждая крошечная библиотека для сложения двух чисел непременно ссылается на десять соседних, каждый пакет соседскому забору двоюродный плетень и ни один просто так не заменишь: <code>npm audit</code> ругается на любой чих. В общем, как надежно обновить зависимости так, чтобы не сломать сам плагин — я с наскока не понял.</p>
@@ -184,6 +184,14 @@
         </a>
         
         <span class="w-[1px]"></span>
+        
+        <a
+          id="nextLink"
+          href="https://kostyanetsky.ru/notes/obsidian-property-organizer"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          Obsidian Property Organizer →
+        </a>
         
       </nav>
 

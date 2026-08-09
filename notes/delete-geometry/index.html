@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/no';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/myth-buster';
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/no";
+        let ctrlRightUrl    = "https://kostyanetsky.ru/notes/myth-buster";
     </script>
     
     <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
@@ -152,7 +152,7 @@
             <div class="prose-like">
               <p>Освоил прикольный трюк с удалением части объекта в том случае, если он с чем-то пересекается. Например, на этой гифке в центре находится модель головы обезьянки; при движении плоскости видно, как её часть (как раз та, что начинает пересекаться с обезьянкой) исчезает.</p>
 <p><img alt="Демо" src="https://kostyanetsky.ru/notes/delete-geometry/demo.gif"/></p>
-<p><a href="https://github.com/vkostyanetsky/3DPlayground/blob/main/Geometry%20Nodes/DeleteGeometry.blend" target="_blank">Идея</a> довольно простая: сводим геометрию объекта-ограничителя к кубу, вычисляем его минимальные и максимальные координаты по всем осям, а потом для каждой точки «обрезаемого» объекта проверяем, входит ли она в полученный диапазон. Входит? Удаляем.</p>
+<p><a href="https://github.com/vkostyanetsky/3DPlayground/blob/main/Geometry%20Nodes/DeleteGeometry.blend" rel="noopener noreferrer" target="_blank">Идея</a> довольно простая: сводим геометрию объекта-ограничителя к кубу, вычисляем его минимальные и максимальные координаты по всем осям, а потом для каждой точки «обрезаемого» объекта проверяем, входит ли она в полученный диапазон. Входит? Удаляем.</p>
 <p>Способов применения — масса; например, мне это пригодилось, когда я захотел автоматически отрезать часть линий декоративного нотного стана на стене так, чтобы они не пересекали дверной проем.</p>
 <p><img alt="Пример" src="https://kostyanetsky.ru/notes/delete-geometry/case.jpg"/></p>
 <p>Конечно, можно было бы сделать это вручную, без геонод, но такой вариант ударил бы по гибкости: изменятся какие-то размеры (ширина стены, размеры двери, угол наклона линий) — всё придётся переделывать.</p>

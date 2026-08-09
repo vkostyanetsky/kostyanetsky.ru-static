@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/debug-via-http';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/ninth-wave';
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/debug-via-http";
+        let ctrlRightUrl    = "https://kostyanetsky.ru/notes/ninth-wave";
     </script>
     
     <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
@@ -158,7 +158,7 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Выложил на GitHub <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/FrequentExceptions.sh" target="_blank">скрипт</a> на баше, который по собранному технологическому журналу 1С определяет наиболее частотные исключения.</p>
+              <p>Выложил на GitHub <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/FrequentExceptions.sh" rel="noopener noreferrer" target="_blank">скрипт</a> на баше, который по собранному технологическому журналу 1С определяет наиболее частотные исключения.</p>
 <p>Скрипт анализирует события EXCP. Это основной источник информации об ошибках, хотя, конечно, не единственный: например, есть EXCPCNTX (событие, которое началось, но не закончилось в тот момент, когда произошла ошибка). Кроме того, если исключение происходит во время серверного вызова, то в поле RetExcp у события CALL будет текст ошибки, которая вернется на клиент.</p>
 <p>Впрочем, в большинстве случаев EXCP и, иногда, EXCPCNTX вполне достаточно. Часто их собирают просто по умолчанию — нагрузки это не создает, зато позволяет прогонять собранные логи через какой-нибудь инструмент аналитики (скрипт выше, например) и держать, так сказать, руку на пульсе.</p>
             </div>

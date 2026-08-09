@@ -39,8 +39,8 @@
     <!-- Blog -->
 
     <script>
-        let ctrlLeftUrl     = 'https://kostyanetsky.ru/notes/draugen';
-        let ctrlRightUrl    = 'https://kostyanetsky.ru/notes/rapunzel';
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/draugen";
+        let ctrlRightUrl    = "https://kostyanetsky.ru/notes/rapunzel";
     </script>
     
     <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
@@ -158,12 +158,12 @@
 
           <div class="mt-5">
             <div class="prose-like">
-              <p>Я веду этот сайт на русском языке, но есть и <a href="https://kostyanetsky.me" target="_blank">зеркало</a> на английском — туда я постепенно перевожу то, что написал здесь. Поддерживать два набора скриптов я не хочу, поэтому оба домена ссылаются на один и тот же сервер, который определяет, с какого домена пришел запрос — и выводит ответ на соответствующем языке.</p>
-<p>Звучит просто, но на самом деле эта задача рождает довольно много дополнительных проблем, и одна из них — вывод интерфейса. Сначала я <s>по привычке</s> завел на клиенте два массива с фразами на разных языках, но быстро выкинул этот велосипед и прикрутил <a href="https://www.npmjs.com/package/vue-i18n" target="_blank">Vue I18n</a>.</p>
-<p>На нижнем уровне это, правда, всё те же <a href="https://kazupon.github.io/vue-i18n/guide/formatting.html#named-formatting" target="_blank">два массива</a> с фразами (их нужно задать при инициализации), однако выгода здесь в другом. Этот плагин сам по себе закрывает еще две проблемы с генерацией интерфейса:</p>
+              <p>Я веду этот сайт на русском языке, но есть и <a href="https://kostyanetsky.me" rel="noopener noreferrer" target="_blank">зеркало</a> на английском — туда я постепенно перевожу то, что написал здесь. Поддерживать два набора скриптов я не хочу, поэтому оба домена ссылаются на один и тот же сервер, который определяет, с какого домена пришел запрос — и выводит ответ на соответствующем языке.</p>
+<p>Звучит просто, но на самом деле эта задача рождает довольно много дополнительных проблем, и одна из них — вывод интерфейса. Сначала я <s>по привычке</s> завел на клиенте два массива с фразами на разных языках, но быстро выкинул этот велосипед и прикрутил <a href="https://www.npmjs.com/package/vue-i18n" rel="noopener noreferrer" target="_blank">Vue I18n</a>.</p>
+<p>На нижнем уровне это, правда, всё те же <a href="https://kazupon.github.io/vue-i18n/guide/formatting.html#named-formatting" rel="noopener noreferrer" target="_blank">два массива</a> с фразами (их нужно задать при инициализации), однако выгода здесь в другом. Этот плагин сам по себе закрывает еще две проблемы с генерацией интерфейса:</p>
 <ol>
-<li><a href="https://kazupon.github.io/vue-i18n/guide/pluralization.html" target="_blank">Склонение существительных</a>. Нужно, чтобы правильно выводить слово «страница» в <a href="https://kostyanetsky.ru/notes/tags" target="_blank">статистике по тегам</a> — одна заметка, две заметки, пять заметок и так далее.</li>
-<li><a href="https://kazupon.github.io/vue-i18n/guide/datetime.html" target="_blank">Вывод дат</a>. Например, дата под этой заметкой.</li>
+<li><a href="https://kazupon.github.io/vue-i18n/guide/pluralization.html" rel="noopener noreferrer" target="_blank">Склонение существительных</a>. Нужно, чтобы правильно выводить слово «страница» в <a href="https://kostyanetsky.ru/notes/tags" rel="noopener noreferrer" target="_blank">статистике по тегам</a> — одна заметка, две заметки, пять заметок и так далее.</li>
+<li><a href="https://kazupon.github.io/vue-i18n/guide/datetime.html" rel="noopener noreferrer" target="_blank">Вывод дат</a>. Например, дата под этой заметкой.</li>
 </ol>
 <p>Обе задачи, конечно, можно было закрыть на стороне сервера, силами PHP, но я счел это некрасивым решением. Сервер должен возвращать данные, клиент — строить интерфейс. Нечего их смешивать.</p>
             </div>
