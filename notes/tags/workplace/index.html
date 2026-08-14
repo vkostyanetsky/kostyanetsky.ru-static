@@ -1,0 +1,1043 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Заметки: Рабочее место</title>
+
+    <meta name="description" content="" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="https://kostyanetsky.ru/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.ru/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.ru/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.ru/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.ru/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Заметки: Рабочее место"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/workplace" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "";
+        let ctrlRightUrl    = "";
+    </script>
+    
+    <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/">Сайт Влада</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/projects/">Проекты</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.ru/notes/">Заметки</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <span
+                        class="inline-block text-[1.35rem] leading-none text-slate-400"
+                        title="Видите опечатку? Поправьте меня!"
+                        aria-disabled="true"
+                        >✎</span>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.me/notes/tags/workplace"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="EN"
+                    >
+                        EN
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page="1"
+      data-total-notes="7"
+      data-total-pages="1"
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+    
+
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Заметки: Рабочее место</h1>
+        <p class="max-w-2xl text-slate-700">
+          Мои мысли о жизни, работе и разных интересных штуках вокруг меня.
+        </p>
+      </header>
+
+
+
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="relative w-full sm:w-[420px]">
+          <input
+            id="search"
+            type="search"
+            placeholder="Поиск по заголовку / тексту / тегам…"
+            class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+          />
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </div>
+
+        <p class="text-sm text-slate-600">
+          Показано: <span id="count" class="font-semibold text-slate-900">0</span>
+          <span class="text-slate-400">·</span>
+          <span id="pageInfo">Страница</span>
+        </p>
+      </section>
+
+      <section class="mt-4 flex flex-wrap gap-2">
+      
+        <button
+          data-chip="all"
+          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200"
+        >
+          Все
+        </button>
+
+        
+        <button
+          data-chip="1c"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          1С
+        </button>
+        
+        <button
+          data-chip="work"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Работа
+        </button>
+        
+        <button
+          data-chip="done"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Готово
+        </button>
+        
+        <button
+          data-chip="videogames"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Видеоигры
+        </button>
+        
+        <button
+          data-chip="meanwhile"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Тем временем
+        </button>
+        
+        <button
+          data-chip="english"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          English
+        </button>
+        
+        <button
+          data-chip="bash"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bash
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
+        </button>
+        
+        <button
+          data-chip="code-smell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Код с запашком
+        </button>
+        
+        <button
+          data-chip="family"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Семья
+        </button>
+        
+        <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Obsidian
+        </button>
+        
+        <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
+          data-chip="blog"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Блог
+        </button>
+        
+        <button
+          data-chip="pgsql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          PostgreSQL
+        </button>
+        
+        <button
+          data-chip="workplace"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Рабочее место
+        </button>
+        
+        <button
+          data-chip="javascript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Javascript
+        </button>
+        
+        <button
+          data-chip="python"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Python
+        </button>
+        
+        <button
+          data-chip="webdev"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Вебдев
+        </button>
+        
+        <button
+          data-chip="books"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Книги
+        </button>
+        
+        <button
+          data-chip="georgia"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Грузия
+        </button>
+        
+        <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Оптимизация
+        </button>
+        
+        <button
+          data-chip="sport"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Спорт
+        </button>
+        
+        <button
+          data-chip="3d"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          3D
+        </button>
+        
+        <button
+          data-chip="bitrix"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Битрикс
+        </button>
+        
+        <button
+          data-chip="nodejs"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Node.js
+        </button>
+        
+        <button
+          data-chip="powershell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Powershell
+        </button>
+        
+        <button
+          data-chip="typescript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Typescript
+        </button>
+        
+
+      </section>
+
+      <!-- Static notes (SEO + no-JS fallback) -->
+      <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/2nd-monitor-and-console"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Управление вторым монитором из консоли
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>16 октября 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="workplace" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Рабочее место</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>У меня стоят два монитора. Второй нужен во время встреч в Zoom или при совместной игре с друзьями (в обеих случаях туда удобно вывести камеры собеседников). Есть ещё несколько примеров, когда он полезен, но часто устройство просто простаивает. Чтобы не отвлекало, решил его выключать.</p>
+<p>В чем тут засада: средствами ОС управлять вторым монитором неудобно (несколько кликов, скроллить надо, да ещё всё время путаю, куда лезть — в «Параметры экрана» или «Персонализацию»). Хотелось бы одной командой, а команду — на хоткей. И в идеале из скрипта всем этим рулить.</p>
+<p>Скрипта я не нашел, но накопал готовую утилиту — <a href="https://www.nirsoft.net/utils/multi_monitor_tool.html" rel="noopener noreferrer" target="_blank">MultiMonitorTool</a>. Бесплатная. Под десятой виндой работает без проблем. Команды ниже включают-выключают 2-й монитор:</p>
+<pre><code>MultiMonitorTool.exe /disable 2
+MultiMonitorTool.exe /enable 2  
+MultiMonitorTool.exe /switch 2
+</code></pre>
+<p>Почему-то при включении монитора через enable или switch он иногда неверно позиционируется (например, до выключения он был справа, а после включения встал слева). Это поправимо. Сначала запишем конфигурацию в тот момент, когда включены оба монитора:</p>
+<pre><code>MultiMonitorTool.exe /SaveConfig Monitors.cfg
+</code></pre>
+<p>А потом, когда нужно включить монитор — загрузим сохранённый конфиг:</p>
+<pre><code>MultiMonitorTool.exe /LoadConfig Monitors.cfg
+</code></pre>
+<p>Утилита ещё много чего умеет (например, одна из команд перекидывает окна приложений между мониторами). Описание — по ссылке выше.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/rclone-abuser"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Скрипт для синхронизации c NAS
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>7 июня 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="python" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Python</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="workplace" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Рабочее место</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Выложил на GitHub <a href="https://github.com/vkostyanetsky/RCloneAbuser" rel="noopener noreferrer" target="_blank">скрипт</a> на Python, который я использую для синхронизации файлов между своим компьютером и домашним NAS'ом. У меня стоит Synology DS220j; с ним так-то идет целый вагон софта и в том числе утилита, которая умеет гонять файлы туда-сюда по расписанию. Однако сделана она, похоже, чисто для галочки: программа принялась глючить ещё на этапе настройки, после чего доверие к ней я потерял.</p>
+<p>В общем, какое-то время я помучался с решениями конкурентов и в итоге вернулся к привычному <a href="https://rclone.org" rel="noopener noreferrer" target="_blank">rclone</a>, с которым было всего две проблемы. Во-первых, нельзя нормально соединиться с SMB-шарой: да, логин и пароль можно сохранить в Windows и rclone будет их использовать, но они будут слетать при каждом удобном случае. Я вышел из положения, подключив шару как внешний диск.</p>
+<p>Во-вторых, файлов и папок для синхронизации у меня оказалось много: директория здесь, директория там, конфиг оттуда, профиль отсюда… Чтобы не плодить лапшу, я накатал простой скрипт, который берет из конфига источники и приемники, а потом для каждого вызывает rclone по одному и тому же шаблону.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/service-launcher-update"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Обновление запускатора служб
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>22 июля 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="powershell" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Powershell</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="workplace" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Рабочее место</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Доработал логику <a href="https://kostyanetsky.ru/notes/service-launcher" rel="noopener noreferrer" target="_blank">запускатора служб</a>. Теперь, если вызвать скрипт без параметров (т.е. не указав ни -start, ни -stop) — он сам решит, запускать службы или останавливать их.</p>
+<p>Для этого скрипт определит статус первой службы в списке. Если она работает — все службы из списка будут остановлены, если выключена — скрипт попытается их запустить.</p>
+<p>Зачем это нужно? Ну, если вы вызываете скрипт прямо с программируемой клавиатуры, как я — теперь вам нужна только одна кнопка. Раньше было нужно две: одна для запуска служб, вторая для остановки.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/service-launcher"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Запускатор служб
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>13 июля 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="powershell" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Powershell</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="workplace" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Рабочее место</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Какое-то время назад я <a href="https://kostyanetsky.ru/notes/manage-services-with-powershell" rel="noopener noreferrer" target="_blank">писал</a> про командлеты PowerShell, с помощью которых можно запускать и останавливать службы. В итоге я собрал из этих набросков нормальный скрипт: он читает список к запуску или остановке служб из отдельного файла, а ещё проверяет и (если нужно) запрашивает права администратора.</p>
+<p>Результат можно <a href="https://github.com/vkostyanetsky/ServiceLauncher" rel="noopener noreferrer" target="_blank">посмотреть</a> на GitHub'е. No big deal — хотел поупражняться в языке и упростить ежедневную рутину: в моей системе наберется десятка полтора прожорливых сервисов, которые нужны для работы, но бесполезны в другое время. Вручную останавливать, а потом запускать этот зоопарк неудобно, а вот одной командой — совсем другое дело!</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/manage-services-with-powershell"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Управление службами через PowerShell
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>28 апреля 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="powershell" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Powershell</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="workplace" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Рабочее место</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>На днях набросал себе несколько скриптов на PowerShell'е для запуска и остановки служб на рабочем ПК. Наработки в итоге не пригодились, так что зафиксирую себе пару примеров на будущее, чтобы не потерять:</p>
+<pre><code>get-service -Name 1C:Enterprise* | Where-Object {$_.status -eq 'running'} | stop-service -pass
+get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service -pass
+</code></pre>
+<p>Обе строки выше делают одно и то же: ищут службы с определенным именем, проверяют их состояния и, если службы запущены — останавливают их. Имена служб удобно задавать через шаблоны — например, у Microsoft SQL Server целый выводок служб с разным назначением и их удобно пристрелить одной строкой. Или, скажем, служба сервера 1С:Предприятия — она одна, зато её длиннющее название просто лень писать полностью :-)</p>
+<p>Примерно тот же подход, кстати, работает и с обычными процессами. Так, строка ниже ищет процесс obs64; если находит — останавливает. </p>
+<pre><code>get-process -Name obs64 | stop-process -pass
+</code></pre>
+<p>Если нужны детали, то на сайте разработчика есть подробная <a href="https://docs.microsoft.com/ru-ru/powershell/scripting/samples/managing-services?view=powershell-7" rel="noopener noreferrer" target="_blank">документация</a> с кучей примеров и рассуждений в духе «как запустить службу, если вы медитируете на одной ноге в условиях искусственной невесомости».</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/sharex-video-recording"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Запись видео в ShareX
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>8 апреля 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="workplace" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Рабочее место</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Прежде чем приспособить OBS Studio для записи видео (писал о ней в <a href="https://kostyanetsky.ru/notes/video-recording" rel="noopener noreferrer" target="_blank">предыдущей</a> заметке), я пробовал использовать <a href="https://getsharex.com/" rel="noopener noreferrer" target="_blank">ShareX</a>. Программа поначалу неплохо справлялась, однако от неё пришлось отказаться из-за неприятного бага: иногда при попытке завершить запись софт портил полученное видео.</p>
+<p>Я гуглил, но причину понять так и не смог. Впрочем, неудивительно — ShareX использует <a href="https://www.ffmpeg.org/" rel="noopener noreferrer" target="_blank">ffmpeg</a> для записи видео, а это дитя опенсорца вместо адекватной диагностики невозмутимо вываливает целый рулон логов. Разбирать его без соответствующего опыта — занятие для клинического оптимиста.</p>
+<p>Впрочем, как инструмент для создания скриншотов ShareX почти безупречна. Обилие опций слегка напоминает замотанного человека в приступе гиперактивности :-)</p>
+<p><a href="https://kostyanetsky.ru/notes/sharex-video-recording/interface.png" rel="noopener noreferrer" target="_blank"><img alt="Настраиваем скриншоты" src="https://kostyanetsky.ru/notes/sharex-video-recording/interface-thumb.png"/></a></p>
+<blockquote>
+<p>— Протестирую сам! Сам все протестирую! И полы вымою!</p>
+<p><em><a href="https://www.youtube.com/watch?v=K6oZuB8_dU8&amp;feature=youtu.be&amp;t=640" rel="noopener noreferrer" target="_blank">Эффективность не работает. Илья Якямсев</a></em></p>
+</blockquote>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/video-recording"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Запись видео
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>3 апреля 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="workplace" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Рабочее место</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Я работаю удалённо и с коллегами общаюсь через Zoom и Slack. В основном в чатах, но многие темы по-прежнему проще обсудить голосом. И вот тут-то возникают проблемы: приходится забыть про индексацию и поиск по сообщениям, а главное — нет никакого архива разговоров. Иногда очень нужно вспомнить: кто говорил? Что конкретно? Когда?</p>
+<p>Zoom и Slack сами по себе эту проблему не решают. Первый умеет записывать только те конференции, которые организуешь ты или которые тебе разрешили писать (короче, далеко не все), а второй писать видео не умеет вообще.</p>
+<h2>Решение проблемы</h2>
+<p>Я закрыл вопрос какое-то время назад, поставив себе <a href="https://obsproject.com" rel="noopener noreferrer" target="_blank">OBS Studio</a> — популярный среди стримеров софт для записи экрана. С записью конференций он прекрасно справляется. Настройка минимальная: пишем весь экран, звук с микрофона и все звуки, которые воспроизводятся. В микшере по результатам тестовых записей можно натыкать фильтры — усиление, шумоподавление и так далее.</p>
+<p><img alt="Настройка OBS Studio" src="https://kostyanetsky.ru/notes/video-recording/video-recording.png"/></p>
+<p>В настройках нужно указать папку, куда будут складываться записанные видео (Вывод → Запись → Путь записи). Поскольку мы пишем звонки и файлов будет много, лучше сразу разложить их в папки по дням — для этого идем в расширенные настройки и в поле «Формат имени файла» указываем нечто вроде %CCYY-%MM-%DD/%hh-%mm-%ss.</p>
+<h2>Быстрое управление записью</h2>
+<p>Конечно, лезть в OBS при каждом звонке неудобно, но у неё есть куча хоткеев — можно прожимать какие-нибудь заковыристые комбинации в начале и в конце разговора. Однако со мной это не сработало — придуманные хоткеи почему-то постоянно вылетали из головы. Даже стикеры не помогали. </p>
+<p>Поначалу я здорово разозлился, но потом понял: раз не получается запомнить хоткей — надо его выкинуть. Начинать запись нажатием одной кнопки, заканчивать нажатием на другую.</p>
+<p>С оборудованием всё было просто: у меня эргономичная <a href="https://www.microsoft.com/accessories/ru-ru/products/keyboards/natural-ergonomic-keyboard-4000/b2m-00020" rel="noopener noreferrer" target="_blank">клавиатура</a> от Microsoft, программируемых кнопок на ней — вагон. Хуже с софтом: OBS Studio понимает некоторые <a href="https://github.com/obsproject/obs-studio/wiki/Launch-Parameters" rel="noopener noreferrer" target="_blank">параметры</a> запуска, но список откровенно бедноват — даже остановки записи нет. Хотелось бы побольше.</p>
+<p>В итоге решил задачу через плагин к OBS Studio, который дает порулить запущенным экземпляром программы. Он придуман для удаленного управления записью (например, со смартфона), но никто не мешает использовать его локально.</p>
+<p>Схема получилась такая:</p>
+<ol>
+<li>Ставим OBS Studio и плагин <a href="https://obsproject.com/forum/resources/obs-websocket-remote-control-of-obs-studio-made-easy.466/" rel="noopener noreferrer" target="_blank">obs-websocket</a> к ней. Снимаем галку «Enable System Tray Alerts» в настройках (Tools → WebSockets Server Settings), не то программа примется сообщать о каждом чихе.</li>
+<li>Кладем куда-нибудь <a href="https://obsproject.com/forum/resources/command-line-tool-for-obs-websocket-plugin-windows.615/" rel="noopener noreferrer" target="_blank">утилиту</a>, с помощью которой этим плагином можно рулить из командной строки. </li>
+<li>Вешаем на одну кнопку OBSCommand.exe /startrecording, а на другую — OBSCommand.exe /stoprecording.</li>
+<li>Готово, вы великолепны!</li>
+</ol>
+<p>При вызове на долю секунду видно консоль (OBSCommand запускается, связывается с obs-websocket и ждет ответа). Сначала хотел как-нибудь скрыть это окно, но, поразмыслив, передумал — если OBS Studio не будет запущен или возникнет какая-то проблема, консоль не закроется и я хотя бы узнаю, что запись не началась.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+      </section>
+
+      <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Ничего не нашлось. Попробуйте другой запрос?
+      </div>
+
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <span class="w-[1px]"></span>
+        
+      </nav>
+
+<script>
+  // ------------------------------------------------------------
+  // Hybrid mode:
+  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
+  // - On first user search OR tag click: fetch notes.json, hide static, render results.
+  // - On clear (no query AND tag=all): show static again.
+  // ------------------------------------------------------------
+
+  const metaEl = document.getElementById("pageMeta");
+  const notesJsonUrl = "https://kostyanetsky.ru/notes.json";
+
+  // A tag of a pre-generated list (notes/tags/<tag>), empty for a common one.
+
+  const pageTag = "workplace";
+  const notesListUrl = "https://kostyanetsky.ru/notes/";
+
+  const page = Number(metaEl.getAttribute("data-page") || "1");
+  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
+  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
+
+  const searchEl = document.getElementById("search");
+  const countEl = document.getElementById("count");
+  const pageInfoEl = document.getElementById("pageInfo");
+
+  const staticNotesEl = document.getElementById("staticNotes");
+  const dynamicNotesEl = document.getElementById("dynamicNotes");
+  const emptyEl = document.getElementById("empty");
+  const paginationEl = document.getElementById("pagination");
+
+  let notesCache = null;
+  let notesLoadPromise = null;
+
+  // Tag filter state (chip)
+  let activeTag = pageTag || "all";
+
+  const TAG_SESSION_KEY = "notesActiveTag";
+
+  // A pre-generated list is filtered by its own tag, so a saved one has to be
+  // ignored: an URL wins over a state of a previously visited page.
+
+  if (!pageTag) {
+    try {
+      const saved = sessionStorage.getItem(TAG_SESSION_KEY);
+      if (saved) activeTag = saved;
+    } catch (e) {
+      // no sessionStorage :|
+    }
+  }
+
+  const CHIP_CLASS_DEFAULT =
+    "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50";
+  const CHIP_CLASS_ACTIVE =
+    "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200";
+
+  function debounce(fn, ms = 200) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  async function loadNotesJsonOnce() {
+    if (notesCache) return notesCache;
+
+    if (!notesLoadPromise) {
+      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          // Expecting: [{ html: "<article>...</article>", text: "plain text", tags: ["work", ...] }, ...]
+          notesCache = Array.isArray(data) ? data : [];
+          return notesCache;
+        })
+        .catch((err) => {
+          console.error(err);
+          notesCache = [];
+          return notesCache;
+        });
+    }
+
+    return notesLoadPromise;
+  }
+
+  function showStaticMode() {
+    dynamicNotesEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = "";
+    emptyEl.classList.add("hidden");
+
+    staticNotesEl.classList.remove("hidden");
+    paginationEl.classList.remove("hidden");
+
+    countEl.textContent = String(totalNotes);
+    pageInfoEl.textContent = `Страница ${page} из ${totalPages}`;
+  }
+
+  function showSearchMode() {
+    staticNotesEl.classList.add("hidden");
+    paginationEl.classList.add("hidden");
+
+    dynamicNotesEl.classList.remove("hidden");
+  }
+
+  function normalizeTag(t) {
+    return String(t || "")
+      .trim()
+      .toLowerCase();
+  }
+
+  function noteHasTag(note, tag) {
+    if (!tag || tag === "all") return true;
+
+    const want = normalizeTag(tag);
+
+    const tags = note?.tags;
+    
+    return tags.map(normalizeTag).includes(want);
+  }
+
+  function filterNotes(notes, q, tag) {
+    const needle = (q ?? "").trim().toLowerCase();
+    const needText = needle.length > 0;
+    const needTag = tag && tag !== "all";
+
+    if (!needText && !needTag) return notes;
+
+    return notes.filter((n) => {
+      const matchesText = !needText ? true : String(n?.text ?? "").includes(needle);
+      const matchesTag = !needTag ? true : noteHasTag(n, tag);
+      return matchesText && matchesTag;
+    });
+  }
+
+  function setActiveChipUI(tag) {
+    document.querySelectorAll(".chip").forEach((x) => {
+      x.className = CHIP_CLASS_DEFAULT;
+      x.setAttribute("aria-pressed", "false");
+    });
+
+    const btn = Array.from(document.querySelectorAll(".chip")).find((b) => b.dataset.chip === tag);
+    if (btn) {
+      btn.className = CHIP_CLASS_ACTIVE;
+      btn.setAttribute("aria-pressed", "true");
+    }
+  }
+
+  function makeSearchLabel(q, tag) {
+    const hasQ = (q || "").trim().length > 0;
+    const hasTag = tag && tag !== "all";
+
+    if (hasQ && hasTag) return `Поиск + #${normalizeTag(tag)}`;
+    if (hasTag) return `Тег: #${normalizeTag(tag)}`;
+    return "Поиск";
+  }
+
+  async function runSearch() {
+    const q = (searchEl.value || "").trim();
+    const hasQ = q.length > 0;
+    const hasTag = activeTag && activeTag !== "all";
+
+    if (pageTag) {
+      // Notes of a pre-generated list are filtered by its tag already, so the
+      // static mode is the untouched state of such a page. Dropping the tag
+      // means leaving the page for the common list.
+
+      if (!hasTag) {
+        try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+        window.location.href = notesListUrl;
+        return;
+      }
+
+      if (activeTag === pageTag && !hasQ) {
+        showStaticMode();
+        return;
+      }
+    } else if (!hasQ && !hasTag) {
+      try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+      showStaticMode();
+      return;
+    }
+
+    showSearchMode();
+
+    const notes = await loadNotesJsonOnce();
+    const filtered = filterNotes(notes, q, activeTag);
+
+    countEl.textContent = String(filtered.length);
+    pageInfoEl.textContent = makeSearchLabel(q, activeTag);
+
+    if (filtered.length === 0) {
+      dynamicNotesEl.innerHTML = "";
+      emptyEl.classList.remove("hidden");
+      return;
+    }
+
+    emptyEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+  }
+
+  // Initial render
+  setActiveChipUI(activeTag);
+  showStaticMode();
+
+  // Text search handler
+  searchEl.addEventListener("input", debounce(runSearch, 200));
+
+  // Tag chips handler.
+  //
+  // It is a delegated one, since tag chips of a note are rendered dynamically
+  // as well: both the chips above and the ones of a note filter the list.
+
+  document.addEventListener("click", (event) => {
+    const chip = event.target.closest("[data-chip]");
+
+    if (!chip) return;
+
+    activeTag = chip.dataset.chip || "all";
+      try {
+      if (activeTag === "all") sessionStorage.removeItem(TAG_SESSION_KEY);
+      else sessionStorage.setItem(TAG_SESSION_KEY, activeTag);
+      } catch (e) {}
+    setActiveChipUI(activeTag);
+    runSearch();
+  });
+
+  // Search autorun in case search string is set (refresh / back-forward cache)
+  function runSearchSoon() {
+    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
+  }
+
+  document.addEventListener("DOMContentLoaded", runSearchSoon);
+  window.addEventListener("pageshow", runSearchSoon);
+</script>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Влад Костянецкий</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.ru/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -124,9 +124,12 @@
             Управление службами через PowerShell
           </header>
 
+          
           <div class="mt-5">
-            <div class="prose-like">
-                
+            
+
+
+
 
         <article class="rounded-2xl bg-white">
 
@@ -140,11 +143,15 @@
                 <span class="text-slate-300">·</span>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Powershell</span>
+                    
+                    <a href="https://kostyanetsky.ru/notes/tags/powershell/" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Powershell</a>
+                    
                 </div>
                 
                 <div class="flex flex-wrap gap-2">
-                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700">Рабочее место</span>
+                    
+                    <a href="https://kostyanetsky.ru/notes/tags/workplace/" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Рабочее место</a>
+                    
                 </div>
                 
               
@@ -169,7 +176,6 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
         </article>
 
 
-            </div>
           </div>
 
         </article>

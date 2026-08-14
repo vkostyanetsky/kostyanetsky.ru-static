@@ -1,0 +1,1871 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Заметки: Готово</title>
+
+    <meta name="description" content="" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="https://kostyanetsky.ru/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.ru/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.ru/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.ru/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.ru/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Заметки: Готово"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/done" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/tags/done/page-2";
+        let ctrlRightUrl    = "";
+    </script>
+    
+    <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/">Сайт Влада</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/projects/">Проекты</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.ru/notes/">Заметки</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <span
+                        class="inline-block text-[1.35rem] leading-none text-slate-400"
+                        title="Видите опечатку? Поправьте меня!"
+                        aria-disabled="true"
+                        >✎</span>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.me/notes/tags/done"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="EN"
+                    >
+                        EN
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page="1"
+      data-total-notes="20"
+      data-total-pages="3"
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+    
+
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Заметки: Готово</h1>
+        <p class="max-w-2xl text-slate-700">
+          Мои мысли о жизни, работе и разных интересных штуках вокруг меня.
+        </p>
+      </header>
+
+
+
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="relative w-full sm:w-[420px]">
+          <input
+            id="search"
+            type="search"
+            placeholder="Поиск по заголовку / тексту / тегам…"
+            class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+          />
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </div>
+
+        <p class="text-sm text-slate-600">
+          Показано: <span id="count" class="font-semibold text-slate-900">0</span>
+          <span class="text-slate-400">·</span>
+          <span id="pageInfo">Страница</span>
+        </p>
+      </section>
+
+      <section class="mt-4 flex flex-wrap gap-2">
+      
+        <button
+          data-chip="all"
+          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200"
+        >
+          Все
+        </button>
+
+        
+        <button
+          data-chip="1c"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          1С
+        </button>
+        
+        <button
+          data-chip="work"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Работа
+        </button>
+        
+        <button
+          data-chip="done"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Готово
+        </button>
+        
+        <button
+          data-chip="videogames"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Видеоигры
+        </button>
+        
+        <button
+          data-chip="meanwhile"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Тем временем
+        </button>
+        
+        <button
+          data-chip="english"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          English
+        </button>
+        
+        <button
+          data-chip="bash"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bash
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
+        </button>
+        
+        <button
+          data-chip="code-smell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Код с запашком
+        </button>
+        
+        <button
+          data-chip="family"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Семья
+        </button>
+        
+        <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Obsidian
+        </button>
+        
+        <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
+          data-chip="blog"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Блог
+        </button>
+        
+        <button
+          data-chip="pgsql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          PostgreSQL
+        </button>
+        
+        <button
+          data-chip="workplace"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Рабочее место
+        </button>
+        
+        <button
+          data-chip="javascript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Javascript
+        </button>
+        
+        <button
+          data-chip="python"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Python
+        </button>
+        
+        <button
+          data-chip="webdev"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Вебдев
+        </button>
+        
+        <button
+          data-chip="books"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Книги
+        </button>
+        
+        <button
+          data-chip="georgia"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Грузия
+        </button>
+        
+        <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Оптимизация
+        </button>
+        
+        <button
+          data-chip="sport"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Спорт
+        </button>
+        
+        <button
+          data-chip="3d"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          3D
+        </button>
+        
+        <button
+          data-chip="bitrix"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Битрикс
+        </button>
+        
+        <button
+          data-chip="nodejs"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Node.js
+        </button>
+        
+        <button
+          data-chip="powershell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Powershell
+        </button>
+        
+        <button
+          data-chip="typescript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Typescript
+        </button>
+        
+
+      </section>
+
+      <!-- Static notes (SEO + no-JS fallback) -->
+      <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/obsidian-property-organizer"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Obsidian Property Organizer
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 августа 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="obsidian" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Obsidian</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="ai" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">ИИ</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Что точно стало лучше с появлением ИИ в инструментарии разработчиков — наконец-то появилась реальная возможность доделывать мелкие проекты. Я про всякие тулкиты, MVP-шки и идеи, которые раньше почти всегда отправлялись в стол: делать вроде хочется, но тратить несколько вечеров на очередную маленькую утилиту просто-напросто влом.</p>
+<p>Например, на прошлой неделе я навайбкодил себе <a href="https://community.obsidian.md/plugins/property-organizer" rel="noopener noreferrer" target="_blank">плагин</a> для Obsidian, который приводит в порядок свойства заметок. Если вкратце: для разных папок можно задать, какие свойства должны быть у заметок и в каком порядке. Плагин добавляет недостающие, убирает лишние и переставляет всё как положено — вместо того бардака, который я когда-то накидал на скорую руку и забыл поправить.</p>
+<p>В репозитории на Github есть <a href="https://github.com/vkostyanetsky/ObsidianPropertyOrganizer/blob/main/README.ru.md" rel="noopener noreferrer" target="_blank">подробное описание</a>, как это работает.</p>
+<p>Вроде бы мелочь, да? Поглаживание внутреннего перфекциониста. Но мне нравится порядок, а за три дня плагин успели скачать семьдесят человек.</p>
+<p>Привет вам, собратья по навязчивой любви к чистоте :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/new-ui"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Новый UI в блоге
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 января 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="blog" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Блог</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>На новогодних праздниках внезапно закусился и переписал UI блога. Хотел всего-то прикрутить поиск по заметкам: их уже довольно много и время от времени нужно что-то быстро выудить из кучи написанного (например, ссылку коллеге скинуть).</p>
+<p>Блог живёт на <a href="https://pages.github.com" rel="noopener noreferrer" target="_blank">Github Pages</a>, так что выбор решений небогат: либо слать запрос в гугл, либо делать свой статический индекс и отдавать в браузер пользователя (пусть сам в нём роется). Я пошёл по второму пути: быстрее, управляемее <s>и можно самому покодить</s>. При первом поиске <a href="https://kostyanetsky.ru/notes.json" rel="noopener noreferrer" target="_blank">файл индекса</a>, правда, нужно скачать, но что такое 200 Кб в современном интернете? Смешно.</p>
+<p>Ну а там как-то, знаете ли, пошло-поехало... Сначала не удавалось прикрутить к полю поиска <a href="https://tachyons.io" rel="noopener noreferrer" target="_blank">Tachyons</a> — разозлился и переделал всё на <a href="https://tailwindcss.com" rel="noopener noreferrer" target="_blank">Tailwind</a> (всё равно хотел попробовать, а случая всё никак не представлялось). Пока писал код для поиска — подумал, что логично сразу вкрутить в него теги, чтобы два раза не вставать. Очнулся с облаком тегов над заметками и сообразил, что тогда уж надо и с проектником то же самое сделать, только там не теги нужны, а стеки...</p>
+<p>В общем, получилось как в том меме из «Страха и отвращения в Лас-Вегасе». Сложно было остановиться. Осталось заставить себя писать в новый проектник: работы всегда дофига, и работа интересная, но если не писать о ней — кофе, всё тонет в кофе.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/backup-ui"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Управление бэкапами
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>6 декабря 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>В конце года выкатили для нашего внутреннего инструмента (я уже вскользь <a href="https://kostyanetsky.ru/notes/easter-eggs" rel="noopener noreferrer" target="_blank">писал</a> о нём) большой апдейт, дающий коллегам адекватный доступ к бэкапам пользовательских приложений. Бэкапы в SaaS-компании нужны всем и всегда — для разработки, для тестирования, для расследования проблем, да много для чего. Без адекватного учёта процесс превращается в зоопарк, когда три человека в один момент времени создают три запроса на практически одинаковые копии одной и той же базы. Задача, конечно, решается, но ресурсов прожрано в три раза больше, чем хотелось бы.</p>
+<p>У нас уже было решение на базе UI Битрикса, но в силу, э-э, особенностей развития этого продукта оно приносило больше боли, чем пользы. Поэтому мы переосмыслили процесс и всё переписали. На фронте — 1C, на бэке — PostgREST, PostgreSQL, PowerShell и много чего ещё. Логика довольно сложная, но у пользователя — простой и дружелюбный UI, через который можно заказать бэкап буквально в два нажатия.</p>
+<p>Выбрать можно один из трёх видов бэкапов:</p>
+<ul>
+<li>облачный (копия реального приложения, развёрнутая в облаке и доступная, в том числе, через браузер);</li>
+<li>файловый бэкап (обычный .dt-файл, который можно скачать и развернуть на локальной машине);</li>
+<li>бэкап конфигурации и расширений (.cf + .cfe).</li>
+</ul>
+<p>Кроме того, новое решение отслеживает попытки заказать бэкап приложения, если он уже делается прямо сейчас. А ещё — не даёт пользователям бэкапить одно и то же приложение чаще, чем раз в час. </p>
+<p>Ну и продолжаем хохмить в интерфейсе, конечно.</p>
+<p><img alt="But Still!" src="https://kostyanetsky.ru/notes/backup-ui/but-still.png"/></p>
+<p><img alt="Coffee First!" src="https://kostyanetsky.ru/notes/backup-ui/coffee-first.png"/></p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/obsidian-foodiary-bases"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Дневник питания в Obsidian Bases
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>23 ноября 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="obsidian" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Obsidian</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Переписал с помощью <a href="https://help.obsidian.md/bases" rel="noopener noreferrer" target="_blank">Obsidian Bases</a> свой прошлогодний <a href="https://kostyanetsky.ru/notes/obsidian-foodiary" rel="noopener noreferrer" target="_blank">плагин</a>, считающий калории, белки, жиры и углеводы в пище. Получилось сильно более гибкая и настраиваемая штука, чем в виде плагина — не нужно ничего переписывать, собирать и релизить, если вдруг решил посчитать клетчатку в еде или просто подвигать колонки в отчёте.</p>
+<p>Ну и симпатичная, да:</p>
+<p><img alt="UI" src="https://kostyanetsky.ru/notes/obsidian-foodiary-bases/base.png"/></p>
+<p>Все необходимые настройки и скрипты — в <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases" rel="noopener noreferrer" target="_blank">репозитории</a> на Github'е; инструкция <a href="https://github.com/vkostyanetsky/ObsidianFoodiaryBases/blob/main/README.ru.md" rel="noopener noreferrer" target="_blank">переведена</a> на русский язык.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/creepy-graveyard"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Жуткое кладбище
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>26 ноября 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="3d" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">3D</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Продолжаю осваивать 3D в свободное время. Вот, первая более-менее самостоятельная работа с <a href="https://www.udemy.com/course/blender-environments-megacourse-create-3d-environments/" rel="noopener noreferrer" target="_blank">курса</a>, который недавно закончил.</p>
+<p><a href="https://kostyanetsky.ru/notes/creepy-graveyard/creepy-graveyard.png" rel="noopener noreferrer" target="_blank"><img alt="Creepy Graveyard" src="https://kostyanetsky.ru/notes/creepy-graveyard/creepy-graveyard.png"/></a></p>
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/mraGFR_Tr5k" width="560"></iframe>
+<p>Проблем, конечно, хватает: и в моделях, и в цветах, и в композиции... Да вообще везде. Хорошо хоть, что сцена по сюжету — ночь и туман. Самые косячные места можно просто спрятать. Не удивлюсь, если авторы курса специально выбрали такой сеттинг, чтобы новички не расстраивались :)</p>
+<p>Но результатом я всё равно доволен. Думаю, на этом этапе перфекционизм скорее мешает, чем помогает. К тому же получилось явно лучше, чем прошлая работа. Я тогда был совсем зелёным в Blender и боялся сделать шаг в сторону от преподавателя: десять минут смотрел урок, а потом десять минут пытался повторить.</p>
+<p>Такой подход работает только на старте, но не помогает понять, как искать решения проблем. Поэтому в этот раз я смотрел несколько уроков подряд по часу-полтора. Потом пробовал делать сам и к видео возвращался, только если совсем что-то не клеилось. В голове, кажется, осело заметно больше.</p>
+<p>Короче, прогресс есть, едем дальше!</p>
+<p>UPD: Один из фаундеров FlippedNormals записал <a href="https://www.youtube.com/watch?v=izkRFqBzya0" rel="noopener noreferrer" target="_blank">ролик</a> с теми же мыслями про обучение.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/slack-summary"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Сводка в Slack
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>10 ноября 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="powershell" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Powershell</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Попался под руку <a href="https://gist.github.com/vkostyanetsky/b0807f2df2501bbeeb97c95a977f3e23" rel="noopener noreferrer" target="_blank">скрипт</a>, который я пару лет назад накатал для рабочего GitLab'а. Вкратце: мы ежедневно прогоняем репозиторий разработки через прорву тестов на Ванессе, в результате чего получаем симпатичный отчет — сколько тестов выполнено, какие провалились, причины провалов и так далее.</p>
+<p>Отчет нужно постоянно анализировать, хотя бы бегло. Конечно, полностью «зеленых» тестов мы уже давно не видели, и это нормально: например, в случае взаимозависимой разработки, когда коммиты ломают проверяемый функционал, и тесты еще предстоит поправить. Однако держать руку на пульсе все равно необходимо.</p>
+<p>Чтобы упростить эту рутину, я немного расширил код пайплайна: после формирования отчета GitLab первым делом создает короткую сводку (тип клиента, тип базы, статистика по тестам) и отправляет ее в слак.</p>
+<p><img alt="Отчет" src="https://kostyanetsky.ru/notes/slack-summary/report.jpg"/></p>
+<p>Как бонус, стало проще отвечать на философский вопрос «кто все сломал». Чаще всего — автор первого коммита, на котором метрика Scenarios Failed на скриншоте выше пробила потолок :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/system-analysis-course"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Анализ систем
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>25 августа 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="meanwhile" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Тем временем</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Среди всех этих пет-проектов и августовских переживаний забыл упомянуть, что завершил <a href="https://tough-dev.school/system-analysis" rel="noopener noreferrer" target="_blank">курс</a> по анализу систем, о котором недавно <a href="https://kostyanetsky.ru/notes/ibrahim" rel="noopener noreferrer" target="_blank">писал</a>.</p>
+<p><img alt="Сертификат" src="https://kostyanetsky.ru/notes/system-analysis-course/certificate.png"/></p>
+<p>Курс был устроен так, что на протяжении всех занятий мы работали над одной и той же системой, выявляли проблемы и постепенно их решали. Перед первым уроком нам предложили спроектировать первую версию системы, чтобы потом, в конце курса, сравнить её с финальной версией и оценить прогресс. Так вот, сравнением я доволен — в том смысле, что на первую версию теперь без слез смотреть сложно :)</p>
+<p>Времени для рефлексии было в целом мало, так что буду дальше работать над материалами и растаскивать уроки на личные заметки. Это не так-то просто, так как у нас в компании много специфики связано с решениями на базе 1С:Предприятия, и масса моей работы крутится вокруг разной обвязки 1С-инстансов на решениях вне стека 1С. </p>
+<p>Однако 1С-инстансы, кажется, можно воспринимать как монолиты с определенным набором характеристик (в зависимости от решаемых внутри задач), а в остальном коммуникации с ними мало чем отличаются от традиционных решений: те же события (например, кролик), те же входящие/исходящие HTTP-вызовы, тот же показатель instability и так далее.</p>
+<p>На этом этапе я точно потащу (или уже потащил) к себе:</p>
+<ol>
+<li>Распил ТЗ на нумерованные пункты (US-XXX) и хранение их в одном месте с пометками «updated at», «canceled at» и так далее. Кажется, удачный формат.</li>
+<li>Ведение ADR. Собственно, это уже внедрил. Несколько смущает, правда, что в них периодически оседает что-то, что архитектурой в прямом смысле не является (например, принципы логирования событий на каком-то участке). Однако такие штуки тоже кажутся важными для принятия решений.</li>
+<li>Event Storming как способ визуализации бизнес-процессов. Не могу сказать, что он сильно выигрывает по сравнению с той сборной солянкой, которая до этого обычно оседала у нас, но результат выглядит симпатично и вообще: какой-то стандарт лучше, чем никакого.</li>
+<li>Диаграммы сервисов приложения с наклеенными стикерами, указывающими характеристики. Достаточно функционально, если надо взглянуть на проект с высоты птичьего полета и опять же не так сухо, как гигантские таблицы. То есть, если сработает bus factor — выше шанс, что следующий (или следующая) я заметит эти детали.</li>
+<li>Хочу делать BPMN-ки и Activity Diagrams. Формат мне нравится, но пока мои попытки оставляют желать лучшего. Буду пробовать ещё.</li>
+<li>Неожиданно зашел концепт разделения функционала для снижения зависимостей. Раньше казалось, что всегда проще склеить похожий функционал для снижения объёма кода, но это увеличивает и сложность, и внутреннюю связность — а значит, может сильно больше вредить, чем помогать.</li>
+</ol>
+<p>В целом курсом очень доволен. Лучшее вложение сил за последний год. Если думаете идти туда, но сомневаетесь — идите :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/obsidian-timesheet"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Таймшит для Обсидиана
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>12 мая 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="typescript" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Typescript</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="obsidian" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Obsidian</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Написал ещё один плагин к <a href="https://obsidian.md" rel="noopener noreferrer" target="_blank">Obsidian</a>, на этот раз — для <a href="https://help.obsidian.md/Plugins/Daily+notes" rel="noopener noreferrer" target="_blank">ежедневных заметок</a>. Рисует симпатичный отчет: над какими задачами работал, что сделал, сколько времени потратил. Я постарался описать в <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" rel="noopener noreferrer" target="_blank">репозитории</a>, как это работает; буду рад, если кому-то ещё пригодится!</p>
+<p>Забавный момент: для примеров в README я использовал номера задач FBI-1, FBI-2 и так далее. Это не отсылка к X-Files или Twin Peaks — просто первое, что пришло мне в голову. Дело в том, что наш внутренний проект по разработке FirstBit ERP называется First Bit Internal, сокращенно — FBI. Основной пул задач, над которыми мы работаем, живёт именно в нём.</p>
+<p>Мы-то уже привыкли, но коллег вне компании наши скриншоты из JIRA или SonarQube неизменно веселят. Представили, что вы — агент Купер? А мне и представлять не надо :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/obsidian-foodiary"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Фудиари для Обсидиана
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>14 апреля 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="typescript" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Typescript</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="obsidian" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Obsidian</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Вслед за <a href="https://kostyanetsky.ru/notes/obsidian-fastimer" rel="noopener noreferrer" target="_blank">первым</a> плагином для Obsidian пару недель назад выкатил <a href="https://github.com/vkostyanetsky/ObsidianFoodiary" rel="noopener noreferrer" target="_blank">второй</a>. Считает КБЖУ (калории, белки, жиры и углеводы) в пище. Помогает не переедать на пустом месте — всё-таки на глаз трудно оценить, сколько слопал за день, и можно ли позволить себе вон тот пончик.</p>
+<p>Короче, полезная штука, если вы:</p>
+<ol>
+<li>Толстяк (как я)</li>
+<li>Хотите перестать им быть (как я)</li>
+<li>Ведете заметки в Obsidian (как я) 🙂</li>
+</ol>
+<p>На самом деле, программ для этой задачи полным-полно (я перепробовал штук десять). Остался недоволен: либо страшная, либо глючит, либо постоянно пытается всучить ежемесячную подписку. Короче, больше раздражает, чем помогает. Хочется чего-то нативного, встроенного в обычную рутину — и если она оседает в Obsidian, то решение напрашивается само собой.</p>
+<p>Установить плагин можно прямо из программы — разработчики его уже одобрили. В остальном всё просто: пишем в ежедневной заметке, что съели и сколько это весило, и в ответ получаем компактную табличку с сортировкой по калориям и числам по белкам, жирам и углеводам. </p>
+<p>В репозитории по ссылке выше есть примеры.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/obsidian-fastimer"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Фастаймер для Обсидиана
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>13 февраля 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="typescript" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Typescript</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="obsidian" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Obsidian</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Разработчики <a href="https://obsidian.md" rel="noopener noreferrer" target="_blank">Obsidian</a> на днях заапрувили один из моих пет-плагинов на TypeScript — <a href="https://github.com/vkostyanetsky/ObsidianFastimer" rel="noopener noreferrer" target="_blank">Фастаймер</a>, трекер интервального голодания. Он добавляет в хранилище новый блок кода: вводишь в него дату начала окна голодания и получаешь дату завершения, время до этого момента и раскладку по зонам, которые предстоит пройти. </p>
+<p>Блок показывает актуальную картину каждый раз, когда Obsidian его отрисовывает — то есть, можно следить за своим прогрессом в реальном времени. Когда окно голодания закончится, можно ввести дату завершения и блок покажет результат: получилось ли выполнить цель, сколько времени сверх плана вы голодали и так далее.</p>
+<p>Думаю немного доработать визуальную часть (сейчас всё выводится текстом без какого-либо оформления). А ещё — прикрутить функции расчета статистики, чтобы можно было на ходу рисовать красивые графики в духе <a href="https://charts.phib.ro/Meta/Charts/Charts+Documentation" rel="noopener noreferrer" target="_blank">Charts</a> и показывать ачивки. У меня была эта механика в <a href="https://github.com/vkostyanetsky/Fastimer" rel="noopener noreferrer" target="_blank">реализации</a> этого же приложения на Python, но я вряд ли к ней вернусь — в хранилище Obsidian эту задачу решать проще, чем раскатывать на компьютер дополнительную утилиту.</p>
+<p>Короче, зацените плагин! :) В библиотеке Обсидиана его можно найти по имени (Fastimer). Или, при желании, установить вручную из репозитория.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/fastimer-1-3-1"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Новый Фастаймер
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>23 августа 2023</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="python" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Python</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Выпустил новую <a href="https://github.com/vkostyanetsky/Fastimer/releases/tag/v1.3.1" rel="noopener noreferrer" target="_blank">версию</a> своего консольного таймера для <a href="https://ru.wikipedia.org/wiki/Периодическое_голодание" rel="noopener noreferrer" target="_blank">интервального голодания</a>. Сам таймер я написал где-то год назад, когда меня в очередной раз расстроило приложение <a href="https://www.zerolongevity.com/" rel="noopener noreferrer" target="_blank">Zero</a> для Android: в нём не работала какая-то совсем примитивная функция вроде просмотра конкретного интервала.</p>
+<p>Основное отличие 1.3.1 от 1.2.3 — выпилил к черту консольное меню в пользу старых-добрых аргументов и опций. Концепция меню выглядит удобной, пока фич у приложения мало, но как только их число растёт — необходимость протыкивать каждое действие начинает напрягать.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/outgoing-requests-limiter"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Помедленнее, я записываю
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>5 марта 2023</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bitrix" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Битрикс</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Обычно при разработке исходишь из простой формулы: чем быстрее работает — тем лучше. Например, чем больше запросов приложение успеет выполнить за единицу времени — тем быстрее решится задача, ради которой эти запросы нужны.</p>
+<p>Однако бывает наоборот: нужно снизить количество операций, которые программа способна выполнить. Допустим, мы дергаем внешний сервис и он банит, если делать это слишком часто. Пример — облако <a href="https://bitrix24.net" rel="noopener noreferrer" target="_blank">Битрикс24</a>, которое требует отправлять не больше двух запросов в секунду.</p>
+<p>Вот <a href="https://github.com/vkostyanetsky/OutgoingRequestsLimiter" rel="noopener noreferrer" target="_blank">реализация</a> такой замедлялки, которую я написал на прошлой неделе. Поддержки очередности в ней нет; основная решенная задача — выполнить как можно больше запросов, не выходя за лимит (с учётом того, что запросы могут делаться из разных сеансов).</p>
+<p>Задача решена грубо — через константу, которая хранит дату текущей секунды и количество уже были отправленных запросов. Клиенты, которые утыкаются в ограничение — ждут. Для нагруженных систем такой подход не годится, а так — вполне может пригодиться.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/infostart-event-2021"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Infostart Event 2021
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>16 ноября 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>На прошлой неделе сгонял в Москву на <a href="https://event.infostart.ru/2021_msk/" rel="noopener noreferrer" target="_blank">Infostart Event 2021</a>:</p>
+<ul>
+<li>Послушать дюжину докладов о разработке и близких темах — check;</li>
+<li>Развиртуализоваться с несколькими классными людьми — check;</li>
+<li>Поболтать с друзьями — check!</li>
+</ul>
+<p>По итогу неожиданно почуствовал себя отдохнувшим — и это несмотря на перелёты, нервы и суету. Думаю, дело в том, что я удалёнщик; было по-настоящему здорово посмотреть на такое количество коллег вживую, а не в виде потока электронов.</p>
+<p>Чтобы два раза не <s>вставать</s> летать, сдал в офисе PostgresPro <a href="https://postgrespro.ru/education/exam/DBA1-10" rel="noopener noreferrer" target="_blank">входной тест</a> по администрированию PostgreSQL. Впереди ещё три, а финального пока вообще не существует — но дорогу осилит идущий, так вижу.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/build-on-github"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Сборка блога на GitHub
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>29 сентября 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="blog" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Блог</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Последний год этот сайт работал на простой связке: статика, гитхаб и свой домен. То есть все страницы были заранее сгенерированы и лежали в <a href="https://github.com/vkostyanetsky/kostyanetsky.ru-static" rel="noopener noreferrer" target="_blank">репе</a> гитхаба, к которой был подключен <a href="https://pages.github.com/" rel="noopener noreferrer" target="_blank">GitHub Pages</a>.</p>
+<p>Статику я собирал с помощью скрипта, на вход которому подавались педантично разложенные по папкам текстовые файлы с содержимым страниц. Скрипт рылся в них и генерил html-ки, которые я потом вручную перекладывал в репу.</p>
+<p>Эта схема, в общем, неплохо работала, но меня раздражало количество кликов. Здесь скрипт дерни, там скрипт дерни, потом ещё с гитом повозиться надо. Хотелось бы попроще.</p>
+<p>В какой-то момент до меня дошло, что на плечи гитхаба можно переложить не только деплой статики, но и саму сборку. Я поворочал мозгами и добавил к репозиторию со статикой ещё два:</p>
+<ol>
+<li><a href="https://github.com/vkostyanetsky/kostyanetsky.ru" rel="noopener noreferrer" target="_blank">Репозиторий</a> исходных данных. Сюда я положил контент сайта: те самые текстовые файлы и чуть-чуть метаданных (заголовки страниц, даты их создания, теги для заметок и так далее).</li>
+<li><a href="https://github.com/vkostyanetsky/BlogBuilder" rel="noopener noreferrer" target="_blank">Репозиторий</a> скрипта для генерации статики. Кроме самого скрипта, сюда я засунул разные ассеты (иконки, стили, манифесты — в общем, всё, что не нужно каждый раз генерировать, а можно просто «положить» рядом с получившимися html-ками).</li>
+</ol>
+<p>Потом я накатал <a href="https://github.com/vkostyanetsky/kostyanetsky.ru/blob/main/.github/workflows/main.yml" rel="noopener noreferrer" target="_blank">экшен</a>, который просыпается при каждом пуше в репу с исходными данными. Вкратце, его логика:</p>
+<ol>
+<li>Клонировать репу со статикой и репу с генератором;</li>
+<li>Обновить репу со статикой с помощью генератора;</li>
+<li>Запушить изменения репы со статикой в мейн;</li>
+<li>Написать хозяину (мне) в телегу.</li>
+</ol>
+<p>Вуаля! Теперь при любом изменении репозитория с исходными данными гитхаб немедленно (ну, как немедленно — в пределах минуты) обновляет репозиторий с готовым сайтом и деплоит его оттуда через GitHub Pages. Бонусом — веб-интерфейс для правки страниц сайта (собственно, сайт гитхаба). Почти чистый No Code :-)</p>
+<p>Чтобы два раза не вставать, я добавил ссылки для правки страниц прямо на сайт (карандаш в верхнем правом углу). Это задумано как удобство для меня, но вообще отправить PR может любой, кто, например, найдёт опечатку. Заранее спасибо!</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/rclone-abuser"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Скрипт для синхронизации c NAS
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>7 июня 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="python" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Python</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="workplace" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Рабочее место</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Выложил на GitHub <a href="https://github.com/vkostyanetsky/RCloneAbuser" rel="noopener noreferrer" target="_blank">скрипт</a> на Python, который я использую для синхронизации файлов между своим компьютером и домашним NAS'ом. У меня стоит Synology DS220j; с ним так-то идет целый вагон софта и в том числе утилита, которая умеет гонять файлы туда-сюда по расписанию. Однако сделана она, похоже, чисто для галочки: программа принялась глючить ещё на этапе настройки, после чего доверие к ней я потерял.</p>
+<p>В общем, какое-то время я помучался с решениями конкурентов и в итоге вернулся к привычному <a href="https://rclone.org" rel="noopener noreferrer" target="_blank">rclone</a>, с которым было всего две проблемы. Во-первых, нельзя нормально соединиться с SMB-шарой: да, логин и пароль можно сохранить в Windows и rclone будет их использовать, но они будут слетать при каждом удобном случае. Я вышел из положения, подключив шару как внешний диск.</p>
+<p>Во-вторых, файлов и папок для синхронизации у меня оказалось много: директория здесь, директория там, конфиг оттуда, профиль отсюда… Чтобы не плодить лапшу, я накатал простой скрипт, который берет из конфига источники и приемники, а потом для каждого вызывает rclone по одному и тому же шаблону.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/1c-expert"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Как готовиться к 1С:Эксперту
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>25 мая 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>В середине мая я сдал экзамен на статус эксперта в 1С по технологическим вопросам крупных внедрений. Подготовка вышла долгая, почти два года — так что я чертовски рад, что наконец-то справился.</p>
+<p>В сети есть море материала про этот экзамен и связанные с ним темы — начиная с <a href="https://uc1.1c.ru/course/podgotovka-k-1s-ekspertu-po-tehnologicheskim-voprosam-osnovnoj-kurs/" rel="noopener noreferrer" target="_blank">курса</a> Виктора Богачева и заканчивая, не знаю, релевантным <a href="https://t.me/OneC_Expert" rel="noopener noreferrer" target="_blank">чатом</a> в Телеграме. То есть вопрос из заголовка заметки обычно не стоит. Но я хочу написать о паре психологических заморочек, к которым лучше быть готовым заранее и о которых обычно не вспоминают.</p>
+<h2>Нехватка дофамина</h2>
+<p>Этот экзамен — сложный. Подготовка может затянуться, как и сдача: очень вероятно, что потребуется несколько попыток. Я справился со второго раза, но у людей выходит по-всякому — среди моих знакомых есть те, кто сдал с третьего, пятого или даже восьмого захода.</p>
+<p>То есть может получиться так, что вы раз за разом будете сильно вкладываться, а результата не получать. Через какое-то время ваш мозг решит, что этой задачи надо избегать: какая-то она провальная, бесполезная и вызывает неприятные ощущения. Как это повлияет на конечную цель, догадаться легко.</p>
+<p>Поэтому к подготовке лучше подходить как к долгому и рискованному проекту: разбавлять её короткими и, главное, успешными задачами. Для мозга нет существенной разницы между большим и маленьким успехом, и вернуться к основному проекту будет проще.</p>
+<p>Например, я для отвлечения катал скрипты для домашней автоматизации — <a href="https://github.com/vkostyanetsky/BlogBuilder" rel="noopener noreferrer" target="_blank">генератор статики</a> для этого сайта, органайзер на текстовых файлах, обвязку для домашнего NAS'а и тому подобные штуки, до которых раньше никак руки не доходили. Подойдут любые задачи — включая те, что с айтишечкой вообще не связаны. Почистить слив в ванной? Отличная идея!</p>
+<h2>Нехватка памяти</h2>
+<p>Если вы не работаете с проблемами производительности 1С каждый день, этот экзамен — очень ресурсоемкий контекст. Вы будете держать в голове массу вспомогательных данных, которые обычно берете из документации: флаги трассировки и имена динамических представлений Microsoft SQL Server, настройки PostgreSQL и рекомендации по их заполнению, перечень стандартных индексов платформы и так далее, и тому подобное. Во-о-от такенная куча информации! <em>(показывает руками, какая)</em></p>
+<p>Между тем, наш мозг при работе с большими объёмами данных порой крепко напоминает СУБД, работающую с переполненным буферным кэшем. Другими словами: всё, что не нужно в данный момент, будет выгружено из памяти. Готовьтесь забывать самые неожиданные вещи: номер своей квартиры, кличку соседской собаки, день рождения жены — и это ещё не самые диковатые последствия. Я, пока готовился, чуствовал сильное духовное родство с Джонни Мнемоником — персонажем старого-престарого киберпанка, который загрузил себе в мозги столько данных, что чуть не отбросил коньки :-)</p>
+<p><img alt="Не надо так" src="https://kostyanetsky.ru/notes/1c-expert/dont-do-it.jpg"/></p>
+<p>Выхода тут мне видится два, оба довольно очевидные.</p>
+<p>Во-первых, старайтесь набивать руку. Сложные технические детали запоминаются в сто раз легче, когда у тебя перед глазами тут же встает интерфейс программы, на которой ты их проверял.</p>
+<p>Во-вторых — старайтесь строить ассоциативные цепочки для наиболее заковыристых штук. Взять, например, баш! Название утилиты sed проще запомнить, если знать, что это сокращение от Stream EDitor. Утилита cat называется так, потому что concatenate, а не потому что кошка, но если вам проще запомнить второй вариант — так и делайте. Почему нет?</p>
+<p>Или, скажем, маркер последовательности байтов. \xef\xbb\xbf, ага. Его я намертво запомнил — только не смейтесь — через абсолютно иррелевантную фразу «Elf Friend BB Best Fight». Понятия не имею, почему моя голова работает через <s>такую жо</s> такие заковыристые интерфейсы, но жаловаться я не собираюсь. Главное — отыскать их!</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/longest-queries-v2"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Новый скрипт поиска долгих запросов
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>26 апреля 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Обновил <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LongestQueries.sh" rel="noopener noreferrer" target="_blank">скрипт</a> поиска долгих запросов в технологическом журнале платформы. Ранняя версия содержала серьёзный косяк: она старательно группировала DBMSSQL по Sql и Content, но игнорировала случаи, в которых поле Sql отсутствовало (для DBMSSQL это не то чтобы норма, но встречается).</p>
+<p>Ну и код слегка причесал, чтобы два раза не вставать: добавил разметку и комментарии, а часть логики gawk'а вынес из основного тела в функции. Да, скрипт стал смотреться длиннее, чем он есть на самом деле, зато читать его стало куда проще.</p>
+<p>Мне вообще, по-чеснаку, непонятна причина, по которой ветераны баша трамбуют всю логику в две-три строки: язык и так-то не блещет читаемостью (в телеграм-канале Никиты Прокопова есть <a href="https://t.me/nikitonsky_pub/55" rel="noopener noreferrer" target="_blank">отличный текст</a> на эту тему), а при виде страницы конвейеров без единого перевода строки вообще хочется молча выйти в окно.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/bunch-of-scrips"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Пучок скриптов
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>24 апреля 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Выложил на GitHub ещё несколько скриптов для разбора технологического журнала платформы, которые написал за последнее время:</p>
+<ul>
+<li><a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/FrequentEvents.sh" rel="noopener noreferrer" target="_blank">Частотные события</a>. Группирует события по наименованию, считает количество воспроизведений для каждого и выводит в порядке убывания — от наиболее частотного к наименее частотному. Практического применения у этого скрипта, скорее, нет; просто фиксировал для себя, какой процесс кластера какие события пишет.</li>
+<li><a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/ExceptionDescriptions.sh" rel="noopener noreferrer" target="_blank">Описания исключений</a>. Группирует EXCP по полю Name; для каждого наименования выводит варианты значений поля Description, которые были у исключений с таким наименованием. С помощью этого скрипта можно составить примерную картину: какие исключения действительно проблема, а какие — просто белый шум, который можно игнорировать и, например, закинуть в фильтры Кибаны.</li>
+<li><a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический журнал/LocksByConnectIDAndRegions.sh" rel="noopener noreferrer" target="_blank">Блокировки по ID соединения и области</a>. Удобен для поиска виновника таймаута на управляемых блокировках: скрипт выгребает из ТЖ все TLOCK'и по конкретной области от конкретного соединения, а потом выстраивает их в хронологическом порядке.</li>
+</ul>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/excp-number-by-minutes"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Расчет количества исключений по ТЖ
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>24 октября 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Ещё <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/ExceptionsNumberByMinutes.sh" rel="noopener noreferrer" target="_blank">скрипт</a>. Считает количество исключений в минуту и строит топ, по которому видно распределение. Можно быстро оценить периоды, когда программы сбоили особенно яростно.</p>
+<p>По ходу дела столкнулся в двумя любопытными проблемами, которые меня порядком сбили с толку. Во-первых, я почему-то был уверен, что uniq -c группирует строки вне зависимости от того, где в потоке данных они встречаются. Рассмотрим пример:</p>
+<pre><code>банан
+банан
+груша
+банан
+</code></pre>
+<p>Я думал, что если отдать эти данные uniq -c, то она сгруппирует одинаковые строки, посчитает количество повторений и выдаст примерно такое:</p>
+<pre><code>3 банан
+1 груша
+</code></pre>
+<p>Но на деле получилось так:</p>
+<pre><code>2 банан
+1 груша
+1 банан
+</code></pre>
+<p>Вывод: утилита uniq ожидает, что повторяющиеся строки идут одна за другой. Если строка отличается от предыдущей — она начинает считать счетчик совпадений для неё с нуля. То есть, чтобы получить тот результат, на который я рассчитывал — нужно сначала отсортировать данные, и только потом передавать их в uniq.</p>
+<p>Второй проблемой стала утилита sed. С помощью неё я пытался удалить из потока данных всё, кроме часов и минут (текст попытки на 12-й строке скрипта). Однако часть событий упорно не попадали под регулярку несмотря на то, что визуально никак не отличались. Я промаялся кучу времени и здорово разозлился, но потом вспомнил про существование <a href="https://ru.wikipedia.org/wiki/Маркер_последовательности_байтов" rel="noopener noreferrer" target="_blank">BOM</a>. Вычистил их и дальше все пошло как по маслу.</p>
+<p>BOM используется во всех файлах ТЖ (в этом можно убедиться, например, с помощью <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LogFilesWithoutBOM.sh" rel="noopener noreferrer" target="_blank">скрипта</a>). То есть каждый лог начинается с особых символов, которых невооруженным глазом не увидеть и которые могут помешать обработать первую строку файла (так как эти самые символы не будут попадать под условие регулярного выражения).</p>
+<p>Вывод: проще всего удалять BOM по умолчанию, не оценивая рисков для каждой конкретной задачи. Да, иногда это будет лишним (например, решению задачи по тексту выше через grep BOM никак не мешает). Но я не люблю сюрпризы. Кроме того, несколько тактов процессора на простую замену — явно выгоднее, чем эквивалент в сгоревших нервных клетках и потерянном времени.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/queries-and-lock-waits"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Запросы и ожидания на блокировках
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>19 октября 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Набросал ещё два скрипта для анализа ТЖ: <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestQueries.sh" rel="noopener noreferrer" target="_blank">первый</a> строит топ тяжелых запросов к MS SQL, <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestLockWaitsByRegions.sh" rel="noopener noreferrer" target="_blank">второй</a> — топ длительных ожиданий на блокировках.</p>
+<p>Тяжелые запросы определяются по продолжительности событий DBMSSQL. То есть, чем дольше выполнялся запрос — тем вероятнее, что в процессе он слопал кучу ресурсов. Обычно это так и есть, хотя для нормальной диагностики нужно смотреть трассировку.</p>
+<p>Ожидания на блокировках тоже считаются по продолжительности. При этом скрипт проверяет, что у события TLOCK заполнено свойство WaitConnections — то есть платформа действительно ждала возможности установить блокировку, а не просто потратила какое-то время на её установку.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+      </section>
+
+      <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Ничего не нашлось. Попробуйте другой запрос?
+      </div>
+
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.ru/notes/tags/done/page-2"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← Раньше
+        </a>
+        
+        <span class="w-[1px]"></span>
+        
+      </nav>
+
+<script>
+  // ------------------------------------------------------------
+  // Hybrid mode:
+  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
+  // - On first user search OR tag click: fetch notes.json, hide static, render results.
+  // - On clear (no query AND tag=all): show static again.
+  // ------------------------------------------------------------
+
+  const metaEl = document.getElementById("pageMeta");
+  const notesJsonUrl = "https://kostyanetsky.ru/notes.json";
+
+  // A tag of a pre-generated list (notes/tags/<tag>), empty for a common one.
+
+  const pageTag = "done";
+  const notesListUrl = "https://kostyanetsky.ru/notes/";
+
+  const page = Number(metaEl.getAttribute("data-page") || "1");
+  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
+  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
+
+  const searchEl = document.getElementById("search");
+  const countEl = document.getElementById("count");
+  const pageInfoEl = document.getElementById("pageInfo");
+
+  const staticNotesEl = document.getElementById("staticNotes");
+  const dynamicNotesEl = document.getElementById("dynamicNotes");
+  const emptyEl = document.getElementById("empty");
+  const paginationEl = document.getElementById("pagination");
+
+  let notesCache = null;
+  let notesLoadPromise = null;
+
+  // Tag filter state (chip)
+  let activeTag = pageTag || "all";
+
+  const TAG_SESSION_KEY = "notesActiveTag";
+
+  // A pre-generated list is filtered by its own tag, so a saved one has to be
+  // ignored: an URL wins over a state of a previously visited page.
+
+  if (!pageTag) {
+    try {
+      const saved = sessionStorage.getItem(TAG_SESSION_KEY);
+      if (saved) activeTag = saved;
+    } catch (e) {
+      // no sessionStorage :|
+    }
+  }
+
+  const CHIP_CLASS_DEFAULT =
+    "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50";
+  const CHIP_CLASS_ACTIVE =
+    "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200";
+
+  function debounce(fn, ms = 200) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  async function loadNotesJsonOnce() {
+    if (notesCache) return notesCache;
+
+    if (!notesLoadPromise) {
+      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          // Expecting: [{ html: "<article>...</article>", text: "plain text", tags: ["work", ...] }, ...]
+          notesCache = Array.isArray(data) ? data : [];
+          return notesCache;
+        })
+        .catch((err) => {
+          console.error(err);
+          notesCache = [];
+          return notesCache;
+        });
+    }
+
+    return notesLoadPromise;
+  }
+
+  function showStaticMode() {
+    dynamicNotesEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = "";
+    emptyEl.classList.add("hidden");
+
+    staticNotesEl.classList.remove("hidden");
+    paginationEl.classList.remove("hidden");
+
+    countEl.textContent = String(totalNotes);
+    pageInfoEl.textContent = `Страница ${page} из ${totalPages}`;
+  }
+
+  function showSearchMode() {
+    staticNotesEl.classList.add("hidden");
+    paginationEl.classList.add("hidden");
+
+    dynamicNotesEl.classList.remove("hidden");
+  }
+
+  function normalizeTag(t) {
+    return String(t || "")
+      .trim()
+      .toLowerCase();
+  }
+
+  function noteHasTag(note, tag) {
+    if (!tag || tag === "all") return true;
+
+    const want = normalizeTag(tag);
+
+    const tags = note?.tags;
+    
+    return tags.map(normalizeTag).includes(want);
+  }
+
+  function filterNotes(notes, q, tag) {
+    const needle = (q ?? "").trim().toLowerCase();
+    const needText = needle.length > 0;
+    const needTag = tag && tag !== "all";
+
+    if (!needText && !needTag) return notes;
+
+    return notes.filter((n) => {
+      const matchesText = !needText ? true : String(n?.text ?? "").includes(needle);
+      const matchesTag = !needTag ? true : noteHasTag(n, tag);
+      return matchesText && matchesTag;
+    });
+  }
+
+  function setActiveChipUI(tag) {
+    document.querySelectorAll(".chip").forEach((x) => {
+      x.className = CHIP_CLASS_DEFAULT;
+      x.setAttribute("aria-pressed", "false");
+    });
+
+    const btn = Array.from(document.querySelectorAll(".chip")).find((b) => b.dataset.chip === tag);
+    if (btn) {
+      btn.className = CHIP_CLASS_ACTIVE;
+      btn.setAttribute("aria-pressed", "true");
+    }
+  }
+
+  function makeSearchLabel(q, tag) {
+    const hasQ = (q || "").trim().length > 0;
+    const hasTag = tag && tag !== "all";
+
+    if (hasQ && hasTag) return `Поиск + #${normalizeTag(tag)}`;
+    if (hasTag) return `Тег: #${normalizeTag(tag)}`;
+    return "Поиск";
+  }
+
+  async function runSearch() {
+    const q = (searchEl.value || "").trim();
+    const hasQ = q.length > 0;
+    const hasTag = activeTag && activeTag !== "all";
+
+    if (pageTag) {
+      // Notes of a pre-generated list are filtered by its tag already, so the
+      // static mode is the untouched state of such a page. Dropping the tag
+      // means leaving the page for the common list.
+
+      if (!hasTag) {
+        try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+        window.location.href = notesListUrl;
+        return;
+      }
+
+      if (activeTag === pageTag && !hasQ) {
+        showStaticMode();
+        return;
+      }
+    } else if (!hasQ && !hasTag) {
+      try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+      showStaticMode();
+      return;
+    }
+
+    showSearchMode();
+
+    const notes = await loadNotesJsonOnce();
+    const filtered = filterNotes(notes, q, activeTag);
+
+    countEl.textContent = String(filtered.length);
+    pageInfoEl.textContent = makeSearchLabel(q, activeTag);
+
+    if (filtered.length === 0) {
+      dynamicNotesEl.innerHTML = "";
+      emptyEl.classList.remove("hidden");
+      return;
+    }
+
+    emptyEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+  }
+
+  // Initial render
+  setActiveChipUI(activeTag);
+  showStaticMode();
+
+  // Text search handler
+  searchEl.addEventListener("input", debounce(runSearch, 200));
+
+  // Tag chips handler.
+  //
+  // It is a delegated one, since tag chips of a note are rendered dynamically
+  // as well: both the chips above and the ones of a note filter the list.
+
+  document.addEventListener("click", (event) => {
+    const chip = event.target.closest("[data-chip]");
+
+    if (!chip) return;
+
+    activeTag = chip.dataset.chip || "all";
+      try {
+      if (activeTag === "all") sessionStorage.removeItem(TAG_SESSION_KEY);
+      else sessionStorage.setItem(TAG_SESSION_KEY, activeTag);
+      } catch (e) {}
+    setActiveChipUI(activeTag);
+    runSearch();
+  });
+
+  // Search autorun in case search string is set (refresh / back-forward cache)
+  function runSearchSoon() {
+    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
+  }
+
+  document.addEventListener("DOMContentLoaded", runSearchSoon);
+  window.addEventListener("pageshow", runSearchSoon);
+</script>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Влад Костянецкий</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.ru/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

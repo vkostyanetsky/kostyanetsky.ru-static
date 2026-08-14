@@ -1,0 +1,1892 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Заметки: 1С</title>
+
+    <meta name="description" content="" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="https://kostyanetsky.ru/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.ru/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.ru/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.ru/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.ru/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Заметки: 1С"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/1c" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/tags/1c/page-2";
+        let ctrlRightUrl    = "";
+    </script>
+    
+    <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/">Сайт Влада</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/projects/">Проекты</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.ru/notes/">Заметки</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <span
+                        class="inline-block text-[1.35rem] leading-none text-slate-400"
+                        title="Видите опечатку? Поправьте меня!"
+                        aria-disabled="true"
+                        >✎</span>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.me/notes/tags/1c"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="EN"
+                    >
+                        EN
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page="1"
+      data-total-notes="20"
+      data-total-pages="5"
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+    
+
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Заметки: 1С</h1>
+        <p class="max-w-2xl text-slate-700">
+          Мои мысли о жизни, работе и разных интересных штуках вокруг меня.
+        </p>
+      </header>
+
+
+
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="relative w-full sm:w-[420px]">
+          <input
+            id="search"
+            type="search"
+            placeholder="Поиск по заголовку / тексту / тегам…"
+            class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+          />
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </div>
+
+        <p class="text-sm text-slate-600">
+          Показано: <span id="count" class="font-semibold text-slate-900">0</span>
+          <span class="text-slate-400">·</span>
+          <span id="pageInfo">Страница</span>
+        </p>
+      </section>
+
+      <section class="mt-4 flex flex-wrap gap-2">
+      
+        <button
+          data-chip="all"
+          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200"
+        >
+          Все
+        </button>
+
+        
+        <button
+          data-chip="1c"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          1С
+        </button>
+        
+        <button
+          data-chip="work"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Работа
+        </button>
+        
+        <button
+          data-chip="done"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Готово
+        </button>
+        
+        <button
+          data-chip="videogames"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Видеоигры
+        </button>
+        
+        <button
+          data-chip="meanwhile"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Тем временем
+        </button>
+        
+        <button
+          data-chip="english"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          English
+        </button>
+        
+        <button
+          data-chip="bash"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bash
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
+        </button>
+        
+        <button
+          data-chip="code-smell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Код с запашком
+        </button>
+        
+        <button
+          data-chip="family"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Семья
+        </button>
+        
+        <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Obsidian
+        </button>
+        
+        <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
+          data-chip="blog"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Блог
+        </button>
+        
+        <button
+          data-chip="pgsql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          PostgreSQL
+        </button>
+        
+        <button
+          data-chip="workplace"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Рабочее место
+        </button>
+        
+        <button
+          data-chip="javascript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Javascript
+        </button>
+        
+        <button
+          data-chip="python"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Python
+        </button>
+        
+        <button
+          data-chip="webdev"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Вебдев
+        </button>
+        
+        <button
+          data-chip="books"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Книги
+        </button>
+        
+        <button
+          data-chip="georgia"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Грузия
+        </button>
+        
+        <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Оптимизация
+        </button>
+        
+        <button
+          data-chip="sport"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Спорт
+        </button>
+        
+        <button
+          data-chip="3d"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          3D
+        </button>
+        
+        <button
+          data-chip="bitrix"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Битрикс
+        </button>
+        
+        <button
+          data-chip="nodejs"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Node.js
+        </button>
+        
+        <button
+          data-chip="powershell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Powershell
+        </button>
+        
+        <button
+          data-chip="typescript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Typescript
+        </button>
+        
+
+      </section>
+
+      <!-- Static notes (SEO + no-JS fallback) -->
+      <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/date-literal-exceeds-3999-once-again"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Номер года в литерале типа дата превышает 3999
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>28 марта 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="mssql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">MS SQL</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Про ошибку в названии заметки я уже как-то <a href="https://kostyanetsky.ru/notes/date-literal-exceeds-3999" rel="noopener noreferrer" target="_blank">писал</a>. Напомню суть: платформа не переваривает даты позже 3999 года (на практике начинает стрелять с 3999-12-01). Теоретически такие даты вообще нельзя записать, но <s>если очень хочется</s> из-за ошибок в прикладном коде (и в коде самой платформы) это всё-таки возможно и время от времени случается. </p>
+<p>Обычные симптомы — перестают работать какие-то отчёты, не проводятся какие-то документы, падает пересчёт итогов. В общем, страдает любой код, который трогает записи с проблемными датами.</p>
+<p>Способ лечения, который я рамочно описал в заметке по ссылке выше — рабочий, но сравнительно медленный: нужно настроить ТЖ, собрать и распарсить результаты. Между тем, платформа падает на первом же обращении к битой дате, а их может быть много и валяться они могут в разных таблицах. То есть может потребоваться несколько подходов к снаряду: проверили, получили ошибку, исправили, проверили, получили следующую...</p>
+<p><img alt="Thank You, Mario!" src="https://kostyanetsky.ru/notes/date-literal-exceeds-3999-once-again/thanks.jpg"/></p>
+<p>Желая решать проблему как-нибудь побыстрее, несколько лет назад я написал <a href="https://gist.github.com/vkostyanetsky/a58ff201d2a87a35e70c4c8f4112ad4c" rel="noopener noreferrer" target="_blank">запрос для PostgreSQL</a>. Общая идея:</p>
+<ol>
+<li>Ищем в базе данных все поля с датами.</li>
+<li>Строим мегазапрос к таким полям (ищем даты, которые выходят за лимит 1С).</li>
+</ol>
+<p>То есть этот запрос генерирует другой запрос, да. Выполняем его и получаем полную картинку проблемы: список таблиц с некорректными датами. Дальше уже дело техники — смотрим, что за таблицы и решаем, как быть. В нашем случае проблемные даты иногда возникают в итогах и оборотах, так что их можно просто удалять и пересчитывать итоги через штатные инструменты.</p>
+<p>Почему действуем на уровне СУБД? Ну, средствами 1С такой номер не отколоть — напомню, платформа падает при попытке потрогать проблемные записи. Это касается любого взаимодействия, включая чтение. Кроме того, в данном случае работать напрямую быстрее и удобнее.</p>
+<p>На днях я переписал этот <a href="https://gist.github.com/vkostyanetsky/5990a16caacc4a9057b577c6a5694512" rel="noopener noreferrer" target="_blank">запрос для MS SQL</a>. Вышло длиннее (в силу особенностей этой СУБД), но идея та же.</p>
+<p>Если будете использовать, имейте в виду, что:</p>
+<ul>
+<li>Поле <code>_Fld626</code> в тексте запроса — разделитель для фреша. В вашей базе может называться по-другому или вообще отсутствовать.</li>
+<li>Запрос написан для базы со сдвигом в 2000 лет. Если в вашей базе сдвига нет, нужно скорректировать условие (см. функцию <code>DATEADD()</code>).</li>
+<li>Трюк с выводом в XML (см. <code>FOR XML</code>) я добавил, чтобы не дать SSMS обрезать текст мегазапроса (показалось быстрее, чем возиться с приведением типов). Побочный эффект: в получившемся мегазапросе нужно заменить <code>&amp;gt;</code> на <code>&gt;</code>, прежде чем выполнять его.</li>
+</ul>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/with-side-effect"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                С побочным эффектом
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>15 марта 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>В последнем релизе <a href="https://firstbit.ae" rel="noopener noreferrer" target="_blank">нашей ERP</a> мы оптимизировали несколько тяжелых динамических списков (заказы, инвойсы, проформа инвойсы и так далее). Там накопился приличный техдолг, в основном — горы вспомогательных таблиц, прикрученных к основным запросам (контактная информация, технические реквизиты, остатки, обороты и так далее). В итоге даже в сравнительно небольших приложениях оптимизатор СУБД начинал выдавать бредни вместо планов запроса и мало-помалу платить за это ресурсами стало совсем неприятно.</p>
+<p>В общем, запатчили через несколько разных подходов, один из них — подгрузка дополнительных данных в обработчике <code>ПриПолученииДанныхНаСервере()</code> (я про него недавно <a href="https://kostyanetsky.ru/notes/desire-paths" rel="noopener noreferrer" target="_blank">вспоминал</a>, кстати). Написали удобный фреймворк вокруг фичи, внедрили, потестировали и... В общем, сидим с кислыми минами. </p>
+<p>Нет, с производительностью и правда стало сильно лучше. Запрос к тяжелым виртуальным таблицам можно затюнить просто идеально. Проблема в другом: значения полей, которые заполняет этот обработчик, не пробрасываются в стандартные механики динамического списка. То есть для них не работает поиск, сортировка и группировка.</p>
+<p>Например, вводим значение, которое видим в колонке, а строка не находится. Или находятся не все строки. Или находятся строки, которые не должны были найтись. Для пользователя это выглядит отвратительно, ну баг и баг же: визуально-то такие поля никак не отличаются. Как ты ему объяснишь, что это особенность работы механизма платформы™? </p>
+<p>Исключишь такое поле из механизмов, которые с ними работать не могут — будет ещё чище. Например, попытаешься отсортировать — получишь здоровенную ошибку. Опять же, объяснить, почему на этой колонке с суммой вылетает ошибка, а на соседней сортировка прекрасно работает — задача со звездочкой.</p>
+<p>Блин, вот как можно было разработать такой замечательный концепт обработчика и настолько заруинить реализацию на уровне платформы?</p>
+<p>Неожиданно вспомнил Реддит. В некоторых сообществах популярны треды «придумай суперсилу, но с побочным эффектом». Типа, кто-то пишет в комментариях: я могу бегать со скоростью ветра! Ему отвечают: да, но не можешь тормозить. И так далее. Местами получается забавно.</p>
+<p><img alt="Superpower" src="https://kostyanetsky.ru/notes/with-side-effect/reddit.png"/></p>
+<p>Вот и мы с разработчиками платформы в таком же диалоге. Вы можете разогнать динамические списки (но UI будет вызывать у пользователей бешенство). Вы можете автоматом слать двоичные данные в бакет S3 (но потеряете их в один неосторожный клик). Вы можете телепортироваться куда угодно (но тратите столько времени, словно шли пешком). Вы можете превращаться (но только в пожилого мопса). У вас пышные, шелковистые волосы (но на заднице). </p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/backup-ui"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Управление бэкапами
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>6 декабря 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>В конце года выкатили для нашего внутреннего инструмента (я уже вскользь <a href="https://kostyanetsky.ru/notes/easter-eggs" rel="noopener noreferrer" target="_blank">писал</a> о нём) большой апдейт, дающий коллегам адекватный доступ к бэкапам пользовательских приложений. Бэкапы в SaaS-компании нужны всем и всегда — для разработки, для тестирования, для расследования проблем, да много для чего. Без адекватного учёта процесс превращается в зоопарк, когда три человека в один момент времени создают три запроса на практически одинаковые копии одной и той же базы. Задача, конечно, решается, но ресурсов прожрано в три раза больше, чем хотелось бы.</p>
+<p>У нас уже было решение на базе UI Битрикса, но в силу, э-э, особенностей развития этого продукта оно приносило больше боли, чем пользы. Поэтому мы переосмыслили процесс и всё переписали. На фронте — 1C, на бэке — PostgREST, PostgreSQL, PowerShell и много чего ещё. Логика довольно сложная, но у пользователя — простой и дружелюбный UI, через который можно заказать бэкап буквально в два нажатия.</p>
+<p>Выбрать можно один из трёх видов бэкапов:</p>
+<ul>
+<li>облачный (копия реального приложения, развёрнутая в облаке и доступная, в том числе, через браузер);</li>
+<li>файловый бэкап (обычный .dt-файл, который можно скачать и развернуть на локальной машине);</li>
+<li>бэкап конфигурации и расширений (.cf + .cfe).</li>
+</ul>
+<p>Кроме того, новое решение отслеживает попытки заказать бэкап приложения, если он уже делается прямо сейчас. А ещё — не даёт пользователям бэкапить одно и то же приложение чаще, чем раз в час. </p>
+<p>Ну и продолжаем хохмить в интерфейсе, конечно.</p>
+<p><img alt="But Still!" src="https://kostyanetsky.ru/notes/backup-ui/but-still.png"/></p>
+<p><img alt="Coffee First!" src="https://kostyanetsky.ru/notes/backup-ui/coffee-first.png"/></p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/desire-paths"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Протоптанные дорожки
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>29 ноября 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="optimization" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Оптимизация</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Ладно, загадка Жана Фреско. У вас есть таблица, скажем, на 50 тысяч строк. Как прочитать из неё полмиллиарда?</p>
+<p>Раз плюнуть, Nested Loops + Clustered Index Seek:</p>
+<p><img alt="Полмиллиарда" src="https://kostyanetsky.ru/notes/desire-paths/500_million.png"/></p>
+<p>От Clustered Index Seek тут одно название, конечно. Фактически оператор при каждом исполнении пробегает по всей таблице (всему кластерному индексу) и сверяет каждую запись с Predicates. И так — 10 730 раз для 51 391 записей. В итоге 551 425 430 строк прочитали, 13 343 вернули.</p>
+<p><img alt="Ох" src="https://kostyanetsky.ru/notes/desire-paths/ouch.gif"/></p>
+<p>Короче, идеальный пример плохого плана запроса в вакууме, хоть сейчас тащи в палату мер и весов. Nested Loops, если кто позабыл, работает примерно так:</p>
+<pre>
+For Each Table1Row In Table1 Do
+    For Each Table2Row In Table2 Do
+        ...
+</pre>
+<p>Это ОК для мелких таблиц, но СУБД может его применить и для таблиц поболбше — например, если ей не хватает времени на построение плана.</p>
+<p>Это и произошло в нашем случае. Прыгнем повыше, на уровень платформы: тут у нас динамический список с запросом по таблице документа, к которой разработчики прицепили с десяток виртуальных таблиц регистров накопления.</p>
+<p>Некоторые регистры и сами по себе были здоровенными, а виртуальные таблицы дополнительно поддали жару (каждая превращается в 2+ вложенных запроса). СУБД честно пыталась придумать эффективный алгоритм, но в какой-то момент решала, что хреновый план запроса всё же лучше, чем вообще никакого.</p>
+<p>В итоге пользователь что? Пытался поискать документ по номеру и клиентское приложение просто-напросто зависало.</p>
+<p>Короче, по поводу виртуальных таблиц в динамических списках. В английском есть выражение «desire path», «протоптанная дорожка». Часто прицепить виртуальную таблицу к основной — и в самом деле самый простой, быстрый и привычный способ решить задачу. Но он <strong>не эффективен</strong>.</p>
+<p>Есть, например, обработчик <code>ПриПолученииДанныхНаСервере()</code>. Он дольше в реализации, но позволяет хорошо затюнить виртуальную таблицу и избежать сценария выше. На каждую прокрутку списка получится больше запросов, но они будут быстрее и эффективнее, чем один, но гигантский.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/harmless-harm"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Безвредный вред
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>16 ноября 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="mssql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">MS SQL</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Разбирали на днях с коллегой проблему. Ничего особенно серьёзного, очередное расследование вида «какого черта этот запрос ведет себя странно?».</p>
+<p>Упрощая, суть: читаем таблицу базы данных и кладем результат во временную таблицу. Если срабатывает определённое условие, нужно, чтобы временная таблица всё равно создавалась, но была пустой (независимо от того, есть строки в исходной таблице или нет).</p>
+<p>Запрос был примерно такой:</p>
+<pre>
+SELECT
+    Table.Field1 AS Field1
+FROM
+    Table AS Table
+WHERE 
+    &amp;Parameter
+</pre>
+<p>Если нужно было отбирать записи из исходной таблицы во временную, в параметр передавался TRUE; если временную таблицу нужно было получить пустой — передавался FALSE.</p>
+<p>Несмотря на кажущуюся простоту, такой трюк — проблема для производительности, если таблица, которую читает запрос — большая.</p>
+<p>Причина в том, как СУБД работают с параметризованными запросами. И MS SQL, и PostgreSQL строят план выполнения запроса на основе его текста, и в примере выше значение параметра <strong>не</strong> повлияет на принятие решения, нужно читать таблицу или нет.</p>
+<p>Таким образом, при выполнении такого запроса обе СУБД педантично прочитают всю таблицу (ну, или её индекс), даже если параметр равен FALSE. В последнем случае каждая прочитанная запись будет отброшена и алгоритм будет работать корректно, однако мы будем тратить ресурсы на бессмысленное чтение данных и забивать буферный кэш, замедляя систему в целом и активно работая на глобальное потепление :)</p>
+<p>Решение тут простое — вставлять TRUE/FALSE в тело запроса как константу, не используя параметр. Либо использовать оператор TOP, так текст запроса будет даже проще:</p>
+<pre>
+SELECT TOP 0
+    Table.Field1 AS Field1
+FROM
+    Table AS Table
+</pre>
+<p>Тут на уровне SQL мы получим что-то вроде «SELECT TOP 0 ... FROM Table» (для MS SQL) и «SELECT ... FROM Table LIMIT 0» (для PostgreSQL). В итоговом плане будет оператор чтения, но исполнитель фактически не запросит ни одной строки, так что реального сканирования данных не случится (ура).</p>
+<p>P.S. Если не критично получать во временной таблице корректные типы колонок, можно вообще вот так:</p>
+<pre>
+SELECT TOP 0
+    UNDEFINED AS Field1
+</pre>
+<p>Выигрыш в производительности, впрочем, будет таким копеечным, что можно не упарываться. </p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/voodoo"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Шаманство
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>5 октября 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Поймали, кажется, первый воспроизводимый в лабораторных условиях сценарий повреждения кэша платформы. Короткий синопсис:</p>
+<ul>
+<li>Создаем новое приложение из шаблона 35-го релиза <a href="https://firstbit.ae" rel="noopener noreferrer" target="_blank">нашей ERP</a>.</li>
+<li>Запускаем его и ждем, когда закончится инициализация.</li>
+<li>Заменяем конфигурацию приложения на 36-й релиз (конкретно, версию 28537 из хранилища разработки) и снова запускаем.</li>
+</ul>
+<p>После этих нехитрых действий примерно у половины нашей команды платформа перестаёт видеть одно из перечислений. Причем, зараза, избирательно: обращаешься к элементу перечисления на клиенте — полный порядок, обращаешься на сервере — ловишь исключение.</p>
+<p>Такая же петрушка с модулем менеджера одного из справочников: его методы недоступны, хотя существуют и объявлены как экспортные. Однако платформа после обновления делает вид, что их нет, и швыряется исключениями при попытке обратиться.</p>
+<p><a href="https://x.com/EffinBirds/status/1970264357427704080" rel="noopener noreferrer" target="_blank"><img alt="Welcome To Dipshit Central" src="https://kostyanetsky.ru/notes/voodoo/welcome.jpg"/></a></p>
+<p>Как и всегда, когда начинается магия — проблему нужно искать в кэше. Чистишь — все симптомы бесследно исчезают. Кроме того, есть и косвенные признаки:</p>
+<ul>
+<li>Перечисление было и в 35-м релизе, но было переименовано в 36-м;</li>
+<li>Методов в 35-м релизе вообще не было (в 36-м их как раз разработали). </li>
+</ul>
+<p>То есть не первого, не вторых в кэше 35-го релиза не существовало, а платформа, по какой-то причине, пытается рыться в именно в нём.</p>
+<p>Мы пока не доискались, что вызывает сбой. Вышли на конкретный коммит, после которого появилась проблема, но в нём из необычного — одно <a href="https://kostyanetsky.ru/notes/voodoo/the-commit.png" rel="noopener noreferrer" target="_blank">название</a> (и то поблизости есть куда более подозрительные с этой точки зрения <a href="https://kostyanetsky.ru/notes/voodoo/the-other-commit.png" rel="noopener noreferrer" target="_blank">кандидаты</a>). В остальном там минорные <a href="https://kostyanetsky.ru/notes/voodoo/5ba6ac0956e0cc7bc6b520e5110420e6950478fe.diff" rel="noopener noreferrer" target="_blank">изменения</a>, сопровождаемые заменой внутренних идентификаторов объекта метаданных. Они, конечно, связаны с ключами кэша, но их сброс делается при любом изменении любых метаданных и никогда раньше не приводил к проблемам.</p>
+<p>Если вы набрели на эту заметку из гугла, потому что столкнулись с той же бедой — закиньте в проблемный объект какую-нибудь правку, чтобы платформа опять сменила идентификаторы объекта метаданных в манифесте. Например, добавьте пустой метод или просто пробел в текст модуля. Это решит проблему с конфигурацией и инструкция в начале заметки перестанет приводить к повреждению кэша.</p>
+<p>Шаманство, конечно, но работает ¯\_(ツ)_/¯</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/data-history-missing-indexes"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Медленное удаление областей Фреша
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>3 августа 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Коллега заметил, что на одном из инстансов нашего фреша удаление областей стало идти прямо-таки трагически долго. Что в метриках? Вот это:</p>
+<pre>
+DELETE FROM T1
+FROM _DataHistoryMetadata T1
+WHERE 
+    T1._MetadataId = ?
+    AND T1._IsActual = 0x00 
+    AND NOT (
+        T1._MetadataVersionNumber IN (
+            SELECT T2._MetadataVersionNumber AS MetadataVersionNumber_
+            FROM _DataHistoryVersions T2
+            WHERE T2._HistoryDataId IN (
+                SELECT DataHistoryLatestVersions1.DataHistoryLatestVersions._HistoryDataId AS HistoryDataId_
+                FROM DataHistoryLatestVersions1.DataHistoryLatestVersions T3
+                WHERE DataHistoryLatestVersions1.DataHistoryLatestVersions._MetadataId = ?
+            )
+        )
+    )
+</pre>
+<p>Каждый такой запрос читает порядка двадцати гигабайт. Что тут происходит — примерно понятно: платформа пытается удалить историю данных области и кривой запрос к БД приводит к сканированию всей таблицы по всем областям вместо быстрого поиска по индексу. Кто-то на Дмитровском опять поленился.</p>
+<p><a href="https://x.com/EffinBirds/status/1945545263407301033" rel="noopener noreferrer" target="_blank"><img alt="Чему ты удивлён?" src="https://kostyanetsky.ru/notes/data-history-missing-indexes/why.png"/></a></p>
+<p>В общем, теряем от тридцати секунд до получаса на действие. Хотелось бы побыстрее. Решение:</p>
+<pre>
+CREATE NONCLUSTERED INDEX IX_DataHistoryLatestVersions1_MetadataId
+  ON dbo._DataHistoryLatestVersions1 (_MetadataId)
+  INCLUDE (_HistoryDataId)
+  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
+
+CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
+  ON dbo._DataHistoryVersions (_MetadataVersionNumber)
+  WITH (DROP_EXISTING = OFF, ONLINE = OFF);
+</pre>
+<p>Стоимость удаления области ожидаемо просела на ~99%.</p>
+<p>Если будете повторять у себя:</p>
+<ol>
+<li>Формально такой трюк нарушает лицензионное соглашение, you've been warned и всё такое.</li>
+<li>Есть риск, что платформа при будущих реструктуризациях будет спотыкаться о новые индексы (особенно при работе по «новой» схеме). Лучше иметь под рукой готовый скрипт, который сможет их грохнуть, а потом (после реструктуризации) — вернуть обратно.</li>
+</ol>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/myth-buster"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Развенчиватель мифов
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>27 июля 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Попался под руку объёмный <a href="https://infostart.ru/1c/articles/2434171/" rel="noopener noreferrer" target="_blank">текст</a> на Инфостарте про мифы о платформе, полез читать.</p>
+<p>По сути. Половина там написана заголовка ради, кажется. Свежий номер! Криминал, интриги, расследования! Файловая база быстрее клиент-серверной! СКД медленнее запроса! Вызов метода сервера на сервере — новый вызов сервера! <s>НЛО над Красной площадью!</s></p>
+<p>Однако местами и правда любопытно. Например, о том, что код, слепленный в одну строку, механически работает в десять раз быстрее, я услышал впервые. Жалко, за такой отчаянный свэг коллеги побьют быстрее, чем успеешь порадоваться результату. Да и основные тормоза enterprise-приложений чаще растут из других мест.</p>
+<p>Или, скажем, сравнение скорости выгрузки в таблицу для представлений объектов и для их наименований. Первое — в десятки раз медленнее! На первый взгляд странно: в конце концов, в обоих случаях у нас строки, и на момент замера они уже извлечены из базы. Думаю, что дело в типизации: строки представлений имеют неограниченную длину, в отличие от наименований. Отсюда расходы на выделение памяти, какие-то вспомогательные структуры и вот мы имеем то, что имеем.</p>
+<p>P.S. Про некоторые аспекты из статьи я где-то у себя писал. Если навскидку — помню свою попытку <a href="https://kostyanetsky.ru/notes/is-ref-empty" rel="noopener noreferrer" target="_blank">измерить</a> скорость работы <code>ValueIsFilled()</code> и неприятный <a href="https://kostyanetsky.ru/notes/method-with-surprise" rel="noopener noreferrer" target="_blank">сюрприз</a> от встроенного <code>FindByNumber()</code>.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/no"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Нет
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>11 июня 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><img alt="Нет" src="https://kostyanetsky.ru/notes/no/no.jpg"/></p>
+<p>Сообщение, которое выдает актуальная платформа при попытке подключения к выключенному кластеру серверов. Я, конечно, люблю лаконичность в интерфейсах, но тут всё-таки перебор.</p>
+<p>Платформа, причем, установлена с единственным языковым пакетом (английским) и даже запущена с жестким указанием на «Ven VLen», но откуда-то всё равно прорастают родные березки. Возможно, сишная библиотека, откуда стреляет сообщение (DataExchangeTcpClientImpl.cpp) в моем случае смотрит на язык ОС (русский), сложно сказать.</p>
+<p>В любом случае, не могу избавиться от ассоциаций с Багзом Банни каждый раз, как вижу это окошко.</p>
+<p><img alt="No" src="https://kostyanetsky.ru/notes/no/bugs-bunny.png"/></p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/bit-of-surgery"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Немного хирургии
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 декабря 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Несколько лет назад попадалась на глаза заметка программиста, которому пришлось отлаживать ПО, управляющее роботом-хирургом, прямо во время операции. Помню, тогда это меня поразило до глубины души.</p>
+<p>А сегодня с коллегой ремонтировали кластер 1С с базами на 1cFresh, которому после миграции на соседний сервер внезапно поплохело (если вкратце, при попытке распечатать документ клиентское приложение умирало в муках). Пока возились, мелькнула мысль: это, конечно, не так жутко выглядит, как ремонтировать софт, от которого вот прямо сейчас зависит чья-то жизнь, но... Если посчитать всех клиентов, которые вот прямо сейчас сидят на нервах из-за того, что у них бизнес стоит — ещё неизвестно, где уровень стресса будет выше.</p>
+<p>P.S. Технические заморочки для тех, кому интересно. Вышло так, что при миграции кластера права на папку с серверным кэшем переехали некорректно и это привело к любопытному эффекту: в ней оседали только логи, а данные сеансов — нет. В итоге при открытии печатной формы документа конфигурация пыталась положить её в хранилище; rphost, в свою очередь, пытался засунуть её в серверный кэш сеанса.</p>
+<p>Так что рабочий процесс (видимо) получал по рукам от ОС, из-за (видимо) кривой отработки событий файловой системы в платформе никак это исключение не обрабатывал и от безысходности убивал сеанс, что, в свою очередь, приводило к крашу клиентского процесса.</p>
+<p>Пересобрали права, перезапустили кластер, проблема ушла.</p>
+<p><img alt="End of Report" src="https://kostyanetsky.ru/notes/bit-of-surgery/report.jpeg"/></p>
+<p>Остальные гипотезы (буйство менеджера кластера, недостаток аппаратных ресурсов, программные ошибки конфигурации, ошибки клиентского процесса, кривая отработка security profile, проблемы c сетью между клиентом и сервером) отбросили по ходу диагностики.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/rapture"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Восторг
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>31 августа 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="3d" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">3D</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Помню, в каком восторге я был, когда впервые поработал с оконными функциями в PostgreSQL. Можно построчно регулировать окошко вычислений для каждой строки! И на сегменты предварительно нарезать! И всё
+ это — нативно, внутри самого обычного запроса, никаких пристроек справа и слева. Стандартная агрегация с группировкой и подзапросами, к которой я привык в 1С, резко превратилась в тыкву, совсем как карета Золушки в полночь.</p>
+<p>Последнее время осваиваю Blender и внезапно ощутил то же чувство по той же самой причине. То, что объект можно произвольно таскать по 3D Viewport через команду Move, было понятно ещё на берегу, ладно. Но когда до меня дошло, что каждый объект — это набор полигонов, и каждый из таких полигонов тоже можно произвольно таскать, и это приводит к естественному изменению геометрии объекта — вот тут-то меня и накрыло.</p>
+<p>Технологии удивительны. Учиться — клёво. Ради таких озарений хочется делать это ещё и ещё :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/nowhere-to-run"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Некуда бежать
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>31 августа 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="sport" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Спорт</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Вчера решил отвлечься от работы и как следует побегать. Выбрался в местный парк, сделал несколько кругов. Сижу, перевожу дух, беру смартфон, чтобы переключить трек, а там — поздравление от фитнес-трекера.</p>
+<p><img alt="Ой, привет!" src="https://kostyanetsky.ru/notes/nowhere-to-run/hi.jpg"/></p>
+<p>Отвлекся, блин. Платформа следит за тобой, %username%!</p>
+<p>P.S. Зато теперь у меня есть кастомный значок с символикой любимой компании!</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/yaga"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Яга
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>29 июля 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="meanwhile" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Тем временем</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Случайно вспомнил, что полгода назад кто-то из коллег закинул в рабочий чат ссылку на <a href="https://yaga.rt.ru" rel="noopener noreferrer" target="_blank">Ягу</a> — будущего (наверное) конкурента JIRA в России. Разработкой, судя по URL, занимаются ребята из Ростелекома. Проснулось любопытство  — как оно там, взлетело?</p>
+<p>Увы, но похоже, что нет. По крайней мере, на лендинге висит стандартное «оставьте заявку и ждите ответного гудка». Доступна урезанная версия для команд поменбше, но я сейчас не в России, и клик по кнопке «Начать пользоваться» приводит к бану. Ладно, как-нибудь в следующий раз.</p>
+<p>Нейминг, конечно, у ребят кликбейтный. Но не уверен, что прям удачный. Например, название «1С», может, и провоцирует натужные шутки (один эс! задница Одина! хахаха!), но если ты гуглишь его — то, скорее, находишь инфу про платформу или хотя бы вендора. А не кучу статей, фанфиков, фанарта и видеоигр, как в случае с Ягой.</p>
+<p>И вообще, ассоциации какие-то не те лезут. Избушка на курьих ножках? Выглядит как изначально <a href="https://kostyanetsky.ru/notes/evolution" rel="noopener noreferrer" target="_blank">плохо спроектированное</a> приложение, которое кое-как переделали прямо на проде. Ступа? Костыль? Блин, если смотреть с точки зрения программистов — тут не красные флаги, а алые знамена :)</p>
+<p>Ну и я еще, наверное, испорченный, но при слове «Яга» у меня в голове первым делом всплывает не могущественная ведьма из славянского фольклора, а <a href="https://ru.wikipedia.org/wiki/Jaguar_(напиток)" rel="noopener noreferrer" target="_blank">отвратительное пойло</a> из двухтысячных.</p>
+<blockquote>
+<p>И вот баба с ягой уже не быдло, а патриотичная программистка!</p>
+<p>― коллега</p>
+</blockquote>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/data-history-duplication"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Не уникальные метаданные
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>8 июня 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="mssql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">MS SQL</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>В очередной раз столкнулся с противным багом, при котором платформа ломает таблицу с метаданными истории данных. </p>
+<p>Внешне он выглядит так: вы обновляете конфигурацию базы, и при попытке реструктуризации выскакивает ошибка "Таблица метаданных истории данных cодержит не уникальные записи, которые должны быть удалены". </p>
+<p>При этом платформа не предлагает никакого понятного способа найти такие записи — иди туда, не знаю куда, сделай то, не знаю что.   </p>
+<p><img alt="Таблица метаданных истории данных cодержит не уникальные записи, которые должны быть удалены" src="https://kostyanetsky.ru/notes/data-history-duplication/error.png"/></p>
+<p>Проблему можно решить, порывшись в базе данных. Таблица, на которую ссылается ошибка — _DataHistoryMetadata. В ней лежат версии метаданных каждого объекта, для которого ведётся история. Это позволяет платформе понимать, какие реквизиты были у объекта на любой момент времени, в течении которого для объекта велась история.</p>
+<p>Как это работает? Ну, когда меняется состав реквизитов объекта (например, реквизит в справочнике добавили), платформа запоминает его метаданные: конкретно, добавляет в _DataHistoryMetadata новую запись и сохраняет в ней актуальный список реквизитов объекта, а также номер версии этого списка (например, в при включении истории для объекта сохраняется первая версия метаданных, при добавлении какого-нибудь реквизита — вторая и так далее).</p>
+<p>Ещё платформа ставит в созданной записи отметку, что именно эта версия объекта — самая актуальная, после чего снимает этот флаг с той версии, которая была помечена актуальной до этого.</p>
+<p>Так вот, проблема в том, что платформа иногда забывает сделать последний шаг и в таблице появляется сразу две версии, помеченные как актуальные. Конфигуратор понимает это, но сделать ничего не может.</p>
+<p><img alt="Как помочь больной скотине?" src="https://kostyanetsky.ru/notes/data-history-duplication/howto.jpeg"/></p>
+<p>Решение вытекает из алгоритма выше: нужно найти конфликтующие версии и отобрать признак актуальности у той, что старше. Лучше использовать запросы: историю данных включают, как правило, для кучи объектов и состав реквизитов у них постоянно меняется — в общем, версий в таблице будет столько, что черт ногу сломит.</p>
+<p>Если вы тоже столкнулись с этой проблемой и поэтому читаете этот текст — можете воспользоваться <a href="https://gist.github.com/vkostyanetsky/6496c67e2b2fd3d064c4cafd16da0b79" rel="noopener noreferrer" target="_blank">запросами</a>, что написал я:</p>
+<ol>
+<li>get-issues.sql проверяет, что проблема есть: ищет версии метаданных, которые одновременно помечены как актуальные.</li>
+<li>fix-issues.sql снимает признак актуальности с тех версий, которые на самом деле устарели.</li>
+</ol>
+<p>Оба запроса написаны для Microsoft SQL Server. Если вы используете PostgreSQL, то <a href="https://gist.github.com/vkostyanetsky/75665ce04247e900743604eb386d1889" rel="noopener noreferrer" target="_blank">вот они же</a> для этой СУБД.</p>
+<p>Запросы потребуют небольшой адаптации под конкретную базу: в них используется поле _fld626, в котором хранится разделитель данных. В вашей таблице _DataHistoryMetadata это поле может называться иначе, поэтому нужно обновить его имя на актуальное. Ошибиться будет трудно — у таблицы только одно поле с префиксом _fld.</p>
+<p>P.S. Напоминаю, что лицензионное соглашение запрещает ковыряться в базе данных в обход средств платформы, так что на такие эксперименты можно идти, только если других вариантов не осталось.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/uuid-main-issue"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Главная проблема UUID
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>2 июня 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Наткнулся на <a href="https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/" rel="noopener noreferrer" target="_blank">хороший текст</a> об основной проблеме, которую таскает с собой UUID. Для 1С она тоже актуальна: все ссылочные объекты платформы (элементы справочников, документы и так далее) имеют собственные UUID. Они хранятся в БД, активно используются при поиске и, понятно, обильно индексируются (со всеми вытекающими последствиями). </p>
+<p>1С старается компенсировать проблему, создавая последовательные UUID. Пусть не идеально, но в целом эта штука работает и индексы получаются более-менее ровными. Да и вообще в сообществе об этом говорят довольно давно: вот, например, бородатый <a href="https://forum.mista.ru/topic.php?id=801986" rel="noopener noreferrer" target="_blank">топик на Мисте</a> (правда, тут диалог быстро перерос в курятник и из шести десятков комментариев от силы полтора — по делу).</p>
+<p>P.S. Рассмешила ремарка про вероятность создать в одной базе два одинаковых UUID:</p>
+<blockquote>
+<p>As an aside, for those worried about collisions: you should take up the lottery, since winning the jackpot twice in a row is a much more likely outcome than your system ever generating two identical random 128 bit numbers.</p>
+</blockquote>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/payment-terms"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Запросом больше, запросом меньше
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>5 мая 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="optimization" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Оптимизация</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Регулярно слышу тейк: запросом больше, запросом меньше — без разницы. Мол, главное, чтобы запрос был дешевым: не читал лишнего, попадал в индекс и так далее.</p>
+<p>Эта точка зрения имеет право на жизнь, однако бездумно пулеметить запросами — опасная затея. Даже если в моменте все выглядит хорошо, в будущем система может слегка поменяться. А потом внешне безобидный патч положит вам прод в пятницу.</p>
+<p>Пример из недавней практики. Есть ERP, в которой лежит таблица с этапами оплаты по заказам клиентов. Один из таких этапов — предоплата; пока она не внесена, создать заказ поставщику нельзя. </p>
+<p>Технически в заказе поставщику просто хранится ID заказа клиента; если последний заполнен (то есть, заказ поставщику создан под заказ клиента), ERP нужно прочитать этапы оплаты по заказу клиента и понять, можно ли делать закупку. </p>
+<p>Звучит элементарно, однако мониторинг показывает: операция тормозит и жрет память, будто в последний раз. Лезем разбираться. Видим примерно такую картинку:</p>
+<p><img alt="825701 записей" src="https://kostyanetsky.ru/notes/payment-terms/payment-terms.png"/></p>
+<p>То есть вместо того, чтобы выдернуть два-три этапа оплаты по заказу, ERP читает без малого миллион! Как так? </p>
+<p>Опуская детали: проблема рождалась в тех заказах поставщику, которые вообще не были связаны с заказом клиента. Разработчик посчитал, что для них можно не менять логику: ID заказа клиента пустой и запрос не найдет для него этапов оплаты. А значит, получится тот же результат, как если бы запроса вообще не было. А лишний запрос — ну... Запросом больше, запросом меньше... Тоже мне, большое дело.</p>
+<p>Оказалось, большое. В таблице этапов оплаты оказались данные не только для заказов клиентов, но и для других видов документов. Поле с ID заказа клиента у них было пустым. В итоге ERP при попытке найти этапы оплаты по пустому ID заказа клиента находила такие записи — и, как видите, немало.</p>
+<p>Запрос читал порядка гигабайта данных и помещал во временную таблицу. Гигабайт прочитали, гигабайт записали... История била и по диску, и по буферному кэшу СУБД, и по другим частям системы (вплоть до сети, которой этот гигабайт приходилось гонять туда-сюда без всякой пользы).</p>
+<p>В общем, знаете, что я думаю? Если результат запроса известен — наверное, его все-таки не нужно делать.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/not-only-everything"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Не только лишь все
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>25 февраля 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Завидной глубины комментарий из документации к методу WriteJSON() XDTOSerializer'а:</p>
+<p><img alt="Не только лиь все" src="https://kostyanetsky.ru/notes/not-only-everything/write-json.jpg"/></p>
+<p>Ну да, метод дампит данные в JSON, а не в XML. Так что поспорить сложно, не все типы данных можно упаковать в XML с его помощью (если быть точным — никакие). Если бы дальше не пошла очевидная копипаста из справки к WriteXML() — счёл бы пасхалкой от разработчиков :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/last-meth"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Последний мет
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 декабря 2023</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Роюсь в коде внешней компоненты 1С, опубликованный разработчиками платформы как пример у себя на сайте. Из хорошего: ну, она компилируется и, если немного допилить — действительно работает. </p>
+<p>В остальном хватает bruh moments: например, проект не открывается в современной Visual Studio (нужно указывать CMake вручную). Код довольно небрежный, документации нет, комментариев и оформления по большому счёту тоже. Разработчику без опыта в С++ может быть непросто вкатиться.</p>
+<p>Позабавил нейминг:</p>
+<pre><code>long CAddInNative::FindMethod(const WCHAR_T* wsMethodName)
+{ 
+    long plMethodNum = -1;
+    wchar_t* name = 0;
+
+    ::convFromShortWchar(&amp;name, wsMethodName);
+
+    plMethodNum = findName(g_MethodNames, name, eMethLast);
+
+    if (plMethodNum == -1)
+        plMethodNum = findName(g_MethodNamesRu, name, eMethLast);
+
+    delete[] name;
+
+    return plMethodNum;
+}
+</code></pre>
+<p>Со строк выше на нас смотрит необъяснимая любовь автора кода к сокращениям: вот что ему мешало назвать переменную "eMethodLast", а не "eMethLast"? В конце концов, у нас уже есть "wsMethodName" и "plMethodNum". </p>
+<p>Возможно, это такая пасхалка с отсылкой на Breaking Bad. Тогда, конечно, уверенный лайк :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/how-to-be-a-hero"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Бытовой героизм
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>24 сентября 2023</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Поднимал какое-то время назад <a href="https://swagger.io" rel="noopener noreferrer" target="_blank">Swagger</a> для внутренней API-шки. Пока возился — стало понятно, что часть функционала в документацию включать не нужно. Поискал способ, как это сделать без костылей — наткнулся на забавный <a href="https://github.com/tiangolo/full-stack-fastapi-couchbase/issues/10" rel="noopener noreferrer" target="_blank">вопрос</a> на GitHub'е.</p>
+<p>Чем забавный? Ну, невольно вспомнил про <a href="https://forum.mista.ru" rel="noopener noreferrer" target="_blank">Мисту</a>. В среде 1С-разработчиков это синоним слова "токсичность": мол, спросишь там что-нибудь — получишь ушат помоев за шиворот вместо ответа. Здесь, конечно, не так всё запущено, но ребята, с завидным упорством ссылающиеся на 14-и страничный мануал, здорово рассмешили.</p>
+<p>Одно радует: к концу треда всё же нашёлся отважный повстанец, который просто взял и запостил нужный параметр для декоратора.</p>
+<p>Не все герои носят плащи, ей-богу.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/this-is-the-way"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Таков путь
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 июля 2023</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Немного экзистенциальной безысходности от СП (на случай, если вам её почему-то не хватало):</p>
+<p><img alt="Исключение генерируется" src="https://kostyanetsky.ru/notes/this-is-the-way/delete-messages.png"/></p>
+<p>Это справка для метода УдалитьСообщения() менеджера канала сервиса интеграции. Если серьёзно, я понимаю, что тут имеется в виду: дело в том, что все методы сервисов интеграции швыряются исключениями, если их вызвать в сеансе со включенными разделителями. Авторы документации педантично сообщают об этом в справке по любому из них, так что здесь, видимо, просто почему-то кусок отвалился. В английской документации к этому методу, например, всё нормально.</p>
+<p>Но все равно, забавно смотрится. Напомнило старый мем:</p>
+<p><img alt="Исключение генерируется" src="https://kostyanetsky.ru/notes/this-is-the-way/bees.jpeg"/></p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+      </section>
+
+      <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Ничего не нашлось. Попробуйте другой запрос?
+      </div>
+
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.ru/notes/tags/1c/page-2"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← Раньше
+        </a>
+        
+        <span class="w-[1px]"></span>
+        
+      </nav>
+
+<script>
+  // ------------------------------------------------------------
+  // Hybrid mode:
+  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
+  // - On first user search OR tag click: fetch notes.json, hide static, render results.
+  // - On clear (no query AND tag=all): show static again.
+  // ------------------------------------------------------------
+
+  const metaEl = document.getElementById("pageMeta");
+  const notesJsonUrl = "https://kostyanetsky.ru/notes.json";
+
+  // A tag of a pre-generated list (notes/tags/<tag>), empty for a common one.
+
+  const pageTag = "1c";
+  const notesListUrl = "https://kostyanetsky.ru/notes/";
+
+  const page = Number(metaEl.getAttribute("data-page") || "1");
+  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
+  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
+
+  const searchEl = document.getElementById("search");
+  const countEl = document.getElementById("count");
+  const pageInfoEl = document.getElementById("pageInfo");
+
+  const staticNotesEl = document.getElementById("staticNotes");
+  const dynamicNotesEl = document.getElementById("dynamicNotes");
+  const emptyEl = document.getElementById("empty");
+  const paginationEl = document.getElementById("pagination");
+
+  let notesCache = null;
+  let notesLoadPromise = null;
+
+  // Tag filter state (chip)
+  let activeTag = pageTag || "all";
+
+  const TAG_SESSION_KEY = "notesActiveTag";
+
+  // A pre-generated list is filtered by its own tag, so a saved one has to be
+  // ignored: an URL wins over a state of a previously visited page.
+
+  if (!pageTag) {
+    try {
+      const saved = sessionStorage.getItem(TAG_SESSION_KEY);
+      if (saved) activeTag = saved;
+    } catch (e) {
+      // no sessionStorage :|
+    }
+  }
+
+  const CHIP_CLASS_DEFAULT =
+    "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50";
+  const CHIP_CLASS_ACTIVE =
+    "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200";
+
+  function debounce(fn, ms = 200) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  async function loadNotesJsonOnce() {
+    if (notesCache) return notesCache;
+
+    if (!notesLoadPromise) {
+      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          // Expecting: [{ html: "<article>...</article>", text: "plain text", tags: ["work", ...] }, ...]
+          notesCache = Array.isArray(data) ? data : [];
+          return notesCache;
+        })
+        .catch((err) => {
+          console.error(err);
+          notesCache = [];
+          return notesCache;
+        });
+    }
+
+    return notesLoadPromise;
+  }
+
+  function showStaticMode() {
+    dynamicNotesEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = "";
+    emptyEl.classList.add("hidden");
+
+    staticNotesEl.classList.remove("hidden");
+    paginationEl.classList.remove("hidden");
+
+    countEl.textContent = String(totalNotes);
+    pageInfoEl.textContent = `Страница ${page} из ${totalPages}`;
+  }
+
+  function showSearchMode() {
+    staticNotesEl.classList.add("hidden");
+    paginationEl.classList.add("hidden");
+
+    dynamicNotesEl.classList.remove("hidden");
+  }
+
+  function normalizeTag(t) {
+    return String(t || "")
+      .trim()
+      .toLowerCase();
+  }
+
+  function noteHasTag(note, tag) {
+    if (!tag || tag === "all") return true;
+
+    const want = normalizeTag(tag);
+
+    const tags = note?.tags;
+    
+    return tags.map(normalizeTag).includes(want);
+  }
+
+  function filterNotes(notes, q, tag) {
+    const needle = (q ?? "").trim().toLowerCase();
+    const needText = needle.length > 0;
+    const needTag = tag && tag !== "all";
+
+    if (!needText && !needTag) return notes;
+
+    return notes.filter((n) => {
+      const matchesText = !needText ? true : String(n?.text ?? "").includes(needle);
+      const matchesTag = !needTag ? true : noteHasTag(n, tag);
+      return matchesText && matchesTag;
+    });
+  }
+
+  function setActiveChipUI(tag) {
+    document.querySelectorAll(".chip").forEach((x) => {
+      x.className = CHIP_CLASS_DEFAULT;
+      x.setAttribute("aria-pressed", "false");
+    });
+
+    const btn = Array.from(document.querySelectorAll(".chip")).find((b) => b.dataset.chip === tag);
+    if (btn) {
+      btn.className = CHIP_CLASS_ACTIVE;
+      btn.setAttribute("aria-pressed", "true");
+    }
+  }
+
+  function makeSearchLabel(q, tag) {
+    const hasQ = (q || "").trim().length > 0;
+    const hasTag = tag && tag !== "all";
+
+    if (hasQ && hasTag) return `Поиск + #${normalizeTag(tag)}`;
+    if (hasTag) return `Тег: #${normalizeTag(tag)}`;
+    return "Поиск";
+  }
+
+  async function runSearch() {
+    const q = (searchEl.value || "").trim();
+    const hasQ = q.length > 0;
+    const hasTag = activeTag && activeTag !== "all";
+
+    if (pageTag) {
+      // Notes of a pre-generated list are filtered by its tag already, so the
+      // static mode is the untouched state of such a page. Dropping the tag
+      // means leaving the page for the common list.
+
+      if (!hasTag) {
+        try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+        window.location.href = notesListUrl;
+        return;
+      }
+
+      if (activeTag === pageTag && !hasQ) {
+        showStaticMode();
+        return;
+      }
+    } else if (!hasQ && !hasTag) {
+      try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+      showStaticMode();
+      return;
+    }
+
+    showSearchMode();
+
+    const notes = await loadNotesJsonOnce();
+    const filtered = filterNotes(notes, q, activeTag);
+
+    countEl.textContent = String(filtered.length);
+    pageInfoEl.textContent = makeSearchLabel(q, activeTag);
+
+    if (filtered.length === 0) {
+      dynamicNotesEl.innerHTML = "";
+      emptyEl.classList.remove("hidden");
+      return;
+    }
+
+    emptyEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+  }
+
+  // Initial render
+  setActiveChipUI(activeTag);
+  showStaticMode();
+
+  // Text search handler
+  searchEl.addEventListener("input", debounce(runSearch, 200));
+
+  // Tag chips handler.
+  //
+  // It is a delegated one, since tag chips of a note are rendered dynamically
+  // as well: both the chips above and the ones of a note filter the list.
+
+  document.addEventListener("click", (event) => {
+    const chip = event.target.closest("[data-chip]");
+
+    if (!chip) return;
+
+    activeTag = chip.dataset.chip || "all";
+      try {
+      if (activeTag === "all") sessionStorage.removeItem(TAG_SESSION_KEY);
+      else sessionStorage.setItem(TAG_SESSION_KEY, activeTag);
+      } catch (e) {}
+    setActiveChipUI(activeTag);
+    runSearch();
+  });
+
+  // Search autorun in case search string is set (refresh / back-forward cache)
+  function runSearchSoon() {
+    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
+  }
+
+  document.addEventListener("DOMContentLoaded", runSearchSoon);
+  window.addEventListener("pageshow", runSearchSoon);
+</script>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Влад Костянецкий</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.ru/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

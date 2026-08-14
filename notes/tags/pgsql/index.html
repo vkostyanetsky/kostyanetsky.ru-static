@@ -1,0 +1,1101 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Заметки: PostgreSQL</title>
+
+    <meta name="description" content="" />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="https://kostyanetsky.ru/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.ru/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.ru/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.ru/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.ru/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Заметки: PostgreSQL"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/tags/pgsql" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "";
+        let ctrlRightUrl    = "";
+    </script>
+    
+    <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/">Сайт Влада</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/projects/">Проекты</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.ru/notes/">Заметки</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <span
+                        class="inline-block text-[1.35rem] leading-none text-slate-400"
+                        title="Видите опечатку? Поправьте меня!"
+                        aria-disabled="true"
+                        >✎</span>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.me/notes/tags/pgsql"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="EN"
+                    >
+                        EN
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page="1"
+      data-total-notes="7"
+      data-total-pages="1"
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+    
+
+      <header class="space-y-3">
+        <h1 class="text-3xl font-semibold tracking-tight">Заметки: PostgreSQL</h1>
+        <p class="max-w-2xl text-slate-700">
+          Мои мысли о жизни, работе и разных интересных штуках вокруг меня.
+        </p>
+      </header>
+
+
+
+      <section class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="relative w-full sm:w-[420px]">
+          <input
+            id="search"
+            type="search"
+            placeholder="Поиск по заголовку / тексту / тегам…"
+            class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
+          />
+          <svg
+            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+            />
+          </svg>
+        </div>
+
+        <p class="text-sm text-slate-600">
+          Показано: <span id="count" class="font-semibold text-slate-900">0</span>
+          <span class="text-slate-400">·</span>
+          <span id="pageInfo">Страница</span>
+        </p>
+      </section>
+
+      <section class="mt-4 flex flex-wrap gap-2">
+      
+        <button
+          data-chip="all"
+          class="chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200"
+        >
+          Все
+        </button>
+
+        
+        <button
+          data-chip="1c"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          1С
+        </button>
+        
+        <button
+          data-chip="work"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Работа
+        </button>
+        
+        <button
+          data-chip="done"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Готово
+        </button>
+        
+        <button
+          data-chip="videogames"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Видеоигры
+        </button>
+        
+        <button
+          data-chip="meanwhile"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Тем временем
+        </button>
+        
+        <button
+          data-chip="english"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          English
+        </button>
+        
+        <button
+          data-chip="bash"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Bash
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
+        </button>
+        
+        <button
+          data-chip="code-smell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Код с запашком
+        </button>
+        
+        <button
+          data-chip="family"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Семья
+        </button>
+        
+        <button
+          data-chip="obsidian"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Obsidian
+        </button>
+        
+        <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
+          data-chip="blog"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Блог
+        </button>
+        
+        <button
+          data-chip="pgsql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          PostgreSQL
+        </button>
+        
+        <button
+          data-chip="workplace"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Рабочее место
+        </button>
+        
+        <button
+          data-chip="javascript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Javascript
+        </button>
+        
+        <button
+          data-chip="python"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Python
+        </button>
+        
+        <button
+          data-chip="webdev"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Вебдев
+        </button>
+        
+        <button
+          data-chip="books"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Книги
+        </button>
+        
+        <button
+          data-chip="georgia"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Грузия
+        </button>
+        
+        <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Оптимизация
+        </button>
+        
+        <button
+          data-chip="sport"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Спорт
+        </button>
+        
+        <button
+          data-chip="3d"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          3D
+        </button>
+        
+        <button
+          data-chip="bitrix"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Битрикс
+        </button>
+        
+        <button
+          data-chip="nodejs"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Node.js
+        </button>
+        
+        <button
+          data-chip="powershell"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Powershell
+        </button>
+        
+        <button
+          data-chip="typescript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Typescript
+        </button>
+        
+
+      </section>
+
+      <!-- Static notes (SEO + no-JS fallback) -->
+      <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/date-literal-exceeds-3999-once-again"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Номер года в литерале типа дата превышает 3999
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>28 марта 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="mssql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">MS SQL</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Про ошибку в названии заметки я уже как-то <a href="https://kostyanetsky.ru/notes/date-literal-exceeds-3999" rel="noopener noreferrer" target="_blank">писал</a>. Напомню суть: платформа не переваривает даты позже 3999 года (на практике начинает стрелять с 3999-12-01). Теоретически такие даты вообще нельзя записать, но <s>если очень хочется</s> из-за ошибок в прикладном коде (и в коде самой платформы) это всё-таки возможно и время от времени случается. </p>
+<p>Обычные симптомы — перестают работать какие-то отчёты, не проводятся какие-то документы, падает пересчёт итогов. В общем, страдает любой код, который трогает записи с проблемными датами.</p>
+<p>Способ лечения, который я рамочно описал в заметке по ссылке выше — рабочий, но сравнительно медленный: нужно настроить ТЖ, собрать и распарсить результаты. Между тем, платформа падает на первом же обращении к битой дате, а их может быть много и валяться они могут в разных таблицах. То есть может потребоваться несколько подходов к снаряду: проверили, получили ошибку, исправили, проверили, получили следующую...</p>
+<p><img alt="Thank You, Mario!" src="https://kostyanetsky.ru/notes/date-literal-exceeds-3999-once-again/thanks.jpg"/></p>
+<p>Желая решать проблему как-нибудь побыстрее, несколько лет назад я написал <a href="https://gist.github.com/vkostyanetsky/a58ff201d2a87a35e70c4c8f4112ad4c" rel="noopener noreferrer" target="_blank">запрос для PostgreSQL</a>. Общая идея:</p>
+<ol>
+<li>Ищем в базе данных все поля с датами.</li>
+<li>Строим мегазапрос к таким полям (ищем даты, которые выходят за лимит 1С).</li>
+</ol>
+<p>То есть этот запрос генерирует другой запрос, да. Выполняем его и получаем полную картинку проблемы: список таблиц с некорректными датами. Дальше уже дело техники — смотрим, что за таблицы и решаем, как быть. В нашем случае проблемные даты иногда возникают в итогах и оборотах, так что их можно просто удалять и пересчитывать итоги через штатные инструменты.</p>
+<p>Почему действуем на уровне СУБД? Ну, средствами 1С такой номер не отколоть — напомню, платформа падает при попытке потрогать проблемные записи. Это касается любого взаимодействия, включая чтение. Кроме того, в данном случае работать напрямую быстрее и удобнее.</p>
+<p>На днях я переписал этот <a href="https://gist.github.com/vkostyanetsky/5990a16caacc4a9057b577c6a5694512" rel="noopener noreferrer" target="_blank">запрос для MS SQL</a>. Вышло длиннее (в силу особенностей этой СУБД), но идея та же.</p>
+<p>Если будете использовать, имейте в виду, что:</p>
+<ul>
+<li>Поле <code>_Fld626</code> в тексте запроса — разделитель для фреша. В вашей базе может называться по-другому или вообще отсутствовать.</li>
+<li>Запрос написан для базы со сдвигом в 2000 лет. Если в вашей базе сдвига нет, нужно скорректировать условие (см. функцию <code>DATEADD()</code>).</li>
+<li>Трюк с выводом в XML (см. <code>FOR XML</code>) я добавил, чтобы не дать SSMS обрезать текст мегазапроса (показалось быстрее, чем возиться с приведением типов). Побочный эффект: в получившемся мегазапросе нужно заменить <code>&amp;gt;</code> на <code>&gt;</code>, прежде чем выполнять его.</li>
+</ul>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/harmless-harm"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Безвредный вред
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>16 ноября 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="mssql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">MS SQL</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Разбирали на днях с коллегой проблему. Ничего особенно серьёзного, очередное расследование вида «какого черта этот запрос ведет себя странно?».</p>
+<p>Упрощая, суть: читаем таблицу базы данных и кладем результат во временную таблицу. Если срабатывает определённое условие, нужно, чтобы временная таблица всё равно создавалась, но была пустой (независимо от того, есть строки в исходной таблице или нет).</p>
+<p>Запрос был примерно такой:</p>
+<pre>
+SELECT
+    Table.Field1 AS Field1
+FROM
+    Table AS Table
+WHERE 
+    &amp;Parameter
+</pre>
+<p>Если нужно было отбирать записи из исходной таблицы во временную, в параметр передавался TRUE; если временную таблицу нужно было получить пустой — передавался FALSE.</p>
+<p>Несмотря на кажущуюся простоту, такой трюк — проблема для производительности, если таблица, которую читает запрос — большая.</p>
+<p>Причина в том, как СУБД работают с параметризованными запросами. И MS SQL, и PostgreSQL строят план выполнения запроса на основе его текста, и в примере выше значение параметра <strong>не</strong> повлияет на принятие решения, нужно читать таблицу или нет.</p>
+<p>Таким образом, при выполнении такого запроса обе СУБД педантично прочитают всю таблицу (ну, или её индекс), даже если параметр равен FALSE. В последнем случае каждая прочитанная запись будет отброшена и алгоритм будет работать корректно, однако мы будем тратить ресурсы на бессмысленное чтение данных и забивать буферный кэш, замедляя систему в целом и активно работая на глобальное потепление :)</p>
+<p>Решение тут простое — вставлять TRUE/FALSE в тело запроса как константу, не используя параметр. Либо использовать оператор TOP, так текст запроса будет даже проще:</p>
+<pre>
+SELECT TOP 0
+    Table.Field1 AS Field1
+FROM
+    Table AS Table
+</pre>
+<p>Тут на уровне SQL мы получим что-то вроде «SELECT TOP 0 ... FROM Table» (для MS SQL) и «SELECT ... FROM Table LIMIT 0» (для PostgreSQL). В итоговом плане будет оператор чтения, но исполнитель фактически не запросит ни одной строки, так что реального сканирования данных не случится (ура).</p>
+<p>P.S. Если не критично получать во временной таблице корректные типы колонок, можно вообще вот так:</p>
+<pre>
+SELECT TOP 0
+    UNDEFINED AS Field1
+</pre>
+<p>Выигрыш в производительности, впрочем, будет таким копеечным, что можно не упарываться. </p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/rapture"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Восторг
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>31 августа 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="3d" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">3D</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Помню, в каком восторге я был, когда впервые поработал с оконными функциями в PostgreSQL. Можно построчно регулировать окошко вычислений для каждой строки! И на сегменты предварительно нарезать! И всё
+ это — нативно, внутри самого обычного запроса, никаких пристроек справа и слева. Стандартная агрегация с группировкой и подзапросами, к которой я привык в 1С, резко превратилась в тыкву, совсем как карета Золушки в полночь.</p>
+<p>Последнее время осваиваю Blender и внезапно ощутил то же чувство по той же самой причине. То, что объект можно произвольно таскать по 3D Viewport через команду Move, было понятно ещё на берегу, ладно. Но когда до меня дошло, что каждый объект — это набор полигонов, и каждый из таких полигонов тоже можно произвольно таскать, и это приводит к естественному изменению геометрии объекта — вот тут-то меня и накрыло.</p>
+<p>Технологии удивительны. Учиться — клёво. Ради таких озарений хочется делать это ещё и ещё :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/data-history-duplication"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Не уникальные метаданные
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>8 июня 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="mssql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">MS SQL</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>В очередной раз столкнулся с противным багом, при котором платформа ломает таблицу с метаданными истории данных. </p>
+<p>Внешне он выглядит так: вы обновляете конфигурацию базы, и при попытке реструктуризации выскакивает ошибка "Таблица метаданных истории данных cодержит не уникальные записи, которые должны быть удалены". </p>
+<p>При этом платформа не предлагает никакого понятного способа найти такие записи — иди туда, не знаю куда, сделай то, не знаю что.   </p>
+<p><img alt="Таблица метаданных истории данных cодержит не уникальные записи, которые должны быть удалены" src="https://kostyanetsky.ru/notes/data-history-duplication/error.png"/></p>
+<p>Проблему можно решить, порывшись в базе данных. Таблица, на которую ссылается ошибка — _DataHistoryMetadata. В ней лежат версии метаданных каждого объекта, для которого ведётся история. Это позволяет платформе понимать, какие реквизиты были у объекта на любой момент времени, в течении которого для объекта велась история.</p>
+<p>Как это работает? Ну, когда меняется состав реквизитов объекта (например, реквизит в справочнике добавили), платформа запоминает его метаданные: конкретно, добавляет в _DataHistoryMetadata новую запись и сохраняет в ней актуальный список реквизитов объекта, а также номер версии этого списка (например, в при включении истории для объекта сохраняется первая версия метаданных, при добавлении какого-нибудь реквизита — вторая и так далее).</p>
+<p>Ещё платформа ставит в созданной записи отметку, что именно эта версия объекта — самая актуальная, после чего снимает этот флаг с той версии, которая была помечена актуальной до этого.</p>
+<p>Так вот, проблема в том, что платформа иногда забывает сделать последний шаг и в таблице появляется сразу две версии, помеченные как актуальные. Конфигуратор понимает это, но сделать ничего не может.</p>
+<p><img alt="Как помочь больной скотине?" src="https://kostyanetsky.ru/notes/data-history-duplication/howto.jpeg"/></p>
+<p>Решение вытекает из алгоритма выше: нужно найти конфликтующие версии и отобрать признак актуальности у той, что старше. Лучше использовать запросы: историю данных включают, как правило, для кучи объектов и состав реквизитов у них постоянно меняется — в общем, версий в таблице будет столько, что черт ногу сломит.</p>
+<p>Если вы тоже столкнулись с этой проблемой и поэтому читаете этот текст — можете воспользоваться <a href="https://gist.github.com/vkostyanetsky/6496c67e2b2fd3d064c4cafd16da0b79" rel="noopener noreferrer" target="_blank">запросами</a>, что написал я:</p>
+<ol>
+<li>get-issues.sql проверяет, что проблема есть: ищет версии метаданных, которые одновременно помечены как актуальные.</li>
+<li>fix-issues.sql снимает признак актуальности с тех версий, которые на самом деле устарели.</li>
+</ol>
+<p>Оба запроса написаны для Microsoft SQL Server. Если вы используете PostgreSQL, то <a href="https://gist.github.com/vkostyanetsky/75665ce04247e900743604eb386d1889" rel="noopener noreferrer" target="_blank">вот они же</a> для этой СУБД.</p>
+<p>Запросы потребуют небольшой адаптации под конкретную базу: в них используется поле _fld626, в котором хранится разделитель данных. В вашей таблице _DataHistoryMetadata это поле может называться иначе, поэтому нужно обновить его имя на актуальное. Ошибиться будет трудно — у таблицы только одно поле с префиксом _fld.</p>
+<p>P.S. Напоминаю, что лицензионное соглашение запрещает ковыряться в базе данных в обход средств платформы, так что на такие эксперименты можно идти, только если других вариантов не осталось.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/uuid-main-issue"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Главная проблема UUID
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>2 июня 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Наткнулся на <a href="https://www.cybertec-postgresql.com/en/unexpected-downsides-of-uuid-keys-in-postgresql/" rel="noopener noreferrer" target="_blank">хороший текст</a> об основной проблеме, которую таскает с собой UUID. Для 1С она тоже актуальна: все ссылочные объекты платформы (элементы справочников, документы и так далее) имеют собственные UUID. Они хранятся в БД, активно используются при поиске и, понятно, обильно индексируются (со всеми вытекающими последствиями). </p>
+<p>1С старается компенсировать проблему, создавая последовательные UUID. Пусть не идеально, но в целом эта штука работает и индексы получаются более-менее ровными. Да и вообще в сообществе об этом говорят довольно давно: вот, например, бородатый <a href="https://forum.mista.ru/topic.php?id=801986" rel="noopener noreferrer" target="_blank">топик на Мисте</a> (правда, тут диалог быстро перерос в курятник и из шести десятков комментариев от силы полтора — по делу).</p>
+<p>P.S. Рассмешила ремарка про вероятность создать в одной базе два одинаковых UUID:</p>
+<blockquote>
+<p>As an aside, for those worried about collisions: you should take up the lottery, since winning the jackpot twice in a row is a much more likely outcome than your system ever generating two identical random 128 bit numbers.</p>
+</blockquote>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/infostart-event-2021"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Infostart Event 2021
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>16 ноября 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>На прошлой неделе сгонял в Москву на <a href="https://event.infostart.ru/2021_msk/" rel="noopener noreferrer" target="_blank">Infostart Event 2021</a>:</p>
+<ul>
+<li>Послушать дюжину докладов о разработке и близких темах — check;</li>
+<li>Развиртуализоваться с несколькими классными людьми — check;</li>
+<li>Поболтать с друзьями — check!</li>
+</ul>
+<p>По итогу неожиданно почуствовал себя отдохнувшим — и это несмотря на перелёты, нервы и суету. Думаю, дело в том, что я удалёнщик; было по-настоящему здорово посмотреть на такое количество коллег вживую, а не в виде потока электронов.</p>
+<p>Чтобы два раза не <s>вставать</s> летать, сдал в офисе PostgresPro <a href="https://postgrespro.ru/education/exam/DBA1-10" rel="noopener noreferrer" target="_blank">входной тест</a> по администрированию PostgreSQL. Впереди ещё три, а финального пока вообще не существует — но дорогу осилит идущий, так вижу.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/hulk-removes"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Халк удалять!
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 ноября 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>На <a href="https://postgrespro.ru/education/courses/DBA1" rel="noopener noreferrer" target="_blank">курсе</a> по PostgreSQL узнал смешную деталь: в 10-й версии СУБД разработчики переименовали папку pg_xlog (журналы предзаписи) в pg_wal, а папку pg_clog (статусы транзакций) — в pg_xact.</p>
+<p>Знаете, почему? Из-за не слишком опытных, но уже достаточно смелых администраторов, которые триггерились на слово «log» в названии папки. Мол, мне нужно место на диске освободить, а тут СУБД забила всё своими дурацкими логами. Некогда разбираться, rm -rf их и порядок!</p>
+<p>В общем, в трубу одновременно вылетала и защита работы с данными в буферном кэше, и многоверсионность. После чего кластер умирал в муках. Свободного места на диске получалось много, но радоваться этому, боюсь, приходилось недолго :-)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+      </section>
+
+      <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
+
+      <div
+        id="empty"
+        class="mt-8 hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 text-center text-slate-700"
+      >
+        Ничего не нашлось. Попробуйте другой запрос?
+      </div>
+
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <span class="w-[1px]"></span>
+        
+      </nav>
+
+<script>
+  // ------------------------------------------------------------
+  // Hybrid mode:
+  // - Default: show static HTML notes (SEO-friendly, no-JS ok).
+  // - On first user search OR tag click: fetch notes.json, hide static, render results.
+  // - On clear (no query AND tag=all): show static again.
+  // ------------------------------------------------------------
+
+  const metaEl = document.getElementById("pageMeta");
+  const notesJsonUrl = "https://kostyanetsky.ru/notes.json";
+
+  // A tag of a pre-generated list (notes/tags/<tag>), empty for a common one.
+
+  const pageTag = "pgsql";
+  const notesListUrl = "https://kostyanetsky.ru/notes/";
+
+  const page = Number(metaEl.getAttribute("data-page") || "1");
+  const totalPages = Number(metaEl.getAttribute("data-total-pages") || "1");
+  const totalNotes = Number(metaEl.getAttribute("data-total-notes") || "0");
+
+  const searchEl = document.getElementById("search");
+  const countEl = document.getElementById("count");
+  const pageInfoEl = document.getElementById("pageInfo");
+
+  const staticNotesEl = document.getElementById("staticNotes");
+  const dynamicNotesEl = document.getElementById("dynamicNotes");
+  const emptyEl = document.getElementById("empty");
+  const paginationEl = document.getElementById("pagination");
+
+  let notesCache = null;
+  let notesLoadPromise = null;
+
+  // Tag filter state (chip)
+  let activeTag = pageTag || "all";
+
+  const TAG_SESSION_KEY = "notesActiveTag";
+
+  // A pre-generated list is filtered by its own tag, so a saved one has to be
+  // ignored: an URL wins over a state of a previously visited page.
+
+  if (!pageTag) {
+    try {
+      const saved = sessionStorage.getItem(TAG_SESSION_KEY);
+      if (saved) activeTag = saved;
+    } catch (e) {
+      // no sessionStorage :|
+    }
+  }
+
+  const CHIP_CLASS_DEFAULT =
+    "chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50";
+  const CHIP_CLASS_ACTIVE =
+    "chip rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-xs text-slate-900 cursor-pointer hover:bg-slate-200";
+
+  function debounce(fn, ms = 200) {
+    let t;
+    return (...args) => {
+      clearTimeout(t);
+      t = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  async function loadNotesJsonOnce() {
+    if (notesCache) return notesCache;
+
+    if (!notesLoadPromise) {
+      notesLoadPromise = fetch(notesJsonUrl, { credentials: "same-origin" })
+        .then((r) => {
+          if (!r.ok) throw new Error(`Failed to load ${notesJsonUrl}: ${r.status}`);
+          return r.json();
+        })
+        .then((data) => {
+          // Expecting: [{ html: "<article>...</article>", text: "plain text", tags: ["work", ...] }, ...]
+          notesCache = Array.isArray(data) ? data : [];
+          return notesCache;
+        })
+        .catch((err) => {
+          console.error(err);
+          notesCache = [];
+          return notesCache;
+        });
+    }
+
+    return notesLoadPromise;
+  }
+
+  function showStaticMode() {
+    dynamicNotesEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = "";
+    emptyEl.classList.add("hidden");
+
+    staticNotesEl.classList.remove("hidden");
+    paginationEl.classList.remove("hidden");
+
+    countEl.textContent = String(totalNotes);
+    pageInfoEl.textContent = `Страница ${page} из ${totalPages}`;
+  }
+
+  function showSearchMode() {
+    staticNotesEl.classList.add("hidden");
+    paginationEl.classList.add("hidden");
+
+    dynamicNotesEl.classList.remove("hidden");
+  }
+
+  function normalizeTag(t) {
+    return String(t || "")
+      .trim()
+      .toLowerCase();
+  }
+
+  function noteHasTag(note, tag) {
+    if (!tag || tag === "all") return true;
+
+    const want = normalizeTag(tag);
+
+    const tags = note?.tags;
+    
+    return tags.map(normalizeTag).includes(want);
+  }
+
+  function filterNotes(notes, q, tag) {
+    const needle = (q ?? "").trim().toLowerCase();
+    const needText = needle.length > 0;
+    const needTag = tag && tag !== "all";
+
+    if (!needText && !needTag) return notes;
+
+    return notes.filter((n) => {
+      const matchesText = !needText ? true : String(n?.text ?? "").includes(needle);
+      const matchesTag = !needTag ? true : noteHasTag(n, tag);
+      return matchesText && matchesTag;
+    });
+  }
+
+  function setActiveChipUI(tag) {
+    document.querySelectorAll(".chip").forEach((x) => {
+      x.className = CHIP_CLASS_DEFAULT;
+      x.setAttribute("aria-pressed", "false");
+    });
+
+    const btn = Array.from(document.querySelectorAll(".chip")).find((b) => b.dataset.chip === tag);
+    if (btn) {
+      btn.className = CHIP_CLASS_ACTIVE;
+      btn.setAttribute("aria-pressed", "true");
+    }
+  }
+
+  function makeSearchLabel(q, tag) {
+    const hasQ = (q || "").trim().length > 0;
+    const hasTag = tag && tag !== "all";
+
+    if (hasQ && hasTag) return `Поиск + #${normalizeTag(tag)}`;
+    if (hasTag) return `Тег: #${normalizeTag(tag)}`;
+    return "Поиск";
+  }
+
+  async function runSearch() {
+    const q = (searchEl.value || "").trim();
+    const hasQ = q.length > 0;
+    const hasTag = activeTag && activeTag !== "all";
+
+    if (pageTag) {
+      // Notes of a pre-generated list are filtered by its tag already, so the
+      // static mode is the untouched state of such a page. Dropping the tag
+      // means leaving the page for the common list.
+
+      if (!hasTag) {
+        try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+        window.location.href = notesListUrl;
+        return;
+      }
+
+      if (activeTag === pageTag && !hasQ) {
+        showStaticMode();
+        return;
+      }
+    } else if (!hasQ && !hasTag) {
+      try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
+      showStaticMode();
+      return;
+    }
+
+    showSearchMode();
+
+    const notes = await loadNotesJsonOnce();
+    const filtered = filterNotes(notes, q, activeTag);
+
+    countEl.textContent = String(filtered.length);
+    pageInfoEl.textContent = makeSearchLabel(q, activeTag);
+
+    if (filtered.length === 0) {
+      dynamicNotesEl.innerHTML = "";
+      emptyEl.classList.remove("hidden");
+      return;
+    }
+
+    emptyEl.classList.add("hidden");
+    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+  }
+
+  // Initial render
+  setActiveChipUI(activeTag);
+  showStaticMode();
+
+  // Text search handler
+  searchEl.addEventListener("input", debounce(runSearch, 200));
+
+  // Tag chips handler.
+  //
+  // It is a delegated one, since tag chips of a note are rendered dynamically
+  // as well: both the chips above and the ones of a note filter the list.
+
+  document.addEventListener("click", (event) => {
+    const chip = event.target.closest("[data-chip]");
+
+    if (!chip) return;
+
+    activeTag = chip.dataset.chip || "all";
+      try {
+      if (activeTag === "all") sessionStorage.removeItem(TAG_SESSION_KEY);
+      else sessionStorage.setItem(TAG_SESSION_KEY, activeTag);
+      } catch (e) {}
+    setActiveChipUI(activeTag);
+    runSearch();
+  });
+
+  // Search autorun in case search string is set (refresh / back-forward cache)
+  function runSearchSoon() {
+    requestAnimationFrame(() => requestAnimationFrame(() => runSearch()));
+  }
+
+  document.addEventListener("DOMContentLoaded", runSearchSoon);
+  window.addEventListener("pageshow", runSearchSoon);
+</script>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Влад Костянецкий</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.ru/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
