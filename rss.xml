@@ -5,8 +5,20 @@
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
         
-        <lastBuildDate>Sun, 09 Aug 2026 14:41:26 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 18 Aug 2026 09:17:10 +0000</lastBuildDate>
         
+        
+        <item>
+            <title>Мику-питомец для Codex</title>
+            <link>https://kostyanetsky.ru/notes/miku-codex-pet</link>
+            <guid isPermaLink="false">note-miku-codex-pet</guid>
+            <pubDate>Tue, 18 Aug 2026 09:17:10 +0000</pubDate>
+            <description>&lt;p&gt;В десктопном &lt;a href=&#34;https://openai.com/codex&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;Codex&lt;/a&gt; есть питомцы — пиксельные персонажи, которые рендерятся поверх UI и показывают, чем занят агент: работает — идёт, ждёт ответа — зовёт пользователя, застрял — жмурится и так далее. Общая идея в том, что пользователь запускает какой-нибудь флоу, переключается на свои дела и краем глаза видит, как там всё идёт.&lt;/p&gt;
+&lt;p&gt;Фича не особенно полезная, но забавная. Правда, встроенные питомцы мне не зашли; полез смотреть работы сообщества и внезапно на ровном месте разогнался сделать своего — на базе дизайна Хацуне Мику из &lt;a href=&#34;https://chaim-videogames.itch.io/mikun-pop&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;Miku&#39;n POP&lt;/a&gt;, старого-престарого платформера.&lt;/p&gt;
+&lt;p&gt;Оказалось, не особенно сложно. Спрайты я взял из &lt;a href=&#34;https://github.com/CharlesWiiFlowers/MikuPet&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;MikuPet&lt;/a&gt; (автор использует тот же дизайн из Miku&#39;n POP). Сам формат питомца довольно логичный, да и благодаря тому же Codex копаться в нём особо не пришлось. Дольше &lt;a href=&#34;https://github.com/vkostyanetsky/MikuCodexPet/blob/main/ATTRIBUTION.ru.md&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;разбирался&lt;/a&gt;, кому там принадлежит арт, на каких условиях его можно переиспользовать и так далее.&lt;/p&gt;
+&lt;p&gt;Питомца можно &lt;a href=&#34;https://github.com/vkostyanetsky/MikuCodexPet/releases&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;скачать&lt;/a&gt; с GitHub, там же скриншот и &lt;a href=&#34;https://github.com/vkostyanetsky/MikuCodexPet&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;подробные описания&lt;/a&gt; того, что внутри барабанчика.&lt;/p&gt;
+&lt;p&gt;Бесплатный бонус: &lt;a href=&#34;https://github.com/vkostyanetsky/MikuCodexPet/actions/workflows/release.yml&#34; rel=&#34;noopener noreferrer&#34; target=&#34;_blank&#34;&gt;сборщик&lt;/a&gt; релизов в таком проекте можно назвать «Release pet» :)&lt;/p&gt;</description>
+        </item>
         
         <item>
             <title>Obsidian Property Organizer</title>
@@ -155,30 +167,6 @@ whisper &#34;D:\audio.wav&#34; --model small --language Russian --output_format 
 &lt;p&gt;Ну и продолжаем хохмить в интерфейсе, конечно.&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;But Still!&#34; src=&#34;https://kostyanetsky.ru/notes/backup-ui/but-still.png&#34;/&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;Coffee First!&#34; src=&#34;https://kostyanetsky.ru/notes/backup-ui/coffee-first.png&#34;/&gt;&lt;/p&gt;</description>
-        </item>
-        
-        <item>
-            <title>Протоптанные дорожки</title>
-            <link>https://kostyanetsky.ru/notes/desire-paths</link>
-            <guid isPermaLink="false">note-desire-paths</guid>
-            <pubDate>Sat, 29 Nov 2025 21:00:48 +0000</pubDate>
-            <description>&lt;p&gt;Ладно, загадка Жана Фреско. У вас есть таблица, скажем, на 50 тысяч строк. Как прочитать из неё полмиллиарда?&lt;/p&gt;
-&lt;p&gt;Раз плюнуть, Nested Loops + Clustered Index Seek:&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;Полмиллиарда&#34; src=&#34;https://kostyanetsky.ru/notes/desire-paths/500_million.png&#34;/&gt;&lt;/p&gt;
-&lt;p&gt;От Clustered Index Seek тут одно название, конечно. Фактически оператор при каждом исполнении пробегает по всей таблице (всему кластерному индексу) и сверяет каждую запись с Predicates. И так — 10 730 раз для 51 391 записей. В итоге 551 425 430 строк прочитали, 13 343 вернули.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;Ох&#34; src=&#34;https://kostyanetsky.ru/notes/desire-paths/ouch.gif&#34;/&gt;&lt;/p&gt;
-&lt;p&gt;Короче, идеальный пример плохого плана запроса в вакууме, хоть сейчас тащи в палату мер и весов. Nested Loops, если кто позабыл, работает примерно так:&lt;/p&gt;
-&lt;pre&gt;
-For Each Table1Row In Table1 Do
-    For Each Table2Row In Table2 Do
-        ...
-&lt;/pre&gt;
-&lt;p&gt;Это ОК для мелких таблиц, но СУБД может его применить и для таблиц поболбше — например, если ей не хватает времени на построение плана.&lt;/p&gt;
-&lt;p&gt;Это и произошло в нашем случае. Прыгнем повыше, на уровень платформы: тут у нас динамический список с запросом по таблице документа, к которой разработчики прицепили с десяток виртуальных таблиц регистров накопления.&lt;/p&gt;
-&lt;p&gt;Некоторые регистры и сами по себе были здоровенными, а виртуальные таблицы дополнительно поддали жару (каждая превращается в 2+ вложенных запроса). СУБД честно пыталась придумать эффективный алгоритм, но в какой-то момент решала, что хреновый план запроса всё же лучше, чем вообще никакого.&lt;/p&gt;
-&lt;p&gt;В итоге пользователь что? Пытался поискать документ по номеру и клиентское приложение просто-напросто зависало.&lt;/p&gt;
-&lt;p&gt;Короче, по поводу виртуальных таблиц в динамических списках. В английском есть выражение «desire path», «протоптанная дорожка». Часто прицепить виртуальную таблицу к основной — и в самом деле самый простой, быстрый и привычный способ решить задачу. Но он &lt;strong&gt;не эффективен&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Есть, например, обработчик &lt;code&gt;ПриПолученииДанныхНаСервере()&lt;/code&gt;. Он дольше в реализации, но позволяет хорошо затюнить виртуальную таблицу и избежать сценария выше. На каждую прокрутку списка получится больше запросов, но они будут быстрее и эффективнее, чем один, но гигантский.&lt;/p&gt;</description>
         </item>
         
     </channel>

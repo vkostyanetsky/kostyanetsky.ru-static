@@ -226,6 +226,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="code-smell"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
@@ -244,13 +251,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Obsidian
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,64 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/queries-and-lock-waits"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Запросы и ожидания на блокировках
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>19 октября 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Набросал ещё два скрипта для анализа ТЖ: <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestQueries.sh" rel="noopener noreferrer" target="_blank">первый</a> строит топ тяжелых запросов к MS SQL, <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestLockWaitsByRegions.sh" rel="noopener noreferrer" target="_blank">второй</a> — топ длительных ожиданий на блокировках.</p>
+<p>Тяжелые запросы определяются по продолжительности событий DBMSSQL. То есть, чем дольше выполнялся запрос — тем вероятнее, что в процессе он слопал кучу ресурсов. Обычно это так и есть, хотя для нормальной диагностики нужно смотреть трассировку.</p>
+<p>Ожидания на блокировках тоже считаются по продолжительности. При этом скрипт проверяет, что у события TLOCK заполнено свойство WaitConnections — то есть платформа действительно ждала возможности установить блокировку, а не просто потратила какое-то время на её установку.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1525,69 +1583,6 @@
 <p>Не скажу сходу, что именно тут сбило платформу с толку и привело к не очевидной диагностике — то ли манипуляции с временной таблицей, куда эта константа была прочитана, то ли то, что читалась она в конструкции ВЫБОР, то ли то, что на сам справочник валют все необходимые права были. Искать конкретное условие или их сочетания я не стал — думаю, это просто специфика реализации движка СКД, которая может меняться от версии к версии. Достаточно не забывать о праве просмотра, и проблемы не будет.</p>
 <p>Что касается ошибки, при столкновении с ней стоит вывести проблемный отчет под полными правами. Если тут всё о'кей, нужно набросать список таблиц, откуда отчет читает данные, и проверить — все ли они с правами на чтение и просмотр.</p>
 <p>Нудно, но может сэкономить прилично времени.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/fce-results"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Результаты FCE
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>15 июля 2018</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="books" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Книги</button>
-                    
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
-                    
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="english" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">English</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Кембридж прислал результаты июньских экзаменов. И — вступают трубы — FCE я сдал! Судя по баллам, ухитрился в чём-то налажать во время письменной части, зато неплохо отыгрался во время разговорной. Жаль, что экзаменаторы не дают более подробных комментариев; впрочем, и так понятно, куда дальше воевать :) Преподаватель заметила, что раньше вообще сообщали только итоговый балл — мол, понимайте как хотите, уважаемые претенденты.</p>
-<p>В общем, в следующем году перевешу планку повыше — видимо, нужно готовиться к CAE.</p>
-<p>По этому поводу вспомнился Фейнман со своей знаменитой «Вы, конечно, шутите». Среди прочего он рассказывал, как во время жизни в Бразилии учился играть на фригидейре и доучился до того, что его стали ставить в пример местным музыкантам:</p>
-<blockquote>
-<p>Я думаю, это напоминает ситуацию, когда человек, который говорит по-французски, приезжает в Америку. Сначала он делает все ошибки, которые можно сделать, и понимать его очень сложно. Но он непрерывно занимается, до тех пор пока не начинает говорить довольно хорошо, и манера речи этого человека начинает доставлять вам истинное удовольствие: у него очень милый акцент, и его приятно слушать.</p>
-<p><em>― Ричард Фейнман</em></p>
-</blockquote>
-<p>Между «все ошибки» и «приятно слушать» непринужденно опущено целое море труда, но в целом этот синопсис мне нравится. Работаем куда-то туда!</p>
             </div>
           </div>
           

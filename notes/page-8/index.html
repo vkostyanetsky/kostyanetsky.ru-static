@@ -226,6 +226,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="code-smell"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
@@ -244,13 +251,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Obsidian
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,58 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/1001-nights-with-1c"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Тысяча и одна ночь с 1С
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>16 января 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/WvdfWMoI1oI" width="560"></iframe>
+<p>Архитектор нашего основного продукта (и, по совместительству, мой тимлид) рассказывает о том, как мы внедряли 1С в Дубае. Погружений в технические детали нет, так что можно смотреть всем, кто хотя бы чуть-чуть в теме.</p>
+<p>Видео записано на краснодарской конференции разработчиков в июне прошлого года, так что кое-что уже поменялось. Например, у нас появились вполне рабочие прототипы программы на арабском языке, а объём автотестирования вырос настолько, что мисс <a href="https://github.com/Pr-Mex/vanessa-automation-single" rel="noopener noreferrer" target="_blank">Ванессу</a> стоит считать отдельным членом команды :-)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1362,52 +1414,6 @@
             <div class="prose-like">
               <p>Про нюансы работы со здоровенными таблицами на клиенте я уже пару раз писал (<a href="https://kostyanetsky.ru/notes/find-rows-at-client" rel="noopener noreferrer" target="_blank">раз</a>, <a href="https://kostyanetsky.ru/notes/big-value-tables" rel="noopener noreferrer" target="_blank">два</a>), но в конце прошлой недели коллеги подсказали ещё один любопытный способ оптимизации работы с относительно большими коллекциями данных на клиенте. Вкратце: стандарт <a href="https://its.1c.ru/db/v8std#content:628:hdoc" rel="noopener noreferrer" target="_blank">советует</a> работать с большими коллекциями только на сервере, однако если сразу обойти всю коллекцию на клиенте (например, в обработчике открытия формы) — она закешируется. В итоге последующие обходы, поиск строк и другая работа с данными не будут требовать дополнительных серверных вызовов. Суммарные расходы при таком подходе получаются ниже.</p>
 <p>Погонял сейчас простые тесты — да, похоже, что так и есть. Метод выглядит отчасти костыльно и на серьезных нагрузках я его ещё не проверял — но, вероятно, его вполне можно иметь ввиду.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/close-to-the-sun"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Close to the Sun
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>14 мая 2019</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="videogames" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Видеоигры</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/UMsQ2oB006w" width="560"></iframe>
-<p>Игрожуры и ютуберы соревнуются, кто задорнее обложит «Close to the Sun» в рецензиях, а мне игра неожиданно понравилась. Конечно, это не шедевр, но атмосфера огромного «летучего голландца» передана просто отлично. Происходящее местами напоминает Биошок, но я очень далек от того, чтобы валять в перьях любую историю, которая чем-то похожа на то, что я уже где-то видел.</p>
-<p>А ещё во время финальных титров тут играет очень крутой <a href="https://www.youtube.com/watch?v=TiRZVAO2XbQ" rel="noopener noreferrer" target="_blank">сингл</a>, который буквально продал мне игру пару дней назад и который можно слушать, к самой игре не прикасаясь.</p>
             </div>
           </div>
           

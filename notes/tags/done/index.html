@@ -226,6 +226,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="code-smell"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
@@ -244,13 +251,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Obsidian
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,60 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/miku-codex-pet"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Мику-питомец для Codex
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>18 августа 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="ai" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">ИИ</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>В десктопном <a href="https://openai.com/codex" rel="noopener noreferrer" target="_blank">Codex</a> есть питомцы — пиксельные персонажи, которые рендерятся поверх UI и показывают, чем занят агент: работает — идёт, ждёт ответа — зовёт пользователя, застрял — жмурится и так далее. Общая идея в том, что пользователь запускает какой-нибудь флоу, переключается на свои дела и краем глаза видит, как там всё идёт.</p>
+<p>Фича не особенно полезная, но забавная. Правда, встроенные питомцы мне не зашли; полез смотреть работы сообщества и внезапно на ровном месте разогнался сделать своего — на базе дизайна Хацуне Мику из <a href="https://chaim-videogames.itch.io/mikun-pop" rel="noopener noreferrer" target="_blank">Miku'n POP</a>, старого-престарого платформера.</p>
+<p>Оказалось, не особенно сложно. Спрайты я взял из <a href="https://github.com/CharlesWiiFlowers/MikuPet" rel="noopener noreferrer" target="_blank">MikuPet</a> (автор использует тот же дизайн из Miku'n POP). Сам формат питомца довольно логичный, да и благодаря тому же Codex копаться в нём особо не пришлось. Дольше <a href="https://github.com/vkostyanetsky/MikuCodexPet/blob/main/ATTRIBUTION.ru.md" rel="noopener noreferrer" target="_blank">разбирался</a>, кому там принадлежит арт, на каких условиях его можно переиспользовать и так далее.</p>
+<p>Питомца можно <a href="https://github.com/vkostyanetsky/MikuCodexPet/releases" rel="noopener noreferrer" target="_blank">скачать</a> с GitHub, там же скриншот и <a href="https://github.com/vkostyanetsky/MikuCodexPet" rel="noopener noreferrer" target="_blank">подробные описания</a> того, что внутри барабанчика.</p>
+<p>Бесплатный бонус: <a href="https://github.com/vkostyanetsky/MikuCodexPet/actions/workflows/release.yml" rel="noopener noreferrer" target="_blank">сборщик</a> релизов в таком проекте можно назвать «Release pet» :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1520,64 +1574,6 @@
 <p>Второй проблемой стала утилита sed. С помощью неё я пытался удалить из потока данных всё, кроме часов и минут (текст попытки на 12-й строке скрипта). Однако часть событий упорно не попадали под регулярку несмотря на то, что визуально никак не отличались. Я промаялся кучу времени и здорово разозлился, но потом вспомнил про существование <a href="https://ru.wikipedia.org/wiki/Маркер_последовательности_байтов" rel="noopener noreferrer" target="_blank">BOM</a>. Вычистил их и дальше все пошло как по маслу.</p>
 <p>BOM используется во всех файлах ТЖ (в этом можно убедиться, например, с помощью <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LogFilesWithoutBOM.sh" rel="noopener noreferrer" target="_blank">скрипта</a>). То есть каждый лог начинается с особых символов, которых невооруженным глазом не увидеть и которые могут помешать обработать первую строку файла (так как эти самые символы не будут попадать под условие регулярного выражения).</p>
 <p>Вывод: проще всего удалять BOM по умолчанию, не оценивая рисков для каждой конкретной задачи. Да, иногда это будет лишним (например, решению задачи по тексту выше через grep BOM никак не мешает). Но я не люблю сюрпризы. Кроме того, несколько тактов процессора на простую замену — явно выгоднее, чем эквивалент в сгоревших нервных клетках и потерянном времени.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/queries-and-lock-waits"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Запросы и ожидания на блокировках
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>19 октября 2020</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
-                    
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="bash" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Bash</button>
-                    
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Набросал ещё два скрипта для анализа ТЖ: <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestQueries.sh" rel="noopener noreferrer" target="_blank">первый</a> строит топ тяжелых запросов к MS SQL, <a href="https://github.com/vkostyanetsky/ScriptsFor1C/blob/master/Технологический%20журнал/LongestLockWaitsByRegions.sh" rel="noopener noreferrer" target="_blank">второй</a> — топ длительных ожиданий на блокировках.</p>
-<p>Тяжелые запросы определяются по продолжительности событий DBMSSQL. То есть, чем дольше выполнялся запрос — тем вероятнее, что в процессе он слопал кучу ресурсов. Обычно это так и есть, хотя для нормальной диагностики нужно смотреть трассировку.</p>
-<p>Ожидания на блокировках тоже считаются по продолжительности. При этом скрипт проверяет, что у события TLOCK заполнено свойство WaitConnections — то есть платформа действительно ждала возможности установить блокировку, а не просто потратила какое-то время на её установку.</p>
             </div>
           </div>
           

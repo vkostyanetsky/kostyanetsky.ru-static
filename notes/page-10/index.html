@@ -226,6 +226,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="code-smell"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
@@ -244,13 +251,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Obsidian
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,59 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/string-concatenation"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Конкатенация строк
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>27 января 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Как и многие другие компании, мы даем соискателям тестовое задание. Оно намеренно несложное и нужно больше для того, чтобы посмотреть — насколько кандидат понимает платформу? Как аккуратно работает с объектами конфигурации и её кодом?</p>
+<p>Одна из множества мелких штук, которые там проверяются — это формирование длинного сообщения для пользователя, включающее множество параметров. Разработчик может делать это через СтрШаблон() или СтрСоединить(), а может — через простую конкатенацию (соединение) строк. Если кандидат использует последний вариант — это считается небольшим минусом: для пользователя результат будет тот же, но вот понять из кода, как он будет примерно выглядеть — заметно сложнее.</p>
+<p>Однако тут есть другой аспект. В первой половине прошлого года «Рарус» опубликовал <a href="http://techlab.rarus.ru/upload/iblock/2/185/Beeline-obespechenie-bespereboynoy-raboti.pdf" rel="noopener noreferrer" target="_blank">отчет</a> о работах, проделанных для «Билайна». Там много любопытного, но среди прочего есть совершенно оглушительный пункт: за счет отказа от соединения строк разработчики добились 40% снижения нагрузки на процессоры! От двух дополнительных серверов после этих изменений вообще отказались, так как они стали не нужны.</p>
+<p>Проблема возникала из-за того, чтобы рабочие процессы тратили слишком много времени на распределение памяти для склейки строк. В случае однократного соединения заметной нагрузки не возникает, однако когда мы, например, собираем большой запрос в цикле и делаем это многократно — нагрузка растет лавинообразно. Конкатенацию в таких случаях использовать нельзя, правильный вариант — все те же СтрШаблон() или СтрСоединить(). На старых версиях платформы, где этих методов нет, можно применять объект текстового документа — добавлять в него строки, а потом получать текст.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1274,57 +1327,6 @@
               <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/YFHHGETsxkE" width="560"></iframe>
 <p>Крутая экранизация «<a href="https://store.steampowered.com/app/239030/Papers_Please/" rel="noopener noreferrer" target="_blank">Papers, Please</a>», даром что на десять минут. Савочкин здорово сыграл, да и остальные не подкачали, включая сценариста. Запихнуть в такой хронометраж драму и сюжетный твист — это надо уметь.</p>
 <p>Если вспомнить, что экранизации видеоигр обычно звёзд с небес не хватают — эту можно считать блестящим экземпляром.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/why-so-serious"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Чего так серьезно?
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>17 февраля 2018</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
-                    
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="code-smell" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Код с запашком</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Иногда при отладке какого-нибудь сложного механизма не хватает времени на адекватные имена переменных и методов. Как итог — в коде появляются загадочные КакогоФига, ПрименитьМагию и прочие ЖивыеНеудачи.</p>
-<p>Этого нужно избегать, правда. На первый взгляд, конечно, смотрится забавно, но через месяц-другой написанный код нужно будет доработать — и тут-то проблема встанет в полный рост! Материться сквозь зубы на автора не выйдет лишь потому, что автор — ты сам.</p>
             </div>
           </div>
           

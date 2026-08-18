@@ -226,6 +226,13 @@
         </button>
         
         <button
+          data-chip="ai"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          ИИ
+        </button>
+        
+        <button
           data-chip="code-smell"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
@@ -244,13 +251,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Obsidian
-        </button>
-        
-        <button
-          data-chip="ai"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          ИИ
         </button>
         
         <button
@@ -363,6 +363,60 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/miku-codex-pet"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Мику-питомец для Codex
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>18 августа 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="ai" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">ИИ</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>В десктопном <a href="https://openai.com/codex" rel="noopener noreferrer" target="_blank">Codex</a> есть питомцы — пиксельные персонажи, которые рендерятся поверх UI и показывают, чем занят агент: работает — идёт, ждёт ответа — зовёт пользователя, застрял — жмурится и так далее. Общая идея в том, что пользователь запускает какой-нибудь флоу, переключается на свои дела и краем глаза видит, как там всё идёт.</p>
+<p>Фича не особенно полезная, но забавная. Правда, встроенные питомцы мне не зашли; полез смотреть работы сообщества и внезапно на ровном месте разогнался сделать своего — на базе дизайна Хацуне Мику из <a href="https://chaim-videogames.itch.io/mikun-pop" rel="noopener noreferrer" target="_blank">Miku'n POP</a>, старого-престарого платформера.</p>
+<p>Оказалось, не особенно сложно. Спрайты я взял из <a href="https://github.com/CharlesWiiFlowers/MikuPet" rel="noopener noreferrer" target="_blank">MikuPet</a> (автор использует тот же дизайн из Miku'n POP). Сам формат питомца довольно логичный, да и благодаря тому же Codex копаться в нём особо не пришлось. Дольше <a href="https://github.com/vkostyanetsky/MikuCodexPet/blob/main/ATTRIBUTION.ru.md" rel="noopener noreferrer" target="_blank">разбирался</a>, кому там принадлежит арт, на каких условиях его можно переиспользовать и так далее.</p>
+<p>Питомца можно <a href="https://github.com/vkostyanetsky/MikuCodexPet/releases" rel="noopener noreferrer" target="_blank">скачать</a> с GitHub, там же скриншот и <a href="https://github.com/vkostyanetsky/MikuCodexPet" rel="noopener noreferrer" target="_blank">подробные описания</a> того, что внутри барабанчика.</p>
+<p>Бесплатный бонус: <a href="https://github.com/vkostyanetsky/MikuCodexPet/actions/workflows/release.yml" rel="noopener noreferrer" target="_blank">сборщик</a> релизов в таком проекте можно назвать «Release pet» :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1527,55 +1581,6 @@ CREATE NONCLUSTERED INDEX IX_DataHistoryVersions_MetadataVersionNumber
 <p>Вот и я так же. Последний месяц довожу до ума модель школьного класса музыки и знаете что? Об устройстве рояля я уже узнал больше, чем за всю предыдущую жизнь. А ещё могу прочитать короткую лекцию о системах отопления в российских школах: секционных батареях, панельных, чугунных и алюминиевых, какие чаще встречаются, расстояниях между ними, почему не надо подключать три в ряд и так далее :)</p>
 <p>Я читал об этом эффекте: мол, рисуешь, например, самурайскую броню — по ходу дела волей-неволей много узнаешь о свойствах кожи, видах металла и технологическом стеке самурайской эпохи в целом. Не думал, правда, что столкнусь с этим буквально с самого начала — но, думаю, это хорошо. Стимуляция нейронных связей, расширение видения мира, развитие креативности и всё такое.</p>
 <p>Ну и в целом интереснее работать с моделью, когда понимаешь, что там, так сказать, внутри барабанчика.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/easter-eggs"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Пасхалки
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>6 апреля 2025</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p><img alt="Thank you, Mario!" src="https://kostyanetsky.ru/notes/easter-eggs/mario.jpg"/></p>
-<p><img alt="Awaiting Signal" src="https://kostyanetsky.ru/notes/easter-eggs/mothership.jpg"/></p>
-<p>Пара пасхалок, которые можно найти внутри FirstBit ERP. Спрятаны для разработчиков: пользователи в первом случае видят на форме заголовок и текст оповещения, а во втором — стандартное waiting for connection.</p>
-<p>Люблю время от времени делать такие штуки: это весело, а ещё — помогает не скучать, даже если задача не слишком увлекает или просто устал. Если не читали заметку «<a href="https://collab.ldwg.ru/stressless-design" rel="noopener noreferrer" target="_blank">Дизайн без стресса</a>» Быстроновского — прочитайте, она клёвая (а я все равно не сформулирую лучше).</p>
-<p>Вот, кстати, ещё одна пасхалка. Эта уже не из нашей ERP, а из нового инструмента по автоматическому обновлению баз. Его мы пишем сами для себя, поэтому можно хохмить с пользователем :)</p>
-<p><img alt="Nice try, Marty!" src="https://kostyanetsky.ru/notes/easter-eggs/marty.jpg"/></p>
             </div>
           </div>
           
