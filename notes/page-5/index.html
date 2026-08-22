@@ -219,17 +219,17 @@
         </button>
         
         <button
-          data-chip="mssql"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          MS SQL
-        </button>
-        
-        <button
           data-chip="ai"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           ИИ
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
         </button>
         
         <button
@@ -363,6 +363,69 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/infostart-event-2021"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Infostart Event 2021
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>16 ноября 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>На прошлой неделе сгонял в Москву на <a href="https://event.infostart.ru/2021_msk/" rel="noopener noreferrer" target="_blank">Infostart Event 2021</a>:</p>
+<ul>
+<li>Послушать дюжину докладов о разработке и близких темах — check;</li>
+<li>Развиртуализоваться с несколькими классными людьми — check;</li>
+<li>Поболтать с друзьями — check!</li>
+</ul>
+<p>По итогу неожиданно почуствовал себя отдохнувшим — и это несмотря на перелёты, нервы и суету. Думаю, дело в том, что я удалёнщик; было по-настоящему здорово посмотреть на такое количество коллег вживую, а не в виде потока электронов.</p>
+<p>Чтобы два раза не <s>вставать</s> летать, сдал в офисе PostgresPro <a href="https://postgrespro.ru/education/exam/DBA1-10" rel="noopener noreferrer" target="_blank">входной тест</a> по администрированию PostgreSQL. Впереди ещё три, а финального пока вообще не существует — но дорогу осилит идущий, так вижу.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1458,57 +1521,6 @@ MultiMonitorTool.exe /switch 2
 <p>В общем, так или иначе мы получим имя регистра. Открываем его форму и простой сортировкой по периоду выходим на <a href="https://kostyanetsky.ru/notes/date-literal-exceeds-3999/entries.png" rel="noopener noreferrer" target="_blank">проблемные движения</a>. Нужно проанализировать документы, которые их сделали, устранить причину ошибки и перепровести документы. Если после этого проблема с пересчетом останется — это либо не единственная таблица с проблемными датами (ищем дальше), либо эти даты успели засесть где-то ещё, кроме таблицы движений.</p>
 <p>Например, у меня был случай, когда после исправления движений записи с некорректными датами сохранялись в таблице оборотов. Средствами платформы их удалить было нельзя, но размер базы позволял играться с реструктуризацией. Я выкинул следующий финт: отключил признак «Использование в итогах» для всех измерений регистра и применил изменения; потом вернул признак на место и пересчитал итоги. В итоге таблица оборотов регистра была физически удалена, а потом создана и наполнена заново — уже без дат на много веков вперёд.</p>
 <p>В крайнем случае можно было удалить проблемные записи с помощью прямых SQL-запросов (DELETE или даже TRUNCATE). Но это, во-первых, нарушает лицензионное соглашение с разработчиками платформы, а во вторых — опасно (по неосторожности можно удалить что-то важное и не заметить). Так что не советую, э-э, повторять в домашних условиях :-)</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/do-you-see-it"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Определение видимости объекта
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>17 января 2021</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>В платформе сразу несколько механик решает, видит пользователь некий объект метаданных или нет. Одна из них — функциональные опции. Если вы раньше не имели с ними дела, в двух словах дела обстоят так: объект можно добавить в состав опции, которая внутри конкретной базы может как быть активной (и видимой пользователям), так и неактивной (и, соответственно, скрытой). Объект можно засунуть в несколько опций сразу (и тогда он отображается, если активна хотя бы одна из них) или не включать вообще никуда (и тогда пользователи его видят в любом случае).</p>
-<p>Так вот, помню, лет пять назад я искал способ понять из кода — видит пользователь объект или нет? Чисто с точки зрения функциональных опций. Тогда я почему-то не нашел решения, а ведь оно до смешного простое; вот, например, <a href="https://gist.github.com/vkostyanetsky/a6c0525c38a8231f37a676ec240d657a" rel="noopener noreferrer" target="_blank">функция</a> ровно для этого. Логика:</p>
-<ol>
-<li>Перебираем опции и ищем объект в составе каждой из них.</li>
-<li>Если объект есть в составе опции, проверяем: опция активна? Если да — значит, пользователь видит объект.</li>
-<li>Если объект не включен ни в одну опцию — тоже видит.</li>
-</ol>
-<p>Конечно, результаты такого анализа как минимум нужно кэшировать (хотя бы из-за запроса в цикле), но в остальном он вполне адекватен. Никак не возьму в толк, почему я тогда не написал что-то похожее? Ох, надеюсь, спустя следующие пять лет мои нынешние занозы в заднице тоже будут отлетать на раз-два-три.</p>
             </div>
           </div>
           

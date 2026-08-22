@@ -219,17 +219,17 @@
         </button>
         
         <button
-          data-chip="mssql"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          MS SQL
-        </button>
-        
-        <button
           data-chip="ai"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           ИИ
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
         </button>
         
         <button
@@ -363,6 +363,51 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/big-table-at-client"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Большая таблица на клиенте
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>19 мая 2019</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Про нюансы работы со здоровенными таблицами на клиенте я уже пару раз писал (<a href="https://kostyanetsky.ru/notes/find-rows-at-client" rel="noopener noreferrer" target="_blank">раз</a>, <a href="https://kostyanetsky.ru/notes/big-value-tables" rel="noopener noreferrer" target="_blank">два</a>), но в конце прошлой недели коллеги подсказали ещё один любопытный способ оптимизации работы с относительно большими коллекциями данных на клиенте. Вкратце: стандарт <a href="https://its.1c.ru/db/v8std#content:628:hdoc" rel="noopener noreferrer" target="_blank">советует</a> работать с большими коллекциями только на сервере, однако если сразу обойти всю коллекцию на клиенте (например, в обработчике открытия формы) — она закешируется. В итоге последующие обходы, поиск строк и другая работа с данными не будут требовать дополнительных серверных вызовов. Суммарные расходы при таком подходе получаются ниже.</p>
+<p>Погонял сейчас простые тесты — да, похоже, что так и есть. Метод выглядит отчасти костыльно и на серьезных нагрузках я его ещё не проверял — но, вероятно, его вполне можно иметь ввиду.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1359,52 +1404,6 @@
 <p>Поначалу я даже не понял, с какого конца это жевать. Поискал перевод иероглифа — Википедия лишь сухо сообщила, что это такой <a href="https://en.wiktionary.org/wiki/%E4%80%80" rel="noopener noreferrer" target="_blank">тип чашки</a>, а Google Translate вообще <a href="https://translate.google.com/#view=home&amp;op=translate&amp;sl=auto&amp;tl=ru&amp;text=%E4%80%80" rel="noopener noreferrer" target="_blank">развёл руками</a>.</p>
 <p>Коллега заметил, что символ отдаленно похож на складского сортировщика — мол, перекладывает что-то там себе между коробками. Не знаю, не знаю. По-моему, больше напоминает барабанщика за работой. Но что, черт побери, это значит? Может быть, 1С пытается что-то мне сказать? Что-то про музыку?</p>
 <p>Может, мне нужно было стать басистом, а не вот это всё.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/temporary-tables-deletion"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Удаление временных таблиц
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>7 февраля 2019</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Любопытная деталь: при закрытии менеджера временных таблиц не происходит удаления этих таблиц из tempdb. Актуально и для прямого вызова метода Закрыть() объекта менеджера, и для неявного варианта (когда объект менеджера уничтожается при завершении метода, в котором он был создан). На деле в обеих случаях выполняется только TRUNCATE, который удаляет данные таблицы; сама же таблица остаётся на случай, если пользователь снова выполнит запрос с таким же составом полей (это выгоднее, чем заново её создавать).</p>
-<p>То же самое (удаление данных, но не самой таблицы) происходит при прямом вызове УНИЧТОЖИТЬ из текста запроса. К слову, эта команда вообще редко бывает осмыслена — разве что если объект менеджера живет сравнительно долго, а во временную таблицу помещён большой объем данных, от которого хочется побыстрее избавиться.</p>
-<p>Что до удаления таблицы, то оно выполняется только при закрытии соединения с сервером приложений.</p>
             </div>
           </div>
           

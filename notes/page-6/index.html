@@ -219,17 +219,17 @@
         </button>
         
         <button
-          data-chip="mssql"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          MS SQL
-        </button>
-        
-        <button
           data-chip="ai"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           ИИ
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
         </button>
         
         <button
@@ -363,6 +363,57 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/do-you-see-it"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Определение видимости объекта
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 января 2021</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>В платформе сразу несколько механик решает, видит пользователь некий объект метаданных или нет. Одна из них — функциональные опции. Если вы раньше не имели с ними дела, в двух словах дела обстоят так: объект можно добавить в состав опции, которая внутри конкретной базы может как быть активной (и видимой пользователям), так и неактивной (и, соответственно, скрытой). Объект можно засунуть в несколько опций сразу (и тогда он отображается, если активна хотя бы одна из них) или не включать вообще никуда (и тогда пользователи его видят в любом случае).</p>
+<p>Так вот, помню, лет пять назад я искал способ понять из кода — видит пользователь объект или нет? Чисто с точки зрения функциональных опций. Тогда я почему-то не нашел решения, а ведь оно до смешного простое; вот, например, <a href="https://gist.github.com/vkostyanetsky/a6c0525c38a8231f37a676ec240d657a" rel="noopener noreferrer" target="_blank">функция</a> ровно для этого. Логика:</p>
+<ol>
+<li>Перебираем опции и ищем объект в составе каждой из них.</li>
+<li>Если объект есть в составе опции, проверяем: опция активна? Если да — значит, пользователь видит объект.</li>
+<li>Если объект не включен ни в одну опцию — тоже видит.</li>
+</ol>
+<p>Конечно, результаты такого анализа как минимум нужно кэшировать (хотя бы из-за запроса в цикле), но в остальном он вполне адекватен. Никак не возьму в толк, почему я тогда не написал что-то похожее? Ох, надеюсь, спустя следующие пять лет мои нынешние занозы в заднице тоже будут отлетать на раз-два-три.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1498,55 +1549,6 @@ WHERE
 <p>Ну, как жизнеспособное? С одной стороны, главное у меня получилось — я разработал клиентское веб-приложение, которое ходит на сервер только за данными, а весь интерфейс собирает само. С другой — пришлось накрутить на фреймворк целую армию <s>костылей</s> хуков даже для самых простых штук (вроде подсветки элементов меню или, скажем, выдачи правильных кодов HTTP). Кое-что я вообще с наскока реализовать не смог — например, выдачу HTML-версий страниц для Яндекса (их пауки в 2020-м году не умеют индексировать сайты на JavaScript).</p>
 <p>В общем, опыт вышел полезным, но результат — настолько спорным, что в конце концов я бросил эту затею, а получившегося Франкенштейна <a href="https://github.com/vkostyanetsky/VuejsBlog" rel="noopener noreferrer" target="_blank">выложил</a> на GitHub. Возможно, он кому-то сэкономит время на решение задач в духе «как вывести через Vue.js произвольный HTML» или «как научить VueI18n работать с русским языком».</p>
 <p>Документации там нет, правда. Я сначала хотел подробно расписать, как что работает, но быстро понял, что потрачу уйму времени без видимой пользы. Вероятно, буду возвращаться к этой теме под настроение — а пока, так сказать, ограничимся парадигмой MVP :-)</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/broken-bicycle"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Сломанный велосипед
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>20 июля 2020</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p><a href="https://www.1ci.com/applications/1c-drive/" rel="noopener noreferrer" target="_blank"><img alt="1C:Drive" src="https://kostyanetsky.ru/notes/broken-bicycle/broken-bicycle.png"/></a></p>
-<p>Думаю, эту картинку для 1Ci нарисовал человек, прямо вот максимально далекий от разработки самой конфигурации и программирования вообще. Потому как программист видит на ней ровно два месседжа о продукте: </p>
-<ol>
-<li>Это велосипед.</li>
-<li>Он сломан.</li>
-</ol>
             </div>
           </div>
           

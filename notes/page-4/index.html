@@ -219,17 +219,17 @@
         </button>
         
         <button
-          data-chip="mssql"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          MS SQL
-        </button>
-        
-        <button
           data-chip="ai"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           ИИ
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
         </button>
         
         <button
@@ -363,6 +363,53 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/do-you-speak-english"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Ду ю спик инглиш?
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>14 мая 2023</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Диалог входа в хранилище конфигурации актуальной версии платформы (8.3.22.1923, если быть точным), запущенной с английским интерфейсом:</p>
+<p><img alt="Диалог входа" src="https://kostyanetsky.ru/notes/do-you-speak-english/login-form.png"/></p>
+<p>Слышал, что развитие Конфигуратора остановилось во многом из-за чудовищного количества технического долга, тормозящего любые новые фичи. Но тут интерфейс поехал прямо на одном из первых окон приложения! Любопытно, как это пролезло через тесты. </p>
+<p>Может, их и вовсе нет.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1416,69 +1463,6 @@ EndProcedure
 <p><a href="https://twitter.com/EffinBirds/status/1488165946342662144" rel="noopener noreferrer" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/reuse-carefully/snap-tweet-EffinBirds-1488165946342662144.png"/></a></p>
 <p>По-хорошему, платформе стоило бы швыряться исключениями при попытке поменять кэш, но пока этого не происходит — надо бить себя по рукам самостоятельно. Например, при разработке кэшируемых модулей возвращать из них неизменяемые типы данных (ФиксированнаяСтруктура вместо Структура, ФиксированныйМассив вместо Массив и так далее). Это, правда, не стопроцентная защита: во-первых, фиксированные типы не везде применимы, а во-вторых — даже в последних версиях БСП это делается далеко не везде. Много конфигураций сейчас пишется не на БСП?</p>
 <p>Сонар тоже пока не умеет ловить проблему, а про менее популярные средства я вообще молчу. Никакой серебрянной пули, короче — следим за своим кодом, поглядываем в код коллег и стараемся не забывать об ещё одном изящном способе бахнуть себе в ногу.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/infostart-event-2021"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Infostart Event 2021
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>16 ноября 2021</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
-                    
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
-                    
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="pgsql" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">PostgreSQL</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>На прошлой неделе сгонял в Москву на <a href="https://event.infostart.ru/2021_msk/" rel="noopener noreferrer" target="_blank">Infostart Event 2021</a>:</p>
-<ul>
-<li>Послушать дюжину докладов о разработке и близких темах — check;</li>
-<li>Развиртуализоваться с несколькими классными людьми — check;</li>
-<li>Поболтать с друзьями — check!</li>
-</ul>
-<p>По итогу неожиданно почуствовал себя отдохнувшим — и это несмотря на перелёты, нервы и суету. Думаю, дело в том, что я удалёнщик; было по-настоящему здорово посмотреть на такое количество коллег вживую, а не в виде потока электронов.</p>
-<p>Чтобы два раза не <s>вставать</s> летать, сдал в офисе PostgresPro <a href="https://postgrespro.ru/education/exam/DBA1-10" rel="noopener noreferrer" target="_blank">входной тест</a> по администрированию PostgreSQL. Впереди ещё три, а финального пока вообще не существует — но дорогу осилит идущий, так вижу.</p>
             </div>
           </div>
           

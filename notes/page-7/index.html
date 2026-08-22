@@ -219,17 +219,17 @@
         </button>
         
         <button
-          data-chip="mssql"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          MS SQL
-        </button>
-        
-        <button
           data-chip="ai"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           ИИ
+        </button>
+        
+        <button
+          data-chip="mssql"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          MS SQL
         </button>
         
         <button
@@ -363,6 +363,55 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/broken-bicycle"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Сломанный велосипед
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>20 июля 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><a href="https://www.1ci.com/applications/1c-drive/" rel="noopener noreferrer" target="_blank"><img alt="1C:Drive" src="https://kostyanetsky.ru/notes/broken-bicycle/broken-bicycle.png"/></a></p>
+<p>Думаю, эту картинку для 1Ci нарисовал человек, прямо вот максимально далекий от разработки самой конфигурации и программирования вообще. Потому как программист видит на ней ровно два месседжа о продукте: </p>
+<ol>
+<li>Это велосипед.</li>
+<li>Он сломан.</li>
+</ol>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1418,52 +1467,6 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
 <li>В параметрах отладки конфигуратором (Сервис → Параметры → Отладка) указать HTTP как протокол отладки и сервер отладки кластера как сервер отладки.</li>
 </ul>
 <p>Подробнее процесс настройки <a href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001604" rel="noopener noreferrer" target="_blank">описан</a> на ИТС.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/unsupported-code"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Неподдерживаемый код
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>18 января 2020</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Случайно наткнулся на <a href="https://helpf.pro/faq/view/1907.html" rel="noopener noreferrer" target="_blank">пример</a> запроса в 1С, который считает разницу между двумя датами (в годах, месяцах и днях).</p>
-<p>Код, возможно, действительно работает (я не проверял), но как по мне — это хороший пример того, как делать не надо. Проблема в том, что автор забудет смысл большинства если-тогда-иначе через пару месяцев, не говоря уже о посторонних разработчиках, которые решат использовать этот код на своих проектах. В итоге при первой же доработке, которую потребуется провернуть на этом участке, куда дешевле будет заменить решение на что-то более наглядное, а не доработать.</p>
-<p>И это еще далеко не самый наглядный пример. Взять хотя бы <a href="http://www.google.ru/search?q=email+regex" rel="noopener noreferrer" target="_blank">регулярки для проверки e-mail</a>. Хочется выйти подышать, да? :-)</p>
             </div>
           </div>
           
