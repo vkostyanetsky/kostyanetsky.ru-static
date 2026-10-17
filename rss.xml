@@ -5,35 +5,38 @@
         <language>ru</language>
         <link>https://kostyanetsky.ru</link>
         
-        <lastBuildDate>Sat, 17 Oct 2026 19:24:10 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 17 Oct 2026 19:24:11 +0000</lastBuildDate>
         
         
         <item>
             <title>Ноу-хау 1С насчет хранения UUID в базе данных</title>
             <link>https://kostyanetsky.ru/notes/reordered-uuid</link>
             <guid isPermaLink="false">note-reordered-uuid</guid>
-            <pubDate>Sat, 17 Oct 2026 19:24:10 +0000</pubDate>
+            <pubDate>Sat, 17 Oct 2026 19:24:11 +0000</pubDate>
             <description>&lt;p&gt;В очередной раз чинил наш фреш (там опять приключения с историей данных, расскажу как-нибудь при случае) и снова столкнулся с ноу-хау платформы по хранению UUID в базе данных, так что решил об этом написать.&lt;/p&gt;
 &lt;p&gt;Короче, UUID объектов метаданных, как и UUID обычных ссылок, хранятся в БД 1С в виде шестнадцати байт. Причём, если посмотреть на них, на UUID они вообще не похожи: например, &lt;code&gt;8e1f9db8-4be2-11ed-a101-2c4d5450919d&lt;/code&gt; в базе выглядит как &lt;code&gt;0xA1012C4D5450919D11ED4BE28E1F9DB8&lt;/code&gt;. Когда я первый раз это увидел, подумал: какой-то хэш или фокус-покус с little-endian.&lt;/p&gt;
 &lt;p&gt;На деле же платформа просто переставляет группы UUID, сохраняя порядок байтов внутри каждой:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;UUID:   aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
-SQL:    dddd eeeeeeeeeeee cccc bbbb aaaaaaaa&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;UUID:   aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+SQL:    dddd eeeeeeeeeeee cccc bbbb aaaaaaaa
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Почему так? Думаю, это попытка оптимизировать работу индексов СУБД. Дело в том, что платформа использует UUID v1 при автоматической генерации ссылок на документы, элементы справочников и другие объекты ссылочных типов. Такой UUID базируется на времени, и метка времени в нём разбита на три части. Сначала идёт её младшая часть, затем средняя и старшая:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;8e1f9db8-4be2-11ed-a101-2c4d5450919d
+&lt;pre&gt;&lt;code&gt;8e1f9db8-4be2-11ed-a101-2c4d5450919d
 │        │    │    │    │
 │        │    │    │    └─ Node ID (48 бит)
 │        │    │    └────── Clock sequence + variant (16 бит)
 │        │    └─────────── Time high + version (16 бит)
 │        └──────────────── Time mid (16 бит)
-└───────────────────────── Time low (32 бит)&lt;/code&gt;&lt;/p&gt;
+└───────────────────────── Time low (32 бит)
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;В базе 1С тот же UUID выглядит так:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;0xA1012C4D5450919D11ED4BE28E1F9DB8
+&lt;pre&gt;&lt;code&gt;0xA1012C4D5450919D11ED4BE28E1F9DB8
   │   │           │   │   │
   │   │           │   │   └─ Time low (32 бит)
   │   │           │   └───── Time mid (16 бит)
   │   │           └───────── Time high + version (16 бит)
   │   └───────────────────── Node ID (48 бит)
-  └───────────────────────── Clock sequence + variant (16 бит)&lt;/code&gt;&lt;/p&gt;
+  └───────────────────────── Clock sequence + variant (16 бит)
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Получается, после перестановки части метки времени идут от старшей к младшей, и при одинаковых clock sequence и node ID такие UUID будут строго возрастающими.&lt;/p&gt;
 &lt;p&gt;Ссылки — часть ключей индексов. Если ключи индексов приходят в случайном порядке, они попадают в разные места B-tree, и когда нужная страница индекса уже заполнена, её приходится делить: выделять новую страницу, переносить туда часть записей и обновлять ссылки в дереве. Эта операция называется page split; она может усиливать фрагментацию индекса и снижать производительность как сама по себе, так и виде последствий.&lt;/p&gt;
 &lt;p&gt;Если же ключи в основном возрастают, новые записи обычно добавляются в конец индекса. Страницы заполняются последовательнее, и вставки часто обходятся дешевле. &lt;/p&gt;
