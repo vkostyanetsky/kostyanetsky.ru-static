@@ -132,24 +132,27 @@
         <div class="relative w-full sm:w-[420px]">
           <input
             id="search"
+            aria-busy="false"
             type="search"
             placeholder="Поиск по заголовку / тексту / тегам…"
             class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
           />
-          <svg
-            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
-            />
-          </svg>
+          
+  <svg
+    class="search-indicator pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+    aria-hidden="true"
+  >
+    <path class="search-symbol" stroke-linecap="round" stroke-linejoin="round"
+      d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+    <circle class="search-spinner" cx="12" cy="12" r="8"
+      stroke-linecap="round" stroke-dasharray="38 13" />
+  </svg>
+
         </div>
 
         <p class="text-sm text-slate-600">
@@ -282,6 +285,13 @@
         </button>
         
         <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Оптимизация
+        </button>
+        
+        <button
           data-chip="python"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
@@ -307,13 +317,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Грузия
-        </button>
-        
-        <button
-          data-chip="optimization"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          Оптимизация
         </button>
         
         <button
@@ -363,6 +366,77 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/vuejs-blog"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Блог на Vue.js
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>21 июля 2020</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="blog" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Блог</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="webdev" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Вебдев</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="nodejs" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Node.js</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="javascript" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Javascript</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>В середине прошлого года я <a href="https://kostyanetsky.ru/notes/so-much" rel="noopener noreferrer" target="_blank">загорелся</a> идеей переписать этот сайт на чем-то посовременнее PHP, выбрал Vue.js в качестве фреймворка и принялся за дело. JavaScript я на тот момент почти не знал, поэтому набил прорву шишек на кейсах в духе «метод вывода даты падает в Safari» — однако в итоге получил вполне жизнеспособное приложение.</p>
+<p>Ну, как жизнеспособное? С одной стороны, главное у меня получилось — я разработал клиентское веб-приложение, которое ходит на сервер только за данными, а весь интерфейс собирает само. С другой — пришлось накрутить на фреймворк целую армию <s>костылей</s> хуков даже для самых простых штук (вроде подсветки элементов меню или, скажем, выдачи правильных кодов HTTP). Кое-что я вообще с наскока реализовать не смог — например, выдачу HTML-версий страниц для Яндекса (их пауки в 2020-м году не умеют индексировать сайты на JavaScript).</p>
+<p>В общем, опыт вышел полезным, но результат — настолько спорным, что в конце концов я бросил эту затею, а получившегося Франкенштейна <a href="https://github.com/vkostyanetsky/VuejsBlog" rel="noopener noreferrer" target="_blank">выложил</a> на GitHub. Возможно, он кому-то сэкономит время на решение задач в духе «как вывести через Vue.js произвольный HTML» или «как научить VueI18n работать с русским языком».</p>
+<p>Документации там нет, правда. Я сначала хотел подробно расписать, как что работает, но быстро понял, что потрачу уйму времени без видимой пользы. Вероятно, буду возвращаться к этой теме под настроение — а пока, так сказать, ограничимся парадигмой MVP :-)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1423,57 +1497,6 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
 
 
         
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/debug-via-http"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Отладка через HTTP
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>26 января 2020</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>В конце недели столкнулся с довольно глупой ситуацией: отладка через TCP/IP на сервере 1С перестала работать. То есть сам по себе режим отладки включен, однако конфигуратор «не видит» контекстов отладки на сервере.</p>
-<p>Ситуация глупая в том смысле, что понять причину довольно сложно: явных ошибок платформа не выдает. После проверки очевидных вариантов (фаервол, порты и так далее) остается только руками разводить. </p>
-<p>Решил проблему, переключившись на отладку через HTTP. Инфрастуктурно это более сложная <a href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001599" rel="noopener noreferrer" target="_blank">схема</a>, но настраивается она довольно просто; если вкратце, то нужно:</p>
-<ul>
-<li>Запустить службу агента сервера с ключами «-debug -http».</li>
-<li>В параметрах отладки конфигуратором (Сервис → Параметры → Отладка) указать HTTP как протокол отладки и сервер отладки кластера как сервер отладки.</li>
-</ul>
-<p>Подробнее процесс настройки <a href="https://its.1c.ru/db/v8310doc#bookmark:dev:TI000001604" rel="noopener noreferrer" target="_blank">описан</a> на ИТС.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
       </section>
 
       <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
@@ -1539,6 +1562,12 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
 
   let notesCache = null;
   let notesLoadPromise = null;
+  let searchVersion = 0;
+
+  function setSearchBusy(busy) {
+    searchEl.setAttribute("aria-busy", String(busy));
+    dynamicNotesEl.setAttribute("aria-busy", String(busy));
+  }
 
   // Tag filter state (chip)
   let activeTag = pageTag || "all";
@@ -1666,7 +1695,9 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
   }
 
   async function runSearch() {
+    const version = ++searchVersion;
     const q = (searchEl.value || "").trim();
+    const tag = activeTag;
     const hasQ = q.length > 0;
     const hasTag = activeTag && activeTag !== "all";
 
@@ -1676,37 +1707,50 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
       // means leaving the page for the common list.
 
       if (!hasTag) {
+        setSearchBusy(false);
         try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
         window.location.href = notesListUrl;
         return;
       }
 
       if (activeTag === pageTag && !hasQ) {
+        setSearchBusy(false);
         showStaticMode();
         return;
       }
     } else if (!hasQ && !hasTag) {
+      setSearchBusy(false);
       try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
       showStaticMode();
       return;
     }
 
     showSearchMode();
-
-    const notes = await loadNotesJsonOnce();
-    const filtered = filterNotes(notes, q, activeTag);
-
-    countEl.textContent = String(filtered.length);
-    pageInfoEl.textContent = makeSearchLabel(q, activeTag);
-
-    if (filtered.length === 0) {
-      dynamicNotesEl.innerHTML = "";
-      emptyEl.classList.remove("hidden");
-      return;
-    }
-
+    setSearchBusy(true);
     emptyEl.classList.add("hidden");
-    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+
+    try {
+      // Allow the busy icon to paint even when the index is already cached.
+      await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      if (version !== searchVersion) return;
+      const notes = await loadNotesJsonOnce();
+      if (version !== searchVersion) return;
+      const filtered = filterNotes(notes, q, tag);
+
+      countEl.textContent = String(filtered.length);
+      pageInfoEl.textContent = makeSearchLabel(q, tag);
+
+      if (filtered.length === 0) {
+        dynamicNotesEl.innerHTML = "";
+        emptyEl.classList.remove("hidden");
+        return;
+      }
+
+      emptyEl.classList.add("hidden");
+      dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+    } finally {
+      if (version === searchVersion) setSearchBusy(false);
+    }
   }
 
   // Initial render
@@ -1714,7 +1758,13 @@ get-service -Name *SQL* | Where-Object {$_.status -eq 'running'} | stop-service 
   showStaticMode();
 
   // Text search handler
-  searchEl.addEventListener("input", debounce(runSearch, 200));
+  const debouncedSearch = debounce(runSearch, 200);
+  searchEl.addEventListener("input", () => {
+    // Invalidate an in-flight search immediately, including during debounce.
+    ++searchVersion;
+    setSearchBusy(true);
+    debouncedSearch();
+  });
 
   // Tag chips handler.
   //

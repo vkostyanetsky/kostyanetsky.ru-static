@@ -1,0 +1,238 @@
+﻿
+
+<!doctype html>
+<html lang="ru" class="text-[18px] leading-[1.65]">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Ноу-хау 1С насчет хранения UUID в базе данных</title>
+
+    <meta name="description" content="Как 1С хранит UUID в базе данных и при чём тут индексы." />
+    
+    <!-- RSS -->
+
+    <link rel="alternate" type="application/rss+xml" title="Сайт Влада" href="https://kostyanetsky.ru/rss.xml" />
+
+    <!-- Icons -->
+
+    <link rel="icon" href="https://kostyanetsky.ru/favicon.ico">
+    <link rel="icon" href="https://kostyanetsky.ru/assets/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://kostyanetsky.ru/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://kostyanetsky.ru/manifest.webmanifest">    
+
+    <!-- Open Graph -->
+
+    <meta property="og:title" content="Ноу-хау 1С насчет хранения UUID в базе данных"/>
+    <meta property="og:description" content="Как 1С хранит UUID в базе данных и при чём тут индексы."/>
+    <meta property="og:image" content="https://kostyanetsky.ru/assets/images/og.jpg">
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content= "https://kostyanetsky.ru/notes/reordered-uuid" />    
+
+    <!-- CSS -->
+     
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
+
+    <!-- Blog -->
+
+    <script>
+        let ctrlLeftUrl     = "https://kostyanetsky.ru/notes/egorova";
+        let ctrlRightUrl    = "";
+    </script>
+    
+    <script src="https://kostyanetsky.ru/assets/js/hotkeys.js"></script>    
+
+  </head>
+
+  <body class="min-h-screen bg-white text-slate-900">
+
+    <!-- header -->
+    <header class="border-b border-slate-200">
+        <div class="mx-auto w-full max-w-4xl px-4 py-5">
+            <div class="flex flex-wrap items-baseline gap-x-5 gap-y-2">
+
+                <!-- header: main menu -->
+                <nav class="flex flex-wrap items-baseline gap-x-5 gap-y-2 text-sm">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/">Сайт Влада</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-blue-600" href="https://kostyanetsky.ru/projects/">Проекты</a>
+                    
+
+                    
+                    
+                    <a class="inline-block text-[1.25rem] leading-tight mr-4 border-b border-current no-underline transition-opacity hover:opacity-70 text-orange-600" href="https://kostyanetsky.ru/notes/">Заметки</a>
+                    
+                </nav>
+
+                <!-- header: mirror link & edit link -->
+                <div class="ml-auto flex items-center gap-4">
+                    
+                    
+                        <a
+                        title="Видите опечатку? Поправьте меня!"
+                        href="https://github.com/vkostyanetsky/kostyanetsky.ru/edit/main/notes/reordered-uuid/index.md"
+                        class="inline-block text-[1.35rem] leading-none text-blue-600 no-underline transition-opacity hover:opacity-70"
+                        >✎</a>
+                    
+                    
+
+                    
+                    
+                    <a
+                        href="https://kostyanetsky.me/notes/reordered-uuid"
+                        class="inline-block text-[1rem] leading-tight text-blue-600 border-b border-current no-underline transition-opacity hover:opacity-70"
+                        title="EN"
+                    >
+                        EN
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- content -->
+    <main
+      class="mx-auto w-full max-w-4xl px-4 py-10"
+      id="pageMeta"
+      data-page=""
+      data-total-notes=""
+      data-total-pages=""
+    >
+      <a id="top" class="block scroll-mt-24"></a>
+
+      
+
+      <section id="staticNotes" class="space-y-12">
+        <article class="rounded-2xl bg-white">
+          
+          <header class="text-3xl font-semibold tracking-tight space-y-2">
+            Ноу-хау 1С насчет хранения UUID в базе данных
+          </header>
+
+          
+          <div class="mt-5">
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 октября 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <a href="https://kostyanetsky.ru/notes/tags/1c/" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</a>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <a href="https://kostyanetsky.ru/notes/tags/optimization/" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Оптимизация</a>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>В очередной раз чинил наш фреш (там опять приключения с историей данных, расскажу как-нибудь при случае) и снова столкнулся с ноу-хау платформы по хранению UUID в базе данных, так что решил об этом написать.</p>
+<p>Короче, UUID объектов метаданных, как и UUID обычных ссылок, хранятся в БД 1С в виде шестнадцати байт. Причём, если посмотреть на них, на UUID они вообще не похожи: например, <code>8e1f9db8-4be2-11ed-a101-2c4d5450919d</code> в базе выглядит как <code>0xA1012C4D5450919D11ED4BE28E1F9DB8</code>. Когда я первый раз это увидел, подумал: какой-то хэш или фокус-покус с little-endian.</p>
+<p>На деле же платформа просто переставляет группы UUID, сохраняя порядок байтов внутри каждой:</p>
+<p><code>UUID:   aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+SQL:    dddd eeeeeeeeeeee cccc bbbb aaaaaaaa</code></p>
+<p>Почему так? Думаю, это попытка оптимизировать работу индексов СУБД. Дело в том, что платформа использует UUID v1 при автоматической генерации ссылок на документы, элементы справочников и другие объекты ссылочных типов. Такой UUID базируется на времени, и метка времени в нём разбита на три части. Сначала идёт её младшая часть, затем средняя и старшая:</p>
+<p><code>8e1f9db8-4be2-11ed-a101-2c4d5450919d
+│        │    │    │    │
+│        │    │    │    └─ Node ID (48 бит)
+│        │    │    └────── Clock sequence + variant (16 бит)
+│        │    └─────────── Time high + version (16 бит)
+│        └──────────────── Time mid (16 бит)
+└───────────────────────── Time low (32 бит)</code></p>
+<p>В базе 1С тот же UUID выглядит так:</p>
+<p><code>0xA1012C4D5450919D11ED4BE28E1F9DB8
+  │   │           │   │   │
+  │   │           │   │   └─ Time low (32 бит)
+  │   │           │   └───── Time mid (16 бит)
+  │   │           └───────── Time high + version (16 бит)
+  │   └───────────────────── Node ID (48 бит)
+  └───────────────────────── Clock sequence + variant (16 бит)</code></p>
+<p>Получается, после перестановки части метки времени идут от старшей к младшей, и при одинаковых clock sequence и node ID такие UUID будут строго возрастающими.</p>
+<p>Ссылки — часть ключей индексов. Если ключи индексов приходят в случайном порядке, они попадают в разные места B-tree, и когда нужная страница индекса уже заполнена, её приходится делить: выделять новую страницу, переносить туда часть записей и обновлять ссылки в дереве. Эта операция называется page split; она может усиливать фрагментацию индекса и снижать производительность как сама по себе, так и виде последствий.</p>
+<p>Если же ключи в основном возрастают, новые записи обычно добавляются в конец индекса. Страницы заполняются последовательнее, и вставки часто обходятся дешевле. </p>
+<p>(правда, при большом числе одновременных вставок тут возникает другая проблема: все хотят записать данные в последнюю страницу индекса и начинают толкаться локтями, но это уже другая история)</p>
+<p>Мелочь, да? Но мне нравятся подобные штуки: смотришь себе на странненькие шестнадцать байт в базе данных, а за ними, кажется, проступает вполне осмысленное архитектурное решение, принятое неизвестно кем много лет назад.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+          </div>
+
+        </article>
+
+      </section>
+        
+      <!-- Static pagination (works without JS; hide during search) -->
+      <nav id="pagination" class="mt-10 flex items-center justify-between">
+        
+        <a
+          id="prevLink"
+          href="https://kostyanetsky.ru/notes/egorova"
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-50"
+        >
+          ← Феномен Егоровой
+        </a>
+        
+        <span class="w-[1px]"></span>
+        
+      </nav>
+
+
+
+    </main>
+
+    <!-- footer -->
+    <footer class="mt-12 border-t border-slate-200">
+      <div class="mx-auto w-full max-w-4xl px-4 py-8 text-sm text-slate-600">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <p>Влад Костянецкий</p>
+          <p>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://kostyanetsky.ru/rss.xml">RSS</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://github.com/vkostyanetsky">GitHub</a>
+            <span class="mx-2 text-slate-300">·</span>
+            <a class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-500" href="https://t.me/tell_me_alisa">Telegram</a>            
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

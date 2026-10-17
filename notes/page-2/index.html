@@ -132,24 +132,27 @@
         <div class="relative w-full sm:w-[420px]">
           <input
             id="search"
+            aria-busy="false"
             type="search"
             placeholder="Поиск по заголовку / тексту / тегам…"
             class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
           />
-          <svg
-            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
-            />
-          </svg>
+          
+  <svg
+    class="search-indicator pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+    aria-hidden="true"
+  >
+    <path class="search-symbol" stroke-linecap="round" stroke-linejoin="round"
+      d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+    <circle class="search-spinner" cx="12" cy="12" r="8"
+      stroke-linecap="round" stroke-dasharray="38 13" />
+  </svg>
+
         </div>
 
         <p class="text-sm text-slate-600">
@@ -282,6 +285,13 @@
         </button>
         
         <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Оптимизация
+        </button>
+        
+        <button
           data-chip="python"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
@@ -307,13 +317,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Грузия
-        </button>
-        
-        <button
-          data-chip="optimization"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          Оптимизация
         </button>
         
         <button
@@ -363,6 +366,60 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/no"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Нет
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>11 июня 2025</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p><img alt="Нет" src="https://kostyanetsky.ru/notes/no/no.jpg"/></p>
+<p>Сообщение, которое выдает актуальная платформа при попытке подключения к выключенному кластеру серверов. Я, конечно, люблю лаконичность в интерфейсах, но тут всё-таки перебор.</p>
+<p>Платформа, причем, установлена с единственным языковым пакетом (английским) и даже запущена с жестким указанием на «Ven VLen», но откуда-то всё равно прорастают родные березки. Возможно, сишная библиотека, откуда стреляет сообщение (DataExchangeTcpClientImpl.cpp) в моем случае смотрит на язык ОС (русский), сложно сказать.</p>
+<p>В любом случае, не могу избавиться от ассоциаций с Багзом Банни каждый раз, как вижу это окошко.</p>
+<p><img alt="No" src="https://kostyanetsky.ru/notes/no/bugs-bunny.png"/></p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1396,53 +1453,6 @@
 
 
         
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/make-my-window-a-door"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Сделать окно дверью
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>4 августа 2024</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="english" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">English</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Вчера во время прогулки слушал <a href="https://music.yandex.ru/album/13443698/track/24134841" rel="noopener noreferrer" target="_blank">Be Somebody</a> от Thousand Foot Krutch и неожиданно зацепился за фразу «you made my window a door». Мне эта идиома всегда казалась забавной: блин, врезать дверь вместо окна — это как-то небезопасно звучит. Можно выпасть с десятого этажа, например. </p>
-<p>Но песня-то чудесная и совсем не про то! Стало любопытно; пошел копаться, какой смысл вкладывают носители языка. </p>
-<p>Оказалось, это про две разные позиции: пассивный наблюдатель и активный участник. То есть, если перед тобой окно — ты лишь смотришь сквозь него на что-то или кого-то. А вот дверь можно открыть и что-то сделать. Так что «when I could only see the floor you made my window a door» — это по смыслу что-то вроде «когда мои руки опустились, ты помогла мне встать».</p>
-<p>Кстати, есть ещё одна похожая идиома — «to be a better window than a door». Абстракция здесь та же: если какой-то человек похож на окно, а не на дверь — он никогда не подпускает окружающих близко к себе, делая пассивных наблюдателей даже из очень близких ему людей.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
       </section>
 
       <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
@@ -1508,6 +1518,12 @@
 
   let notesCache = null;
   let notesLoadPromise = null;
+  let searchVersion = 0;
+
+  function setSearchBusy(busy) {
+    searchEl.setAttribute("aria-busy", String(busy));
+    dynamicNotesEl.setAttribute("aria-busy", String(busy));
+  }
 
   // Tag filter state (chip)
   let activeTag = pageTag || "all";
@@ -1635,7 +1651,9 @@
   }
 
   async function runSearch() {
+    const version = ++searchVersion;
     const q = (searchEl.value || "").trim();
+    const tag = activeTag;
     const hasQ = q.length > 0;
     const hasTag = activeTag && activeTag !== "all";
 
@@ -1645,37 +1663,50 @@
       // means leaving the page for the common list.
 
       if (!hasTag) {
+        setSearchBusy(false);
         try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
         window.location.href = notesListUrl;
         return;
       }
 
       if (activeTag === pageTag && !hasQ) {
+        setSearchBusy(false);
         showStaticMode();
         return;
       }
     } else if (!hasQ && !hasTag) {
+      setSearchBusy(false);
       try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
       showStaticMode();
       return;
     }
 
     showSearchMode();
-
-    const notes = await loadNotesJsonOnce();
-    const filtered = filterNotes(notes, q, activeTag);
-
-    countEl.textContent = String(filtered.length);
-    pageInfoEl.textContent = makeSearchLabel(q, activeTag);
-
-    if (filtered.length === 0) {
-      dynamicNotesEl.innerHTML = "";
-      emptyEl.classList.remove("hidden");
-      return;
-    }
-
+    setSearchBusy(true);
     emptyEl.classList.add("hidden");
-    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+
+    try {
+      // Allow the busy icon to paint even when the index is already cached.
+      await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      if (version !== searchVersion) return;
+      const notes = await loadNotesJsonOnce();
+      if (version !== searchVersion) return;
+      const filtered = filterNotes(notes, q, tag);
+
+      countEl.textContent = String(filtered.length);
+      pageInfoEl.textContent = makeSearchLabel(q, tag);
+
+      if (filtered.length === 0) {
+        dynamicNotesEl.innerHTML = "";
+        emptyEl.classList.remove("hidden");
+        return;
+      }
+
+      emptyEl.classList.add("hidden");
+      dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+    } finally {
+      if (version === searchVersion) setSearchBusy(false);
+    }
   }
 
   // Initial render
@@ -1683,7 +1714,13 @@
   showStaticMode();
 
   // Text search handler
-  searchEl.addEventListener("input", debounce(runSearch, 200));
+  const debouncedSearch = debounce(runSearch, 200);
+  searchEl.addEventListener("input", () => {
+    // Invalidate an in-flight search immediately, including during debounce.
+    ++searchVersion;
+    setSearchBusy(true);
+    debouncedSearch();
+  });
 
   // Tag chips handler.
   //

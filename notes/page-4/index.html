@@ -132,24 +132,27 @@
         <div class="relative w-full sm:w-[420px]">
           <input
             id="search"
+            aria-busy="false"
             type="search"
             placeholder="Поиск по заголовку / тексту / тегам…"
             class="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 pr-10 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-slate-400"
           />
-          <svg
-            class="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
-            />
-          </svg>
+          
+  <svg
+    class="search-indicator pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+    aria-hidden="true"
+  >
+    <path class="search-symbol" stroke-linecap="round" stroke-linejoin="round"
+      d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+    <circle class="search-spinner" cx="12" cy="12" r="8"
+      stroke-linecap="round" stroke-dasharray="38 13" />
+  </svg>
+
         </div>
 
         <p class="text-sm text-slate-600">
@@ -282,6 +285,13 @@
         </button>
         
         <button
+          data-chip="optimization"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Оптимизация
+        </button>
+        
+        <button
           data-chip="python"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
@@ -307,13 +317,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Грузия
-        </button>
-        
-        <button
-          data-chip="optimization"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          Оптимизация
         </button>
         
         <button
@@ -363,6 +366,54 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/this-is-the-way"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Таков путь
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>17 июля 2023</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Немного экзистенциальной безысходности от СП (на случай, если вам её почему-то не хватало):</p>
+<p><img alt="Исключение генерируется" src="https://kostyanetsky.ru/notes/this-is-the-way/delete-messages.png"/></p>
+<p>Это справка для метода УдалитьСообщения() менеджера канала сервиса интеграции. Если серьёзно, я понимаю, что тут имеется в виду: дело в том, что все методы сервисов интеграции швыряются исключениями, если их вызвать в сеансе со включенными разделителями. Авторы документации педантично сообщают об этом в справке по любому из них, так что здесь, видимо, просто почему-то кусок отвалился. В английской документации к этому методу, например, всё нормально.</p>
+<p>Но все равно, забавно смотрится. Напомнило старый мем:</p>
+<p><img alt="Исключение генерируется" src="https://kostyanetsky.ru/notes/this-is-the-way/bees.jpeg"/></p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -1409,67 +1460,6 @@ EndProcedure
 
 
         
-            
-
-
-
-
-        <article class="rounded-2xl bg-white">
-
-          <header class="space-y-2">
-
-                        
-            <header class="space-y-2">
-            <a href="https://kostyanetsky.ru/notes/reuse-carefully"
-                class="inline text-2xl font-semibold tracking-tight hover:underline">
-                Переиспользуйте с осторожностью
-            </a>
-            </header>
-            
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
-              <span>8 февраля 2022</span>
-              
-                <span class="text-slate-300">·</span>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="1c" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">1С</button>
-                    
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
-                    
-                </div>
-                
-              
-            </div>
-
-          </header>
-
-          <div class="mt-5">
-            <div class="prose-like">
-              <p>Расскажу про смешной и немного стыдный кейс, который разбирал в январе. Суть в двух словах: где-то ближе к концу падает огромный автотест на Ванессе, проверяющий расчёт НДС.</p>
-<p>Начинаю расследовать. Первым делом смотрю на скрины в Аллюре: о'кей, причина очевидна — в одном из документов сдохло условное оформление для поля с суммой НДС. Тест ожидал, что оно будет недоступно, если ставка НДС равна нулю, а оно оказалось доступным.</p>
-<p>Непорядок, надо чинить. Смотрю на условие оформления в коде: ну, поле блокируется, если ссылка на ставку НДС есть в списке «нулевых» ставок (т.е. ставка в которых равна нулю). Всё просто и логично. Что тут, блин, могло сломаться?</p>
-<p><a href="https://twitter.com/EffinBirds/status/1489980393675702281" rel="noopener noreferrer" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/reuse-carefully/snap-tweet-EffinBirds-1489980393675702281.png"/></a></p>
-<p>Ладно, лезу в документ ручками. А там внезапно всё тип-топ: оформление работает как надо. Плавающий баг, что ли? Запускаю автотест снова, в нужный момент вклиниваюсь с отладчиком и обнаруживаю какую-то откровенную фигню: в списке «нулевых» ставок, кроме них самих — пачка пустых ссылок! </p>
-<p>Откровенно чешу в затылке. Этот список документ получает из общего модуля, где лежит <a href="https://gist.github.com/vkostyanetsky/5ec036ee148606aad9caefbc9305bfb0" rel="noopener noreferrer" target="_blank">примерно такой код</a>. Пустую ссылку отсюда даже теоретически получить нельзя. Причем у модуля включено переиспользование возвращаемых значений и функция по факту выполняется один раз где-то в начале теста, до всех сложных манипуляций с данными. То есть тест, по идее, повлиять на неё никак не может.</p>
-<p>Тупик? Ну, опытные коллеги уже, наверное, обо всём догадались, но мне пришлось порядком потанцевать вокруг бага и даже залезть в <a href="https://its.1c.ru/db/v8std/content/724/hdoc" rel="noopener noreferrer" target="_blank">стандарт</a>, пока не дошло: <strong>кэш возвращаемых значений в 1С можно изменить</strong>. В смысле, не просто вызвать <code>ОбновитьПовторноИспользуемыеЗначения()</code>, а прямо вот ручками взять и поменять конкретные данные.</p>
-<p>Как? Ну, если вы тянете из общего модуля со включенным кэшированием какие-то значения и они не примитивного типа (строка, число и т.п.) — вы получите не само значение, а указатель на него где-то в памяти. Запишете этот указатель в переменную и попробуете поменять — поменяете кэш.</p>
-<p>Вот так просто, да. Это и произошло в моем случае: метод, формирующий список «нулевых» ставок, вызывала форма другого документа. Получив список значений, она непринужденно дописывала к нему пустую ссылку и использовала в своей логике. Таким образом, при каждом открытии этой формы кэш списка прирастал всё новыми и новыми пустыми ссылками, что в конце концов сломало документ на другом конце конфы.</p>
-<p><a href="https://twitter.com/EffinBirds/status/1488165946342662144" rel="noopener noreferrer" target="_blank"><img alt="Твит" src="https://kostyanetsky.ru/notes/reuse-carefully/snap-tweet-EffinBirds-1488165946342662144.png"/></a></p>
-<p>По-хорошему, платформе стоило бы швыряться исключениями при попытке поменять кэш, но пока этого не происходит — надо бить себя по рукам самостоятельно. Например, при разработке кэшируемых модулей возвращать из них неизменяемые типы данных (ФиксированнаяСтруктура вместо Структура, ФиксированныйМассив вместо Массив и так далее). Это, правда, не стопроцентная защита: во-первых, фиксированные типы не везде применимы, а во-вторых — даже в последних версиях БСП это делается далеко не везде. Много конфигураций сейчас пишется не на БСП?</p>
-<p>Сонар тоже пока не умеет ловить проблему, а про менее популярные средства я вообще молчу. Никакой серебрянной пули, короче — следим за своим кодом, поглядываем в код коллег и стараемся не забывать об ещё одном изящном способе бахнуть себе в ногу.</p>
-            </div>
-          </div>
-          
-        </article>
-
-
-        
       </section>
 
       <section id="dynamicNotes" class="mt-10 hidden space-y-12"></section>
@@ -1535,6 +1525,12 @@ EndProcedure
 
   let notesCache = null;
   let notesLoadPromise = null;
+  let searchVersion = 0;
+
+  function setSearchBusy(busy) {
+    searchEl.setAttribute("aria-busy", String(busy));
+    dynamicNotesEl.setAttribute("aria-busy", String(busy));
+  }
 
   // Tag filter state (chip)
   let activeTag = pageTag || "all";
@@ -1662,7 +1658,9 @@ EndProcedure
   }
 
   async function runSearch() {
+    const version = ++searchVersion;
     const q = (searchEl.value || "").trim();
+    const tag = activeTag;
     const hasQ = q.length > 0;
     const hasTag = activeTag && activeTag !== "all";
 
@@ -1672,37 +1670,50 @@ EndProcedure
       // means leaving the page for the common list.
 
       if (!hasTag) {
+        setSearchBusy(false);
         try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
         window.location.href = notesListUrl;
         return;
       }
 
       if (activeTag === pageTag && !hasQ) {
+        setSearchBusy(false);
         showStaticMode();
         return;
       }
     } else if (!hasQ && !hasTag) {
+      setSearchBusy(false);
       try { sessionStorage.removeItem(TAG_SESSION_KEY); } catch (e) {}
       showStaticMode();
       return;
     }
 
     showSearchMode();
-
-    const notes = await loadNotesJsonOnce();
-    const filtered = filterNotes(notes, q, activeTag);
-
-    countEl.textContent = String(filtered.length);
-    pageInfoEl.textContent = makeSearchLabel(q, activeTag);
-
-    if (filtered.length === 0) {
-      dynamicNotesEl.innerHTML = "";
-      emptyEl.classList.remove("hidden");
-      return;
-    }
-
+    setSearchBusy(true);
     emptyEl.classList.add("hidden");
-    dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+
+    try {
+      // Allow the busy icon to paint even when the index is already cached.
+      await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      if (version !== searchVersion) return;
+      const notes = await loadNotesJsonOnce();
+      if (version !== searchVersion) return;
+      const filtered = filterNotes(notes, q, tag);
+
+      countEl.textContent = String(filtered.length);
+      pageInfoEl.textContent = makeSearchLabel(q, tag);
+
+      if (filtered.length === 0) {
+        dynamicNotesEl.innerHTML = "";
+        emptyEl.classList.remove("hidden");
+        return;
+      }
+
+      emptyEl.classList.add("hidden");
+      dynamicNotesEl.innerHTML = filtered.map((n) => n.html || "").join("\n");
+    } finally {
+      if (version === searchVersion) setSearchBusy(false);
+    }
   }
 
   // Initial render
@@ -1710,7 +1721,13 @@ EndProcedure
   showStaticMode();
 
   // Text search handler
-  searchEl.addEventListener("input", debounce(runSearch, 200));
+  const debouncedSearch = debounce(runSearch, 200);
+  searchEl.addEventListener("input", () => {
+    // Invalidate an in-flight search immediately, including during debounce.
+    ++searchVersion;
+    setSearchBusy(true);
+    debouncedSearch();
+  });
 
   // Tag chips handler.
   //
