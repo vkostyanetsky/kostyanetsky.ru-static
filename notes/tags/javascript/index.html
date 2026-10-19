@@ -110,7 +110,7 @@
       class="mx-auto w-full max-w-4xl px-4 py-10"
       id="pageMeta"
       data-page="1"
-      data-total-notes="6"
+      data-total-notes="8"
       data-total-pages="1"
     >
       <a id="top" class="block scroll-mt-24"></a>
@@ -250,6 +250,13 @@
         </button>
         
         <button
+          data-chip="javascript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Javascript
+        </button>
+        
+        <button
           data-chip="obsidian"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
@@ -275,13 +282,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Рабочее место
-        </button>
-        
-        <button
-          data-chip="javascript"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          Javascript
         </button>
         
         <button
@@ -334,13 +334,6 @@
         </button>
         
         <button
-          data-chip="nodejs"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          Node.js
-        </button>
-        
-        <button
           data-chip="powershell"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
@@ -359,6 +352,60 @@
 
       <!-- Static notes (SEO + no-JS fallback) -->
       <section id="staticNotes" class="mt-10 space-y-12">
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/timesheet-auto-refresh"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Автообновление для Timesheet
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>26 июля 2026</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="obsidian" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Obsidian</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="javascript" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Javascript</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Спонтанно вернулся к своему старому <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" rel="noopener noreferrer" target="_blank">плагину для Obsidian</a>, который по daily notes за какой-то день выдаёт список задач и время, потраченное на каждую.</p>
+<p>В его коде был первородный баг: при изменении текста заметки блок плагина не перерисовывался самостоятельно. То есть добавляешь задачу, меняешь потраченное время или исправляешь описание, а отчёт продолжает показывать старые данные. Приходилось либо переоткрывать саму заметку, либо начинать редактирование блока, а потом отменять, чтобы затриггерить его рендер вручную. Это раздражало (и пахло велосипедом).</p>
+<p>Теперь блок плагина автоматически рендерится после изменений (только он, не вся заметка). Плюс есть небольшая задержка после ввода и проверка: если отчёт фактически не изменился, то рендера не будет вообще.</p>
+<p>Хотел ещё сразу обновить зависимости, всё-таки год прошёл, но... В NPM, знаете ли, всё тот же образцовый порядок. Каждая крошечная библиотека для сложения двух чисел непременно ссылается на десять соседних, каждый пакет соседскому забору двоюродный плетень и ни один просто так не заменишь: <code>npm audit</code> ругается на любой чих. В общем, как надежно обновить зависимости так, чтобы не сломать сам плагин — я с наскока не понял.</p>
+<p>Ладно, это задача для завтрашнего меня.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
         
             
 
@@ -411,6 +458,67 @@
 <li>В функции noteLink() пропишите путь к вашей папке с ежедневными заметками (сейчас в ней папка Days для примера; путь, если забыли, указан в настройке Daily notes/New file location);</li>
 <li>Закиньте скрипт в шаблон ежедневной заметки (настройка Daily notes/Template file location).</li>
 </ol>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/no-more-embedded-tweets"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Минус встроенные твиты
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>21 марта 2022</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="blog" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Блог</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="javascript" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Javascript</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Не успел я <a href="https://kostyanetsky.ru/notes/no-more-google-fonts" rel="noopener noreferrer" target="_blank">выпилить</a> из блога Google Fonts, как пришлось отправить вдогонку встроенные твиты.</p>
+<p>Как это работало раньше? Хотел сослаться на твит — просто вставлял на него ссылку. Скрипт сборки заменял её на HTML-блок, который находил скрипт Твиттера и заменял на текст твита (и всякими полезными ссылками). Вот в этом <a href="https://github.com/vkostyanetsky/BlogBuilder/commit/c21ef8a7bec10672406e6be57b8e734ba3ac01c5" rel="noopener noreferrer" target="_blank">коммите</a> в целом видно, как это работало.</p>
+<p>Как это работает теперь? Ну да, никак. Твиттер в России заблокирован.</p>
+<p><img alt="Штош" src="https://kostyanetsky.ru/notes/no-more-embedded-tweets/well.jpg"/></p>
+<p>Пришлось поскринить все твиты, на которые я когда-то ссылался, и добавить их в заметки в виде картинок со ссылками. Кому нужен оригинал, тот найдёт способ перейти в Твиттер, а остальные, по крайней мере, могут прочитать текст.</p>
+<p>Пара слов про техническую сторону. Скринить каждый твит вручную мне было лень, поэтому я полез в сеть, обдумывая, как автоматизировать процесс. Сначала попадались только сервисы, готовые решить проблему за какие-то жалкие десять долларов (спасибо, как-нибудь в следующий раз), но потом я набрёл на идеальный <a href="https://github.com/privatenumber/snap-tweet" rel="noopener noreferrer" target="_blank">инструмент</a>: консольный скрипт для Node.js.</p>
+<p>Ничего лишнего. Чистый функционал. Ты ему — твит. Он тебе — картинку:</p>
+<blockquote>
+<p>npx snap-tweet https://twitter.com/PossumEveryHour/status/1506148678461014016</p>
+</blockquote>
+<p>И всё. Захотелось занести автору денег.</p>
+<p>Подумал, не прикрутить ли snap-tweet к скрипту сборки (чтобы было, как раньше: вставляешь ссылку на твит, а дальше оно само генерит картинку и кладёт куда надо). Решил, нафиг. Грубое попирание KISS, да и вообще... В мире и так хватает энтропии. Особенно, блин, сейчас.</p>
             </div>
           </div>
           
@@ -501,12 +609,6 @@
                 
                 <div class="flex flex-wrap gap-2">
                     
-                    <button type="button" data-chip="nodejs" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Node.js</button>
-                    
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    
                     <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
                     
                 </div>
@@ -561,12 +663,6 @@
                 <div class="flex flex-wrap gap-2">
                     
                     <button type="button" data-chip="blog" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Блог</button>
-                    
-                </div>
-                
-                <div class="flex flex-wrap gap-2">
-                    
-                    <button type="button" data-chip="nodejs" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Node.js</button>
                     
                 </div>
                 
