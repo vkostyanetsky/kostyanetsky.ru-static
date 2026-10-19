@@ -110,7 +110,7 @@
       class="mx-auto w-full max-w-4xl px-4 py-10"
       id="pageMeta"
       data-page="1"
-      data-total-notes="8"
+      data-total-notes="12"
       data-total-pages="1"
     >
       <a id="top" class="block scroll-mt-24"></a>
@@ -222,6 +222,13 @@
         </button>
         
         <button
+          data-chip="javascript"
+          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
+        >
+          Javascript
+        </button>
+        
+        <button
           data-chip="mssql"
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
@@ -247,13 +254,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Семья
-        </button>
-        
-        <button
-          data-chip="javascript"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          Javascript
         </button>
         
         <button
@@ -338,13 +338,6 @@
           class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
         >
           Powershell
-        </button>
-        
-        <button
-          data-chip="typescript"
-          class="chip rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 cursor-pointer hover:bg-slate-50"
-        >
-          Typescript
         </button>
         
 
@@ -458,6 +451,248 @@
 <li>В функции noteLink() пропишите путь к вашей папке с ежедневными заметками (сейчас в ней папка Days для примера; путь, если забыли, указан в настройке Daily notes/New file location);</li>
 <li>Закиньте скрипт в шаблон ежедневной заметки (настройка Daily notes/Template file location).</li>
 </ol>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/obsidian-timesheet"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Таймшит для Обсидиана
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>12 мая 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="javascript" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Javascript</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="obsidian" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Obsidian</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="work" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Работа</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Написал ещё один плагин к <a href="https://obsidian.md" rel="noopener noreferrer" target="_blank">Obsidian</a>, на этот раз — для <a href="https://help.obsidian.md/Plugins/Daily+notes" rel="noopener noreferrer" target="_blank">ежедневных заметок</a>. Рисует симпатичный отчет: над какими задачами работал, что сделал, сколько времени потратил. Я постарался описать в <a href="https://github.com/vkostyanetsky/ObsidianTimesheet" rel="noopener noreferrer" target="_blank">репозитории</a>, как это работает; буду рад, если кому-то ещё пригодится!</p>
+<p>Забавный момент: для примеров в README я использовал номера задач FBI-1, FBI-2 и так далее. Это не отсылка к X-Files или Twin Peaks — просто первое, что пришло мне в голову. Дело в том, что наш внутренний проект по разработке FirstBit ERP называется First Bit Internal, сокращенно — FBI. Основной пул задач, над которыми мы работаем, живёт именно в нём.</p>
+<p>Мы-то уже привыкли, но коллег вне компании наши скриншоты из JIRA или SonarQube неизменно веселят. Представили, что вы — агент Купер? А мне и представлять не надо :)</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/obsidian-foodiary"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Фудиари для Обсидиана
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>14 апреля 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="javascript" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Javascript</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="obsidian" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Obsidian</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Вслед за <a href="https://kostyanetsky.ru/notes/obsidian-fastimer" rel="noopener noreferrer" target="_blank">первым</a> плагином для Obsidian пару недель назад выкатил <a href="https://github.com/vkostyanetsky/ObsidianFoodiary" rel="noopener noreferrer" target="_blank">второй</a>. Считает КБЖУ (калории, белки, жиры и углеводы) в пище. Помогает не переедать на пустом месте — всё-таки на глаз трудно оценить, сколько слопал за день, и можно ли позволить себе вон тот пончик.</p>
+<p>Короче, полезная штука, если вы:</p>
+<ol>
+<li>Толстяк (как я)</li>
+<li>Хотите перестать им быть (как я)</li>
+<li>Ведете заметки в Obsidian (как я) 🙂</li>
+</ol>
+<p>На самом деле, программ для этой задачи полным-полно (я перепробовал штук десять). Остался недоволен: либо страшная, либо глючит, либо постоянно пытается всучить ежемесячную подписку. Короче, больше раздражает, чем помогает. Хочется чего-то нативного, встроенного в обычную рутину — и если она оседает в Obsidian, то решение напрашивается само собой.</p>
+<p>Установить плагин можно прямо из программы — разработчики его уже одобрили. В остальном всё просто: пишем в ежедневной заметке, что съели и сколько это весило, и в ответ получаем компактную табличку с сортировкой по калориям и числам по белкам, жирам и углеводам. </p>
+<p>В репозитории по ссылке выше есть примеры.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/callouts-for-fastimer"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Внешний вид Фастаймера
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>9 марта 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="obsidian" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Obsidian</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="javascript" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Javascript</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Завернул отрисовку <a href="https://kostyanetsky.ru/notes/obsidian-fastimer" rel="noopener noreferrer" target="_blank">Фастаймера</a> через выноски: это механика Obsidian, позволяющая превращать обычную цитату в оформленный блок текста, привлекающий внимание читателя. Вы наверняка видели блоки в духе «совет» и «обрати внимание» — вот это и есть выноски. </p>
+<p>Подробнее можно прочитать в <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" rel="noopener noreferrer" target="_blank">справке</a> Obsidian.</p>
+<p>В общем, теперь таймер принимает разный цвет в зависимости от состояния (активный интервал — голубой, успех — зеленый, провал — красный). Кроме того, я немного уплотнил текст и отточил формулировки:</p>
+<p><img alt="Пример" src="https://kostyanetsky.ru/notes/callouts-for-fastimer/example.png"/></p>
+<p>Получилось компактнее и симпатичнее простого блока текста, который я использовал до этого.</p>
+            </div>
+          </div>
+          
+        </article>
+
+
+        
+            
+
+
+
+
+        <article class="rounded-2xl bg-white">
+
+          <header class="space-y-2">
+
+                        
+            <header class="space-y-2">
+            <a href="https://kostyanetsky.ru/notes/obsidian-fastimer"
+                class="inline text-2xl font-semibold tracking-tight hover:underline">
+                Фастаймер для Обсидиана
+            </a>
+            </header>
+            
+
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-slate-600">
+              <span>13 февраля 2024</span>
+              
+                <span class="text-slate-300">·</span>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="done" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Готово</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="javascript" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Javascript</button>
+                    
+                </div>
+                
+                <div class="flex flex-wrap gap-2">
+                    
+                    <button type="button" data-chip="obsidian" class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs text-slate-700 cursor-pointer transition hover:bg-slate-100">Obsidian</button>
+                    
+                </div>
+                
+              
+            </div>
+
+          </header>
+
+          <div class="mt-5">
+            <div class="prose-like">
+              <p>Разработчики <a href="https://obsidian.md" rel="noopener noreferrer" target="_blank">Obsidian</a> на днях заапрувили один из моих пет-плагинов на TypeScript — <a href="https://github.com/vkostyanetsky/ObsidianFastimer" rel="noopener noreferrer" target="_blank">Фастаймер</a>, трекер интервального голодания. Он добавляет в хранилище новый блок кода: вводишь в него дату начала окна голодания и получаешь дату завершения, время до этого момента и раскладку по зонам, которые предстоит пройти. </p>
+<p>Блок показывает актуальную картину каждый раз, когда Obsidian его отрисовывает — то есть, можно следить за своим прогрессом в реальном времени. Когда окно голодания закончится, можно ввести дату завершения и блок покажет результат: получилось ли выполнить цель, сколько времени сверх плана вы голодали и так далее.</p>
+<p>Думаю немного доработать визуальную часть (сейчас всё выводится текстом без какого-либо оформления). А ещё — прикрутить функции расчета статистики, чтобы можно было на ходу рисовать красивые графики в духе <a href="https://charts.phib.ro/Meta/Charts/Charts+Documentation" rel="noopener noreferrer" target="_blank">Charts</a> и показывать ачивки. У меня была эта механика в <a href="https://github.com/vkostyanetsky/Fastimer" rel="noopener noreferrer" target="_blank">реализации</a> этого же приложения на Python, но я вряд ли к ней вернусь — в хранилище Obsidian эту задачу решать проще, чем раскатывать на компьютер дополнительную утилиту.</p>
+<p>Короче, зацените плагин! :) В библиотеке Обсидиана его можно найти по имени (Fastimer). Или, при желании, установить вручную из репозитория.</p>
             </div>
           </div>
           
